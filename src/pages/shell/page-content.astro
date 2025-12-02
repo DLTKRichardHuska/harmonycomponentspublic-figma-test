@@ -42,6 +42,182 @@ import CodeBlock from '../../components/CodeBlock.astro';
       </div>
     </section>
 
+    <!-- Header Toolbar Anatomy -->
+    <section class="space-y-6">
+      <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Header Toolbar Anatomy</h2>
+      <p class="text-slate-600 dark:text-slate-400">
+        The App Panel header contains multiple grouped elements for navigation, actions, and window management.
+      </p>
+      
+      <!-- Visual Diagram -->
+      <div class="rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-surface overflow-hidden">
+        <div class="h-[52px] border-b border-slate-200 dark:border-slate-700 px-4 flex items-center justify-between bg-slate-50 dark:bg-slate-800/50">
+          <!-- Left: Title -->
+          <span class="font-semibold text-slate-900 dark:text-white text-sm">Panel Title</span>
+          
+          <!-- Right: All toolbar elements -->
+          <div class="flex items-center gap-2">
+            <!-- Action Buttons -->
+            <div class="flex items-center gap-1 pr-2 border-r border-slate-200 dark:border-slate-600">
+              <button class="px-2 py-1 text-xs bg-theme-primary text-white rounded">New</button>
+              <button class="px-2 py-1 text-xs bg-white dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded text-slate-700 dark:text-slate-300 flex items-center gap-1">
+                Copy
+                <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" /></svg>
+              </button>
+              <button class="px-2 py-1 text-xs bg-white dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded text-slate-700 dark:text-slate-300">Delete</button>
+              <button class="px-2 py-1 text-xs bg-white dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded text-slate-700 dark:text-slate-300 flex items-center gap-1">
+                Attach
+                <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" /></svg>
+              </button>
+              <button class="px-2 py-1 text-xs bg-white dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded text-slate-700 dark:text-slate-300">Approval</button>
+            </div>
+            
+            <!-- Pagination -->
+            <div class="flex items-center gap-0.5 px-2 border-r border-slate-200 dark:border-slate-600">
+              <input type="checkbox" class="w-3 h-3 rounded border-slate-300 dark:border-slate-600">
+              <button class="p-1 text-slate-500 hover:text-slate-700 dark:hover:text-slate-300">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m18.75 4.5-7.5 7.5 7.5 7.5m-6-15L5.25 12l7.5 7.5" /></svg>
+              </button>
+              <button class="p-1 text-slate-500 hover:text-slate-700 dark:hover:text-slate-300">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" /></svg>
+              </button>
+              <span class="text-xs text-slate-500 mx-1">1 of 3</span>
+              <button class="p-1 text-slate-500 hover:text-slate-700 dark:hover:text-slate-300">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" /></svg>
+              </button>
+              <button class="p-1 text-slate-500 hover:text-slate-700 dark:hover:text-slate-300">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m5.25 4.5 7.5 7.5-7.5 7.5m6-15 7.5 7.5-7.5 7.5" /></svg>
+              </button>
+            </div>
+            
+            <!-- Utility Icon -->
+            <button class="p-1 text-slate-500 hover:text-slate-700 dark:hover:text-slate-300">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M7.217 10.907a2.25 2.25 0 1 0 0 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186 9.566-5.314m-9.566 7.5 9.566 5.314m0 0a2.25 2.25 0 1 0 3.935 2.186 2.25 2.25 0 0 0-3.935-2.186Zm0-12.814a2.25 2.25 0 1 0 3.933-2.185 2.25 2.25 0 0 0-3.933 2.185Z" /></svg>
+            </button>
+            
+            <!-- Find + Query -->
+            <div class="flex items-center gap-1 px-2 border-l border-slate-200 dark:border-slate-600">
+              <span class="text-xs text-slate-500">Find</span>
+              <input type="text" class="w-20 px-2 py-1 text-xs border border-slate-300 dark:border-slate-600 rounded bg-white dark:bg-slate-700 text-slate-700 dark:text-slate-300">
+              <button class="px-2 py-1 text-xs bg-white dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded text-slate-700 dark:text-slate-300 flex items-center gap-1">
+                Query
+                <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" /></svg>
+              </button>
+            </div>
+            
+            <!-- View Toggle -->
+            <div class="flex items-center gap-0.5 px-2 border-l border-slate-200 dark:border-slate-600">
+              <button class="p-1 text-slate-400 hover:text-slate-700 dark:hover:text-slate-300">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 0 1 6 3.75h2.25A2.25 2.25 0 0 1 10.5 6v2.25a2.25 2.25 0 0 1-2.25 2.25H6a2.25 2.25 0 0 1-2.25-2.25V6ZM3.75 15.75A2.25 2.25 0 0 1 6 13.5h2.25a2.25 2.25 0 0 1 2.25 2.25V18a2.25 2.25 0 0 1-2.25 2.25H6A2.25 2.25 0 0 1 3.75 18v-2.25ZM13.5 6a2.25 2.25 0 0 1 2.25-2.25H18A2.25 2.25 0 0 1 20.25 6v2.25A2.25 2.25 0 0 1 18 10.5h-2.25a2.25 2.25 0 0 1-2.25-2.25V6ZM13.5 15.75a2.25 2.25 0 0 1 2.25-2.25H18a2.25 2.25 0 0 1 2.25 2.25V18A2.25 2.25 0 0 1 18 20.25h-2.25A2.25 2.25 0 0 1 13.5 18v-2.25Z" /></svg>
+              </button>
+              <button class="p-1 text-theme-primary">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" /></svg>
+              </button>
+            </div>
+            
+            <!-- Window Controls -->
+            <div class="flex items-center gap-0.5 pl-2 border-l border-slate-200 dark:border-slate-600">
+              <button class="p-1 text-slate-500 hover:text-slate-700 dark:hover:text-slate-300">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" /></svg>
+              </button>
+              <button class="p-1 text-slate-500 hover:text-red-500">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" /></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Element Groups Table -->
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="border-b border-slate-200 dark:border-slate-700">
+              <th class="text-left py-3 px-4 font-medium text-slate-900 dark:text-white">Group</th>
+              <th class="text-left py-3 px-4 font-medium text-slate-900 dark:text-white">Elements</th>
+              <th class="text-left py-3 px-4 font-medium text-slate-900 dark:text-white">Position</th>
+              <th class="text-left py-3 px-4 font-medium text-slate-900 dark:text-white">Icons</th>
+            </tr>
+          </thead>
+          <tbody class="text-slate-600 dark:text-slate-400">
+            <tr class="border-b border-slate-100 dark:border-slate-800">
+              <td class="py-3 px-4 font-medium text-slate-900 dark:text-white">Title</td>
+              <td class="py-3 px-4">Panel name/identifier</td>
+              <td class="py-3 px-4">Left</td>
+              <td class="py-3 px-4 text-slate-400">—</td>
+            </tr>
+            <tr class="border-b border-slate-100 dark:border-slate-800">
+              <td class="py-3 px-4 font-medium text-slate-900 dark:text-white">Action Buttons</td>
+              <td class="py-3 px-4">New, Copy▾, Delete, Attach▾, Approval</td>
+              <td class="py-3 px-4">Center-left</td>
+              <td class="py-3 px-4 font-mono text-xs">chevron-down</td>
+            </tr>
+            <tr class="border-b border-slate-100 dark:border-slate-800">
+              <td class="py-3 px-4 font-medium text-slate-900 dark:text-white">Pagination</td>
+              <td class="py-3 px-4">☐ ⏮ ◀ "X of Y" ▶ ⏭</td>
+              <td class="py-3 px-4">Center</td>
+              <td class="py-3 px-4 font-mono text-xs">chevron-double-left/right, chevron-left/right</td>
+            </tr>
+            <tr class="border-b border-slate-100 dark:border-slate-800">
+              <td class="py-3 px-4 font-medium text-slate-900 dark:text-white">Utility</td>
+              <td class="py-3 px-4">Share/link action</td>
+              <td class="py-3 px-4">Center-right</td>
+              <td class="py-3 px-4 font-mono text-xs">share</td>
+            </tr>
+            <tr class="border-b border-slate-100 dark:border-slate-800">
+              <td class="py-3 px-4 font-medium text-slate-900 dark:text-white">Search</td>
+              <td class="py-3 px-4">"Find" label + input + Query▾</td>
+              <td class="py-3 px-4">Right</td>
+              <td class="py-3 px-4 font-mono text-xs">chevron-down</td>
+            </tr>
+            <tr class="border-b border-slate-100 dark:border-slate-800">
+              <td class="py-3 px-4 font-medium text-slate-900 dark:text-white">View Toggle</td>
+              <td class="py-3 px-4">Grid view, List view</td>
+              <td class="py-3 px-4">Right</td>
+              <td class="py-3 px-4 font-mono text-xs">squares-2x2, bars-3</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-4 font-medium text-slate-900 dark:text-white">Window Controls</td>
+              <td class="py-3 px-4">Minimize, Close</td>
+              <td class="py-3 px-4">Far right</td>
+              <td class="py-3 px-4 font-mono text-xs">minus, x-mark</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      
+      <!-- Icon Reference -->
+      <div class="p-4 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50">
+        <h4 class="font-medium text-slate-900 dark:text-white mb-3">Icon Reference (Heroicons Outline)</h4>
+        <div class="flex flex-wrap gap-4 text-xs">
+          <div class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-slate-600 dark:text-slate-400" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m18.75 4.5-7.5 7.5 7.5 7.5m-6-15L5.25 12l7.5 7.5" /></svg>
+            <code class="text-slate-500">chevron-double-left</code>
+          </div>
+          <div class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-slate-600 dark:text-slate-400" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" /></svg>
+            <code class="text-slate-500">chevron-left</code>
+          </div>
+          <div class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-slate-600 dark:text-slate-400" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" /></svg>
+            <code class="text-slate-500">chevron-right</code>
+          </div>
+          <div class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-slate-600 dark:text-slate-400" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m5.25 4.5 7.5 7.5-7.5 7.5m6-15 7.5 7.5-7.5 7.5" /></svg>
+            <code class="text-slate-500">chevron-double-right</code>
+          </div>
+          <div class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-slate-600 dark:text-slate-400" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" /></svg>
+            <code class="text-slate-500">minus</code>
+          </div>
+          <div class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-slate-600 dark:text-slate-400" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" /></svg>
+            <code class="text-slate-500">x-mark</code>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Visual Example -->
     <section class="space-y-6">
       <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Visual Example</h2>
@@ -54,11 +230,39 @@ import CodeBlock from '../../components/CodeBlock.astro';
           <div class="h-[52px] border-b border-slate-200 dark:border-slate-700 px-4 flex items-center justify-between bg-slate-50 dark:bg-slate-800/50">
             <span class="font-semibold text-slate-900 dark:text-white text-sm">Manage Project User Flow</span>
             <div class="flex items-center gap-2">
+              <!-- Action Buttons -->
               <button class="px-2 py-1 text-xs bg-theme-primary text-white rounded">New</button>
-              <button class="px-2 py-1 text-xs bg-white dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded text-slate-700 dark:text-slate-300">Copy</button>
+              <button class="px-2 py-1 text-xs bg-white dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded text-slate-700 dark:text-slate-300 flex items-center gap-0.5">Copy <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" /></svg></button>
               <button class="px-2 py-1 text-xs bg-white dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded text-slate-700 dark:text-slate-300">Delete</button>
-              <span class="text-xs text-slate-500 mx-2">1 of 3</span>
-              <button class="px-2 py-1 text-xs bg-white dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded text-slate-700 dark:text-slate-300">Query</button>
+              <button class="px-2 py-1 text-xs bg-white dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded text-slate-700 dark:text-slate-300 flex items-center gap-0.5">Attach <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" /></svg></button>
+              <button class="px-2 py-1 text-xs bg-white dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded text-slate-700 dark:text-slate-300">Approval</button>
+              <!-- Pagination -->
+              <div class="flex items-center gap-0.5 mx-1 border-l border-slate-200 dark:border-slate-600 pl-2">
+                <input type="checkbox" class="w-3 h-3 rounded border-slate-300">
+                <button class="p-0.5 text-slate-400 hover:text-slate-600"><svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m18.75 4.5-7.5 7.5 7.5 7.5m-6-15L5.25 12l7.5 7.5" /></svg></button>
+                <button class="p-0.5 text-slate-400 hover:text-slate-600"><svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" /></svg></button>
+                <span class="text-xs text-slate-500 mx-1">1 of 3</span>
+                <button class="p-0.5 text-slate-400 hover:text-slate-600"><svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" /></svg></button>
+                <button class="p-0.5 text-slate-400 hover:text-slate-600"><svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m5.25 4.5 7.5 7.5-7.5 7.5m6-15 7.5 7.5-7.5 7.5" /></svg></button>
+              </div>
+              <!-- Utility -->
+              <button class="p-1 text-slate-400 hover:text-slate-600"><svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M7.217 10.907a2.25 2.25 0 1 0 0 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186 9.566-5.314m-9.566 7.5 9.566 5.314m0 0a2.25 2.25 0 1 0 3.935 2.186 2.25 2.25 0 0 0-3.935-2.186Zm0-12.814a2.25 2.25 0 1 0 3.933-2.185 2.25 2.25 0 0 0-3.933 2.185Z" /></svg></button>
+              <!-- Find + Query -->
+              <div class="flex items-center gap-1 border-l border-slate-200 dark:border-slate-600 pl-2">
+                <span class="text-xs text-slate-500">Find</span>
+                <input type="text" class="w-16 px-1.5 py-0.5 text-xs border border-slate-300 dark:border-slate-600 rounded bg-white dark:bg-slate-700">
+                <button class="px-2 py-1 text-xs bg-white dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded text-slate-700 dark:text-slate-300 flex items-center gap-0.5">Query <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" /></svg></button>
+              </div>
+              <!-- View Toggle -->
+              <div class="flex items-center gap-0.5 border-l border-slate-200 dark:border-slate-600 pl-2">
+                <button class="p-1 text-slate-300"><svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 0 1 6 3.75h2.25A2.25 2.25 0 0 1 10.5 6v2.25a2.25 2.25 0 0 1-2.25 2.25H6a2.25 2.25 0 0 1-2.25-2.25V6ZM3.75 15.75A2.25 2.25 0 0 1 6 13.5h2.25a2.25 2.25 0 0 1 2.25 2.25V18a2.25 2.25 0 0 1-2.25 2.25H6A2.25 2.25 0 0 1 3.75 18v-2.25ZM13.5 6a2.25 2.25 0 0 1 2.25-2.25H18A2.25 2.25 0 0 1 20.25 6v2.25A2.25 2.25 0 0 1 18 10.5h-2.25a2.25 2.25 0 0 1-2.25-2.25V6ZM13.5 15.75a2.25 2.25 0 0 1 2.25-2.25H18a2.25 2.25 0 0 1 2.25 2.25V18A2.25 2.25 0 0 1 18 20.25h-2.25A2.25 2.25 0 0 1 13.5 18v-2.25Z" /></svg></button>
+                <button class="p-1 text-theme-primary"><svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" /></svg></button>
+              </div>
+              <!-- Window Controls -->
+              <div class="flex items-center gap-0.5 border-l border-slate-200 dark:border-slate-600 pl-2">
+                <button class="p-1 text-slate-400 hover:text-slate-600"><svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" /></svg></button>
+                <button class="p-1 text-slate-400 hover:text-red-500"><svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" /></svg></button>
+              </div>
             </div>
           </div>
           
@@ -162,11 +366,35 @@ import CodeBlock from '../../components/CodeBlock.astro';
           <div class="h-[52px] border-b border-slate-200 dark:border-slate-700 px-4 flex items-center justify-between bg-slate-50 dark:bg-slate-800/50">
             <span class="font-semibold text-slate-900 dark:text-white text-sm">Modifications</span>
             <div class="flex items-center gap-2">
+              <!-- Action Buttons -->
               <button class="px-2 py-1 text-xs bg-theme-primary text-white rounded">New</button>
-              <button class="px-2 py-1 text-xs bg-white dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded text-slate-700 dark:text-slate-300">Copy</button>
+              <button class="px-2 py-1 text-xs bg-white dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded text-slate-700 dark:text-slate-300 flex items-center gap-0.5">Copy <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" /></svg></button>
               <button class="px-2 py-1 text-xs bg-white dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded text-slate-700 dark:text-slate-300">Delete</button>
-              <span class="text-xs text-slate-500 mx-2">1 of 3</span>
-              <button class="px-2 py-1 text-xs bg-white dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded text-slate-700 dark:text-slate-300">Query</button>
+              <!-- Pagination -->
+              <div class="flex items-center gap-0.5 mx-1 border-l border-slate-200 dark:border-slate-600 pl-2">
+                <input type="checkbox" class="w-3 h-3 rounded border-slate-300">
+                <button class="p-0.5 text-slate-400 hover:text-slate-600"><svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m18.75 4.5-7.5 7.5 7.5 7.5m-6-15L5.25 12l7.5 7.5" /></svg></button>
+                <button class="p-0.5 text-slate-400 hover:text-slate-600"><svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" /></svg></button>
+                <span class="text-xs text-slate-500 mx-1">1 of 3</span>
+                <button class="p-0.5 text-slate-400 hover:text-slate-600"><svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" /></svg></button>
+                <button class="p-0.5 text-slate-400 hover:text-slate-600"><svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m5.25 4.5 7.5 7.5-7.5 7.5m6-15 7.5 7.5-7.5 7.5" /></svg></button>
+              </div>
+              <!-- Find + Query -->
+              <div class="flex items-center gap-1 border-l border-slate-200 dark:border-slate-600 pl-2">
+                <span class="text-xs text-slate-500">Find</span>
+                <input type="text" class="w-16 px-1.5 py-0.5 text-xs border border-slate-300 dark:border-slate-600 rounded bg-white dark:bg-slate-700">
+                <button class="px-2 py-1 text-xs bg-white dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded text-slate-700 dark:text-slate-300 flex items-center gap-0.5">Query <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" /></svg></button>
+              </div>
+              <!-- View Toggle -->
+              <div class="flex items-center gap-0.5 border-l border-slate-200 dark:border-slate-600 pl-2">
+                <button class="p-1 text-slate-300"><svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 0 1 6 3.75h2.25A2.25 2.25 0 0 1 10.5 6v2.25a2.25 2.25 0 0 1-2.25 2.25H6a2.25 2.25 0 0 1-2.25-2.25V6ZM3.75 15.75A2.25 2.25 0 0 1 6 13.5h2.25a2.25 2.25 0 0 1 2.25 2.25V18a2.25 2.25 0 0 1-2.25 2.25H6A2.25 2.25 0 0 1 3.75 18v-2.25ZM13.5 6a2.25 2.25 0 0 1 2.25-2.25H18A2.25 2.25 0 0 1 20.25 6v2.25A2.25 2.25 0 0 1 18 10.5h-2.25a2.25 2.25 0 0 1-2.25-2.25V6ZM13.5 15.75a2.25 2.25 0 0 1 2.25-2.25H18a2.25 2.25 0 0 1 2.25 2.25V18A2.25 2.25 0 0 1 18 20.25h-2.25A2.25 2.25 0 0 1 13.5 18v-2.25Z" /></svg></button>
+                <button class="p-1 text-theme-primary"><svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" /></svg></button>
+              </div>
+              <!-- Window Controls -->
+              <div class="flex items-center gap-0.5 border-l border-slate-200 dark:border-slate-600 pl-2">
+                <button class="p-1 text-slate-400 hover:text-slate-600"><svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" /></svg></button>
+                <button class="p-1 text-slate-400 hover:text-red-500"><svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" /></svg></button>
+              </div>
             </div>
           </div>
           
@@ -295,6 +523,26 @@ import CodeBlock from '../../components/CodeBlock.astro';
               <td class="py-3 px-4">32px height</td>
               <td class="py-3 px-4">New, Copy, Delete, etc.</td>
             </tr>
+            <tr class="border-b border-slate-100 dark:border-slate-800">
+              <td class="py-3 px-4 font-mono text-xs">Icon button</td>
+              <td class="py-3 px-4">28px</td>
+              <td class="py-3 px-4">Pagination, view toggle, window controls</td>
+            </tr>
+            <tr class="border-b border-slate-100 dark:border-slate-800">
+              <td class="py-3 px-4 font-mono text-xs">Find input</td>
+              <td class="py-3 px-4">80-100px width</td>
+              <td class="py-3 px-4">Search input field</td>
+            </tr>
+            <tr class="border-b border-slate-100 dark:border-slate-800">
+              <td class="py-3 px-4 font-mono text-xs">Button gap (within)</td>
+              <td class="py-3 px-4">4px</td>
+              <td class="py-3 px-4">Spacing within element groups</td>
+            </tr>
+            <tr class="border-b border-slate-100 dark:border-slate-800">
+              <td class="py-3 px-4 font-mono text-xs">Button gap (between)</td>
+              <td class="py-3 px-4">8px</td>
+              <td class="py-3 px-4">Spacing between element groups</td>
+            </tr>
             <tr>
               <td class="py-3 px-4 font-mono text-xs">Sub-task button</td>
               <td class="py-3 px-4">24px height</td>
@@ -326,18 +574,52 @@ import CodeBlock from '../../components/CodeBlock.astro';
       
       <!-- Toolbar -->
       <div class="flex items-center gap-2">
-        <button class="btn-primary px-2 py-1 text-xs">New</button>
-        <button class="btn-secondary px-2 py-1 text-xs">Copy</button>
-        <button class="btn-secondary px-2 py-1 text-xs">Delete</button>
+        <!-- Action Buttons -->
+        <div class="flex items-center gap-1">
+          <button class="btn-primary px-2 py-1 text-xs">New</button>
+          <button class="btn-secondary px-2 py-1 text-xs flex items-center gap-1">
+            Copy <svg class="w-3 h-3"><use href="#chevron-down"/></svg>
+          </button>
+          <button class="btn-secondary px-2 py-1 text-xs">Delete</button>
+          <button class="btn-secondary px-2 py-1 text-xs flex items-center gap-1">
+            Attach <svg class="w-3 h-3"><use href="#chevron-down"/></svg>
+          </button>
+          <button class="btn-secondary px-2 py-1 text-xs">Approval</button>
+        </div>
         
         <!-- Pagination -->
-        <span class="text-xs text-slate-500 mx-2">1 of 3</span>
-        <button class="btn-secondary px-1.5 py-1"><i class="ti ti-chevron-left"></i></button>
-        <button class="btn-secondary px-1.5 py-1"><i class="ti ti-chevron-right"></i></button>
+        <div class="flex items-center gap-0.5 px-2 border-l border-slate-200">
+          <input type="checkbox" class="w-3 h-3">
+          <button class="p-1"><svg class="w-4 h-4"><use href="#chevron-double-left"/></svg></button>
+          <button class="p-1"><svg class="w-4 h-4"><use href="#chevron-left"/></svg></button>
+          <span class="text-xs text-slate-500 mx-1">1 of 3</span>
+          <button class="p-1"><svg class="w-4 h-4"><use href="#chevron-right"/></svg></button>
+          <button class="p-1"><svg class="w-4 h-4"><use href="#chevron-double-right"/></svg></button>
+        </div>
         
-        <!-- Find/Query -->
-        <input type="text" placeholder="Find" class="w-24 px-2 py-1 text-xs border rounded">
-        <button class="btn-secondary px-2 py-1 text-xs">Query</button>
+        <!-- Utility Icon -->
+        <button class="p-1"><svg class="w-4 h-4"><use href="#share"/></svg></button>
+        
+        <!-- Find + Query -->
+        <div class="flex items-center gap-1 px-2 border-l border-slate-200">
+          <span class="text-xs text-slate-500">Find</span>
+          <input type="text" class="w-20 px-2 py-1 text-xs border rounded">
+          <button class="btn-secondary px-2 py-1 text-xs flex items-center gap-1">
+            Query <svg class="w-3 h-3"><use href="#chevron-down"/></svg>
+          </button>
+        </div>
+        
+        <!-- View Toggle -->
+        <div class="flex items-center gap-0.5 px-2 border-l border-slate-200">
+          <button class="p-1"><svg class="w-4 h-4"><use href="#squares-2x2"/></svg></button>
+          <button class="p-1 text-primary"><svg class="w-4 h-4"><use href="#bars-3"/></svg></button>
+        </div>
+        
+        <!-- Window Controls -->
+        <div class="flex items-center gap-0.5 pl-2 border-l border-slate-200">
+          <button class="p-1"><svg class="w-4 h-4"><use href="#minus"/></svg></button>
+          <button class="p-1 hover:text-red-500"><svg class="w-4 h-4"><use href="#x-mark"/></svg></button>
+        </div>
       </div>
     </header>
     
