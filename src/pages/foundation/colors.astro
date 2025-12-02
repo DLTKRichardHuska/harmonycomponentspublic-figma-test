@@ -2,7 +2,7 @@
 import DocsLayout from '../../layouts/DocsLayout.astro';
 import CodeBlock from '../../components/CodeBlock.astro';
 
-// Dark mode colors
+// Dark mode colors (default)
 const darkModeColors = [
   { name: 'Obsidian', value: '#09090b', class: 'bg-obsidian', usage: 'Primary background' },
   { name: 'Charcoal', value: '#18181b', class: 'bg-charcoal', usage: 'Elevated surfaces' },
@@ -15,7 +15,7 @@ const darkModeColors = [
   { name: 'Text', value: '#e5e5e5', class: 'bg-text', usage: 'Primary text' },
 ];
 
-// Light mode colors
+// Light mode colors (default)
 const lightModeColors = [
   { name: 'White', value: '#ffffff', class: 'bg-white', usage: 'Primary surfaces, cards' },
   { name: 'Page Background', value: '#EDF0F6', class: 'bg-[#EDF0F6]', usage: 'Main page background' },
@@ -26,6 +26,40 @@ const lightModeColors = [
   { name: 'Slate 300', value: '#cbd5e1', class: 'bg-slate-300', usage: 'Disabled states' },
   { name: 'Slate 600', value: '#475569', class: 'bg-slate-600', usage: 'Secondary text' },
   { name: 'Slate 900', value: '#0f172a', class: 'bg-slate-900', usage: 'Primary text' },
+];
+
+// CP Semi-Dark colors (CP dark mode)
+const cpSemiDarkColors = [
+  { name: 'Page Background', value: '#1F252E', class: 'bg-[#1F252E]', usage: 'Main page background' },
+  { name: 'Cell Background', value: '#212935', class: 'bg-[#212935]', usage: 'Table cells, content areas' },
+  { name: 'Card Background', value: '#37424D', class: 'bg-[#37424D]', usage: 'Cards, containers, elevated surfaces' },
+  { name: 'Navigation Background', value: '#333D47', class: 'bg-[#333D47]', usage: 'Sidebar, header, navigation' },
+  { name: 'Input Disabled', value: '#333D47', class: 'bg-[#333D47]', usage: 'Disabled inputs, dimmed cells' },
+  { name: 'Table Total Rows', value: '#223A52', class: 'bg-[#223A52]', usage: 'Table totals, summary rows' },
+  { name: 'Border', value: '#2D3748', class: 'bg-[#2D3748]', usage: 'Borders, dividers' },
+  { name: 'Hover', value: '#3D4A5C', class: 'bg-[#3D4A5C]', usage: 'Hover states' },
+  { name: 'Title Text', value: '#E9ECEF', class: 'bg-[#E9ECEF]', usage: 'Primary text, titles' },
+  { name: 'Secondary Text', value: '#A0AEC0', class: 'bg-[#A0AEC0]', usage: 'Secondary text, labels' },
+  { name: 'Muted Text', value: '#6B7280', class: 'bg-[#6B7280]', usage: 'Muted text, placeholders' },
+  { name: 'Brand Primary', value: '#59ACFF', class: 'bg-[#59ACFF]', usage: 'Primary brand color, buttons' },
+  { name: 'Links', value: '#ADD0FF', class: 'bg-[#ADD0FF]', usage: 'Text links' },
+];
+
+// CP Semi-Light colors (CP light mode)
+const cpSemiLightColors = [
+  { name: 'Page Background', value: '#E2E4E9', class: 'bg-[#E2E4E9]', usage: 'Main page background' },
+  { name: 'Card Background', value: '#F7F8FA', class: 'bg-[#F7F8FA]', usage: 'Cards, containers' },
+  { name: 'Navigation Background', value: '#FCFDFF', class: 'bg-[#FCFDFF]', usage: 'Sidebar, header, navigation' },
+  { name: 'Input Background', value: '#FFFFFF', class: 'bg-[#FFFFFF]', usage: 'Input fields, table cells' },
+  { name: 'Input Disabled', value: '#EAEAEA', class: 'bg-[#EAEAEA]', usage: 'Disabled inputs, dimmed cells' },
+  { name: 'Table Total Rows', value: '#F0F3BE', class: 'bg-[#F0F3BE]', usage: 'Table totals, summary rows' },
+  { name: 'Border', value: '#CBD5E1', class: 'bg-[#CBD5E1]', usage: 'Borders, dividers' },
+  { name: 'Hover', value: '#E5E7EB', class: 'bg-[#E5E7EB]', usage: 'Hover states' },
+  { name: 'Title Text', value: '#373F4E', class: 'bg-[#373F4E]', usage: 'Primary text, titles' },
+  { name: 'Secondary Text', value: '#64748B', class: 'bg-[#64748B]', usage: 'Secondary text, labels' },
+  { name: 'Muted Text', value: '#94A3B8', class: 'bg-[#94A3B8]', usage: 'Muted text, placeholders' },
+  { name: 'Brand Primary', value: '#4C92D9', class: 'bg-[#4C92D9]', usage: 'Primary brand color, buttons' },
+  { name: 'Links', value: '#3A70A6', class: 'bg-[#3A70A6]', usage: 'Text links' },
 ];
 
 // Shared colors (both modes)
@@ -66,18 +100,18 @@ const slateScale = [
         A comprehensive color palette designed for both dark and light themes, with semantic colors for consistent communication.
       </p>
       <!-- Theme indicator -->
-      <div class="mt-4 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800 text-sm">
-        <span class="hidden dark:inline-flex items-center gap-2 text-slate-300">
-          <i class="ti ti-moon"></i> Showing Dark Mode Colors
+      <div id="theme-indicator" class="mt-4 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800 text-sm">
+        <span id="indicator-dark" class="hidden dark:inline-flex items-center gap-2 text-slate-300">
+          <i class="ti ti-moon"></i> <span id="dark-mode-label">Showing Dark Mode Colors</span>
         </span>
-        <span class="inline-flex dark:hidden items-center gap-2 text-slate-600">
-          <i class="ti ti-sun"></i> Showing Light Mode Colors
+        <span id="indicator-light" class="inline-flex dark:hidden items-center gap-2 text-slate-600">
+          <i class="ti ti-sun"></i> <span id="light-mode-label">Showing Light Mode Colors</span>
         </span>
       </div>
     </header>
 
-    <!-- DARK MODE COLORS - Only visible in dark mode -->
-    <section class="hidden dark:block">
+    <!-- DARK MODE COLORS - Only visible in dark mode (non-CP themes) -->
+    <section id="default-dark-palette" class="hidden dark:block">
       <h2 class="text-sm font-mono text-slate-400 uppercase tracking-wider mb-6">Dark Mode Palette</h2>
       <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
         {darkModeColors.map((color) => (
@@ -93,13 +127,53 @@ const slateScale = [
       </div>
     </section>
 
-    <!-- LIGHT MODE COLORS - Only visible in light mode -->
-    <section class="block dark:hidden">
+    <!-- LIGHT MODE COLORS - Only visible in light mode (non-CP themes) -->
+    <section id="default-light-palette" class="block dark:hidden">
       <h2 class="text-sm font-mono text-slate-500 uppercase tracking-wider mb-6">Light Mode Palette</h2>
       <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
         {lightModeColors.map((color) => (
           <div class="space-y-3">
             <div class={`h-20 rounded-lg ${color.class} border border-slate-200`}></div>
+            <div>
+              <div class="text-sm font-medium text-slate-900">{color.name}</div>
+              <div class="text-xs font-mono text-slate-500">{color.value}</div>
+            </div>
+            <p class="text-xs text-slate-500">{color.usage}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- CP SEMI-DARK COLORS - Only visible in dark mode when CP theme is active -->
+    <section id="cp-semi-dark-palette" class="hidden">
+      <div class="flex items-center gap-3 mb-6">
+        <h2 class="text-sm font-mono text-slate-400 uppercase tracking-wider">CP Semi-Dark Palette</h2>
+        <span class="px-2 py-0.5 text-[10px] font-medium bg-theme-primary/20 text-theme-primary rounded">CP Only</span>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        {cpSemiDarkColors.map((color) => (
+          <div class="space-y-3">
+            <div class={`h-20 rounded-lg ${color.class} border border-slate-700`}></div>
+            <div>
+              <div class="text-sm font-medium text-white">{color.name}</div>
+              <div class="text-xs font-mono text-slate-500">{color.value}</div>
+            </div>
+            <p class="text-xs text-slate-400">{color.usage}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- CP SEMI-LIGHT COLORS - Only visible in light mode when CP theme is active -->
+    <section id="cp-semi-light-palette" class="hidden">
+      <div class="flex items-center gap-3 mb-6">
+        <h2 class="text-sm font-mono text-slate-500 uppercase tracking-wider">CP Semi-Light Palette</h2>
+        <span class="px-2 py-0.5 text-[10px] font-medium bg-theme-primary/20 text-theme-primary rounded">CP Only</span>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        {cpSemiLightColors.map((color) => (
+          <div class="space-y-3">
+            <div class={`h-20 rounded-lg ${color.class} border border-slate-300`}></div>
             <div>
               <div class="text-sm font-medium text-slate-900">{color.name}</div>
               <div class="text-xs font-mono text-slate-500">{color.value}</div>
@@ -239,4 +313,75 @@ const slateScale = [
       </div>
     </section>
   </article>
+
+  <script>
+    // Toggle color palettes based on active theme
+    function updateColorPalettes() {
+      const html = document.documentElement;
+      const isDark = html.classList.contains('dark');
+      const isCPTheme = html.classList.contains('theme-cp');
+      
+      // Get palette sections
+      const defaultDarkPalette = document.getElementById('default-dark-palette');
+      const defaultLightPalette = document.getElementById('default-light-palette');
+      const cpSemiDarkPalette = document.getElementById('cp-semi-dark-palette');
+      const cpSemiLightPalette = document.getElementById('cp-semi-light-palette');
+      
+      // Get labels
+      const darkModeLabel = document.getElementById('dark-mode-label');
+      const lightModeLabel = document.getElementById('light-mode-label');
+      
+      if (isCPTheme) {
+        // CP theme - show Semi-Dark/Semi-Light palettes
+        if (isDark) {
+          defaultDarkPalette?.classList.add('hidden');
+          defaultDarkPalette?.classList.remove('dark:block');
+          cpSemiDarkPalette?.classList.remove('hidden');
+          cpSemiLightPalette?.classList.add('hidden');
+          if (darkModeLabel) darkModeLabel.textContent = 'Showing CP Semi-Dark Colors';
+        } else {
+          defaultLightPalette?.classList.add('hidden');
+          defaultLightPalette?.classList.remove('block');
+          cpSemiLightPalette?.classList.remove('hidden');
+          cpSemiDarkPalette?.classList.add('hidden');
+          if (lightModeLabel) lightModeLabel.textContent = 'Showing CP Semi-Light Colors';
+        }
+      } else {
+        // Non-CP themes - show default Dark/Light palettes
+        cpSemiDarkPalette?.classList.add('hidden');
+        cpSemiLightPalette?.classList.add('hidden');
+        
+        if (isDark) {
+          defaultDarkPalette?.classList.remove('hidden');
+          defaultDarkPalette?.classList.add('dark:block');
+          defaultLightPalette?.classList.add('hidden');
+          defaultLightPalette?.classList.remove('block');
+          if (darkModeLabel) darkModeLabel.textContent = 'Showing Dark Mode Colors';
+        } else {
+          defaultLightPalette?.classList.remove('hidden');
+          defaultLightPalette?.classList.add('block');
+          defaultDarkPalette?.classList.add('hidden');
+          defaultDarkPalette?.classList.remove('dark:block');
+          if (lightModeLabel) lightModeLabel.textContent = 'Showing Light Mode Colors';
+        }
+      }
+    }
+    
+    // Run on initial load
+    updateColorPalettes();
+    
+    // Watch for theme changes using MutationObserver
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        if (mutation.attributeName === 'class') {
+          updateColorPalettes();
+        }
+      });
+    });
+    
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['class']
+    });
+  </script>
 </DocsLayout>
