@@ -44,8 +44,8 @@ const currentPath = Astro.url.pathname;
       <div class="flex items-center gap-4">
         <a href="/" class="flex items-center gap-2 group cursor-pointer">
           <div class="w-5 h-5 bg-theme-primary rounded-sm group-hover:bg-slate-900 dark:group-hover:bg-white transition-colors"></div>
-          <h1 class="font-display font-bold tracking-tight text-slate-900 dark:text-white text-sm">
-            DESIGN <span class="text-slate-400 dark:text-slate-500 font-normal">SYSTEM</span>
+          <h1 id="header-title" class="font-display font-bold tracking-tight text-slate-900 dark:text-white text-sm">
+            Harmony <span id="header-product-name" class="text-theme-primary">CP</span> <span class="text-slate-400 dark:text-slate-500 font-normal">Design System</span>
           </h1>
         </a>
       </div>
@@ -249,6 +249,15 @@ const currentPath = Astro.url.pathname;
       currentThemeName.textContent = savedColorTheme.toUpperCase();
     }
     
+    // Update header product name on initial load
+    const headerProductName = document.getElementById('header-product-name');
+    if (headerProductName && window.themeComponentConfig) {
+      const themeConfigData = window.themeComponentConfig[savedColorTheme];
+      if (themeConfigData) {
+        headerProductName.textContent = themeConfigData.name;
+      }
+    }
+    
     // Render theme-specific nav for initial load
     if (typeof window.renderThemeSpecificNav === 'function') {
       window.renderThemeSpecificNav(savedColorTheme);
@@ -285,6 +294,16 @@ const currentPath = Astro.url.pathname;
         if (currentThemeName) {
           currentThemeName.textContent = (newTheme || 'cp').toUpperCase();
         }
+        
+        // Update header product name
+        const headerProductName = document.getElementById('header-product-name');
+        if (headerProductName && window.themeComponentConfig) {
+          const themeConfigData = window.themeComponentConfig[newTheme || 'cp'];
+          if (themeConfigData) {
+            headerProductName.textContent = themeConfigData.name;
+          }
+        }
+        
         themePickerMenu?.classList.add('hidden');
         
         // Check if current page is theme-specific and redirect if needed
