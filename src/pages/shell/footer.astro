@@ -3,32 +3,224 @@ import DocsLayout from '../../layouts/DocsLayout.astro';
 import CodeBlock from '../../components/CodeBlock.astro';
 ---
 
-<DocsLayout title="Shell Footer" description="Bottom bar for workspace navigation.">
+<DocsLayout title="Shell Footer" description="Bottom bar for workspace navigation (product-specific).">
   <article class="space-y-12">
     <header class="border-b border-slate-200 dark:border-slate-800 pb-8">
-      <h1 class="font-display text-4xl font-bold text-slate-900 dark:text-white mb-4">Shell Footer</h1>
+      <div class="flex items-center gap-3 mb-4">
+        <h1 class="font-display text-4xl font-bold text-slate-900 dark:text-white">Shell Footer</h1>
+      </div>
       <p class="text-lg text-slate-600 dark:text-slate-400 max-w-2xl">
-        Optional footer bar for workspace tabs, status indicators, or additional navigation.
+        Optional footer bar for workspace tabs, status indicators, or additional navigation. Product availability varies.
       </p>
     </header>
 
-    <CodeBlock 
-      language="html"
-      filename="footer.html"
-      code={`<footer class="h-12 bg-white dark:bg-surface border-t border-slate-200 dark:border-border flex items-center px-4">
+    <!-- Product Availability Banner -->
+    <section class="space-y-4">
+      <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Product Availability</h2>
+      
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <!-- CP - No Footer -->
+        <div class="p-4 rounded-lg border-2 border-red-200 dark:border-red-900/50 bg-red-50 dark:bg-red-900/20">
+          <div class="flex items-center gap-2 mb-2">
+            <span class="w-3 h-3 rounded-full bg-[#4C92D9]"></span>
+            <span class="font-medium text-slate-900 dark:text-white">CP</span>
+          </div>
+          <div class="flex items-center gap-1 text-red-600 dark:text-red-400">
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+            </svg>
+            <span class="text-xs font-medium">Not Used</span>
+          </div>
+          <p class="text-[10px] text-slate-500 dark:text-slate-400 mt-1">Uses Floating Nav instead</p>
+        </div>
+        
+        <!-- VP - Has Footer -->
+        <div class="p-4 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-surface">
+          <div class="flex items-center gap-2 mb-2">
+            <span class="w-3 h-3 rounded-full bg-[#4C92D9]"></span>
+            <span class="font-medium text-slate-900 dark:text-white">VP</span>
+          </div>
+          <div class="flex items-center gap-1 text-green-600 dark:text-green-400">
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+            </svg>
+            <span class="text-xs font-medium">Available</span>
+          </div>
+        </div>
+        
+        <!-- PPM - Has Footer -->
+        <div class="p-4 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-surface">
+          <div class="flex items-center gap-2 mb-2">
+            <span class="w-3 h-3 rounded-full bg-[#30659F]"></span>
+            <span class="font-medium text-slate-900 dark:text-white">PPM</span>
+          </div>
+          <div class="flex items-center gap-1 text-green-600 dark:text-green-400">
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+            </svg>
+            <span class="text-xs font-medium">Available</span>
+          </div>
+        </div>
+        
+        <!-- Maconomy - Has Footer -->
+        <div class="p-4 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-surface">
+          <div class="flex items-center gap-2 mb-2">
+            <span class="w-3 h-3 rounded-full bg-[#804A98]"></span>
+            <span class="font-medium text-slate-900 dark:text-white">Maconomy</span>
+          </div>
+          <div class="flex items-center gap-1 text-green-600 dark:text-green-400">
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+            </svg>
+            <span class="text-xs font-medium">Available</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- CP Alternative Note -->
+      <div class="p-4 rounded-lg border border-amber-200 dark:border-amber-900/50 bg-amber-50 dark:bg-amber-900/20">
+        <div class="flex gap-3">
+          <svg class="w-5 h-5 text-amber-600 dark:text-amber-400 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z" />
+          </svg>
+          <div>
+            <h4 class="font-medium text-amber-800 dark:text-amber-300">CP/Costpoint Alternative</h4>
+            <p class="text-sm text-amber-700 dark:text-amber-400 mt-1">
+              Costpoint (CP) does not use a footer component. Instead, it uses the <a href="/cp/floating-nav" class="underline hover:no-underline">Floating Navigation</a> toolbar that appears at the top of the page content area for common actions like Execute, Save, and Query.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Visual Example -->
+    <section class="space-y-6">
+      <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Visual Example</h2>
+      <p class="text-sm text-slate-600 dark:text-slate-400">Footer component as used in VP, PPM, and Maconomy products.</p>
+      
+      <div class="rounded-lg border border-slate-200 dark:border-slate-800 overflow-hidden">
+        <!-- Simulated content area -->
+        <div class="h-24 bg-slate-100 dark:bg-surface flex items-center justify-center border-b border-slate-200 dark:border-slate-700">
+          <span class="text-xs text-slate-400">Page Content</span>
+        </div>
+        <!-- Footer -->
+        <footer class="h-12 bg-white dark:bg-surface border-t border-slate-200 dark:border-border flex items-center justify-between px-4">
+          <div class="flex items-center gap-4">
+            <button class="text-xs text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white px-2 py-1 rounded hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+              Tab 1
+            </button>
+            <button class="text-xs text-theme-primary font-medium px-2 py-1 rounded bg-theme-primary/10">
+              Tab 2 (Active)
+            </button>
+            <button class="text-xs text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white px-2 py-1 rounded hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+              Tab 3
+            </button>
+          </div>
+          <div class="flex items-center gap-3 text-xs text-slate-500 dark:text-slate-400">
+            <span>Status: Ready</span>
+            <span class="w-2 h-2 rounded-full bg-green-500"></span>
+          </div>
+        </footer>
+      </div>
+    </section>
+
+    <!-- Code Example -->
+    <section class="space-y-6">
+      <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Code Example</h2>
+      
+      <CodeBlock 
+        language="html"
+        filename="footer.html"
+        code={`<!-- Footer (VP, PPM, Maconomy only - NOT used in CP) -->
+<footer class="h-12 bg-white dark:bg-surface border-t border-slate-200 dark:border-border 
+               flex items-center justify-between px-4 shrink-0">
+  <!-- Workspace Tabs -->
   <div class="flex items-center gap-4">
-    <button class="text-xs text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white">
+    <button class="footer-tab text-xs text-slate-600 dark:text-slate-400 
+                   hover:text-slate-900 dark:hover:text-white 
+                   px-2 py-1 rounded hover:bg-slate-100 dark:hover:bg-slate-800">
       Tab 1
     </button>
-    <button class="text-xs text-theme-primary font-medium">
+    <button class="footer-tab active text-xs text-theme-primary font-medium 
+                   px-2 py-1 rounded bg-theme-primary/10">
       Tab 2 (Active)
     </button>
-    <button class="text-xs text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white">
+    <button class="footer-tab text-xs text-slate-600 dark:text-slate-400 
+                   hover:text-slate-900 dark:hover:text-white 
+                   px-2 py-1 rounded hover:bg-slate-100 dark:hover:bg-slate-800">
       Tab 3
     </button>
   </div>
+  
+  <!-- Status Indicators -->
+  <div class="flex items-center gap-3 text-xs text-slate-500 dark:text-slate-400">
+    <span>Status: Ready</span>
+    <span class="w-2 h-2 rounded-full bg-green-500"></span>
+  </div>
 </footer>`}
-    />
+      />
+    </section>
+
+    <!-- Specifications -->
+    <section class="space-y-6">
+      <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Specifications</h2>
+      
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="border-b border-slate-200 dark:border-slate-700">
+              <th class="text-left py-3 px-4 font-medium text-slate-900 dark:text-white">Property</th>
+              <th class="text-left py-3 px-4 font-medium text-slate-900 dark:text-white">Value</th>
+            </tr>
+          </thead>
+          <tbody class="text-slate-600 dark:text-slate-400">
+            <tr class="border-b border-slate-100 dark:border-slate-800">
+              <td class="py-3 px-4">Height</td>
+              <td class="py-3 px-4 font-mono text-xs">48px (h-12)</td>
+            </tr>
+            <tr class="border-b border-slate-100 dark:border-slate-800">
+              <td class="py-3 px-4">Background</td>
+              <td class="py-3 px-4 font-mono text-xs">bg-white / dark:bg-surface</td>
+            </tr>
+            <tr class="border-b border-slate-100 dark:border-slate-800">
+              <td class="py-3 px-4">Border</td>
+              <td class="py-3 px-4 font-mono text-xs">border-t border-slate-200</td>
+            </tr>
+            <tr class="border-b border-slate-100 dark:border-slate-800">
+              <td class="py-3 px-4">Padding</td>
+              <td class="py-3 px-4 font-mono text-xs">px-4</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-4">Tab font size</td>
+              <td class="py-3 px-4 font-mono text-xs">12px (text-xs)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Use Cases -->
+    <section class="space-y-4">
+      <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Use Cases</h2>
+      
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="p-4 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-surface">
+          <h4 class="font-medium text-slate-900 dark:text-white mb-2">Workspace Tabs</h4>
+          <p class="text-sm text-slate-600 dark:text-slate-400">Allow users to switch between multiple open workspaces or documents without leaving the current view.</p>
+        </div>
+        <div class="p-4 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-surface">
+          <h4 class="font-medium text-slate-900 dark:text-white mb-2">Status Indicators</h4>
+          <p class="text-sm text-slate-600 dark:text-slate-400">Display system status, connection state, sync indicators, or other persistent information.</p>
+        </div>
+        <div class="p-4 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-surface">
+          <h4 class="font-medium text-slate-900 dark:text-white mb-2">Quick Actions</h4>
+          <p class="text-sm text-slate-600 dark:text-slate-400">Provide shortcuts to frequently used actions that should be accessible from any page.</p>
+        </div>
+        <div class="p-4 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-surface">
+          <h4 class="font-medium text-slate-900 dark:text-white mb-2">Progress/Loading</h4>
+          <p class="text-sm text-slate-600 dark:text-slate-400">Show background process status, upload/download progress, or batch operation indicators.</p>
+        </div>
+      </div>
+    </section>
   </article>
 </DocsLayout>
-
