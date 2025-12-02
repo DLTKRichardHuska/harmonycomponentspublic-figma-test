@@ -12,8 +12,17 @@ const currentPath = Astro.url.pathname;
 ---
 
 <!DOCTYPE html>
-<html lang="en" class="dark theme-cp">
+<html lang="en">
 <head>
+  <script is:inline>
+    // Immediately apply saved theme to prevent flash
+    (function() {
+      const savedTheme = localStorage.getItem('theme') || 'dark';
+      const savedColorTheme = localStorage.getItem('colorTheme') || 'cp';
+      if (savedTheme === 'dark') document.documentElement.classList.add('dark');
+      document.documentElement.classList.add('theme-' + savedColorTheme);
+    })();
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{title} | Design System</title>
