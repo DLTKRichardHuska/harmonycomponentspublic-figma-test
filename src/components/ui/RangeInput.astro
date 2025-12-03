@@ -1,9 +1,4 @@
 ---
-/**
- * RangeInput Component
- * Slider for selecting a value within a range.
- */
-
 export interface Props {
   value?: number;
   min?: number;
@@ -37,7 +32,7 @@ const {
 const rangeId = id || `range-${Math.random().toString(36).substr(2, 9)}`;
 ---
 
-<div class={`range-wrap ${className}`}>
+<div class={`rng-wrap ${className}`}>
   <input
     type="range"
     id={rangeId}
@@ -47,116 +42,188 @@ const rangeId = id || `range-${Math.random().toString(36).substr(2, 9)}`;
     max={max}
     step={step}
     disabled={disabled}
-    class="range-track"
+    class="rng"
     data-show-percent={showPercent ? 'true' : undefined}
     data-prefix={prefix || undefined}
     data-suffix={suffix || undefined}
     {...rest}
   />
-  <span class="range-val" data-for={rangeId}>
+  <span class="rng-val" data-for={rangeId}>
     {prefix}{showPercent ? `${Math.round((value - min) / (max - min) * 100)}%` : value}{suffix}
   </span>
 </div>
 
 <style is:global>
-  .range-wrap {
+  .rng-wrap {
     display: flex;
     align-items: center;
     gap: 12px;
+  }
+  
+  /* EXACT copy from CodePen */
+  .rng {
+    --thumb-height: 1.25em;
+    --track-height: 0.375em;
+    --track-color: rgba(0, 0, 0, 0.2);
+    --thumb-color: var(--theme-primary, #4C92D9);
+    
+    font-size: 1rem;
     width: 100%;
   }
   
-  .range-track {
-    flex: 1;
-    height: 6px;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    background: #e2e8f0;
-    border-radius: 3px;
-    outline: none;
-    border: none;
-    padding: 0;
-    margin: 0;
-    cursor: pointer;
+  html.dark .rng {
+    --track-color: rgba(255, 255, 255, 0.2);
   }
   
-  html.dark .range-track {
-    background: #475569;
+  .rng {
+    position: relative;
+    background: #fff0;
+    overflow: hidden;
   }
   
-  .range-track::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background: var(--theme-primary, #4C92D9);
-    cursor: pointer;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    border: none;
+  .rng:active {
+    cursor: grabbing;
   }
   
-  .range-track::-moz-range-thumb {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background: var(--theme-primary, #4C92D9);
-    cursor: pointer;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    border: none;
-  }
-  
-  .range-track::-moz-range-track {
-    background: transparent;
-    border: none;
-  }
-  
-  .range-track:disabled {
-    opacity: 0.5;
+  .rng:disabled {
+    filter: grayscale(1);
+    opacity: 0.3;
     cursor: not-allowed;
   }
   
-  .range-val {
-    min-width: 48px;
+  /* WebKit */
+  .rng,
+  .rng::-webkit-slider-runnable-track,
+  .rng::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    transition: all ease 100ms;
+    height: var(--thumb-height);
+  }
+  
+  .rng::-webkit-slider-runnable-track,
+  .rng::-webkit-slider-thumb {
+    position: relative;
+  }
+  
+  .rng::-webkit-slider-thumb {
+    width: var(--thumb-height);
+    background: var(--thumb-color);
+    border-radius: var(--thumb-height);
+    filter: brightness(100%);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  }
+  
+  .rng:hover::-webkit-slider-thumb {
+    filter: brightness(110%);
+    cursor: grab;
+  }
+  
+  .rng:active::-webkit-slider-thumb {
+    filter: brightness(90%);
+    cursor: grabbing;
+  }
+  
+  .rng::-webkit-slider-runnable-track {
+    background: linear-gradient(var(--track-color) 0 0) scroll no-repeat center / 100% calc(var(--track-height) + 1px);
+  }
+  
+  .rng:disabled::-webkit-slider-thumb {
+    cursor: not-allowed;
+  }
+  
+  /* Firefox */
+  .rng,
+  .rng::-moz-range-track,
+  .rng::-moz-range-thumb {
+    appearance: none;
+    transition: all ease 100ms;
+    height: var(--thumb-height);
+  }
+  
+  .rng::-moz-range-track,
+  .rng::-moz-range-thumb,
+  .rng::-moz-range-progress {
+    background: #fff0;
+  }
+  
+  .rng::-moz-range-thumb {
+    background: var(--thumb-color);
+    border: 0;
+    width: var(--thumb-height);
+    border-radius: var(--thumb-height);
+    cursor: grab;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  }
+  
+  .rng:active::-moz-range-thumb {
+    cursor: grabbing;
+  }
+  
+  .rng::-moz-range-track {
+    width: 100%;
+    background: var(--track-color);
+  }
+  
+  .rng::-moz-range-track {
+    height: calc(var(--track-height) + 1px);
+    border-radius: var(--track-height);
+  }
+  
+  .rng::-moz-range-thumb {
+    filter: brightness(100%);
+  }
+  
+  .rng:hover::-moz-range-thumb {
+    filter: brightness(110%);
+  }
+  
+  .rng:active::-moz-range-thumb {
+    filter: brightness(90%);
+  }
+  
+  .rng:disabled::-moz-range-thumb {
+    cursor: not-allowed;
+  }
+  
+  .rng:focus {
+    outline: none;
+  }
+  
+  .rng-val {
+    min-width: 50px;
     text-align: right;
     font-size: 14px;
     color: #64748b;
     flex-shrink: 0;
   }
   
-  html.dark .range-val {
+  html.dark .rng-val {
     color: #94a3b8;
   }
 </style>
 
 <script>
-  function initRanges() {
-    document.querySelectorAll('.range-track').forEach((el) => {
+  function initRng() {
+    document.querySelectorAll('.rng').forEach((el) => {
       const input = el as HTMLInputElement;
-      const valueEl = document.querySelector(`.range-val[data-for="${input.id}"]`);
-      if (!valueEl || input.hasAttribute('data-init')) return;
+      const val = document.querySelector(`.rng-val[data-for="${input.id}"]`);
+      if (!val || input.hasAttribute('data-init')) return;
       input.setAttribute('data-init', '1');
       
       const update = () => {
-        const val = parseFloat(input.value);
-        const min = parseFloat(input.min) || 0;
-        const max = parseFloat(input.max) || 100;
-        const showPercent = input.dataset.showPercent === 'true';
-        const prefix = input.dataset.prefix || '';
-        const suffix = input.dataset.suffix || '';
-        
-        if (showPercent) {
-          valueEl.textContent = `${prefix}${Math.round((val - min) / (max - min) * 100)}%${suffix}`;
-        } else {
-          valueEl.textContent = `${prefix}${val}${suffix}`;
-        }
+        const v = parseFloat(input.value);
+        const mn = parseFloat(input.min) || 0;
+        const mx = parseFloat(input.max) || 100;
+        const pct = input.dataset.showPercent === 'true';
+        const pre = input.dataset.prefix || '';
+        const suf = input.dataset.suffix || '';
+        val.textContent = pct ? `${pre}${Math.round((v - mn) / (mx - mn) * 100)}%${suf}` : `${pre}${v}${suf}`;
       };
       
       input.addEventListener('input', update);
     });
   }
   
-  initRanges();
-  document.addEventListener('astro:page-load', initRanges);
+  initRng();
+  document.addEventListener('astro:page-load', initRng);
 </script>
