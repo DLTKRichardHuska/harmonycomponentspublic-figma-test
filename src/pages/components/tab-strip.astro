@@ -3,45 +3,69 @@ import DocsLayout from '../../layouts/DocsLayout.astro';
 import ExampleSection from '../../components/ExampleSection.astro';
 ---
 
-<DocsLayout title="Tab Strip" description="Horizontal tab navigation.">
+<DocsLayout title="Tab Strip" description="Tab components for organizing content.">
   <article class="space-y-12">
-    <header class="border-b border-slate-200 dark:border-slate-800 pb-8">
-      <h1 class="font-display text-4xl font-bold text-slate-900 dark:text-white mb-4">Tab Strip</h1>
-      <p class="text-lg text-slate-600 dark:text-slate-400 max-w-2xl">
-        Tab strips allow users to navigate between related content sections.
+    <header class="page-header page-header--compact">
+      <div class="flex items-center gap-3 mb-4">
+        <h1 class="page-header__title page-header__title--sm">Tab Strip</h1>
+        <span class="badge badge--success">stable</span>
+      </div>
+      <p class="page-header__description">
+        Tabs organize content into separate views where only one view is visible at a time.
       </p>
     </header>
 
-    <ExampleSection title="Underline Tabs" description="Classic underline style tabs.">
-      <div class="border-b border-slate-200 dark:border-slate-800">
-        <nav class="flex gap-6">
-          <button class="pb-3 text-sm font-medium text-theme-primary border-b-2 border-theme-primary">Overview</button>
-          <button class="pb-3 text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white border-b-2 border-transparent">Features</button>
-          <button class="pb-3 text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white border-b-2 border-transparent">Pricing</button>
-        </nav>
-      </div>
-    </ExampleSection>
+    <nav class="article-nav">
+      <a href="#examples" class="article-nav__link"><i class="ti ti-eye"></i> Examples</a>
+    </nav>
 
-    <ExampleSection title="Pill Tabs" description="Rounded pill style tabs.">
-      <div class="inline-flex rounded-lg bg-slate-100 dark:bg-slate-800 p-1">
-        <button class="px-4 py-1.5 text-sm font-medium rounded-md bg-white dark:bg-slate-700 text-slate-900 dark:text-white shadow-sm">All</button>
-        <button class="px-4 py-1.5 text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white">Active</button>
-        <button class="px-4 py-1.5 text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white">Archived</button>
-      </div>
-    </ExampleSection>
+    <section id="examples" class="space-y-8">
+      <h2 class="section__title">Examples</h2>
 
-    <ExampleSection title="With Icons" description="Tabs with icons.">
-      <div class="border-b border-slate-200 dark:border-slate-800">
-        <nav class="flex gap-6">
-          <button class="pb-3 text-sm font-medium text-theme-primary border-b-2 border-theme-primary flex items-center gap-2">
-            <i class="ti ti-home"></i> Home
-          </button>
-          <button class="pb-3 text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white border-b-2 border-transparent flex items-center gap-2">
-            <i class="ti ti-settings"></i> Settings
-          </button>
-        </nav>
-      </div>
-    </ExampleSection>
+      <ExampleSection title="Basic Tabs" description="Standard tab navigation.">
+        <div>
+          <div class="tabs">
+            <button class="tab is-active">Overview</button>
+            <button class="tab">Features</button>
+            <button class="tab">Pricing</button>
+            <button class="tab">Reviews</button>
+          </div>
+          <div class="tab-panel is-active">
+            <p class="text-secondary">
+              This is the overview content. Click other tabs to switch views.
+            </p>
+          </div>
+        </div>
+      </ExampleSection>
+
+      <ExampleSection title="With Icons" description="Tabs with icons.">
+        <div>
+          <div class="tabs">
+            <button class="tab is-active">
+              <i class="ti ti-home mr-1"></i> Home
+            </button>
+            <button class="tab">
+              <i class="ti ti-user mr-1"></i> Profile
+            </button>
+            <button class="tab">
+              <i class="ti ti-settings mr-1"></i> Settings
+            </button>
+          </div>
+          <div class="tab-panel is-active">
+            <p class="text-secondary">Home tab content.</p>
+          </div>
+        </div>
+      </ExampleSection>
+
+      <ExampleSection title="Disabled Tab" description="Tab that cannot be selected.">
+        <div>
+          <div class="tabs">
+            <button class="tab is-active">Active</button>
+            <button class="tab">Normal</button>
+            <button class="tab tab--disabled" disabled>Disabled</button>
+          </div>
+        </div>
+      </ExampleSection>
+    </section>
   </article>
 </DocsLayout>
-

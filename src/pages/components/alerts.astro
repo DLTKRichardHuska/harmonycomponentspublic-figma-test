@@ -3,225 +3,84 @@ import DocsLayout from '../../layouts/DocsLayout.astro';
 import PropsTable from '../../components/PropsTable.astro';
 import ExampleSection from '../../components/ExampleSection.astro';
 import Alert from '../../components/ui/Alert.astro';
-import Badge from '../../components/ui/Badge.astro';
 
 const props = [
-  { name: 'variant', type: "'success' | 'warning' | 'error' | 'info'", default: "'info'", description: 'Alert type and color' },
-  { name: 'title', type: 'string', default: '—', description: 'Optional title text' },
+  { name: 'variant', type: "'info' | 'success' | 'warning' | 'error'", default: "'info'", description: 'Alert style variant' },
+  { name: 'title', type: 'string', default: '—', description: 'Alert title' },
   { name: 'dismissible', type: 'boolean', default: 'false', description: 'Show close button' },
-  { name: 'inline', type: 'boolean', default: 'false', description: 'Compact inline style' },
-  { name: 'icon', type: 'string', default: 'auto', description: 'Custom icon (auto-selected by variant)' },
+  { name: 'icon', type: 'string', default: '—', description: 'Custom icon class' },
 ];
 ---
 
-<DocsLayout title="Alerts" description="Alert components for displaying important messages and notifications.">
+<DocsLayout title="Alerts" description="Alert components for displaying important messages.">
   <article class="space-y-12">
-    <header class="border-b border-slate-200 dark:border-slate-800 pb-8">
+    <header class="page-header page-header--compact">
       <div class="flex items-center gap-3 mb-4">
-        <h1 class="font-display text-4xl font-bold text-slate-900 dark:text-white">Alerts</h1>
-        <Badge variant="success">stable</Badge>
+        <h1 class="page-header__title page-header__title--sm">Alerts</h1>
+        <span class="badge badge--success">stable</span>
       </div>
-      <p class="text-lg text-slate-600 dark:text-slate-400 max-w-2xl">
-        Alerts display important messages to users. Use different variants to communicate the nature and urgency of the message.
+      <p class="page-header__description">
+        Alerts display important messages that require user attention. Use different variants to communicate severity.
       </p>
     </header>
 
-    <nav class="flex gap-4 text-sm">
-      <a href="#examples" class="text-theme-primary hover:underline flex items-center gap-1"><i class="ti ti-eye"></i> Examples</a>
-      <a href="#props" class="text-theme-primary hover:underline flex items-center gap-1"><i class="ti ti-list"></i> Props</a>
-      <a href="#usage" class="text-theme-primary hover:underline flex items-center gap-1"><i class="ti ti-book"></i> Usage</a>
-      <a href="#accessibility" class="text-theme-primary hover:underline flex items-center gap-1"><i class="ti ti-accessible"></i> Accessibility</a>
+    <nav class="article-nav">
+      <a href="#examples" class="article-nav__link"><i class="ti ti-eye"></i> Examples</a>
+      <a href="#props" class="article-nav__link"><i class="ti ti-list"></i> Props</a>
+      <a href="#accessibility" class="article-nav__link"><i class="ti ti-accessible"></i> Accessibility</a>
     </nav>
 
     <section id="examples" class="space-y-8">
-      <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Examples</h2>
+      <h2 class="section__title">Examples</h2>
 
-      <ExampleSection title="Alert Variants" description="Four semantic variants for different message types.">
+      <ExampleSection title="Variants" description="Different alert styles for various contexts.">
         <div class="space-y-4">
+          <Alert variant="info" title="Information">
+            This is an informational message for the user.
+          </Alert>
           <Alert variant="success" title="Success">
             Your changes have been saved successfully.
           </Alert>
-          
           <Alert variant="warning" title="Warning">
-            Your session will expire in 5 minutes.
+            Please review the changes before proceeding.
           </Alert>
-          
           <Alert variant="error" title="Error">
-            Failed to save changes. Please try again.
-          </Alert>
-          
-          <Alert variant="info" title="Info">
-            A new version is available for download.
+            Something went wrong. Please try again.
           </Alert>
         </div>
       </ExampleSection>
 
-      <ExampleSection title="Without Title" description="Simpler alerts with just the message.">
+      <ExampleSection title="Dismissible" description="Alerts that can be closed by the user.">
         <div class="space-y-4">
-          <Alert variant="success">
-            Your profile has been updated.
-          </Alert>
-          
-          <Alert variant="warning">
-            Please verify your email address.
-          </Alert>
-          
-          <Alert variant="error">
-            Network connection lost.
-          </Alert>
-          
-          <Alert variant="info">
-            New features are coming soon!
+          <Alert variant="info" title="Dismissible Alert" dismissible>
+            Click the X button to dismiss this alert.
           </Alert>
         </div>
       </ExampleSection>
 
-      <ExampleSection title="Dismissible Alerts" description="Alerts with close button for user control.">
+      <ExampleSection title="Without Title" description="Simpler alerts without a title.">
         <div class="space-y-4">
-          <Alert variant="info" title="New Feature Available" dismissible>
-            Check out our new dashboard analytics feature.
-          </Alert>
-          
-          <Alert variant="success" title="Welcome!" dismissible>
-            Thanks for signing up. Here's what you can do next.
-          </Alert>
-        </div>
-      </ExampleSection>
-
-      <ExampleSection title="Inline Alerts" description="Compact alerts without title for inline messaging.">
-        <div class="space-y-4 max-w-md">
-          <Alert variant="warning" inline>
-            Unsaved changes will be lost.
-          </Alert>
-          
-          <Alert variant="error" inline>
-            This field is required.
-          </Alert>
-          
-          <Alert variant="success" inline>
-            Email verified successfully.
-          </Alert>
-          
-          <Alert variant="info" inline>
-            Tip: You can drag and drop to reorder items.
-          </Alert>
-        </div>
-      </ExampleSection>
-
-      <ExampleSection title="With Actions" description="Alerts with additional action buttons.">
-        <div class="space-y-4">
-          <Alert variant="warning" title="Subscription Expiring">
-            <p class="mb-3">Your subscription will expire in 3 days. Renew now to avoid service interruption.</p>
-            <div class="flex gap-2">
-              <button class="px-3 py-1.5 text-sm font-medium bg-warning text-white rounded-lg hover:opacity-90">Renew Now</button>
-              <button class="px-3 py-1.5 text-sm font-medium text-warning hover:underline">Learn More</button>
-            </div>
-          </Alert>
-          
-          <Alert variant="error" title="Payment Failed">
-            <p class="mb-3">We couldn't process your payment. Please update your billing information.</p>
-            <div class="flex gap-2">
-              <button class="px-3 py-1.5 text-sm font-medium bg-error text-white rounded-lg hover:opacity-90">Update Payment</button>
-              <button class="px-3 py-1.5 text-sm font-medium text-error hover:underline">Contact Support</button>
-            </div>
-          </Alert>
-        </div>
-      </ExampleSection>
-
-      <ExampleSection title="Rich Content" description="Alerts with lists and formatted content.">
-        <Alert variant="info" title="Before you continue">
-          <p class="mb-2">Please ensure you have completed the following:</p>
-          <ul class="list-disc list-inside space-y-1 text-sm">
-            <li>Verified your email address</li>
-            <li>Set up two-factor authentication</li>
-            <li>Completed your profile information</li>
-            <li>Agreed to the terms of service</li>
-          </ul>
-        </Alert>
-      </ExampleSection>
-
-      <ExampleSection title="In Context" description="Alert used within a card or form.">
-        <div class="max-w-md p-6 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-charcoal">
-          <h3 class="font-semibold text-slate-900 dark:text-white mb-4">Account Settings</h3>
-          
-          <Alert variant="warning" inline class="mb-4">
-            Your email is not verified. Some features may be limited.
-          </Alert>
-          
-          <div class="space-y-4">
-            <div class="space-y-2">
-              <label class="block text-sm font-medium text-slate-700 dark:text-slate-300">Display Name</label>
-              <input type="text" value="John Smith" class="w-full px-4 py-2 border border-slate-300 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-900 text-slate-900 dark:text-white" />
-            </div>
-            <button class="px-4 py-2 bg-theme-primary hover:bg-theme-primary-hover text-white rounded-lg font-medium transition-colors">
-              Save Changes
-            </button>
-          </div>
+          <Alert variant="info">A simple informational message.</Alert>
+          <Alert variant="success">Operation completed successfully.</Alert>
         </div>
       </ExampleSection>
     </section>
 
     <section id="props">
-      <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">Props</h2>
+      <h2 class="section__title">Props</h2>
       <PropsTable props={props} />
     </section>
 
-    <section id="usage">
-      <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">Usage Guidelines</h2>
-      <div class="grid md:grid-cols-2 gap-6">
-        <div class="p-6 rounded-lg border border-success/30 bg-success/5">
-          <h3 class="font-semibold text-success mb-3 flex items-center gap-2"><i class="ti ti-check"></i> Do</h3>
-          <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-400">
-            <li>• Use appropriate variant for message type</li>
-            <li>• Keep messages concise and actionable</li>
-            <li>• Place alerts near related content</li>
-            <li>• Allow dismissal for non-critical alerts</li>
-            <li>• Include clear next steps when needed</li>
-          </ul>
-        </div>
-        <div class="p-6 rounded-lg border border-error/30 bg-error/5">
-          <h3 class="font-semibold text-error mb-3 flex items-center gap-2"><i class="ti ti-x"></i> Don't</h3>
-          <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-400">
-            <li>• Use alerts for decorative purposes</li>
-            <li>• Show too many alerts at once</li>
-            <li>• Use error style for warnings</li>
-            <li>• Hide critical information in dismissible alerts</li>
-            <li>• Use alerts for lengthy content</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section id="accessibility">
-      <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">Accessibility</h2>
-      <div class="space-y-4">
-        <div class="p-4 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-surface/50">
-          <h3 class="font-semibold text-slate-900 dark:text-white mb-2 flex items-center gap-2">
-            <i class="ti ti-speakerphone text-theme-primary"></i>
-            ARIA Roles
-          </h3>
-          <p class="text-sm text-slate-600 dark:text-slate-400">
-            Use <code>role="alert"</code> for important messages that need immediate attention. Use <code>role="status"</code> for less urgent informational updates.
-          </p>
-        </div>
-        <div class="p-4 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-surface/50">
-          <h3 class="font-semibold text-slate-900 dark:text-white mb-2 flex items-center gap-2">
-            <i class="ti ti-palette text-theme-primary"></i>
-            Color Independence
-          </h3>
-          <p class="text-sm text-slate-600 dark:text-slate-400">
-            Never rely solely on color to convey meaning. Alerts include icons and descriptive titles to ensure all users understand the message type.
-          </p>
-        </div>
-        <div class="p-4 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-surface/50">
-          <h3 class="font-semibold text-slate-900 dark:text-white mb-2 flex items-center gap-2">
-            <i class="ti ti-x text-theme-primary"></i>
-            Dismissible Alerts
-          </h3>
-          <p class="text-sm text-slate-600 dark:text-slate-400">
-            Dismiss buttons include proper labeling for screen readers. Focus should return to a logical element after dismissal.
-          </p>
-        </div>
+    <section id="accessibility" class="space-y-4">
+      <h2 class="section__title">Accessibility</h2>
+      <div class="a11y-card">
+        <h3 class="a11y-card__title">
+          <i class="ti ti-alert-circle a11y-card__title-icon"></i>
+          Role
+        </h3>
+        <p class="a11y-card__text">
+          Alerts use <code>role="alert"</code> to announce important messages to screen readers.
+        </p>
       </div>
     </section>
   </article>

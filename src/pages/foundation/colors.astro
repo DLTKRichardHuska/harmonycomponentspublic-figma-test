@@ -4,173 +4,159 @@ import CodeBlock from '../../components/CodeBlock.astro';
 
 // Dark mode colors (default)
 const darkModeColors = [
-  { name: 'Obsidian', value: '#09090b', class: 'bg-obsidian', usage: 'Primary background' },
-  { name: 'Charcoal', value: '#18181b', class: 'bg-charcoal', usage: 'Elevated surfaces' },
-  { name: 'Void', value: '#000000', class: 'bg-void', usage: 'Deepest background level' },
-  { name: 'Surface', value: '#0a0a0a', class: 'bg-surface', usage: 'Primary surface background' },
-  { name: 'Panel', value: '#111111', class: 'bg-panel', usage: 'Elevated panels, cards' },
-  { name: 'Border', value: '#222222', class: 'bg-border', usage: 'Border color' },
-  { name: 'Dim', value: '#444444', class: 'bg-dim', usage: 'Subtle dividers, disabled states' },
-  { name: 'Muted', value: '#525252', class: 'bg-muted', usage: 'Secondary text, icons' },
-  { name: 'Text', value: '#e5e5e5', class: 'bg-text', usage: 'Primary text' },
+  { name: 'Obsidian', value: '#09090b', usage: 'Primary background' },
+  { name: 'Charcoal', value: '#18181b', usage: 'Elevated surfaces' },
+  { name: 'Void', value: '#000000', usage: 'Deepest background level' },
+  { name: 'Surface', value: '#0a0a0a', usage: 'Primary surface background' },
+  { name: 'Panel', value: '#111111', usage: 'Elevated panels, cards' },
+  { name: 'Border', value: '#222222', usage: 'Border color' },
+  { name: 'Dim', value: '#444444', usage: 'Subtle dividers, disabled states' },
+  { name: 'Muted', value: '#525252', usage: 'Secondary text, icons' },
+  { name: 'Text', value: '#e5e5e5', usage: 'Primary text' },
 ];
 
 // Light mode colors (default)
 const lightModeColors = [
-  { name: 'White', value: '#ffffff', class: 'bg-white', usage: 'Primary surfaces, cards' },
-  { name: 'Page Background', value: '#EDF0F6', class: 'bg-[#EDF0F6]', usage: 'Main page background' },
-  { name: 'Concrete', value: '#f4f4f5', class: 'bg-concrete', usage: 'Subtle backgrounds' },
-  { name: 'Slate 50', value: '#f8fafc', class: 'bg-slate-50', usage: 'Lightest surface' },
-  { name: 'Slate 100', value: '#f1f5f9', class: 'bg-slate-100', usage: 'Hover states, inputs' },
-  { name: 'Slate 200', value: '#e2e8f0', class: 'bg-slate-200', usage: 'Borders, dividers' },
-  { name: 'Slate 300', value: '#cbd5e1', class: 'bg-slate-300', usage: 'Disabled states' },
-  { name: 'Slate 600', value: '#475569', class: 'bg-slate-600', usage: 'Secondary text' },
-  { name: 'Slate 900', value: '#0f172a', class: 'bg-slate-900', usage: 'Primary text' },
+  { name: 'White', value: '#ffffff', usage: 'Primary surfaces, cards' },
+  { name: 'Page Background', value: '#EDF0F6', usage: 'Main page background' },
+  { name: 'Concrete', value: '#f4f4f5', usage: 'Subtle backgrounds' },
+  { name: 'Slate 50', value: '#f8fafc', usage: 'Lightest surface' },
+  { name: 'Slate 100', value: '#f1f5f9', usage: 'Hover states, inputs' },
+  { name: 'Slate 200', value: '#e2e8f0', usage: 'Borders, dividers' },
+  { name: 'Slate 300', value: '#cbd5e1', usage: 'Disabled states' },
+  { name: 'Slate 600', value: '#475569', usage: 'Secondary text' },
+  { name: 'Slate 900', value: '#0f172a', usage: 'Primary text' },
 ];
 
 // CP Semi-Dark colors (CP dark mode)
 const cpSemiDarkColors = [
-  { name: 'Links', value: '#ADD0FF', class: 'bg-[#ADD0FF]', usage: 'Text links' },
-  { name: 'Page Background', value: '#1F252E', class: 'bg-[#1F252E]', usage: 'Main page background' },
-  { name: 'Cell Background', value: '#212935', class: 'bg-[#212935]', usage: 'Table cells, content areas' },
-  { name: 'Card Background', value: '#37424D', class: 'bg-[#37424D]', usage: 'Cards, containers, elevated surfaces' },
-  { name: 'Navigation Background', value: '#333D47', class: 'bg-[#333D47]', usage: 'Sidebar, header, navigation' },
-  { name: 'Input Disabled', value: '#333D47', class: 'bg-[#333D47]', usage: 'Disabled inputs, dimmed cells' },
-  { name: 'Table Total Rows', value: '#223A52', class: 'bg-[#223A52]', usage: 'Table totals, summary rows' },
-  { name: 'Border', value: '#2D3748', class: 'bg-[#2D3748]', usage: 'Borders, dividers' },
-  { name: 'Hover', value: '#3D4A5C', class: 'bg-[#3D4A5C]', usage: 'Hover states' },
-  { name: 'Title Text', value: '#E9ECEF', class: 'bg-[#E9ECEF]', usage: 'Primary text, titles' },
-  { name: 'Secondary Text', value: '#A0AEC0', class: 'bg-[#A0AEC0]', usage: 'Secondary text, labels' },
-  { name: 'Muted Text', value: '#6B7280', class: 'bg-[#6B7280]', usage: 'Muted text, placeholders' },
+  { name: 'Links', value: '#ADD0FF', usage: 'Text links' },
+  { name: 'Page Background', value: '#1F252E', usage: 'Main page background' },
+  { name: 'Cell Background', value: '#212935', usage: 'Table cells, content areas' },
+  { name: 'Card Background', value: '#37424D', usage: 'Cards, containers, elevated surfaces' },
+  { name: 'Navigation Background', value: '#333D47', usage: 'Sidebar, header, navigation' },
+  { name: 'Input Disabled', value: '#333D47', usage: 'Disabled inputs, dimmed cells' },
+  { name: 'Table Total Rows', value: '#223A52', usage: 'Table totals, summary rows' },
+  { name: 'Border', value: '#2D3748', usage: 'Borders, dividers' },
+  { name: 'Hover', value: '#3D4A5C', usage: 'Hover states' },
+  { name: 'Title Text', value: '#E9ECEF', usage: 'Primary text, titles' },
+  { name: 'Secondary Text', value: '#A0AEC0', usage: 'Secondary text, labels' },
+  { name: 'Muted Text', value: '#6B7280', usage: 'Muted text, placeholders' },
 ];
 
 // CP Semi-Light colors (CP light mode)
 const cpSemiLightColors = [
-  { name: 'Links', value: '#3A70A6', class: 'bg-[#3A70A6]', usage: 'Text links' },
-  { name: 'Page Background', value: '#E2E4E9', class: 'bg-[#E2E4E9]', usage: 'Main page background' },
-  { name: 'Card Background', value: '#F7F8FA', class: 'bg-[#F7F8FA]', usage: 'Cards, containers' },
-  { name: 'Navigation Background', value: '#FCFDFF', class: 'bg-[#FCFDFF]', usage: 'Sidebar, header, navigation' },
-  { name: 'Input Background', value: '#FFFFFF', class: 'bg-[#FFFFFF]', usage: 'Input fields, table cells' },
-  { name: 'Input Disabled', value: '#EAEAEA', class: 'bg-[#EAEAEA]', usage: 'Disabled inputs, dimmed cells' },
-  { name: 'Table Total Rows', value: '#F0F3BE', class: 'bg-[#F0F3BE]', usage: 'Table totals, summary rows' },
-  { name: 'Border', value: '#CBD5E1', class: 'bg-[#CBD5E1]', usage: 'Borders, dividers' },
-  { name: 'Hover', value: '#E5E7EB', class: 'bg-[#E5E7EB]', usage: 'Hover states' },
-  { name: 'Title Text', value: '#373F4E', class: 'bg-[#373F4E]', usage: 'Primary text, titles' },
-  { name: 'Secondary Text', value: '#64748B', class: 'bg-[#64748B]', usage: 'Secondary text, labels' },
-  { name: 'Muted Text', value: '#94A3B8', class: 'bg-[#94A3B8]', usage: 'Muted text, placeholders' },
+  { name: 'Links', value: '#3A70A6', usage: 'Text links' },
+  { name: 'Page Background', value: '#E2E4E9', usage: 'Main page background' },
+  { name: 'Card Background', value: '#F7F8FA', usage: 'Cards, containers' },
+  { name: 'Navigation Background', value: '#FCFDFF', usage: 'Sidebar, header, navigation' },
+  { name: 'Input Background', value: '#FFFFFF', usage: 'Input fields, table cells' },
+  { name: 'Input Disabled', value: '#EAEAEA', usage: 'Disabled inputs, dimmed cells' },
+  { name: 'Table Total Rows', value: '#F0F3BE', usage: 'Table totals, summary rows' },
+  { name: 'Border', value: '#CBD5E1', usage: 'Borders, dividers' },
+  { name: 'Hover', value: '#E5E7EB', usage: 'Hover states' },
+  { name: 'Title Text', value: '#373F4E', usage: 'Primary text, titles' },
+  { name: 'Secondary Text', value: '#64748B', usage: 'Secondary text, labels' },
+  { name: 'Muted Text', value: '#94A3B8', usage: 'Muted text, placeholders' },
 ];
 
 // Shared colors (both modes)
 const semanticColors = [
-  { name: 'Success', value: '#52BD94', class: 'bg-success', usage: 'Success states, confirmations' },
-  { name: 'Warning', value: '#FFB020', class: 'bg-warning', usage: 'Warning states, cautions' },
-  { name: 'Error', value: '#D14343', class: 'bg-error', usage: 'Error states, destructive actions' },
-  { name: 'Info', value: '#3366FF', class: 'bg-info', usage: 'Informational states' },
-];
-
-const slateScale = [
-  { shade: '50', class: 'bg-slate-50' },
-  { shade: '100', class: 'bg-slate-100' },
-  { shade: '200', class: 'bg-slate-200' },
-  { shade: '300', class: 'bg-slate-300' },
-  { shade: '400', class: 'bg-slate-400' },
-  { shade: '500', class: 'bg-slate-500' },
-  { shade: '600', class: 'bg-slate-600' },
-  { shade: '700', class: 'bg-slate-700' },
-  { shade: '800', class: 'bg-slate-800' },
-  { shade: '900', class: 'bg-slate-900' },
-  { shade: '950', class: 'bg-slate-950' },
+  { name: 'Success', value: '#52BD94', usage: 'Success states, confirmations' },
+  { name: 'Warning', value: '#FFB020', usage: 'Warning states, cautions' },
+  { name: 'Error', value: '#D14343', usage: 'Error states, destructive actions' },
+  { name: 'Info', value: '#3366FF', usage: 'Informational states' },
 ];
 ---
 
 <DocsLayout title="Colors" description="The foundational color palette for the design system.">
   <article class="space-y-12">
     <!-- Header -->
-    <header class="border-b border-slate-200 dark:border-slate-800 pb-8">
-      <h1 class="font-display text-4xl font-bold text-slate-900 dark:text-white mb-4">Color System</h1>
-      <p class="text-lg text-slate-600 dark:text-slate-400 max-w-2xl">
+    <header class="page-header page-header--compact">
+      <h1 class="page-header__title page-header__title--sm">Color System</h1>
+      <p class="page-header__description">
         A comprehensive color palette designed for both dark and light themes, with semantic colors for consistent communication.
       </p>
       <!-- Theme indicator -->
-      <div id="theme-indicator" class="mt-4 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800 text-sm">
-        <span id="indicator-dark" class="hidden dark:inline-flex items-center gap-2 text-slate-300">
+      <div id="theme-indicator" class="mt-4 badge badge--default">
+        <span id="indicator-dark" class="hidden items-center gap-2">
           <i class="ti ti-moon"></i> <span id="dark-mode-label">Showing Dark Mode Colors</span>
         </span>
-        <span id="indicator-light" class="inline-flex dark:hidden items-center gap-2 text-slate-600">
+        <span id="indicator-light" class="flex items-center gap-2">
           <i class="ti ti-sun"></i> <span id="light-mode-label">Showing Light Mode Colors</span>
         </span>
       </div>
     </header>
 
-    <!-- DARK MODE COLORS - Only visible in dark mode (non-CP themes) -->
-    <section id="default-dark-palette" class="hidden dark:block">
-      <h2 class="text-sm font-mono text-slate-400 uppercase tracking-wider mb-6">Dark Mode Palette</h2>
+    <!-- DARK MODE COLORS -->
+    <section id="default-dark-palette" class="hidden">
+      <h2 class="text-sm font-mono text-muted uppercase tracking-widest mb-6">Dark Mode Palette</h2>
       <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
         {darkModeColors.map((color) => (
           <div class="space-y-3">
-            <div class={`h-20 rounded-lg ${color.class} border border-slate-700`}></div>
+            <div class="h-20 rounded-lg border" style={`background-color: ${color.value}; border-color: var(--border-color);`}></div>
             <div>
-              <div class="text-sm font-medium text-white">{color.name}</div>
-              <div class="text-xs font-mono text-slate-500">{color.value}</div>
+              <div class="text-sm font-medium text-primary">{color.name}</div>
+              <div class="text-xs font-mono text-muted">{color.value}</div>
             </div>
-            <p class="text-xs text-slate-400">{color.usage}</p>
+            <p class="text-xs text-secondary">{color.usage}</p>
           </div>
         ))}
       </div>
     </section>
 
-    <!-- LIGHT MODE COLORS - Only visible in light mode (non-CP themes) -->
-    <section id="default-light-palette" class="block dark:hidden">
-      <h2 class="text-sm font-mono text-slate-500 uppercase tracking-wider mb-6">Light Mode Palette</h2>
+    <!-- LIGHT MODE COLORS -->
+    <section id="default-light-palette">
+      <h2 class="text-sm font-mono text-muted uppercase tracking-widest mb-6">Light Mode Palette</h2>
       <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
         {lightModeColors.map((color) => (
           <div class="space-y-3">
-            <div class={`h-20 rounded-lg ${color.class} border border-slate-200`}></div>
+            <div class="h-20 rounded-lg border" style={`background-color: ${color.value}; border-color: var(--border-color);`}></div>
             <div>
-              <div class="text-sm font-medium text-slate-900">{color.name}</div>
-              <div class="text-xs font-mono text-slate-500">{color.value}</div>
+              <div class="text-sm font-medium text-primary">{color.name}</div>
+              <div class="text-xs font-mono text-muted">{color.value}</div>
             </div>
-            <p class="text-xs text-slate-500">{color.usage}</p>
+            <p class="text-xs text-secondary">{color.usage}</p>
           </div>
         ))}
       </div>
     </section>
 
-    <!-- CP SEMI-DARK COLORS - Only visible in dark mode when CP theme is active -->
+    <!-- CP SEMI-DARK COLORS -->
     <section id="cp-semi-dark-palette" class="hidden">
       <div class="flex items-center gap-3 mb-6">
-        <h2 class="text-sm font-mono text-slate-400 uppercase tracking-wider">CP Semi-Dark Palette</h2>
-        <span class="px-2 py-0.5 text-[10px] font-medium bg-theme-primary/20 text-theme-primary rounded">CP Only</span>
+        <h2 class="text-sm font-mono text-muted uppercase tracking-widest">CP Semi-Dark Palette</h2>
+        <span class="badge badge--primary">CP Only</span>
       </div>
       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {cpSemiDarkColors.map((color) => (
           <div class="space-y-3">
-            <div class={`h-20 rounded-lg ${color.class} border border-slate-700`}></div>
+            <div class="h-20 rounded-lg border" style={`background-color: ${color.value}; border-color: var(--border-color);`}></div>
             <div>
-              <div class="text-sm font-medium text-white">{color.name}</div>
-              <div class="text-xs font-mono text-slate-500">{color.value}</div>
+              <div class="text-sm font-medium text-primary">{color.name}</div>
+              <div class="text-xs font-mono text-muted">{color.value}</div>
             </div>
-            <p class="text-xs text-slate-400">{color.usage}</p>
+            <p class="text-xs text-secondary">{color.usage}</p>
           </div>
         ))}
       </div>
     </section>
 
-    <!-- CP SEMI-LIGHT COLORS - Only visible in light mode when CP theme is active -->
+    <!-- CP SEMI-LIGHT COLORS -->
     <section id="cp-semi-light-palette" class="hidden">
       <div class="flex items-center gap-3 mb-6">
-        <h2 class="text-sm font-mono text-slate-500 uppercase tracking-wider">CP Semi-Light Palette</h2>
-        <span class="px-2 py-0.5 text-[10px] font-medium bg-theme-primary/20 text-theme-primary rounded">CP Only</span>
+        <h2 class="text-sm font-mono text-muted uppercase tracking-widest">CP Semi-Light Palette</h2>
+        <span class="badge badge--primary">CP Only</span>
       </div>
       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {cpSemiLightColors.map((color) => (
           <div class="space-y-3">
-            <div class={`h-20 rounded-lg ${color.class} border border-slate-300`}></div>
+            <div class="h-20 rounded-lg border" style={`background-color: ${color.value}; border-color: var(--border-color);`}></div>
             <div>
-              <div class="text-sm font-medium text-slate-900">{color.name}</div>
-              <div class="text-xs font-mono text-slate-500">{color.value}</div>
+              <div class="text-sm font-medium text-primary">{color.name}</div>
+              <div class="text-xs font-mono text-muted">{color.value}</div>
             </div>
-            <p class="text-xs text-slate-500">{color.usage}</p>
+            <p class="text-xs text-secondary">{color.usage}</p>
           </div>
         ))}
       </div>
@@ -178,19 +164,19 @@ const slateScale = [
 
     <!-- SHARED: Semantic Colors -->
     <section>
-      <h2 class="text-sm font-mono text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-6">Semantic Colors</h2>
-      <p class="text-sm text-slate-600 dark:text-slate-400 mb-6">
+      <h2 class="text-sm font-mono text-muted uppercase tracking-widest mb-6">Semantic Colors</h2>
+      <p class="text-sm text-secondary mb-6">
         These colors are used in both light and dark modes for consistent meaning.
       </p>
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
         {semanticColors.map((color) => (
           <div class="space-y-3">
-            <div class={`h-24 rounded-lg ${color.class}`}></div>
+            <div class="h-24 rounded-lg" style={`background-color: ${color.value};`}></div>
             <div>
-              <div class="text-sm font-medium text-slate-900 dark:text-white">{color.name}</div>
-              <div class="text-xs font-mono text-slate-500">{color.value}</div>
+              <div class="text-sm font-medium text-primary">{color.name}</div>
+              <div class="text-xs font-mono text-muted">{color.value}</div>
             </div>
-            <p class="text-xs text-slate-500 dark:text-slate-400">{color.usage}</p>
+            <p class="text-xs text-secondary">{color.usage}</p>
           </div>
         ))}
       </div>
@@ -198,127 +184,60 @@ const slateScale = [
 
     <!-- SHARED: Accent Colors -->
     <section>
-      <h2 class="text-sm font-mono text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-6">Accent Colors</h2>
+      <h2 class="text-sm font-mono text-muted uppercase tracking-widest mb-6">Accent Colors</h2>
       <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-        <!-- Theme Primary - special handling for dynamic value -->
+        <!-- Theme Primary -->
         <div class="space-y-3">
-          <div class="h-24 rounded-lg bg-theme-primary"></div>
+          <div class="h-24 rounded-lg bg-theme"></div>
           <div>
-            <div class="text-sm font-medium text-slate-900 dark:text-white">Theme Primary</div>
-            <div id="theme-primary-value" class="text-xs font-mono text-slate-500">#4C92D9</div>
+            <div class="text-sm font-medium text-primary">Theme Primary</div>
+            <div id="theme-primary-value" class="text-xs font-mono text-muted">#4C92D9</div>
           </div>
-          <p class="text-xs text-slate-500 dark:text-slate-400">Primary brand color, buttons, CTA</p>
+          <p class="text-xs text-secondary">Primary brand color, buttons, CTA</p>
         </div>
         <!-- Acid -->
         <div class="space-y-3">
-          <div class="h-24 rounded-lg bg-acid"></div>
+          <div class="h-24 rounded-lg" style="background-color: #ccff00;"></div>
           <div>
-            <div class="text-sm font-medium text-slate-900 dark:text-white">Acid</div>
-            <div class="text-xs font-mono text-slate-500">#ccff00</div>
+            <div class="text-sm font-medium text-primary">Acid</div>
+            <div class="text-xs font-mono text-muted">#ccff00</div>
           </div>
-          <p class="text-xs text-slate-500 dark:text-slate-400">Highlight, special emphasis</p>
+          <p class="text-xs text-secondary">Highlight, special emphasis</p>
         </div>
         <!-- Accent -->
         <div class="space-y-3">
-          <div class="h-24 rounded-lg bg-accent"></div>
+          <div class="h-24 rounded-lg" style="background-color: #043852;"></div>
           <div>
-            <div class="text-sm font-medium text-slate-900 dark:text-white">Accent</div>
-            <div class="text-xs font-mono text-slate-500">#043852</div>
+            <div class="text-sm font-medium text-primary">Accent</div>
+            <div class="text-xs font-mono text-muted">#043852</div>
           </div>
-          <p class="text-xs text-slate-500 dark:text-slate-400">Secondary accent color</p>
+          <p class="text-xs text-secondary">Secondary accent color</p>
         </div>
-      </div>
-    </section>
-
-    <!-- SHARED: Slate Scale -->
-    <section>
-      <h2 class="text-sm font-mono text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-6">Slate Scale</h2>
-      <p class="text-sm text-slate-600 dark:text-slate-400 mb-6">
-        The neutral slate palette provides grays with a subtle cool undertone. Use lighter shades in light mode and darker shades in dark mode.
-      </p>
-      <div class="grid grid-cols-5 md:grid-cols-11 gap-2">
-        {slateScale.map((color) => (
-          <div class="space-y-2">
-            <div class={`h-16 rounded ${color.class} border border-slate-200 dark:border-slate-700`}></div>
-            <div class="text-xs font-mono text-slate-500 text-center">{color.shade}</div>
-          </div>
-        ))}
-      </div>
-    </section>
-
-    <!-- Code Example -->
-    <section>
-      <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">Code Usage</h2>
-      
-      <!-- Dark mode code - only in dark mode -->
-      <div class="hidden dark:block">
-        <CodeBlock 
-          language="html"
-          filename="dark-mode.html"
-          code={`<!-- Dark mode backgrounds -->
-<div class="bg-obsidian">Primary background</div>
-<div class="bg-charcoal">Elevated surface</div>
-<div class="bg-surface">Surface background</div>
-<div class="bg-panel">Panel/card</div>
-
-<!-- Dark mode text -->
-<p class="text-white">Primary text</p>
-<p class="text-slate-400">Secondary text</p>
-<p class="text-slate-500">Muted text</p>
-
-<!-- Dark mode borders -->
-<div class="border-slate-800">Standard border</div>
-<div class="border-border">Custom border</div>`}
-        />
-      </div>
-
-      <!-- Light mode code - only in light mode -->
-      <div class="block dark:hidden">
-        <CodeBlock 
-          language="html"
-          filename="light-mode.html"
-          code={`<!-- Light mode backgrounds -->
-<div class="bg-white">Primary surface</div>
-<div class="bg-slate-50">Subtle background</div>
-<div class="bg-slate-100">Input/hover state</div>
-<div class="bg-concrete">Alternative surface</div>
-
-<!-- Light mode text -->
-<p class="text-slate-900">Primary text</p>
-<p class="text-slate-600">Secondary text</p>
-<p class="text-slate-500">Muted text</p>
-
-<!-- Light mode borders -->
-<div class="border-slate-200">Standard border</div>
-<div class="border-slate-300">Stronger border</div>`}
-        />
       </div>
     </section>
 
     <!-- Accessibility -->
-    <section id="accessibility">
-      <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">Accessibility</h2>
-      <div class="space-y-4">
-        <div class="p-4 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-surface/50">
-          <h3 class="font-semibold text-slate-900 dark:text-white mb-2 flex items-center gap-2">
-            <i class="ti ti-accessible text-theme-primary"></i>
-            Contrast Ratios
-          </h3>
-          <p class="text-sm text-slate-600 dark:text-slate-400">
-            All color combinations meet WCAG AA standards. Primary text on backgrounds maintains a minimum 4.5:1 contrast ratio, 
-            while large text maintains 3:1. Interactive elements have clear focus states.
-          </p>
-        </div>
-        <div class="p-4 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-surface/50">
-          <h3 class="font-semibold text-slate-900 dark:text-white mb-2 flex items-center gap-2">
-            <i class="ti ti-eye text-theme-primary"></i>
-            Color Blindness
-          </h3>
-          <p class="text-sm text-slate-600 dark:text-slate-400">
-            Semantic colors are designed to be distinguishable for users with color vision deficiencies. 
-            Always pair color with icons or text labels for critical information.
-          </p>
-        </div>
+    <section id="accessibility" class="space-y-4">
+      <h2 class="section__title">Accessibility</h2>
+      <div class="a11y-card">
+        <h3 class="a11y-card__title">
+          <i class="ti ti-accessible a11y-card__title-icon"></i>
+          Contrast Ratios
+        </h3>
+        <p class="a11y-card__text">
+          All color combinations meet WCAG AA standards. Primary text on backgrounds maintains a minimum 4.5:1 contrast ratio, 
+          while large text maintains 3:1. Interactive elements have clear focus states.
+        </p>
+      </div>
+      <div class="a11y-card">
+        <h3 class="a11y-card__title">
+          <i class="ti ti-eye a11y-card__title-icon"></i>
+          Color Blindness
+        </h3>
+        <p class="a11y-card__text">
+          Semantic colors are designed to be distinguishable for users with color vision deficiencies. 
+          Always pair color with icons or text labels for critical information.
+        </p>
       </div>
     </section>
   </article>
@@ -342,7 +261,7 @@ const slateScale = [
       const isMaconomyTheme = html.classList.contains('theme-maconomy');
       
       // Determine current theme
-      let currentTheme = 'cp'; // default
+      let currentTheme = 'cp';
       if (isVPTheme) currentTheme = 'vp';
       else if (isPPMTheme) currentTheme = 'ppm';
       else if (isMaconomyTheme) currentTheme = 'maconomy';
@@ -357,6 +276,8 @@ const slateScale = [
       const darkModeLabel = document.getElementById('dark-mode-label');
       const lightModeLabel = document.getElementById('light-mode-label');
       const themePrimaryValue = document.getElementById('theme-primary-value');
+      const indicatorDark = document.getElementById('indicator-dark');
+      const indicatorLight = document.getElementById('indicator-light');
       
       // Update Theme Primary hex value
       if (themePrimaryValue && themePrimaryColors[currentTheme]) {
@@ -366,37 +287,36 @@ const slateScale = [
         themePrimaryValue.textContent = hexValue;
       }
       
+      // Update indicator visibility
+      if (indicatorDark && indicatorLight) {
+        indicatorDark.classList.toggle('hidden', !isDark);
+        indicatorDark.classList.toggle('flex', isDark);
+        indicatorLight.classList.toggle('hidden', isDark);
+        indicatorLight.classList.toggle('flex', !isDark);
+      }
+      
+      // Hide all palettes first
+      defaultDarkPalette?.classList.add('hidden');
+      defaultLightPalette?.classList.add('hidden');
+      cpSemiDarkPalette?.classList.add('hidden');
+      cpSemiLightPalette?.classList.add('hidden');
+      
       if (isCPTheme) {
         // CP theme - show Semi-Dark/Semi-Light palettes
         if (isDark) {
-          defaultDarkPalette?.classList.add('hidden');
-          defaultDarkPalette?.classList.remove('dark:block');
           cpSemiDarkPalette?.classList.remove('hidden');
-          cpSemiLightPalette?.classList.add('hidden');
           if (darkModeLabel) darkModeLabel.textContent = 'Showing CP Semi-Dark Colors';
         } else {
-          defaultLightPalette?.classList.add('hidden');
-          defaultLightPalette?.classList.remove('block');
           cpSemiLightPalette?.classList.remove('hidden');
-          cpSemiDarkPalette?.classList.add('hidden');
           if (lightModeLabel) lightModeLabel.textContent = 'Showing CP Semi-Light Colors';
         }
       } else {
         // Non-CP themes - show default Dark/Light palettes
-        cpSemiDarkPalette?.classList.add('hidden');
-        cpSemiLightPalette?.classList.add('hidden');
-        
         if (isDark) {
           defaultDarkPalette?.classList.remove('hidden');
-          defaultDarkPalette?.classList.add('dark:block');
-          defaultLightPalette?.classList.add('hidden');
-          defaultLightPalette?.classList.remove('block');
           if (darkModeLabel) darkModeLabel.textContent = 'Showing Dark Mode Colors';
         } else {
           defaultLightPalette?.classList.remove('hidden');
-          defaultLightPalette?.classList.add('block');
-          defaultDarkPalette?.classList.add('hidden');
-          defaultDarkPalette?.classList.remove('dark:block');
           if (lightModeLabel) lightModeLabel.textContent = 'Showing Light Mode Colors';
         }
       }

@@ -1,258 +1,85 @@
 ---
 import DocsLayout from '../../layouts/DocsLayout.astro';
-import CodeBlock from '../../components/CodeBlock.astro';
 import ExampleSection from '../../components/ExampleSection.astro';
 ---
 
-<DocsLayout title="Shell Layout" description="Complete application layout structure.">
+<DocsLayout title="Shell Layout" description="Main application shell layout structure.">
   <article class="space-y-12">
-    <header class="border-b border-slate-200 dark:border-slate-800 pb-8">
-      <div class="flex items-center gap-3 mb-4">
-        <h1 class="font-display text-4xl font-bold text-slate-900 dark:text-white">Shell Layout</h1>
-        <span class="text-xs px-2 py-1 rounded-full border bg-success/10 text-success border-success/30">stable</span>
-      </div>
-      <p class="text-lg text-slate-600 dark:text-slate-400 max-w-2xl">
-        The shell layout provides the structural foundation for the entire application, including header, sidebars, main content area, and optional footer.
+    <header class="page-header page-header--compact">
+      <h1 class="page-header__title page-header__title--sm">Shell Layout</h1>
+      <p class="page-header__description">
+        The shell layout provides the main structure for the application, including header, sidebar, and content areas.
       </p>
     </header>
 
-    <!-- Product Availability -->
-    <section class="space-y-4">
-      <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Product Availability</h2>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <div class="p-4 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-surface">
-          <div class="flex items-center gap-2 mb-2">
-            <span class="w-3 h-3 rounded-full bg-[#4C92D9]"></span>
-            <span class="font-medium text-slate-900 dark:text-white">CP</span>
-          </div>
-          <p class="text-xs text-slate-500 dark:text-slate-400">Header, Left (2), Right (3), No Footer</p>
-        </div>
-        <div class="p-4 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-surface">
-          <div class="flex items-center gap-2 mb-2">
-            <span class="w-3 h-3 rounded-full bg-[#4C92D9]"></span>
-            <span class="font-medium text-slate-900 dark:text-white">VP</span>
-          </div>
-          <p class="text-xs text-slate-500 dark:text-slate-400">Header, Left, Right, Footer</p>
-        </div>
-        <div class="p-4 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-surface">
-          <div class="flex items-center gap-2 mb-2">
-            <span class="w-3 h-3 rounded-full bg-[#30659F]"></span>
-            <span class="font-medium text-slate-900 dark:text-white">PPM</span>
-          </div>
-          <p class="text-xs text-slate-500 dark:text-slate-400">Header, Left, Right, Footer</p>
-        </div>
-        <div class="p-4 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-surface">
-          <div class="flex items-center gap-2 mb-2">
-            <span class="w-3 h-3 rounded-full bg-[#804A98]"></span>
-            <span class="font-medium text-slate-900 dark:text-white">Maconomy</span>
-          </div>
-          <p class="text-xs text-slate-500 dark:text-slate-400">Header, Left, Right, Footer</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- CP Structure Overview -->
     <section class="space-y-6">
-      <div class="flex items-center gap-3">
-        <h2 class="text-2xl font-bold text-slate-900 dark:text-white">CP Structure Overview</h2>
-        <span class="text-xs px-2 py-1 bg-theme-primary/10 text-theme-primary rounded">CP/VP</span>
-      </div>
+      <h2 class="section__title">Layout Structure</h2>
       
-      <p class="text-slate-600 dark:text-slate-400">
-        The CP shell features a header, two-panel left sidebar, three-panel right sidebar, and no footer. 
-        Sidebars are docked to the edges with an 8px gap from the header.
-      </p>
-      
-      <!-- Visual Diagram -->
-      <div class="p-6 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-100 dark:bg-obsidian">
-        <div class="relative bg-slate-200 dark:bg-slate-800 rounded-lg overflow-hidden" style="height: 320px;">
-          <!-- Header -->
-          <div class="absolute top-0 left-0 right-0 h-11 bg-white dark:bg-surface border-b border-slate-300 dark:border-slate-700 flex items-center justify-center z-10">
-            <span class="text-xs font-mono text-slate-500 dark:text-slate-400">Header (44px)</span>
-          </div>
-          
-          <!-- Content Area with Gap -->
-          <div class="absolute top-[52px] left-0 right-0 bottom-0 flex">
-            <!-- Left Sidebar - Docked to left edge -->
-            <div class="w-14 flex flex-col gap-4 py-2">
-              <!-- Panel 1 -->
-              <div class="bg-white dark:bg-surface rounded-tr-xl rounded-br-xl shadow-lg flex-none h-24 flex items-center justify-center border border-l-0 border-slate-200 dark:border-slate-700">
-                <span class="text-[10px] font-mono text-slate-400 [writing-mode:vertical-lr]">Panel 1</span>
+      <ExampleSection title="Full Layout" description="Complete shell with all sections.">
+        <div class="border rounded-lg overflow-hidden" style="height: 400px;">
+          <div class="h-full flex flex-col">
+            <!-- Header -->
+            <div class="h-12 bg-nav border-b flex items-center px-4">
+              <span class="text-sm text-primary font-medium">Header</span>
+            </div>
+            <!-- Content -->
+            <div class="flex flex-1">
+              <!-- Sidebar -->
+              <div class="w-48 bg-nav border-r p-4">
+                <span class="text-sm text-primary font-medium">Sidebar</span>
+                <div class="mt-4 space-y-2">
+                  <div class="h-6 bg-hover rounded"></div>
+                  <div class="h-6 bg-hover rounded"></div>
+                  <div class="h-6 bg-hover rounded"></div>
+                </div>
               </div>
-              <!-- Panel 2 -->
-              <div class="bg-white dark:bg-surface rounded-tr-xl rounded-br-xl shadow-lg flex-1 flex items-center justify-center border border-l-0 border-slate-200 dark:border-slate-700">
-                <span class="text-[10px] font-mono text-slate-400 [writing-mode:vertical-lr]">Panel 2</span>
+              <!-- Main Content -->
+              <div class="flex-1 bg-page p-4">
+                <span class="text-sm text-primary font-medium">Main Content</span>
+                <div class="mt-4 grid grid-cols-2 gap-4">
+                  <div class="h-24 bg-card rounded border"></div>
+                  <div class="h-24 bg-card rounded border"></div>
+                </div>
               </div>
             </div>
-            
-            <!-- Main Content -->
-            <div class="flex-1 m-2 bg-white dark:bg-surface rounded-lg flex items-center justify-center border border-slate-200 dark:border-slate-700">
-              <span class="text-xs font-mono text-slate-400">Main Content</span>
-            </div>
-            
-            <!-- Right Sidebar - Docked to right edge -->
-            <div class="w-14 flex flex-col gap-3 py-2">
-              <!-- Panel 1 -->
-              <div class="bg-white dark:bg-surface rounded-tl-xl rounded-bl-xl shadow-lg flex-none h-20 flex items-center justify-center border border-r-0 border-slate-200 dark:border-slate-700">
-                <span class="text-[10px] font-mono text-slate-400 [writing-mode:vertical-lr]">Panel 1</span>
-              </div>
-              <!-- Panel 2 -->
-              <div class="bg-white dark:bg-surface rounded-tl-xl rounded-bl-xl shadow-lg flex-none h-14 flex items-center justify-center border border-r-0 border-slate-200 dark:border-slate-700">
-                <span class="text-[10px] font-mono text-slate-400 [writing-mode:vertical-lr]">Panel 2</span>
-              </div>
-              <!-- Panel 3 -->
-              <div class="bg-white dark:bg-surface rounded-tl-xl rounded-bl-xl shadow-lg flex-1 flex items-center justify-center border border-r-0 border-slate-200 dark:border-slate-700">
-                <span class="text-[10px] font-mono text-slate-400 [writing-mode:vertical-lr]">Panel 3</span>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Gap indicator -->
-          <div class="absolute top-11 left-1/2 -translate-x-1/2 flex items-center gap-1 text-[10px] text-theme-primary font-mono bg-theme-primary/10 px-2 py-0.5 rounded">
-            <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" /></svg>
-            8px gap
           </div>
         </div>
-        
-        <!-- Legend -->
-        <div class="mt-4 flex flex-wrap gap-4 text-xs">
-          <div class="flex items-center gap-2">
-            <div class="w-4 h-4 bg-white dark:bg-surface rounded shadow border border-slate-200 dark:border-slate-700"></div>
-            <span class="text-slate-600 dark:text-slate-400">Panels with shadow</span>
-          </div>
-          <div class="flex items-center gap-2">
-            <div class="w-4 h-4 rounded-tr rounded-br border-2 border-l-0 border-theme-primary"></div>
-            <span class="text-slate-600 dark:text-slate-400">Left: rounded inner corners</span>
-          </div>
-          <div class="flex items-center gap-2">
-            <div class="w-4 h-4 rounded-tl rounded-bl border-2 border-r-0 border-theme-primary"></div>
-            <span class="text-slate-600 dark:text-slate-400">Right: rounded inner corners</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- CP Code Example -->
-      <CodeBlock 
-        language="html"
-        filename="cp-shell-layout.html"
-        code={`<div class="flex flex-col h-screen bg-slate-100 dark:bg-obsidian">
-  <!-- Header -->
-  <header class="h-11 bg-white dark:bg-surface border-b border-slate-200 dark:border-border shrink-0">
-    <!-- Header content -->
-  </header>
-  
-  <!-- Content wrapper (8px gap from header via pt-2) -->
-  <div class="flex flex-1 overflow-hidden pt-2">
-    <!-- Left Sidebar - Docked to left edge -->
-    <aside class="w-[52px] flex flex-col gap-4 shrink-0">
-      <!-- Panel 1: Primary nav -->
-      <div class="bg-[#fcfdff] rounded-tr-xl rounded-br-xl shadow-lg">
-        <!-- 4 icon buttons -->
-      </div>
-      <!-- Panel 2: Secondary nav -->
-      <div class="bg-[#fcfdff] rounded-tr-xl rounded-br-xl shadow-lg flex-1">
-        <!-- 11 icon buttons with divider -->
-      </div>
-    </aside>
-    
-    <!-- Main Content -->
-    <main class="flex-1 overflow-y-auto mx-2">
-      <!-- Page content -->
-    </main>
-    
-    <!-- Right Sidebar - Docked to right edge -->
-    <aside class="w-[52px] flex flex-col gap-3 shrink-0">
-      <!-- Panel 1: Logo + notifications -->
-      <div class="bg-[#fcfdff] rounded-tl-xl rounded-bl-xl shadow-lg">
-        <!-- Logo, Bell, Files icons -->
-      </div>
-      <!-- Panel 2: Tools -->
-      <div class="bg-[#fcfdff] rounded-tl-xl rounded-bl-xl shadow-lg">
-        <!-- Print, Layout icons -->
-      </div>
-      <!-- Panel 3: Settings -->
-      <div class="bg-[#fcfdff] rounded-tl-xl rounded-bl-xl shadow-lg flex-1">
-        <!-- Mic, Signal, Actions, Help icons -->
-      </div>
-    </aside>
-  </div>
-  
-  <!-- No footer for CP -->
-</div>`}
-      />
+      </ExampleSection>
     </section>
 
-    <!-- Key Specifications -->
     <section class="space-y-6">
-      <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Key Specifications</h2>
-      
-      <div class="overflow-x-auto">
-        <table class="w-full text-sm">
-          <thead>
-            <tr class="border-b border-slate-200 dark:border-slate-700">
-              <th class="text-left py-3 px-4 font-medium text-slate-900 dark:text-white">Property</th>
-              <th class="text-left py-3 px-4 font-medium text-slate-900 dark:text-white">Value</th>
-              <th class="text-left py-3 px-4 font-medium text-slate-900 dark:text-white">Notes</th>
-            </tr>
-          </thead>
-          <tbody class="text-slate-600 dark:text-slate-400">
-            <tr class="border-b border-slate-100 dark:border-slate-800">
-              <td class="py-3 px-4 font-mono text-xs">Header height</td>
-              <td class="py-3 px-4">44px</td>
-              <td class="py-3 px-4">Fixed, does not scroll</td>
-            </tr>
-            <tr class="border-b border-slate-100 dark:border-slate-800">
-              <td class="py-3 px-4 font-mono text-xs">Gap from header</td>
-              <td class="py-3 px-4">8px</td>
-              <td class="py-3 px-4">Sidebars don't touch header</td>
-            </tr>
-            <tr class="border-b border-slate-100 dark:border-slate-800">
-              <td class="py-3 px-4 font-mono text-xs">Sidebar width</td>
-              <td class="py-3 px-4">52px (collapsed)</td>
-              <td class="py-3 px-4">Expands on hover</td>
-            </tr>
-            <tr class="border-b border-slate-100 dark:border-slate-800">
-              <td class="py-3 px-4 font-mono text-xs">Panel background</td>
-              <td class="py-3 px-4">#fcfdff</td>
-              <td class="py-3 px-4">Near-white for light mode</td>
-            </tr>
-            <tr class="border-b border-slate-100 dark:border-slate-800">
-              <td class="py-3 px-4 font-mono text-xs">Border radius</td>
-              <td class="py-3 px-4">12px</td>
-              <td class="py-3 px-4">Inner corners only</td>
-            </tr>
-            <tr class="border-b border-slate-100 dark:border-slate-800">
-              <td class="py-3 px-4 font-mono text-xs">Panel shadow</td>
-              <td class="py-3 px-4 font-mono text-[10px]">0 12px 40px rgba(16,24,64,0.24)</td>
-              <td class="py-3 px-4">Elevation effect</td>
-            </tr>
-            <tr class="border-b border-slate-100 dark:border-slate-800">
-              <td class="py-3 px-4 font-mono text-xs">Left panel gap</td>
-              <td class="py-3 px-4">16px</td>
-              <td class="py-3 px-4">Between Panel 1 & 2</td>
-            </tr>
-            <tr>
-              <td class="py-3 px-4 font-mono text-xs">Right panel gap</td>
-              <td class="py-3 px-4">12px</td>
-              <td class="py-3 px-4">Between panels</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-    <!-- Usage Guidelines -->
-    <section>
-      <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">Usage Guidelines</h2>
-      <div class="prose dark:prose-invert max-w-none">
-        <ul class="text-slate-600 dark:text-slate-400 space-y-2">
-          <li>The shell layout uses <code>h-screen</code> and <code>overflow-hidden</code> to contain all content within the viewport</li>
-          <li>The main content area uses <code>overflow-y-auto</code> for independent scrolling</li>
-          <li>Sidebars are docked to edges with rounded inner corners only</li>
-          <li>Use <code>custom-scroll</code> class for styled scrollbars</li>
-          <li>CP does not use a footer - use the Floating Nav component instead</li>
-          <li>Icons use Heroicons outline style at 24px with 6px padding</li>
-        </ul>
+      <h2 class="section__title">Layout Components</h2>
+      <div class="grid md:grid-cols-2 gap-4">
+        <a href="/shell/header" class="nav-card">
+          <div class="nav-card__icon-wrap">
+            <i class="ti ti-layout-navbar nav-card__icon"></i>
+          </div>
+          <span class="nav-card__title">Header</span>
+        </a>
+        <a href="/shell/left-sidebar" class="nav-card">
+          <div class="nav-card__icon-wrap">
+            <i class="ti ti-layout-sidebar-left nav-card__icon"></i>
+          </div>
+          <span class="nav-card__title">Left Sidebar</span>
+        </a>
+        <a href="/shell/page-content" class="nav-card">
+          <div class="nav-card__icon-wrap">
+            <i class="ti ti-layout-board nav-card__icon"></i>
+          </div>
+          <span class="nav-card__title">Page Content</span>
+        </a>
+        <a href="/shell/right-sidebar" class="nav-card">
+          <div class="nav-card__icon-wrap">
+            <i class="ti ti-layout-sidebar-right nav-card__icon"></i>
+          </div>
+          <span class="nav-card__title">Right Sidebar</span>
+        </a>
+        <a href="/shell/footer" class="nav-card">
+          <div class="nav-card__icon-wrap">
+            <i class="ti ti-layout-bottombar nav-card__icon"></i>
+          </div>
+          <span class="nav-card__title">Footer</span>
+        </a>
       </div>
     </section>
   </article>

@@ -3,30 +3,70 @@ import DocsLayout from '../../layouts/DocsLayout.astro';
 import ExampleSection from '../../components/ExampleSection.astro';
 ---
 
-<DocsLayout title="List Menu" description="Vertical navigation menus.">
+<DocsLayout title="List Menu" description="Vertical list menu for navigation.">
   <article class="space-y-12">
-    <header class="border-b border-slate-200 dark:border-slate-800 pb-8">
-      <h1 class="font-display text-4xl font-bold text-slate-900 dark:text-white mb-4">List Menu</h1>
-      <p class="text-lg text-slate-600 dark:text-slate-400 max-w-2xl">
-        Vertical list menus for navigation, settings, or action lists.
+    <header class="page-header page-header--compact">
+      <div class="flex items-center gap-3 mb-4">
+        <h1 class="page-header__title page-header__title--sm">List Menu</h1>
+        <span class="badge badge--success">stable</span>
+      </div>
+      <p class="page-header__description">
+        List menus display a vertical list of interactive items for navigation or selection.
       </p>
     </header>
 
-    <ExampleSection title="Basic Menu" description="Simple navigation menu.">
-      <div class="max-w-xs border border-slate-200 dark:border-slate-800 rounded-lg overflow-hidden">
-        <nav class="py-1">
-          <a href="#" class="flex items-center gap-3 px-4 py-2 text-sm text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">
-            <i class="ti ti-home text-slate-400"></i> Home
-          </a>
-          <a href="#" class="flex items-center gap-3 px-4 py-2 text-sm bg-theme-primary/10 text-theme-primary">
-            <i class="ti ti-folder"></i> Projects
-          </a>
-          <a href="#" class="flex items-center gap-3 px-4 py-2 text-sm text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">
-            <i class="ti ti-settings text-slate-400"></i> Settings
-          </a>
-        </nav>
-      </div>
-    </ExampleSection>
+    <nav class="article-nav">
+      <a href="#examples" class="article-nav__link"><i class="ti ti-eye"></i> Examples</a>
+    </nav>
+
+    <section id="examples" class="space-y-8">
+      <h2 class="section__title">Examples</h2>
+
+      <ExampleSection title="Basic List Menu" description="Standard navigation menu.">
+        <div class="max-w-xs">
+          <div class="list-menu">
+            <button class="list-menu__item is-active">
+              <i class="ti ti-home list-menu__item-icon"></i>
+              Dashboard
+            </button>
+            <button class="list-menu__item">
+              <i class="ti ti-user list-menu__item-icon"></i>
+              Profile
+            </button>
+            <button class="list-menu__item">
+              <i class="ti ti-settings list-menu__item-icon"></i>
+              Settings
+            </button>
+            <button class="list-menu__item">
+              <i class="ti ti-logout list-menu__item-icon"></i>
+              Logout
+            </button>
+          </div>
+        </div>
+      </ExampleSection>
+
+      <ExampleSection title="With Links" description="Menu as navigation links.">
+        <div class="max-w-xs">
+          <nav class="list-menu">
+            <a href="#" class="list-menu__item is-active">
+              <i class="ti ti-file list-menu__item-icon"></i>
+              Documents
+            </a>
+            <a href="#" class="list-menu__item">
+              <i class="ti ti-photo list-menu__item-icon"></i>
+              Images
+            </a>
+            <a href="#" class="list-menu__item">
+              <i class="ti ti-movie list-menu__item-icon"></i>
+              Videos
+            </a>
+            <a href="#" class="list-menu__item">
+              <i class="ti ti-music list-menu__item-icon"></i>
+              Audio
+            </a>
+          </nav>
+        </div>
+      </ExampleSection>
+    </section>
   </article>
 </DocsLayout>
-

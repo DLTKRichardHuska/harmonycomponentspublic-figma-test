@@ -2,22 +2,18 @@
 /**
  * DateInput Component
  * 
- * Date/time input with consistent styling.
- * Completely hides ALL native browser icons.
- * Shows ONLY our custom Tabler icon on the right.
+ * Input for date and time values.
  */
 
 export interface Props {
-  type?: 'date' | 'datetime-local' | 'time' | 'month' | 'week';
+  type?: 'date' | 'time' | 'datetime-local' | 'month' | 'week';
   value?: string;
-  min?: string;
-  max?: string;
   name?: string;
   id?: string;
   disabled?: boolean;
+  min?: string;
+  max?: string;
   required?: boolean;
-  error?: boolean;
-  errorMessage?: string;
   class?: string;
   [key: string]: any;
 }
@@ -25,129 +21,28 @@ export interface Props {
 const {
   type = 'date',
   value,
-  min,
-  max,
   name,
   id,
   disabled = false,
+  min,
+  max,
   required = false,
-  error = false,
-  errorMessage,
   class: className = '',
   ...rest
 } = Astro.props;
 
-const iconMap: Record<string, string> = {
-  'date': 'ti-calendar',
-  'datetime-local': 'ti-calendar-time',
-  'time': 'ti-clock',
-  'month': 'ti-calendar-month',
-  'week': 'ti-calendar-week',
-};
-
-const icon = iconMap[type] || 'ti-calendar';
-const inputId = id || `date-${Math.random().toString(36).substr(2, 9)}`;
-
-const iconColorClass = error
-  ? 'text-error'
-  : disabled
-    ? 'text-slate-300 dark:text-slate-600'
-    : 'text-slate-400 dark:text-slate-500';
+const classes = ['date-input', className].filter(Boolean).join(' ');
 ---
 
-<div class={`date-input-wrapper relative ${className}`}>
-  <input
-    type={type}
-    id={inputId}
-    name={name}
-    value={value}
-    min={min}
-    max={max}
-    disabled={disabled}
-    required={required}
-    class:list={[
-      'date-input-field w-full h-10 rounded-lg text-sm',
-      'pl-4 pr-10',
-      error
-        ? 'border-2 border-error focus:ring-2 focus:ring-error/30 focus:outline-none bg-white dark:bg-slate-800 text-slate-900 dark:text-white'
-        : disabled
-          ? 'border border-slate-300 dark:border-slate-600 bg-slate-100 dark:bg-slate-800 text-slate-400 dark:text-slate-500 cursor-not-allowed'
-          : 'border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-theme-primary focus:border-theme-primary',
-    ]}
-    aria-invalid={error ? 'true' : undefined}
-    aria-describedby={error && errorMessage ? `${inputId}-error` : undefined}
-    {...rest}
-  />
-  <!-- Our single icon on the right - vertically centered -->
-  <div class={`absolute inset-y-0 right-0 w-10 flex items-center justify-center pointer-events-none ${iconColorClass}`}>
-    <i class={`ti ${icon}`}></i>
-  </div>
-  
-  {error && errorMessage && (
-    <p id={`${inputId}-error`} class="mt-1.5 text-sm text-error">{errorMessage}</p>
-  )}
-</div>
-
-<style is:global>
-  /* AGGRESSIVELY hide ALL native date/time input styling */
-  .date-input-field {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-  }
-  
-  /* Hide the calendar picker indicator completely */
-  .date-input-field::-webkit-calendar-picker-indicator {
-    background: transparent;
-    color: transparent;
-    cursor: pointer;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: auto;
-    height: auto;
-  }
-  
-  /* Hide inner spin button */
-  .date-input-field::-webkit-inner-spin-button {
-    display: none;
-    -webkit-appearance: none;
-  }
-  
-  /* Hide clear button */
-  .date-input-field::-webkit-clear-button {
-    display: none;
-    -webkit-appearance: none;
-  }
-  
-  /* Remove any reveal button (Edge) */
-  .date-input-field::-ms-reveal,
-  .date-input-field::-ms-clear {
-    display: none;
-  }
-  
-  /* Style the datetime edit wrapper to not show icons */
-  .date-input-field::-webkit-datetime-edit {
-    padding: 0;
-    display: flex;
-    align-items: center;
-  }
-  
-  .date-input-field::-webkit-datetime-edit-fields-wrapper {
-    padding: 0;
-  }
-  
-  /* Ensure date parts don't have extra styling */
-  .date-input-field::-webkit-datetime-edit-text,
-  .date-input-field::-webkit-datetime-edit-month-field,
-  .date-input-field::-webkit-datetime-edit-day-field,
-  .date-input-field::-webkit-datetime-edit-year-field,
-  .date-input-field::-webkit-datetime-edit-hour-field,
-  .date-input-field::-webkit-datetime-edit-minute-field,
-  .date-input-field::-webkit-datetime-edit-second-field,
-  .date-input-field::-webkit-datetime-edit-ampm-field {
-    padding: 0 2px;
-  }
-</style>
+<input
+  type={type}
+  value={value}
+  name={name}
+  id={id}
+  disabled={disabled}
+  min={min}
+  max={max}
+  required={required}
+  class={classes}
+  {...rest}
+/>

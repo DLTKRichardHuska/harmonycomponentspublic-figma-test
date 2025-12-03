@@ -8,7 +8,6 @@ const props = [
   { name: 'label', type: 'string', default: '—', description: 'Checkbox label text' },
   { name: 'checked', type: 'boolean', default: 'false', description: 'Checked state' },
   { name: 'disabled', type: 'boolean', default: 'false', description: 'Disables the checkbox' },
-  { name: 'error', type: 'boolean', default: 'false', description: 'Shows error state' },
   { name: 'name', type: 'string', default: '—', description: 'Checkbox name attribute' },
   { name: 'id', type: 'string', default: '—', description: 'Checkbox id attribute' },
   { name: 'value', type: 'string', default: '—', description: 'Checkbox value' },
@@ -17,25 +16,25 @@ const props = [
 
 <DocsLayout title="Checkboxes" description="Checkbox components for multiple selection inputs.">
   <article class="space-y-12">
-    <header class="border-b border-slate-200 dark:border-slate-800 pb-8">
+    <header class="page-header page-header--compact">
       <div class="flex items-center gap-3 mb-4">
-        <h1 class="font-display text-4xl font-bold text-slate-900 dark:text-white">Checkboxes</h1>
-        <span class="text-xs px-2 py-1 rounded-full border bg-success/10 text-success border-success/30">stable</span>
+        <h1 class="page-header__title page-header__title--sm">Checkboxes</h1>
+        <span class="badge badge--success">stable</span>
       </div>
-      <p class="text-lg text-slate-600 dark:text-slate-400 max-w-2xl">
+      <p class="page-header__description">
         Checkboxes allow users to select one or more items from a set, or toggle a single option on/off.
       </p>
     </header>
 
-    <nav class="flex gap-4 text-sm">
-      <a href="#examples" class="text-theme-primary hover:underline flex items-center gap-1"><i class="ti ti-eye"></i> Examples</a>
-      <a href="#props" class="text-theme-primary hover:underline flex items-center gap-1"><i class="ti ti-list"></i> Props</a>
-      <a href="#usage" class="text-theme-primary hover:underline flex items-center gap-1"><i class="ti ti-book"></i> Usage</a>
-      <a href="#accessibility" class="text-theme-primary hover:underline flex items-center gap-1"><i class="ti ti-accessible"></i> Accessibility</a>
+    <nav class="article-nav">
+      <a href="#examples" class="article-nav__link"><i class="ti ti-eye"></i> Examples</a>
+      <a href="#props" class="article-nav__link"><i class="ti ti-list"></i> Props</a>
+      <a href="#usage" class="article-nav__link"><i class="ti ti-book"></i> Usage</a>
+      <a href="#accessibility" class="article-nav__link"><i class="ti ti-accessible"></i> Accessibility</a>
     </nav>
 
     <section id="examples" class="space-y-8">
-      <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Examples</h2>
+      <h2 class="section__title">Examples</h2>
 
       <ExampleSection title="Basic Checkbox" description="Standard checkbox with label.">
         <div class="flex flex-col gap-3">
@@ -51,7 +50,6 @@ const props = [
           <Checkbox label="Checked" name="state-checked" checked />
           <Checkbox label="Disabled" name="state-disabled" disabled />
           <Checkbox label="Checked & Disabled" name="state-checked-disabled" checked disabled />
-          <Checkbox label="Error state" name="state-error" error />
         </div>
       </ExampleSection>
 
@@ -65,54 +63,14 @@ const props = [
 
       <ExampleSection title="In a Form Group" description="Multiple checkboxes with a group label.">
         <fieldset class="flex flex-col gap-4">
-          <legend class="text-sm font-semibold text-slate-900 dark:text-white mb-2">Notification Preferences</legend>
-          <div class="flex flex-col gap-3 pl-1">
+          <legend class="text-sm font-semibold text-primary mb-2">Notification Preferences</legend>
+          <div class="flex flex-col gap-3 pl-4">
             <Checkbox label="Email notifications" name="notif-email" checked />
             <Checkbox label="SMS notifications" name="notif-sms" />
             <Checkbox label="Push notifications" name="notif-push" checked />
             <Checkbox label="Marketing emails" name="notif-marketing" />
           </div>
         </fieldset>
-      </ExampleSection>
-
-      <ExampleSection title="With Description Cards" description="Checkboxes styled as selectable cards.">
-        <div class="space-y-3 max-w-md">
-          <label class="flex items-start gap-3 p-4 rounded-lg border border-slate-200 dark:border-slate-800 hover:border-theme-primary dark:hover:border-theme-primary cursor-pointer transition-colors">
-            <input type="checkbox" checked class="mt-0.5 w-4 h-4 rounded border-slate-300 dark:border-slate-600 text-theme-primary focus:ring-theme-primary focus:ring-offset-0" />
-            <div>
-              <span class="text-sm font-medium text-slate-900 dark:text-white block">Email notifications</span>
-              <span class="text-sm text-slate-500 dark:text-slate-400">Receive email updates about your account activity.</span>
-            </div>
-          </label>
-          <label class="flex items-start gap-3 p-4 rounded-lg border border-slate-200 dark:border-slate-800 hover:border-theme-primary dark:hover:border-theme-primary cursor-pointer transition-colors">
-            <input type="checkbox" class="mt-0.5 w-4 h-4 rounded border-slate-300 dark:border-slate-600 text-theme-primary focus:ring-theme-primary focus:ring-offset-0" />
-            <div>
-              <span class="text-sm font-medium text-slate-900 dark:text-white block">Marketing emails</span>
-              <span class="text-sm text-slate-500 dark:text-slate-400">Receive tips, product updates, and special offers.</span>
-            </div>
-          </label>
-          <label class="flex items-start gap-3 p-4 rounded-lg border border-slate-200 dark:border-slate-800 hover:border-theme-primary dark:hover:border-theme-primary cursor-pointer transition-colors">
-            <input type="checkbox" class="mt-0.5 w-4 h-4 rounded border-slate-300 dark:border-slate-600 text-theme-primary focus:ring-theme-primary focus:ring-offset-0" />
-            <div>
-              <span class="text-sm font-medium text-slate-900 dark:text-white block">Security alerts</span>
-              <span class="text-sm text-slate-500 dark:text-slate-400">Get notified about security issues and suspicious activity.</span>
-            </div>
-          </label>
-        </div>
-      </ExampleSection>
-
-      <ExampleSection title="Select All Pattern" description="Parent checkbox controlling children.">
-        <div class="flex flex-col gap-3 max-w-sm">
-          <div class="pb-2 border-b border-slate-200 dark:border-slate-800">
-            <Checkbox label="Select all" name="select-all" />
-          </div>
-          <div class="pl-6 flex flex-col gap-2">
-            <Checkbox label="First item" name="item-1" checked />
-            <Checkbox label="Second item" name="item-2" checked />
-            <Checkbox label="Third item" name="item-3" />
-            <Checkbox label="Fourth item" name="item-4" />
-          </div>
-        </div>
       </ExampleSection>
 
       <ExampleSection title="Inline Layout" description="Checkboxes arranged horizontally.">
@@ -126,66 +84,53 @@ const props = [
     </section>
 
     <section id="props">
-      <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">Props</h2>
+      <h2 class="section__title">Props</h2>
       <PropsTable props={props} />
     </section>
 
     <section id="usage">
-      <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">Usage Guidelines</h2>
-      <div class="grid md:grid-cols-2 gap-6">
-        <div class="p-6 rounded-lg border border-success/30 bg-success/5">
-          <h3 class="font-semibold text-success mb-3 flex items-center gap-2"><i class="ti ti-check"></i> Do</h3>
-          <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-400">
+      <h2 class="section__title">Usage Guidelines</h2>
+      <div class="guidelines">
+        <div class="guideline-card guideline-card--do">
+          <h3 class="guideline-card__header"><i class="ti ti-check"></i> Do</h3>
+          <ul class="guideline-card__list">
             <li>• Use for multiple selections</li>
             <li>• Provide clear, concise labels</li>
             <li>• Group related options together</li>
             <li>• Use for binary on/off choices</li>
-            <li>• Use descriptive labels that make sense independently</li>
           </ul>
         </div>
-        <div class="p-6 rounded-lg border border-error/30 bg-error/5">
-          <h3 class="font-semibold text-error mb-3 flex items-center gap-2"><i class="ti ti-x"></i> Don't</h3>
-          <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-400">
+        <div class="guideline-card guideline-card--dont">
+          <h3 class="guideline-card__header"><i class="ti ti-x"></i> Don't</h3>
+          <ul class="guideline-card__list">
             <li>• Use for mutually exclusive options (use radio buttons)</li>
             <li>• Have checkboxes without labels</li>
-            <li>• Use negative phrasing ("Don't send emails")</li>
+            <li>• Use negative phrasing</li>
             <li>• Pre-check options unexpectedly</li>
-            <li>• Use for more than 7-10 options (use a different pattern)</li>
           </ul>
         </div>
       </div>
     </section>
 
-    <section id="accessibility">
-      <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">Accessibility</h2>
-      <div class="space-y-4">
-        <div class="p-4 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-surface/50">
-          <h3 class="font-semibold text-slate-900 dark:text-white mb-2 flex items-center gap-2">
-            <i class="ti ti-tag text-theme-primary"></i>
-            Labels
-          </h3>
-          <p class="text-sm text-slate-600 dark:text-slate-400">
-            The Checkbox component automatically wraps the input in a <code>&lt;label&gt;</code> element, ensuring proper association.
-          </p>
-        </div>
-        <div class="p-4 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-surface/50">
-          <h3 class="font-semibold text-slate-900 dark:text-white mb-2 flex items-center gap-2">
-            <i class="ti ti-keyboard text-theme-primary"></i>
-            Keyboard
-          </h3>
-          <p class="text-sm text-slate-600 dark:text-slate-400">
-            Checkboxes are togglable with <kbd class="px-1.5 py-0.5 bg-slate-200 dark:bg-slate-800 rounded text-xs">Space</kbd> key and navigable with <kbd class="px-1.5 py-0.5 bg-slate-200 dark:bg-slate-800 rounded text-xs">Tab</kbd>.
-          </p>
-        </div>
-        <div class="p-4 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-surface/50">
-          <h3 class="font-semibold text-slate-900 dark:text-white mb-2 flex items-center gap-2">
-            <i class="ti ti-users text-theme-primary"></i>
-            Group Labels
-          </h3>
-          <p class="text-sm text-slate-600 dark:text-slate-400">
-            When grouping checkboxes, use <code>&lt;fieldset&gt;</code> and <code>&lt;legend&gt;</code> to provide context for screen readers.
-          </p>
-        </div>
+    <section id="accessibility" class="space-y-4">
+      <h2 class="section__title">Accessibility</h2>
+      <div class="a11y-card">
+        <h3 class="a11y-card__title">
+          <i class="ti ti-tag a11y-card__title-icon"></i>
+          Labels
+        </h3>
+        <p class="a11y-card__text">
+          The Checkbox component automatically wraps the input in a <code>&lt;label&gt;</code> element, ensuring proper association.
+        </p>
+      </div>
+      <div class="a11y-card">
+        <h3 class="a11y-card__title">
+          <i class="ti ti-keyboard a11y-card__title-icon"></i>
+          Keyboard
+        </h3>
+        <p class="a11y-card__text">
+          Checkboxes are togglable with <kbd>Space</kbd> key and navigable with <kbd>Tab</kbd>.
+        </p>
       </div>
     </section>
   </article>

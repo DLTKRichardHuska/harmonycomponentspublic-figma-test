@@ -1,4 +1,10 @@
 ---
+/**
+ * CodeBlock Component
+ * 
+ * Syntax-highlighted code display with copy button.
+ */
+
 interface Props {
   code: string;
   language?: string;
@@ -9,16 +15,16 @@ const { code, language = 'html', filename } = Astro.props;
 const id = `code-${Math.random().toString(36).substring(7)}`;
 ---
 
-<div class="relative group rounded-lg overflow-hidden border border-slate-200 dark:border-slate-800">
+<div class="code-block">
   {filename && (
-    <div class="bg-slate-100 dark:bg-slate-800 px-4 py-2 text-xs font-mono text-slate-600 dark:text-slate-400 border-b border-slate-200 dark:border-slate-700">
+    <div class="code-block__header">
       {filename}
     </div>
   )}
-  <div class="relative">
-    <pre class="!m-0 !rounded-none bg-slate-900 dark:bg-black p-4 overflow-x-auto"><code id={id} class={`language-${language} text-slate-300 text-sm font-mono whitespace-pre`}>{code}</code></pre>
+  <div class="code-block__content">
+    <pre><code id={id} class={`language-${language}`}>{code}</code></pre>
     <button 
-      class="copy-btn"
+      class="code-block__copy"
       data-code={code}
       aria-label="Copy code"
     >
@@ -28,8 +34,73 @@ const id = `code-${Math.random().toString(36).substring(7)}`;
   </div>
 </div>
 
+<style>
+  .code-block {
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+  }
+  
+  .code-block__header {
+    background-color: var(--elevated-bg);
+    padding: var(--space-2) var(--space-4);
+    font-size: var(--text-xs);
+    font-family: var(--font-mono);
+    color: var(--text-secondary);
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  .code-block__content {
+    position: relative;
+  }
+  
+  .code-block pre {
+    margin: 0;
+    border-radius: 0;
+    background-color: var(--surface-bg);
+    padding: var(--space-4);
+    overflow-x: auto;
+  }
+  
+  .code-block code {
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+    white-space: pre;
+    background: none;
+    padding: 0;
+    border-radius: 0;
+  }
+  
+  .code-block__copy {
+    position: absolute;
+    top: var(--space-3);
+    right: var(--space-3);
+    padding: var(--space-2);
+    border-radius: var(--radius-md);
+    background-color: var(--elevated-bg);
+    color: var(--text-muted);
+    opacity: 0;
+    transition: all var(--transition-fast);
+  }
+  
+  .code-block:hover .code-block__copy {
+    opacity: 1;
+  }
+  
+  .code-block__copy:hover {
+    background-color: var(--hover-bg);
+    color: var(--text-primary);
+  }
+  
+  .code-block__copy.copied {
+    color: var(--color-success);
+  }
+</style>
+
 <script>
-  document.querySelectorAll('.copy-btn').forEach(button => {
+  document.querySelectorAll('.code-block__copy').forEach(button => {
     button.addEventListener('click', async () => {
       const code = (button as HTMLElement).dataset.code || '';
       await navigator.clipboard.writeText(code);
@@ -49,4 +120,3 @@ const id = `code-${Math.random().toString(36).substring(7)}`;
     });
   });
 </script>
-

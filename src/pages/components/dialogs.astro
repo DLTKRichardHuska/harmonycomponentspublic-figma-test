@@ -4,293 +4,65 @@ import PropsTable from '../../components/PropsTable.astro';
 import ExampleSection from '../../components/ExampleSection.astro';
 import Dialog from '../../components/ui/Dialog.astro';
 import Button from '../../components/ui/Button.astro';
-import Input from '../../components/ui/Input.astro';
-import Textarea from '../../components/ui/Textarea.astro';
-import Label from '../../components/ui/Label.astro';
 
 const props = [
-  { name: 'id', type: 'string', description: 'Dialog id for JavaScript control', required: true },
+  { name: 'id', type: 'string', default: '—', description: 'Unique dialog id (required)' },
   { name: 'title', type: 'string', default: '—', description: 'Dialog title' },
-  { name: 'size', type: "'sm' | 'md' | 'lg' | 'xl' | 'full'", default: "'md'", description: 'Dialog width' },
-  { name: 'showClose', type: 'boolean', default: 'true', description: 'Show close button' },
 ];
 ---
 
-<DocsLayout title="Dialogs" description="Modal dialog components for focused interactions.">
+<DocsLayout title="Dialogs" description="Dialog/modal components for focused interactions.">
   <article class="space-y-12">
-    <header class="border-b border-slate-200 dark:border-slate-800 pb-8">
+    <header class="page-header page-header--compact">
       <div class="flex items-center gap-3 mb-4">
-        <h1 class="font-display text-4xl font-bold text-slate-900 dark:text-white">Dialogs</h1>
-        <span class="text-xs px-2 py-1 rounded-full border bg-success/10 text-success border-success/30">stable</span>
+        <h1 class="page-header__title page-header__title--sm">Dialogs</h1>
+        <span class="badge badge--success">stable</span>
       </div>
-      <p class="text-lg text-slate-600 dark:text-slate-400 max-w-2xl">
-        Dialogs are modal overlays that focus user attention on a specific task or information, temporarily blocking interaction with the rest of the page.
+      <p class="page-header__description">
+        Dialogs (modals) focus user attention on important information or actions that require immediate response.
       </p>
     </header>
 
-    <nav class="flex gap-4 text-sm">
-      <a href="#examples" class="text-theme-primary hover:underline flex items-center gap-1"><i class="ti ti-eye"></i> Examples</a>
-      <a href="#props" class="text-theme-primary hover:underline flex items-center gap-1"><i class="ti ti-list"></i> Props</a>
-      <a href="#usage" class="text-theme-primary hover:underline flex items-center gap-1"><i class="ti ti-book"></i> Usage</a>
-      <a href="#accessibility" class="text-theme-primary hover:underline flex items-center gap-1"><i class="ti ti-accessible"></i> Accessibility</a>
+    <nav class="article-nav">
+      <a href="#examples" class="article-nav__link"><i class="ti ti-eye"></i> Examples</a>
+      <a href="#props" class="article-nav__link"><i class="ti ti-list"></i> Props</a>
     </nav>
 
     <section id="examples" class="space-y-8">
-      <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Examples</h2>
+      <h2 class="section__title">Examples</h2>
 
-      <ExampleSection title="Basic Dialog" description="A simple dialog with title, content, and actions. Click the button to open.">
-        <Button id="open-basic-dialog" variant="primary">
-          Open Dialog
-        </Button>
+      <ExampleSection title="Basic Dialog" description="Click to open a dialog.">
+        <Button onclick="openDialog('basic-dialog')">Open Dialog</Button>
         
-        <Dialog id="basic-dialog" title="Dialog Title" size="md">
-          <p class="text-slate-600 dark:text-slate-400">
-            This is the dialog content. You can add any content here including forms, images, or other components.
+        <Dialog id="basic-dialog" title="Dialog Title">
+          <p class="text-secondary">
+            This is a basic dialog with some content. You can add any content here including forms, images, or other components.
           </p>
           <div slot="footer">
             <Button variant="ghost" onclick="closeDialog('basic-dialog')">Cancel</Button>
-            <Button variant="primary" onclick="closeDialog('basic-dialog')">Confirm</Button>
+            <Button onclick="closeDialog('basic-dialog')">Confirm</Button>
           </div>
         </Dialog>
       </ExampleSection>
 
-      <ExampleSection title="Confirmation Dialog" description="Used for destructive or important actions. Click to preview.">
-        <Button id="open-confirm-dialog" variant="destructive">
-          Delete Item
-        </Button>
+      <ExampleSection title="Confirmation Dialog" description="Dialog for confirming actions.">
+        <Button variant="destructive" onclick="openDialog('confirm-dialog')">Delete Item</Button>
         
-        <Dialog id="confirm-dialog" title="" size="sm" showClose={false}>
-          <div class="text-center">
-            <div class="w-12 h-12 rounded-full bg-error/10 flex items-center justify-center mx-auto mb-4">
-              <i class="ti ti-alert-triangle text-2xl text-error"></i>
-            </div>
-            <h3 class="text-lg font-semibold text-slate-900 dark:text-white mb-2">Delete Item?</h3>
-            <p class="text-sm text-slate-600 dark:text-slate-400 mb-6">
-              This action cannot be undone. This will permanently delete the item from your account.
-            </p>
-            <div class="flex gap-3">
-              <Button variant="ghost" class="flex-1" onclick="closeDialog('confirm-dialog')">Cancel</Button>
-              <Button variant="destructive" class="flex-1" onclick="closeDialog('confirm-dialog')">Delete</Button>
-            </div>
-          </div>
-        </Dialog>
-      </ExampleSection>
-
-      <ExampleSection title="Dialog with Form" description="Dialog containing a form for data entry.">
-        <Button id="open-form-dialog" variant="primary">
-          Create Project
-        </Button>
-        
-        <Dialog id="form-dialog" title="Create Project" size="md">
-          <form class="space-y-4">
-            <div class="space-y-2">
-              <Label for="project-name" required>Project Name</Label>
-              <Input id="project-name" placeholder="My awesome project" />
-            </div>
-            <div class="space-y-2">
-              <Label for="project-desc">Description</Label>
-              <Textarea id="project-desc" rows={3} placeholder="Brief description..." />
-            </div>
-          </form>
+        <Dialog id="confirm-dialog" title="Delete Item?">
+          <p class="text-secondary">
+            Are you sure you want to delete this item? This action cannot be undone.
+          </p>
           <div slot="footer">
-            <Button variant="ghost" onclick="closeDialog('form-dialog')">Cancel</Button>
-            <Button variant="primary" onclick="closeDialog('form-dialog')">Create Project</Button>
-          </div>
-        </Dialog>
-      </ExampleSection>
-
-      <ExampleSection title="Dialog Sizes" description="Dialogs come in multiple sizes.">
-        <div class="flex flex-wrap gap-3">
-          <Button id="open-sm-dialog" variant="outline">Small (sm)</Button>
-          <Button id="open-md-dialog" variant="outline">Medium (md)</Button>
-          <Button id="open-lg-dialog" variant="outline">Large (lg)</Button>
-          <Button id="open-xl-dialog" variant="outline">Extra Large (xl)</Button>
-        </div>
-        
-        <Dialog id="sm-dialog" title="Small Dialog" size="sm">
-          <p class="text-slate-600 dark:text-slate-400">This is a small dialog with max-width of sm.</p>
-          <div slot="footer">
-            <Button variant="primary" onclick="closeDialog('sm-dialog')">Close</Button>
-          </div>
-        </Dialog>
-        
-        <Dialog id="md-dialog" title="Medium Dialog" size="md">
-          <p class="text-slate-600 dark:text-slate-400">This is a medium dialog (default) with max-width of md. Good for most use cases.</p>
-          <div slot="footer">
-            <Button variant="primary" onclick="closeDialog('md-dialog')">Close</Button>
-          </div>
-        </Dialog>
-        
-        <Dialog id="lg-dialog" title="Large Dialog" size="lg">
-          <p class="text-slate-600 dark:text-slate-400">This is a large dialog with max-width of lg. Use for content that needs more space.</p>
-          <div slot="footer">
-            <Button variant="primary" onclick="closeDialog('lg-dialog')">Close</Button>
-          </div>
-        </Dialog>
-        
-        <Dialog id="xl-dialog" title="Extra Large Dialog" size="xl">
-          <p class="text-slate-600 dark:text-slate-400">This is an extra large dialog with max-width of xl. Best for complex content like data tables or detailed forms.</p>
-          <div slot="footer">
-            <Button variant="primary" onclick="closeDialog('xl-dialog')">Close</Button>
-          </div>
-        </Dialog>
-      </ExampleSection>
-
-      <ExampleSection title="Success Dialog" description="Feedback dialog for successful actions.">
-        <Button id="open-success-dialog" variant="primary">
-          Complete Action
-        </Button>
-        
-        <Dialog id="success-dialog" title="" size="sm" showClose={false}>
-          <div class="text-center">
-            <div class="w-12 h-12 rounded-full bg-success/10 flex items-center justify-center mx-auto mb-4">
-              <i class="ti ti-check text-2xl text-success"></i>
-            </div>
-            <h3 class="text-lg font-semibold text-slate-900 dark:text-white mb-2">Success!</h3>
-            <p class="text-sm text-slate-600 dark:text-slate-400 mb-6">
-              Your action was completed successfully.
-            </p>
-            <Button variant="primary" class="w-full" onclick="closeDialog('success-dialog')">Continue</Button>
-          </div>
-        </Dialog>
-      </ExampleSection>
-
-      <ExampleSection title="Information Dialog" description="Dialog for displaying important information.">
-        <Button id="open-info-dialog" variant="secondary">
-          View Details
-        </Button>
-        
-        <Dialog id="info-dialog" title="Important Information" size="md">
-          <div class="space-y-4">
-            <div class="p-4 rounded-lg bg-info/10 border border-info/30">
-              <div class="flex gap-3">
-                <i class="ti ti-info-circle text-info text-lg mt-0.5"></i>
-                <div>
-                  <p class="text-sm font-medium text-slate-900 dark:text-white mb-1">Did you know?</p>
-                  <p class="text-sm text-slate-600 dark:text-slate-400">
-                    You can press <kbd class="px-1.5 py-0.5 bg-slate-200 dark:bg-slate-800 rounded text-xs">Esc</kbd> to close any dialog.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <p class="text-slate-600 dark:text-slate-400">
-              Dialogs support keyboard navigation, backdrop click to close, and proper focus management for accessibility.
-            </p>
-          </div>
-          <div slot="footer">
-            <Button variant="primary" onclick="closeDialog('info-dialog')">Got it</Button>
+            <Button variant="ghost" onclick="closeDialog('confirm-dialog')">Cancel</Button>
+            <Button variant="destructive" onclick="closeDialog('confirm-dialog')">Delete</Button>
           </div>
         </Dialog>
       </ExampleSection>
     </section>
 
     <section id="props">
-      <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">Props</h2>
+      <h2 class="section__title">Props</h2>
       <PropsTable props={props} />
-      
-      <h3 class="text-lg font-semibold text-slate-900 dark:text-white mt-6 mb-3">Slots</h3>
-      <div class="overflow-x-auto">
-        <table class="w-full text-sm">
-          <thead>
-            <tr class="border-b border-slate-200 dark:border-slate-800">
-              <th class="text-left py-3 pr-4 font-semibold text-slate-900 dark:text-white">Slot</th>
-              <th class="text-left py-3 pr-4 font-semibold text-slate-900 dark:text-white">Description</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="border-b border-slate-200 dark:border-slate-800">
-              <td class="py-3 pr-4 font-mono text-xs text-theme-primary">default</td>
-              <td class="py-3 pr-4 text-slate-600 dark:text-slate-400">Dialog body content</td>
-            </tr>
-            <tr class="border-b border-slate-200 dark:border-slate-800">
-              <td class="py-3 pr-4 font-mono text-xs text-theme-primary">footer</td>
-              <td class="py-3 pr-4 text-slate-600 dark:text-slate-400">Footer area for action buttons</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      
-      <h3 class="text-lg font-semibold text-slate-900 dark:text-white mt-6 mb-3">JavaScript API</h3>
-      <div class="p-4 rounded-lg bg-slate-100 dark:bg-slate-800 font-mono text-sm space-y-2">
-        <p class="text-slate-700 dark:text-slate-300">// Open a dialog</p>
-        <p class="text-theme-primary">openDialog('dialog-id')</p>
-        <p class="text-slate-700 dark:text-slate-300 mt-4">// Close a dialog</p>
-        <p class="text-theme-primary">closeDialog('dialog-id')</p>
-      </div>
-    </section>
-
-    <section id="usage">
-      <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">Usage Guidelines</h2>
-      <div class="grid md:grid-cols-2 gap-6">
-        <div class="p-6 rounded-lg border border-success/30 bg-success/5">
-          <h3 class="font-semibold text-success mb-3 flex items-center gap-2"><i class="ti ti-check"></i> Do</h3>
-          <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-400">
-            <li>• Use for focused, important tasks</li>
-            <li>• Provide clear title and actions</li>
-            <li>• Allow closing via overlay click and Escape key</li>
-            <li>• Keep content concise and focused</li>
-            <li>• Use appropriate sizes for content</li>
-          </ul>
-        </div>
-        <div class="p-6 rounded-lg border border-error/30 bg-error/5">
-          <h3 class="font-semibold text-error mb-3 flex items-center gap-2"><i class="ti ti-x"></i> Don't</h3>
-          <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-400">
-            <li>• Stack multiple dialogs</li>
-            <li>• Use for non-essential content</li>
-            <li>• Make dialogs larger than necessary</li>
-            <li>• Prevent all methods of closing</li>
-            <li>• Put scrollable content without clear boundaries</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section id="accessibility">
-      <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">Accessibility</h2>
-      <div class="space-y-4">
-        <div class="p-4 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-surface/50">
-          <h3 class="font-semibold text-slate-900 dark:text-white mb-2 flex items-center gap-2">
-            <i class="ti ti-focus-2 text-theme-primary"></i>
-            Focus Management
-          </h3>
-          <p class="text-sm text-slate-600 dark:text-slate-400">
-            Focus is trapped within the dialog when open. On close, focus returns to the trigger element.
-          </p>
-        </div>
-        <div class="p-4 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-surface/50">
-          <h3 class="font-semibold text-slate-900 dark:text-white mb-2 flex items-center gap-2">
-            <i class="ti ti-keyboard text-theme-primary"></i>
-            Keyboard Support
-          </h3>
-          <p class="text-sm text-slate-600 dark:text-slate-400">
-            <kbd class="px-1.5 py-0.5 bg-slate-200 dark:bg-slate-800 rounded text-xs">Esc</kbd> closes the dialog. Tab navigation cycles through focusable elements.
-          </p>
-        </div>
-        <div class="p-4 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-surface/50">
-          <h3 class="font-semibold text-slate-900 dark:text-white mb-2 flex items-center gap-2">
-            <i class="ti ti-accessible text-theme-primary"></i>
-            ARIA Attributes
-          </h3>
-          <p class="text-sm text-slate-600 dark:text-slate-400">
-            The Dialog component includes <code>role="dialog"</code>, <code>aria-modal="true"</code>, and <code>aria-labelledby</code> pointing to the title.
-          </p>
-        </div>
-      </div>
     </section>
   </article>
 </DocsLayout>
-
-<script>
-  // Connect buttons to dialogs
-  document.addEventListener('DOMContentLoaded', () => {
-    document.getElementById('open-basic-dialog')?.addEventListener('click', () => openDialog('basic-dialog'));
-    document.getElementById('open-confirm-dialog')?.addEventListener('click', () => openDialog('confirm-dialog'));
-    document.getElementById('open-form-dialog')?.addEventListener('click', () => openDialog('form-dialog'));
-    document.getElementById('open-sm-dialog')?.addEventListener('click', () => openDialog('sm-dialog'));
-    document.getElementById('open-md-dialog')?.addEventListener('click', () => openDialog('md-dialog'));
-    document.getElementById('open-lg-dialog')?.addEventListener('click', () => openDialog('lg-dialog'));
-    document.getElementById('open-xl-dialog')?.addEventListener('click', () => openDialog('xl-dialog'));
-    document.getElementById('open-success-dialog')?.addEventListener('click', () => openDialog('success-dialog'));
-    document.getElementById('open-info-dialog')?.addEventListener('click', () => openDialog('info-dialog'));
-  });
-</script>

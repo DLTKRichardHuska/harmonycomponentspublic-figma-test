@@ -1,83 +1,28 @@
 /**
- * Harmony Design System - UI Components
+ * Harmony Design System - UI Components Export
  * 
- * Export all reusable UI components for easy importing.
- * 
- * @example
- * import { Button, Card, Input } from '../components/ui';
- * 
- * // Or import individual components
- * import Button from '../components/ui/Button.astro';
+ * Re-exports all UI components for convenient imports.
  */
 
-// Note: Astro components are imported directly from their .astro files
-// This file serves as documentation of available components
-
-export const components = {
-  // Form Controls
-  Button: 'Button.astro',
-  ButtonGroup: 'ButtonGroup.astro',
-  Input: 'Input.astro',
-  Textarea: 'Textarea.astro',
-  Checkbox: 'Checkbox.astro',
-  RadioButton: 'RadioButton.astro',
-  Toggle: 'Toggle.astro',
-  Dropdown: 'Dropdown.astro',
-  Label: 'Label.astro',
-  DateInput: 'DateInput.astro',
-  StepperInput: 'StepperInput.astro',
-  RangeInput: 'RangeInput.astro',
-  
-  // Display
-  Card: 'Card.astro',
-  Badge: 'Badge.astro',
-  Chip: 'Chip.astro',
-  Alert: 'Alert.astro',
-  Tooltip: 'Tooltip.astro',
-  ProgressBar: 'ProgressBar.astro',
-  Spinner: 'Spinner.astro',
-  
-  // Navigation
-  Link: 'Link.astro',
-  Accordion: 'Accordion.astro',
-  
-  // Overlay
-  Dialog: 'Dialog.astro',
-} as const;
-
-export type ComponentName = keyof typeof components;
-
-// Component categories for documentation
-export const componentCategories = {
-  'Form Controls': [
-    'Button',
-    'ButtonGroup', 
-    'Input',
-    'Textarea',
-    'Checkbox',
-    'RadioButton',
-    'Toggle',
-    'Dropdown',
-    'Label',
-    'DateInput',
-    'StepperInput',
-    'RangeInput',
-  ],
-  'Display': [
-    'Card',
-    'Badge',
-    'Chip',
-    'Alert',
-    'Tooltip',
-    'ProgressBar',
-    'Spinner',
-  ],
-  'Navigation': [
-    'Link',
-    'Accordion',
-  ],
-  'Overlay': [
-    'Dialog',
-  ],
-} as const;
-
+export { default as Accordion } from './Accordion.astro';
+export { default as Alert } from './Alert.astro';
+export { default as Badge } from './Badge.astro';
+export { default as Button } from './Button.astro';
+export { default as ButtonGroup } from './ButtonGroup.astro';
+export { default as Card } from './Card.astro';
+export { default as Checkbox } from './Checkbox.astro';
+export { default as Chip } from './Chip.astro';
+export { default as DateInput } from './DateInput.astro';
+export { default as Dialog } from './Dialog.astro';
+export { default as Dropdown } from './Dropdown.astro';
+export { default as Input } from './Input.astro';
+export { default as Label } from './Label.astro';
+export { default as Link } from './Link.astro';
+export { default as ProgressBar } from './ProgressBar.astro';
+export { default as RadioButton } from './RadioButton.astro';
+export { default as RangeInput } from './RangeInput.astro';
+export { default as Spinner } from './Spinner.astro';
+export { default as StepperInput } from './StepperInput.astro';
+export { default as Textarea } from './Textarea.astro';
+export { default as Toggle } from './Toggle.astro';
+export { default as Tooltip } from './Tooltip.astro';

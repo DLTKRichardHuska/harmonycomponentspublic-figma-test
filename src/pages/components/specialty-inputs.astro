@@ -1,6 +1,5 @@
 ---
 import DocsLayout from '../../layouts/DocsLayout.astro';
-import PropsTable from '../../components/PropsTable.astro';
 import ExampleSection from '../../components/ExampleSection.astro';
 import Input from '../../components/ui/Input.astro';
 import Label from '../../components/ui/Label.astro';
@@ -9,95 +8,30 @@ import StepperInput from '../../components/ui/StepperInput.astro';
 import RangeInput from '../../components/ui/RangeInput.astro';
 ---
 
-<DocsLayout title="Specialty Inputs" description="Number, URL, and currency inputs.">
+<DocsLayout title="Specialty Inputs" description="Specialized input components for specific data types.">
   <article class="space-y-12">
-    <header class="border-b border-slate-200 dark:border-slate-800 pb-8">
+    <header class="page-header page-header--compact">
       <div class="flex items-center gap-3 mb-4">
-        <h1 class="font-display text-4xl font-bold text-slate-900 dark:text-white">Specialty Inputs</h1>
-        <span class="text-xs px-2 py-1 rounded-full border bg-success/10 text-success border-success/30">stable</span>
+        <h1 class="page-header__title page-header__title--sm">Specialty Inputs</h1>
+        <span class="badge badge--success">stable</span>
       </div>
-      <p class="text-lg text-slate-600 dark:text-slate-400 max-w-2xl">
-        Specialized input types for numbers, URLs, currency, and other formatted data.
+      <p class="page-header__description">
+        Specialized input types for numbers, URLs, currency, dates, and other formatted data.
       </p>
     </header>
 
-    <nav class="flex gap-4 text-sm">
-      <a href="#examples" class="text-theme-primary hover:underline flex items-center gap-1"><i class="ti ti-eye"></i> Examples</a>
-      <a href="#usage" class="text-theme-primary hover:underline flex items-center gap-1"><i class="ti ti-book"></i> Usage</a>
-      <a href="#accessibility" class="text-theme-primary hover:underline flex items-center gap-1"><i class="ti ti-accessible"></i> Accessibility</a>
+    <nav class="article-nav">
+      <a href="#examples" class="article-nav__link"><i class="ti ti-eye"></i> Examples</a>
     </nav>
 
     <section id="examples" class="space-y-8">
-      <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Examples</h2>
+      <h2 class="section__title">Examples</h2>
 
       <ExampleSection title="Number Input" description="Input for numeric values.">
         <div class="space-y-4 max-w-sm">
           <div class="space-y-2">
             <Label for="number-basic">Quantity</Label>
             <Input type="number" id="number-basic" placeholder="0" />
-          </div>
-          <div class="space-y-2">
-            <Label for="number-minmax">Age (18-100)</Label>
-            <Input type="number" id="number-minmax" placeholder="Enter your age" min="18" max="100" />
-          </div>
-        </div>
-      </ExampleSection>
-
-      <ExampleSection title="Currency Input" description="Input with currency prefix.">
-        <div class="space-y-4 max-w-sm">
-          <div class="space-y-2">
-            <Label for="currency-usd">Price (USD)</Label>
-            <div class="relative">
-              <span class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-500">$</span>
-              <input type="number" id="currency-usd" placeholder="0.00" step="0.01" class="w-full h-10 pl-7 pr-4 border border-slate-300 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-900 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-theme-primary" />
-            </div>
-          </div>
-          <div class="space-y-2">
-            <Label for="currency-euro">Price (EUR)</Label>
-            <div class="relative">
-              <span class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-500">€</span>
-              <input type="number" id="currency-euro" placeholder="0.00" step="0.01" class="w-full h-10 pl-7 pr-4 border border-slate-300 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-900 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-theme-primary" />
-            </div>
-          </div>
-        </div>
-      </ExampleSection>
-
-      <ExampleSection title="URL Input" description="Input for website URLs.">
-        <div class="space-y-2 max-w-sm">
-          <Label for="url-input">Website URL</Label>
-          <Input type="url" id="url-input" icon="ti-link" placeholder="https://example.com" />
-        </div>
-      </ExampleSection>
-
-      <ExampleSection title="Phone Input" description="Input for phone numbers.">
-        <div class="space-y-2 max-w-sm">
-          <Label for="phone-input">Phone Number</Label>
-          <Input type="tel" id="phone-input" icon="ti-phone" placeholder="(555) 555-5555" />
-        </div>
-      </ExampleSection>
-
-      <ExampleSection title="Input with Unit Suffix" description="Inputs with unit indicators.">
-        <div class="space-y-4 max-w-sm">
-          <div class="space-y-2">
-            <Label for="weight-input">Weight</Label>
-            <div class="relative">
-              <input type="number" id="weight-input" placeholder="0" class="w-full h-10 pl-4 pr-12 border border-slate-300 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-900 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-theme-primary" />
-              <span class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-500 text-sm">kg</span>
-            </div>
-          </div>
-          <div class="space-y-2">
-            <Label for="height-input">Height</Label>
-            <div class="relative">
-              <input type="number" id="height-input" placeholder="0" class="w-full h-10 pl-4 pr-12 border border-slate-300 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-900 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-theme-primary" />
-              <span class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-500 text-sm">cm</span>
-            </div>
-          </div>
-          <div class="space-y-2">
-            <Label for="percentage-input">Percentage</Label>
-            <div class="relative">
-              <input type="number" id="percentage-input" placeholder="0" min="0" max="100" class="w-full h-10 pl-4 pr-10 border border-slate-300 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-900 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-theme-primary" />
-              <span class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-500 text-sm">%</span>
-            </div>
           </div>
         </div>
       </ExampleSection>
@@ -132,16 +66,6 @@ import RangeInput from '../../components/ui/RangeInput.astro';
         </div>
       </ExampleSection>
 
-      <ExampleSection title="Color Input" description="Input for selecting colors.">
-        <div class="space-y-2 max-w-sm">
-          <Label for="color-input">Brand Color</Label>
-          <div class="flex gap-2">
-            <input type="color" id="color-input" value="#4C92D9" class="w-10 h-10 rounded-lg border border-slate-300 dark:border-slate-700 cursor-pointer" />
-            <Input type="text" placeholder="#4C92D9" class="flex-1" />
-          </div>
-        </div>
-      </ExampleSection>
-
       <ExampleSection title="Date and Time" description="Inputs for date and time values.">
         <div class="grid sm:grid-cols-2 gap-4 max-w-md">
           <div class="space-y-2">
@@ -154,54 +78,20 @@ import RangeInput from '../../components/ui/RangeInput.astro';
           </div>
         </div>
       </ExampleSection>
-    </section>
 
-    <section id="usage">
-      <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">Usage Guidelines</h2>
-      <div class="grid md:grid-cols-2 gap-6">
-        <div class="p-6 rounded-lg border border-success/30 bg-success/5">
-          <h3 class="font-semibold text-success mb-3 flex items-center gap-2"><i class="ti ti-check"></i> Do</h3>
-          <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-400">
-            <li>• Use appropriate input types (number, url, tel)</li>
-            <li>• Show units and currency symbols clearly</li>
-            <li>• Set reasonable min/max constraints</li>
-            <li>• Provide format hints in placeholders</li>
-          </ul>
+      <ExampleSection title="URL Input" description="Input for website URLs.">
+        <div class="space-y-2 max-w-sm">
+          <Label for="url-input">Website URL</Label>
+          <Input type="url" id="url-input" icon="ti-link" placeholder="https://example.com" />
         </div>
-        <div class="p-6 rounded-lg border border-error/30 bg-error/5">
-          <h3 class="font-semibold text-error mb-3 flex items-center gap-2"><i class="ti ti-x"></i> Don't</h3>
-          <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-400">
-            <li>• Use text input for structured data</li>
-            <li>• Hide units or currency symbols</li>
-            <li>• Allow invalid input without feedback</li>
-            <li>• Use overly complex formatting</li>
-          </ul>
-        </div>
-      </div>
-    </section>
+      </ExampleSection>
 
-    <section id="accessibility">
-      <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">Accessibility</h2>
-      <div class="space-y-4">
-        <div class="p-4 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-surface/50">
-          <h3 class="font-semibold text-slate-900 dark:text-white mb-2 flex items-center gap-2">
-            <i class="ti ti-tag text-theme-primary"></i>
-            Input Types
-          </h3>
-          <p class="text-sm text-slate-600 dark:text-slate-400">
-            Use semantic input types like <code>number</code>, <code>tel</code>, <code>url</code>, and <code>email</code> to enable appropriate mobile keyboards and validation.
-          </p>
+      <ExampleSection title="Phone Input" description="Input for phone numbers.">
+        <div class="space-y-2 max-w-sm">
+          <Label for="phone-input">Phone Number</Label>
+          <Input type="tel" id="phone-input" icon="ti-phone" placeholder="(555) 555-5555" />
         </div>
-        <div class="p-4 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-surface/50">
-          <h3 class="font-semibold text-slate-900 dark:text-white mb-2 flex items-center gap-2">
-            <i class="ti ti-eye text-theme-primary"></i>
-            Visual Indicators
-          </h3>
-          <p class="text-sm text-slate-600 dark:text-slate-400">
-            Units and currency symbols should be visually associated with inputs but may need <code>aria-describedby</code> for screen readers.
-          </p>
-        </div>
-      </div>
+      </ExampleSection>
     </section>
   </article>
 </DocsLayout>

@@ -1,55 +1,43 @@
 ---
+/**
+ * ComponentDoc Component
+ * 
+ * Documentation template for component pages.
+ */
+
 interface Props {
   name: string;
   description: string;
   status?: 'stable' | 'beta' | 'deprecated';
 }
 
-interface Prop {
-  name: string;
-  type: string;
-  default?: string;
-  description: string;
-}
-
-interface AccessibilityNote {
-  title: string;
-  description: string;
-}
-
 const { name, description, status = 'stable' } = Astro.props;
-
-const statusColors = {
-  stable: 'bg-success/10 text-success border-success/30',
-  beta: 'bg-warning/10 text-warning border-warning/30',
-  deprecated: 'bg-error/10 text-error border-error/30',
-};
 ---
 
 <article class="space-y-12">
   <!-- Header -->
-  <header class="border-b border-slate-200 dark:border-slate-800 pb-8">
+  <header class="page-header page-header--compact">
     <div class="flex items-center gap-3 mb-4">
-      <h1 class="font-display text-4xl font-bold text-slate-900 dark:text-white">{name}</h1>
-      <span class={`text-xs px-2 py-1 rounded-full border ${statusColors[status]}`}>
+      <h1 class="page-header__title page-header__title--sm">{name}</h1>
+      <span class={`badge badge--${status === 'stable' ? 'success' : status === 'beta' ? 'warning' : 'error'}`}>
         {status}
       </span>
     </div>
-    <p class="text-lg text-slate-600 dark:text-slate-400 max-w-2xl">{description}</p>
+    <p class="page-header__description">{description}</p>
   </header>
 
   <!-- Quick Links -->
-  <nav class="flex gap-4 text-sm">
-    <a href="#examples" class="text-theme-primary hover:underline flex items-center gap-1">
+  <nav class="article-nav">
+    <a href="#examples" class="article-nav__link">
       <i class="ti ti-eye"></i> Examples
     </a>
-    <a href="#props" class="text-theme-primary hover:underline flex items-center gap-1">
+    <a href="#props" class="article-nav__link">
       <i class="ti ti-list"></i> Props
     </a>
-    <a href="#usage" class="text-theme-primary hover:underline flex items-center gap-1">
+    <a href="#usage" class="article-nav__link">
       <i class="ti ti-book"></i> Usage
     </a>
-    <a href="#accessibility" class="text-theme-primary hover:underline flex items-center gap-1">
+    <a href="#accessibility" class="article-nav__link">
       <i class="ti ti-accessible"></i> Accessibility
     </a>
   </nav>
@@ -57,4 +45,3 @@ const statusColors = {
   <!-- Content slots -->
   <slot />
 </article>
-

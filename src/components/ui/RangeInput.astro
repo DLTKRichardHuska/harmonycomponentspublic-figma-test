@@ -1,4 +1,10 @@
 ---
+/**
+ * RangeInput Component
+ * 
+ * Slider for selecting a value within a range.
+ */
+
 export interface Props {
   value?: number;
   min?: number;
@@ -30,9 +36,14 @@ const {
 } = Astro.props;
 
 const rangeId = id || `range-${Math.random().toString(36).substr(2, 9)}`;
+const displayValue = showPercent 
+  ? `${prefix}${Math.round((value - min) / (max - min) * 100)}%${suffix}` 
+  : `${prefix}${value}${suffix}`;
+
+const classes = ['range-wrap', className].filter(Boolean).join(' ');
 ---
 
-<div class={`rng-wrap ${className}`}>
+<div class={classes}>
   <input
     type="range"
     id={rangeId}
@@ -42,171 +53,22 @@ const rangeId = id || `range-${Math.random().toString(36).substr(2, 9)}`;
     max={max}
     step={step}
     disabled={disabled}
-    class="rng"
+    class="range"
     data-show-percent={showPercent ? 'true' : undefined}
     data-prefix={prefix || undefined}
     data-suffix={suffix || undefined}
     {...rest}
   />
-  <span class="rng-val" data-for={rangeId}>
-    {prefix}{showPercent ? `${Math.round((value - min) / (max - min) * 100)}%` : value}{suffix}
+  <span class="range-value" data-for={rangeId}>
+    {displayValue}
   </span>
 </div>
 
-<style is:global>
-  .rng-wrap {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-  
-  /* EXACT copy from CodePen */
-  .rng {
-    --thumb-height: 1.25em;
-    --track-height: 0.375em;
-    --track-color: rgba(0, 0, 0, 0.2);
-    --thumb-color: var(--theme-primary, #4C92D9);
-    
-    font-size: 1rem;
-    width: 100%;
-  }
-  
-  html.dark .rng {
-    --track-color: rgba(255, 255, 255, 0.2);
-  }
-  
-  .rng {
-    position: relative;
-    background: #fff0;
-    overflow: hidden;
-  }
-  
-  .rng:active {
-    cursor: grabbing;
-  }
-  
-  .rng:disabled {
-    filter: grayscale(1);
-    opacity: 0.3;
-    cursor: not-allowed;
-  }
-  
-  /* WebKit */
-  .rng,
-  .rng::-webkit-slider-runnable-track,
-  .rng::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    transition: all ease 100ms;
-    height: var(--thumb-height);
-  }
-  
-  .rng::-webkit-slider-runnable-track,
-  .rng::-webkit-slider-thumb {
-    position: relative;
-  }
-  
-  .rng::-webkit-slider-thumb {
-    width: var(--thumb-height);
-    background: var(--thumb-color);
-    border-radius: var(--thumb-height);
-    filter: brightness(100%);
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-  }
-  
-  .rng:hover::-webkit-slider-thumb {
-    filter: brightness(110%);
-    cursor: grab;
-  }
-  
-  .rng:active::-webkit-slider-thumb {
-    filter: brightness(90%);
-    cursor: grabbing;
-  }
-  
-  .rng::-webkit-slider-runnable-track {
-    background: linear-gradient(var(--track-color) 0 0) scroll no-repeat center / 100% calc(var(--track-height) + 1px);
-  }
-  
-  .rng:disabled::-webkit-slider-thumb {
-    cursor: not-allowed;
-  }
-  
-  /* Firefox */
-  .rng,
-  .rng::-moz-range-track,
-  .rng::-moz-range-thumb {
-    appearance: none;
-    transition: all ease 100ms;
-    height: var(--thumb-height);
-  }
-  
-  .rng::-moz-range-track,
-  .rng::-moz-range-thumb,
-  .rng::-moz-range-progress {
-    background: #fff0;
-  }
-  
-  .rng::-moz-range-thumb {
-    background: var(--thumb-color);
-    border: 0;
-    width: var(--thumb-height);
-    border-radius: var(--thumb-height);
-    cursor: grab;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-  }
-  
-  .rng:active::-moz-range-thumb {
-    cursor: grabbing;
-  }
-  
-  .rng::-moz-range-track {
-    width: 100%;
-    background: var(--track-color);
-  }
-  
-  .rng::-moz-range-track {
-    height: calc(var(--track-height) + 1px);
-    border-radius: var(--track-height);
-  }
-  
-  .rng::-moz-range-thumb {
-    filter: brightness(100%);
-  }
-  
-  .rng:hover::-moz-range-thumb {
-    filter: brightness(110%);
-  }
-  
-  .rng:active::-moz-range-thumb {
-    filter: brightness(90%);
-  }
-  
-  .rng:disabled::-moz-range-thumb {
-    cursor: not-allowed;
-  }
-  
-  .rng:focus {
-    outline: none;
-  }
-  
-  .rng-val {
-    min-width: 50px;
-    text-align: right;
-    font-size: 14px;
-    color: #64748b;
-    flex-shrink: 0;
-  }
-  
-  html.dark .rng-val {
-    color: #94a3b8;
-  }
-</style>
-
 <script>
-  function initRng() {
-    document.querySelectorAll('.rng').forEach((el) => {
+  function initRanges() {
+    document.querySelectorAll('.range').forEach((el) => {
       const input = el as HTMLInputElement;
-      const val = document.querySelector(`.rng-val[data-for="${input.id}"]`);
+      const val = document.querySelector(`.range-value[data-for="${input.id}"]`);
       if (!val || input.hasAttribute('data-init')) return;
       input.setAttribute('data-init', '1');
       
@@ -224,6 +86,6 @@ const rangeId = id || `range-${Math.random().toString(36).substr(2, 9)}`;
     });
   }
   
-  initRng();
-  document.addEventListener('astro:page-load', initRng);
+  initRanges();
+  document.addEventListener('astro:page-load', initRanges);
 </script>

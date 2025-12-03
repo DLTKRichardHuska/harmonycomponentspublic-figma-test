@@ -5,6 +5,7 @@ import ExampleSection from '../../components/ExampleSection.astro';
 import Input from '../../components/ui/Input.astro';
 import Textarea from '../../components/ui/Textarea.astro';
 import Label from '../../components/ui/Label.astro';
+import Button from '../../components/ui/Button.astro';
 
 const props = [
   { name: 'type', type: "'text' | 'email' | 'password' | 'number' | 'url' | 'search' | 'tel'", default: "'text'", description: 'Input type' },
@@ -22,33 +23,30 @@ const textareaProps = [
   { name: 'value', type: 'string', default: '—', description: 'Textarea value' },
   { name: 'rows', type: 'number', default: '4', description: 'Number of visible rows' },
   { name: 'disabled', type: 'boolean', default: 'false', description: 'Disables the textarea' },
-  { name: 'error', type: 'boolean', default: 'false', description: 'Shows error state' },
-  { name: 'errorMessage', type: 'string', default: '—', description: 'Error message to display' },
-  { name: 'resizable', type: 'boolean', default: 'false', description: 'Allow resizing' },
 ];
 ---
 
 <DocsLayout title="Inputs" description="Form input components for collecting user data.">
   <article class="space-y-12">
-    <header class="border-b border-slate-200 dark:border-slate-800 pb-8">
+    <header class="page-header page-header--compact">
       <div class="flex items-center gap-3 mb-4">
-        <h1 class="font-display text-4xl font-bold text-slate-900 dark:text-white">Inputs</h1>
-        <span class="text-xs px-2 py-1 rounded-full border bg-success/10 text-success border-success/30">stable</span>
+        <h1 class="page-header__title page-header__title--sm">Inputs</h1>
+        <span class="badge badge--success">stable</span>
       </div>
-      <p class="text-lg text-slate-600 dark:text-slate-400 max-w-2xl">
+      <p class="page-header__description">
         Text inputs allow users to enter and edit text. They're used in forms, search fields, and anywhere text input is needed.
       </p>
     </header>
 
-    <nav class="flex gap-4 text-sm">
-      <a href="#examples" class="text-theme-primary hover:underline flex items-center gap-1"><i class="ti ti-eye"></i> Examples</a>
-      <a href="#props" class="text-theme-primary hover:underline flex items-center gap-1"><i class="ti ti-list"></i> Props</a>
-      <a href="#usage" class="text-theme-primary hover:underline flex items-center gap-1"><i class="ti ti-book"></i> Usage</a>
-      <a href="#accessibility" class="text-theme-primary hover:underline flex items-center gap-1"><i class="ti ti-accessible"></i> Accessibility</a>
+    <nav class="article-nav">
+      <a href="#examples" class="article-nav__link"><i class="ti ti-eye"></i> Examples</a>
+      <a href="#props" class="article-nav__link"><i class="ti ti-list"></i> Props</a>
+      <a href="#usage" class="article-nav__link"><i class="ti ti-book"></i> Usage</a>
+      <a href="#accessibility" class="article-nav__link"><i class="ti ti-accessible"></i> Accessibility</a>
     </nav>
 
     <section id="examples" class="space-y-8">
-      <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Examples</h2>
+      <h2 class="section__title">Examples</h2>
 
       <ExampleSection title="Basic Input" description="Standard text input with label.">
         <div class="max-w-sm space-y-2">
@@ -75,10 +73,6 @@ const textareaProps = [
             <Label for="number-input">Number</Label>
             <Input type="number" id="number-input" placeholder="0" />
           </div>
-          <div class="space-y-2">
-            <Label for="tel-input">Phone</Label>
-            <Input type="tel" id="tel-input" placeholder="(555) 555-5555" />
-          </div>
         </div>
       </ExampleSection>
 
@@ -91,14 +85,6 @@ const textareaProps = [
           <div class="space-y-2">
             <Label for="email-icon">Email</Label>
             <Input icon="ti-mail" type="email" id="email-icon" placeholder="you@example.com" />
-          </div>
-          <div class="space-y-2">
-            <Label for="user-icon">Username</Label>
-            <Input icon="ti-user" id="user-icon" placeholder="johndoe" />
-          </div>
-          <div class="space-y-2">
-            <Label for="lock-icon">Password</Label>
-            <Input icon="ti-lock" type="password" id="lock-icon" placeholder="••••••••" />
           </div>
         </div>
       </ExampleSection>
@@ -117,10 +103,6 @@ const textareaProps = [
             <Label for="error-state">Error</Label>
             <Input id="error-state" error errorMessage="Please enter a valid value" value="Invalid value" />
           </div>
-          <div class="space-y-2">
-            <Label for="required-state" required>Required Field</Label>
-            <Input id="required-state" required placeholder="This field is required" />
-          </div>
         </div>
       </ExampleSection>
 
@@ -130,128 +112,90 @@ const textareaProps = [
             <Label for="textarea-basic">Description</Label>
             <Textarea id="textarea-basic" placeholder="Enter your message..." />
           </div>
-          <div class="space-y-2">
-            <Label for="textarea-resizable">Resizable Textarea</Label>
-            <Textarea id="textarea-resizable" placeholder="This textarea can be resized..." resizable />
-          </div>
-          <div class="space-y-2">
-            <Label for="textarea-rows">Custom Rows (6)</Label>
-            <Textarea id="textarea-rows" rows={6} placeholder="Larger textarea..." />
-          </div>
-        </div>
-      </ExampleSection>
-
-      <ExampleSection title="Textarea States" description="Textarea with different states.">
-        <div class="max-w-sm space-y-4">
-          <div class="space-y-2">
-            <Label for="textarea-disabled">Disabled</Label>
-            <Textarea id="textarea-disabled" disabled value="This textarea is disabled" />
-          </div>
-          <div class="space-y-2">
-            <Label for="textarea-error">Error</Label>
-            <Textarea id="textarea-error" error errorMessage="Description is required" />
-          </div>
         </div>
       </ExampleSection>
 
       <ExampleSection title="Form Example" description="Complete form with inputs and labels.">
-        <div class="max-w-md p-6 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-charcoal">
-          <h3 class="font-semibold text-slate-900 dark:text-white mb-4">Contact Form</h3>
-          <form class="space-y-4">
-            <div class="grid sm:grid-cols-2 gap-4">
-              <div class="space-y-2">
-                <Label for="first-name" required>First Name</Label>
-                <Input id="first-name" placeholder="John" required />
+        <div class="max-w-md card">
+          <div class="card__body">
+            <h3 class="text-lg font-semibold text-primary mb-4">Contact Form</h3>
+            <form class="space-y-4">
+              <div class="grid sm:grid-cols-2 gap-4">
+                <div class="space-y-2">
+                  <Label for="first-name" required>First Name</Label>
+                  <Input id="first-name" placeholder="John" required />
+                </div>
+                <div class="space-y-2">
+                  <Label for="last-name" required>Last Name</Label>
+                  <Input id="last-name" placeholder="Doe" required />
+                </div>
               </div>
               <div class="space-y-2">
-                <Label for="last-name" required>Last Name</Label>
-                <Input id="last-name" placeholder="Doe" required />
+                <Label for="contact-email" required>Email</Label>
+                <Input icon="ti-mail" type="email" id="contact-email" placeholder="john@example.com" required />
               </div>
-            </div>
-            <div class="space-y-2">
-              <Label for="contact-email" required>Email</Label>
-              <Input icon="ti-mail" type="email" id="contact-email" placeholder="john@example.com" required />
-            </div>
-            <div class="space-y-2">
-              <Label for="phone">Phone (optional)</Label>
-              <Input icon="ti-phone" type="tel" id="phone" placeholder="(555) 555-5555" />
-            </div>
-            <div class="space-y-2">
-              <Label for="message" required>Message</Label>
-              <Textarea id="message" rows={4} placeholder="How can we help you?" required />
-            </div>
-            <button type="submit" class="w-full px-4 py-2 bg-theme-primary hover:bg-theme-primary-hover text-white rounded-lg font-medium transition-colors">
-              Send Message
-            </button>
-          </form>
+              <div class="space-y-2">
+                <Label for="message" required>Message</Label>
+                <Textarea id="message" rows={4} placeholder="How can we help you?" required />
+              </div>
+              <Button fullWidth>Send Message</Button>
+            </form>
+          </div>
         </div>
       </ExampleSection>
     </section>
 
     <section id="props">
-      <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">Input Props</h2>
+      <h2 class="section__title">Input Props</h2>
       <PropsTable props={props} />
       
-      <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4 mt-8">Textarea Props</h2>
+      <h2 class="section__title mt-8">Textarea Props</h2>
       <PropsTable props={textareaProps} />
     </section>
 
     <section id="usage">
-      <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">Usage Guidelines</h2>
-      <div class="grid md:grid-cols-2 gap-6">
-        <div class="p-6 rounded-lg border border-success/30 bg-success/5">
-          <h3 class="font-semibold text-success mb-3 flex items-center gap-2"><i class="ti ti-check"></i> Do</h3>
-          <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-400">
+      <h2 class="section__title">Usage Guidelines</h2>
+      <div class="guidelines">
+        <div class="guideline-card guideline-card--do">
+          <h3 class="guideline-card__header"><i class="ti ti-check"></i> Do</h3>
+          <ul class="guideline-card__list">
             <li>• Always use labels with inputs</li>
             <li>• Provide helpful placeholder text</li>
             <li>• Show validation feedback inline</li>
             <li>• Use appropriate input types</li>
-            <li>• Mark required fields clearly</li>
           </ul>
         </div>
-        <div class="p-6 rounded-lg border border-error/30 bg-error/5">
-          <h3 class="font-semibold text-error mb-3 flex items-center gap-2"><i class="ti ti-x"></i> Don't</h3>
-          <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-400">
+        <div class="guideline-card guideline-card--dont">
+          <h3 class="guideline-card__header"><i class="ti ti-x"></i> Don't</h3>
+          <ul class="guideline-card__list">
             <li>• Use placeholder as label</li>
             <li>• Hide error messages</li>
             <li>• Disable without explanation</li>
             <li>• Use generic error messages</li>
-            <li>• Forget to handle validation</li>
           </ul>
         </div>
       </div>
     </section>
 
-    <section id="accessibility">
-      <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">Accessibility</h2>
-      <div class="space-y-4">
-        <div class="p-4 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-surface/50">
-          <h3 class="font-semibold text-slate-900 dark:text-white mb-2 flex items-center gap-2">
-            <i class="ti ti-tag text-theme-primary"></i>
-            Labels
-          </h3>
-          <p class="text-sm text-slate-600 dark:text-slate-400">
-            Always associate labels with inputs using the <code>for</code> attribute. The Label component handles this automatically.
-          </p>
-        </div>
-        <div class="p-4 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-surface/50">
-          <h3 class="font-semibold text-slate-900 dark:text-white mb-2 flex items-center gap-2">
-            <i class="ti ti-alert-circle text-theme-primary"></i>
-            Error Announcements
-          </h3>
-          <p class="text-sm text-slate-600 dark:text-slate-400">
-            Error messages are automatically associated with inputs via <code>aria-describedby</code>. Use the <code>errorMessage</code> prop for clear feedback.
-          </p>
-        </div>
-        <div class="p-4 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-surface/50">
-          <h3 class="font-semibold text-slate-900 dark:text-white mb-2 flex items-center gap-2">
-            <i class="ti ti-asterisk text-theme-primary"></i>
-            Required Fields
-          </h3>
-          <p class="text-sm text-slate-600 dark:text-slate-400">
-            Use the <code>required</code> prop on both Label and Input to clearly indicate required fields with visual and semantic indicators.
-          </p>
-        </div>
+    <section id="accessibility" class="space-y-4">
+      <h2 class="section__title">Accessibility</h2>
+      <div class="a11y-card">
+        <h3 class="a11y-card__title">
+          <i class="ti ti-tag a11y-card__title-icon"></i>
+          Labels
+        </h3>
+        <p class="a11y-card__text">
+          Always associate labels with inputs using the <code>for</code> attribute. The Label component handles this automatically.
+        </p>
+      </div>
+      <div class="a11y-card">
+        <h3 class="a11y-card__title">
+          <i class="ti ti-alert-circle a11y-card__title-icon"></i>
+          Error Announcements
+        </h3>
+        <p class="a11y-card__text">
+          Error messages are automatically associated with inputs via <code>aria-describedby</code>. Use the <code>errorMessage</code> prop for clear feedback.
+        </p>
       </div>
     </section>
   </article>

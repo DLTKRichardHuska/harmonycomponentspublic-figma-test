@@ -2,88 +2,88 @@
 /**
  * Accordion Component
  * 
- * Expandable/collapsible content section.
- * 
- * @example
- * <Accordion title="Section Title">
- *   Content goes here
- * </Accordion>
- * <Accordion title="Open by default" open>
- *   This is expanded initially
- * </Accordion>
+ * Collapsible content sections.
  */
 
-export interface Props {
-  /** Accordion header/title */
+export interface AccordionItem {
   title: string;
-  /** Initially open state */
-  open?: boolean;
-  /** Accordion id */
-  id?: string;
-  /** Additional CSS classes */
+  content: string;
+  defaultOpen?: boolean;
+}
+
+export interface Props {
+  items: AccordionItem[];
+  allowMultiple?: boolean;
   class?: string;
-  /** Any additional HTML attributes */
-  [key: string]: any;
 }
 
 const {
-  title,
-  open = false,
-  id,
+  items,
+  allowMultiple = false,
   class: className = '',
-  ...rest
 } = Astro.props;
 
-// Generate unique ID for accessibility
-const accordionId = id || `accordion-${Math.random().toString(36).substr(2, 9)}`;
-const contentId = `${accordionId}-content`;
-
-// Container classes
-const containerClasses = [
-  'border border-slate-200 dark:border-slate-800 rounded-lg overflow-hidden',
-  className,
-].filter(Boolean).join(' ');
+const accordionId = `accordion-${Math.random().toString(36).substr(2, 9)}`;
+const classes = ['accordion', className].filter(Boolean).join(' ');
 ---
 
-<div class={containerClasses} {...rest}>
-  <button
-    type="button"
-    id={accordionId}
-    class="w-full flex items-center justify-between p-4 text-left bg-slate-50 dark:bg-surface hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
-    aria-expanded={open ? 'true' : 'false'}
-    aria-controls={contentId}
-    data-accordion-trigger
-  >
-    <span class="font-medium text-slate-900 dark:text-white">{title}</span>
-    <i class={`ti ti-chevron-down text-slate-400 transition-transform duration-200 ${open ? 'rotate-180' : ''}`} data-accordion-icon></i>
-  </button>
-  
-  <div
-    id={contentId}
-    role="region"
-    aria-labelledby={accordionId}
-    class={`overflow-hidden transition-all duration-200 ${open ? '' : 'hidden'}`}
-    data-accordion-content
-  >
-    <div class="p-4 text-slate-600 dark:text-slate-400">
-      <slot />
+<div class={classes} data-accordion data-allow-multiple={allowMultiple}>
+  {items.map((item, index) => (
+    <div class={`accordion__item ${item.defaultOpen ? 'is-open' : ''}`} data-accordion-item>
+      <button 
+        type="button" 
+        class="accordion__trigger"
+        aria-expanded={item.defaultOpen ? 'true' : 'false'}
+        aria-controls={`${accordionId}-panel-${index}`}
+      >
+        {item.title}
+        <i class="ti ti-chevron-down accordion__icon"></i>
+      </button>
+      <div 
+        class="accordion__content" 
+        id={`${accordionId}-panel-${index}`}
+        role="region"
+      >
+        {item.content}
+      </div>
     </div>
-  </div>
+  ))}
 </div>
 
 <script>
-  // Accordion toggle functionality
-  document.querySelectorAll('[data-accordion-trigger]').forEach(trigger => {
-    trigger.addEventListener('click', () => {
-      const content = trigger.nextElementSibling as HTMLElement;
-      const icon = trigger.querySelector('[data-accordion-icon]');
-      const isExpanded = trigger.getAttribute('aria-expanded') === 'true';
+  function initAccordions() {
+    document.querySelectorAll('[data-accordion]').forEach((accordion) => {
+      if (accordion.hasAttribute('data-init')) return;
+      accordion.setAttribute('data-init', 'true');
       
-      // Toggle state
-      trigger.setAttribute('aria-expanded', isExpanded ? 'false' : 'true');
-      content?.classList.toggle('hidden');
-      icon?.classList.toggle('rotate-180');
+      const allowMultiple = accordion.hasAttribute('data-allow-multiple');
+      const items = accordion.querySelectorAll('[data-accordion-item]');
+      
+      items.forEach((item) => {
+        const trigger = item.querySelector('.accordion__trigger');
+        
+        trigger?.addEventListener('click', () => {
+          const isOpen = item.classList.contains('is-open');
+          
+          if (!allowMultiple) {
+            items.forEach((i) => {
+              i.classList.remove('is-open');
+              i.querySelector('.accordion__trigger')?.setAttribute('aria-expanded', 'false');
+            });
+          }
+          
+          if (!isOpen) {
+            item.classList.add('is-open');
+            trigger.setAttribute('aria-expanded', 'true');
+          } else {
+            item.classList.remove('is-open');
+            trigger.setAttribute('aria-expanded', 'false');
+          }
+        });
+      });
     });
-  });
+  }
+  
+  initAccordions();
+  document.addEventListener('astro:page-load', initAccordions);
 </script>
-
