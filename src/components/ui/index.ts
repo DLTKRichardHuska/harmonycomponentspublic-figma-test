@@ -24,6 +24,9 @@ export const components = {
   Toggle: 'Toggle.astro',
   Dropdown: 'Dropdown.astro',
   Label: 'Label.astro',
+  DateInput: 'DateInput.astro',
+  StepperInput: 'StepperInput.astro',
+  RangeInput: 'RangeInput.astro',
   
   // Display
   Card: 'Card.astro',
@@ -56,6 +59,9 @@ export const componentCategories = {
     'Toggle',
     'Dropdown',
     'Label',
+    'DateInput',
+    'StepperInput',
+    'RangeInput',
   ],
   'Display': [
     'Card',

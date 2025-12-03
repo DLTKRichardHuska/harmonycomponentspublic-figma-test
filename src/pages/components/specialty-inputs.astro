@@ -4,6 +4,9 @@ import PropsTable from '../../components/PropsTable.astro';
 import ExampleSection from '../../components/ExampleSection.astro';
 import Input from '../../components/ui/Input.astro';
 import Label from '../../components/ui/Label.astro';
+import DateInput from '../../components/ui/DateInput.astro';
+import StepperInput from '../../components/ui/StepperInput.astro';
+import RangeInput from '../../components/ui/RangeInput.astro';
 ---
 
 <DocsLayout title="Specialty Inputs" description="Number, URL, and currency inputs.">
@@ -46,14 +49,14 @@ import Label from '../../components/ui/Label.astro';
             <Label for="currency-usd">Price (USD)</Label>
             <div class="relative">
               <span class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-500">$</span>
-              <input type="number" id="currency-usd" placeholder="0.00" step="0.01" class="w-full pl-7 pr-4 py-2 border border-slate-300 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-900 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-theme-primary" />
+              <input type="number" id="currency-usd" placeholder="0.00" step="0.01" class="w-full h-10 pl-7 pr-4 border border-slate-300 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-900 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-theme-primary" />
             </div>
           </div>
           <div class="space-y-2">
             <Label for="currency-euro">Price (EUR)</Label>
             <div class="relative">
               <span class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-500">€</span>
-              <input type="number" id="currency-euro" placeholder="0.00" step="0.01" class="w-full pl-7 pr-4 py-2 border border-slate-300 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-900 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-theme-primary" />
+              <input type="number" id="currency-euro" placeholder="0.00" step="0.01" class="w-full h-10 pl-7 pr-4 border border-slate-300 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-900 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-theme-primary" />
             </div>
           </div>
         </div>
@@ -78,21 +81,21 @@ import Label from '../../components/ui/Label.astro';
           <div class="space-y-2">
             <Label for="weight-input">Weight</Label>
             <div class="relative">
-              <input type="number" id="weight-input" placeholder="0" class="w-full pl-4 pr-12 py-2 border border-slate-300 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-900 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-theme-primary" />
+              <input type="number" id="weight-input" placeholder="0" class="w-full h-10 pl-4 pr-12 border border-slate-300 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-900 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-theme-primary" />
               <span class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-500 text-sm">kg</span>
             </div>
           </div>
           <div class="space-y-2">
             <Label for="height-input">Height</Label>
             <div class="relative">
-              <input type="number" id="height-input" placeholder="0" class="w-full pl-4 pr-12 py-2 border border-slate-300 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-900 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-theme-primary" />
+              <input type="number" id="height-input" placeholder="0" class="w-full h-10 pl-4 pr-12 border border-slate-300 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-900 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-theme-primary" />
               <span class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-500 text-sm">cm</span>
             </div>
           </div>
           <div class="space-y-2">
             <Label for="percentage-input">Percentage</Label>
             <div class="relative">
-              <input type="number" id="percentage-input" placeholder="0" min="0" max="100" class="w-full pl-4 pr-10 py-2 border border-slate-300 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-900 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-theme-primary" />
+              <input type="number" id="percentage-input" placeholder="0" min="0" max="100" class="w-full h-10 pl-4 pr-10 border border-slate-300 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-900 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-theme-primary" />
               <span class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-500 text-sm">%</span>
             </div>
           </div>
@@ -100,68 +103,31 @@ import Label from '../../components/ui/Label.astro';
       </ExampleSection>
 
       <ExampleSection title="Stepper Input" description="Number input with increment/decrement buttons.">
-        <div class="space-y-2 max-w-xs">
-          <Label>Quantity</Label>
-          <div class="stepper-input inline-flex items-stretch">
-            <button type="button" class="stepper-btn px-3 py-2 border border-slate-300 dark:border-slate-600 border-r-0 rounded-l-lg bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-400 transition-colors">
-              <i class="ti ti-minus"></i>
-            </button>
-            <input type="number" value="1" min="0" class="stepper-value w-16 text-center border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-theme-primary focus:z-10 [-moz-appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none" />
-            <button type="button" class="stepper-btn px-3 py-2 border border-slate-300 dark:border-slate-600 border-l-0 rounded-r-lg bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-400 transition-colors">
-              <i class="ti ti-plus"></i>
-            </button>
+        <div class="space-y-4 max-w-xs">
+          <div class="space-y-2">
+            <Label>Quantity</Label>
+            <StepperInput value={1} min={0} max={99} />
+          </div>
+          <div class="space-y-2">
+            <Label>Step by 5</Label>
+            <StepperInput value={10} step={5} min={0} max={100} />
+          </div>
+          <div class="space-y-2">
+            <Label>Disabled</Label>
+            <StepperInput value={5} disabled />
           </div>
         </div>
-        <script>
-          function initSteppers() {
-            document.querySelectorAll('.stepper-input').forEach((stepper) => {
-              const input = stepper.querySelector('.stepper-value') as HTMLInputElement;
-              const buttons = stepper.querySelectorAll('.stepper-btn');
-              
-              if (!input || buttons.length !== 2) return;
-              
-              const [decrementBtn, incrementBtn] = buttons;
-              const min = parseInt(input.min) || 0;
-              const max = parseInt(input.max) || Infinity;
-              
-              decrementBtn.addEventListener('click', () => {
-                const current = parseInt(input.value) || 0;
-                if (current > min) {
-                  input.value = String(current - 1);
-                  input.dispatchEvent(new Event('change', { bubbles: true }));
-                }
-              });
-              
-              incrementBtn.addEventListener('click', () => {
-                const current = parseInt(input.value) || 0;
-                if (current < max) {
-                  input.value = String(current + 1);
-                  input.dispatchEvent(new Event('change', { bubbles: true }));
-                }
-              });
-            });
-          }
-          
-          initSteppers();
-          document.addEventListener('astro:page-load', initSteppers);
-        </script>
       </ExampleSection>
 
       <ExampleSection title="Range Input" description="Slider for selecting a value within a range.">
-        <div class="space-y-4 max-w-sm">
+        <div class="space-y-6 max-w-sm">
           <div class="space-y-2">
-            <div class="flex justify-between">
-              <Label for="range-input">Volume</Label>
-              <span class="text-sm text-slate-500">75%</span>
-            </div>
-            <input type="range" id="range-input" value="75" class="w-full h-2 bg-slate-200 dark:bg-slate-700 rounded-lg appearance-none cursor-pointer accent-theme-primary" />
+            <Label>Volume</Label>
+            <RangeInput value={75} showPercent />
           </div>
           <div class="space-y-2">
-            <div class="flex justify-between">
-              <Label for="range-input-2">Price Range</Label>
-              <span class="text-sm text-slate-500">$50 - $150</span>
-            </div>
-            <input type="range" id="range-input-2" min="0" max="200" value="100" class="w-full h-2 bg-slate-200 dark:bg-slate-700 rounded-lg appearance-none cursor-pointer accent-theme-primary" />
+            <Label>Price Range</Label>
+            <RangeInput value={100} min={0} max={200} prefix="$" />
           </div>
         </div>
       </ExampleSection>
@@ -180,11 +146,11 @@ import Label from '../../components/ui/Label.astro';
         <div class="grid sm:grid-cols-2 gap-4 max-w-md">
           <div class="space-y-2">
             <Label for="date-input">Date</Label>
-            <input type="date" id="date-input" class="w-full px-4 py-2 border border-slate-300 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-900 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-theme-primary" />
+            <DateInput id="date-input" />
           </div>
           <div class="space-y-2">
             <Label for="time-input">Time</Label>
-            <input type="time" id="time-input" class="w-full px-4 py-2 border border-slate-300 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-900 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-theme-primary" />
+            <DateInput type="time" id="time-input" />
           </div>
         </div>
       </ExampleSection>

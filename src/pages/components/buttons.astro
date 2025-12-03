@@ -3,7 +3,6 @@ import DocsLayout from '../../layouts/DocsLayout.astro';
 import PropsTable from '../../components/PropsTable.astro';
 import ExampleSection from '../../components/ExampleSection.astro';
 import Button from '../../components/ui/Button.astro';
-import Spinner from '../../components/ui/Spinner.astro';
 
 const props = [
   { name: 'variant', type: "'primary' | 'secondary' | 'outline' | 'ghost' | 'destructive'", default: "'primary'", description: 'Visual style of the button' },
@@ -85,18 +84,9 @@ const props = [
 
       <ExampleSection title="Loading State" description="Buttons with loading spinner.">
         <div class="flex flex-wrap gap-4">
-          <Button disabled>
-            <Spinner size="sm" class="text-white" />
-            <span>Loading...</span>
-          </Button>
-          <Button variant="secondary" disabled>
-            <Spinner size="sm" class="text-slate-600" />
-            <span>Processing</span>
-          </Button>
-          <Button variant="outline" disabled>
-            <Spinner size="sm" />
-            <span>Saving...</span>
-          </Button>
+          <Button loading loadingText="Loading...">Submit</Button>
+          <Button variant="secondary" loading loadingText="Processing">Process</Button>
+          <Button variant="outline" loading loadingText="Saving...">Save</Button>
         </div>
       </ExampleSection>
 

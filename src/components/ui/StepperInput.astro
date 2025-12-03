@@ -1,0 +1,180 @@
+---
+export interface Props {
+  value?: number;
+  min?: number;
+  max?: number;
+  step?: number;
+  name?: string;
+  id?: string;
+  disabled?: boolean;
+  class?: string;
+  [key: string]: any;
+}
+
+const {
+  value = 0,
+  min,
+  max,
+  step = 1,
+  name,
+  id,
+  disabled = false,
+  class: className = '',
+  ...rest
+} = Astro.props;
+
+const stepperId = id || `stepper-${Math.random().toString(36).substr(2, 9)}`;
+---
+
+<div class={`stepper ${className}`} data-stepper-id={stepperId} style={disabled ? 'opacity: 0.5;' : ''}>
+  <button type="button" class="stepper-minus" data-action="dec" disabled={disabled}>−</button>
+  <div class="stepper-value-wrap">
+    <input
+      type="text"
+      inputmode="numeric"
+      id={stepperId}
+      name={name}
+      value={value}
+      disabled={disabled}
+      class="stepper-value"
+      data-min={min}
+      data-max={max}
+      data-step={step}
+      {...rest}
+    />
+  </div>
+  <button type="button" class="stepper-plus" data-action="inc" disabled={disabled}>+</button>
+</div>
+
+<style>
+  .stepper {
+    display: inline-grid;
+    grid-template-columns: 40px 60px 40px;
+    height: 40px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  :global(html.dark) .stepper {
+    border-color: #475569;
+  }
+  
+  .stepper-minus,
+  .stepper-plus,
+  .stepper-value-wrap {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .stepper-minus,
+  .stepper-plus {
+    background: #f8fafc;
+    color: #64748b;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  :global(html.dark) .stepper-minus,
+  :global(html.dark) .stepper-plus {
+    background: #1e293b;
+    color: #94a3b8;
+  }
+  
+  .stepper-minus:hover:not(:disabled),
+  .stepper-plus:hover:not(:disabled) {
+    background: #f1f5f9;
+  }
+  
+  :global(html.dark) .stepper-minus:hover:not(:disabled),
+  :global(html.dark) .stepper-plus:hover:not(:disabled) {
+    background: #334155;
+  }
+  
+  .stepper-minus {
+    border-right: 1px solid #cbd5e1;
+  }
+  
+  .stepper-plus {
+    border-left: 1px solid #cbd5e1;
+  }
+  
+  :global(html.dark) .stepper-minus,
+  :global(html.dark) .stepper-plus {
+    border-color: #475569;
+  }
+  
+  .stepper-value-wrap {
+    background: #fff;
+  }
+  
+  :global(html.dark) .stepper-value-wrap {
+    background: #0f172a;
+  }
+  
+  .stepper-value {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: transparent;
+    text-align: center;
+    font-size: 14px;
+    color: #0f172a;
+    padding: 0;
+    margin: 0;
+    -moz-appearance: textfield;
+  }
+  
+  :global(html.dark) .stepper-value {
+    color: #f8fafc;
+  }
+  
+  .stepper-value:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--theme-primary, #4C92D9) inset;
+  }
+  
+  .stepper-minus:disabled,
+  .stepper-plus:disabled {
+    cursor: not-allowed;
+  }
+</style>
+
+<script>
+  function initSteppers() {
+    document.querySelectorAll('.stepper').forEach((el) => {
+      if (el.hasAttribute('data-ready')) return;
+      el.setAttribute('data-ready', '1');
+      
+      const input = el.querySelector('.stepper-value') as HTMLInputElement;
+      if (!input) return;
+      
+      const step = parseFloat(input.dataset.step || '1');
+      const min = input.dataset.min ? parseFloat(input.dataset.min) : -Infinity;
+      const max = input.dataset.max ? parseFloat(input.dataset.max) : Infinity;
+      
+      const set = (v: number) => {
+        input.value = String(Math.max(min, Math.min(max, v)));
+      };
+      
+      el.querySelector('[data-action="dec"]')?.addEventListener('click', () => {
+        if (!input.disabled) set((parseFloat(input.value) || 0) - step);
+      });
+      
+      el.querySelector('[data-action="inc"]')?.addEventListener('click', () => {
+        if (!input.disabled) set((parseFloat(input.value) || 0) + step);
+      });
+      
+      input.addEventListener('blur', () => set(parseFloat(input.value) || 0));
+    });
+  }
+  
+  initSteppers();
+  document.addEventListener('astro:page-load', initSteppers);
+</script>

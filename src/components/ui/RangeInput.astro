@@ -1,0 +1,162 @@
+---
+/**
+ * RangeInput Component
+ * Slider for selecting a value within a range.
+ */
+
+export interface Props {
+  value?: number;
+  min?: number;
+  max?: number;
+  step?: number;
+  name?: string;
+  id?: string;
+  disabled?: boolean;
+  showPercent?: boolean;
+  prefix?: string;
+  suffix?: string;
+  class?: string;
+  [key: string]: any;
+}
+
+const {
+  value = 50,
+  min = 0,
+  max = 100,
+  step = 1,
+  name,
+  id,
+  disabled = false,
+  showPercent = false,
+  prefix = '',
+  suffix = '',
+  class: className = '',
+  ...rest
+} = Astro.props;
+
+const rangeId = id || `range-${Math.random().toString(36).substr(2, 9)}`;
+---
+
+<div class={`range-wrap ${className}`}>
+  <input
+    type="range"
+    id={rangeId}
+    name={name}
+    value={value}
+    min={min}
+    max={max}
+    step={step}
+    disabled={disabled}
+    class="range-track"
+    data-show-percent={showPercent ? 'true' : undefined}
+    data-prefix={prefix || undefined}
+    data-suffix={suffix || undefined}
+    {...rest}
+  />
+  <span class="range-val" data-for={rangeId}>
+    {prefix}{showPercent ? `${Math.round((value - min) / (max - min) * 100)}%` : value}{suffix}
+  </span>
+</div>
+
+<style is:global>
+  .range-wrap {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+  }
+  
+  .range-track {
+    flex: 1;
+    height: 6px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: #e2e8f0;
+    border-radius: 3px;
+    outline: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+  }
+  
+  html.dark .range-track {
+    background: #475569;
+  }
+  
+  .range-track::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--theme-primary, #4C92D9);
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    border: none;
+  }
+  
+  .range-track::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--theme-primary, #4C92D9);
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    border: none;
+  }
+  
+  .range-track::-moz-range-track {
+    background: transparent;
+    border: none;
+  }
+  
+  .range-track:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  .range-val {
+    min-width: 48px;
+    text-align: right;
+    font-size: 14px;
+    color: #64748b;
+    flex-shrink: 0;
+  }
+  
+  html.dark .range-val {
+    color: #94a3b8;
+  }
+</style>
+
+<script>
+  function initRanges() {
+    document.querySelectorAll('.range-track').forEach((el) => {
+      const input = el as HTMLInputElement;
+      const valueEl = document.querySelector(`.range-val[data-for="${input.id}"]`);
+      if (!valueEl || input.hasAttribute('data-init')) return;
+      input.setAttribute('data-init', '1');
+      
+      const update = () => {
+        const val = parseFloat(input.value);
+        const min = parseFloat(input.min) || 0;
+        const max = parseFloat(input.max) || 100;
+        const showPercent = input.dataset.showPercent === 'true';
+        const prefix = input.dataset.prefix || '';
+        const suffix = input.dataset.suffix || '';
+        
+        if (showPercent) {
+          valueEl.textContent = `${prefix}${Math.round((val - min) / (max - min) * 100)}%${suffix}`;
+        } else {
+          valueEl.textContent = `${prefix}${val}${suffix}`;
+        }
+      };
+      
+      input.addEventListener('input', update);
+    });
+  }
+  
+  initRanges();
+  document.addEventListener('astro:page-load', initRanges);
+</script>

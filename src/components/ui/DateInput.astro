@@ -2,39 +2,23 @@
 /**
  * DateInput Component
  * 
- * Date/time input with consistent styling and icon handling.
- * Hides the native calendar picker indicator and uses Tabler icons.
- * 
- * @example
- * <DateInput label="Start Date" />
- * <DateInput type="datetime-local" />
- * <DateInput type="time" />
+ * Date/time input with consistent styling.
+ * Completely hides ALL native browser icons.
+ * Shows ONLY our custom Tabler icon on the right.
  */
 
 export interface Props {
-  /** Input type */
   type?: 'date' | 'datetime-local' | 'time' | 'month' | 'week';
-  /** Input value in ISO format */
   value?: string;
-  /** Minimum allowed value */
   min?: string;
-  /** Maximum allowed value */
   max?: string;
-  /** Input name attribute */
   name?: string;
-  /** Input id attribute */
   id?: string;
-  /** Disables the input */
   disabled?: boolean;
-  /** Makes the input required */
   required?: boolean;
-  /** Shows error state */
   error?: boolean;
-  /** Error message to display */
   errorMessage?: string;
-  /** Additional CSS classes */
   class?: string;
-  /** Any additional HTML attributes */
   [key: string]: any;
 }
 
@@ -53,7 +37,6 @@ const {
   ...rest
 } = Astro.props;
 
-// Icon mapping based on input type
 const iconMap: Record<string, string> = {
   'date': 'ti-calendar',
   'datetime-local': 'ti-calendar-time',
@@ -63,28 +46,8 @@ const iconMap: Record<string, string> = {
 };
 
 const icon = iconMap[type] || 'ti-calendar';
-
-// Generate ID if not provided
 const inputId = id || `date-${Math.random().toString(36).substr(2, 9)}`;
 
-// Base classes
-const baseClasses = 'date-input-custom w-full h-10 px-4 pr-10 rounded-lg transition-colors text-sm';
-
-// State classes
-const stateClasses = error
-  ? 'border-2 border-error focus:ring-2 focus:ring-error/30 focus:outline-none'
-  : disabled
-    ? 'border border-slate-300 dark:border-slate-600 bg-slate-100 dark:bg-slate-800 text-slate-400 dark:text-slate-500 cursor-not-allowed'
-    : 'border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-theme-primary focus:border-theme-primary';
-
-// Combine classes
-const inputClasses = [
-  baseClasses,
-  stateClasses,
-  className,
-].filter(Boolean).join(' ');
-
-// Icon color based on state
 const iconColorClass = error
   ? 'text-error'
   : disabled
@@ -92,7 +55,7 @@ const iconColorClass = error
     : 'text-slate-400 dark:text-slate-500';
 ---
 
-<div class="relative">
+<div class={`date-input-wrapper relative ${className}`}>
   <input
     type={type}
     id={inputId}
@@ -102,12 +65,21 @@ const iconColorClass = error
     max={max}
     disabled={disabled}
     required={required}
-    class={inputClasses}
+    class:list={[
+      'date-input-field w-full h-10 rounded-lg text-sm',
+      'pl-4 pr-10',
+      error
+        ? 'border-2 border-error focus:ring-2 focus:ring-error/30 focus:outline-none bg-white dark:bg-slate-800 text-slate-900 dark:text-white'
+        : disabled
+          ? 'border border-slate-300 dark:border-slate-600 bg-slate-100 dark:bg-slate-800 text-slate-400 dark:text-slate-500 cursor-not-allowed'
+          : 'border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-theme-primary focus:border-theme-primary',
+    ]}
     aria-invalid={error ? 'true' : undefined}
     aria-describedby={error && errorMessage ? `${inputId}-error` : undefined}
     {...rest}
   />
-  <div class={`pointer-events-none absolute top-1/2 -translate-y-1/2 right-3 ${iconColorClass}`}>
+  <!-- Our single icon on the right - vertically centered -->
+  <div class={`absolute inset-y-0 right-0 w-10 flex items-center justify-center pointer-events-none ${iconColorClass}`}>
     <i class={`ti ${icon}`}></i>
   </div>
   
@@ -117,19 +89,65 @@ const iconColorClass = error
 </div>
 
 <style is:global>
-  /* Hide native calendar picker indicator for custom date inputs */
-  .date-input-custom::-webkit-calendar-picker-indicator {
-    opacity: 0;
-    position: absolute;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    cursor: pointer;
+  /* AGGRESSIVELY hide ALL native date/time input styling */
+  .date-input-field {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
   }
   
-  .date-input-custom::-webkit-inner-spin-button,
-  .date-input-custom::-webkit-clear-button {
+  /* Hide the calendar picker indicator completely */
+  .date-input-field::-webkit-calendar-picker-indicator {
+    background: transparent;
+    color: transparent;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: auto;
+    height: auto;
+  }
+  
+  /* Hide inner spin button */
+  .date-input-field::-webkit-inner-spin-button {
+    display: none;
+    -webkit-appearance: none;
+  }
+  
+  /* Hide clear button */
+  .date-input-field::-webkit-clear-button {
+    display: none;
+    -webkit-appearance: none;
+  }
+  
+  /* Remove any reveal button (Edge) */
+  .date-input-field::-ms-reveal,
+  .date-input-field::-ms-clear {
     display: none;
   }
+  
+  /* Style the datetime edit wrapper to not show icons */
+  .date-input-field::-webkit-datetime-edit {
+    padding: 0;
+    display: flex;
+    align-items: center;
+  }
+  
+  .date-input-field::-webkit-datetime-edit-fields-wrapper {
+    padding: 0;
+  }
+  
+  /* Ensure date parts don't have extra styling */
+  .date-input-field::-webkit-datetime-edit-text,
+  .date-input-field::-webkit-datetime-edit-month-field,
+  .date-input-field::-webkit-datetime-edit-day-field,
+  .date-input-field::-webkit-datetime-edit-year-field,
+  .date-input-field::-webkit-datetime-edit-hour-field,
+  .date-input-field::-webkit-datetime-edit-minute-field,
+  .date-input-field::-webkit-datetime-edit-second-field,
+  .date-input-field::-webkit-datetime-edit-ampm-field {
+    padding: 0 2px;
+  }
 </style>
-

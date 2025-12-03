@@ -1,6 +1,5 @@
 ---
 import DocsLayout from '../../layouts/DocsLayout.astro';
-import CodeBlock from '../../components/CodeBlock.astro';
 import ExampleSection from '../../components/ExampleSection.astro';
 ---
 
@@ -43,24 +42,6 @@ import ExampleSection from '../../components/ExampleSection.astro';
         </nav>
       </div>
     </ExampleSection>
-
-    <CodeBlock 
-      language="html"
-      filename="tabs.html"
-      code={`<!-- Underline Tabs -->
-<div class="border-b border-slate-200 dark:border-slate-800">
-  <nav class="flex gap-6">
-    <button class="pb-3 text-sm font-medium text-theme-primary border-b-2 border-theme-primary">Active</button>
-    <button class="pb-3 text-sm font-medium text-slate-600 dark:text-slate-400 border-b-2 border-transparent">Inactive</button>
-  </nav>
-</div>
-
-<!-- Pill Tabs -->
-<div class="inline-flex rounded-lg bg-slate-100 dark:bg-slate-800 p-1">
-  <button class="px-4 py-1.5 text-sm font-medium rounded-md bg-white dark:bg-slate-700 shadow-sm">Active</button>
-  <button class="px-4 py-1.5 text-sm font-medium text-slate-600 dark:text-slate-400">Inactive</button>
-</div>`}
-    />
   </article>
 </DocsLayout>
 

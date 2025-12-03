@@ -7,7 +7,7 @@
  * @example
  * <Button variant="primary" size="md">Click me</Button>
  * <Button variant="outline" icon="ti-plus">Add Item</Button>
- * <Button variant="destructive" disabled>Delete</Button>
+ * <Button loading loadingText="Saving...">Save</Button>
  */
 
 export interface Props {
@@ -17,6 +17,10 @@ export interface Props {
   size?: 'sm' | 'md' | 'lg';
   /** Disables the button */
   disabled?: boolean;
+  /** Shows loading state with spinner */
+  loading?: boolean;
+  /** Text to show when loading */
+  loadingText?: string;
   /** Tabler icon class (e.g., ti-plus) */
   icon?: string;
   /** Position of icon relative to text */
@@ -35,6 +39,8 @@ const {
   variant = 'primary',
   size = 'md',
   disabled = false,
+  loading = false,
+  loadingText,
   icon,
   iconPosition = 'left',
   type = 'button',
@@ -48,7 +54,7 @@ const baseClasses = 'rounded-lg font-medium transition-colors inline-flex items-
 
 // Check if there's slot content (text)
 const hasSlotContent = Astro.slots.has('default');
-const isIconOnly = icon && !hasSlotContent;
+const isIconOnly = icon && !hasSlotContent && !loading;
 
 // Size-specific classes with explicit heights for consistency
 const sizeClasses: Record<string, string> = {
@@ -66,8 +72,11 @@ const variantClasses: Record<string, string> = {
   destructive: 'bg-error hover:bg-red-600 text-white',
 };
 
-// Disabled state classes
+// Disabled state - faded and no pointer
 const disabledClasses = disabled ? 'opacity-50 cursor-not-allowed' : '';
+
+// Loading state - NOT faded, just no pointer events
+const loadingClasses = loading ? 'pointer-events-none' : '';
 
 // Full width class
 const widthClass = fullWidth ? 'w-full' : '';
@@ -78,28 +87,41 @@ const buttonClasses = [
   sizeClasses[size],
   variantClasses[variant],
   disabledClasses,
+  loadingClasses,
   widthClass,
   className,
 ].filter(Boolean).join(' ');
 
+// Spinner color based on variant
+const spinnerColor = (variant === 'primary' || variant === 'destructive') 
+  ? 'text-white' 
+  : 'text-slate-600 dark:text-slate-400';
 ---
 
 <button
   type={type}
   class={buttonClasses}
-  disabled={disabled}
+  disabled={disabled || loading}
+  aria-busy={loading ? 'true' : undefined}
   {...rest}
 >
-  {icon && iconPosition === 'left' && (
-    <i class={`ti ${icon}`}></i>
-  )}
-  
-  {hasSlotContent && (
-    <span><slot /></span>
-  )}
-  
-  {icon && iconPosition === 'right' && (
-    <i class={`ti ${icon}`}></i>
+  {loading ? (
+    <>
+      <svg class={`animate-spin h-4 w-4 ${spinnerColor}`} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+      </svg>
+      {loadingText && <span>{loadingText}</span>}
+    </>
+  ) : (
+    <>
+      {icon && iconPosition === 'left' && (
+        <i class={`ti ${icon}`}></i>
+      )}
+      <slot />
+      {icon && iconPosition === 'right' && (
+        <i class={`ti ${icon}`}></i>
+      )}
+    </>
   )}
 </button>
-
