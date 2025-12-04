@@ -1,0 +1,147 @@
+---
+/**
+ * ShellFooter Component
+ *
+ * A bottom tab bar for workspace navigation, similar to browser tabs.
+ * Used by VP, PPM, and Maconomy themes. CP uses FloatingNav instead.
+ *
+ * @prop {Array} tabs - Array of tab objects with { id, label, active, href }
+ * @prop {boolean} showMore - Whether to show "More" dropdown (default: false)
+ * @prop {number} moreCount - Number for "More (N)" label (default: 0)
+ * @prop {boolean} showAddTab - Whether to show "Add Tab" button (default: true)
+ * @prop {string} variant - 'default' | 'compact' (default: 'default')
+ */
+import Icon from './Icon.astro';
+
+interface Tab {
+  id: string;
+  label: string;
+  active?: boolean;
+  href?: string;
+}
+
+interface Props {
+  tabs: Tab[];
+  showMore?: boolean;
+  moreCount?: number;
+  showAddTab?: boolean;
+  variant?: 'default' | 'compact';
+}
+
+const {
+  tabs = [],
+  showMore = false,
+  moreCount = 0,
+  showAddTab = true,
+  variant = 'default'
+} = Astro.props;
+---
+
+<div class="shell-footer" data-variant={variant}>
+  <nav role="tablist" aria-label="Workspace tabs">
+    <div class="tabs shell-footer__tabs">
+      {tabs.map((tab) => (
+        tab.href ? (
+          <a
+            href={tab.href}
+            role="tab"
+            aria-selected={tab.active ? 'true' : 'false'}
+            class:list={[
+              "tab",
+              tab.active && "is-active"
+            ]}
+            tabindex={tab.active ? 0 : -1}
+          >
+            {tab.label}
+          </a>
+        ) : (
+          <button
+            type="button"
+            role="tab"
+            aria-selected={tab.active ? 'true' : 'false'}
+            class:list={[
+              "tab",
+              tab.active && "is-active"
+            ]}
+            tabindex={tab.active ? 0 : -1}
+          >
+            {tab.label}
+          </button>
+        )
+      ))}
+
+      {showMore && (
+        <button
+          type="button"
+          class="tab shell-footer__more"
+          aria-label={`Show ${moreCount} more tabs`}
+        >
+          <span>More ({moreCount})</span>
+          <Icon name="ellipsis-horizontal" size="sm" />
+        </button>
+      )}
+
+      {showAddTab && (
+        <button
+          type="button"
+          class="tab shell-footer__add"
+          aria-label="Add new tab"
+        >
+          <Icon name="plus" size="sm" />
+          <span>Add Tab</span>
+        </button>
+      )}
+    </div>
+  </nav>
+</div>
+
+<style>
+  .shell-footer {
+    background-color: #212631;
+    border-top: 1px solid var(--border-color);
+    height: 48px;
+    width: 100%;
+    padding: 0 var(--space-4);
+  }
+
+  .shell-footer nav {
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  .shell-footer__tabs {
+    gap: var(--space-1);
+  }
+
+  .shell-footer .tab {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    border-bottom: 3px solid transparent;
+  }
+
+  .shell-footer .tab.is-active {
+    border-bottom-color: var(--primary);
+  }
+
+  .shell-footer__more,
+  .shell-footer__add {
+    margin-left: var(--space-2);
+  }
+
+  .shell-footer__add {
+    margin-left: auto;
+  }
+
+  /* Compact variant */
+  .shell-footer[data-variant="compact"] {
+    height: 40px;
+  }
+
+  .shell-footer[data-variant="compact"] .tab {
+    padding: 0 var(--space-3);
+    font-size: 0.8125rem;
+  }
+</style>

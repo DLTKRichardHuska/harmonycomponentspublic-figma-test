@@ -19,38 +19,40 @@ import { themeConfig } from '../../data/theme-config';
       <h2 class="section__title">Header with Company Dropdown</h2>
 
       <ExampleSection title="CP Header" description="Header with company dropdown, gradient border, and user avatar.">
-        <header class="header demo-header" style="position: relative;">
-          <!-- Left: Brand -->
-          <div class="header__brand">
-            <a href="#" class="header__brand-link">
-              <img src="/logos/CPVPLogo.svg" alt="Logo" class="header__logo" />
-              <span class="header__title">Costpoint</span>
-            </a>
-          </div>
-
-          <!-- Right: Company dropdown + Avatar -->
-          <div class="header__actions">
-            <!-- Company Dropdown -->
-            <div class="company-picker" id="demo-company-picker">
-              <button id="demo-company-picker-btn" class="company-picker__btn">
-                <span id="demo-company-indicator" class="company-picker__indicator" style="background-color: #FF507B;"></span>
-                <span id="demo-company-name" class="company-picker__name">Acme Corporation</span>
-                <Icon name="chevron-down" size="sm" class="company-picker__chevron" />
-              </button>
-              <div id="demo-company-picker-menu" class="company-picker__menu">
-                <!-- Dynamically populated via JavaScript -->
-              </div>
+        <div style="min-height: 200px; position: relative;">
+          <header class="header demo-header" style="position: relative;">
+            <!-- Left: Brand -->
+            <div class="header__brand">
+              <a href="#" class="header__brand-link">
+                <img src="/logos/CPVPLogo.svg" alt="Logo" class="header__logo" />
+                <span class="header__title">Costpoint</span>
+              </a>
             </div>
 
-            <div class="divider"></div>
+            <!-- Right: Company dropdown + Avatar -->
+            <div class="header__actions">
+              <!-- Company Dropdown -->
+              <div class="company-picker" id="demo-company-picker">
+                <button id="demo-company-picker-btn" class="company-picker__btn">
+                  <span id="demo-company-indicator" class="company-picker__indicator" style="background-color: #FF507B;"></span>
+                  <span id="demo-company-name" class="company-picker__name">Acme Corporation</span>
+                  <Icon name="chevron-down" size="sm" class="company-picker__chevron" />
+                </button>
+                <div id="demo-company-picker-menu" class="company-picker__menu">
+                  <!-- Dynamically populated via JavaScript -->
+                </div>
+              </div>
 
-            <!-- User Avatar -->
-            <Avatar size="sm" />
-          </div>
+              <div class="divider"></div>
 
-          <!-- Gradient Border (outside, at bottom of header) -->
-          <div id="demo-header-gradient" class="header__gradient" style="background: linear-gradient(to right, #FF507B05, #FF507B 50%, #FF507B05);"></div>
-        </header>
+              <!-- User Avatar -->
+              <Avatar size="sm" />
+            </div>
+
+            <!-- Gradient Border (outside, at bottom of header) -->
+            <div id="demo-header-gradient" class="header__gradient" style="background: linear-gradient(to right, #FF507B05, #FF507B 50%, #FF507B05);"></div>
+          </header>
+        </div>
       </ExampleSection>
     </section>
 

@@ -27,7 +27,7 @@
   width: 100%;
   height: 56px;
   background-color: var(--nav-bg);
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: none;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -316,7 +316,7 @@
   visibility: hidden;
   transform: translateY(-8px);
   transition: all var(--transition-fast);
-  z-index: 100;
+  z-index: 1000;
 }
 
 .company-picker__menu--open {
