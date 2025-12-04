@@ -2,6 +2,7 @@
 import DocsLayout from '../../layouts/DocsLayout.astro';
 import ExampleSection from '../../components/ExampleSection.astro';
 import Icon from '../../components/ui/Icon.astro';
+import Checkbox from '../../components/ui/Checkbox.astro';
 ---
 
 <DocsLayout title="Tables" description="Data table components and patterns for displaying structured information.">
@@ -77,7 +78,7 @@ import Icon from '../../components/ui/Icon.astro';
             <thead>
               <tr class="border-b border-border-color">
                 <th class="w-10 py-3 px-4 bg-elevated-bg">
-                  <input type="checkbox" class="rounded border-border-color">
+                  <Checkbox name="select-all" aria-label="Select all rows" />
                 </th>
                 <th class="text-left py-3 px-4 font-medium text-secondary bg-elevated-bg">Employee</th>
                 <th class="text-left py-3 px-4 font-medium text-secondary bg-elevated-bg">Department</th>
@@ -88,7 +89,7 @@ import Icon from '../../components/ui/Icon.astro';
             <tbody>
               <tr class="border-b border-border-light hover:bg-hover-bg transition-colors">
                 <td class="py-3 px-4">
-                  <input type="checkbox" class="rounded border-border-color">
+                  <Checkbox name="select-employee-1" aria-label="Select row for John Doe" />
                 </td>
                 <td class="py-3 px-4">
                   <div class="flex items-center gap-3">
@@ -111,7 +112,7 @@ import Icon from '../../components/ui/Icon.astro';
               </tr>
               <tr class="border-b border-border-light hover:bg-hover-bg transition-colors">
                 <td class="py-3 px-4">
-                  <input type="checkbox" class="rounded border-border-color">
+                  <Checkbox name="select-employee-2" aria-label="Select row for Jane Smith" />
                 </td>
                 <td class="py-3 px-4">
                   <div class="flex items-center gap-3">
@@ -134,7 +135,7 @@ import Icon from '../../components/ui/Icon.astro';
               </tr>
               <tr class="hover:bg-hover-bg transition-colors">
                 <td class="py-3 px-4">
-                  <input type="checkbox" class="rounded border-border-color">
+                  <Checkbox name="select-employee-3" aria-label="Select row for Mike Johnson" />
                 </td>
                 <td class="py-3 px-4">
                   <div class="flex items-center gap-3">

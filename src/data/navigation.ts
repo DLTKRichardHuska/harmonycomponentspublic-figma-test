@@ -20,12 +20,6 @@ export const navigation: NavSection[] = [
     ],
   },
   {
-    title: 'CP Components',
-    items: [
-      { title: 'Floating Nav', href: '/cp/floating-nav', icon: 'bars-3' },
-    ],
-  },
-  {
     title: 'Shell Layout',
     items: [
       { title: 'Shell Layout', href: '/shell/layout', icon: 'view-columns' },

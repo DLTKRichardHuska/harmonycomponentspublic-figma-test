@@ -2017,3 +2017,35 @@ html.theme-cp.dark .cp-right-sidebar__item:hover {
   height: auto;
 }
 
+/* ===========================================
+   AVATAR
+   =========================================== */
+
+.avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: var(--theme-primary);
+  flex-shrink: 0;
+}
+
+.avatar--sm {
+  width: 32px;
+  height: 32px;
+}
+
+.avatar--md {
+  width: 40px;
+  height: 40px;
+}
+
+.avatar--lg {
+  width: 48px;
+  height: 48px;
+}
+
+.avatar__icon {
+  color: white;
+}
+
