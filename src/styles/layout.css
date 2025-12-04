@@ -933,6 +933,10 @@
   color: var(--theme-primary);
 }
 
+.a11y-card--warning .a11y-card__title-icon {
+  color: var(--color-error);
+}
+
 .a11y-card__text {
   font-size: var(--text-sm);
   color: var(--text-secondary);

@@ -9,6 +9,7 @@ import Icon from '../../components/ui/Icon.astro';
 const props = [
   { name: 'elevated', type: 'boolean', default: 'false', description: 'Adds shadow elevation' },
   { name: 'interactive', type: 'boolean', default: 'false', description: 'Adds hover effects for clickable cards' },
+  { name: 'primary', type: 'boolean', default: 'false', description: 'Adds 6px top border in theme primary color' },
 ];
 ---
 
@@ -92,6 +93,43 @@ const props = [
             <div class="card__body">
               <h3 class="text-lg font-semibold text-primary mb-2">Click Me Too</h3>
               <p class="text-sm text-secondary">Another interactive card example.</p>
+            </div>
+          </Card>
+        </div>
+      </ExampleSection>
+
+      <ExampleSection title="Primary Border Card" description="Card with theme primary color top border for emphasis.">
+        <div class="max-w-md">
+          <Card primary>
+            <div class="card__body">
+              <h3 class="text-lg font-semibold text-primary mb-2">Featured Card</h3>
+              <p class="text-sm text-secondary">
+                This card has a prominent 6px top border in the theme primary color to draw attention.
+              </p>
+            </div>
+          </Card>
+        </div>
+      </ExampleSection>
+
+      <ExampleSection
+        title="Primary Border + Other Variants"
+        description="Primary border works with other card variants."
+      >
+        <div class="grid sm:grid-cols-2 gap-4 max-w-2xl">
+          <Card primary elevated>
+            <div class="card__body">
+              <h3 class="text-lg font-semibold text-primary mb-2">Primary + Elevated</h3>
+              <p class="text-sm text-secondary">
+                Combines the primary border with elevation shadow.
+              </p>
+            </div>
+          </Card>
+          <Card primary interactive>
+            <div class="card__body">
+              <h3 class="text-lg font-semibold text-primary mb-2">Primary + Interactive</h3>
+              <p class="text-sm text-secondary">
+                Combines the primary border with hover effects.
+              </p>
             </div>
           </Card>
         </div>

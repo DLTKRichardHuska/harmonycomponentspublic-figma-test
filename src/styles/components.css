@@ -857,6 +857,10 @@
   box-shadow: var(--shadow-md);
 }
 
+.card--primary {
+  border-top: 6px solid var(--theme-primary);
+}
+
 .card__header {
   padding: var(--space-4) var(--space-6);
   border-bottom: 1px solid var(--border-color);

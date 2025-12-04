@@ -8,12 +8,14 @@
 export interface Props {
   elevated?: boolean;
   interactive?: boolean;
+  primary?: boolean;
   class?: string;
 }
 
 const {
   elevated = false,
   interactive = false,
+  primary = false,
   class: className = '',
 } = Astro.props;
 
@@ -21,6 +23,7 @@ const classes = [
   'card',
   elevated && 'card--elevated',
   interactive && 'card--interactive',
+  primary && 'card--primary',
   className,
 ].filter(Boolean).join(' ');
 ---
