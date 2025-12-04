@@ -50,20 +50,22 @@ import Icon from '../../components/ui/Icon.astro';
       </ExampleSection>
 
       <ExampleSection title="With More Dropdown" description="When there are too many tabs, overflow tabs are accessible via the 'More' dropdown.">
-        <div class="border overflow-hidden">
+        <div class="border">
           <ShellFooter
             tabs={[
               { id: '1', label: 'Tab 1', active: true },
               { id: '2', label: 'Tab 2' },
               { id: '3', label: 'Tab 3' },
               { id: '4', label: 'Tab 4' },
+            ]}
+            showMore={true}
+            moreCount={4}
+            overflowTabs={[
               { id: '5', label: 'Tab 5' },
               { id: '6', label: 'Tab 6' },
               { id: '7', label: 'Tab 7' },
               { id: '8', label: 'Tab 8' },
             ]}
-            showMore={true}
-            moreCount={4}
             showAddTab={true}
           />
         </div>
@@ -278,3 +280,24 @@ import Icon from '../../components/ui/Icon.astro';
     </section>
   </article>
 </DocsLayout>
+
+<script>
+  // Demo: Listen for shell footer dropdown events
+  document.addEventListener('shell-footer:select-tab', (e) => {
+    console.log('Tab selected from dropdown:', e.detail.tabId);
+    // In a real application, you would handle tab selection here
+    // For example: navigate to a different workspace, update state, etc.
+  });
+
+  document.addEventListener('shell-footer:close-tab', (e) => {
+    console.log('Close individual tab:', e.detail.tabId);
+    // In a real application, you would handle closing the individual tab here
+    // For example: remove tab from state, close workspace, etc.
+  });
+
+  document.addEventListener('shell-footer:close-all', () => {
+    console.log('Close all tabs requested');
+    // In a real application, you would handle closing all tabs here
+    // For example: clear all open workspaces, show confirmation dialog, etc.
+  });
+</script>
