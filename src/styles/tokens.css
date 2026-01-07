@@ -94,6 +94,7 @@
 
   /* Border Radius - Numbered Convention */
   --radius-04: 4px;
+  --radius-06: 6px;
   --radius-08: 8px;
   --radius-12: 12px;
   --radius-16: 16px;
@@ -154,6 +155,8 @@ html.theme-cp {
   --theme-primary: #1D8DFF;
   --theme-primary-hover: #0d7aeb;
   --theme-primary-light: rgba(29, 141, 255, 0.1);
+  --theme-primary-border: rgba(29, 141, 255, 0.2);
+  --theme-primary-hover-light: rgba(29, 141, 255, 0.08);
 
   /* Backgrounds */
   --page-bg: #E2E4E9;
@@ -230,6 +233,8 @@ html.theme-cp.dark {
   --theme-primary: #59ACFF;
   --theme-primary-hover: #7bb8ff;
   --theme-primary-light: rgba(89, 172, 255, 0.1);
+  --theme-primary-border: rgba(89, 172, 255, 0.2);
+  --theme-primary-hover-light: rgba(89, 172, 255, 0.08);
 
   /* Backgrounds */
   --page-bg: #1F252E;

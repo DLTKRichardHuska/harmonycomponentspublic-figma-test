@@ -6,14 +6,26 @@
  */
 
 export interface Props {
+  variant?: 'default' | 'outline';
+  size?: 'sm' | 'md' | 'lg';
+  orientation?: 'horizontal' | 'vertical';
   class?: string;
 }
 
 const {
+  variant = 'default',
+  size = 'md',
+  orientation = 'horizontal',
   class: className = '',
 } = Astro.props;
 
-const classes = ['btn-group', className].filter(Boolean).join(' ');
+const classes = [
+  'btn-group',
+  `btn-group--${variant}`,
+  `btn-group--${size}`,
+  `btn-group--${orientation}`,
+  className
+].filter(Boolean).join(' ');
 ---
 
 <div class={classes} role="group">

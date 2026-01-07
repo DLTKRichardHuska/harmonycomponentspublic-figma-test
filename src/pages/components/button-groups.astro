@@ -7,6 +7,9 @@ import ButtonGroup from '../../components/ui/ButtonGroup.astro';
 import Icon from '../../components/ui/Icon.astro';
 
 const props = [
+  { name: 'variant', type: "'default' | 'outline'", default: "'default'", description: 'Button group variant style' },
+  { name: 'size', type: "'sm' | 'md' | 'lg'", default: "'md'", description: 'Size of the button group' },
+  { name: 'orientation', type: "'horizontal' | 'vertical'", default: "'horizontal'", description: 'Orientation of the button group' },
   { name: 'class', type: 'string', default: '—', description: 'Additional CSS classes' },
 ];
 ---
@@ -31,27 +34,130 @@ const props = [
     <section id="examples" class="space-y-8">
       <h2 class="section__title">Examples</h2>
 
-      <ExampleSection title="Basic Button Group" description="Grouped buttons for related actions.">
+      <ExampleSection title="Default Variant (Container with Border)" description="The default variant features a bordered container with spaced buttons inside. Selected buttons use primary blue background.">
         <ButtonGroup>
-          <Button variant="outline">Left</Button>
-          <Button variant="outline">Middle</Button>
-          <Button variant="outline">Right</Button>
+          <Button variant="primary">Selected</Button>
+          <Button variant="outline">Option 1</Button>
+          <Button variant="outline">Option 2</Button>
         </ButtonGroup>
       </ExampleSection>
 
-      <ExampleSection title="With Icons" description="Button group with icon buttons.">
+      <ExampleSection title="Default Variant - Toggle Example" description="Button group used as a toggle with selected and unselected states.">
         <ButtonGroup>
-          <Button variant="outline" icon="bold" class="btn--icon-md" aria-label="Bold" />
+          <Button variant="primary">Day</Button>
+          <Button variant="outline">Week</Button>
+          <Button variant="outline">Month</Button>
+        </ButtonGroup>
+      </ExampleSection>
+
+      <ExampleSection title="Size Variants" description="Button groups support three sizes: small, medium (default), and large.">
+        <div class="space-y-4">
+          <div>
+            <p class="text-sm text-secondary mb-2">Small</p>
+            <ButtonGroup size="sm">
+              <Button variant="primary">Option 1</Button>
+              <Button variant="outline">Option 2</Button>
+              <Button variant="outline">Option 3</Button>
+            </ButtonGroup>
+          </div>
+          <div>
+            <p class="text-sm text-secondary mb-2">Medium (default)</p>
+            <ButtonGroup size="md">
+              <Button variant="primary">Option 1</Button>
+              <Button variant="outline">Option 2</Button>
+              <Button variant="outline">Option 3</Button>
+            </ButtonGroup>
+          </div>
+          <div>
+            <p class="text-sm text-secondary mb-2">Large</p>
+            <ButtonGroup size="lg">
+              <Button variant="primary">Option 1</Button>
+              <Button variant="outline">Option 2</Button>
+              <Button variant="outline">Option 3</Button>
+            </ButtonGroup>
+          </div>
+        </div>
+      </ExampleSection>
+
+      <ExampleSection title="Orientation Variants" description="Button groups can be displayed horizontally (default) or vertically.">
+        <div class="space-y-4">
+          <div>
+            <p class="text-sm text-secondary mb-2">Horizontal (default)</p>
+            <ButtonGroup orientation="horizontal">
+              <Button variant="primary">Option 1</Button>
+              <Button variant="outline">Option 2</Button>
+              <Button variant="outline">Option 3</Button>
+            </ButtonGroup>
+          </div>
+          <div>
+            <p class="text-sm text-secondary mb-2">Vertical</p>
+            <ButtonGroup orientation="vertical">
+              <Button variant="primary">Option 1</Button>
+              <Button variant="outline">Option 2</Button>
+              <Button variant="outline">Option 3</Button>
+            </ButtonGroup>
+          </div>
+        </div>
+      </ExampleSection>
+
+      <ExampleSection title="Disabled State" description="Button groups support disabled state for all buttons.">
+        <ButtonGroup>
+          <Button variant="primary" disabled>Selected</Button>
+          <Button variant="outline" disabled>Option 1</Button>
+          <Button variant="outline" disabled>Option 2</Button>
+        </ButtonGroup>
+      </ExampleSection>
+
+      <ExampleSection title="Multiple Button Counts" description="Button groups work with various numbers of buttons (2-10+).">
+        <div class="space-y-4">
+          <div>
+            <p class="text-sm text-secondary mb-2">2 Buttons</p>
+            <ButtonGroup>
+              <Button variant="primary">Option 1</Button>
+              <Button variant="outline">Option 2</Button>
+            </ButtonGroup>
+          </div>
+          <div>
+            <p class="text-sm text-secondary mb-2">5 Buttons</p>
+            <ButtonGroup>
+              <Button variant="primary">Option 1</Button>
+              <Button variant="outline">Option 2</Button>
+              <Button variant="outline">Option 3</Button>
+              <Button variant="outline">Option 4</Button>
+              <Button variant="outline">Option 5</Button>
+            </ButtonGroup>
+          </div>
+          <div>
+            <p class="text-sm text-secondary mb-2">10 Buttons</p>
+            <ButtonGroup>
+              <Button variant="primary">1</Button>
+              <Button variant="outline">2</Button>
+              <Button variant="outline">3</Button>
+              <Button variant="outline">4</Button>
+              <Button variant="outline">5</Button>
+              <Button variant="outline">6</Button>
+              <Button variant="outline">7</Button>
+              <Button variant="outline">8</Button>
+              <Button variant="outline">9</Button>
+              <Button variant="outline">10</Button>
+            </ButtonGroup>
+          </div>
+        </div>
+      </ExampleSection>
+
+      <ExampleSection title="Default Variant - With Icons" description="Button group with icon buttons in the default variant.">
+        <ButtonGroup>
+          <Button variant="primary" icon="bold" class="btn--icon-md" aria-label="Bold" />
           <Button variant="outline" icon="italic" class="btn--icon-md" aria-label="Italic" />
           <Button variant="outline" icon="underline" class="btn--icon-md" aria-label="Underline" />
         </ButtonGroup>
       </ExampleSection>
 
-      <ExampleSection title="Toggle Example" description="Button group used as a toggle.">
-        <ButtonGroup>
-          <Button variant="primary">Day</Button>
-          <Button variant="outline">Week</Button>
-          <Button variant="outline">Month</Button>
+      <ExampleSection title="Outline Variant (Connected Buttons)" description="The outline variant displays connected buttons without a container border.">
+        <ButtonGroup variant="outline">
+          <Button variant="outline">Left</Button>
+          <Button variant="outline">Middle</Button>
+          <Button variant="outline">Right</Button>
         </ButtonGroup>
       </ExampleSection>
     </section>
