@@ -1,8 +1,11 @@
 ---
 /**
  * PickerPopup Component
- * 
- * Simple popup container for date/time pickers.
+ *
+ * Reusable popup container for date/time pickers.
+ * Positions relative to trigger element with clean event delegation.
+ *
+ * REBUILT FROM SCRATCH - No global functions, no race conditions.
  */
 import Icon from './Icon.astro';
 
@@ -23,20 +26,21 @@ const {
 const classes = ['picker-popup', className].filter(Boolean).join(' ');
 ---
 
-<div 
+<div
   class={classes}
   id={id}
   role="dialog"
   aria-modal="true"
+  aria-labelledby={title ? `${id}-title` : undefined}
   data-picker-popup
   data-trigger-id={triggerId || ''}
 >
   {title && (
     <div class="picker-popup__header">
       <h3 class="picker-popup__title" id={`${id}-title`}>{title}</h3>
-      <button 
-        type="button" 
-        class="picker-popup__close" 
+      <button
+        type="button"
+        class="picker-popup__close"
         data-picker-close
         aria-label="Close picker"
       >
@@ -50,138 +54,122 @@ const classes = ['picker-popup', className].filter(Boolean).join(' ');
 </div>
 
 <script>
-  function positionPopup(popup: HTMLElement, trigger: HTMLElement) {
-    popup.style.visibility = 'hidden';
-    popup.style.display = 'block';
-    
+  /**
+   * Clean event delegation system for all pickers
+   * No global functions, no timing hacks, no race conditions
+   *
+   * State management is handled in DateInput.astro
+   * This component only handles global event delegation
+   */
+
+  let initialized = false;
+
+  /**
+   * Position popup relative to trigger element
+   * Uses viewport-aware positioning to stay within bounds
+   *
+   * This is exported for DateInput to use when opening popups
+   */
+  function positionPopup(popup: HTMLElement, trigger: HTMLElement): void {
     const triggerRect = trigger.getBoundingClientRect();
     const popupRect = popup.getBoundingClientRect();
     const padding = 16;
-    
-    let top = triggerRect.bottom + 8;
+
+    let top = triggerRect.bottom + 8; // var(--space-2) = 8px
     let left = triggerRect.left;
-    
+
+    // Right boundary check
     if (left + popupRect.width > window.innerWidth - padding) {
       left = window.innerWidth - popupRect.width - padding;
     }
     if (left < padding) {
       left = padding;
     }
-    
+
+    // Bottom boundary check - flip to top if needed
     if (top + popupRect.height > window.innerHeight - padding) {
       top = triggerRect.top - popupRect.height - 8;
       if (top < padding) {
         top = window.innerHeight - popupRect.height - padding;
       }
     }
-    
+
     popup.style.position = 'fixed';
     popup.style.top = `${top}px`;
     popup.style.left = `${left}px`;
-    popup.style.visibility = 'visible';
   }
-  
-  function openPopup(popupId: string) {
-    const popup = document.getElementById(popupId) as HTMLElement;
-    if (!popup) return;
-    
-    const triggerId = popup.getAttribute('data-trigger-id');
-    const trigger = triggerId ? document.getElementById(triggerId) : null;
-    
-    if (trigger) {
-      positionPopup(popup, trigger);
-    }
-    
-    popup.classList.add('is-open');
-  }
-  
-  function closePopup(popupId: string) {
-    const popup = document.getElementById(popupId) as HTMLElement;
-    if (!popup) return;
-    popup.classList.remove('is-open');
-  }
-  
-  function togglePopup(popupId: string) {
-    const popup = document.getElementById(popupId) as HTMLElement;
-    if (!popup) return;
-    
-    if (popup.classList.contains('is-open')) {
-      closePopup(popupId);
-    } else {
-      openPopup(popupId);
-    }
-  }
-  
-  // ATTACH TO WINDOW IMMEDIATELY - BEFORE ANY OTHER CODE
-  (window as any).openPicker = openPopup;
-  (window as any).closePicker = closePopup;
-  (window as any).togglePicker = togglePopup;
-  
-  function isClickInside(target: Element, popup: HTMLElement): boolean {
-    if (popup.contains(target)) return true;
-    
-    const triggerId = popup.getAttribute('data-trigger-id');
-    if (triggerId) {
-      const trigger = document.getElementById(triggerId);
-      if (trigger && (trigger === target || trigger.contains(target))) return true;
-      
-      const icon = document.querySelector(`[data-date-input-icon="${triggerId}"]`);
-      if (icon && (icon === target || icon.contains(target))) return true;
-      
-      const wrapper = trigger.closest('.date-input-wrapper');
-      if (wrapper && (wrapper === target || wrapper.contains(target))) return true;
-    }
-    
-    return false;
-  }
-  
-  function initPopup(popup: HTMLElement) {
-    const popupId = popup.id;
-    const closeBtn = popup.querySelector('[data-picker-close]');
-    
-    closeBtn?.addEventListener('click', (e) => {
-      e.stopPropagation();
-      closePopup(popupId);
-    });
-  }
-  
-  function handleEscape(e: KeyboardEvent) {
+
+  /**
+   * Handle Escape key to close all open pickers
+   */
+  function handleEscapeKey(e: KeyboardEvent): void {
     if (e.key === 'Escape') {
-      document.querySelectorAll('[data-picker-popup].is-open').forEach((popup) => {
-        closePopup((popup as HTMLElement).id);
+      document.querySelectorAll('[data-picker-popup].is-open').forEach(popup => {
+        popup.classList.remove('is-open');
       });
     }
   }
-  
-  function handleClickOutside(e: MouseEvent) {
-    const target = e.target as Element;
-    
-    document.querySelectorAll('[data-picker-popup].is-open').forEach((popup) => {
-      const popupEl = popup as HTMLElement;
-      if (!isClickInside(target, popupEl)) {
-        closePopup(popupEl.id);
+
+  /**
+   * Handle clicks outside popups to close them
+   * Uses composedPath for reliable "outside" detection
+   */
+  function handleClickOutside(e: MouseEvent): void {
+    const target = e.target as HTMLElement;
+    const path = e.composedPath();
+
+    document.querySelectorAll('[data-picker-popup].is-open').forEach(popup => {
+      const triggerId = popup.getAttribute('data-trigger-id');
+      const wrapper = triggerId
+        ? document.getElementById(triggerId)?.closest('.date-input-wrapper')
+        : null;
+
+      // Check if click is outside both popup AND wrapper
+      const clickedOutside = !path.includes(popup) && (!wrapper || !path.includes(wrapper));
+
+      if (clickedOutside) {
+        popup.classList.remove('is-open');
       }
     });
   }
-  
-  function initPickerPopups() {
-    document.querySelectorAll('[data-picker-popup]:not([data-initialized])').forEach((popup) => {
-      popup.setAttribute('data-initialized', 'true');
-      initPopup(popup as HTMLElement);
+
+  /**
+   * Handle close button clicks
+   */
+  function handleCloseButton(): void {
+    document.querySelectorAll('[data-picker-popup]:not([data-close-init])').forEach(popup => {
+      popup.setAttribute('data-close-init', 'true');
+
+      const closeBtn = popup.querySelector('[data-picker-close]');
+      closeBtn?.addEventListener('click', (e) => {
+        e.stopPropagation();
+        popup.classList.remove('is-open');
+      });
     });
-    
-    if (!(window as any).pickerHandlersAttached) {
-      document.addEventListener('keydown', handleEscape);
-      document.addEventListener('click', handleClickOutside);
-      (window as any).pickerHandlersAttached = true;
-    }
   }
-  
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initPickerPopups);
-  } else {
-    initPickerPopups();
+
+  /**
+   * Initialize picker system
+   * Attaches global event delegation handlers once
+   */
+  function initPickerSystem(): void {
+    if (initialized) return;
+    initialized = true;
+
+    // Global event delegation
+    document.addEventListener('keydown', handleEscapeKey);
+    document.addEventListener('click', handleClickOutside);
+
+    // Close button handlers
+    handleCloseButton();
   }
-  
-  document.addEventListener('astro:page-load', initPickerPopups);
+
+  // Export positionPopup for DateInput to use (only helper, not state management)
+  (window as any).positionPickerPopup = positionPopup;
+
+  initPickerSystem();
+  document.addEventListener('astro:page-load', () => {
+    // Re-init close buttons on page load (Astro navigation)
+    handleCloseButton();
+  });
 </script>

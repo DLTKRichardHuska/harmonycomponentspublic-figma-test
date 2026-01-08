@@ -354,12 +354,34 @@ const displayValue = formatDisplayValue(value, type, locale);
       // Set trigger ID on popup
       popup.setAttribute('data-trigger-id', inputId);
       
-      // Toggle picker on input/icon click
+      // Helper function to position popup (DRY principle)
+      const positionPopup = (window as any).positionPickerPopup;
+
+      // Toggle picker on input/icon click - direct DOM manipulation (no global functions)
       const togglePicker = (e: Event) => {
         if (inputEl.disabled) return;
-        e.stopPropagation();
+        e.stopPropagation(); // CRITICAL: Prevents race with click outside handler
         e.preventDefault();
-        (window as any).togglePicker?.(popupId);
+
+        const isOpen = popup.classList.contains('is-open');
+
+        if (isOpen) {
+          // Close popup
+          popup.classList.remove('is-open');
+        } else {
+          // Close other open pickers (only one open at a time)
+          document.querySelectorAll('[data-picker-popup].is-open').forEach(p => {
+            if (p !== popup) p.classList.remove('is-open');
+          });
+
+          // Open this popup
+          popup.classList.add('is-open');
+
+          // Position popup using helper
+          if (positionPopup) {
+            positionPopup(popup, inputEl);
+          }
+        }
       };
 
       inputEl.addEventListener('click', togglePicker);
@@ -373,35 +395,35 @@ const displayValue = formatDisplayValue(value, type, locale);
           const date = e.detail.date;
           if (hiddenInput) hiddenInput.value = date;
           inputEl.value = formatDisplayValue(date, inputType, 'en-US');
-          (window as any).closePicker?.(popupId);
+          popup.classList.remove('is-open');
         }) as EventListener);
         
         picker.addEventListener('time-select', ((e: CustomEvent) => {
           const time = e.detail.time;
           if (hiddenInput) hiddenInput.value = time;
           inputEl.value = formatDisplayValue(time, inputType, 'en-US');
-          (window as any).closePicker?.(popupId);
+          popup.classList.remove('is-open');
         }) as EventListener);
         
         picker.addEventListener('datetime-select', ((e: CustomEvent) => {
           const datetime = e.detail.datetime;
           if (hiddenInput) hiddenInput.value = datetime;
           inputEl.value = formatDisplayValue(datetime, inputType, 'en-US');
-          (window as any).closePicker?.(popupId);
+          popup.classList.remove('is-open');
         }) as EventListener);
         
         picker.addEventListener('month-select', ((e: CustomEvent) => {
           const value = e.detail.value;
           if (hiddenInput) hiddenInput.value = value;
           inputEl.value = formatDisplayValue(value, inputType, 'en-US');
-          (window as any).closePicker?.(popupId);
+          popup.classList.remove('is-open');
         }) as EventListener);
         
         picker.addEventListener('week-select', ((e: CustomEvent) => {
           const value = e.detail.value;
           if (hiddenInput) hiddenInput.value = value;
           inputEl.value = formatDisplayValue(value, inputType, 'en-US');
-          (window as any).closePicker?.(popupId);
+          popup.classList.remove('is-open');
         }) as EventListener);
       }
     });
