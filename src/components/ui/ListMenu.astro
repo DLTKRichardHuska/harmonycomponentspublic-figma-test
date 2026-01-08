@@ -7,6 +7,7 @@
  *
  * @prop {MenuItem[]} items - Array of menu items
  * @prop {string} as - Element type: 'button' or 'link' (default: 'button')
+ * @prop {string} variant - Variant style: 'default' or 'no-borders' (default: 'default')
  * @prop {string} class - Additional CSS classes
  */
 import Icon from './Icon.astro';
@@ -21,13 +22,14 @@ export interface MenuItem {
 export interface Props {
   items: MenuItem[];
   as?: 'button' | 'link';
+  variant?: 'default' | 'no-borders';
   class?: string;
 }
 
-const { items, as = 'button', class: className = '' } = Astro.props;
+const { items, as = 'button', variant = 'default', class: className = '' } = Astro.props;
 ---
 
-<div class:list={['list-menu', className]}>
+<div class:list={['list-menu', variant === 'no-borders' && 'list-menu--no-borders', className]}>
   {items.map((item) => {
     const Element = as === 'link' ? 'a' : 'button';
     const itemProps = as === 'link' ? { href: item.href || '#' } : { type: 'button' };

@@ -2,8 +2,7 @@
 /**
  * DatePicker Component
  * 
- * Custom date picker with calendar grid, month navigation, and date selection.
- * Uses Harmony Design System tokens for styling.
+ * Simple, working date picker with calendar grid, month navigation, and date selection.
  */
 import Icon from './Icon.astro';
 
@@ -37,11 +36,13 @@ const currentMonth = currentDate.getMonth();
 const currentYear = currentDate.getFullYear();
 
 // Month names for display
-const monthNames: string[] = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+const monthNames: string[] = [
+  'January', 'February', 'March', 'April', 'May', 'June',
+  'July', 'August', 'September', 'October', 'November', 'December'
+];
 
 // Day names for weekday headers
 const dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-const dayNamesFull = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
 const classes = ['date-picker', className].filter(Boolean).join(' ');
 ---
@@ -87,7 +88,7 @@ const classes = ['date-picker', className].filter(Boolean).join(' ');
   
   <div class="date-picker__weekdays">
     {dayNames.map((day, index) => (
-      <div class="date-picker__weekday" key={index} aria-label={dayNamesFull[index]}>
+      <div class="date-picker__weekday" key={index} aria-label={day}>
         {day}
       </div>
     ))}
@@ -104,15 +105,23 @@ const classes = ['date-picker', className].filter(Boolean).join(' ');
 </div>
 
 <script>
-  const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-  const dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-  const dayNamesFull = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-  
   function formatDate(date: Date): string {
     const year = date.getFullYear();
     const month = String(date.getMonth() + 1).padStart(2, '0');
     const day = String(date.getDate()).padStart(2, '0');
     return `${year}-${month}-${day}`;
+  }
+  
+  function parseDate(dateStr: string): Date | null {
+    if (!dateStr) return null;
+    const date = new Date(dateStr + 'T00:00:00');
+    return isNaN(date.getTime()) ? null : date;
+  }
+  
+  function isSameDay(date1: Date, date2: Date): boolean {
+    date1.setHours(0, 0, 0, 0);
+    date2.setHours(0, 0, 0, 0);
+    return date1.getTime() === date2.getTime();
   }
   
   function getCalendarDays(month: number, year: number): Array<{ date: Date; isCurrentMonth: boolean }> {
@@ -134,10 +143,24 @@ const classes = ['date-picker', className].filter(Boolean).join(' ');
     return days;
   }
   
-  function renderCalendar(picker: HTMLElement, month: number, year: number, selectedDate: string | null, minDate: string | null, maxDate: string | null, locale: string, isDisabled: boolean) {
+  function renderCalendar(picker: HTMLElement) {
     const grid = picker.querySelector('[data-calendar-grid]');
     if (!grid) return;
     
+    const monthNames = [
+      'January', 'February', 'March', 'April', 'May', 'June',
+      'July', 'August', 'September', 'October', 'November', 'December'
+    ];
+    
+    const month = parseInt(picker.dataset.month || '0');
+    const year = parseInt(picker.dataset.year || new Date().getFullYear().toString());
+    const selectedDate = picker.dataset.selectedDate || null;
+    const minDate = picker.dataset.minDate || null;
+    const maxDate = picker.dataset.maxDate || null;
+    const locale = picker.dataset.locale || 'en-US';
+    const isDisabled = picker.dataset.disabled === 'true';
+    
+    // Update month/year display
     const monthYearEl = picker.querySelector('.date-picker__month-year');
     if (monthYearEl) {
       const monthEl = monthYearEl.querySelector('.date-picker__month');
@@ -147,25 +170,28 @@ const classes = ['date-picker', className].filter(Boolean).join(' ');
     }
     
     const calendarDays = getCalendarDays(month, year);
-    const min = minDate ? new Date(minDate + 'T00:00:00') : null;
-    const max = maxDate ? new Date(maxDate + 'T00:00:00') : null;
-    const selected = selectedDate ? new Date(selectedDate + 'T00:00:00') : null;
+    const min = minDate ? parseDate(minDate) : null;
+    const max = maxDate ? parseDate(maxDate) : null;
+    const selected = selectedDate ? parseDate(selectedDate) : null;
     const today = new Date();
+    today.setHours(0, 0, 0, 0);
     
     grid.innerHTML = '';
-    grid.setAttribute('aria-label', `Calendar for ${monthNames[month]} ${year}`);
     
     calendarDays.forEach((day) => {
-      const dateStr = formatDate(day.date);
-      const isDisabledDate = (min && day.date < min) || (max && day.date > max);
-      const isTodayDate = day.date.toDateString() === today.toDateString();
-      const isSelectedDate = selected && day.date.toDateString() === selected.toDateString();
+      const dayDate = new Date(day.date);
+      dayDate.setHours(0, 0, 0, 0);
+      
+      const dateStr = formatDate(dayDate);
+      const isDisabledDate = (min && dayDate < min) || (max && dayDate > max);
+      const isToday = isSameDay(dayDate, today);
+      const isSelected = selected && isSameDay(dayDate, selected);
       
       const dayClasses = [
         'date-picker__day',
         !day.isCurrentMonth && 'date-picker__day--other-month',
-        isTodayDate && 'date-picker__day--today',
-        isSelectedDate && 'date-picker__day--selected',
+        isToday && 'date-picker__day--today',
+        isSelected && 'date-picker__day--selected',
         isDisabledDate && 'date-picker__day--disabled',
       ].filter(Boolean).join(' ');
       
@@ -175,12 +201,14 @@ const classes = ['date-picker', className].filter(Boolean).join(' ');
       button.setAttribute('data-date', dateStr);
       button.disabled = isDisabled || isDisabledDate;
       button.setAttribute('role', 'gridcell');
-      button.setAttribute('aria-label', `${day.date.toLocaleDateString(locale, { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}${isSelectedDate ? ', selected' : ''}${isTodayDate ? ', today' : ''}`);
-      button.setAttribute('tabindex', isSelectedDate ? '0' : '-1');
-      button.textContent = day.date.getDate().toString();
+      button.setAttribute('tabindex', isSelected ? '0' : '-1');
+      button.textContent = dayDate.getDate().toString();
       
-      button.addEventListener('click', () => {
-        selectDate(picker, dateStr);
+      button.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (!isDisabled && !isDisabledDate) {
+          selectDate(picker, dateStr);
+        }
       });
       
       grid.appendChild(button);
@@ -197,145 +225,59 @@ const classes = ['date-picker', className].filter(Boolean).join(' ');
     if (selectedDay) {
       selectedDay.classList.add('date-picker__day--selected');
       selectedDay.setAttribute('tabindex', '0');
-      selectedDay.focus();
     }
     
-    picker.dispatchEvent(new CustomEvent('date-select', { detail: { date } }));
+    picker.setAttribute('data-selected-date', date);
+    picker.dispatchEvent(new CustomEvent('date-select', { 
+      detail: { date },
+      bubbles: true 
+    }));
   }
   
-  function initDatePickers() {
-    document.querySelectorAll('[data-date-picker]').forEach((picker) => {
-      if (picker.hasAttribute('data-init')) return;
-      picker.setAttribute('data-init', 'true');
-      
-      const pickerEl = picker as HTMLElement;
-      const prevBtn = picker.querySelector('[data-prev-month]');
-      const nextBtn = picker.querySelector('[data-next-month]');
-      const grid = picker.querySelector('[data-calendar-grid]');
-      
-      // Get initial state from data attributes
-      let currentMonth = parseInt(pickerEl.dataset.month || '0');
-      let currentYear = parseInt(pickerEl.dataset.year || new Date().getFullYear().toString());
-      let selectedDate = pickerEl.dataset.selectedDate || null;
-      const minDate = pickerEl.dataset.minDate || null;
-      const maxDate = pickerEl.dataset.maxDate || null;
-      const pickerLocale = pickerEl.dataset.locale || 'en-US';
-      const pickerDisabled = pickerEl.dataset.disabled === 'true';
-      
-      // Initial render
-      renderCalendar(pickerEl, currentMonth, currentYear, selectedDate, minDate, maxDate, pickerLocale, pickerDisabled);
-      
-      // Month navigation
-      prevBtn?.addEventListener('click', () => {
-        currentMonth--;
-        if (currentMonth < 0) {
-          currentMonth = 11;
-          currentYear--;
-        }
-        pickerEl.dataset.month = currentMonth.toString();
-        pickerEl.dataset.year = currentYear.toString();
-        renderCalendar(pickerEl, currentMonth, currentYear, selectedDate, minDate, maxDate, pickerLocale, pickerDisabled);
-      });
-      
-      nextBtn?.addEventListener('click', () => {
-        currentMonth++;
-        if (currentMonth > 11) {
-          currentMonth = 0;
-          currentYear++;
-        }
-        pickerEl.dataset.month = currentMonth.toString();
-        pickerEl.dataset.year = currentYear.toString();
-        renderCalendar(pickerEl, currentMonth, currentYear, selectedDate, minDate, maxDate, pickerLocale, pickerDisabled);
-      });
-      
-      // Keyboard navigation
-      grid?.addEventListener('keydown', (e) => {
-        const currentDay = picker.querySelector('.date-picker__day:focus') as HTMLElement;
-        if (!currentDay) return;
-        
-        const currentDate = currentDay.dataset.date;
-        if (!currentDate) return;
-        
-        const date = new Date(currentDate + 'T00:00:00');
-        let newDate: Date | null = null;
-        
-        switch (e.key) {
-          case 'ArrowLeft':
-            e.preventDefault();
-            newDate = new Date(date);
-            newDate.setDate(newDate.getDate() - 1);
-            break;
-          case 'ArrowRight':
-            e.preventDefault();
-            newDate = new Date(date);
-            newDate.setDate(newDate.getDate() + 1);
-            break;
-          case 'ArrowUp':
-            e.preventDefault();
-            newDate = new Date(date);
-            newDate.setDate(newDate.getDate() - 7);
-            break;
-          case 'ArrowDown':
-            e.preventDefault();
-            newDate = new Date(date);
-            newDate.setDate(newDate.getDate() + 7);
-            break;
-          case 'Home':
-            e.preventDefault();
-            newDate = new Date(date.getFullYear(), date.getMonth(), 1);
-            break;
-          case 'End':
-            e.preventDefault();
-            newDate = new Date(date.getFullYear(), date.getMonth() + 1, 0);
-            break;
-          case 'PageUp':
-            e.preventDefault();
-            newDate = new Date(date);
-            newDate.setMonth(newDate.getMonth() - 1);
-            if (newDate.getMonth() !== date.getMonth() - 1) {
-              // Month changed, re-render calendar
-              currentMonth = newDate.getMonth();
-              currentYear = newDate.getFullYear();
-              pickerEl.dataset.month = currentMonth.toString();
-              pickerEl.dataset.year = currentYear.toString();
-              renderCalendar(pickerEl, currentMonth, currentYear, selectedDate, minDate, maxDate, pickerLocale, pickerDisabled);
-            }
-            break;
-          case 'PageDown':
-            e.preventDefault();
-            newDate = new Date(date);
-            newDate.setMonth(newDate.getMonth() + 1);
-            if (newDate.getMonth() !== date.getMonth() + 1) {
-              // Month changed, re-render calendar
-              currentMonth = newDate.getMonth();
-              currentYear = newDate.getFullYear();
-              pickerEl.dataset.month = currentMonth.toString();
-              pickerEl.dataset.year = currentYear.toString();
-              renderCalendar(pickerEl, currentMonth, currentYear, selectedDate, minDate, maxDate, pickerLocale, pickerDisabled);
-            }
-            break;
-          case 'Enter':
-          case ' ':
-            e.preventDefault();
-            selectDate(pickerEl, currentDate);
-            selectedDate = currentDate;
-            pickerEl.dataset.selectedDate = selectedDate;
-            return;
-        }
-        
-        if (newDate) {
-          const newDateStr = formatDate(newDate);
-          const newDay = picker.querySelector(`[data-date="${newDateStr}"]`) as HTMLElement;
-          if (newDay && !newDay.disabled) {
-            newDay.focus();
-            newDay.setAttribute('tabindex', '0');
-            currentDay.setAttribute('tabindex', '-1');
-          }
-        }
-      });
+  function initDatePicker(picker: HTMLElement) {
+    let currentMonth = parseInt(picker.dataset.month || '0');
+    let currentYear = parseInt(picker.dataset.year || new Date().getFullYear().toString());
+    
+    renderCalendar(picker);
+    
+    const prevBtn = picker.querySelector('[data-prev-month]');
+    const nextBtn = picker.querySelector('[data-next-month]');
+    
+    prevBtn?.addEventListener('click', () => {
+      currentMonth--;
+      if (currentMonth < 0) {
+        currentMonth = 11;
+        currentYear--;
+      }
+      picker.setAttribute('data-month', currentMonth.toString());
+      picker.setAttribute('data-year', currentYear.toString());
+      renderCalendar(picker);
+    });
+    
+    nextBtn?.addEventListener('click', () => {
+      currentMonth++;
+      if (currentMonth > 11) {
+        currentMonth = 0;
+        currentYear++;
+      }
+      picker.setAttribute('data-month', currentMonth.toString());
+      picker.setAttribute('data-year', currentYear.toString());
+      renderCalendar(picker);
     });
   }
   
-  initDatePickers();
+  function initDatePickers() {
+    document.querySelectorAll('[data-date-picker]:not([data-initialized])').forEach((picker) => {
+      picker.setAttribute('data-initialized', 'true');
+      initDatePicker(picker as HTMLElement);
+    });
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initDatePickers);
+  } else {
+    initDatePickers();
+  }
+  
   document.addEventListener('astro:page-load', initDatePickers);
 </script>

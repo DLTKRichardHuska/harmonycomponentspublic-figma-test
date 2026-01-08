@@ -38,10 +38,10 @@ The design system supports four product themes, each with light and dark modes:
 
 | Theme | Primary Color | Description |
 |-------|--------------|-------------|
-| CP | #4C92D9 | Changepoint |
-| VP | #4C92D9 | Vendor Portal |
-| PPM | #30659F | Project Portfolio Management |
-| Maconomy | #804A98 | Maconomy |
+| CP | #0073E6 | Changepoint |
+| VP | #0073E6 | Vendor Portal |
+| PPM | #0073E6 | Project Portfolio Management |
+| Maconomy | #0073E6 | Maconomy |
 
 ## Shell Layout Components
 

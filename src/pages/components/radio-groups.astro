@@ -1,10 +1,21 @@
 ---
 import DocsLayout from '../../layouts/DocsLayout.astro';
+import PropsTable from '../../components/PropsTable.astro';
 import Icon from '../../components/ui/Icon.astro';
 import ExampleSection from '../../components/ExampleSection.astro';
-import Icon from '../../components/ui/Icon.astro';
 import RadioButton from '../../components/ui/RadioButton.astro';
-import Icon from '../../components/ui/Icon.astro';
+import RadioGroup from '../../components/ui/RadioGroup.astro';
+
+const props = [
+  { name: 'name', type: 'string', default: '—', description: 'Radio group name (required) - all radio buttons in the group must share this name' },
+  { name: 'legend', type: 'string', default: '—', description: 'Legend text displayed above the radio group' },
+  { name: 'error', type: 'boolean', default: 'false', description: 'Shows error state on the group and all child radio buttons' },
+  { name: 'warning', type: 'boolean', default: 'false', description: 'Shows warning state on the group and all child radio buttons' },
+  { name: 'errorMessage', type: 'string', default: '—', description: 'Error message displayed below the group' },
+  { name: 'warningMessage', type: 'string', default: '—', description: 'Warning message displayed below the group' },
+  { name: 'orientation', type: "'vertical' | 'horizontal'", default: "'vertical'", description: 'Layout orientation of radio buttons' },
+  { name: 'class', type: 'string', default: '—', description: 'Additional CSS classes' },
+];
 ---
 
 <DocsLayout title="Radio Groups" description="Groups of radio buttons for single selection.">
@@ -21,6 +32,7 @@ import Icon from '../../components/ui/Icon.astro';
 
     <nav class="article-nav">
       <a href="#examples" class="article-nav__link"><Icon name="eye" size="sm" /> Examples</a>
+      <a href="#props" class="article-nav__link"><Icon name="queue-list" size="sm" /> Props</a>
     </nav>
 
     <section id="examples" class="space-y-8">
@@ -47,6 +59,55 @@ import Icon from '../../components/ui/Icon.astro';
           </div>
         </fieldset>
       </ExampleSection>
+
+      <ExampleSection title="Using RadioGroup Component" description="RadioGroup component provides a cleaner API with built-in error/warning state support.">
+        <RadioGroup name="shipping-group" legend="Shipping Method">
+          <RadioButton name="shipping-group" value="standard" label="Standard (5-7 days)" checked />
+          <RadioButton name="shipping-group" value="express" label="Express (2-3 days)" />
+          <RadioButton name="shipping-group" value="overnight" label="Overnight (Next day)" />
+        </RadioGroup>
+      </ExampleSection>
+
+      <ExampleSection title="Horizontal Layout" description="RadioGroup with horizontal orientation.">
+        <RadioGroup name="plan-group" legend="Select Plan" orientation="horizontal">
+          <RadioButton name="plan-group" value="free" label="Free" />
+          <RadioButton name="plan-group" value="pro" label="Pro" checked />
+          <RadioButton name="plan-group" value="enterprise" label="Enterprise" />
+        </RadioGroup>
+      </ExampleSection>
+
+      <ExampleSection title="Error State" description="RadioGroup with error state - applies error styling to all child radio buttons and displays error message.">
+        <div class="flex flex-col gap-6">
+          <RadioGroup 
+            name="shipping-error" 
+            legend="Shipping Method *" 
+            error 
+            errorMessage="Please select a shipping method"
+          >
+            <RadioButton name="shipping-error" value="standard" label="Standard (5-7 days)" />
+            <RadioButton name="shipping-error" value="express" label="Express (2-3 days)" />
+            <RadioButton name="shipping-error" value="overnight" label="Overnight (Next day)" />
+          </RadioGroup>
+        </div>
+      </ExampleSection>
+
+      <ExampleSection title="Warning State" description="RadioGroup with warning state - applies warning styling to all child radio buttons and displays warning message.">
+        <RadioGroup 
+          name="shipping-warning" 
+          legend="Shipping Method" 
+          warning 
+          warningMessage="Express shipping may have additional fees"
+        >
+          <RadioButton name="shipping-warning" value="standard" label="Standard (5-7 days)" checked />
+          <RadioButton name="shipping-warning" value="express" label="Express (2-3 days)" />
+          <RadioButton name="shipping-warning" value="overnight" label="Overnight (Next day)" />
+        </RadioGroup>
+      </ExampleSection>
+    </section>
+
+    <section id="props">
+      <h2 class="section__title">Props</h2>
+      <PropsTable props={props} />
     </section>
   </article>
 </DocsLayout>

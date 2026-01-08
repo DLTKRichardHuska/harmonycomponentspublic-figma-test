@@ -1,8 +1,23 @@
 ---
 import DocsLayout from '../../layouts/DocsLayout.astro';
+import PropsTable from '../../components/PropsTable.astro';
 import ExampleSection from '../../components/ExampleSection.astro';
 import Icon from '../../components/ui/Icon.astro';
 import ListMenu from '../../components/ui/ListMenu.astro';
+
+const props = [
+  { name: 'items', type: 'MenuItem[]', default: '—', description: 'Array of menu items to display' },
+  { name: 'as', type: "'button' | 'link'", default: "'button'", description: 'Element type for menu items' },
+  { name: 'variant', type: "'default' | 'no-borders'", default: "'default'", description: 'Visual style variant - no-borders removes separators between items' },
+  { name: 'class', type: 'string', default: '—', description: 'Additional CSS classes' },
+];
+
+const menuItemProps = [
+  { name: 'icon', type: 'string', default: '—', description: 'Heroicon name (e.g., "home", "user")' },
+  { name: 'label', type: 'string', default: '—', description: 'Text label for the menu item' },
+  { name: 'href', type: 'string', default: '—', description: 'URL for link items (required when as="link")' },
+  { name: 'active', type: 'boolean', default: 'false', description: 'Marks the item as active/selected' },
+];
 ---
 
 <DocsLayout title="List Menu" description="Vertical list menu for navigation.">
@@ -19,6 +34,7 @@ import ListMenu from '../../components/ui/ListMenu.astro';
 
     <nav class="article-nav">
       <a href="#examples" class="article-nav__link"><Icon name="eye" size="sm" /> Examples</a>
+      <a href="#props" class="article-nav__link"><Icon name="queue-list" size="sm" /> Props</a>
     </nav>
 
     <section id="examples" class="space-y-8">
@@ -50,6 +66,36 @@ import ListMenu from '../../components/ui/ListMenu.astro';
           />
         </div>
       </ExampleSection>
+
+      <ExampleSection title="No Borders" description="List menu without borders or separators.">
+        <div class="max-w-xs">
+          <ListMenu
+            variant="no-borders"
+            items={[
+              { icon: 'home', label: 'Dashboard', active: true },
+              { icon: 'user', label: 'Profile' },
+              { icon: 'cog-6-tooth', label: 'Settings' },
+              { icon: 'arrow-right-on-rectangle', label: 'Logout' },
+            ]}
+          />
+        </div>
+      </ExampleSection>
+    </section>
+
+    <section id="props">
+      <h2 class="section__title">Props</h2>
+      
+      <div class="space-y-6">
+        <div>
+          <h3 class="text-lg font-semibold text-primary mb-3">ListMenu Props</h3>
+          <PropsTable props={props} />
+        </div>
+        
+        <div>
+          <h3 class="text-lg font-semibold text-primary mb-3">MenuItem Props</h3>
+          <PropsTable props={menuItemProps} />
+        </div>
+      </div>
     </section>
   </article>
 </DocsLayout>

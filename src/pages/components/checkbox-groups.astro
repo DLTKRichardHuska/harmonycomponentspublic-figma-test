@@ -1,10 +1,20 @@
 ---
 import DocsLayout from '../../layouts/DocsLayout.astro';
+import PropsTable from '../../components/PropsTable.astro';
 import Icon from '../../components/ui/Icon.astro';
 import ExampleSection from '../../components/ExampleSection.astro';
-import Icon from '../../components/ui/Icon.astro';
 import Checkbox from '../../components/ui/Checkbox.astro';
-import Icon from '../../components/ui/Icon.astro';
+import CheckboxGroup from '../../components/ui/CheckboxGroup.astro';
+
+const props = [
+  { name: 'legend', type: 'string', default: '—', description: 'Legend text displayed above the checkbox group' },
+  { name: 'error', type: 'boolean', default: 'false', description: 'Shows error state on the group and all child checkboxes' },
+  { name: 'warning', type: 'boolean', default: 'false', description: 'Shows warning state on the group and all child checkboxes' },
+  { name: 'errorMessage', type: 'string', default: '—', description: 'Error message displayed below the group' },
+  { name: 'warningMessage', type: 'string', default: '—', description: 'Warning message displayed below the group' },
+  { name: 'orientation', type: "'vertical' | 'horizontal'", default: "'vertical'", description: 'Layout orientation of checkboxes' },
+  { name: 'class', type: 'string', default: '—', description: 'Additional CSS classes' },
+];
 ---
 
 <DocsLayout title="Checkbox Groups" description="Groups of related checkbox inputs.">
@@ -21,6 +31,7 @@ import Icon from '../../components/ui/Icon.astro';
 
     <nav class="article-nav">
       <a href="#examples" class="article-nav__link"><Icon name="eye" size="sm" /> Examples</a>
+      <a href="#props" class="article-nav__link"><Icon name="queue-list" size="sm" /> Props</a>
     </nav>
 
     <section id="examples" class="space-y-8">
@@ -49,6 +60,55 @@ import Icon from '../../components/ui/Icon.astro';
           </div>
         </fieldset>
       </ExampleSection>
+
+      <ExampleSection title="Using CheckboxGroup Component" description="CheckboxGroup component provides a cleaner API with built-in error/warning state support.">
+        <CheckboxGroup legend="Notification Preferences">
+          <Checkbox label="Email notifications" name="notif-email-group" checked />
+          <Checkbox label="SMS notifications" name="notif-sms-group" />
+          <Checkbox label="Push notifications" name="notif-push-group" checked />
+          <Checkbox label="Marketing emails" name="notif-marketing-group" />
+        </CheckboxGroup>
+      </ExampleSection>
+
+      <ExampleSection title="Horizontal Layout" description="CheckboxGroup with horizontal orientation.">
+        <CheckboxGroup legend="Select Categories" orientation="horizontal">
+          <Checkbox label="News" name="cat-news-group" checked />
+          <Checkbox label="Sports" name="cat-sports-group" />
+          <Checkbox label="Technology" name="cat-tech-group" checked />
+          <Checkbox label="Entertainment" name="cat-ent-group" />
+        </CheckboxGroup>
+      </ExampleSection>
+
+      <ExampleSection title="Error State" description="CheckboxGroup with error state - applies error styling to all child checkboxes and displays error message.">
+        <CheckboxGroup 
+          legend="Notification Preferences *" 
+          error 
+          errorMessage="Please select at least one notification method"
+        >
+          <Checkbox label="Email notifications" name="notif-error-email" />
+          <Checkbox label="SMS notifications" name="notif-error-sms" />
+          <Checkbox label="Push notifications" name="notif-error-push" />
+          <Checkbox label="Marketing emails" name="notif-error-marketing" />
+        </CheckboxGroup>
+      </ExampleSection>
+
+      <ExampleSection title="Warning State" description="CheckboxGroup with warning state - applies warning styling to all child checkboxes and displays warning message.">
+        <CheckboxGroup 
+          legend="Notification Preferences" 
+          warning 
+          warningMessage="Marketing emails may contain promotional content"
+        >
+          <Checkbox label="Email notifications" name="notif-warning-email" checked />
+          <Checkbox label="SMS notifications" name="notif-warning-sms" />
+          <Checkbox label="Push notifications" name="notif-warning-push" checked />
+          <Checkbox label="Marketing emails" name="notif-warning-marketing" />
+        </CheckboxGroup>
+      </ExampleSection>
+    </section>
+
+    <section id="props">
+      <h2 class="section__title">Props</h2>
+      <PropsTable props={props} />
     </section>
   </article>
 </DocsLayout>

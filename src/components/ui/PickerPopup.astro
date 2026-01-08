@@ -2,8 +2,7 @@
 /**
  * PickerPopup Component
  * 
- * Reusable popup container for date/time pickers.
- * Positions relative to trigger element and handles focus management.
+ * Simple popup container for date/time pickers.
  */
 import Icon from './Icon.astro';
 
@@ -29,8 +28,8 @@ const classes = ['picker-popup', className].filter(Boolean).join(' ');
   id={id}
   role="dialog"
   aria-modal="true"
-  aria-labelledby={title ? `${id}-title` : undefined}
   data-picker-popup
+  data-trigger-id={triggerId || ''}
 >
   {title && (
     <div class="picker-popup__header">
@@ -51,101 +50,28 @@ const classes = ['picker-popup', className].filter(Boolean).join(' ');
 </div>
 
 <script>
-  function initPickerPopups() {
-    document.querySelectorAll('[data-picker-popup]').forEach((popup) => {
-      if (popup.hasAttribute('data-init')) return;
-      popup.setAttribute('data-init', 'true');
-      
-      const triggerId = popup.getAttribute('data-trigger-id');
-      const closeBtn = popup.querySelector('[data-picker-close]');
-      let triggerElement: HTMLElement | null = null;
-      
-      if (triggerId) {
-        triggerElement = document.getElementById(triggerId);
-      }
-      
-      // Close button handler
-      closeBtn?.addEventListener('click', () => {
-        closePicker(popup as HTMLElement, triggerElement);
-      });
-      
-      // Escape key handler
-      const escapeHandler = (e: KeyboardEvent) => {
-        if (e.key === 'Escape' && popup.classList.contains('is-open')) {
-          closePicker(popup as HTMLElement, triggerElement);
-        }
-      };
-      
-      document.addEventListener('keydown', escapeHandler);
-      
-      // Click outside handler
-      const clickOutsideHandler = (e: MouseEvent) => {
-        if (popup.classList.contains('is-open') && 
-            !popup.contains(e.target as Node) &&
-            (!triggerElement || !triggerElement.contains(e.target as Node))) {
-          closePicker(popup as HTMLElement, triggerElement);
-        }
-      };
-      
-      document.addEventListener('click', clickOutsideHandler);
-    });
-  }
-  
-  function openPicker(popupId: string, triggerElement?: HTMLElement | null) {
-    const popup = document.getElementById(popupId);
-    if (!popup) return;
-    
-    popup.classList.add('is-open');
-    
-    // Position popup relative to trigger
-    if (triggerElement) {
-      positionPopup(popup as HTMLElement, triggerElement);
-    }
-    
-    // Focus management - focus first focusable element
-    const firstFocusable = popup.querySelector('button, [tabindex]:not([tabindex="-1"])') as HTMLElement;
-    firstFocusable?.focus();
-  }
-  
-  function closePicker(popup: HTMLElement, triggerElement?: HTMLElement | null) {
-    popup.classList.remove('is-open');
-    
-    // Return focus to trigger
-    if (triggerElement) {
-      triggerElement.focus();
-    }
-  }
-  
   function positionPopup(popup: HTMLElement, trigger: HTMLElement) {
-    // Ensure popup is visible for measurement
     popup.style.visibility = 'hidden';
     popup.style.display = 'block';
     
     const triggerRect = trigger.getBoundingClientRect();
     const popupRect = popup.getBoundingClientRect();
-    const viewportWidth = window.innerWidth;
-    const viewportHeight = window.innerHeight;
-    const scrollX = window.scrollX || window.pageXOffset;
-    const scrollY = window.scrollY || window.pageYOffset;
+    const padding = 16;
     
-    // Default: position below trigger, aligned to left
-    let top = triggerRect.bottom + scrollY + 8;
-    let left = triggerRect.left + scrollX;
+    let top = triggerRect.bottom + 8;
+    let left = triggerRect.left;
     
-    // Adjust if popup would go off screen
-    if (left + popupRect.width > viewportWidth + scrollX) {
-      left = viewportWidth + scrollX - popupRect.width - 16;
+    if (left + popupRect.width > window.innerWidth - padding) {
+      left = window.innerWidth - popupRect.width - padding;
+    }
+    if (left < padding) {
+      left = padding;
     }
     
-    if (left < scrollX + 16) {
-      left = scrollX + 16;
-    }
-    
-    // If not enough space below, position above
-    if (top + popupRect.height > viewportHeight + scrollY - 16) {
-      top = triggerRect.top + scrollY - popupRect.height - 8;
-      if (top < scrollY + 16) {
-        top = scrollY + 16;
+    if (top + popupRect.height > window.innerHeight - padding) {
+      top = triggerRect.top - popupRect.height - 8;
+      if (top < padding) {
+        top = window.innerHeight - popupRect.height - padding;
       }
     }
     
@@ -155,10 +81,107 @@ const classes = ['picker-popup', className].filter(Boolean).join(' ');
     popup.style.visibility = 'visible';
   }
   
-  // Global functions
-  (window as any).openPicker = openPicker;
-  (window as any).closePicker = closePicker;
+  function openPopup(popupId: string) {
+    const popup = document.getElementById(popupId) as HTMLElement;
+    if (!popup) return;
+    
+    const triggerId = popup.getAttribute('data-trigger-id');
+    const trigger = triggerId ? document.getElementById(triggerId) : null;
+    
+    if (trigger) {
+      positionPopup(popup, trigger);
+    }
+    
+    popup.classList.add('is-open');
+  }
   
-  initPickerPopups();
+  function closePopup(popupId: string) {
+    const popup = document.getElementById(popupId) as HTMLElement;
+    if (!popup) return;
+    popup.classList.remove('is-open');
+  }
+  
+  function togglePopup(popupId: string) {
+    const popup = document.getElementById(popupId) as HTMLElement;
+    if (!popup) return;
+    
+    if (popup.classList.contains('is-open')) {
+      closePopup(popupId);
+    } else {
+      openPopup(popupId);
+    }
+  }
+  
+  // ATTACH TO WINDOW IMMEDIATELY - BEFORE ANY OTHER CODE
+  (window as any).openPicker = openPopup;
+  (window as any).closePicker = closePopup;
+  (window as any).togglePicker = togglePopup;
+  
+  function isClickInside(target: Element, popup: HTMLElement): boolean {
+    if (popup.contains(target)) return true;
+    
+    const triggerId = popup.getAttribute('data-trigger-id');
+    if (triggerId) {
+      const trigger = document.getElementById(triggerId);
+      if (trigger && (trigger === target || trigger.contains(target))) return true;
+      
+      const icon = document.querySelector(`[data-date-input-icon="${triggerId}"]`);
+      if (icon && (icon === target || icon.contains(target))) return true;
+      
+      const wrapper = trigger.closest('.date-input-wrapper');
+      if (wrapper && (wrapper === target || wrapper.contains(target))) return true;
+    }
+    
+    return false;
+  }
+  
+  function initPopup(popup: HTMLElement) {
+    const popupId = popup.id;
+    const closeBtn = popup.querySelector('[data-picker-close]');
+    
+    closeBtn?.addEventListener('click', (e) => {
+      e.stopPropagation();
+      closePopup(popupId);
+    });
+  }
+  
+  function handleEscape(e: KeyboardEvent) {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('[data-picker-popup].is-open').forEach((popup) => {
+        closePopup((popup as HTMLElement).id);
+      });
+    }
+  }
+  
+  function handleClickOutside(e: MouseEvent) {
+    const target = e.target as Element;
+    
+    document.querySelectorAll('[data-picker-popup].is-open').forEach((popup) => {
+      const popupEl = popup as HTMLElement;
+      if (!isClickInside(target, popupEl)) {
+        closePopup(popupEl.id);
+      }
+    });
+  }
+  
+  function initPickerPopups() {
+    document.querySelectorAll('[data-picker-popup]:not([data-initialized])').forEach((popup) => {
+      popup.setAttribute('data-initialized', 'true');
+      initPopup(popup as HTMLElement);
+    });
+    
+    if (!(window as any).pickerHandlersAttached) {
+      document.addEventListener('keydown', handleEscape);
+      document.addEventListener('click', handleClickOutside);
+      (window as any).pickerHandlersAttached = true;
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initPickerPopups);
+  } else {
+    initPickerPopups();
+  }
+  
   document.addEventListener('astro:page-load', initPickerPopups);
 </script>

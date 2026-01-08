@@ -1,6 +1,7 @@
 ---
 import DocsLayout from '../../layouts/DocsLayout.astro';
 import ExampleSection from '../../components/ExampleSection.astro';
+import TabStrip from '../../components/ui/TabStrip.astro';
 import Icon from '../../components/ui/Icon.astro';
 ---
 
@@ -25,12 +26,14 @@ import Icon from '../../components/ui/Icon.astro';
 
       <ExampleSection title="Basic Tabs" description="Standard tab navigation.">
         <div>
-          <div class="tabs">
-            <button class="tab is-active">Overview</button>
-            <button class="tab">Features</button>
-            <button class="tab">Pricing</button>
-            <button class="tab">Reviews</button>
-          </div>
+          <TabStrip
+            tabs={[
+              { id: '1', label: 'Overview', active: true },
+              { id: '2', label: 'Features' },
+              { id: '3', label: 'Pricing' },
+              { id: '4', label: 'Reviews' },
+            ]}
+          />
           <div class="tab-panel is-active">
             <p class="text-secondary">
               This is the overview content. Click other tabs to switch views.
@@ -39,19 +42,45 @@ import Icon from '../../components/ui/Icon.astro';
         </div>
       </ExampleSection>
 
-      <ExampleSection title="With Icons" description="Tabs with icons.">
+      <ExampleSection title="With Icons (Left)" description="Tabs with icons on the left side of the label.">
         <div>
-          <div class="tabs">
-            <button class="tab is-active">
-              <Icon name="home" size="sm" class="mr-1" /> Home
-            </button>
-            <button class="tab">
-              <Icon name="user" size="sm" class="mr-1" /> Profile
-            </button>
-            <button class="tab">
-              <Icon name="cog" size="sm" class="mr-1" /> Settings
-            </button>
+          <TabStrip
+            tabs={[
+              { id: '1', label: 'Home', icon: 'home', iconPosition: 'left', active: true },
+              { id: '2', label: 'Profile', icon: 'user', iconPosition: 'left' },
+              { id: '3', label: 'Settings', icon: 'cog-6-tooth', iconPosition: 'left' },
+            ]}
+          />
+          <div class="tab-panel is-active">
+            <p class="text-secondary">Home tab content.</p>
           </div>
+        </div>
+      </ExampleSection>
+
+      <ExampleSection title="With Icons (Right)" description="Tabs with icons on the right side of the label.">
+        <div>
+          <TabStrip
+            tabs={[
+              { id: '1', label: 'Home', icon: 'home', iconPosition: 'right', active: true },
+              { id: '2', label: 'Profile', icon: 'user', iconPosition: 'right' },
+              { id: '3', label: 'Settings', icon: 'cog-6-tooth', iconPosition: 'right' },
+            ]}
+          />
+          <div class="tab-panel is-active">
+            <p class="text-secondary">Home tab content.</p>
+          </div>
+        </div>
+      </ExampleSection>
+
+      <ExampleSection title="With Icons (Centered Over Text)" description="Tabs with icons centered above the text label.">
+        <div>
+          <TabStrip
+            tabs={[
+              { id: '1', label: 'Home', icon: 'home', iconPosition: 'top', active: true },
+              { id: '2', label: 'Profile', icon: 'user', iconPosition: 'top' },
+              { id: '3', label: 'Settings', icon: 'cog-6-tooth', iconPosition: 'top' },
+            ]}
+          />
           <div class="tab-panel is-active">
             <p class="text-secondary">Home tab content.</p>
           </div>
@@ -60,13 +89,124 @@ import Icon from '../../components/ui/Icon.astro';
 
       <ExampleSection title="Disabled Tab" description="Tab that cannot be selected.">
         <div>
-          <div class="tabs">
-            <button class="tab is-active">Active</button>
-            <button class="tab">Normal</button>
-            <button class="tab tab--disabled" disabled>Disabled</button>
-          </div>
+          <TabStrip
+            tabs={[
+              { id: '1', label: 'Active', active: true },
+              { id: '2', label: 'Normal' },
+              { id: '3', label: 'Disabled', disabled: true },
+            ]}
+          />
+        </div>
+      </ExampleSection>
+
+      <ExampleSection title="With Add Tab Button" description="Tab strip with an 'Add Tab' button at the end.">
+        <div>
+          <TabStrip
+            tabs={[
+              { id: '1', label: 'Tab 1', active: true },
+              { id: '2', label: 'Tab 2' },
+              { id: '3', label: 'Tab 3' },
+            ]}
+            showAddTab={true}
+            addTabLabel="Add Tab"
+          />
+        </div>
+      </ExampleSection>
+
+      <ExampleSection title="With Overflow Handling" description="When tabs overflow, a 'More(N)' button appears showing overflow tabs in a dropdown. Each overflow tab has close and open-in-new-window icons.">
+        <div style="width: 400px; border: 1px solid var(--border-color); padding: var(--space-4);">
+          <TabStrip
+            tabs={[
+              { id: '1', label: 'Tab 1', active: true },
+              { id: '2', label: 'Tab 2' },
+              { id: '3', label: 'Tab 3' },
+              { id: '4', label: 'Tab 4' },
+              { id: '5', label: 'Tab 5' },
+              { id: '6', label: 'Tab 6' },
+              { id: '7', label: 'Tab 7' },
+              { id: '8', label: 'Tab 8' },
+              { id: '9', label: 'Tab 9' },
+              { id: '10', label: 'Tab 10' },
+            ]}
+            overflowMode="auto"
+            showAddTab={true}
+          />
+        </div>
+        <p class="text-sm text-secondary mt-2">
+          Resize the container or viewport to see the overflow behavior. Tabs that don't fit will appear in the "More" dropdown.
+        </p>
+      </ExampleSection>
+
+      <ExampleSection title="Manual Overflow Control" description="Manually control which tabs appear in the overflow dropdown.">
+        <div>
+          <TabStrip
+            tabs={[
+              { id: '1', label: 'Tab 1', active: true },
+              { id: '2', label: 'Tab 2' },
+              { id: '3', label: 'Tab 3' },
+              { id: '4', label: 'Tab 4' },
+            ]}
+            overflowMode="manual"
+            overflowTabs={[
+              { id: '5', label: 'Tab 5', icon: 'document' },
+              { id: '6', label: 'Tab 6', icon: 'folder' },
+              { id: '7', label: 'Tab 7', icon: 'chart-bar' },
+            ]}
+            showAddTab={true}
+          />
+        </div>
+      </ExampleSection>
+
+      <ExampleSection title="Compact Variant" description="A more condensed version with reduced height and padding.">
+        <div>
+          <TabStrip
+            tabs={[
+              { id: '1', label: 'Overview', active: true },
+              { id: '2', label: 'Features' },
+              { id: '3', label: 'Pricing' },
+              { id: '4', label: 'Reviews' },
+            ]}
+            variant="compact"
+          />
+        </div>
+      </ExampleSection>
+
+      <ExampleSection title="Mixed Icon Positions" description="Tabs can have different icon positions in the same strip.">
+        <div>
+          <TabStrip
+            tabs={[
+              { id: '1', label: 'Home', icon: 'home', iconPosition: 'top', active: true },
+              { id: '2', label: 'Profile', icon: 'user', iconPosition: 'left' },
+              { id: '3', label: 'Settings', icon: 'cog-6-tooth', iconPosition: 'right' },
+              { id: '4', label: 'Help', icon: 'question-mark-circle', iconPosition: 'top' },
+            ]}
+          />
         </div>
       </ExampleSection>
     </section>
   </article>
 </DocsLayout>
+
+<script>
+  // Demo: Listen for tab strip events
+  document.addEventListener('tab-strip:tab-selected', (e) => {
+    console.log('Tab selected:', e.detail.tabId);
+    // In a real application, you would handle tab selection here
+    // For example: show corresponding tab panel, update state, etc.
+  });
+
+  document.addEventListener('tab-strip:add-tab', () => {
+    console.log('Add tab requested');
+    // In a real application, you would handle adding a new tab here
+  });
+
+  document.addEventListener('tab-strip:close-tab', (e) => {
+    console.log('Close tab:', e.detail.tabId);
+    // In a real application, you would handle closing the tab here
+  });
+
+  document.addEventListener('tab-strip:open-new-window', (e) => {
+    console.log('Open in new window:', e.detail.tabId);
+    // In a real application, you would handle opening in new window here
+  });
+</script>

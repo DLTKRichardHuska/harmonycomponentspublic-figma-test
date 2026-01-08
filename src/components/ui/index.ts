@@ -28,6 +28,7 @@ export { default as RadioButton } from './RadioButton.astro';
 export { default as RangeInput } from './RangeInput.astro';
 export { default as Spinner } from './Spinner.astro';
 export { default as StepperInput } from './StepperInput.astro';
+export { default as TabStrip } from './TabStrip.astro';
 export { default as Textarea } from './Textarea.astro';
 export { default as Toggle } from './Toggle.astro';
 export { default as Tooltip } from './Tooltip.astro';

@@ -1,0 +1,67 @@
+---
+/**
+ * CheckboxGroup Component
+ * 
+ * Wrapper component for grouping checkboxes with optional error/warning states.
+ * Accepts children via slot (composition pattern).
+ */
+import Icon from './Icon.astro';
+
+export interface Props {
+  legend?: string;
+  error?: boolean;
+  warning?: boolean;
+  errorMessage?: string;
+  warningMessage?: string;
+  orientation?: 'vertical' | 'horizontal';
+  class?: string;
+}
+
+const {
+  legend,
+  error = false,
+  warning = false,
+  errorMessage,
+  warningMessage,
+  orientation = 'vertical',
+  class: className = '',
+} = Astro.props;
+
+const groupId = `checkbox-group-${Math.random().toString(36).substr(2, 9)}`;
+const messageId = error && errorMessage ? `${groupId}-error` : warning && warningMessage ? `${groupId}-warning` : undefined;
+
+const wrapperClasses = [
+  'checkbox-group-wrapper',
+  error && 'checkbox-group-wrapper--error',
+  warning && 'checkbox-group-wrapper--warning',
+  orientation === 'horizontal' && 'checkbox-group-wrapper--horizontal',
+  className,
+].filter(Boolean).join(' ');
+
+const legendClasses = [
+  'checkbox-group-wrapper__legend',
+  error && 'checkbox-group-wrapper__legend--error',
+  warning && 'checkbox-group-wrapper__legend--warning',
+].filter(Boolean).join(' ');
+---
+
+<fieldset class={wrapperClasses} aria-invalid={error ? 'true' : undefined} aria-describedby={messageId}>
+  {legend && (
+    <legend class={legendClasses}>{legend}</legend>
+  )}
+  <div class="checkbox-group-wrapper__content">
+    <slot />
+  </div>
+  {error && errorMessage && (
+    <p id={messageId} class="checkbox-group-wrapper__message checkbox-group-wrapper__message--error">
+      <Icon name="exclamation-circle" size="sm" class="checkbox-group-wrapper__message-icon" />
+      {errorMessage}
+    </p>
+  )}
+  {!error && warning && warningMessage && (
+    <p id={messageId} class="checkbox-group-wrapper__message checkbox-group-wrapper__message--warning">
+      <Icon name="exclamation-triangle" size="sm" class="checkbox-group-wrapper__message-icon" />
+      {warningMessage}
+    </p>
+  )}
+</fieldset>

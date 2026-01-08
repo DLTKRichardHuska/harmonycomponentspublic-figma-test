@@ -548,6 +548,148 @@
 }
 
 /* ===========================================
+   RADIO GROUP / CHECKBOX GROUP
+   =========================================== */
+
+.radio-group-wrapper,
+.checkbox-group-wrapper {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.radio-group-wrapper__content,
+.checkbox-group-wrapper__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.radio-group-wrapper--horizontal .radio-group-wrapper__content,
+.checkbox-group-wrapper--horizontal .checkbox-group-wrapper__content {
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+.radio-group-wrapper__legend,
+.checkbox-group-wrapper__legend {
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  color: var(--text-primary);
+  margin-bottom: var(--space-3);
+}
+
+.radio-group-wrapper__legend--error,
+.checkbox-group-wrapper__legend--error {
+  color: var(--color-error);
+}
+
+.radio-group-wrapper__legend--warning,
+.checkbox-group-wrapper__legend--warning {
+  color: var(--color-warning);
+}
+
+.radio-group-wrapper__message,
+.checkbox-group-wrapper__message {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  margin-top: var(--space-1);
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+}
+
+.radio-group-wrapper__message-icon,
+.checkbox-group-wrapper__message-icon {
+  flex-shrink: 0;
+}
+
+.radio-group-wrapper__message--error .radio-group-wrapper__message-icon,
+.checkbox-group-wrapper__message--error .checkbox-group-wrapper__message-icon {
+  color: var(--color-error);
+}
+
+.radio-group-wrapper__message--warning .radio-group-wrapper__message-icon,
+.checkbox-group-wrapper__message--warning .checkbox-group-wrapper__message-icon {
+  color: var(--color-warning);
+}
+
+/* CSS-based state propagation for radio groups */
+.radio-group-wrapper--error .radio__circle {
+  border-color: var(--color-error);
+  border-width: 2px;
+}
+
+.radio-group-wrapper--error .radio__input:checked + .radio__circle {
+  border-color: var(--theme-primary);
+  box-shadow: 0 0 0 2px var(--color-error);
+}
+
+.radio-group-wrapper--error .radio__input:focus + .radio__circle {
+  box-shadow: 0 0 0 1px var(--border-color), 0 0 0 3px var(--color-error-focus);
+}
+
+.radio-group-wrapper--error .radio__input:checked:focus + .radio__circle {
+  box-shadow: 0 0 0 2px var(--color-error), 0 0 0 3px var(--color-error-focus);
+}
+
+.radio-group-wrapper--warning .radio__circle {
+  border-color: var(--color-warning);
+}
+
+.radio-group-wrapper--warning .radio__input:checked + .radio__circle {
+  border-color: var(--theme-primary);
+  box-shadow: 0 0 0 1px var(--color-warning);
+}
+
+.radio-group-wrapper--warning .radio__input:focus + .radio__circle {
+  box-shadow: 0 0 0 1px var(--border-color), 0 0 0 3px var(--color-warning-focus);
+}
+
+.radio-group-wrapper--warning .radio__input:checked:focus + .radio__circle {
+  box-shadow: 0 0 0 1px var(--color-warning), 0 0 0 3px var(--color-warning-focus);
+}
+
+/* CSS-based state propagation for checkbox groups */
+.checkbox-group-wrapper--error .checkbox__box {
+  border-color: var(--color-error);
+  border-width: 2px;
+}
+
+.checkbox-group-wrapper--error .checkbox__input:checked + .checkbox__box {
+  background-color: var(--theme-primary);
+  border-color: var(--theme-primary);
+  box-shadow: 0 0 0 2px var(--color-error);
+}
+
+.checkbox-group-wrapper--error .checkbox__input:focus + .checkbox__box {
+  box-shadow: 0 0 0 1px var(--border-color), 0 0 0 3px var(--color-error-focus);
+}
+
+.checkbox-group-wrapper--error .checkbox__input:checked:focus + .checkbox__box {
+  box-shadow: 0 0 0 2px var(--color-error), 0 0 0 3px var(--color-error-focus);
+}
+
+.checkbox-group-wrapper--warning .checkbox__box {
+  border-color: var(--color-warning);
+}
+
+.checkbox-group-wrapper--warning .checkbox__input:checked + .checkbox__box {
+  background-color: var(--theme-primary);
+  border-color: var(--theme-primary);
+  box-shadow: 0 0 0 1px var(--color-warning);
+}
+
+.checkbox-group-wrapper--warning .checkbox__input:focus + .checkbox__box {
+  box-shadow: 0 0 0 1px var(--border-color), 0 0 0 3px var(--color-warning-focus);
+}
+
+.checkbox-group-wrapper--warning .checkbox__input:checked:focus + .checkbox__box {
+  box-shadow: 0 0 0 1px var(--color-warning), 0 0 0 3px var(--color-warning-focus);
+}
+
+/* ===========================================
    CHECKBOX
    =========================================== */
 
@@ -761,6 +903,77 @@
 
 .radio--disabled .radio__label {
   color: var(--text-muted);
+}
+
+/* Radio Warning State */
+.radio--warning .radio__circle {
+  border-color: var(--color-warning);
+}
+
+.radio--warning .radio__input:checked + .radio__circle {
+  border-color: var(--theme-primary);
+  box-shadow: 0 0 0 1px var(--color-warning);
+}
+
+.radio--warning .radio__input:focus + .radio__circle {
+  box-shadow: 0 0 0 1px var(--border-color), 0 0 0 3px var(--color-warning-focus);
+}
+
+.radio--warning .radio__input:checked:focus + .radio__circle {
+  box-shadow: 0 0 0 1px var(--color-warning), 0 0 0 3px var(--color-warning-focus);
+}
+
+/* Radio Error State */
+.radio--error .radio__circle {
+  border-color: var(--color-error);
+  border-width: 2px;
+}
+
+.radio--error .radio__input:checked + .radio__circle {
+  border-color: var(--theme-primary);
+  box-shadow: 0 0 0 2px var(--color-error);
+}
+
+.radio--error .radio__input:focus + .radio__circle {
+  box-shadow: 0 0 0 1px var(--border-color), 0 0 0 3px var(--color-error-focus);
+}
+
+.radio--error .radio__input:checked:focus + .radio__circle {
+  box-shadow: 0 0 0 2px var(--color-error), 0 0 0 3px var(--color-error-focus);
+}
+
+/* Radio Wrapper */
+.radio-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.radio-wrapper__warning,
+.radio-wrapper__error {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  margin-top: var(--space-1);
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+}
+
+.radio-wrapper__warning {
+  color: var(--text-secondary);
+}
+
+.radio-wrapper__warning-icon {
+  color: var(--color-warning);
+  flex-shrink: 0;
+}
+
+.radio-wrapper__error {
+  color: var(--text-secondary);
+}
+
+.radio-wrapper__error-icon {
+  color: var(--color-error);
+  flex-shrink: 0;
 }
 
 /* ===========================================
@@ -2305,10 +2518,14 @@
   font-size: var(--text-sm);
   font-weight: var(--font-medium);
   color: var(--text-secondary);
+  border: none;
   border-bottom: 2px solid transparent;
   margin-bottom: -1px;
   cursor: pointer;
   transition: all var(--transition-fast);
+  background: transparent;
+  text-decoration: none;
+  font-family: var(--font-sans);
 }
 
 .tab:hover {
@@ -2317,13 +2534,15 @@
 
 .tab.is-active {
   color: var(--theme-primary);
-  border-bottom-color: var(--theme-primary);
+  border-bottom: 4px solid var(--theme-primary);
+  margin-bottom: -3px;
 }
 
 .tab:disabled,
 .tab--disabled {
   color: var(--text-muted);
   cursor: not-allowed;
+  opacity: 0.6;
 }
 
 .tab-panel {
@@ -2333,6 +2552,41 @@
 
 .tab-panel.is-active {
   display: block;
+}
+
+/* Tab icon positioning variants */
+.tab--icon-left {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.tab--icon-right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-direction: row-reverse;
+}
+
+.tab--icon-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.tab__icon {
+  flex-shrink: 0;
+}
+
+.tab__icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tab__label {
+  white-space: nowrap;
 }
 
 /* ===========================================
@@ -2404,6 +2658,10 @@
   cursor: not-allowed;
 }
 
+.date-input::placeholder {
+  color: var(--text-muted);
+}
+
 .date-input-wrapper {
   position: relative;
 }
@@ -2416,6 +2674,17 @@
   color: var(--text-secondary);
   pointer-events: auto;
   cursor: pointer;
+  background: transparent;
+  border: none;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.date-input-wrapper__icon:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
 }
 
 /* ===========================================
@@ -3340,6 +3609,7 @@
 .list-menu__item {
   display: flex;
   align-items: center;
+  width: 100%;
   gap: var(--space-3);
   padding: var(--space-3) var(--space-4);
   font-size: var(--text-sm);
@@ -3369,6 +3639,10 @@
 .list-menu__item:hover .list-menu__item-icon,
 .list-menu__item.is-active .list-menu__item-icon {
   color: var(--theme-primary);
+}
+
+.list-menu--no-borders .list-menu__item {
+  border-bottom: none;
 }
 
 /* ===========================================

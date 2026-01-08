@@ -4,6 +4,7 @@
  * 
  * Radio input for single selection from a group.
  */
+import Icon from './Icon.astro';
 
 export interface Props {
   name: string;
@@ -12,6 +13,10 @@ export interface Props {
   disabled?: boolean;
   label?: string;
   value: string;
+  warning?: boolean;
+  error?: boolean;
+  warningMessage?: string;
+  errorMessage?: string;
   class?: string;
   [key: string]: any;
 }
@@ -23,32 +28,55 @@ const {
   disabled = false,
   label,
   value,
+  warning = false,
+  error = false,
+  warningMessage,
+  errorMessage,
   class: className = '',
   ...rest
 } = Astro.props;
 
 const radioId = id || `radio-${Math.random().toString(36).substr(2, 9)}`;
+const messageId = error && errorMessage ? `${radioId}-error` : warning && warningMessage ? `${radioId}-warning` : undefined;
 
 const classes = [
   'radio',
   disabled && 'radio--disabled',
+  warning && 'radio--warning',
+  error && 'radio--error',
   className,
 ].filter(Boolean).join(' ');
 ---
 
-<label class={classes}>
-  <input
-    type="radio"
-    name={name}
-    id={radioId}
-    checked={checked}
-    disabled={disabled}
-    value={value}
-    class="radio__input"
-    {...rest}
-  />
-  <span class="radio__circle">
-    <span class="radio__dot"></span>
-  </span>
-  {label && <span class="radio__label">{label}</span>}
-</label>
+<div class="radio-wrapper">
+  <label class={classes}>
+    <input
+      type="radio"
+      name={name}
+      id={radioId}
+      checked={checked}
+      disabled={disabled}
+      value={value}
+      class="radio__input"
+      aria-invalid={error ? 'true' : undefined}
+      aria-describedby={messageId}
+      {...rest}
+    />
+    <span class="radio__circle">
+      <span class="radio__dot"></span>
+    </span>
+    {label && <span class="radio__label">{label}</span>}
+  </label>
+  {error && errorMessage && (
+    <p id={messageId} class="radio-wrapper__error">
+      <Icon name="exclamation-circle" size="sm" class="radio-wrapper__error-icon" />
+      {errorMessage}
+    </p>
+  )}
+  {!error && warning && warningMessage && (
+    <p id={messageId} class="radio-wrapper__warning">
+      <Icon name="exclamation-triangle" size="sm" class="radio-wrapper__warning-icon" />
+      {warningMessage}
+    </p>
+  )}
+</div>

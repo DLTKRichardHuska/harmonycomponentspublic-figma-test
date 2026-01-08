@@ -14,6 +14,10 @@ const props = [
   { name: 'label', type: 'string', default: '—', description: 'Label text' },
   { name: 'checked', type: 'boolean', default: 'false', description: 'Checked state' },
   { name: 'disabled', type: 'boolean', default: 'false', description: 'Disables the radio' },
+  { name: 'warning', type: 'boolean', default: 'false', description: 'Shows warning state' },
+  { name: 'error', type: 'boolean', default: 'false', description: 'Shows error state' },
+  { name: 'warningMessage', type: 'string', default: '—', description: 'Warning message to display' },
+  { name: 'errorMessage', type: 'string', default: '—', description: 'Error message to display' },
 ];
 ---
 
@@ -59,6 +63,23 @@ const props = [
           <RadioButton name="color" value="red" label="Red" />
           <RadioButton name="color" value="green" label="Green" checked />
           <RadioButton name="color" value="blue" label="Blue" />
+        </div>
+      </ExampleSection>
+
+      <ExampleSection title="State Variants" description="Warning and error states for validation and important status information.">
+        <div class="flex flex-col gap-6">
+          <div class="flex flex-col gap-3">
+            <h4 class="text-sm font-semibold text-primary">Warning States</h4>
+            <RadioButton name="warning-unchecked" value="1" label="Unchecked with warning" warning warningMessage="This action may have unintended consequences" />
+            <RadioButton name="warning-checked" value="2" label="Checked with warning" checked warning warningMessage="Review this selection carefully" />
+            <RadioButton name="warning-disabled" value="3" label="Disabled warning" disabled warning warningMessage="This option is currently unavailable" />
+          </div>
+          <div class="flex flex-col gap-3">
+            <h4 class="text-sm font-semibold text-primary">Error States</h4>
+            <RadioButton name="error-unchecked" value="1" label="Unchecked with error" error errorMessage="This field is required" />
+            <RadioButton name="error-checked" value="2" label="Checked with error" checked error errorMessage="This selection is invalid" />
+            <RadioButton name="error-disabled" value="3" label="Disabled error" disabled error errorMessage="Cannot select this option" />
+          </div>
         </div>
       </ExampleSection>
     </section>

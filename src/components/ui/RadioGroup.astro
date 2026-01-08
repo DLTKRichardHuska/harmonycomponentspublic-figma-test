@@ -1,0 +1,69 @@
+---
+/**
+ * RadioGroup Component
+ * 
+ * Wrapper component for grouping radio buttons with optional error/warning states.
+ * Accepts children via slot (composition pattern).
+ */
+import Icon from './Icon.astro';
+
+export interface Props {
+  name: string;
+  legend?: string;
+  error?: boolean;
+  warning?: boolean;
+  errorMessage?: string;
+  warningMessage?: string;
+  orientation?: 'vertical' | 'horizontal';
+  class?: string;
+}
+
+const {
+  name,
+  legend,
+  error = false,
+  warning = false,
+  errorMessage,
+  warningMessage,
+  orientation = 'vertical',
+  class: className = '',
+} = Astro.props;
+
+const groupId = `radio-group-${Math.random().toString(36).substr(2, 9)}`;
+const messageId = error && errorMessage ? `${groupId}-error` : warning && warningMessage ? `${groupId}-warning` : undefined;
+
+const wrapperClasses = [
+  'radio-group-wrapper',
+  error && 'radio-group-wrapper--error',
+  warning && 'radio-group-wrapper--warning',
+  orientation === 'horizontal' && 'radio-group-wrapper--horizontal',
+  className,
+].filter(Boolean).join(' ');
+
+const legendClasses = [
+  'radio-group-wrapper__legend',
+  error && 'radio-group-wrapper__legend--error',
+  warning && 'radio-group-wrapper__legend--warning',
+].filter(Boolean).join(' ');
+---
+
+<fieldset class={wrapperClasses} aria-invalid={error ? 'true' : undefined} aria-describedby={messageId}>
+  {legend && (
+    <legend class={legendClasses}>{legend}</legend>
+  )}
+  <div class="radio-group-wrapper__content">
+    <slot />
+  </div>
+  {error && errorMessage && (
+    <p id={messageId} class="radio-group-wrapper__message radio-group-wrapper__message--error">
+      <Icon name="exclamation-circle" size="sm" class="radio-group-wrapper__message-icon" />
+      {errorMessage}
+    </p>
+  )}
+  {!error && warning && warningMessage && (
+    <p id={messageId} class="radio-group-wrapper__message radio-group-wrapper__message--warning">
+      <Icon name="exclamation-triangle" size="sm" class="radio-group-wrapper__message-icon" />
+      {warningMessage}
+    </p>
+  )}
+</fieldset>
