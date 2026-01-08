@@ -15,6 +15,7 @@
     },
     "sm": {
       "value": "0 1px 2px 0 rgb(15 23 42 / 0.05)",
+      "valueDark": "0 1px 2px 0 rgba(0, 0, 0, 0.3)",
       "css": "0 1px 2px 0 rgb(15 23 42 / 0.05)",
       "cssVar": "--shadow-sm",
       "cssClass": "shadow-sm",
@@ -22,26 +23,19 @@
       "description": "Subtle elevation for buttons and small elements",
       "usage": ["Buttons", "Inputs", "Small cards"]
     },
-    "default": {
-      "value": "0 1px 3px 0 rgb(15 23 42 / 0.1), 0 1px 2px -1px rgb(15 23 42 / 0.1)",
-      "css": "0 1px 3px 0 rgb(15 23 42 / 0.1), 0 1px 2px -1px rgb(15 23 42 / 0.1)",
-      "cssVar": "--shadow-md",
-      "cssClass": "shadow-md",
-      "level": 1,
-      "description": "Default elevation for cards and containers",
-      "usage": ["Cards", "Dropdowns", "Tooltips"]
-    },
     "md": {
       "value": "0 4px 6px -1px rgb(15 23 42 / 0.1), 0 2px 4px -2px rgb(15 23 42 / 0.1)",
+      "valueDark": "0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -2px rgba(0, 0, 0, 0.2)",
       "css": "0 4px 6px -1px rgb(15 23 42 / 0.1), 0 2px 4px -2px rgb(15 23 42 / 0.1)",
       "cssVar": "--shadow-md",
       "cssClass": "shadow-md",
       "level": 2,
-      "description": "Medium elevation for floating elements",
-      "usage": ["Floating menus", "Popovers"]
+      "description": "Medium elevation for floating elements, cards, and enhanced alerts",
+      "usage": ["Floating menus", "Popovers", "Cards", "Enhanced alerts"]
     },
     "lg": {
       "value": "0 10px 15px -3px rgb(15 23 42 / 0.1), 0 4px 6px -4px rgb(15 23 42 / 0.1)",
+      "valueDark": "0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -4px rgba(0, 0, 0, 0.3)",
       "css": "0 10px 15px -3px rgb(15 23 42 / 0.1), 0 4px 6px -4px rgb(15 23 42 / 0.1)",
       "cssVar": "--shadow-lg",
       "cssClass": "shadow-lg",
@@ -51,6 +45,7 @@
     },
     "xl": {
       "value": "0 20px 25px -5px rgb(15 23 42 / 0.1), 0 8px 10px -6px rgb(15 23 42 / 0.1)",
+      "valueDark": "0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 8px 10px -6px rgba(0, 0, 0, 0.3)",
       "css": "0 20px 25px -5px rgb(15 23 42 / 0.1), 0 8px 10px -6px rgb(15 23 42 / 0.1)",
       "cssVar": "--shadow-xl",
       "cssClass": "shadow-xl",
@@ -59,22 +54,14 @@
       "usage": ["Full-screen modals", "Image lightboxes"]
     },
     "2xl": {
-      "value": "0 25px 50px -12px rgb(15 23 42 / 0.25)",
-      "css": "0 25px 50px -12px rgb(15 23 42 / 0.25)",
+      "value": "0 30px 35px -8px rgb(15 23 42 / 0.15), 0 12px 15px -7px rgb(15 23 42 / 0.12)",
+      "valueDark": "0 30px 35px -8px rgba(0, 0, 0, 0.5), 0 12px 15px -7px rgba(0, 0, 0, 0.4)",
+      "css": "0 30px 35px -8px rgb(15 23 42 / 0.15), 0 12px 15px -7px rgb(15 23 42 / 0.12)",
       "cssVar": "--shadow-2xl",
       "cssClass": "shadow-2xl",
       "level": 5,
       "description": "Maximum elevation for dramatic effect",
       "usage": ["Hero images", "Featured content"]
-    },
-    "elevation-2": {
-      "value": "0px 3px 6px 0px rgba(16, 24, 64, 0.12)",
-      "css": "0px 3px 6px 0px rgba(16, 24, 64, 0.12)",
-      "cssVar": "--shadow-elevation-2",
-      "cssClass": "shadow-elevation-2",
-      "level": 2,
-      "description": "Elevation 2 shadow for enhanced alerts and elevated elements",
-      "usage": ["Enhanced alerts", "Elevated containers"]
     }
   },
 

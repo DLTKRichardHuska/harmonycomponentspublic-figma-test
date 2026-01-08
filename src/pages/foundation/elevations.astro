@@ -9,7 +9,9 @@ const shadowData = Object.entries(elevations.shadows).map(([key, shadow]) => ({
   cssClass: shadow.cssClass,
   level: shadow.level,
   description: shadow.description,
-  usage: shadow.usage || []
+  usage: shadow.usage || [],
+  value: shadow.value,
+  valueDark: (shadow as any).valueDark || shadow.value
 }));
 
 // Sort shadows by level
@@ -27,6 +29,9 @@ shadowData.sort((a, b) => a.level - b.level);
 
     <section class="space-y-6">
       <h2 class="section__title">Shadow Scale</h2>
+      <p class="text-sm text-secondary mb-4">
+        Shadows automatically adapt to light and dark modes. In dark mode, shadows use increased opacity for better visibility on dark backgrounds.
+      </p>
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {shadowData.map((shadow) => (
           <div class={`p-6 bg-card rounded-lg text-center ${shadow.cssClass === 'shadow-none' ? '' : shadow.cssClass}`}>
@@ -44,10 +49,43 @@ shadowData.sort((a, b) => a.level - b.level);
     </section>
 
     <section class="space-y-6">
+      <h2 class="section__title">Shadow Values</h2>
+      <p class="text-sm text-secondary mb-4">
+        Each shadow has separate values for light and dark modes to ensure optimal visibility and depth perception.
+      </p>
+      <div class="space-y-4">
+        {shadowData.filter(s => s.key !== 'none').map((shadow) => (
+          <div class="p-4 bg-card rounded-lg border">
+            <div class="flex items-center gap-3 mb-3">
+              <span class="text-sm font-medium text-primary">{shadow.name}</span>
+              <span class="badge badge--default">{shadow.cssClass}</span>
+            </div>
+            <div class="grid md:grid-cols-2 gap-4">
+              <div>
+                <p class="text-xs font-semibold text-secondary mb-1">Light Mode</p>
+                <code class="text-xs font-mono text-muted block p-2 bg-elevated rounded">
+                  {shadow.value}
+                </code>
+              </div>
+              <div>
+                <p class="text-xs font-semibold text-secondary mb-1">Dark Mode</p>
+                <code class="text-xs font-mono text-muted block p-2 bg-elevated rounded">
+                  {shadow.valueDark}
+                </code>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="space-y-6">
       <h2 class="section__title">Elevation Hierarchy</h2>
       <div class="space-y-4">
         {elevations.hierarchy.map((level) => {
-          const shadow = elevations.shadows[level.shadow as keyof typeof elevations.shadows];
+          // Map shadow class name (e.g., "shadow-sm") to shadow key (e.g., "sm")
+          const shadowKey = level.shadow.replace('shadow-', '') as keyof typeof elevations.shadows;
+          const shadow = elevations.shadows[shadowKey];
           const shadowClass = shadow?.cssClass || 'shadow-none';
           return (
             <div class={`p-4 bg-card rounded-lg border ${shadowClass === 'shadow-none' ? 'bg-elevated' : ''}`}>
