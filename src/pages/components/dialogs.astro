@@ -13,7 +13,7 @@ import Icon from '../../components/ui/Icon.astro';
 const props = [
   { name: 'id', type: 'string', default: '—', description: 'Unique dialog id (required)' },
   { name: 'title', type: 'string', default: '—', description: 'Dialog title' },
-  { name: 'buttonAlignment', type: '"left" | "right"', default: '"right"', description: 'Button alignment in footer. "left" places primary button first, "right" aligns buttons to the right.' },
+  { name: 'buttonAlignment', type: '"left" | "right"', default: '"left"', description: 'Button alignment in footer. "left" places primary button first, "right" aligns buttons to the right.' },
   { name: 'headerVariant', type: '"default" | "primary"', default: '"default"', description: 'Header background variant. "default" uses card background, "primary" uses theme primary color.' },
   { name: 'class', type: 'string', default: '—', description: 'Additional CSS classes' },
 ];
@@ -48,8 +48,8 @@ const props = [
             This is a basic dialog with some content. You can add any content here including forms, images, or other components.
           </p>
           <div slot="footer">
-            <Button variant="ghost" onclick="closeDialog('basic-dialog')">Cancel</Button>
             <Button onclick="closeDialog('basic-dialog')">Confirm</Button>
+            <Button variant="ghost" onclick="closeDialog('basic-dialog')">Cancel</Button>
           </div>
         </Dialog>
       </ExampleSection>
@@ -62,22 +62,22 @@ const props = [
             Are you sure you want to delete this item? This action cannot be undone.
           </p>
           <div slot="footer">
-            <Button variant="ghost" onclick="closeDialog('confirm-dialog')">Cancel</Button>
             <Button variant="destructive" onclick="closeDialog('confirm-dialog')">Delete</Button>
+            <Button variant="ghost" onclick="closeDialog('confirm-dialog')">Cancel</Button>
           </div>
         </Dialog>
       </ExampleSection>
 
-      <ExampleSection title="Left-Aligned Buttons" description="Dialog with buttons aligned to the left, primary button first.">
-        <Button onclick="openDialog('left-align-dialog')">Open Left-Aligned Dialog</Button>
+      <ExampleSection title="Right-Aligned Buttons" description="Dialog with buttons aligned to the right.">
+        <Button onclick="openDialog('right-align-dialog')">Open Right-Aligned Dialog</Button>
         
-        <Dialog id="left-align-dialog" title="Left-Aligned Buttons" buttonAlignment="left">
+        <Dialog id="right-align-dialog" title="Right-Aligned Buttons" buttonAlignment="right">
           <p class="text-secondary">
-            This dialog has buttons aligned to the left with the primary button appearing first.
+            This dialog has buttons aligned to the right. Use buttonAlignment="right" to override the default left alignment.
           </p>
           <div slot="footer">
-            <Button onclick="closeDialog('left-align-dialog')">Confirm</Button>
-            <Button variant="ghost" onclick="closeDialog('left-align-dialog')">Cancel</Button>
+            <Button variant="ghost" onclick="closeDialog('right-align-dialog')">Cancel</Button>
+            <Button onclick="closeDialog('right-align-dialog')">Confirm</Button>
           </div>
         </Dialog>
       </ExampleSection>
@@ -90,8 +90,8 @@ const props = [
             This dialog has a primary blue header background with inverse text color for better contrast.
           </p>
           <div slot="footer">
-            <Button variant="ghost" onclick="closeDialog('primary-header-dialog')">Cancel</Button>
             <Button onclick="closeDialog('primary-header-dialog')">Confirm</Button>
+            <Button variant="ghost" onclick="closeDialog('primary-header-dialog')">Cancel</Button>
           </div>
         </Dialog>
       </ExampleSection>

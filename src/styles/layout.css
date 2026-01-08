@@ -785,6 +785,7 @@
 }
 
 .quick-card__title {
+  font-family: var(--font-display);
   font-weight: var(--font-semibold);
   color: var(--text-primary);
   margin-bottom: var(--space-2);
@@ -841,6 +842,7 @@
 }
 
 .nav-card__title {
+  font-family: var(--font-display);
   font-size: var(--text-sm);
   font-weight: var(--font-medium);
   color: var(--text-secondary);
@@ -922,6 +924,7 @@
 }
 
 .a11y-card__title {
+  font-family: var(--font-display);
   font-weight: var(--font-semibold);
   color: var(--text-primary);
   margin-bottom: var(--space-2);
