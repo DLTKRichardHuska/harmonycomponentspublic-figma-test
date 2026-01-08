@@ -1,0 +1,434 @@
+---
+/**
+ * WeekPicker Component
+ * 
+ * Week selection picker with ISO week numbering.
+ * Uses Harmony Design System tokens for styling.
+ */
+import Icon from './Icon.astro';
+
+export interface Props {
+  value?: string; // ISO week string (YYYY-Www)
+  min?: string; // ISO week string
+  max?: string; // ISO week string
+  disabled?: boolean;
+  locale?: string;
+  id?: string;
+  class?: string;
+}
+
+const {
+  value,
+  min,
+  max,
+  disabled = false,
+  locale = 'en-US',
+  id,
+  class: className = '',
+} = Astro.props;
+
+const pickerId = id || `week-picker-${Math.random().toString(36).substr(2, 9)}`;
+
+// Helper to get ISO week number
+function getISOWeek(date: Date): { year: number; week: number } {
+  const d = new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()));
+  const dayNum = d.getUTCDay() || 7;
+  d.setUTCDate(d.getUTCDate() + 4 - dayNum);
+  const yearStart = new Date(Date.UTC(d.getUTCFullYear(), 0, 1));
+  const week = Math.ceil((((d.getTime() - yearStart.getTime()) / 86400000) + 1) / 7);
+  return { year: d.getUTCFullYear(), week };
+}
+
+// Helper to get date from ISO week
+function getDateFromISOWeek(year: number, week: number): Date {
+  const simple = new Date(year, 0, 1 + (week - 1) * 7);
+  const dow = simple.getDay();
+  const ISOweekStart = simple;
+  if (dow <= 4) {
+    ISOweekStart.setDate(simple.getDate() - simple.getDay() + 1);
+  } else {
+    ISOweekStart.setDate(simple.getDate() + 8 - simple.getDay());
+  }
+  return ISOweekStart;
+}
+
+// Parse value
+let currentYear = new Date().getFullYear();
+let selectedWeek: number | null = null;
+
+if (value) {
+  const match = value.match(/(\d{4})-W(\d{2})/);
+  if (match) {
+    currentYear = parseInt(match[1]);
+    selectedWeek = parseInt(match[2]);
+  }
+}
+
+// Parse min/max
+let minYear: number | null = null;
+let minWeek: number | null = null;
+let maxYear: number | null = null;
+let maxWeek: number | null = null;
+
+if (min) {
+  const match = min.match(/(\d{4})-W(\d{2})/);
+  if (match) {
+    minYear = parseInt(match[1]);
+    minWeek = parseInt(match[2]);
+  }
+}
+
+if (max) {
+  const match = max.match(/(\d{4})-W(\d{2})/);
+  if (match) {
+    maxYear = parseInt(match[1]);
+    maxWeek = parseInt(match[2]);
+  }
+}
+
+// Get weeks for current year (ISO weeks can span years, so we need to handle that)
+function getWeeksForYear(year: number): Array<{ week: number; startDate: Date; endDate: Date }> {
+  const weeks: Array<{ week: number; startDate: Date; endDate: Date }> = [];
+  const firstDay = new Date(year, 0, 1);
+  const lastDay = new Date(year, 11, 31);
+  
+  const firstWeek = getISOWeek(firstDay);
+  const lastWeek = getISOWeek(lastDay);
+  
+  // ISO weeks can start in previous year or end in next year
+  const startYear = firstWeek.year;
+  const endYear = lastWeek.year;
+  
+  // Get all weeks that have at least one day in the target year
+  for (let y = startYear; y <= endYear; y++) {
+    const yearStart = new Date(y, 0, 1);
+    const yearEnd = new Date(y, 11, 31);
+    const yearStartWeek = getISOWeek(yearStart);
+    const yearEndWeek = getISOWeek(yearEnd);
+    
+    const maxWeeks = yearEndWeek.week;
+    
+    for (let w = 1; w <= maxWeeks; w++) {
+      const weekStart = getDateFromISOWeek(y, w);
+      const weekEnd = new Date(weekStart);
+      weekEnd.setDate(weekEnd.getDate() + 6);
+      
+      // Only include weeks that overlap with the target year
+      if (weekStart.getFullYear() === year || weekEnd.getFullYear() === year || 
+          (weekStart.getFullYear() < year && weekEnd.getFullYear() >= year)) {
+        weeks.push({ week: w, startDate: weekStart, endDate: weekEnd });
+      }
+    }
+  }
+  
+  return weeks.sort((a, b) => a.startDate.getTime() - b.startDate.getTime());
+}
+
+const weeks = getWeeksForYear(currentYear);
+
+const classes = ['week-picker', className].filter(Boolean).join(' ');
+---
+
+<div 
+  class={classes} 
+  id={pickerId} 
+  data-week-picker
+  data-year={currentYear}
+  data-selected-week={selectedWeek?.toString() || ''}
+  data-min-year={minYear?.toString() || ''}
+  data-min-week={minWeek?.toString() || ''}
+  data-max-year={maxYear?.toString() || ''}
+  data-max-week={maxWeek?.toString() || ''}
+  data-disabled={disabled.toString()}
+>
+  <div class="week-picker__header">
+    <button 
+      type="button" 
+      class="week-picker__nav-btn"
+      data-prev-year
+      aria-label="Previous year"
+      disabled={disabled}
+    >
+      <Icon name="chevron-left" size="sm" />
+    </button>
+    
+    <div class="week-picker__year">
+      <span>{currentYear}</span>
+    </div>
+    
+    <button 
+      type="button" 
+      class="week-picker__nav-btn"
+      data-next-year
+      aria-label="Next year"
+      disabled={disabled}
+    >
+      <Icon name="chevron-right" size="sm" />
+    </button>
+  </div>
+  
+  <div class="week-picker__list" role="listbox" aria-label={`Weeks for ${currentYear}`}>
+    {weeks.map((weekData) => {
+      const weekStr = `${currentYear}-W${String(weekData.week).padStart(2, '0')}`;
+      const isDisabled = (minYear !== null && minWeek !== null && (currentYear < minYear || (currentYear === minYear && weekData.week < minWeek))) ||
+                        (maxYear !== null && maxWeek !== null && (currentYear > maxYear || (currentYear === maxYear && weekData.week > maxWeek)));
+      const isSelected = selectedWeek === weekData.week;
+      
+      const weekClasses = [
+        'week-picker__week',
+        isSelected && 'week-picker__week--selected',
+        isDisabled && 'week-picker__week--disabled',
+      ].filter(Boolean).join(' ');
+      
+      const startStr = weekData.startDate.toLocaleDateString(locale, { month: 'short', day: 'numeric' });
+      const endStr = weekData.endDate.toLocaleDateString(locale, { month: 'short', day: 'numeric' });
+      
+      return (
+        <button
+          type="button"
+          class={weekClasses}
+          data-week={weekData.week}
+          data-week-value={weekStr}
+          disabled={disabled || isDisabled}
+          role="option"
+          aria-label={`Week ${weekData.week}, ${startStr} to ${endStr}${isSelected ? ', selected' : ''}`}
+          aria-selected={isSelected}
+          tabindex={isSelected ? 0 : -1}
+        >
+          <span class="week-picker__week-number">Week {weekData.week}</span>
+          <span class="week-picker__week-range">{startStr} - {endStr}</span>
+        </button>
+      );
+    })}
+  </div>
+</div>
+
+<script>
+  function getISOWeek(date: Date): { year: number; week: number } {
+    const d = new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()));
+    const dayNum = d.getUTCDay() || 7;
+    d.setUTCDate(d.getUTCDate() + 4 - dayNum);
+    const yearStart = new Date(Date.UTC(d.getUTCFullYear(), 0, 1));
+    const week = Math.ceil((((d.getTime() - yearStart.getTime()) / 86400000) + 1) / 7);
+    return { year: d.getUTCFullYear(), week };
+  }
+  
+  function getDateFromISOWeek(year: number, week: number): Date {
+    const simple = new Date(year, 0, 1 + (week - 1) * 7);
+    const dow = simple.getDay();
+    const ISOweekStart = simple;
+    if (dow <= 4) {
+      ISOweekStart.setDate(simple.getDate() - simple.getDay() + 1);
+    } else {
+      ISOweekStart.setDate(simple.getDate() + 8 - simple.getDay());
+    }
+    return ISOweekStart;
+  }
+  
+  function getWeeksForYear(year: number): Array<{ week: number; startDate: Date; endDate: Date }> {
+    const weeks: Array<{ week: number; startDate: Date; endDate: Date }> = [];
+    const firstDay = new Date(year, 0, 1);
+    const lastDay = new Date(year, 11, 31);
+    
+    const firstWeek = getISOWeek(firstDay);
+    const lastWeek = getISOWeek(lastDay);
+    
+    const startYear = firstWeek.year;
+    const endYear = lastWeek.year;
+    
+    for (let y = startYear; y <= endYear; y++) {
+      const yearStart = new Date(y, 0, 1);
+      const yearEnd = new Date(y, 11, 31);
+      const yearEndWeek = getISOWeek(yearEnd);
+      const maxWeeks = yearEndWeek.week;
+      
+      for (let w = 1; w <= maxWeeks; w++) {
+        const weekStart = getDateFromISOWeek(y, w);
+        const weekEnd = new Date(weekStart);
+        weekEnd.setDate(weekEnd.getDate() + 6);
+        
+        if (weekStart.getFullYear() === year || weekEnd.getFullYear() === year || 
+            (weekStart.getFullYear() < year && weekEnd.getFullYear() >= year)) {
+          weeks.push({ week: w, startDate: weekStart, endDate: weekEnd });
+        }
+      }
+    }
+    
+    return weeks.sort((a, b) => a.startDate.getTime() - b.startDate.getTime());
+  }
+  
+  function initWeekPickers() {
+    document.querySelectorAll('[data-week-picker]').forEach((picker) => {
+      if (picker.hasAttribute('data-init')) return;
+      picker.setAttribute('data-init', 'true');
+      
+      const pickerEl = picker as HTMLElement;
+      const prevBtn = picker.querySelector('[data-prev-year]');
+      const nextBtn = picker.querySelector('[data-next-year]');
+      const list = picker.querySelector('.week-picker__list');
+      const yearEl = picker.querySelector('.week-picker__year span');
+      
+      let currentYear = parseInt(pickerEl.dataset.year || new Date().getFullYear().toString());
+      let selectedWeek: number | null = null;
+      if (pickerEl.dataset.selectedWeek) {
+        selectedWeek = parseInt(pickerEl.dataset.selectedWeek);
+      }
+      
+      const minYear = pickerEl.dataset.minYear ? parseInt(pickerEl.dataset.minYear) : null;
+      const minWeek = pickerEl.dataset.minWeek ? parseInt(pickerEl.dataset.minWeek) : null;
+      const maxYear = pickerEl.dataset.maxYear ? parseInt(pickerEl.dataset.maxYear) : null;
+      const maxWeek = pickerEl.dataset.maxWeek ? parseInt(pickerEl.dataset.maxWeek) : null;
+      const isDisabled = pickerEl.dataset.disabled === 'true';
+      const pickerLocale = pickerEl.dataset.locale || 'en-US';
+      
+      function renderWeeks() {
+        const weeks = getWeeksForYear(currentYear);
+        if (!list) return;
+        
+        list.innerHTML = '';
+        list.setAttribute('aria-label', `Weeks for ${currentYear}`);
+        
+        weeks.forEach((weekData) => {
+          const weekStr = `${currentYear}-W${String(weekData.week).padStart(2, '0')}`;
+          const isDisabledWeek = (minYear !== null && minWeek !== null && (currentYear < minYear || (currentYear === minYear && weekData.week < minWeek))) ||
+                                (maxYear !== null && maxWeek !== null && (currentYear > maxYear || (currentYear === maxYear && weekData.week > maxWeek)));
+          const isSelectedWeek = selectedWeek === weekData.week;
+          
+          const weekClasses = [
+            'week-picker__week',
+            isSelectedWeek && 'week-picker__week--selected',
+            isDisabledWeek && 'week-picker__week--disabled',
+          ].filter(Boolean).join(' ');
+          
+          const startStr = weekData.startDate.toLocaleDateString(pickerLocale, { month: 'short', day: 'numeric' });
+          const endStr = weekData.endDate.toLocaleDateString(pickerLocale, { month: 'short', day: 'numeric' });
+          
+          const button = document.createElement('button');
+          button.type = 'button';
+          button.className = weekClasses;
+          button.setAttribute('data-week', weekData.week.toString());
+          button.setAttribute('data-week-value', weekStr);
+          button.disabled = isDisabled || isDisabledWeek;
+          button.setAttribute('role', 'option');
+          button.setAttribute('aria-label', `Week ${weekData.week}, ${startStr} to ${endStr}${isSelectedWeek ? ', selected' : ''}`);
+          button.setAttribute('aria-selected', isSelectedWeek.toString());
+          button.setAttribute('tabindex', isSelectedWeek ? '0' : '-1');
+          
+          const weekNumber = document.createElement('span');
+          weekNumber.className = 'week-picker__week-number';
+          weekNumber.textContent = `Week ${weekData.week}`;
+          
+          const weekRange = document.createElement('span');
+          weekRange.className = 'week-picker__week-range';
+          weekRange.textContent = `${startStr} - ${endStr}`;
+          
+          button.appendChild(weekNumber);
+          button.appendChild(weekRange);
+          
+          button.addEventListener('click', () => {
+            selectWeek(weekData.week, weekStr);
+          });
+          
+          list.appendChild(button);
+        });
+      }
+      
+      function updateYear(newYear: number) {
+        currentYear = newYear;
+        pickerEl.dataset.year = currentYear.toString();
+        if (yearEl) yearEl.textContent = currentYear.toString();
+        renderWeeks();
+      }
+      
+      function selectWeek(week: number, weekStr: string) {
+        // Remove previous selection
+        picker.querySelectorAll('.week-picker__week--selected').forEach(weekEl => {
+          weekEl.classList.remove('week-picker__week--selected');
+          (weekEl as HTMLElement).setAttribute('tabindex', '-1');
+          (weekEl as HTMLElement).setAttribute('aria-selected', 'false');
+        });
+        
+        // Add new selection
+        const selectedWeekEl = picker.querySelector(`[data-week="${week}"]`) as HTMLElement;
+        if (selectedWeekEl) {
+          selectedWeekEl.classList.add('week-picker__week--selected');
+          selectedWeekEl.setAttribute('tabindex', '0');
+          selectedWeekEl.setAttribute('aria-selected', 'true');
+          selectedWeekEl.focus();
+        }
+        
+        selectedWeek = week;
+        pickerEl.dataset.selectedWeek = week.toString();
+        
+        // Dispatch change event
+        pickerEl.dispatchEvent(new CustomEvent('week-select', { detail: { value: weekStr } }));
+      }
+      
+      // Year navigation
+      prevBtn?.addEventListener('click', () => {
+        updateYear(currentYear - 1);
+      });
+      
+      nextBtn?.addEventListener('click', () => {
+        updateYear(currentYear + 1);
+      });
+      
+      // Initial render
+      renderWeeks();
+      
+      // Keyboard navigation
+      list?.addEventListener('keydown', (e) => {
+        const currentWeek = picker.querySelector('.week-picker__week:focus') as HTMLElement;
+        if (!currentWeek) return;
+        
+        const weeks = Array.from(picker.querySelectorAll('.week-picker__week:not(.week-picker__week--disabled)')) as HTMLElement[];
+        const currentIndex = weeks.indexOf(currentWeek);
+        
+        switch (e.key) {
+          case 'ArrowUp':
+            e.preventDefault();
+            if (currentIndex > 0) {
+              weeks[currentIndex - 1].focus();
+              weeks[currentIndex - 1].setAttribute('tabindex', '0');
+              currentWeek.setAttribute('tabindex', '-1');
+            }
+            break;
+          case 'ArrowDown':
+            e.preventDefault();
+            if (currentIndex < weeks.length - 1) {
+              weeks[currentIndex + 1].focus();
+              weeks[currentIndex + 1].setAttribute('tabindex', '0');
+              currentWeek.setAttribute('tabindex', '-1');
+            }
+            break;
+          case 'Home':
+            e.preventDefault();
+            if (weeks.length > 0) {
+              weeks[0].focus();
+              weeks[0].setAttribute('tabindex', '0');
+              currentWeek.setAttribute('tabindex', '-1');
+            }
+            break;
+          case 'End':
+            e.preventDefault();
+            if (weeks.length > 0) {
+              weeks[weeks.length - 1].focus();
+              weeks[weeks.length - 1].setAttribute('tabindex', '0');
+              currentWeek.setAttribute('tabindex', '-1');
+            }
+            break;
+          case 'Enter':
+          case ' ':
+            e.preventDefault();
+            const week = parseInt(currentWeek.dataset.week || '0');
+            const weekStr = currentWeek.dataset.weekValue || '';
+            selectWeek(week, weekStr);
+            return;
+        }
+      });
+    });
+  }
+  
+  initWeekPickers();
+  document.addEventListener('astro:page-load', initWeekPickers);
+</script>

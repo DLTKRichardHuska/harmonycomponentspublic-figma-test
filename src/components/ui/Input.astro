@@ -5,6 +5,7 @@
  * Text input for collecting user data with various states.
  */
 import Icon from './Icon.astro';
+import Label from './Label.astro';
 
 export interface Props {
   type?: 'text' | 'email' | 'password' | 'number' | 'url' | 'search' | 'tel';
@@ -17,6 +18,9 @@ export interface Props {
   errorMessage?: string;
   icon?: string; // Heroicon name (e.g., "magnifying-glass", "envelope")
   required?: boolean;
+  label?: string;
+  labelVariant?: 'inline' | 'stacked';
+  labelFor?: string;
   class?: string;
   [key: string]: any;
 }
@@ -32,6 +36,9 @@ const {
   errorMessage,
   icon,
   required = false,
+  label,
+  labelVariant,
+  labelFor,
   class: className = '',
   ...rest
 } = Astro.props;
@@ -43,33 +50,80 @@ const inputClasses = [
   error && 'input--error',
   className,
 ].filter(Boolean).join(' ');
+
+const inputId = id || `input-${Math.random().toString(36).substr(2, 9)}`;
+
+// Determine label variant
+// If explicitly provided, use that; otherwise CSS will handle default (inline for CP theme, stacked for others)
+const finalLabelVariant = labelVariant;
+
+const wrapperClasses = [
+  'input-form-wrapper',
+  label && finalLabelVariant && `input-form-wrapper--${finalLabelVariant}`,
+].filter(Boolean).join(' ');
 ---
 
-<div class="input-wrapper">
-  {icon && (
-    <Icon name={icon} size="sm" class="input-wrapper__icon" />
-  )}
-  
-  <input
-    type={type}
-    placeholder={placeholder}
-    value={value}
-    name={name}
-    id={id}
-    disabled={disabled}
-    required={required}
-    class={inputClasses}
-    aria-invalid={error ? 'true' : undefined}
-    aria-describedby={error && errorMessage ? `${id || name}-error` : undefined}
-    {...rest}
-  />
-  
-  {error && errorMessage && (
-    <p 
-      id={`${id || name}-error`}
-      class="input-wrapper__error"
-    >
-      {errorMessage}
-    </p>
-  )}
-</div>
+{label ? (
+  <div class={wrapperClasses}>
+    <Label for={labelFor || inputId} class={(finalLabelVariant === 'inline' || !finalLabelVariant) ? 'input-form-wrapper__label' : ''}>
+      {label}
+    </Label>
+    <div class="input-wrapper">
+      {icon && (
+        <Icon name={icon} size="sm" class="input-wrapper__icon" />
+      )}
+      
+      <input
+        type={type}
+        placeholder={placeholder}
+        value={value}
+        name={name}
+        id={inputId}
+        disabled={disabled}
+        required={required}
+        class={inputClasses}
+        aria-invalid={error ? 'true' : undefined}
+        aria-describedby={error && errorMessage ? `${inputId}-error` : undefined}
+        {...rest}
+      />
+      
+      {error && errorMessage && (
+        <p 
+          id={`${inputId}-error`}
+          class="input-wrapper__error"
+        >
+          {errorMessage}
+        </p>
+      )}
+    </div>
+  </div>
+) : (
+  <div class="input-wrapper">
+    {icon && (
+      <Icon name={icon} size="sm" class="input-wrapper__icon" />
+    )}
+    
+    <input
+      type={type}
+      placeholder={placeholder}
+      value={value}
+      name={name}
+      id={inputId}
+      disabled={disabled}
+      required={required}
+      class={inputClasses}
+      aria-invalid={error ? 'true' : undefined}
+      aria-describedby={error && errorMessage ? `${inputId}-error` : undefined}
+      {...rest}
+    />
+    
+    {error && errorMessage && (
+      <p 
+        id={`${inputId}-error`}
+        class="input-wrapper__error"
+      >
+        {errorMessage}
+      </p>
+    )}
+  </div>
+)}

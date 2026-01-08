@@ -5,6 +5,7 @@
  * Dropdown select menu with custom styling.
  */
 import Icon from './Icon.astro';
+import Label from './Label.astro';
 
 export interface Option {
   value: string;
@@ -20,6 +21,9 @@ export interface Props {
   id?: string;
   disabled?: boolean;
   class?: string;
+  label?: string;
+  labelVariant?: 'inline' | 'stacked';
+  labelFor?: string;
   [key: string]: any;
 }
 
@@ -31,46 +35,97 @@ const {
   id,
   disabled = false,
   class: className = '',
+  label,
+  labelVariant,
+  labelFor,
   ...rest
 } = Astro.props;
 
 const dropdownId = id || `dropdown-${Math.random().toString(36).substr(2, 9)}`;
 const selectedOption = options.find(opt => opt.value === value);
 
+// Determine label variant
+// If explicitly provided, use that; otherwise CSS will handle default (inline for CP theme, stacked for others)
+const finalLabelVariant = labelVariant;
+
+const wrapperClasses = [
+  'dropdown-wrapper',
+  label && finalLabelVariant && `dropdown-wrapper--${finalLabelVariant}`,
+].filter(Boolean).join(' ');
+
 const classes = ['dropdown', className].filter(Boolean).join(' ');
 ---
 
-<div class={classes} data-dropdown id={dropdownId}>
-  <button
-    type="button"
-    class="dropdown__trigger"
-    disabled={disabled}
-    aria-haspopup="listbox"
-    aria-expanded="false"
-  >
-    <span class="dropdown__value">
-      {selectedOption ? selectedOption.label : placeholder}
-    </span>
-    <Icon name="chevron-down" class="dropdown__chevron" />
-  </button>
-  
-  <div class="dropdown__menu" role="listbox">
-    {options.map((option) => (
+{label ? (
+  <div class={wrapperClasses}>
+    <Label for={labelFor || dropdownId} class={(finalLabelVariant === 'inline' || !finalLabelVariant) ? 'dropdown-wrapper__label' : ''}>
+      {label}
+    </Label>
+    <div class={classes} data-dropdown id={dropdownId}>
       <button
         type="button"
-        class={`dropdown__item ${option.value === value ? 'is-selected' : ''} ${option.disabled ? 'dropdown__item--disabled' : ''}`}
-        data-value={option.value}
-        disabled={option.disabled}
-        role="option"
-        aria-selected={option.value === value}
+        class="dropdown__trigger"
+        disabled={disabled}
+        aria-haspopup="listbox"
+        aria-expanded="false"
       >
-        {option.label}
+        <span class="dropdown__value">
+          {selectedOption ? selectedOption.label : placeholder}
+        </span>
+        <Icon name="chevron-down" class="dropdown__chevron" />
       </button>
-    ))}
+      
+      <div class="dropdown__menu" role="listbox">
+        {options.map((option) => (
+          <button
+            type="button"
+            class={`dropdown__item ${option.value === value ? 'is-selected' : ''} ${option.disabled ? 'dropdown__item--disabled' : ''}`}
+            data-value={option.value}
+            disabled={option.disabled}
+            role="option"
+            aria-selected={option.value === value}
+          >
+            {option.label}
+          </button>
+        ))}
+      </div>
+      
+      <input type="hidden" name={name} value={value || ''} />
+    </div>
   </div>
-  
-  <input type="hidden" name={name} value={value || ''} />
-</div>
+) : (
+  <div class={classes} data-dropdown id={dropdownId}>
+    <button
+      type="button"
+      class="dropdown__trigger"
+      disabled={disabled}
+      aria-haspopup="listbox"
+      aria-expanded="false"
+    >
+      <span class="dropdown__value">
+        {selectedOption ? selectedOption.label : placeholder}
+      </span>
+      <Icon name="chevron-down" class="dropdown__chevron" />
+    </button>
+    
+    <div class="dropdown__menu" role="listbox">
+      {options.map((option) => (
+        <button
+          type="button"
+          class={`dropdown__item ${option.value === value ? 'is-selected' : ''} ${option.disabled ? 'dropdown__item--disabled' : ''}`}
+          data-value={option.value}
+          disabled={option.disabled}
+          role="option"
+          aria-selected={option.value === value}
+        >
+          {option.label}
+        </button>
+      ))}
+    </div>
+    
+    <input type="hidden" name={name} value={value || ''} />
+  </div>
+)}
 
 <script>
   function initDropdowns() {

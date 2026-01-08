@@ -1,0 +1,164 @@
+---
+/**
+ * PickerPopup Component
+ * 
+ * Reusable popup container for date/time pickers.
+ * Positions relative to trigger element and handles focus management.
+ */
+import Icon from './Icon.astro';
+
+export interface Props {
+  id: string;
+  triggerId?: string;
+  class?: string;
+  title?: string;
+}
+
+const {
+  id,
+  triggerId,
+  class: className = '',
+  title,
+} = Astro.props;
+
+const classes = ['picker-popup', className].filter(Boolean).join(' ');
+---
+
+<div 
+  class={classes}
+  id={id}
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby={title ? `${id}-title` : undefined}
+  data-picker-popup
+>
+  {title && (
+    <div class="picker-popup__header">
+      <h3 class="picker-popup__title" id={`${id}-title`}>{title}</h3>
+      <button 
+        type="button" 
+        class="picker-popup__close" 
+        data-picker-close
+        aria-label="Close picker"
+      >
+        <Icon name="x-mark" size="sm" />
+      </button>
+    </div>
+  )}
+  <div class="picker-popup__body">
+    <slot />
+  </div>
+</div>
+
+<script>
+  function initPickerPopups() {
+    document.querySelectorAll('[data-picker-popup]').forEach((popup) => {
+      if (popup.hasAttribute('data-init')) return;
+      popup.setAttribute('data-init', 'true');
+      
+      const triggerId = popup.getAttribute('data-trigger-id');
+      const closeBtn = popup.querySelector('[data-picker-close]');
+      let triggerElement: HTMLElement | null = null;
+      
+      if (triggerId) {
+        triggerElement = document.getElementById(triggerId);
+      }
+      
+      // Close button handler
+      closeBtn?.addEventListener('click', () => {
+        closePicker(popup as HTMLElement, triggerElement);
+      });
+      
+      // Escape key handler
+      const escapeHandler = (e: KeyboardEvent) => {
+        if (e.key === 'Escape' && popup.classList.contains('is-open')) {
+          closePicker(popup as HTMLElement, triggerElement);
+        }
+      };
+      
+      document.addEventListener('keydown', escapeHandler);
+      
+      // Click outside handler
+      const clickOutsideHandler = (e: MouseEvent) => {
+        if (popup.classList.contains('is-open') && 
+            !popup.contains(e.target as Node) &&
+            (!triggerElement || !triggerElement.contains(e.target as Node))) {
+          closePicker(popup as HTMLElement, triggerElement);
+        }
+      };
+      
+      document.addEventListener('click', clickOutsideHandler);
+    });
+  }
+  
+  function openPicker(popupId: string, triggerElement?: HTMLElement | null) {
+    const popup = document.getElementById(popupId);
+    if (!popup) return;
+    
+    popup.classList.add('is-open');
+    
+    // Position popup relative to trigger
+    if (triggerElement) {
+      positionPopup(popup as HTMLElement, triggerElement);
+    }
+    
+    // Focus management - focus first focusable element
+    const firstFocusable = popup.querySelector('button, [tabindex]:not([tabindex="-1"])') as HTMLElement;
+    firstFocusable?.focus();
+  }
+  
+  function closePicker(popup: HTMLElement, triggerElement?: HTMLElement | null) {
+    popup.classList.remove('is-open');
+    
+    // Return focus to trigger
+    if (triggerElement) {
+      triggerElement.focus();
+    }
+  }
+  
+  function positionPopup(popup: HTMLElement, trigger: HTMLElement) {
+    // Ensure popup is visible for measurement
+    popup.style.visibility = 'hidden';
+    popup.style.display = 'block';
+    
+    const triggerRect = trigger.getBoundingClientRect();
+    const popupRect = popup.getBoundingClientRect();
+    const viewportWidth = window.innerWidth;
+    const viewportHeight = window.innerHeight;
+    const scrollX = window.scrollX || window.pageXOffset;
+    const scrollY = window.scrollY || window.pageYOffset;
+    
+    // Default: position below trigger, aligned to left
+    let top = triggerRect.bottom + scrollY + 8;
+    let left = triggerRect.left + scrollX;
+    
+    // Adjust if popup would go off screen
+    if (left + popupRect.width > viewportWidth + scrollX) {
+      left = viewportWidth + scrollX - popupRect.width - 16;
+    }
+    
+    if (left < scrollX + 16) {
+      left = scrollX + 16;
+    }
+    
+    // If not enough space below, position above
+    if (top + popupRect.height > viewportHeight + scrollY - 16) {
+      top = triggerRect.top + scrollY - popupRect.height - 8;
+      if (top < scrollY + 16) {
+        top = scrollY + 16;
+      }
+    }
+    
+    popup.style.position = 'fixed';
+    popup.style.top = `${top}px`;
+    popup.style.left = `${left}px`;
+    popup.style.visibility = 'visible';
+  }
+  
+  // Global functions
+  (window as any).openPicker = openPicker;
+  (window as any).closePicker = closePicker;
+  
+  initPickerPopups();
+  document.addEventListener('astro:page-load', initPickerPopups);
+</script>

@@ -2,8 +2,17 @@
 /**
  * DateInput Component
  * 
- * Input for date and time values.
+ * Input for date and time values using custom pickers.
+ * Replaces native HTML5 date/time inputs with fully customizable pickers.
  */
+import Icon from './Icon.astro';
+import Label from './Label.astro';
+import DatePicker from './DatePicker.astro';
+import TimePicker from './TimePicker.astro';
+import DateTimePicker from './DateTimePicker.astro';
+import MonthPicker from './MonthPicker.astro';
+import WeekPicker from './WeekPicker.astro';
+import PickerPopup from './PickerPopup.astro';
 
 export interface Props {
   type?: 'date' | 'time' | 'datetime-local' | 'month' | 'week';
@@ -14,6 +23,11 @@ export interface Props {
   min?: string;
   max?: string;
   required?: boolean;
+  label?: string;
+  labelVariant?: 'inline' | 'stacked';
+  labelFor?: string;
+  timeFormat?: '12' | '24';
+  locale?: string;
   class?: string;
   [key: string]: any;
 }
@@ -27,22 +41,342 @@ const {
   min,
   max,
   required = false,
+  label,
+  labelVariant,
+  labelFor,
+  timeFormat = '24',
+  locale = 'en-US',
   class: className = '',
   ...rest
 } = Astro.props;
 
+const dateInputId = id || `date-input-${Math.random().toString(36).substr(2, 9)}`;
+const popupId = `${dateInputId}-popup`;
+
+// Determine label variant
+const finalLabelVariant = labelVariant;
+
+const wrapperClasses = [
+  'date-input-form-wrapper',
+  label && finalLabelVariant && `date-input-form-wrapper--${finalLabelVariant}`,
+].filter(Boolean).join(' ');
+
 const classes = ['date-input', className].filter(Boolean).join(' ');
+
+// Determine which icon to show based on input type
+const iconName = type === 'time' ? 'clock' : 'calendar';
+
+// Format display value based on type
+function formatDisplayValue(val: string | undefined, inputType: string, locale: string): string {
+  if (!val) return '';
+  
+  try {
+    if (inputType === 'date') {
+      const date = new Date(val + 'T00:00:00');
+      return date.toLocaleDateString(locale, { year: 'numeric', month: 'short', day: 'numeric' });
+    } else if (inputType === 'time') {
+      const parts = val.split(':');
+      if (parts.length >= 2) {
+        const hour = parseInt(parts[0]);
+        const minute = parts[1];
+        return `${hour.toString().padStart(2, '0')}:${minute}`;
+      }
+      return val;
+    } else if (inputType === 'datetime-local') {
+      const [datePart, timePart] = val.split('T');
+      const date = new Date(datePart + 'T00:00:00');
+      const dateStr = date.toLocaleDateString(locale, { year: 'numeric', month: 'short', day: 'numeric' });
+      const timeStr = timePart ? timePart.split('.')[0] : '';
+      return `${dateStr} ${timeStr}`;
+    } else if (inputType === 'month') {
+      const [year, month] = val.split('-');
+      const date = new Date(parseInt(year), parseInt(month) - 1, 1);
+      return date.toLocaleDateString(locale, { year: 'numeric', month: 'long' });
+    } else if (inputType === 'week') {
+      const match = val.match(/(\d{4})-W(\d{2})/);
+      if (match) {
+        return `${match[1]}, Week ${parseInt(match[2])}`;
+      }
+      return val;
+    }
+  } catch (e) {
+    return val;
+  }
+  
+  return val;
+}
+
+const displayValue = formatDisplayValue(value, type, locale);
 ---
 
-<input
-  type={type}
-  value={value}
-  name={name}
-  id={id}
-  disabled={disabled}
-  min={min}
-  max={max}
-  required={required}
-  class={classes}
-  {...rest}
-/>
+{label ? (
+  <div class={wrapperClasses}>
+    <Label for={labelFor || dateInputId} class={(finalLabelVariant === 'inline' || !finalLabelVariant) ? 'date-input-form-wrapper__label' : ''}>
+      {label}
+    </Label>
+    <div class="date-input-wrapper">
+      <input
+        type="text"
+        value={displayValue}
+        name={name}
+        id={dateInputId}
+        disabled={disabled}
+        required={required}
+        class={classes}
+        readonly
+        data-date-input
+        data-input-type={type}
+        aria-label={label || `Select ${type}`}
+        {...rest}
+      />
+      <input type="hidden" name={name} value={value || ''} data-date-input-value />
+      <Icon name={iconName} size="sm" class="date-input-wrapper__icon" data-date-input-icon={dateInputId} />
+      
+      <PickerPopup id={popupId} triggerId={dateInputId} class="date-input-popup">
+        {type === 'date' && (
+          <DatePicker
+            value={value}
+            min={min}
+            max={max}
+            disabled={disabled}
+            locale={locale}
+            id={`${dateInputId}-picker`}
+          />
+        )}
+        {type === 'time' && (
+          <TimePicker
+            value={value}
+            min={min}
+            max={max}
+            disabled={disabled}
+            format={timeFormat}
+            id={`${dateInputId}-picker`}
+          />
+        )}
+        {type === 'datetime-local' && (
+          <DateTimePicker
+            value={value}
+            min={min}
+            max={max}
+            disabled={disabled}
+            timeFormat={timeFormat}
+            locale={locale}
+            id={`${dateInputId}-picker`}
+          />
+        )}
+        {type === 'month' && (
+          <MonthPicker
+            value={value}
+            min={min}
+            max={max}
+            disabled={disabled}
+            locale={locale}
+            id={`${dateInputId}-picker`}
+          />
+        )}
+        {type === 'week' && (
+          <WeekPicker
+            value={value}
+            min={min}
+            max={max}
+            disabled={disabled}
+            locale={locale}
+            id={`${dateInputId}-picker`}
+          />
+        )}
+      </PickerPopup>
+    </div>
+  </div>
+) : (
+  <div class="date-input-wrapper">
+    <input
+      type="text"
+      value={displayValue}
+      name={name}
+      id={dateInputId}
+      disabled={disabled}
+      required={required}
+      class={classes}
+        readonly
+        data-date-input
+        data-input-type={type}
+        {...rest}
+      />
+    <input type="hidden" name={name} value={value || ''} data-date-input-value />
+    <Icon name={iconName} size="sm" class="date-input-wrapper__icon" data-date-input-icon={dateInputId} />
+    
+    <PickerPopup id={popupId} triggerId={dateInputId} class="date-input-popup">
+      {type === 'date' && (
+        <DatePicker
+          value={value}
+          min={min}
+          max={max}
+          disabled={disabled}
+          locale={locale}
+          id={`${dateInputId}-picker`}
+        />
+      )}
+      {type === 'time' && (
+        <TimePicker
+          value={value}
+          min={min}
+          max={max}
+          disabled={disabled}
+          format={timeFormat}
+          id={`${dateInputId}-picker`}
+        />
+      )}
+      {type === 'datetime-local' && (
+        <DateTimePicker
+          value={value}
+          min={min}
+          max={max}
+          disabled={disabled}
+          timeFormat={timeFormat}
+          locale={locale}
+          id={`${dateInputId}-picker`}
+        />
+      )}
+      {type === 'month' && (
+        <MonthPicker
+          value={value}
+          min={min}
+          max={max}
+          disabled={disabled}
+          locale={locale}
+          id={`${dateInputId}-picker`}
+        />
+      )}
+      {type === 'week' && (
+        <WeekPicker
+          value={value}
+          min={min}
+          max={max}
+          disabled={disabled}
+          locale={locale}
+          id={`${dateInputId}-picker`}
+        />
+      )}
+    </PickerPopup>
+  </div>
+)}
+
+<script>
+  function formatDisplayValue(val: string, inputType: string, locale: string): string {
+    if (!val) return '';
+    
+    try {
+      if (inputType === 'date') {
+        const date = new Date(val + 'T00:00:00');
+        return date.toLocaleDateString(locale, { year: 'numeric', month: 'short', day: 'numeric' });
+      } else if (inputType === 'time') {
+        const parts = val.split(':');
+        if (parts.length >= 2) {
+          const hour = parseInt(parts[0]);
+          const minute = parts[1];
+          return `${hour.toString().padStart(2, '0')}:${minute}`;
+        }
+        return val;
+      } else if (inputType === 'datetime-local') {
+        const [datePart, timePart] = val.split('T');
+        const date = new Date(datePart + 'T00:00:00');
+        const dateStr = date.toLocaleDateString(locale, { year: 'numeric', month: 'short', day: 'numeric' });
+        const timeStr = timePart ? timePart.split('.')[0] : '';
+        return `${dateStr} ${timeStr}`;
+      } else if (inputType === 'month') {
+        const [year, month] = val.split('-');
+        const date = new Date(parseInt(year), parseInt(month) - 1, 1);
+        return date.toLocaleDateString(locale, { year: 'numeric', month: 'long' });
+      } else if (inputType === 'week') {
+        const match = val.match(/(\d{4})-W(\d{2})/);
+        if (match) {
+          return `${match[1]}, Week ${parseInt(match[2])}`;
+        }
+        return val;
+      }
+    } catch (e) {
+      return val;
+    }
+    
+    return val;
+  }
+  
+  function initDateInputs() {
+    document.querySelectorAll('[data-date-input]').forEach((input) => {
+      if (input.hasAttribute('data-init')) return;
+      input.setAttribute('data-init', 'true');
+      
+      const inputEl = input as HTMLInputElement;
+      const wrapper = inputEl.closest('.date-input-wrapper');
+      if (!wrapper) return;
+      
+      const inputId = inputEl.id;
+      const inputType = inputEl.dataset.inputType || 'date';
+      const popupId = `${inputId}-popup`;
+      const popup = document.getElementById(popupId);
+      const hiddenInput = wrapper.querySelector('[data-date-input-value]') as HTMLInputElement;
+      const icon = wrapper.querySelector(`[data-date-input-icon="${inputId}"]`);
+      
+      if (!popup) return;
+      
+      // Set trigger ID on popup
+      popup.setAttribute('data-trigger-id', inputId);
+      
+      // Open picker on input/icon click
+      const openPicker = () => {
+        if (inputEl.disabled) return;
+        (window as any).openPicker?.(popupId, inputEl);
+      };
+      
+      inputEl.addEventListener('click', openPicker);
+      icon?.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        openPicker();
+      });
+      
+      // Listen for picker selections
+      const picker = popup.querySelector('[data-date-picker], [data-time-picker], [data-datetime-picker], [data-month-picker], [data-week-picker]');
+      
+      if (picker) {
+        picker.addEventListener('date-select', ((e: CustomEvent) => {
+          const date = e.detail.date;
+          if (hiddenInput) hiddenInput.value = date;
+          inputEl.value = formatDisplayValue(date, inputType, 'en-US');
+          (window as any).closePicker?.(popupId, inputEl);
+        }) as EventListener);
+        
+        picker.addEventListener('time-select', ((e: CustomEvent) => {
+          const time = e.detail.time;
+          if (hiddenInput) hiddenInput.value = time;
+          inputEl.value = formatDisplayValue(time, inputType, 'en-US');
+          (window as any).closePicker?.(popupId, inputEl);
+        }) as EventListener);
+        
+        picker.addEventListener('datetime-select', ((e: CustomEvent) => {
+          const datetime = e.detail.datetime;
+          if (hiddenInput) hiddenInput.value = datetime;
+          inputEl.value = formatDisplayValue(datetime, inputType, 'en-US');
+          (window as any).closePicker?.(popupId, inputEl);
+        }) as EventListener);
+        
+        picker.addEventListener('month-select', ((e: CustomEvent) => {
+          const value = e.detail.value;
+          if (hiddenInput) hiddenInput.value = value;
+          inputEl.value = formatDisplayValue(value, inputType, 'en-US');
+          (window as any).closePicker?.(popupId, inputEl);
+        }) as EventListener);
+        
+        picker.addEventListener('week-select', ((e: CustomEvent) => {
+          const value = e.detail.value;
+          if (hiddenInput) hiddenInput.value = value;
+          inputEl.value = formatDisplayValue(value, inputType, 'en-US');
+          (window as any).closePicker?.(popupId, inputEl);
+        }) as EventListener);
+      }
+    });
+  }
+  
+  initDateInputs();
+  document.addEventListener('astro:page-load', initDateInputs);
+</script>

@@ -5,6 +5,7 @@
  * Number input with increment/decrement buttons.
  */
 import Icon from './Icon.astro';
+import Label from './Label.astro';
 
 export interface Props {
   value?: number;
@@ -14,6 +15,9 @@ export interface Props {
   name?: string;
   id?: string;
   disabled?: boolean;
+  label?: string;
+  labelVariant?: 'inline' | 'stacked';
+  labelFor?: string;
   class?: string;
   [key: string]: any;
 }
@@ -26,46 +30,99 @@ const {
   name,
   id,
   disabled = false,
+  label,
+  labelVariant,
+  labelFor,
   class: className = '',
   ...rest
 } = Astro.props;
 
 const stepperId = id || `stepper-${Math.random().toString(36).substr(2, 9)}`;
+
+// Determine label variant
+// If explicitly provided, use that; otherwise CSS will handle default (inline for CP theme, stacked for others)
+const finalLabelVariant = labelVariant;
+
+const wrapperClasses = [
+  'stepper-input-form-wrapper',
+  label && finalLabelVariant && `stepper-input-form-wrapper--${finalLabelVariant}`,
+].filter(Boolean).join(' ');
+
 const classes = ['stepper', className].filter(Boolean).join(' ');
 ---
 
-<div class={classes} data-stepper>
-  <button
-    type="button"
-    class="stepper__btn"
-    data-stepper-decrement
-    disabled={disabled || (min !== undefined && value <= min)}
-    aria-label="Decrease"
-  >
-    <Icon name="minus" />
-  </button>
-  <input
-    type="number"
-    value={value}
-    min={min}
-    max={max}
-    step={step}
-    name={name}
-    id={stepperId}
-    disabled={disabled}
-    class="stepper__input"
-    {...rest}
-  />
-  <button
-    type="button"
-    class="stepper__btn"
-    data-stepper-increment
-    disabled={disabled || (max !== undefined && value >= max)}
-    aria-label="Increase"
-  >
-    <Icon name="plus" />
-  </button>
-</div>
+{label ? (
+  <div class={wrapperClasses}>
+    <Label for={labelFor || stepperId} class={(finalLabelVariant === 'inline' || !finalLabelVariant) ? 'stepper-input-form-wrapper__label' : ''}>
+      {label}
+    </Label>
+    <div class={classes} data-stepper>
+      <button
+        type="button"
+        class="stepper__btn"
+        data-stepper-decrement
+        disabled={disabled || (min !== undefined && value <= min)}
+        aria-label="Decrease"
+      >
+        <Icon name="minus" />
+      </button>
+      <input
+        type="number"
+        value={value}
+        min={min}
+        max={max}
+        step={step}
+        name={name}
+        id={stepperId}
+        disabled={disabled}
+        class="stepper__input"
+        {...rest}
+      />
+      <button
+        type="button"
+        class="stepper__btn"
+        data-stepper-increment
+        disabled={disabled || (max !== undefined && value >= max)}
+        aria-label="Increase"
+      >
+        <Icon name="plus" />
+      </button>
+    </div>
+  </div>
+) : (
+  <div class={classes} data-stepper>
+    <button
+      type="button"
+      class="stepper__btn"
+      data-stepper-decrement
+      disabled={disabled || (min !== undefined && value <= min)}
+      aria-label="Decrease"
+    >
+      <Icon name="minus" />
+    </button>
+    <input
+      type="number"
+      value={value}
+      min={min}
+      max={max}
+      step={step}
+      name={name}
+      id={stepperId}
+      disabled={disabled}
+      class="stepper__input"
+      {...rest}
+    />
+    <button
+      type="button"
+      class="stepper__btn"
+      data-stepper-increment
+      disabled={disabled || (max !== undefined && value >= max)}
+      aria-label="Increase"
+    >
+      <Icon name="plus" />
+    </button>
+  </div>
+)}
 
 <script>
   function initSteppers() {

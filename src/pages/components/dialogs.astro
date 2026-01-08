@@ -13,6 +13,9 @@ import Icon from '../../components/ui/Icon.astro';
 const props = [
   { name: 'id', type: 'string', default: '—', description: 'Unique dialog id (required)' },
   { name: 'title', type: 'string', default: '—', description: 'Dialog title' },
+  { name: 'buttonAlignment', type: '"left" | "right"', default: '"right"', description: 'Button alignment in footer. "left" places primary button first, "right" aligns buttons to the right.' },
+  { name: 'headerVariant', type: '"default" | "primary"', default: '"default"', description: 'Header background variant. "default" uses card background, "primary" uses theme primary color.' },
+  { name: 'class', type: 'string', default: '—', description: 'Additional CSS classes' },
 ];
 ---
 
@@ -60,6 +63,48 @@ const props = [
           <div slot="footer">
             <Button variant="ghost" onclick="closeDialog('confirm-dialog')">Cancel</Button>
             <Button variant="destructive" onclick="closeDialog('confirm-dialog')">Delete</Button>
+          </div>
+        </Dialog>
+      </ExampleSection>
+
+      <ExampleSection title="Left-Aligned Buttons" description="Dialog with buttons aligned to the left, primary button first.">
+        <Button onclick="openDialog('left-align-dialog')">Open Left-Aligned Dialog</Button>
+        
+        <Dialog id="left-align-dialog" title="Left-Aligned Buttons" buttonAlignment="left">
+          <p class="text-secondary">
+            This dialog has buttons aligned to the left with the primary button appearing first.
+          </p>
+          <div slot="footer">
+            <Button onclick="closeDialog('left-align-dialog')">Confirm</Button>
+            <Button variant="ghost" onclick="closeDialog('left-align-dialog')">Cancel</Button>
+          </div>
+        </Dialog>
+      </ExampleSection>
+
+      <ExampleSection title="Primary Header Variant" description="Dialog with primary blue header background.">
+        <Button onclick="openDialog('primary-header-dialog')">Open Primary Header Dialog</Button>
+        
+        <Dialog id="primary-header-dialog" title="Primary Header" headerVariant="primary">
+          <p class="text-secondary">
+            This dialog has a primary blue header background with inverse text color for better contrast.
+          </p>
+          <div slot="footer">
+            <Button variant="ghost" onclick="closeDialog('primary-header-dialog')">Cancel</Button>
+            <Button onclick="closeDialog('primary-header-dialog')">Confirm</Button>
+          </div>
+        </Dialog>
+      </ExampleSection>
+
+      <ExampleSection title="Combined Variants" description="Dialog with both left-aligned buttons and primary header.">
+        <Button onclick="openDialog('combined-dialog')">Open Combined Variants Dialog</Button>
+        
+        <Dialog id="combined-dialog" title="Combined Variants" buttonAlignment="left" headerVariant="primary">
+          <p class="text-secondary">
+            This dialog combines both variants: left-aligned buttons and a primary blue header.
+          </p>
+          <div slot="footer">
+            <Button onclick="closeDialog('combined-dialog')">Confirm</Button>
+            <Button variant="ghost" onclick="closeDialog('combined-dialog')">Cancel</Button>
           </div>
         </Dialog>
       </ExampleSection>

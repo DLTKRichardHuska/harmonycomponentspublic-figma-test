@@ -151,9 +151,9 @@ const {
 
 <style>
   .shell-footer {
-    background-color: #212631;
-    border-top: 1px solid var(--border-color);
-    height: 48px;
+    background-color: var(--shell-footer-bg);
+    border-top: var(--border-width-thin) solid var(--border-color);
+    height: var(--shell-footer-height-default);
     width: 100%;
     padding: 0 var(--space-4);
   }
@@ -173,7 +173,7 @@ const {
     display: flex;
     align-items: center;
     gap: var(--space-2);
-    border-bottom: 3px solid transparent;
+    border-bottom: var(--border-width-medium) solid transparent;
   }
 
   .shell-footer .tab.is-active {
@@ -191,12 +191,12 @@ const {
 
   /* Compact variant */
   .shell-footer[data-variant="compact"] {
-    height: 40px;
+    height: var(--shell-footer-height-compact);
   }
 
   .shell-footer[data-variant="compact"] .tab {
     padding: 0 var(--space-3);
-    font-size: 0.8125rem;
+    font-size: var(--text-13);
   }
 
   .shell-footer .tabs {
@@ -217,14 +217,14 @@ const {
     bottom: 100%;
     left: 0;
     margin-bottom: var(--space-2);
-    min-width: 200px;
+    min-width: var(--dropdown-min-width);
     background-color: var(--card-bg);
-    border: 1px solid var(--border-color);
+    border: var(--border-width-thin) solid var(--border-color);
     border-radius: var(--radius-lg);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: var(--shadow-dropdown);
     padding: var(--space-1) 0;
     z-index: var(--z-dropdown);
-    max-height: 400px;
+    max-height: var(--dropdown-max-height);
     overflow-y: auto;
   }
 
@@ -289,7 +289,7 @@ const {
 
   /* Separator */
   .shell-footer-dropdown__separator {
-    height: 1px;
+    height: var(--border-width-thin);
     background-color: var(--border-color);
     margin: var(--space-1) 0;
   }

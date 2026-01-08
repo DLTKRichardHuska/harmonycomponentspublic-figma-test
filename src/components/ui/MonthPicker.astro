@@ -1,0 +1,271 @@
+---
+/**
+ * MonthPicker Component
+ * 
+ * Month selection picker with year navigation.
+ * Uses Harmony Design System tokens for styling.
+ */
+import Icon from './Icon.astro';
+
+export interface Props {
+  value?: string; // ISO month string (YYYY-MM)
+  min?: string; // ISO month string
+  max?: string; // ISO month string
+  disabled?: boolean;
+  locale?: string;
+  id?: string;
+  class?: string;
+}
+
+const {
+  value,
+  min,
+  max,
+  disabled = false,
+  locale = 'en-US',
+  id,
+  class: className = '',
+} = Astro.props;
+
+const pickerId = id || `month-picker-${Math.random().toString(36).substr(2, 9)}`;
+
+// Parse value
+let currentYear = new Date().getFullYear();
+let selectedMonth: number | null = null;
+
+if (value) {
+  const parts = value.split('-');
+  if (parts.length >= 2) {
+    currentYear = parseInt(parts[0]);
+    selectedMonth = parseInt(parts[1]) - 1; // 0-indexed
+  }
+}
+
+// Parse min/max
+let minYear: number | null = null;
+let minMonth: number | null = null;
+let maxYear: number | null = null;
+let maxMonth: number | null = null;
+
+if (min) {
+  const parts = min.split('-');
+  if (parts.length >= 2) {
+    minYear = parseInt(parts[0]);
+    minMonth = parseInt(parts[1]) - 1;
+  }
+}
+
+if (max) {
+  const parts = max.split('-');
+  if (parts.length >= 2) {
+    maxYear = parseInt(parts[0]);
+    maxMonth = parseInt(parts[1]) - 1;
+  }
+}
+
+const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+const monthNamesShort = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+const classes = ['month-picker', className].filter(Boolean).join(' ');
+---
+
+<div 
+  class={classes} 
+  id={pickerId} 
+  data-month-picker
+  data-year={currentYear}
+  data-selected-month={selectedMonth !== null ? selectedMonth.toString() : ''}
+  data-min-year={minYear?.toString() || ''}
+  data-min-month={minMonth?.toString() || ''}
+  data-max-year={maxYear?.toString() || ''}
+  data-max-month={maxMonth?.toString() || ''}
+  data-disabled={disabled.toString()}
+>
+  <div class="month-picker__header">
+    <button 
+      type="button" 
+      class="month-picker__nav-btn"
+      data-prev-year
+      aria-label="Previous year"
+      disabled={disabled}
+    >
+      <Icon name="chevron-left" size="sm" />
+    </button>
+    
+    <div class="month-picker__year">
+      <span>{currentYear}</span>
+    </div>
+    
+    <button 
+      type="button" 
+      class="month-picker__nav-btn"
+      data-next-year
+      aria-label="Next year"
+      disabled={disabled}
+    >
+      <Icon name="chevron-right" size="sm" />
+    </button>
+  </div>
+  
+  <div class="month-picker__grid" role="grid" aria-label={`Months for ${currentYear}`}>
+    {monthNames.map((month, index) => {
+      const isDisabled = (minYear !== null && minMonth !== null && (currentYear < minYear || (currentYear === minYear && index < minMonth))) ||
+                        (maxYear !== null && maxMonth !== null && (currentYear > maxYear || (currentYear === maxYear && index > maxMonth)));
+      const isSelected = selectedMonth === index;
+      
+      const monthClasses = [
+        'month-picker__month',
+        isSelected && 'month-picker__month--selected',
+        isDisabled && 'month-picker__month--disabled',
+      ].filter(Boolean).join(' ');
+      
+      return (
+        <button
+          type="button"
+          class={monthClasses}
+          data-month={index}
+          disabled={disabled || isDisabled}
+          role="gridcell"
+          aria-label={`${month} ${currentYear}${isSelected ? ', selected' : ''}`}
+          tabindex={isSelected ? 0 : -1}
+        >
+          {monthNamesShort[index]}
+        </button>
+      );
+    })}
+  </div>
+</div>
+
+<script>
+  function initMonthPickers() {
+    document.querySelectorAll('[data-month-picker]').forEach((picker) => {
+      if (picker.hasAttribute('data-init')) return;
+      picker.setAttribute('data-init', 'true');
+      
+      const pickerEl = picker as HTMLElement;
+      const prevBtn = picker.querySelector('[data-prev-year]');
+      const nextBtn = picker.querySelector('[data-next-year]');
+      const grid = picker.querySelector('.month-picker__grid');
+      const yearEl = picker.querySelector('.month-picker__year span');
+      
+      let currentYear = parseInt(pickerEl.dataset.year || new Date().getFullYear().toString());
+      let selectedMonth: number | null = null;
+      if (pickerEl.dataset.selectedMonth) {
+        selectedMonth = parseInt(pickerEl.dataset.selectedMonth);
+      }
+      
+      const minYear = pickerEl.dataset.minYear ? parseInt(pickerEl.dataset.minYear) : null;
+      const minMonth = pickerEl.dataset.minMonth ? parseInt(pickerEl.dataset.minMonth) : null;
+      const maxYear = pickerEl.dataset.maxYear ? parseInt(pickerEl.dataset.maxYear) : null;
+      const maxMonth = pickerEl.dataset.maxMonth ? parseInt(pickerEl.dataset.maxMonth) : null;
+      const isDisabled = pickerEl.dataset.disabled === 'true';
+      
+      function updateYear(newYear: number) {
+        currentYear = newYear;
+        pickerEl.dataset.year = currentYear.toString();
+        if (yearEl) yearEl.textContent = currentYear.toString();
+        if (grid) grid.setAttribute('aria-label', `Months for ${currentYear}`);
+        
+        // Update disabled states
+        const months = picker.querySelectorAll('.month-picker__month');
+        months.forEach((month, index) => {
+          const monthEl = month as HTMLElement;
+          const isDisabledMonth = (minYear !== null && minMonth !== null && (currentYear < minYear || (currentYear === minYear && index < minMonth))) ||
+                                 (maxYear !== null && maxMonth !== null && (currentYear > maxYear || (currentYear === maxYear && index > maxMonth)));
+          monthEl.disabled = isDisabled || isDisabledMonth;
+          monthEl.classList.toggle('month-picker__month--disabled', isDisabledMonth);
+        });
+      }
+      
+      function selectMonth(month: number) {
+        // Remove previous selection
+        picker.querySelectorAll('.month-picker__month--selected').forEach(monthEl => {
+          monthEl.classList.remove('month-picker__month--selected');
+          (monthEl as HTMLElement).setAttribute('tabindex', '-1');
+        });
+        
+        // Add new selection
+        const selectedMonthEl = picker.querySelector(`[data-month="${month}"]`) as HTMLElement;
+        if (selectedMonthEl) {
+          selectedMonthEl.classList.add('month-picker__month--selected');
+          selectedMonthEl.setAttribute('tabindex', '0');
+          selectedMonthEl.focus();
+        }
+        
+        selectedMonth = month;
+        pickerEl.dataset.selectedMonth = month.toString();
+        
+        // Dispatch change event
+        const monthStr = String(month + 1).padStart(2, '0');
+        const value = `${currentYear}-${monthStr}`;
+        pickerEl.dispatchEvent(new CustomEvent('month-select', { detail: { value } }));
+      }
+      
+      // Year navigation
+      prevBtn?.addEventListener('click', () => {
+        updateYear(currentYear - 1);
+      });
+      
+      nextBtn?.addEventListener('click', () => {
+        updateYear(currentYear + 1);
+      });
+      
+      // Month selection
+      picker.querySelectorAll('.month-picker__month').forEach((month) => {
+        month.addEventListener('click', () => {
+          const monthIndex = parseInt((month as HTMLElement).dataset.month || '0');
+          selectMonth(monthIndex);
+        });
+      });
+      
+      // Keyboard navigation
+      grid?.addEventListener('keydown', (e) => {
+        const currentMonth = picker.querySelector('.month-picker__month:focus') as HTMLElement;
+        if (!currentMonth) return;
+        
+        const currentMonthIndex = parseInt(currentMonth.dataset.month || '0');
+        let newMonthIndex: number | null = null;
+        
+        switch (e.key) {
+          case 'ArrowLeft':
+            e.preventDefault();
+            newMonthIndex = currentMonthIndex - 1;
+            if (newMonthIndex < 0) newMonthIndex = 11;
+            break;
+          case 'ArrowRight':
+            e.preventDefault();
+            newMonthIndex = currentMonthIndex + 1;
+            if (newMonthIndex > 11) newMonthIndex = 0;
+            break;
+          case 'ArrowUp':
+            e.preventDefault();
+            newMonthIndex = currentMonthIndex - 3;
+            if (newMonthIndex < 0) newMonthIndex += 12;
+            break;
+          case 'ArrowDown':
+            e.preventDefault();
+            newMonthIndex = currentMonthIndex + 3;
+            if (newMonthIndex > 11) newMonthIndex -= 12;
+            break;
+          case 'Enter':
+          case ' ':
+            e.preventDefault();
+            selectMonth(currentMonthIndex);
+            return;
+        }
+        
+        if (newMonthIndex !== null) {
+          const newMonth = picker.querySelector(`[data-month="${newMonthIndex}"]`) as HTMLElement;
+          if (newMonth && !newMonth.disabled) {
+            newMonth.focus();
+            newMonth.setAttribute('tabindex', '0');
+            currentMonth.setAttribute('tabindex', '-1');
+          }
+        }
+      });
+    });
+  }
+  
+  initMonthPickers();
+  document.addEventListener('astro:page-load', initMonthPickers);
+</script>

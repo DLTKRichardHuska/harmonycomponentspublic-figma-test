@@ -1,0 +1,136 @@
+---
+/**
+ * DateTimePicker Component
+ * 
+ * Combined date and time picker.
+ * Uses Harmony Design System tokens for styling.
+ */
+import DatePicker from './DatePicker.astro';
+import TimePicker from './TimePicker.astro';
+
+export interface Props {
+  value?: string; // ISO datetime string (YYYY-MM-DDTHH:MM)
+  min?: string; // ISO datetime string
+  max?: string; // ISO datetime string
+  disabled?: boolean;
+  timeFormat?: '12' | '24';
+  locale?: string;
+  id?: string;
+  class?: string;
+}
+
+const {
+  value,
+  min,
+  max,
+  disabled = false,
+  timeFormat = '24',
+  locale = 'en-US',
+  id,
+  class: className = '',
+} = Astro.props;
+
+const pickerId = id || `datetime-picker-${Math.random().toString(36).substr(2, 9)}`;
+
+// Parse datetime value
+let dateValue: string | undefined;
+let timeValue: string | undefined;
+
+if (value) {
+  const parts = value.split('T');
+  if (parts.length >= 2) {
+    dateValue = parts[0];
+    timeValue = parts[1].split('.')[0]; // Remove milliseconds if present
+  }
+}
+
+// Parse min/max
+let minDate: string | undefined;
+let minTime: string | undefined;
+let maxDate: string | undefined;
+let maxTime: string | undefined;
+
+if (min) {
+  const parts = min.split('T');
+  if (parts.length >= 2) {
+    minDate = parts[0];
+    minTime = parts[1].split('.')[0];
+  } else {
+    minDate = min;
+  }
+}
+
+if (max) {
+  const parts = max.split('T');
+  if (parts.length >= 2) {
+    maxDate = parts[0];
+    maxTime = parts[1].split('.')[0];
+  } else {
+    maxDate = max;
+  }
+}
+
+const classes = ['datetime-picker', className].filter(Boolean).join(' ');
+---
+
+<div class={classes} id={pickerId} data-datetime-picker>
+  <div class="datetime-picker__date-section">
+    <DatePicker
+      value={dateValue}
+      min={minDate}
+      max={maxDate}
+      disabled={disabled}
+      locale={locale}
+      id={`${pickerId}-date`}
+    />
+  </div>
+  
+  <div class="datetime-picker__time-section">
+    <TimePicker
+      value={timeValue}
+      min={minTime}
+      max={maxTime}
+      disabled={disabled}
+      format={timeFormat}
+      id={`${pickerId}-time`}
+    />
+  </div>
+</div>
+
+<script>
+  function initDateTimePickers() {
+    document.querySelectorAll('[data-datetime-picker]').forEach((picker) => {
+      if (picker.hasAttribute('data-init')) return;
+      picker.setAttribute('data-init', 'true');
+      
+      const pickerEl = picker as HTMLElement;
+      const datePicker = picker.querySelector('[data-date-picker]') as HTMLElement;
+      const timePicker = picker.querySelector('[data-time-picker]') as HTMLElement;
+      
+      let selectedDate: string | null = null;
+      let selectedTime: string | null = null;
+      
+      // Listen for date selection
+      datePicker?.addEventListener('date-select', ((e: CustomEvent) => {
+        selectedDate = e.detail.date;
+        updateDateTime(pickerEl, selectedDate, selectedTime);
+      }) as EventListener);
+      
+      // Listen for time selection
+      timePicker?.addEventListener('time-select', ((e: CustomEvent) => {
+        selectedTime = e.detail.time;
+        updateDateTime(pickerEl, selectedDate, selectedTime);
+      }) as EventListener);
+    });
+  }
+  
+  function updateDateTime(picker: HTMLElement, date: string | null, time: string | null) {
+    if (date && time) {
+      const datetime = `${date}T${time}`;
+      picker.dispatchEvent(new CustomEvent('datetime-select', { detail: { datetime } }));
+    }
+  }
+  
+  initDateTimePickers();
+  document.addEventListener('astro:page-load', initDateTimePickers);
+</script>

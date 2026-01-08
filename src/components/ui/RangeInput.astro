@@ -4,6 +4,7 @@
  * 
  * Slider for selecting a value within a range.
  */
+import Label from './Label.astro';
 
 export interface Props {
   value?: number;
@@ -16,6 +17,9 @@ export interface Props {
   showPercent?: boolean;
   prefix?: string;
   suffix?: string;
+  label?: string;
+  labelVariant?: 'inline' | 'stacked';
+  labelFor?: string;
   class?: string;
   [key: string]: any;
 }
@@ -31,6 +35,9 @@ const {
   showPercent = false,
   prefix = '',
   suffix = '',
+  label,
+  labelVariant,
+  labelFor,
   class: className = '',
   ...rest
 } = Astro.props;
@@ -40,29 +47,66 @@ const displayValue = showPercent
   ? `${prefix}${Math.round((value - min) / (max - min) * 100)}%${suffix}` 
   : `${prefix}${value}${suffix}`;
 
+// Determine label variant
+// If explicitly provided, use that; otherwise CSS will handle default (inline for CP theme, stacked for others)
+const finalLabelVariant = labelVariant;
+
+const wrapperClasses = [
+  'range-input-form-wrapper',
+  label && finalLabelVariant && `range-input-form-wrapper--${finalLabelVariant}`,
+].filter(Boolean).join(' ');
+
 const classes = ['range-wrap', className].filter(Boolean).join(' ');
 ---
 
-<div class={classes}>
-  <input
-    type="range"
-    id={rangeId}
-    name={name}
-    value={value}
-    min={min}
-    max={max}
-    step={step}
-    disabled={disabled}
-    class="range"
-    data-show-percent={showPercent ? 'true' : undefined}
-    data-prefix={prefix || undefined}
-    data-suffix={suffix || undefined}
-    {...rest}
-  />
-  <span class="range-value" data-for={rangeId}>
-    {displayValue}
-  </span>
-</div>
+{label ? (
+  <div class={wrapperClasses}>
+    <Label for={labelFor || rangeId} class={(finalLabelVariant === 'inline' || !finalLabelVariant) ? 'range-input-form-wrapper__label' : ''}>
+      {label}
+    </Label>
+    <div class={classes}>
+      <input
+        type="range"
+        id={rangeId}
+        name={name}
+        value={value}
+        min={min}
+        max={max}
+        step={step}
+        disabled={disabled}
+        class="range"
+        data-show-percent={showPercent ? 'true' : undefined}
+        data-prefix={prefix || undefined}
+        data-suffix={suffix || undefined}
+        {...rest}
+      />
+      <span class="range-value" data-for={rangeId}>
+        {displayValue}
+      </span>
+    </div>
+  </div>
+) : (
+  <div class={classes}>
+    <input
+      type="range"
+      id={rangeId}
+      name={name}
+      value={value}
+      min={min}
+      max={max}
+      step={step}
+      disabled={disabled}
+      class="range"
+      data-show-percent={showPercent ? 'true' : undefined}
+      data-prefix={prefix || undefined}
+      data-suffix={suffix || undefined}
+      {...rest}
+    />
+    <span class="range-value" data-for={rangeId}>
+      {displayValue}
+    </span>
+  </div>
+)}
 
 <script>
   function initRanges() {

@@ -128,7 +128,7 @@ const {
     position: relative;
     height: 100vh;
     display: grid;
-    grid-template-rows: 56px 1fr;
+    grid-template-rows: var(--shell-header-height) 1fr;
     grid-template-columns: 1fr;
     overflow: hidden;
   }
@@ -141,16 +141,16 @@ const {
     top: 0;
     left: 0;
     right: 0;
-    z-index: 50;
+    z-index: var(--z-50);
   }
 
   /* Floating Nav - Centered below header */
   .shell-layout__floating-nav-wrap {
     position: fixed;
-    top: 56px;
+    top: var(--shell-header-height);
     left: 50%;
     transform: translateX(-50%);
-    z-index: 40;
+    z-index: var(--z-40);
     pointer-events: none;
   }
 
@@ -164,7 +164,7 @@ const {
     left: 0;
     top: 50%;
     transform: translateY(-50%);
-    z-index: 45;
+    z-index: var(--z-45);
   }
 
   /* Right Sidebar - Fixed right edge, vertically centered */
@@ -173,7 +173,7 @@ const {
     right: 0;
     top: 50%;
     transform: translateY(-50%);
-    z-index: 45;
+    z-index: var(--z-45);
   }
 
   /* Main Content - Scrollable area with padding for sidebars */
@@ -182,7 +182,7 @@ const {
     grid-column: 1;
     overflow-y: auto;
     overflow-x: hidden;
-    padding: 88px 52px 24px 52px; /* top accounts for header + floating nav */
+    padding: var(--shell-layout-padding-top) var(--shell-layout-padding-side-default) var(--space-6) var(--shell-layout-padding-side-default);
   }
 
   /* ========================================
@@ -192,7 +192,7 @@ const {
     position: relative;
     height: 100vh;
     display: grid;
-    grid-template-rows: 56px 1fr 48px;
+    grid-template-rows: var(--shell-header-height) 1fr var(--shell-footer-height-default);
     grid-template-columns: 1fr;
     overflow: hidden;
   }
@@ -201,7 +201,7 @@ const {
   .shell-layout__standard .shell-layout__header {
     grid-row: 1;
     grid-column: 1;
-    z-index: 50;
+    z-index: var(--z-50);
   }
 
   /* Main Content - Grid row 2, scrollable */
@@ -210,20 +210,20 @@ const {
     grid-column: 1;
     overflow-y: auto;
     overflow-x: hidden;
-    padding: 24px 89px;
+    padding: var(--space-6) var(--shell-layout-padding-side-standard);
   }
 
   /* Footer - Grid row 3 */
   .shell-layout__standard .shell-layout__footer {
     grid-row: 3;
     grid-column: 1;
-    z-index: 40;
+    z-index: var(--z-40);
   }
 
   /* ========================================
      RESPONSIVE BEHAVIOR
      ======================================== */
-  @media (max-width: 768px) {
+  @media (max-width: var(--breakpoint-md)) {
     /* CP Theme: Hide sidebars on mobile */
     .shell-layout__cp .shell-layout__left-sidebar,
     .shell-layout__cp .shell-layout__right-sidebar {
@@ -232,19 +232,19 @@ const {
 
     /* CP Theme: Adjust main content padding without sidebars */
     .shell-layout__cp .shell-layout__main {
-      padding: 88px 16px 24px 16px;
+      padding: var(--shell-layout-padding-top) var(--shell-layout-padding-side-mobile) var(--space-6) var(--shell-layout-padding-side-mobile);
     }
 
     /* Standard Theme: Reduce padding on mobile */
     .shell-layout__standard .shell-layout__main {
-      padding: 16px;
+      padding: var(--space-4);
     }
   }
 
-  @media (max-width: 1024px) {
+  @media (max-width: var(--breakpoint-lg)) {
     /* Standard Theme: Reduce side padding on tablets */
     .shell-layout__standard .shell-layout__main {
-      padding: 24px 32px;
+      padding: var(--space-6) var(--shell-layout-padding-side-tablet);
     }
   }
 </style>

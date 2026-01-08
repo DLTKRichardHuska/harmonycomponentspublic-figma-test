@@ -10,20 +10,32 @@ export interface Props {
   id: string;
   title: string;
   class?: string;
+  buttonAlignment?: 'left' | 'right';
+  headerVariant?: 'default' | 'primary';
 }
 
 const {
   id,
   title,
   class: className = '',
+  buttonAlignment = 'right',
+  headerVariant = 'default',
 } = Astro.props;
 
 const classes = ['dialog', className].filter(Boolean).join(' ');
+const headerClasses = [
+  'dialog__header',
+  `dialog__header--variant-${headerVariant}`,
+].filter(Boolean).join(' ');
+const footerClasses = [
+  'dialog__footer',
+  `dialog__footer--align-${buttonAlignment}`,
+].filter(Boolean).join(' ');
 ---
 
 <div class="dialog-overlay" id={`${id}-overlay`} data-dialog-overlay>
   <div class={classes} role="dialog" aria-modal="true" aria-labelledby={`${id}-title`}>
-    <div class="dialog__header">
+    <div class={headerClasses}>
       <h2 class="dialog__title" id={`${id}-title`}>{title}</h2>
       <button type="button" class="dialog__close" data-dialog-close aria-label="Close">
         <Icon name="x-mark" />
@@ -32,7 +44,7 @@ const classes = ['dialog', className].filter(Boolean).join(' ');
     <div class="dialog__body">
       <slot />
     </div>
-    <div class="dialog__footer">
+    <div class={footerClasses}>
       <slot name="footer" />
     </div>
   </div>

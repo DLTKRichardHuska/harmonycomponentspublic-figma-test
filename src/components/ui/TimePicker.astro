@@ -1,0 +1,395 @@
+---
+/**
+ * TimePicker Component
+ * 
+ * Custom time picker with hour/minute selection and 12/24 hour format support.
+ * Uses Harmony Design System tokens for styling.
+ */
+import Icon from './Icon.astro';
+
+export interface Props {
+  value?: string; // Time string (HH:MM or HH:MM:SS)
+  min?: string; // Time string
+  max?: string; // Time string
+  disabled?: boolean;
+  format?: '12' | '24'; // 12 or 24 hour format
+  step?: number; // Minutes step (default: 1)
+  id?: string;
+  class?: string;
+}
+
+const {
+  value,
+  min,
+  max,
+  disabled = false,
+  format = '24',
+  step = 1,
+  id,
+  class: className = '',
+} = Astro.props;
+
+const pickerId = id || `time-picker-${Math.random().toString(36).substr(2, 9)}`;
+
+// Parse time value
+let hour = 0;
+let minute = 0;
+let period: 'AM' | 'PM' = 'AM';
+
+if (value) {
+  const parts = value.split(':');
+  if (parts.length >= 2) {
+    hour = parseInt(parts[0]) || 0;
+    minute = parseInt(parts[1]) || 0;
+    
+    if (format === '12') {
+      if (hour >= 12) {
+        period = 'PM';
+        if (hour > 12) hour -= 12;
+      } else {
+        period = 'AM';
+        if (hour === 0) hour = 12;
+      }
+    }
+  }
+}
+
+const classes = ['time-picker', className].filter(Boolean).join(' ');
+---
+
+<div 
+  class={classes} 
+  id={pickerId} 
+  data-time-picker 
+  data-format={format} 
+  data-step={step} 
+  data-disabled={disabled.toString()}
+  data-min-time={min || ''}
+  data-max-time={max || ''}
+>
+  <div class="time-picker__controls">
+    <div class="time-picker__hour">
+      <button 
+        type="button" 
+        class="time-picker__increment"
+        data-increment="hour"
+        aria-label="Increment hour"
+        disabled={disabled}
+      >
+        <Icon name="chevron-up" size="sm" />
+      </button>
+      <input
+        type="text"
+        class="time-picker__input"
+        data-hour-input
+        value={hour.toString().padStart(2, '0')}
+        readonly
+        aria-label="Hour"
+      />
+      <button 
+        type="button" 
+        class="time-picker__decrement"
+        data-decrement="hour"
+        aria-label="Decrement hour"
+        disabled={disabled}
+      >
+        <Icon name="chevron-down" size="sm" />
+      </button>
+    </div>
+    
+    <span class="time-picker__separator">:</span>
+    
+    <div class="time-picker__minute">
+      <button 
+        type="button" 
+        class="time-picker__increment"
+        data-increment="minute"
+        aria-label="Increment minute"
+        disabled={disabled}
+      >
+        <Icon name="chevron-up" size="sm" />
+      </button>
+      <input
+        type="text"
+        class="time-picker__input"
+        data-minute-input
+        value={minute.toString().padStart(2, '0')}
+        readonly
+        aria-label="Minute"
+      />
+      <button 
+        type="button" 
+        class="time-picker__decrement"
+        data-decrement="minute"
+        aria-label="Decrement minute"
+        disabled={disabled}
+      >
+        <Icon name="chevron-down" size="sm" />
+      </button>
+    </div>
+    
+    {format === '12' && (
+      <div class="time-picker__period">
+        <button
+          type="button"
+          class={`time-picker__period-btn ${period === 'AM' ? 'time-picker__period-btn--active' : ''}`}
+          data-period="AM"
+          aria-label="AM"
+          disabled={disabled}
+        >
+          AM
+        </button>
+        <button
+          type="button"
+          class={`time-picker__period-btn ${period === 'PM' ? 'time-picker__period-btn--active' : ''}`}
+          data-period="PM"
+          aria-label="PM"
+          disabled={disabled}
+        >
+          PM
+        </button>
+      </div>
+    )}
+  </div>
+</div>
+
+<script>
+  function formatTime(hour: number, minute: number, period: 'AM' | 'PM', format: '12' | '24'): string {
+    let h = hour;
+    
+    if (format === '24') {
+      return `${String(h).padStart(2, '0')}:${String(minute).padStart(2, '0')}`;
+    } else {
+      if (period === 'PM' && h !== 12) h += 12;
+      if (period === 'AM' && h === 12) h = 0;
+      return `${String(h).padStart(2, '0')}:${String(minute).padStart(2, '0')}`;
+    }
+  }
+  
+  function parseTime(value: string, format: '12' | '24'): { hour: number; minute: number; period: 'AM' | 'PM' } {
+    const parts = value.split(':');
+    let hour = 0;
+    let minute = 0;
+    let period: 'AM' | 'PM' = 'AM';
+    
+    if (parts.length >= 2) {
+      hour = parseInt(parts[0]) || 0;
+      minute = parseInt(parts[1]) || 0;
+      
+      if (format === '12') {
+        if (hour >= 12) {
+          period = 'PM';
+          if (hour > 12) hour -= 12;
+        } else {
+          period = 'AM';
+          if (hour === 0) hour = 12;
+        }
+      }
+    }
+    
+    return { hour, minute, period };
+  }
+  
+  function validateTime(hour: number, minute: number, minTime: string | null, maxTime: string | null, format: '12' | '24'): boolean {
+    if (!minTime && !maxTime) return true;
+    
+    const timeStr = formatTime(hour, minute, 'AM', format);
+    const time = timeStr.split(':').map(Number);
+    const timeMinutes = time[0] * 60 + time[1];
+    
+    if (minTime) {
+      const min = minTime.split(':').map(Number);
+      const minMinutes = min[0] * 60 + (min[1] || 0);
+      if (timeMinutes < minMinutes) return false;
+    }
+    
+    if (maxTime) {
+      const max = maxTime.split(':').map(Number);
+      const maxMinutes = max[0] * 60 + (max[1] || 0);
+      if (timeMinutes > maxMinutes) return false;
+    }
+    
+    return true;
+  }
+  
+  function initTimePickers() {
+    document.querySelectorAll('[data-time-picker]').forEach((picker) => {
+      if (picker.hasAttribute('data-init')) return;
+      picker.setAttribute('data-init', 'true');
+      
+      const pickerEl = picker as HTMLElement;
+      const format = (pickerEl.dataset.format || '24') as '12' | '24';
+      const step = parseInt(pickerEl.dataset.step || '1');
+      const isDisabled = pickerEl.dataset.disabled === 'true';
+      const minTime = pickerEl.dataset.minTime || null;
+      const maxTime = pickerEl.dataset.maxTime || null;
+      
+      const hourInput = picker.querySelector('[data-hour-input]') as HTMLInputElement;
+      const minuteInput = picker.querySelector('[data-minute-input]') as HTMLInputElement;
+      const periodBtns = picker.querySelectorAll('[data-period]');
+      
+      // Get initial values
+      let hour = parseInt(hourInput?.value || '0');
+      let minute = parseInt(minuteInput?.value || '0');
+      let period: 'AM' | 'PM' = 'AM';
+      
+      // Get period from active button
+      const activePeriod = picker.querySelector('.time-picker__period-btn--active');
+      if (activePeriod) {
+        period = (activePeriod as HTMLElement).dataset.period as 'AM' | 'PM';
+      }
+      
+      // Convert to 12-hour if needed
+      if (format === '12') {
+        if (hour >= 12) {
+          period = 'PM';
+          if (hour > 12) hour -= 12;
+        } else {
+          period = 'AM';
+          if (hour === 0) hour = 12;
+        }
+      }
+      
+      function updateTime(newHour: number, newMinute: number, newPeriod: 'AM' | 'PM') {
+        // Validate bounds
+        if (format === '12') {
+          if (newHour < 1) newHour = 12;
+          if (newHour > 12) newHour = 1;
+        } else {
+          if (newHour < 0) newHour = 23;
+          if (newHour > 23) newHour = 0;
+        }
+        
+        if (newMinute < 0) newMinute = 59;
+        if (newMinute > 59) newMinute = 0;
+        
+        // Round minute to step
+        newMinute = Math.round(newMinute / step) * step;
+        if (newMinute > 59) newMinute = 0;
+        
+        // Validate against min/max
+        if (!validateTime(newHour, newMinute, minTime, maxTime, format)) {
+          return;
+        }
+        
+        hour = newHour;
+        minute = newMinute;
+        period = newPeriod;
+        
+        // Update display
+        if (hourInput) {
+          hourInput.value = hour.toString().padStart(2, '0');
+        }
+        if (minuteInput) {
+          minuteInput.value = minute.toString().padStart(2, '0');
+        }
+        
+        // Update period buttons
+        periodBtns.forEach(btn => {
+          const btnEl = btn as HTMLElement;
+          if (btnEl.dataset.period === period) {
+            btnEl.classList.add('time-picker__period-btn--active');
+          } else {
+            btnEl.classList.remove('time-picker__period-btn--active');
+          }
+        });
+        
+        // Dispatch change event
+        const timeStr = formatTime(hour, minute, period, format);
+        pickerEl.dispatchEvent(new CustomEvent('time-select', { detail: { time: timeStr } }));
+      }
+      
+      // Hour increment/decrement
+      picker.querySelectorAll('[data-increment="hour"], [data-decrement="hour"]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const isIncrement = btn.hasAttribute('data-increment');
+          let newHour = hour;
+          
+          if (isIncrement) {
+            newHour++;
+            if (format === '12') {
+              if (newHour > 12) newHour = 1;
+            } else {
+              if (newHour > 23) newHour = 0;
+            }
+          } else {
+            newHour--;
+            if (format === '12') {
+              if (newHour < 1) newHour = 12;
+            } else {
+              if (newHour < 0) newHour = 23;
+            }
+          }
+          
+          updateTime(newHour, minute, period);
+        });
+      });
+      
+      // Minute increment/decrement
+      picker.querySelectorAll('[data-increment="minute"], [data-decrement="minute"]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const isIncrement = btn.hasAttribute('data-increment');
+          let newMinute = minute;
+          
+          if (isIncrement) {
+            newMinute += step;
+            if (newMinute > 59) newMinute = 0;
+          } else {
+            newMinute -= step;
+            if (newMinute < 0) newMinute = 60 - step;
+          }
+          
+          updateTime(hour, newMinute, period);
+        });
+      });
+      
+      // Period toggle (12-hour format)
+      periodBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const newPeriod = (btn as HTMLElement).dataset.period as 'AM' | 'PM';
+          updateTime(hour, minute, newPeriod);
+        });
+      });
+      
+      // Keyboard navigation
+      hourInput?.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowUp') {
+          e.preventDefault();
+          let newHour = hour + 1;
+          if (format === '12') {
+            if (newHour > 12) newHour = 1;
+          } else {
+            if (newHour > 23) newHour = 0;
+          }
+          updateTime(newHour, minute, period);
+        } else if (e.key === 'ArrowDown') {
+          e.preventDefault();
+          let newHour = hour - 1;
+          if (format === '12') {
+            if (newHour < 1) newHour = 12;
+          } else {
+            if (newHour < 0) newHour = 23;
+          }
+          updateTime(newHour, minute, period);
+        }
+      });
+      
+      minuteInput?.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowUp') {
+          e.preventDefault();
+          let newMinute = minute + step;
+          if (newMinute > 59) newMinute = 0;
+          updateTime(hour, newMinute, period);
+        } else if (e.key === 'ArrowDown') {
+          e.preventDefault();
+          let newMinute = minute - step;
+          if (newMinute < 0) newMinute = 60 - step;
+          updateTime(hour, newMinute, period);
+        }
+      });
+    });
+  }
+  
+  initTimePickers();
+  document.addEventListener('astro:page-load', initTimePickers);
+</script>

@@ -17,6 +17,9 @@ const props = [
   { name: 'errorMessage', type: 'string', default: '—', description: 'Error message to display' },
   { name: 'icon', type: 'string', default: '—', description: 'Leading icon class (e.g., ti-search)' },
   { name: 'required', type: 'boolean', default: 'false', description: 'Makes the input required' },
+  { name: 'label', type: 'string', default: '—', description: 'Label text for the input' },
+  { name: 'labelVariant', type: "'inline' | 'stacked'", default: "'stacked' (inline for CP theme)", description: 'Label alignment variant - inline (left) or stacked (top)' },
+  { name: 'labelFor', type: 'string', default: '—', description: 'ID of the input element the label is associated with' },
 ];
 
 const textareaProps = [
@@ -24,6 +27,9 @@ const textareaProps = [
   { name: 'value', type: 'string', default: '—', description: 'Textarea value' },
   { name: 'rows', type: 'number', default: '4', description: 'Number of visible rows' },
   { name: 'disabled', type: 'boolean', default: 'false', description: 'Disables the textarea' },
+  { name: 'label', type: 'string', default: '—', description: 'Label text for the textarea' },
+  { name: 'labelVariant', type: "'inline' | 'stacked'", default: "'stacked' (inline for CP theme)", description: 'Label alignment variant - inline (left) or stacked (top)' },
+  { name: 'labelFor', type: 'string', default: '—', description: 'ID of the textarea element the label is associated with' },
 ];
 ---
 
@@ -116,6 +122,38 @@ const textareaProps = [
         </div>
       </ExampleSection>
 
+      <ExampleSection title="With Label (Stacked)" description="Input with label on top (default for non-CP themes).">
+        <div class="max-w-sm">
+          <Input 
+            label="Email Address"
+            labelVariant="stacked"
+            type="email"
+            placeholder="you@example.com"
+          />
+        </div>
+      </ExampleSection>
+
+      <ExampleSection title="With Label (Inline)" description="Input with label to the left (default for CP theme).">
+        <div class="max-w-sm">
+          <Input 
+            label="Email Address"
+            labelVariant="inline"
+            type="email"
+            placeholder="you@example.com"
+          />
+        </div>
+      </ExampleSection>
+
+      <ExampleSection title="Textarea With Label" description="Textarea with inline label.">
+        <div class="max-w-sm">
+          <Textarea 
+            label="Message"
+            labelVariant="inline"
+            placeholder="Enter your message..."
+          />
+        </div>
+      </ExampleSection>
+
       <ExampleSection title="Form Example" description="Complete form with inputs and labels.">
         <div class="max-w-md card">
           <div class="card__body">
@@ -139,6 +177,46 @@ const textareaProps = [
                 <Label for="message" required>Message</Label>
                 <Textarea id="message" rows={4} placeholder="How can we help you?" required />
               </div>
+              <Button fullWidth>Send Message</Button>
+            </form>
+          </div>
+        </div>
+      </ExampleSection>
+
+      <ExampleSection title="Form Example with Inline Labels" description="Complete form using inline labels (default for CP theme).">
+        <div class="max-w-md card">
+          <div class="card__body">
+            <h3 class="text-lg font-semibold text-primary mb-4">Contact Form</h3>
+            <form class="space-y-4">
+              <div class="grid sm:grid-cols-2 gap-4">
+                <Input 
+                  label="First Name"
+                  labelVariant="inline"
+                  placeholder="John" 
+                  required 
+                />
+                <Input 
+                  label="Last Name"
+                  labelVariant="inline"
+                  placeholder="Doe" 
+                  required 
+                />
+              </div>
+              <Input 
+                label="Email"
+                labelVariant="inline"
+                icon="envelope" 
+                type="email" 
+                placeholder="john@example.com" 
+                required 
+              />
+              <Textarea 
+                label="Message"
+                labelVariant="inline"
+                rows={4} 
+                placeholder="How can we help you?" 
+                required 
+              />
               <Button fullWidth>Send Message</Button>
             </form>
           </div>

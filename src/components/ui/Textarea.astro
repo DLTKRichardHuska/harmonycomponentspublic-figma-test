@@ -4,6 +4,7 @@
  * 
  * Multi-line text input for longer content.
  */
+import Label from './Label.astro';
 
 export interface Props {
   placeholder?: string;
@@ -13,6 +14,9 @@ export interface Props {
   disabled?: boolean;
   rows?: number;
   required?: boolean;
+  label?: string;
+  labelVariant?: 'inline' | 'stacked';
+  labelFor?: string;
   class?: string;
   [key: string]: any;
 }
@@ -25,20 +29,52 @@ const {
   disabled = false,
   rows = 4,
   required = false,
+  label,
+  labelVariant,
+  labelFor,
   class: className = '',
   ...rest
 } = Astro.props;
 
+const textareaId = id || `textarea-${Math.random().toString(36).substr(2, 9)}`;
+
+// Determine label variant
+// If explicitly provided, use that; otherwise CSS will handle default (inline for CP theme, stacked for others)
+const finalLabelVariant = labelVariant;
+
+const wrapperClasses = [
+  'textarea-form-wrapper',
+  label && finalLabelVariant && `textarea-form-wrapper--${finalLabelVariant}`,
+].filter(Boolean).join(' ');
+
 const classes = ['textarea', className].filter(Boolean).join(' ');
 ---
 
-<textarea
-  placeholder={placeholder}
-  name={name}
-  id={id}
-  disabled={disabled}
-  rows={rows}
-  required={required}
-  class={classes}
-  {...rest}
->{value}</textarea>
+{label ? (
+  <div class={wrapperClasses}>
+    <Label for={labelFor || textareaId} class={(finalLabelVariant === 'inline' || !finalLabelVariant) ? 'textarea-form-wrapper__label' : ''}>
+      {label}
+    </Label>
+    <textarea
+      placeholder={placeholder}
+      name={name}
+      id={textareaId}
+      disabled={disabled}
+      rows={rows}
+      required={required}
+      class={classes}
+      {...rest}
+    >{value}</textarea>
+  </div>
+) : (
+  <textarea
+    placeholder={placeholder}
+    name={name}
+    id={textareaId}
+    disabled={disabled}
+    rows={rows}
+    required={required}
+    class={classes}
+    {...rest}
+  >{value}</textarea>
+)}

@@ -11,13 +11,13 @@ interface Props {
 
 const { name, size = 'md', class: className = '', variant = 'outline' } = Astro.props;
 
-// Size mapping - using explicit pixel dimensions
+// Size mapping - matches CSS token values
 const sizeDimensions: Record<string, { width: number; height: number }> = {
-  xs: { width: 12, height: 12 },
-  sm: { width: 16, height: 16 },
-  md: { width: 20, height: 20 },
-  lg: { width: 24, height: 24 },
-  xl: { width: 32, height: 32 },
+  xs: { width: 12, height: 12 }, // matches --icon-xs
+  sm: { width: 16, height: 16 }, // matches --icon-sm
+  md: { width: 20, height: 20 }, // matches --icon-md
+  lg: { width: 24, height: 24 }, // matches --icon-lg
+  xl: { width: 32, height: 32 }, // matches --icon-xl
 };
 
 // Load Hero Icon SVG from heroicons package
@@ -105,13 +105,14 @@ const dimensions = sizeDimensions[size] || sizeDimensions.md;
     width={dimensions.width}
     height={dimensions.height}
     class={className}
+    style={useComplexSvg || isFilledIcon ? undefined : `stroke-width: var(--icon-stroke-width);`}
     aria-hidden="true"
     data-icon={name}
     set:html={svgContent}
   />
 ) : (
   <span
-    style={`width: ${dimensions.width}px; height: ${dimensions.height}px; display: inline-flex; align-items: center; justify-content: center; background-color: #fee; color: #c00; font-size: 8px; border-radius: 2px;`}
+    style={`width: ${dimensions.width}px; height: ${dimensions.height}px; display: inline-flex; align-items: center; justify-content: center; background-color: var(--icon-fallback-bg); color: var(--icon-fallback-text); font-size: var(--icon-fallback-font-size); border-radius: var(--icon-fallback-radius);`}
     class={className}
     title={`Icon "${name}" not found`}
   >

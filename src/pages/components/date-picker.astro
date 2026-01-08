@@ -12,10 +12,15 @@ import Icon from '../../components/ui/Icon.astro';
 
 const props = [
   { name: 'type', type: "'date' | 'time' | 'datetime-local' | 'month' | 'week'", default: "'date'", description: 'Input type' },
-  { name: 'value', type: 'string', default: '—', description: 'Current value' },
-  { name: 'min', type: 'string', default: '—', description: 'Minimum date/time' },
-  { name: 'max', type: 'string', default: '—', description: 'Maximum date/time' },
+  { name: 'value', type: 'string', default: '—', description: 'Current value (ISO format: YYYY-MM-DD for date, HH:MM for time, etc.)' },
+  { name: 'min', type: 'string', default: '—', description: 'Minimum date/time (same format as value)' },
+  { name: 'max', type: 'string', default: '—', description: 'Maximum date/time (same format as value)' },
   { name: 'disabled', type: 'boolean', default: 'false', description: 'Disables the input' },
+  { name: 'timeFormat', type: "'12' | '24'", default: "'24'", description: 'Time format (12-hour with AM/PM or 24-hour)' },
+  { name: 'locale', type: 'string', default: "'en-US'", description: 'Locale for date/time formatting' },
+  { name: 'label', type: 'string', default: '—', description: 'Label text for the date input' },
+  { name: 'labelVariant', type: "'inline' | 'stacked'", default: "'stacked' (inline for CP theme)", description: 'Label alignment variant - inline (left) or stacked (top)' },
+  { name: 'labelFor', type: 'string', default: '—', description: 'ID of the date input element the label is associated with' },
 ];
 ---
 
@@ -27,13 +32,14 @@ const props = [
         <span class="badge badge--success">stable</span>
       </div>
       <p class="page-header__description">
-        Date pickers allow users to select dates and times using native browser controls.
+        Custom date and time pickers built with full styling control and accessibility support. All pickers use Harmony Design System tokens and support keyboard navigation.
       </p>
     </header>
 
     <nav class="article-nav">
       <a href="#examples" class="article-nav__link"><Icon name="eye" size="sm" /> Examples</a>
       <a href="#props" class="article-nav__link"><Icon name="queue-list" size="sm" /> Props</a>
+      <a href="#accessibility" class="article-nav__link"><Icon name="keyboard" size="sm" /> Accessibility</a>
     </nav>
 
     <section id="examples" class="space-y-8">
@@ -77,11 +83,108 @@ const props = [
           <DateInput id="date-disabled" disabled value="2024-01-15" />
         </div>
       </ExampleSection>
+
+      <ExampleSection title="With Label (Stacked)" description="Date input with label on top (default for non-CP themes).">
+        <div class="max-w-sm">
+          <DateInput 
+            label="Select Date"
+            labelVariant="stacked"
+          />
+        </div>
+      </ExampleSection>
+
+      <ExampleSection title="With Label (Inline)" description="Date input with label to the left (default for CP theme).">
+        <div class="max-w-sm">
+          <DateInput 
+            label="Select Date"
+            labelVariant="inline"
+          />
+        </div>
+      </ExampleSection>
+
+      <ExampleSection title="Month Picker" description="Month and year selection.">
+        <div class="max-w-sm space-y-2">
+          <Label for="month-basic">Select Month</Label>
+          <DateInput type="month" id="month-basic" />
+        </div>
+      </ExampleSection>
+
+      <ExampleSection title="Week Picker" description="ISO week selection.">
+        <div class="max-w-sm space-y-2">
+          <Label for="week-basic">Select Week</Label>
+          <DateInput type="week" id="week-basic" />
+        </div>
+      </ExampleSection>
+
+      <ExampleSection title="12-Hour Time Format" description="Time picker with 12-hour format and AM/PM.">
+        <div class="max-w-sm space-y-2">
+          <Label for="time-12h">Select Time (12-hour)</Label>
+          <DateInput type="time" id="time-12h" timeFormat="12" />
+        </div>
+      </ExampleSection>
     </section>
 
     <section id="props">
       <h2 class="section__title">Props</h2>
       <PropsTable props={props} />
+    </section>
+
+    <section id="accessibility" class="space-y-4">
+      <h2 class="section__title">Accessibility</h2>
+      
+      <div class="a11y-card">
+        <h3 class="a11y-card__title">
+          <Icon name="keyboard" size="sm" />
+          Keyboard Navigation
+        </h3>
+        <p class="a11y-card__text">
+          All pickers support full keyboard navigation:
+        </p>
+        <ul class="a11y-card__text" style="list-style: disc; padding-left: 1.5rem; margin-top: 0.5rem;">
+          <li><kbd>Arrow Keys</kbd> - Navigate between dates/months/weeks</li>
+          <li><kbd>Enter</kbd> or <kbd>Space</kbd> - Select the focused item</li>
+          <li><kbd>Home</kbd> / <kbd>End</kbd> - Jump to first/last item in current view</li>
+          <li><kbd>Page Up</kbd> / <kbd>Page Down</kbd> - Navigate months (date picker)</li>
+          <li><kbd>Escape</kbd> - Close the picker popup</li>
+        </ul>
+      </div>
+      
+      <div class="a11y-card">
+        <h3 class="a11y-card__title">
+          <Icon name="eye" size="sm" />
+          ARIA Attributes
+        </h3>
+        <p class="a11y-card__text">
+          All pickers include proper ARIA roles and attributes:
+        </p>
+        <ul class="a11y-card__text" style="list-style: disc; padding-left: 1.5rem; margin-top: 0.5rem;">
+          <li><code>role="dialog"</code> on the popup container</li>
+          <li><code>role="grid"</code> on calendar grids</li>
+          <li><code>role="gridcell"</code> on individual date/month cells</li>
+          <li><code>aria-label</code> and <code>aria-selected</code> for screen reader support</li>
+          <li>Proper focus management and focus trapping within the picker</li>
+        </ul>
+      </div>
+      
+      <div class="a11y-card">
+        <h3 class="a11y-card__title">
+          <Icon name="cursor-arrow-rays" size="sm" />
+          Focus Indicators
+        </h3>
+        <p class="a11y-card__text">
+          All interactive elements have visible focus indicators using the theme primary color with sufficient contrast for WCAG 2.1 compliance.
+        </p>
+      </div>
+      
+      <div class="a11y-card">
+        <h3 class="a11y-card__title">
+          <Icon name="hand-raised" size="sm" />
+          Screen Reader Support
+        </h3>
+        <p class="a11y-card__text">
+          Screen readers announce the picker type, current selection, available dates/times, and navigation instructions. Selected items are clearly indicated with <code>aria-selected="true"</code>.
+        </p>
+      </div>
     </section>
   </article>
 </DocsLayout>

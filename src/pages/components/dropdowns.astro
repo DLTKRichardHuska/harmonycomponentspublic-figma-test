@@ -11,6 +11,9 @@ const props = [
   { name: 'value', type: 'string', default: '—', description: 'Selected value' },
   { name: 'placeholder', type: 'string', default: "'Select an option'", description: 'Placeholder text' },
   { name: 'disabled', type: 'boolean', default: 'false', description: 'Disables the dropdown' },
+  { name: 'label', type: 'string', default: '—', description: 'Label text for the dropdown' },
+  { name: 'labelVariant', type: "'inline' | 'stacked'", default: "'stacked' (inline for CP theme)", description: 'Label alignment variant - inline (left) or stacked (top)' },
+  { name: 'labelFor', type: 'string', default: '—', description: 'ID of the dropdown element the label is associated with' },
 ];
 
 const countries = [
@@ -53,6 +56,28 @@ const priorities = [
         <div class="max-w-sm space-y-2">
           <Label>Country</Label>
           <Dropdown options={countries} placeholder="Select a country" />
+        </div>
+      </ExampleSection>
+
+      <ExampleSection title="With Label (Stacked)" description="Dropdown with label on top (default for non-CP themes).">
+        <div class="max-w-sm">
+          <Dropdown 
+            options={countries} 
+            placeholder="Select a country" 
+            label="Country"
+            labelVariant="stacked"
+          />
+        </div>
+      </ExampleSection>
+
+      <ExampleSection title="With Label (Inline)" description="Dropdown with label to the left (default for CP theme).">
+        <div class="max-w-sm">
+          <Dropdown 
+            options={countries} 
+            placeholder="Select a country" 
+            label="Country"
+            labelVariant="inline"
+          />
         </div>
       </ExampleSection>
 
