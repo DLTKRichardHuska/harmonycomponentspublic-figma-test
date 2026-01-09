@@ -37,8 +37,8 @@ const sampleTabs = [
         <h2 class="section__title">Live Interactive Demo</h2>
         <p class="text-secondary">
           Switch themes using the picker in the top header to see how the shell layout adapts.
-          CP theme includes a floating navigation and no footer, while VP/PPM/Maconomy themes
-          include a footer and no floating navigation.
+          CP theme includes a floating navigation, left sidebar with 2 sections, and no footer.
+          VP/PPM/Maconomy themes include a left sidebar with 1 section, tab-based footer navigation, and no floating navigation.
         </p>
       </div>
 
@@ -79,8 +79,8 @@ const sampleTabs = [
                     the appropriate layout structure.
                   </p>
                   <ul class="text-sm text-secondary space-y-2">
-                    <li>• <strong>CP:</strong> Floating nav toolbar with collapsible sidebars</li>
-                    <li>• <strong>VP/PPM/Maconomy:</strong> Tab-based footer navigation</li>
+                    <li>• <strong>CP:</strong> Floating nav toolbar with collapsible sidebars (2 sections)</li>
+                    <li>• <strong>VP/PPM/Maconomy:</strong> Left sidebar (1 section) with tab-based footer navigation</li>
                   </ul>
                 </div>
               </Card>
@@ -123,7 +123,7 @@ const sampleTabs = [
                 <ul class="text-sm text-secondary space-y-1">
                   <li>• Fixed header at top (56px height)</li>
                   <li>• Floating navigation toolbar below header</li>
-                  <li>• Left sidebar (collapsible, vertically centered)</li>
+                  <li>• Left sidebar (collapsible, vertically centered, 2 sections)</li>
                   <li>• Right sidebar (collapsible, vertically centered)</li>
                   <li>• Scrollable main content area</li>
                   <li>• <strong>No footer</strong> - navigation is handled by floating nav and sidebars</li>
@@ -152,6 +152,7 @@ const sampleTabs = [
                 <h4 class="font-semibold mb-2">Structure</h4>
                 <ul class="text-sm text-secondary space-y-1">
                   <li>• Fixed header at top (56px height)</li>
+                  <li>• Left sidebar (collapsible, vertically centered, 1 section)</li>
                   <li>• Scrollable main content area</li>
                   <li>• Fixed footer with tab navigation (48px height)</li>
                   <li>• <strong>No floating nav</strong> - uses footer for navigation</li>
@@ -179,6 +180,7 @@ const sampleTabs = [
                 <h4 class="font-semibold mb-2">Structure</h4>
                 <ul class="text-sm text-secondary space-y-1">
                   <li>• Same structure as VP theme</li>
+                  <li>• Left sidebar (collapsible, vertically centered, 1 section)</li>
                   <li>• Fixed header, content, and footer</li>
                   <li>• Styled with PPM's primary color (#0073E6)</li>
                 </ul>
@@ -198,6 +200,7 @@ const sampleTabs = [
                 <h4 class="font-semibold mb-2">Structure</h4>
                 <ul class="text-sm text-secondary space-y-1">
                   <li>• Same structure as VP/PPM themes</li>
+                  <li>• Left sidebar (collapsible, vertically centered, 1 section)</li>
                   <li>• Fixed header, content, and footer</li>
                   <li>• Styled with Maconomy's primary color (#0073E6)</li>
                 </ul>
@@ -351,3 +354,51 @@ const sampleTabs = [
     border-top: 1px solid var(--border-color);
   }
 </style>
+
+<script>
+  // Update left sidebar variants based on current theme
+  function updateSidebarVariants() {
+    const html = document.documentElement;
+    const leftSidebars = document.querySelectorAll('.left-sidebar');
+    
+    // Detect current theme
+    let theme: 'cp' | 'vp' | 'ppm' | 'maconomy' = 'cp';
+    if (html.classList.contains('theme-cp')) {
+      theme = 'cp';
+    } else if (html.classList.contains('theme-vp')) {
+      theme = 'vp';
+    } else if (html.classList.contains('theme-ppm')) {
+      theme = 'ppm';
+    } else if (html.classList.contains('theme-maconomy')) {
+      theme = 'maconomy';
+    }
+    
+    // Update all left sidebars
+    leftSidebars.forEach((sidebar) => {
+      // Remove all variant classes
+      sidebar.classList.remove(
+        'left-sidebar--cp',
+        'left-sidebar--vp',
+        'left-sidebar--ppm',
+        'left-sidebar--maconomy'
+      );
+      // Add the correct variant class
+      sidebar.classList.add(`left-sidebar--${theme}`);
+    });
+  }
+  
+  // Run on page load
+  if (typeof window !== 'undefined') {
+    updateSidebarVariants();
+    
+    // Watch for theme changes
+    const observer = new MutationObserver(() => {
+      updateSidebarVariants();
+    });
+    
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['class']
+    });
+  }
+</script>

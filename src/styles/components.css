@@ -4033,6 +4033,118 @@ html.theme-cp.dark .cp-left-sidebar__item:hover {
 }
 
 /* ===========================================
+   UNIFIED LEFT SIDEBAR (All Themes)
+   =========================================== */
+
+.left-sidebar {
+  position: fixed;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: var(--z-sticky);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  width: 52px;
+  transition: width 0.2s ease;
+  overflow: visible;
+}
+
+.left-sidebar:hover {
+  width: 220px;
+}
+
+.left-sidebar__section {
+  background-color: var(--nav-bg);
+  border: 1px solid var(--border-color);
+  border-left: none;
+  border-radius: 0 var(--radius-12) var(--radius-12) 0;
+  box-shadow: 
+    0px 12px 40px 0px rgba(16, 24, 64, 0.24);
+  padding: var(--space-2) var(--space-2);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  overflow: visible;
+}
+
+.left-sidebar__item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-1-5);
+  border-radius: var(--radius-08);
+  text-decoration: none;
+  color: var(--text-primary);
+  white-space: nowrap;
+  transition: background-color var(--transition-fast);
+}
+
+.left-sidebar__item:hover {
+  background-color: var(--hover-bg);
+  text-decoration: none;
+}
+
+.left-sidebar__item--active {
+  background-color: var(--theme-primary);
+  color: var(--text-inverse);
+}
+
+.left-sidebar__item--active:hover {
+  background-color: var(--theme-primary-hover);
+  color: var(--text-inverse);
+}
+
+.left-sidebar__icon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.left-sidebar__icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.left-sidebar__label {
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  font-weight: var(--font-normal);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.left-sidebar:hover .left-sidebar__label {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Active item icon color in light mode */
+.left-sidebar__item--active .left-sidebar__icon {
+  color: var(--text-inverse);
+}
+
+/* Dark mode adjustments for all themes */
+html.dark .left-sidebar__section {
+  box-shadow: 
+    0px 12px 40px 0px rgba(0, 0, 0, 0.4);
+}
+
+html.dark .left-sidebar__item:hover {
+  background-color: var(--hover-bg);
+}
+
+/* Backward compatibility: CP-specific styles also apply to unified component */
+.cp-left-sidebar,
+.left-sidebar--cp {
+  /* Inherits all base .left-sidebar styles */
+}
+
+/* ===========================================
    CP RIGHT SIDEBAR (CP Theme Only)
    =========================================== */
 
@@ -4174,7 +4286,8 @@ html.theme-cp.dark .cp-right-sidebar__item:hover {
 }
 
 /* Override fixed positioning for demo */
-.cp-sidebar-demo .cp-left-sidebar {
+.cp-sidebar-demo .cp-left-sidebar,
+.cp-sidebar-demo .left-sidebar {
   position: static;
   transform: none;
   height: auto;

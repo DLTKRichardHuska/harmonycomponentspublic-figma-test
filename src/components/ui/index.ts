@@ -13,6 +13,7 @@ export { default as ButtonGroup } from './ButtonGroup.astro';
 export { default as Card } from './Card.astro';
 export { default as Checkbox } from './Checkbox.astro';
 export { default as Chip } from './Chip.astro';
+export { default as LeftSidebar } from './LeftSidebar.astro';
 export { default as CPLeftSidebar } from './CPLeftSidebar.astro';
 export { default as CPRightSidebar } from './CPRightSidebar.astro';
 export { default as DateInput } from './DateInput.astro';

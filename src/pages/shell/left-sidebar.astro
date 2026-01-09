@@ -1,29 +1,35 @@
 ---
 import DocsLayout from '../../layouts/DocsLayout.astro';
 import ExampleSection from '../../components/ExampleSection.astro';
-import CPLeftSidebar from '../../components/ui/CPLeftSidebar.astro';
+import LeftSidebar from '../../components/ui/LeftSidebar.astro';
 import Icon from '../../components/ui/Icon.astro';
 ---
 
-<DocsLayout title="Left Sidebar" description="CP left navigation sidebar docked to the left edge of the screen.">
+<DocsLayout title="Left Sidebar" description="Unified left navigation sidebar that supports all themes (CP, VP, PPM, Maconomy). Docked to the left edge of the screen, shows only icons when collapsed, expands on hover to reveal icon + text labels.">
   <article class="space-y-12">
     <header class="page-header page-header--compact">
       <div class="flex items-center gap-3 mb-4">
         <h1 class="page-header__title page-header__title--sm">Left Sidebar</h1>
-        <span class="badge badge--primary">CP Shell</span>
+        <span class="badge badge--primary">Shell Component</span>
+        <span class="badge badge--secondary">Theme Adaptive</span>
       </div>
       <p class="page-header__description">
-        A collapsible left navigation sidebar that is docked to the left edge of the screen. Shows only icons when collapsed, expands on hover to reveal icon + text labels.
+        A unified collapsible left navigation sidebar that supports all Harmony themes. The sidebar adapts its icons and sections based on the theme variant. CP theme includes two sections (Main Navigation + Application Modules), while VP, PPM, and Maconomy themes include a single section with theme-specific icons.
       </p>
     </header>
 
     <section class="space-y-6">
-      <h2 class="section__title">Live Demo</h2>
+      <div>
+        <h2 class="section__title">Live Demo</h2>
+        <p class="text-secondary">
+          Switch themes using the picker in the top header to see how the left sidebar adapts. The sidebar automatically shows the correct icons and sections based on the current theme.
+        </p>
+      </div>
       
-      <ExampleSection title="Left Sidebar - Collapsed/Expanded" description="Hover over the sidebar to see it expand with labels.">
+      <ExampleSection title="Left Sidebar - Theme Adaptive" description="Hover over the sidebar to see it expand with labels. Switch themes to see different icon sets and section configurations.">
         <div class="cp-sidebar-demo">
           <div class="cp-sidebar-demo__sidebar">
-            <CPLeftSidebar />
+            <LeftSidebar variant="cp" />
           </div>
           
           <div class="cp-sidebar-demo__content">
@@ -31,29 +37,17 @@ import Icon from '../../components/ui/Icon.astro';
               The left sidebar is docked to the left edge. Hover over it to see the expanded state with labels.
             </p>
             <p class="text-secondary text-sm mt-4">
-              <strong>Section 1 - Main Navigation:</strong>
+              <strong>CP Theme (2 sections):</strong>
             </p>
             <ul class="list-disc list-inside text-sm text-secondary mt-2 space-y-1">
-              <li>Welcome screen</li>
-              <li>Dashboard</li>
-              <li>My menu</li>
-              <li>Recent</li>
+              <li><strong>Section 1 - Main Navigation:</strong> Welcome screen, Dashboard, My menu, Recent</li>
+              <li><strong>Section 2 - Application Modules:</strong> Search, Command Center, Accounting, Planning, Capture & contracts, Projects, Materials, Time & expense, People, Reports, Admin</li>
             </ul>
             <p class="text-secondary text-sm mt-4">
-              <strong>Section 2 - Application Modules:</strong>
+              <strong>VP/PPM/Maconomy Themes (1 section):</strong>
             </p>
             <ul class="list-disc list-inside text-sm text-secondary mt-2 space-y-1">
-              <li>Search</li>
-              <li>Command Center</li>
-              <li>Accounting</li>
-              <li>Planning</li>
-              <li>Capture & contracts</li>
-              <li>Projects</li>
-              <li>Materials</li>
-              <li>Time & expense</li>
-              <li>People</li>
-              <li>Reports</li>
-              <li>Admin</li>
+              <li>Command Center, Programs, Portfolios, Projects, Risk, Reports, Calendars, Codes, Rates, Resources, Settings, Add Menu</li>
             </ul>
           </div>
         </div>
@@ -86,10 +80,10 @@ import Icon from '../../components/ui/Icon.astro';
         <div class="a11y-card">
           <h3 class="a11y-card__title">
             <Icon name="squares-plus" size="sm" class="a11y-card__title-icon" />
-            Two Sections
+            Configurable Sections
           </h3>
           <p class="a11y-card__text">
-            Organized into two distinct sections: main navigation (4 items) and application modules (11 items).
+            CP theme includes two sections (Main Navigation + Application Modules). VP, PPM, and Maconomy themes include a single section with theme-specific navigation items.
           </p>
         </div>
         
@@ -106,6 +100,64 @@ import Icon from '../../components/ui/Icon.astro';
     </section>
 
     <section class="space-y-6">
+      <h2 class="section__title">Theme Variants</h2>
+      <div class="grid gap-4 md:grid-cols-2">
+        <div class="a11y-card">
+          <h3 class="a11y-card__title">
+            <span class="badge badge--cp mr-2">CP</span>
+            Costpoint Theme
+          </h3>
+          <div class="a11y-card__text space-y-2">
+            <p class="text-sm"><strong>2 Sections:</strong></p>
+            <ul class="list-disc list-inside space-y-1 text-sm">
+              <li>Main Navigation (4 items)</li>
+              <li>Application Modules (11 items)</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="a11y-card">
+          <h3 class="a11y-card__title">
+            <span class="badge badge--ppm mr-2">PPM</span>
+            PPM Theme
+          </h3>
+          <div class="a11y-card__text space-y-2">
+            <p class="text-sm"><strong>1 Section:</strong></p>
+            <ul class="list-disc list-inside space-y-1 text-sm">
+              <li>12 navigation items with PPM-specific icons</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="a11y-card">
+          <h3 class="a11y-card__title">
+            <span class="badge badge--vp mr-2">VP</span>
+            Vantagepoint Theme
+          </h3>
+          <div class="a11y-card__text space-y-2">
+            <p class="text-sm"><strong>1 Section:</strong></p>
+            <ul class="list-disc list-inside space-y-1 text-sm">
+              <li>12 navigation items with VP-specific icons</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="a11y-card">
+          <h3 class="a11y-card__title">
+            <span class="badge badge--maconomy mr-2">Maconomy</span>
+            Maconomy Theme
+          </h3>
+          <div class="a11y-card__text space-y-2">
+            <p class="text-sm"><strong>1 Section:</strong></p>
+            <ul class="list-disc list-inside space-y-1 text-sm">
+              <li>12 navigation items with Maconomy-specific icons</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="space-y-6">
       <h2 class="section__title">Styling</h2>
       <div class="a11y-card">
         <h3 class="a11y-card__title">
@@ -114,12 +166,13 @@ import Icon from '../../components/ui/Icon.astro';
         </h3>
         <div class="a11y-card__text space-y-2">
           <ul class="list-disc list-inside space-y-1 text-sm">
-            <li><strong>Background:</strong> <code>#fcfdff</code></li>
-            <li><strong>Border:</strong> <code>#ffffff</code> (white)</li>
+            <li><strong>Background:</strong> Uses theme-specific <code>--nav-bg</code> design token</li>
+            <li><strong>Border:</strong> Uses theme-specific <code>--border-color</code> design token</li>
             <li><strong>Border Radius:</strong> 12px (top-right and bottom-right only)</li>
-            <li><strong>Shadow:</strong> <code>0px 12px 40px rgba(16, 24, 64, 0.24)</code></li>
-            <li><strong>Icon Color:</strong> <code>#373f4e</code></li>
-            <li><strong>Hover Background:</strong> <code>rgba(55, 63, 78, 0.08)</code></li>
+            <li><strong>Shadow:</strong> <code>0px 12px 40px rgba(16, 24, 64, 0.24)</code> (light mode) / <code>0px 12px 40px rgba(0, 0, 0, 0.4)</code> (dark mode)</li>
+            <li><strong>Icon Color:</strong> Uses theme-specific <code>--text-primary</code> design token</li>
+            <li><strong>Hover Background:</strong> Uses theme-specific <code>--hover-bg</code> design token</li>
+            <li><strong>Active State:</strong> Uses theme-specific <code>--theme-primary</code> color</li>
           </ul>
         </div>
       </div>
