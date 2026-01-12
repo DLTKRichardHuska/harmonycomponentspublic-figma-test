@@ -32,6 +32,8 @@
   padding: 0 var(--space-2);
   font-size: var(--text-xs);
   gap: var(--space-1);
+  --btn-spinner-size: var(--spinner-size-xs);
+  --btn-spinner-stroke-width: var(--spinner-stroke-width-xs);
 }
 
 .btn--sm {
@@ -39,6 +41,8 @@
   padding: 0 var(--space-3);
   font-size: var(--text-sm);
   gap: var(--space-1-5);
+  --btn-spinner-size: var(--spinner-size-sm);
+  --btn-spinner-stroke-width: var(--spinner-stroke-width-sm);
 }
 
 .btn--md {
@@ -46,6 +50,8 @@
   padding: 0 var(--space-4);
   font-size: var(--text-base);
   gap: var(--space-2);
+  --btn-spinner-size: var(--spinner-size-md);
+  --btn-spinner-stroke-width: var(--spinner-stroke-width-md);
 }
 
 .btn--lg {
@@ -53,6 +59,8 @@
   padding: 0 var(--space-6);
   font-size: var(--text-lg);
   gap: var(--space-2);
+  --btn-spinner-size: var(--spinner-size-lg);
+  --btn-spinner-stroke-width: var(--spinner-stroke-width-lg);
 }
 
 /* Icon-only buttons */
@@ -60,24 +68,32 @@
   width: var(--button-height-xs);
   height: var(--button-height-xs);
   padding: 0;
+  --btn-spinner-size: var(--spinner-size-xs);
+  --btn-spinner-stroke-width: var(--spinner-stroke-width-xs);
 }
 
 .btn--icon-sm {
   width: var(--button-height-sm);
   height: var(--button-height-sm);
   padding: 0;
+  --btn-spinner-size: var(--spinner-size-sm);
+  --btn-spinner-stroke-width: var(--spinner-stroke-width-sm);
 }
 
 .btn--icon-md {
   width: var(--button-height-md);
   height: var(--button-height-md);
   padding: 0;
+  --btn-spinner-size: var(--spinner-size-md);
+  --btn-spinner-stroke-width: var(--spinner-stroke-width-md);
 }
 
 .btn--icon-lg {
   width: var(--button-height-lg);
   height: var(--button-height-lg);
   padding: 0;
+  --btn-spinner-size: var(--spinner-size-lg);
+  --btn-spinner-stroke-width: var(--spinner-stroke-width-lg);
 }
 
 /* Button Variants - Theme Buttons (Default) */
@@ -167,7 +183,7 @@
 /* Button Variants - Page Header Buttons */
 .btn--page-header.btn--primary {
   background-color: var(--page-header-btn-primary);
-  color: var(--text-inverse);
+  color: var(--page-header-btn-primary-fg, var(--text-inverse));
 }
 
 .btn--page-header.btn--primary:hover {
@@ -355,6 +371,11 @@
 /* Button Spinner */
 .btn__spinner {
   animation: spin 1s linear infinite;
+  flex-shrink: 0;
+  max-width: var(--btn-spinner-size);
+  max-height: var(--btn-spinner-size);
+  width: var(--btn-spinner-size);
+  height: var(--btn-spinner-size);
 }
 
 @keyframes spin {

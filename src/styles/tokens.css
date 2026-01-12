@@ -243,8 +243,18 @@
   --icon-fallback-radius: 2px;
   
   /* Spinner/Button Loading Icon */
-  --spinner-size: 16px;
-  --spinner-stroke-width: 4;
+  --spinner-size-xs: 12px;
+  --spinner-size-sm: 14px;
+  --spinner-size-md: 16px;
+  --spinner-size-lg: 18px;
+  --spinner-stroke-width-xs: 2;
+  --spinner-stroke-width-sm: 2.5;
+  --spinner-stroke-width-md: 3;
+  --spinner-stroke-width-lg: 3.5;
+  
+  /* Legacy support - default to md size */
+  --spinner-size: var(--spinner-size-md);
+  --spinner-stroke-width: var(--spinner-stroke-width-md);
   
   /* Semantic Error Colors for Fallbacks */
   --color-error-bg-light: #ffecef;
@@ -301,7 +311,7 @@ html.theme-cp {
   /* Text Colors */
   --text-primary: #373F4E;
   --text-secondary: #525969;
-  --text-muted: #94A3B8;
+  --text-muted: #616193;
   --text-inverse: #FFFFFF;
 
   /* Border Colors */
@@ -310,7 +320,7 @@ html.theme-cp {
   --border-focus: var(--theme-primary);
 
   /* Link Color */
-  --link-color: #3A70A6;
+  --link-color: #5959C5;
 
   /* Semantic Colors */
   --color-success: #52BD94;
@@ -342,6 +352,7 @@ html.theme-cp {
 
   /* Page Header Button Colors */
   --page-header-btn-primary: #043852;
+  --page-header-btn-primary-fg: #ffffff;
   --page-header-btn-primary-hover: #03273a;
   --page-header-btn-primary-disabled-bg: #e0e4eb;
   --page-header-btn-primary-disabled-fg: #ffffff;
@@ -386,8 +397,8 @@ html.theme-cp.dark {
 
   /* Text Colors */
   --text-primary: #E9ECEF;
-  --text-secondary: #ADB5BD;
-  --text-muted: #6B7280;
+  --text-secondary: #B6B6C4;
+  --text-muted: #BBBBC6;
   --text-inverse: #1F252E;
 
   /* Border Colors */
@@ -431,14 +442,14 @@ html.theme-cp.dark {
   --page-header-btn-primary-hover: #03273a;
   --page-header-btn-primary-disabled-bg: #e0e4eb;
   --page-header-btn-primary-disabled-fg: #ffffff;
-  --page-header-btn-secondary-stroke: #043852;
-  --page-header-btn-secondary-default-fg: #043852;
-  --page-header-btn-secondary-hover-bg: #eaeff5;
-  --page-header-btn-secondary-hover-fg: #043852;
-  --page-header-btn-secondary-hover-stroke: #043852;
+  --page-header-btn-secondary-stroke: #B6B6C4;
+  --page-header-btn-secondary-default-fg: #B6B6C4;
+  --page-header-btn-secondary-hover-bg: #3D4A5C;
+  --page-header-btn-secondary-hover-fg: #E9ECEF;
+  --page-header-btn-secondary-hover-stroke: #E9ECEF;
   --page-header-btn-secondary-disabled-fg: #e0e4eb;
-  --page-header-btn-tertiary-fg: #043852;
-  --page-header-btn-tertiary-hover-bg: #eaeff5;
+  --page-header-btn-tertiary-fg: #E9ECEF;
+  --page-header-btn-tertiary-hover-bg: #3D4A5C;
   --page-header-btn-tertiary-disabled-fg: #e0e4eb;
 
   /* Scrollbar */
@@ -471,7 +482,7 @@ html.theme-vp {
   /* Text Colors */
   --text-primary: #373F4E;
   --text-secondary: #525969;
-  --text-muted: #94A3B8;
+  --text-muted: #616193;
   --text-inverse: #FFFFFF;
 
   /* Border Colors */
@@ -480,7 +491,7 @@ html.theme-vp {
   --border-focus: var(--theme-primary);
 
   /* Link Color */
-  --link-color: #3A70A6;
+  --link-color: #5959C5;
 
   /* Semantic Colors */
   --color-success: #52BD94;
@@ -554,8 +565,8 @@ html.theme-vp.dark {
 
   /* Text Colors */
   --text-primary: #FAFAFA;
-  --text-secondary: #A1A1AA;
-  --text-muted: #52525B;
+  --text-secondary: #B5B5BC;
+  --text-muted: #B5B5BC;
   --text-inverse: #15171A;
 
   /* Border Colors */
@@ -639,7 +650,7 @@ html.theme-ppm {
   /* Text Colors */
   --text-primary: #373F4E;
   --text-secondary: #525969;
-  --text-muted: #94A3B8;
+  --text-muted: #616193;
   --text-inverse: #FFFFFF;
 
   /* Border Colors */
@@ -648,7 +659,7 @@ html.theme-ppm {
   --border-focus: var(--theme-primary);
 
   /* Link Color */
-  --link-color: #3A70A6;
+  --link-color: #5959C5;
 
   /* Semantic Colors */
   --color-success: #52BD94;
@@ -722,8 +733,8 @@ html.theme-ppm.dark {
 
   /* Text Colors */
   --text-primary: #FAFAFA;
-  --text-secondary: #A1A1AA;
-  --text-muted: #52525B;
+  --text-secondary: #B5B5BC;
+  --text-muted: #B5B5BC;
   --text-inverse: #15171A;
 
   /* Border Colors */
@@ -807,7 +818,7 @@ html.theme-maconomy {
   /* Text Colors */
   --text-primary: #373F4E;
   --text-secondary: #525969;
-  --text-muted: #94A3B8;
+  --text-muted: #616193;
   --text-inverse: #FFFFFF;
 
   /* Border Colors */
@@ -816,7 +827,7 @@ html.theme-maconomy {
   --border-focus: var(--theme-primary);
 
   /* Link Color */
-  --link-color: #3A70A6;
+  --link-color: #5959C5;
 
   /* Semantic Colors */
   --color-success: #52BD94;
@@ -890,8 +901,8 @@ html.theme-maconomy.dark {
 
   /* Text Colors */
   --text-primary: #FAFAFA;
-  --text-secondary: #A1A1AA;
-  --text-muted: #52525B;
+  --text-secondary: #B5B5BC;
+  --text-muted: #B5B5BC;
   --text-inverse: #15171A;
 
   /* Border Colors */

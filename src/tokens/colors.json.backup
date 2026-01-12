@@ -124,8 +124,8 @@
           "border": "#5F6871",
           "hover": "#3D4A5C",
           "titleText": "#E9ECEF",
-          "secondaryText": "#B6B6C4",
-          "mutedText": "#BBBBC6"
+          "secondaryText": "#ADB5BD",
+          "mutedText": "#6B7280"
         }
       }
     },
@@ -165,8 +165,8 @@
           "border": "#2A2D32",
           "hover": "#2A2D32",
           "titleText": "#FAFAFA",
-          "secondaryText": "#B5B5BC",
-          "mutedText": "#B5B5BC"
+          "secondaryText": "#A1A1AA",
+          "mutedText": "#52525B"
         }
       }
     },
@@ -206,8 +206,8 @@
           "border": "#2A2D32",
           "hover": "#2A2D32",
           "titleText": "#FAFAFA",
-          "secondaryText": "#B5B5BC",
-          "mutedText": "#B5B5BC"
+          "secondaryText": "#A1A1AA",
+          "mutedText": "#52525B"
         }
       }
     },
@@ -247,8 +247,8 @@
           "border": "#2A2D32",
           "hover": "#2A2D32",
           "titleText": "#FAFAFA",
-          "secondaryText": "#B5B5BC",
-          "mutedText": "#B5B5BC"
+          "secondaryText": "#A1A1AA",
+          "mutedText": "#52525B"
         }
       }
     }
@@ -385,11 +385,6 @@
       "default": {
         "light": "#043852",
         "dark": "#495057",
-        "foreground": {
-          "light": "#FFFFFF",
-          "dark": "#FFFFFF",
-          "description": "Page header button primary text color - white for contrast on dark blue"
-        },
         "description": "Page header button primary default - exact from Figma"
       },
       "hover": {
@@ -412,26 +407,14 @@
         },
         "foreground": {
           "light": "#043852",
-          "dark": "#B6B6C4",
-          "description": "Page header button secondary default foreground - dark blue for light mode, light gray for dark mode"
+          "dark": "#495057",
+          "description": "Page header button secondary default foreground - dark blue for readability"
         }
       },
       "hover": {
-        "background": {
-          "light": "#eaeff5",
-          "dark": "#3D4A5C",
-          "description": "Page header button secondary hover background"
-        },
-        "foreground": {
-          "light": "#043852",
-          "dark": "#E9ECEF",
-          "description": "Page header button secondary hover foreground - lighter for better contrast on hover"
-        },
-        "stroke": {
-          "light": "#043852",
-          "dark": "#E9ECEF",
-          "description": "Page header button secondary hover stroke - lighter for better contrast"
-        },
+        "background": "#eaeff5",
+        "foreground": "#043852",
+        "stroke": "#043852",
         "description": "Page header button secondary hover colors"
       },
       "disabled": {
@@ -443,16 +426,12 @@
       "default": {
         "foreground": {
           "light": "#043852",
-          "dark": "#E9ECEF",
-          "description": "Page header button tertiary default foreground - dark blue for light mode, light text for dark mode (needs to work on hover background)"
+          "dark": "#495057",
+          "description": "Page header button tertiary default foreground"
         }
       },
       "hover": {
-        "background": {
-          "light": "#eaeff5",
-          "dark": "#3D4A5C",
-          "description": "Page header button tertiary hover background"
-        },
+        "background": "#eaeff5",
         "description": "Page header button tertiary hover background"
       },
       "disabled": {
