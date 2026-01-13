@@ -1,6 +1,9 @@
 ---
 import '../../styles/global.css';
+import Table from '../../components/ui/Table.astro';
 import Badge from '../../components/ui/Badge.astro';
+import Checkbox from '../../components/ui/Checkbox.astro';
+import Icon from '../../components/ui/Icon.astro';
 ---
 
 <!DOCTYPE html>
@@ -21,48 +24,252 @@ import Badge from '../../components/ui/Badge.astro';
     <style>
       * { margin: 0; padding: 0; box-sizing: border-box; }
       html, body { height: 100%; width: 100%; }
-      body { padding: 48px; }
+      body { padding: 48px; display: flex; flex-direction: column; gap: 32px; }
     </style>
   </head>
   <body>
-    <div class="overflow-x-auto">
-      <table class="w-full text-sm">
-        <thead>
-          <tr class="border-b border-border-color">
-            <th class="text-left py-3 px-4 font-medium text-secondary bg-elevated-bg">Project ID</th>
-            <th class="text-left py-3 px-4 font-medium text-secondary bg-elevated-bg">Name</th>
-            <th class="text-left py-3 px-4 font-medium text-secondary bg-elevated-bg">Status</th>
-            <th class="text-right py-3 px-4 font-medium text-secondary bg-elevated-bg">Budget</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="border-b border-border-light hover:bg-hover-bg transition-colors">
-            <td class="py-3 px-4 text-primary">PRJ-001</td>
-            <td class="py-3 px-4 text-primary">Website Redesign</td>
-            <td class="py-3 px-4">
-              <Badge variant="success">Active</Badge>
-            </td>
-            <td class="py-3 px-4 text-right text-primary">$25,000</td>
-          </tr>
-          <tr class="border-b border-border-light hover:bg-hover-bg transition-colors">
-            <td class="py-3 px-4 text-primary">PRJ-002</td>
-            <td class="py-3 px-4 text-primary">Mobile App Development</td>
-            <td class="py-3 px-4">
-              <Badge variant="warning">In Progress</Badge>
-            </td>
-            <td class="py-3 px-4 text-right text-primary">$150,000</td>
-          </tr>
-          <tr class="border-b border-border-light hover:bg-hover-bg transition-colors">
-            <td class="py-3 px-4 text-primary">PRJ-003</td>
-            <td class="py-3 px-4 text-primary">Marketing Campaign</td>
-            <td class="py-3 px-4">
-              <Badge variant="error">On Hold</Badge>
-            </td>
-            <td class="py-3 px-4 text-right text-primary">$50,000</td>
-          </tr>
-        </tbody>
-      </table>
+    <!-- Basic Table with Gray Header -->
+    <div>
+      <h2 style="margin-bottom: 16px; font-size: 18px; font-weight: 600;">Basic Table - Gray Header</h2>
+      <div class="overflow-x-auto">
+        <Table headerVariant="gray">
+          <thead slot="header">
+            <tr>
+              <th class="text-left">Project ID</th>
+              <th class="text-left">Name</th>
+              <th class="text-left">Status</th>
+              <th class="text-right">Budget</th>
+            </tr>
+          </thead>
+          <tbody slot="body">
+            <tr>
+              <td>PRJ-001</td>
+              <td>Website Redesign</td>
+              <td>
+                <Badge variant="success">Active</Badge>
+              </td>
+              <td class="text-right">$25,000</td>
+            </tr>
+            <tr>
+              <td>PRJ-002</td>
+              <td>Mobile App Development</td>
+              <td>
+                <Badge variant="warning">In Progress</Badge>
+              </td>
+              <td class="text-right">$150,000</td>
+            </tr>
+            <tr>
+              <td>PRJ-003</td>
+              <td>Database Migration</td>
+              <td>
+                <Badge variant="default">Pending</Badge>
+              </td>
+              <td class="text-right">$45,000</td>
+            </tr>
+          </tbody>
+        </Table>
+      </div>
     </div>
+
+    <!-- Table with White Header -->
+    <div>
+      <h2 style="margin-bottom: 16px; font-size: 18px; font-weight: 600;">Table - White Header</h2>
+      <div class="overflow-x-auto">
+        <Table headerVariant="white">
+          <thead slot="header">
+            <tr>
+              <th class="text-left">Project ID</th>
+              <th class="text-left">Name</th>
+              <th class="text-left">Status</th>
+              <th class="text-right">Budget</th>
+            </tr>
+          </thead>
+          <tbody slot="body">
+            <tr>
+              <td>PRJ-001</td>
+              <td>Website Redesign</td>
+              <td>
+                <Badge variant="success">Active</Badge>
+              </td>
+              <td class="text-right">$25,000</td>
+            </tr>
+            <tr>
+              <td>PRJ-002</td>
+              <td>Mobile App Development</td>
+              <td>
+                <Badge variant="warning">In Progress</Badge>
+              </td>
+              <td class="text-right">$150,000</td>
+            </tr>
+          </tbody>
+        </Table>
+      </div>
+    </div>
+
+    <!-- Interactive Table with Selection -->
+    <div>
+      <h2 style="margin-bottom: 16px; font-size: 18px; font-weight: 600;">Interactive Table - Row Selection (Blue Highlight)</h2>
+      <div class="overflow-x-auto">
+        <Table headerVariant="gray">
+          <thead slot="header">
+            <tr>
+              <th class="w-10">
+                <Checkbox name="select-all" aria-label="Select all rows" />
+              </th>
+              <th class="text-left">Employee</th>
+              <th class="text-left">Department</th>
+              <th class="text-left">Role</th>
+              <th class="text-right">Actions</th>
+            </tr>
+          </thead>
+          <tbody slot="body">
+            <tr>
+              <td>
+                <Checkbox name="select-employee-1" aria-label="Select row for John Doe" />
+              </td>
+              <td>
+                <div class="flex items-center gap-3">
+                  <div class="w-8 h-8 rounded-full flex items-center justify-center" style="background-color: var(--theme-primary);">
+                    <span class="text-xs font-medium" style="color: var(--text-inverse);">JD</span>
+                  </div>
+                  <div>
+                    <div class="font-medium text-primary">John Doe</div>
+                    <div class="text-xs text-muted">john.doe@company.com</div>
+                  </div>
+                </div>
+              </td>
+              <td>Engineering</td>
+              <td>Senior Developer</td>
+              <td class="table-cell--actions">
+                <button class="icon-btn">
+                  <Icon name="ellipsis-vertical" size="md" class="icon-btn__icon" />
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <Checkbox name="select-employee-2" aria-label="Select row for Jane Smith" />
+              </td>
+              <td>
+                <div class="flex items-center gap-3">
+                  <div class="w-8 h-8 rounded-full flex items-center justify-center" style="background-color: var(--theme-primary);">
+                    <span class="text-xs font-medium" style="color: var(--text-inverse);">JS</span>
+                  </div>
+                  <div>
+                    <div class="font-medium text-primary">Jane Smith</div>
+                    <div class="text-xs text-muted">jane.smith@company.com</div>
+                  </div>
+                </div>
+              </td>
+              <td>Design</td>
+              <td>UX Lead</td>
+              <td class="table-cell--actions">
+                <button class="icon-btn">
+                  <Icon name="ellipsis-vertical" size="md" class="icon-btn__icon" />
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <Checkbox name="select-employee-3" aria-label="Select row for Mike Johnson" />
+              </td>
+              <td>
+                <div class="flex items-center gap-3">
+                  <div class="w-8 h-8 rounded-full flex items-center justify-center" style="background-color: var(--theme-primary);">
+                    <span class="text-xs font-medium" style="color: var(--text-inverse);">MJ</span>
+                  </div>
+                  <div>
+                    <div class="font-medium text-primary">Mike Johnson</div>
+                    <div class="text-xs text-muted">mike.j@company.com</div>
+                  </div>
+                </div>
+              </td>
+              <td>Marketing</td>
+              <td>Manager</td>
+              <td class="table-cell--actions">
+                <button class="icon-btn">
+                  <Icon name="ellipsis-vertical" size="md" class="icon-btn__icon" />
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </Table>
+      </div>
+    </div>
+
+    <!-- Striped Table with Total Row -->
+    <div>
+      <h2 style="margin-bottom: 16px; font-size: 18px; font-weight: 600;">Striped Table - Blue Total Row</h2>
+      <div class="overflow-x-auto">
+        <Table headerVariant="gray" striped>
+          <thead slot="header">
+            <tr>
+              <th class="text-left">Code</th>
+              <th class="text-left">Description</th>
+              <th class="text-right">Amount</th>
+            </tr>
+          </thead>
+          <tbody slot="body">
+            <tr>
+              <td class="font-mono">ACC-1001</td>
+              <td>Operating Expenses</td>
+              <td class="text-right">$12,450.00</td>
+            </tr>
+            <tr>
+              <td class="font-mono">ACC-1002</td>
+              <td>Equipment Purchase</td>
+              <td class="text-right">$8,750.00</td>
+            </tr>
+            <tr>
+              <td class="font-mono">ACC-1003</td>
+              <td>Travel & Entertainment</td>
+              <td class="text-right">$3,200.00</td>
+            </tr>
+            <tr>
+              <td class="font-mono">ACC-1004</td>
+              <td>Software Licenses</td>
+              <td class="text-right">$15,600.00</td>
+            </tr>
+            <tr class="table-row--total font-semibold">
+              <td colspan="2">Total</td>
+              <td class="text-right">$40,000.00</td>
+            </tr>
+          </tbody>
+        </Table>
+      </div>
+    </div>
+
+    <script>
+      // Handle row selection highlighting for browsers without :has() support
+      document.addEventListener('DOMContentLoaded', () => {
+        const tables = document.querySelectorAll('.table');
+        
+        tables.forEach(table => {
+          const checkboxes = table.querySelectorAll('.checkbox__input');
+          
+          // Initialize selected state for pre-checked checkboxes
+          checkboxes.forEach(checkbox => {
+            const row = checkbox.closest('tr');
+            if (row && checkbox.checked) {
+              row.classList.add('table-row--selected');
+            }
+          });
+          
+          // Handle checkbox changes
+          checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', () => {
+              const row = checkbox.closest('tr');
+              if (row) {
+                if (checkbox.checked) {
+                  row.classList.add('table-row--selected');
+                } else {
+                  row.classList.remove('table-row--selected');
+                }
+              }
+            });
+          });
+        });
+      });
+    </script>
   </body>
 </html>
-

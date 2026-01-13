@@ -21,6 +21,7 @@ interface NavItem {
   panelTitle?: string; // Panel title when item is clicked (defaults to label)
   panelIcon?: string; // Panel icon when item is clicked (defaults to item icon)
   panelContentId?: string; // Content identifier for contextual content
+  useGradientHeader?: boolean; // Apply gradient header background when this item's panel is open
 }
 
 interface Section {
@@ -167,6 +168,7 @@ const shouldRenderAllVariants = !sections;
                   data-panel-icon={panelIcon}
                   data-panel-content-id={item.panelContentId}
                   data-item-id={itemId}
+                  data-use-gradient-header={item.useGradientHeader || false}
                   data-left-sidebar-item
                 >
                   <Tooltip text={item.label} position="right" class="left-sidebar__item-tooltip">
@@ -199,6 +201,7 @@ const shouldRenderAllVariants = !sections;
                   data-panel-icon={panelIcon}
                   data-panel-content-id={item.panelContentId}
                   data-item-id={itemId}
+                  data-use-gradient-header={item.useGradientHeader || false}
                   data-left-sidebar-item
                 >
                   <Tooltip text={item.label} position="right" class="left-sidebar__item-tooltip">
@@ -231,6 +234,7 @@ const shouldRenderAllVariants = !sections;
                   data-panel-icon={panelIcon}
                   data-panel-content-id={item.panelContentId}
                   data-item-id={itemId}
+                  data-use-gradient-header={item.useGradientHeader || false}
                   data-left-sidebar-item
                 >
                   <Tooltip text={item.label} position="right" class="left-sidebar__item-tooltip">
@@ -263,6 +267,7 @@ const shouldRenderAllVariants = !sections;
                   data-panel-icon={panelIcon}
                   data-panel-content-id={item.panelContentId}
                   data-item-id={itemId}
+                  data-use-gradient-header={item.useGradientHeader || false}
                   data-left-sidebar-item
                 >
                   <Tooltip text={item.label} position="right" class="left-sidebar__item-tooltip">
@@ -363,9 +368,27 @@ const shouldRenderAllVariants = !sections;
           const title = link.dataset.panelTitle || '';
           const icon = link.dataset.panelIcon || '';
           const contentId = link.dataset.panelContentId;
+          const useGradientHeader = link.dataset.useGradientHeader === 'true';
+          
+          // Check if this is Dela AI item (automatic detection)
+          const isDelaAI = title === 'Dela AI';
+          
+          // Determine if gradient should be applied
+          const shouldUseGradient = useGradientHeader || isDelaAI;
 
           // Update panel dynamically
           if (leftPanel) {
+            // Get panel header
+            const panelHeader = leftPanel.querySelector('.shell-panel__header') as HTMLElement | null;
+            
+            // Set or clear gradient header attribute
+            if (panelHeader) {
+              if (shouldUseGradient) {
+                panelHeader.setAttribute('data-gradient-header', 'true');
+              } else {
+                panelHeader.removeAttribute('data-gradient-header');
+              }
+            }
             // Update title
             const titleElement = leftPanel.querySelector('.shell-panel__title') as HTMLElement | null;
             if (titleElement) {
@@ -452,6 +475,12 @@ const shouldRenderAllVariants = !sections;
             // Close panel
             panel.classList.remove('shell-panel--open');
             panel.setAttribute('data-open', 'false');
+
+            // Clear gradient header attribute
+            const panelHeader = panel.querySelector('.shell-panel__header') as HTMLElement | null;
+            if (panelHeader) {
+              panelHeader.removeAttribute('data-gradient-header');
+            }
 
             // Clear sidebar state
             leftSidebar.removeAttribute('data-panel-open');

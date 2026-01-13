@@ -1,8 +1,16 @@
 ---
 import DocsLayout from '../../layouts/DocsLayout.astro';
 import ExampleSection from '../../components/ExampleSection.astro';
+import PropsTable from '../../components/PropsTable.astro';
 import Icon from '../../components/ui/Icon.astro';
 import Checkbox from '../../components/ui/Checkbox.astro';
+import Table from '../../components/ui/Table.astro';
+
+const props = [
+  { name: 'headerVariant', type: "'gray' | 'white' | 'none'", default: "'gray'", description: 'Header background variant: gray (light gray background), white (white background), or none (transparent)' },
+  { name: 'striped', type: 'boolean', default: 'false', description: 'Enable alternating row background colors (zebra striping) for easier scanning' },
+  { name: 'class', type: 'string', default: '—', description: 'Additional CSS classes to apply to the table element' },
+];
 ---
 
 <DocsLayout title="Tables" description="Data table components and patterns for displaying structured information.">
@@ -19,52 +27,85 @@ import Checkbox from '../../components/ui/Checkbox.astro';
     <section class="space-y-6">
       <h2 class="section__title">Basic Table</h2>
       
-      <ExampleSection title="Default Table" description="A simple table with headers and data rows.">
+      <ExampleSection title="Default Table with Gray Header" description="A simple table with light gray header background.">
         <div class="overflow-x-auto">
-          <table class="w-full text-sm">
-            <thead>
-              <tr class="border-b border-border-color">
-                <th class="text-left py-3 px-4 font-medium text-secondary bg-elevated-bg">Project ID</th>
-                <th class="text-left py-3 px-4 font-medium text-secondary bg-elevated-bg">Name</th>
-                <th class="text-left py-3 px-4 font-medium text-secondary bg-elevated-bg">Status</th>
-                <th class="text-right py-3 px-4 font-medium text-secondary bg-elevated-bg">Budget</th>
+          <Table headerVariant="gray">
+            <thead slot="header">
+              <tr>
+                <th class="text-left">Project ID</th>
+                <th class="text-left">Name</th>
+                <th class="text-left">Status</th>
+                <th class="text-right">Budget</th>
               </tr>
             </thead>
-            <tbody>
-              <tr class="border-b border-border-light hover:bg-hover-bg transition-colors">
-                <td class="py-3 px-4 text-primary">PRJ-001</td>
-                <td class="py-3 px-4 text-primary">Website Redesign</td>
-                <td class="py-3 px-4">
+            <tbody slot="body">
+              <tr>
+                <td>PRJ-001</td>
+                <td>Website Redesign</td>
+                <td>
                   <span class="badge badge--success">Active</span>
                 </td>
-                <td class="py-3 px-4 text-right text-primary">$25,000</td>
+                <td class="text-right">$25,000</td>
               </tr>
-              <tr class="border-b border-border-light hover:bg-hover-bg transition-colors">
-                <td class="py-3 px-4 text-primary">PRJ-002</td>
-                <td class="py-3 px-4 text-primary">Mobile App Development</td>
-                <td class="py-3 px-4">
+              <tr>
+                <td>PRJ-002</td>
+                <td>Mobile App Development</td>
+                <td>
                   <span class="badge badge--warning">In Progress</span>
                 </td>
-                <td class="py-3 px-4 text-right text-primary">$150,000</td>
+                <td class="text-right">$150,000</td>
               </tr>
-              <tr class="border-b border-border-light hover:bg-hover-bg transition-colors">
-                <td class="py-3 px-4 text-primary">PRJ-003</td>
-                <td class="py-3 px-4 text-primary">Database Migration</td>
-                <td class="py-3 px-4">
+              <tr>
+                <td>PRJ-003</td>
+                <td>Database Migration</td>
+                <td>
                   <span class="badge badge--default">Pending</span>
                 </td>
-                <td class="py-3 px-4 text-right text-primary">$45,000</td>
+                <td class="text-right">$45,000</td>
               </tr>
-              <tr class="hover:bg-hover-bg transition-colors">
-                <td class="py-3 px-4 text-primary">PRJ-004</td>
-                <td class="py-3 px-4 text-primary">Security Audit</td>
-                <td class="py-3 px-4">
+              <tr>
+                <td>PRJ-004</td>
+                <td>Security Audit</td>
+                <td>
                   <span class="badge badge--info">Review</span>
                 </td>
-                <td class="py-3 px-4 text-right text-primary">$12,500</td>
+                <td class="text-right">$12,500</td>
               </tr>
             </tbody>
-          </table>
+          </Table>
+        </div>
+      </ExampleSection>
+
+      <ExampleSection title="Table with White Header" description="Table with white header background.">
+        <div class="overflow-x-auto">
+          <Table headerVariant="white">
+            <thead slot="header">
+              <tr>
+                <th class="text-left">Project ID</th>
+                <th class="text-left">Name</th>
+                <th class="text-left">Status</th>
+                <th class="text-right">Budget</th>
+              </tr>
+            </thead>
+            <tbody slot="body">
+              <tr>
+                <td>PRJ-001</td>
+                <td>Website Redesign</td>
+                <td>
+                  <span class="badge badge--success">Active</span>
+                </td>
+                <td class="text-right">$25,000</td>
+              </tr>
+              <tr>
+                <td>PRJ-002</td>
+                <td>Mobile App Development</td>
+                <td>
+                  <span class="badge badge--warning">In Progress</span>
+                </td>
+                <td class="text-right">$150,000</td>
+              </tr>
+            </tbody>
+          </Table>
         </div>
       </ExampleSection>
     </section>
@@ -72,29 +113,29 @@ import Checkbox from '../../components/ui/Checkbox.astro';
     <section class="space-y-6">
       <h2 class="section__title">Table with Actions</h2>
       
-      <ExampleSection title="Interactive Table" description="Table with row actions and selection.">
+      <ExampleSection title="Interactive Table" description="Table with row actions and selection. Selected rows are highlighted in blue.">
         <div class="overflow-x-auto">
-          <table class="w-full text-sm">
-            <thead>
-              <tr class="border-b border-border-color">
-                <th class="w-10 py-3 px-4 bg-elevated-bg">
+          <Table headerVariant="gray">
+            <thead slot="header">
+              <tr>
+                <th class="w-10">
                   <Checkbox name="select-all" aria-label="Select all rows" />
                 </th>
-                <th class="text-left py-3 px-4 font-medium text-secondary bg-elevated-bg">Employee</th>
-                <th class="text-left py-3 px-4 font-medium text-secondary bg-elevated-bg">Department</th>
-                <th class="text-left py-3 px-4 font-medium text-secondary bg-elevated-bg">Role</th>
-                <th class="text-right py-3 px-4 font-medium text-secondary bg-elevated-bg">Actions</th>
+                <th class="text-left">Employee</th>
+                <th class="text-left">Department</th>
+                <th class="text-left">Role</th>
+                <th class="text-right">Actions</th>
               </tr>
             </thead>
-            <tbody>
-              <tr class="border-b border-border-light hover:bg-hover-bg transition-colors">
-                <td class="py-3 px-4">
+            <tbody slot="body">
+              <tr>
+                <td>
                   <Checkbox name="select-employee-1" aria-label="Select row for John Doe" />
                 </td>
-                <td class="py-3 px-4">
+                <td>
                   <div class="flex items-center gap-3">
-                    <div class="w-8 h-8 rounded-full bg-theme-primary-light flex items-center justify-center">
-                      <span class="text-xs font-medium text-theme-primary">JD</span>
+                    <div class="w-8 h-8 rounded-full flex items-center justify-center" style="background-color: var(--theme-primary);">
+                      <span class="text-xs font-medium" style="color: var(--text-inverse);">JD</span>
                     </div>
                     <div>
                       <div class="font-medium text-primary">John Doe</div>
@@ -102,22 +143,22 @@ import Checkbox from '../../components/ui/Checkbox.astro';
                     </div>
                   </div>
                 </td>
-                <td class="py-3 px-4 text-primary">Engineering</td>
-                <td class="py-3 px-4 text-primary">Senior Developer</td>
-                <td class="py-3 px-4 text-right">
+                <td>Engineering</td>
+                <td>Senior Developer</td>
+                <td class="table-cell--actions">
                   <button class="icon-btn">
                     <Icon name="ellipsis-vertical" size="md" class="icon-btn__icon" />
                   </button>
                 </td>
               </tr>
-              <tr class="border-b border-border-light hover:bg-hover-bg transition-colors">
-                <td class="py-3 px-4">
+              <tr>
+                <td>
                   <Checkbox name="select-employee-2" aria-label="Select row for Jane Smith" />
                 </td>
-                <td class="py-3 px-4">
+                <td>
                   <div class="flex items-center gap-3">
-                    <div class="w-8 h-8 rounded-full bg-theme-primary-light flex items-center justify-center">
-                      <span class="text-xs font-medium text-theme-primary">JS</span>
+                    <div class="w-8 h-8 rounded-full flex items-center justify-center" style="background-color: var(--theme-primary);">
+                      <span class="text-xs font-medium" style="color: var(--text-inverse);">JS</span>
                     </div>
                     <div>
                       <div class="font-medium text-primary">Jane Smith</div>
@@ -125,22 +166,22 @@ import Checkbox from '../../components/ui/Checkbox.astro';
                     </div>
                   </div>
                 </td>
-                <td class="py-3 px-4 text-primary">Design</td>
-                <td class="py-3 px-4 text-primary">UX Lead</td>
-                <td class="py-3 px-4 text-right">
+                <td>Design</td>
+                <td>UX Lead</td>
+                <td class="table-cell--actions">
                   <button class="icon-btn">
                     <Icon name="ellipsis-vertical" size="md" class="icon-btn__icon" />
                   </button>
                 </td>
               </tr>
-              <tr class="hover:bg-hover-bg transition-colors">
-                <td class="py-3 px-4">
+              <tr>
+                <td>
                   <Checkbox name="select-employee-3" aria-label="Select row for Mike Johnson" />
                 </td>
-                <td class="py-3 px-4">
+                <td>
                   <div class="flex items-center gap-3">
-                    <div class="w-8 h-8 rounded-full bg-theme-primary-light flex items-center justify-center">
-                      <span class="text-xs font-medium text-theme-primary">MJ</span>
+                    <div class="w-8 h-8 rounded-full flex items-center justify-center" style="background-color: var(--theme-primary);">
+                      <span class="text-xs font-medium" style="color: var(--text-inverse);">MJ</span>
                     </div>
                     <div>
                       <div class="font-medium text-primary">Mike Johnson</div>
@@ -148,16 +189,16 @@ import Checkbox from '../../components/ui/Checkbox.astro';
                     </div>
                   </div>
                 </td>
-                <td class="py-3 px-4 text-primary">Marketing</td>
-                <td class="py-3 px-4 text-primary">Manager</td>
-                <td class="py-3 px-4 text-right">
+                <td>Marketing</td>
+                <td>Manager</td>
+                <td class="table-cell--actions">
                   <button class="icon-btn">
                     <Icon name="ellipsis-vertical" size="md" class="icon-btn__icon" />
                   </button>
                 </td>
               </tr>
             </tbody>
-          </table>
+          </Table>
         </div>
       </ExampleSection>
     </section>
@@ -165,48 +206,53 @@ import Checkbox from '../../components/ui/Checkbox.astro';
     <section class="space-y-6">
       <h2 class="section__title">Striped Table</h2>
       
-      <ExampleSection title="Alternating Rows" description="Table with alternating row background colors for easier scanning.">
+      <ExampleSection title="Alternating Rows" description="Table with alternating row background colors for easier scanning. Total row uses blue highlight.">
         <div class="overflow-x-auto">
-          <table class="w-full text-sm">
-            <thead>
-              <tr class="border-b border-border-color">
-                <th class="text-left py-3 px-4 font-medium text-secondary bg-elevated-bg">Code</th>
-                <th class="text-left py-3 px-4 font-medium text-secondary bg-elevated-bg">Description</th>
-                <th class="text-right py-3 px-4 font-medium text-secondary bg-elevated-bg">Amount</th>
+          <Table headerVariant="gray" striped>
+            <thead slot="header">
+              <tr>
+                <th class="text-left">Code</th>
+                <th class="text-left">Description</th>
+                <th class="text-right">Amount</th>
               </tr>
             </thead>
-            <tbody>
-              <tr class="bg-card">
-                <td class="py-3 px-4 text-primary font-mono">ACC-1001</td>
-                <td class="py-3 px-4 text-primary">Operating Expenses</td>
-                <td class="py-3 px-4 text-right text-primary">$12,450.00</td>
+            <tbody slot="body">
+              <tr>
+                <td class="font-mono">ACC-1001</td>
+                <td>Operating Expenses</td>
+                <td class="text-right">$12,450.00</td>
               </tr>
-              <tr class="bg-surface">
-                <td class="py-3 px-4 text-primary font-mono">ACC-1002</td>
-                <td class="py-3 px-4 text-primary">Equipment Purchase</td>
-                <td class="py-3 px-4 text-right text-primary">$8,750.00</td>
+              <tr>
+                <td class="font-mono">ACC-1002</td>
+                <td>Equipment Purchase</td>
+                <td class="text-right">$8,750.00</td>
               </tr>
-              <tr class="bg-card">
-                <td class="py-3 px-4 text-primary font-mono">ACC-1003</td>
-                <td class="py-3 px-4 text-primary">Travel & Entertainment</td>
-                <td class="py-3 px-4 text-right text-primary">$3,200.00</td>
+              <tr>
+                <td class="font-mono">ACC-1003</td>
+                <td>Travel & Entertainment</td>
+                <td class="text-right">$3,200.00</td>
               </tr>
-              <tr class="bg-surface">
-                <td class="py-3 px-4 text-primary font-mono">ACC-1004</td>
-                <td class="py-3 px-4 text-primary">Software Licenses</td>
-                <td class="py-3 px-4 text-right text-primary">$15,600.00</td>
+              <tr>
+                <td class="font-mono">ACC-1004</td>
+                <td>Software Licenses</td>
+                <td class="text-right">$15,600.00</td>
               </tr>
-              <tr class="bg-card font-semibold" style="background-color: var(--table-total-bg);">
-                <td class="py-3 px-4 text-primary" colspan="2">Total</td>
-                <td class="py-3 px-4 text-right text-primary">$40,000.00</td>
+              <tr class="table-row--total font-semibold">
+                <td colspan="2">Total</td>
+                <td class="text-right">$40,000.00</td>
               </tr>
             </tbody>
-          </table>
+          </Table>
         </div>
       </ExampleSection>
     </section>
 
-    <section class="space-y-6">
+    <section id="props" class="space-y-6">
+      <h2 class="section__title">Props</h2>
+      <PropsTable props={props} />
+    </section>
+
+    <section id="usage" class="space-y-6">
       <h2 class="section__title">Usage Guidelines</h2>
       
       <div class="a11y-card">
@@ -238,4 +284,35 @@ import Checkbox from '../../components/ui/Checkbox.astro';
   </article>
 </DocsLayout>
 
-
+<script>
+  // Handle row selection highlighting for browsers without :has() support
+  document.addEventListener('DOMContentLoaded', () => {
+    const tables = document.querySelectorAll('.table');
+    
+    tables.forEach(table => {
+      const checkboxes = table.querySelectorAll('.checkbox__input');
+      
+      // Initialize selected state for pre-checked checkboxes
+      checkboxes.forEach(checkbox => {
+        const row = checkbox.closest('tr');
+        if (row && checkbox.checked) {
+          row.classList.add('table-row--selected');
+        }
+      });
+      
+      // Handle checkbox changes
+      checkboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', () => {
+          const row = checkbox.closest('tr');
+          if (row) {
+            if (checkbox.checked) {
+              row.classList.add('table-row--selected');
+            } else {
+              row.classList.remove('table-row--selected');
+            }
+          }
+        });
+      });
+    });
+  });
+</script>

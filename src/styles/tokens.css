@@ -306,7 +306,15 @@ html.theme-cp {
   --surface-bg: #FFFFFF;
   --elevated-bg: #F7F8FA;
   --hover-bg: #E5E7EB;
-  --table-total-bg: #F0F3BE;
+  --table-total-bg: rgba(0, 115, 230, 0.15);
+  
+  /* Table Header Colors */
+  --table-header-gray-bg: #EDF0F6; /* Gray header background */
+  
+  /* Table Row Colors - Blue tints for accessibility and visibility */
+  --table-row-hover-bg: #d6ebff; /* Light blue for unselected row hover */
+  --table-row-selected-bg: rgba(0, 115, 230, 0.15); /* Blue tint for selected rows (15% for better visibility) */
+  --table-row-selected-hover-bg: #d6ebff; /* Light blue for selected row hover */
 
   /* Text Colors */
   --text-primary: #373F4E;
@@ -393,7 +401,15 @@ html.theme-cp.dark {
   --surface-bg: #212935;
   --elevated-bg: #37424D;
   --hover-bg: #3D4A5C;
-  --table-total-bg: #223A52;
+  --table-total-bg: rgba(89, 172, 255, 0.15);
+  
+  /* Table Header Colors */
+  --table-header-gray-bg: #37424D; /* Gray header background for dark mode */
+  
+  /* Table Row Colors - Blue tints for accessibility and visibility */
+  --table-row-hover-bg: rgba(89, 172, 255, 0.15); /* Light blue tint for unselected row hover in dark mode */
+  --table-row-selected-bg: rgba(89, 172, 255, 0.15); /* Blue tint for selected rows (15% for better visibility) */
+  --table-row-selected-hover-bg: rgba(89, 172, 255, 0.15); /* Light blue tint for selected row hover in dark mode */
 
   /* Text Colors */
   --text-primary: #E9ECEF;
@@ -477,7 +493,15 @@ html.theme-vp {
   --surface-bg: #FFFFFF;
   --elevated-bg: #F7F8FA;
   --hover-bg: #E5E7EB;
-  --table-total-bg: #F0F3BE;
+  --table-total-bg: rgba(0, 115, 230, 0.15);
+  
+  /* Table Header Colors */
+  --table-header-gray-bg: #EDF0F6; /* Gray header background */
+  
+  /* Table Row Colors - Blue tints for accessibility and visibility */
+  --table-row-hover-bg: #d6ebff; /* Light blue for unselected row hover */
+  --table-row-selected-bg: rgba(0, 115, 230, 0.15); /* Blue tint for selected rows (15% for better visibility) */
+  --table-row-selected-hover-bg: #d6ebff; /* Light blue for selected row hover */
 
   /* Text Colors */
   --text-primary: #373F4E;
@@ -561,7 +585,15 @@ html.theme-vp.dark {
   --surface-bg: #1A1C1F;
   --elevated-bg: #1F2124;
   --hover-bg: #2A2D32;
-  --table-total-bg: #2A4A6B;
+  --table-total-bg: rgba(89, 172, 255, 0.15);
+  
+  /* Table Header Colors */
+  --table-header-gray-bg: #37424D; /* Gray header background for dark mode */
+  
+  /* Table Row Colors - Blue tints for accessibility and visibility */
+  --table-row-hover-bg: rgba(89, 172, 255, 0.15); /* Light blue tint for unselected row hover in dark mode */
+  --table-row-selected-bg: rgba(89, 172, 255, 0.15); /* Blue tint for selected rows (15% for better visibility) */
+  --table-row-selected-hover-bg: rgba(89, 172, 255, 0.15); /* Light blue tint for selected row hover in dark mode */
 
   /* Text Colors */
   --text-primary: #FAFAFA;
@@ -645,7 +677,15 @@ html.theme-ppm {
   --surface-bg: #FFFFFF;
   --elevated-bg: #F7F8FA;
   --hover-bg: #E5E7EB;
-  --table-total-bg: #F0F3BE;
+  --table-total-bg: rgba(0, 115, 230, 0.15);
+  
+  /* Table Header Colors */
+  --table-header-gray-bg: #EDF0F6; /* Gray header background */
+  
+  /* Table Row Colors - Blue tints for accessibility and visibility */
+  --table-row-hover-bg: #d6ebff; /* Light blue for unselected row hover */
+  --table-row-selected-bg: rgba(0, 115, 230, 0.15); /* Blue tint for selected rows (15% for better visibility) */
+  --table-row-selected-hover-bg: #d6ebff; /* Light blue for selected row hover */
 
   /* Text Colors */
   --text-primary: #373F4E;
@@ -729,7 +769,15 @@ html.theme-ppm.dark {
   --surface-bg: #1A1C1F;
   --elevated-bg: #1F2124;
   --hover-bg: #2A2D32;
-  --table-total-bg: #2A4A6B;
+  --table-total-bg: rgba(89, 172, 255, 0.15);
+  
+  /* Table Header Colors */
+  --table-header-gray-bg: #37424D; /* Gray header background for dark mode */
+  
+  /* Table Row Colors - Blue tints for accessibility and visibility */
+  --table-row-hover-bg: rgba(89, 172, 255, 0.15); /* Light blue tint for unselected row hover in dark mode */
+  --table-row-selected-bg: rgba(89, 172, 255, 0.15); /* Blue tint for selected rows (15% for better visibility) */
+  --table-row-selected-hover-bg: rgba(89, 172, 255, 0.15); /* Light blue tint for selected row hover in dark mode */
 
   /* Text Colors */
   --text-primary: #FAFAFA;
@@ -813,7 +861,15 @@ html.theme-maconomy {
   --surface-bg: #FFFFFF;
   --elevated-bg: #F7F8FA;
   --hover-bg: #E5E7EB;
-  --table-total-bg: #F0F3BE;
+  --table-total-bg: rgba(0, 115, 230, 0.15);
+  
+  /* Table Header Colors */
+  --table-header-gray-bg: #EDF0F6; /* Gray header background */
+  
+  /* Table Row Colors - Blue tints for accessibility and visibility */
+  --table-row-hover-bg: #d6ebff; /* Light blue for unselected row hover */
+  --table-row-selected-bg: rgba(0, 115, 230, 0.15); /* Blue tint for selected rows (15% for better visibility) */
+  --table-row-selected-hover-bg: #d6ebff; /* Light blue for selected row hover */
 
   /* Text Colors */
   --text-primary: #373F4E;
@@ -897,7 +953,15 @@ html.theme-maconomy.dark {
   --surface-bg: #1A1C1F;
   --elevated-bg: #1F2124;
   --hover-bg: #2A2D32;
-  --table-total-bg: #2A4A6B;
+  --table-total-bg: rgba(89, 172, 255, 0.15);
+  
+  /* Table Header Colors */
+  --table-header-gray-bg: #37424D; /* Gray header background for dark mode */
+  
+  /* Table Row Colors - Blue tints for accessibility and visibility */
+  --table-row-hover-bg: rgba(89, 172, 255, 0.15); /* Light blue tint for unselected row hover in dark mode */
+  --table-row-selected-bg: rgba(89, 172, 255, 0.15); /* Blue tint for selected rows (15% for better visibility) */
+  --table-row-selected-hover-bg: rgba(89, 172, 255, 0.15); /* Light blue tint for selected row hover in dark mode */
 
   /* Text Colors */
   --text-primary: #FAFAFA;

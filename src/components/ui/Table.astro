@@ -1,0 +1,30 @@
+---
+/**
+ * Table Component
+ *
+ * Reusable table component with header variants and styling options.
+ */
+export interface Props {
+  headerVariant?: 'gray' | 'white' | 'none';
+  striped?: boolean;
+  class?: string;
+}
+
+const {
+  headerVariant = 'gray',
+  striped = false,
+  class: className = '',
+} = Astro.props;
+
+const classes = [
+  'table',
+  `table--header-${headerVariant}`,
+  striped && 'table--striped',
+  className,
+].filter(Boolean).join(' ');
+---
+
+<table class={classes}>
+  <slot name="header" />
+  <slot name="body" />
+</table>

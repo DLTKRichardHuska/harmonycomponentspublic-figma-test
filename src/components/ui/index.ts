@@ -32,6 +32,7 @@ export { default as Spinner } from './Spinner.astro';
 export { default as ShellPageHeader } from './ShellPageHeader.astro';
 export { default as ShellPanel } from './ShellPanel.astro';
 export { default as StepperInput } from './StepperInput.astro';
+export { default as Table } from './Table.astro';
 export { default as TabStrip } from './TabStrip.astro';
 export { default as Textarea } from './Textarea.astro';
 export { default as Toggle } from './Toggle.astro';
