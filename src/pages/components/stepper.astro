@@ -33,8 +33,7 @@ const stepProps = [
       </div>
       <p class="page-header__description">
         Steppers display progress through a sequence of logical and numbered steps. They provide a wizard-like workflow
-        and can be used for navigation. Steppers support horizontal and vertical orientations, linear and non-linear modes,
-        and error/warning/success states.
+        and can be used for navigation. Labels are positioned below the step indicators. Steps support success (green with checkmark), warning, and error states.
       </p>
     </header>
 
@@ -48,82 +47,25 @@ const stepProps = [
     <section id="examples" class="space-y-8">
       <h2 class="section__title">Examples</h2>
 
-      <ExampleSection title="Basic Linear Stepper" description="Standard linear stepper with sequential steps. Future steps are disabled.">
+      <ExampleSection title="Stepper with Alternative Label" description="Labels are positioned below the step indicators. Shows all states: success (green with checkmark), warning, error, and default.">
         <div class="w-full max-w-4xl">
-          <Stepper activeStep={1}>
-            <Step completed>Select campaign settings</Step>
-            <Step>Create an ad group</Step>
-            <Step>Create an ad</Step>
-          </Stepper>
-        </div>
-      </ExampleSection>
-
-      <ExampleSection title="Non-Linear Stepper" description="Non-linear stepper allows jumping to any step. Steps are clickable.">
-        <div class="w-full max-w-4xl">
-          <Stepper activeStep={1} nonLinear>
-            <Step completed>Select campaign settings</Step>
-            <Step>Create an ad group</Step>
-            <Step>Create an ad</Step>
-          </Stepper>
-        </div>
-      </ExampleSection>
-
-      <ExampleSection title="Vertical Stepper" description="Steps arranged vertically with vertical connector lines.">
-        <div class="w-full max-w-2xl">
-          <Stepper activeStep={1} orientation="vertical">
-            <Step completed>Select campaign settings</Step>
-            <Step>Create an ad group</Step>
-            <Step>Create an ad</Step>
-          </Stepper>
-        </div>
-      </ExampleSection>
-
-      <ExampleSection title="Error State" description="Steps can display an error state with an error icon.">
-        <div class="w-full max-w-4xl">
-          <Stepper activeStep={1}>
-            <Step completed>Select campaign settings</Step>
-            <Step error>Create an ad group</Step>
-            <Step>Create an ad</Step>
-          </Stepper>
-        </div>
-      </ExampleSection>
-
-      <ExampleSection title="Warning State" description="Steps can display a warning state with a warning icon.">
-        <div class="w-full max-w-4xl">
-          <Stepper activeStep={1}>
-            <Step completed>Select campaign settings</Step>
-            <Step warning>Review ad group settings</Step>
-            <Step>Create an ad</Step>
-          </Stepper>
-        </div>
-      </ExampleSection>
-
-      <ExampleSection title="Success State" description="Steps can display a success state with a success color and check icon.">
-        <div class="w-full max-w-4xl">
-          <Stepper activeStep={1}>
+          <Stepper activeStep={2}>
             <Step success>Account verified</Step>
-            <Step>Complete profile</Step>
-            <Step>Finalize setup</Step>
+            <Step warning>Review information</Step>
+            <Step error>Fix errors</Step>
+            <Step>Complete setup</Step>
           </Stepper>
         </div>
       </ExampleSection>
 
-      <ExampleSection title="Custom Icons" description="Steps can use custom icons instead of numbers.">
-        <div class="w-full max-w-4xl">
-          <Stepper activeStep={1}>
-            <Step completed icon="check">Account Created</Step>
-            <Step icon="user">Profile Setup</Step>
-            <Step icon="cog-6-tooth">Preferences</Step>
-          </Stepper>
-        </div>
-      </ExampleSection>
-
-      <ExampleSection title="Vertical Non-Linear" description="Vertical stepper with non-linear mode enabled.">
-        <div class="w-full max-w-2xl">
-          <Stepper activeStep={1} orientation="vertical" nonLinear>
-            <Step completed>Account Information</Step>
-            <Step>Personal Details</Step>
-            <Step>Review & Submit</Step>
+      <ExampleSection title="Linear Stepper with Multiple Steps" description="Complete linear workflow showing proper step progression. Steps must be completed in sequence - future steps are disabled until previous steps are completed.">
+        <div class="w-full max-w-6xl">
+          <Stepper activeStep={2}>
+            <Step completed>Select campaign settings</Step>
+            <Step completed>Create an ad group</Step>
+            <Step>Create an ad</Step>
+            <Step>Review campaign</Step>
+            <Step>Launch campaign</Step>
           </Stepper>
         </div>
       </ExampleSection>
@@ -156,7 +98,7 @@ const stepProps = [
               Basic Structure
             </h3>
             <p class="text-sm text-secondary mb-3">
-              The Stepper component is composed of multiple Step components. The step label is provided as slot content.
+              The Stepper component uses an alternative label layout where labels appear below the step indicators. The step label is provided as slot content.
             </p>
             <div class="text-xs bg-elevated p-4 rounded font-mono">
               &lt;Stepper activeStep={1}&gt;<br />
@@ -172,55 +114,17 @@ const stepProps = [
           <div class="card__body">
             <h3 class="font-semibold text-primary mb-3">
               <Icon name="code-bracket" size="sm" class="inline mr-2" />
-              Non-Linear Mode
+              Step States: Success, Warning, and Error
             </h3>
             <p class="text-sm text-secondary mb-3">
-              Use the nonLinear prop to allow jumping to any step. Steps become clickable and emit events.
+              Steps can display different states. Success state uses the semantic success color (green) with a checkmark icon. Warning and error states use their respective semantic colors.
             </p>
             <div class="text-xs bg-elevated p-4 rounded font-mono">
-              &lt;Stepper activeStep={1} nonLinear&gt;<br />
-              &nbsp;&nbsp;&lt;Step completed&gt;Step 1&lt;/Step&gt;<br />
-              &nbsp;&nbsp;&lt;Step&gt;Step 2&lt;/Step&gt;<br />
-              &nbsp;&nbsp;&lt;Step&gt;Step 3&lt;/Step&gt;<br />
-              &lt;/Stepper&gt;
-            </div>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card__body">
-            <h3 class="font-semibold text-primary mb-3">
-              <Icon name="code-bracket" size="sm" class="inline mr-2" />
-              Error, Warning, and Success States
-            </h3>
-            <p class="text-sm text-secondary mb-3">
-              Use the error, warning, or success props to show different states on steps. Success uses the success color token.
-            </p>
-            <div class="text-xs bg-elevated p-4 rounded font-mono">
-              &lt;Stepper activeStep={1}&gt;<br />
-              &nbsp;&nbsp;&lt;Step completed&gt;Step 1&lt;/Step&gt;<br />
-              &nbsp;&nbsp;&lt;Step error&gt;Step 2 (Error)&lt;/Step&gt;<br />
-              &nbsp;&nbsp;&lt;Step warning&gt;Step 3 (Warning)&lt;/Step&gt;<br />
-              &nbsp;&nbsp;&lt;Step success&gt;Step 4 (Success)&lt;/Step&gt;<br />
-              &lt;/Stepper&gt;
-            </div>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card__body">
-            <h3 class="font-semibold text-primary mb-3">
-              <Icon name="code-bracket" size="sm" class="inline mr-2" />
-              Vertical Orientation
-            </h3>
-            <p class="text-sm text-secondary mb-3">
-              Use the orientation prop to display steps vertically.
-            </p>
-            <div class="text-xs bg-elevated p-4 rounded font-mono">
-              &lt;Stepper activeStep={1} orientation="vertical"&gt;<br />
-              &nbsp;&nbsp;&lt;Step completed&gt;Step 1&lt;/Step&gt;<br />
-              &nbsp;&nbsp;&lt;Step&gt;Step 2&lt;/Step&gt;<br />
-              &nbsp;&nbsp;&lt;Step&gt;Step 3&lt;/Step&gt;<br />
+              &lt;Stepper activeStep={2}&gt;<br />
+              &nbsp;&nbsp;&lt;Step success&gt;Verified&lt;/Step&gt;<br />
+              &nbsp;&nbsp;&lt;Step warning&gt;Review&lt;/Step&gt;<br />
+              &nbsp;&nbsp;&lt;Step error&gt;Fix errors&lt;/Step&gt;<br />
+              &nbsp;&nbsp;&lt;Step&gt;Complete&lt;/Step&gt;<br />
               &lt;/Stepper&gt;
             </div>
           </div>
