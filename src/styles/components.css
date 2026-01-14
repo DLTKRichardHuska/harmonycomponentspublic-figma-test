@@ -3778,7 +3778,6 @@
   flex: 1 1 0;
   min-width: 0;
   position: relative;
-  padding: 0 var(--space-2);
 }
 
 .stepper--horizontal .step:first-child {
@@ -4044,7 +4043,7 @@
 }
 
 .step.is-error .step__label {
-  color: var(--color-error);
+  color: var(--text-primary);
 }
 
 /* Step States - Warning */
@@ -4063,7 +4062,7 @@
 }
 
 .step.is-warning .step__label {
-  color: var(--color-warning);
+  color: var(--text-primary);
 }
 
 /* Step States - Success */
@@ -4082,7 +4081,7 @@
 }
 
 .step.is-success .step__label {
-  color: var(--color-success);
+  color: var(--text-primary);
 }
 
 .step.is-success .step__icon {
