@@ -1741,6 +1741,105 @@
     },
     "rawInterface": "type?: 'dot' | 'number' | 'overflow';\n  size?: 'sm' | 'md' | 'lg';\n  variant?: 'error' | 'primary';\n  value?: string | number;\n  border?: boolean;\n  class?: string;"
   },
+  "NumberInput": {
+    "hasProps": true,
+    "filePath": "src/components/ui/NumberInput.astro",
+    "description": "NumberInput Component",
+    "dependencies": [
+      "Icon",
+      "Label"
+    ],
+    "imports": [
+      "./Icon.astro",
+      "./Label.astro"
+    ],
+    "cssClasses": [
+      "number-input__btn",
+      "number-input__input",
+      "input"
+    ],
+    "props": {
+      "value": {
+        "optional": true,
+        "type": "number;",
+        "default": "0",
+        "description": null
+      },
+      "min": {
+        "optional": true,
+        "type": "number;",
+        "default": null,
+        "description": null
+      },
+      "max": {
+        "optional": true,
+        "type": "number;",
+        "default": null,
+        "description": null
+      },
+      "step": {
+        "optional": true,
+        "type": "number;",
+        "default": "1",
+        "description": null
+      },
+      "name": {
+        "optional": true,
+        "type": "string;",
+        "default": null,
+        "description": null
+      },
+      "id": {
+        "optional": true,
+        "type": "string;",
+        "default": null,
+        "description": null
+      },
+      "disabled": {
+        "optional": true,
+        "type": "boolean;",
+        "default": "false",
+        "description": null
+      },
+      "label": {
+        "optional": true,
+        "type": "string;",
+        "default": null,
+        "description": null
+      },
+      "labelVariant": {
+        "optional": true,
+        "type": "'inline' | 'stacked';",
+        "default": null,
+        "description": null
+      },
+      "labelFor": {
+        "optional": true,
+        "type": "string;",
+        "default": null,
+        "description": null
+      },
+      "class": {
+        "optional": true,
+        "type": "string;",
+        "default": null,
+        "description": null
+      },
+      "key": {
+        "optional": false,
+        "type": "string]: any;",
+        "default": null,
+        "description": null
+      }
+    },
+    "defaults": {
+      "value": "0",
+      "step": "1",
+      "disabled": "false",
+      "className": "''"
+    },
+    "rawInterface": "value?: number;\n  min?: number;\n  max?: number;\n  step?: number;\n  name?: string;\n  id?: string;\n  disabled?: boolean;\n  label?: string;\n  labelVariant?: 'inline' | 'stacked';\n  labelFor?: string;\n  class?: string;\n  [key: string]: any;"
+  },
   "PickerPopup": {
     "hasProps": true,
     "filePath": "src/components/ui/PickerPopup.astro",
@@ -2556,105 +2655,6 @@
       "className": "''"
     },
     "rawInterface": "activeStep?: number;\n  orientation?: 'horizontal' | 'vertical';\n  nonLinear?: boolean;\n  class?: string;"
-  },
-  "StepperInput": {
-    "hasProps": true,
-    "filePath": "src/components/ui/StepperInput.astro",
-    "description": "StepperInput Component",
-    "dependencies": [
-      "Icon",
-      "Label"
-    ],
-    "imports": [
-      "./Icon.astro",
-      "./Label.astro"
-    ],
-    "cssClasses": [
-      "stepper__btn",
-      "stepper__input",
-      "input"
-    ],
-    "props": {
-      "value": {
-        "optional": true,
-        "type": "number;",
-        "default": "0",
-        "description": null
-      },
-      "min": {
-        "optional": true,
-        "type": "number;",
-        "default": null,
-        "description": null
-      },
-      "max": {
-        "optional": true,
-        "type": "number;",
-        "default": null,
-        "description": null
-      },
-      "step": {
-        "optional": true,
-        "type": "number;",
-        "default": "1",
-        "description": null
-      },
-      "name": {
-        "optional": true,
-        "type": "string;",
-        "default": null,
-        "description": null
-      },
-      "id": {
-        "optional": true,
-        "type": "string;",
-        "default": null,
-        "description": null
-      },
-      "disabled": {
-        "optional": true,
-        "type": "boolean;",
-        "default": "false",
-        "description": null
-      },
-      "label": {
-        "optional": true,
-        "type": "string;",
-        "default": null,
-        "description": null
-      },
-      "labelVariant": {
-        "optional": true,
-        "type": "'inline' | 'stacked';",
-        "default": null,
-        "description": null
-      },
-      "labelFor": {
-        "optional": true,
-        "type": "string;",
-        "default": null,
-        "description": null
-      },
-      "class": {
-        "optional": true,
-        "type": "string;",
-        "default": null,
-        "description": null
-      },
-      "key": {
-        "optional": false,
-        "type": "string]: any;",
-        "default": null,
-        "description": null
-      }
-    },
-    "defaults": {
-      "value": "0",
-      "step": "1",
-      "disabled": "false",
-      "className": "''"
-    },
-    "rawInterface": "value?: number;\n  min?: number;\n  max?: number;\n  step?: number;\n  name?: string;\n  id?: string;\n  disabled?: boolean;\n  label?: string;\n  labelVariant?: 'inline' | 'stacked';\n  labelFor?: string;\n  class?: string;\n  [key: string]: any;"
   },
   "TabStrip": {
     "hasProps": true,

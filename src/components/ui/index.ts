@@ -35,7 +35,7 @@ export { default as ShellPageHeader } from './ShellPageHeader.astro';
 export { default as ShellPanel } from './ShellPanel.astro';
 export { default as Step } from './Step.astro';
 export { default as Stepper } from './Stepper.astro';
-export { default as StepperInput } from './StepperInput.astro';
+export { default as NumberInput } from './NumberInput.astro';
 export { default as Table } from './Table.astro';
 export { default as TabStrip } from './TabStrip.astro';
 export { default as Textarea } from './Textarea.astro';

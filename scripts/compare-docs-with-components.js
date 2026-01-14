@@ -52,7 +52,7 @@ const componentToDocMap = {
   'WeekPicker': 'specialty-inputs',
   'DateTimePicker': 'specialty-inputs',
   'RangeInput': 'specialty-inputs',
-  'StepperInput': 'specialty-inputs',
+  'NumberInput': 'specialty-inputs',
   'PickerPopup': null, // Internal component
 };
 

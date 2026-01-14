@@ -4553,6 +4553,78 @@
         }
       }
     },
+    "NumberInput": {
+      "description": "NumberInput Component",
+      "filePath": "src/components/ui/NumberInput.astro",
+      "dependencies": [
+        "Icon",
+        "Label"
+      ],
+      "props": {
+        "value": {
+          "type": "number",
+          "description": null,
+          "optional": true,
+          "default": "0"
+        },
+        "min": {
+          "type": "number",
+          "description": null,
+          "optional": true
+        },
+        "max": {
+          "type": "number",
+          "description": null,
+          "optional": true
+        },
+        "step": {
+          "type": "number",
+          "description": null,
+          "optional": true,
+          "default": "1"
+        },
+        "name": {
+          "type": "string",
+          "description": null,
+          "optional": true
+        },
+        "id": {
+          "type": "string",
+          "description": null,
+          "optional": true
+        },
+        "disabled": {
+          "type": "boolean",
+          "description": null,
+          "optional": true,
+          "default": "false"
+        },
+        "label": {
+          "type": "string",
+          "description": null,
+          "optional": true
+        },
+        "labelVariant": {
+          "type": "'inline' | 'stacked'",
+          "description": null,
+          "optional": true
+        },
+        "labelFor": {
+          "type": "string",
+          "description": null,
+          "optional": true
+        },
+        "class": {
+          "type": "string",
+          "description": null,
+          "optional": true
+        },
+        "key": {
+          "type": "string]: any",
+          "description": null
+        }
+      }
+    },
     "PickerPopup": {
       "description": "PickerPopup Component",
       "filePath": "src/components/ui/PickerPopup.astro",
@@ -5564,78 +5636,6 @@
           "type": "string",
           "description": null,
           "optional": true
-        }
-      }
-    },
-    "StepperInput": {
-      "description": "StepperInput Component",
-      "filePath": "src/components/ui/StepperInput.astro",
-      "dependencies": [
-        "Icon",
-        "Label"
-      ],
-      "props": {
-        "value": {
-          "type": "number",
-          "description": null,
-          "optional": true,
-          "default": "0"
-        },
-        "min": {
-          "type": "number",
-          "description": null,
-          "optional": true
-        },
-        "max": {
-          "type": "number",
-          "description": null,
-          "optional": true
-        },
-        "step": {
-          "type": "number",
-          "description": null,
-          "optional": true,
-          "default": "1"
-        },
-        "name": {
-          "type": "string",
-          "description": null,
-          "optional": true
-        },
-        "id": {
-          "type": "string",
-          "description": null,
-          "optional": true
-        },
-        "disabled": {
-          "type": "boolean",
-          "description": null,
-          "optional": true,
-          "default": "false"
-        },
-        "label": {
-          "type": "string",
-          "description": null,
-          "optional": true
-        },
-        "labelVariant": {
-          "type": "'inline' | 'stacked'",
-          "description": null,
-          "optional": true
-        },
-        "labelFor": {
-          "type": "string",
-          "description": null,
-          "optional": true
-        },
-        "class": {
-          "type": "string",
-          "description": null,
-          "optional": true
-        },
-        "key": {
-          "type": "string]: any",
-          "description": null
         }
       }
     },

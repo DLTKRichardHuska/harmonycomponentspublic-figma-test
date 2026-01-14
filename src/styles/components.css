@@ -1447,26 +1447,26 @@
   white-space: nowrap;
 }
 
-/* Stepper Input Form Wrapper */
-.stepper-input-form-wrapper {
+/* Number Input Form Wrapper */
+.number-input-form-wrapper {
   display: flex;
   flex-direction: column;
 }
 
-.stepper-input-form-wrapper--inline {
+.number-input-form-wrapper--inline {
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: var(--space-1);
 }
 
-.stepper-input-form-wrapper--stacked {
+.number-input-form-wrapper--stacked {
   display: flex;
   flex-direction: column;
   gap: var(--space-1-5);
 }
 
-.stepper-input-form-wrapper__label {
+.number-input-form-wrapper__label {
   margin-bottom: 0;
   white-space: nowrap;
 }
@@ -1476,7 +1476,7 @@
 .theme-cp .textarea-form-wrapper:not(.textarea-form-wrapper--stacked),
 .theme-cp .date-input-form-wrapper:not(.date-input-form-wrapper--stacked),
 .theme-cp .range-input-form-wrapper:not(.range-input-form-wrapper--stacked),
-.theme-cp .stepper-input-form-wrapper:not(.stepper-input-form-wrapper--stacked) {
+.theme-cp .number-input-form-wrapper:not(.number-input-form-wrapper--stacked) {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -1491,8 +1491,8 @@
 .theme-cp .date-input-form-wrapper:not(.date-input-form-wrapper--stacked) .date-input-form-wrapper__label,
 .theme-cp .range-input-form-wrapper:not(.range-input-form-wrapper--stacked) .label,
 .theme-cp .range-input-form-wrapper:not(.range-input-form-wrapper--stacked) .range-input-form-wrapper__label,
-.theme-cp .stepper-input-form-wrapper:not(.stepper-input-form-wrapper--stacked) .label,
-.theme-cp .stepper-input-form-wrapper:not(.stepper-input-form-wrapper--stacked) .stepper-input-form-wrapper__label {
+.theme-cp .number-input-form-wrapper:not(.number-input-form-wrapper--stacked) .label,
+.theme-cp .number-input-form-wrapper:not(.number-input-form-wrapper--stacked) .number-input-form-wrapper__label {
   margin-bottom: 0;
   white-space: nowrap;
 }
@@ -3557,18 +3557,19 @@
 }
 
 /* ===========================================
-   STEPPER INPUT
+   NUMBER INPUT
    =========================================== */
 
-.stepper {
+.number-input {
   display: inline-flex;
   align-items: stretch;
   border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
   overflow: hidden;
+  transition: all var(--transition-fast);
 }
 
-.stepper__btn {
+.number-input__btn {
   width: var(--space-10);
   display: flex;
   align-items: center;
@@ -3579,17 +3580,17 @@
   transition: all var(--transition-fast);
 }
 
-.stepper__btn:hover {
+.number-input__btn:hover {
   background-color: var(--hover-bg);
   color: var(--text-primary);
 }
 
-.stepper__btn:disabled {
+.number-input__btn:disabled {
   color: var(--text-muted);
   cursor: not-allowed;
 }
 
-.stepper__input {
+.number-input__input {
   width: 60px; /* Component-specific size, not in spacing scale */
   height: var(--space-10);
   text-align: center;
@@ -3602,28 +3603,34 @@
   border-right: 1px solid var(--border-color);
 }
 
-.stepper__input:focus {
+.number-input__input:focus {
   outline: none;
 }
 
-/* Stepper Input Responsive Styles */
+/* Focus state: change border color and show focus ring on container */
+.number-input:has(.number-input__input:focus) {
+  border-color: var(--theme-primary);
+  box-shadow: var(--focus-ring-primary);
+}
+
+/* Number Input Responsive Styles */
 @media (max-width: var(--breakpoint-md)) {
-  .stepper {
+  .number-input {
     width: 100%;
   }
 
-  .stepper__btn {
+  .number-input__btn {
     min-width: 44px;
     min-height: 44px;
   }
 
-  .stepper__input {
+  .number-input__input {
     width: 60px;
     min-height: 44px;
     font-size: 16px; /* Prevent iOS zoom */
   }
 
-  .stepper-input-form-wrapper--inline {
+  .number-input-form-wrapper--inline {
     flex-direction: column;
     align-items: stretch;
     gap: var(--space-2);
@@ -3739,7 +3746,7 @@
    =========================================== */
 
 /* Base Stepper Container - NO BORDER */
-/* More specific selector to override StepperInput's .stepper border */
+/* More specific selector to ensure Stepper (progress indicator) doesn't get NumberInput's border */
 [data-stepper].stepper,
 .stepper[data-stepper] {
   display: flex;
@@ -4627,13 +4634,13 @@
   font-size: var(--text-xs);
 }
 
-.theme-cp .stepper__input {
+.theme-cp .number-input__input {
   height: var(--space-5);
   width: var(--space-10);
   font-size: var(--text-xs);
 }
 
-.theme-cp .stepper__btn {
+.theme-cp .number-input__btn {
   width: var(--space-5);
   font-size: var(--text-xs);
 }

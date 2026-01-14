@@ -1,6 +1,6 @@
 ---
 /**
- * StepperInput Component
+ * NumberInput Component
  *
  * Number input with increment/decrement buttons.
  */
@@ -37,30 +37,30 @@ const {
   ...rest
 } = Astro.props;
 
-const stepperId = id || `stepper-${Math.random().toString(36).substr(2, 9)}`;
+const numberInputId = id || `number-input-${Math.random().toString(36).substr(2, 9)}`;
 
 // Determine label variant
 // If explicitly provided, use that; otherwise CSS will handle default (inline for CP theme, stacked for others)
 const finalLabelVariant = labelVariant;
 
 const wrapperClasses = [
-  'stepper-input-form-wrapper',
-  label && finalLabelVariant && `stepper-input-form-wrapper--${finalLabelVariant}`,
+  'number-input-form-wrapper',
+  label && finalLabelVariant && `number-input-form-wrapper--${finalLabelVariant}`,
 ].filter(Boolean).join(' ');
 
-const classes = ['stepper', className].filter(Boolean).join(' ');
+const classes = ['number-input', className].filter(Boolean).join(' ');
 ---
 
 {label ? (
   <div class={wrapperClasses}>
-    <Label for={labelFor || stepperId} class={(finalLabelVariant === 'inline' || !finalLabelVariant) ? 'stepper-input-form-wrapper__label' : ''}>
+    <Label for={labelFor || numberInputId} class={(finalLabelVariant === 'inline' || !finalLabelVariant) ? 'number-input-form-wrapper__label' : ''}>
       {label}
     </Label>
-    <div class={classes} data-stepper>
+    <div class={classes} data-number-input>
       <button
         type="button"
-        class="stepper__btn"
-        data-stepper-decrement
+        class="number-input__btn"
+        data-number-input-decrement
         disabled={disabled || (min !== undefined && value <= min)}
         aria-label="Decrease"
       >
@@ -73,15 +73,15 @@ const classes = ['stepper', className].filter(Boolean).join(' ');
         max={max}
         step={step}
         name={name}
-        id={stepperId}
+        id={numberInputId}
         disabled={disabled}
-        class="stepper__input"
+        class="number-input__input"
         {...rest}
       />
       <button
         type="button"
-        class="stepper__btn"
-        data-stepper-increment
+        class="number-input__btn"
+        data-number-input-increment
         disabled={disabled || (max !== undefined && value >= max)}
         aria-label="Increase"
       >
@@ -90,11 +90,11 @@ const classes = ['stepper', className].filter(Boolean).join(' ');
     </div>
   </div>
 ) : (
-  <div class={classes} data-stepper>
+  <div class={classes} data-number-input>
     <button
       type="button"
-      class="stepper__btn"
-      data-stepper-decrement
+      class="number-input__btn"
+      data-number-input-decrement
       disabled={disabled || (min !== undefined && value <= min)}
       aria-label="Decrease"
     >
@@ -107,15 +107,15 @@ const classes = ['stepper', className].filter(Boolean).join(' ');
       max={max}
       step={step}
       name={name}
-      id={stepperId}
+      id={numberInputId}
       disabled={disabled}
-      class="stepper__input"
+      class="number-input__input"
       {...rest}
     />
     <button
       type="button"
-      class="stepper__btn"
-      data-stepper-increment
+      class="number-input__btn"
+      data-number-input-increment
       disabled={disabled || (max !== undefined && value >= max)}
       aria-label="Increase"
     >
@@ -125,14 +125,14 @@ const classes = ['stepper', className].filter(Boolean).join(' ');
 )}
 
 <script>
-  function initSteppers() {
-    document.querySelectorAll('[data-stepper]').forEach((stepper) => {
-      if (stepper.hasAttribute('data-init')) return;
-      stepper.setAttribute('data-init', 'true');
+  function initNumberInputs() {
+    document.querySelectorAll('[data-number-input]').forEach((numberInput) => {
+      if (numberInput.hasAttribute('data-init')) return;
+      numberInput.setAttribute('data-init', 'true');
       
-      const input = stepper.querySelector('.stepper__input') as HTMLInputElement;
-      const decrementBtn = stepper.querySelector('[data-stepper-decrement]') as HTMLButtonElement;
-      const incrementBtn = stepper.querySelector('[data-stepper-increment]') as HTMLButtonElement;
+      const input = numberInput.querySelector('.number-input__input') as HTMLInputElement;
+      const decrementBtn = numberInput.querySelector('[data-number-input-decrement]') as HTMLButtonElement;
+      const incrementBtn = numberInput.querySelector('[data-number-input-increment]') as HTMLButtonElement;
       
       if (!input || !decrementBtn || !incrementBtn) return;
       
@@ -170,6 +170,6 @@ const classes = ['stepper', className].filter(Boolean).join(' ');
     });
   }
   
-  initSteppers();
-  document.addEventListener('astro:page-load', initSteppers);
+  initNumberInputs();
+  document.addEventListener('astro:page-load', initNumberInputs);
 </script>

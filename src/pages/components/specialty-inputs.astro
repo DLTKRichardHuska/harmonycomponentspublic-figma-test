@@ -4,7 +4,7 @@ import ExampleSection from '../../components/ExampleSection.astro';
 import Input from '../../components/ui/Input.astro';
 import Label from '../../components/ui/Label.astro';
 import DateInput from '../../components/ui/DateInput.astro';
-import StepperInput from '../../components/ui/StepperInput.astro';
+import NumberInput from '../../components/ui/NumberInput.astro';
 import RangeInput from '../../components/ui/RangeInput.astro';
 import Icon from '../../components/ui/Icon.astro';
 ---
@@ -37,26 +37,26 @@ import Icon from '../../components/ui/Icon.astro';
         </div>
       </ExampleSection>
 
-      <ExampleSection title="Stepper Input" description="Number input with increment/decrement buttons.">
+      <ExampleSection title="Number Input" description="Number input with increment/decrement buttons.">
         <div class="space-y-4 max-w-xs">
           <div class="space-y-2">
             <Label>Quantity</Label>
-            <StepperInput value={1} min={0} max={99} />
+            <NumberInput value={1} min={0} max={99} />
           </div>
           <div class="space-y-2">
             <Label>Step by 5</Label>
-            <StepperInput value={10} step={5} min={0} max={100} />
+            <NumberInput value={10} step={5} min={0} max={100} />
           </div>
           <div class="space-y-2">
             <Label>Disabled</Label>
-            <StepperInput value={5} disabled />
+            <NumberInput value={5} disabled />
           </div>
         </div>
       </ExampleSection>
 
-      <ExampleSection title="Stepper Input With Label" description="Stepper input with inline label (default for CP theme).">
+      <ExampleSection title="Number Input With Label" description="Number input with inline label (default for CP theme).">
         <div class="max-w-xs">
-          <StepperInput 
+          <NumberInput 
             label="Quantity"
             labelVariant="inline"
             value={1} 

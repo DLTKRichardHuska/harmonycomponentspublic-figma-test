@@ -32,7 +32,7 @@
 26. **RadioGroup** - Stacks vertically on mobile when horizontal
 27. **RangeInput** - Full-width, larger thumb size, improved track visibility
 28. **Spinner** - Scales appropriately (no changes needed)
-29. **StepperInput** - Full-width, 44px touch targets, stacks inline form wrapper
+29. **NumberInput** - Full-width, 44px touch targets, stacks inline form wrapper
 30. **Table** - Horizontal scrolling wrapper for mobile
 31. **TabStrip** - Horizontal scrolling with scroll indicators
 32. **Textarea** - Full-width, 16px font size, adjusted padding
