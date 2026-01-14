@@ -1,0 +1,284 @@
+---
+import DocsLayout from '../../layouts/DocsLayout.astro';
+import PropsTable from '../../components/PropsTable.astro';
+import ExampleSection from '../../components/ExampleSection.astro';
+import Stepper from '../../components/ui/Stepper.astro';
+import Step from '../../components/ui/Step.astro';
+import Icon from '../../components/ui/Icon.astro';
+
+const stepperProps = [
+  { name: 'activeStep', type: 'number', default: '0', description: 'Zero-based index of the active step' },
+  { name: 'orientation', type: "'horizontal' | 'vertical'", default: "'horizontal'", description: 'Orientation of the stepper' },
+  { name: 'nonLinear', type: 'boolean', default: 'false', description: 'Allow jumping to any step (non-linear mode)' },
+  { name: 'class', type: 'string', default: 'undefined', description: 'Additional CSS classes' },
+];
+
+const stepProps = [
+  { name: 'completed', type: 'boolean', default: 'false', description: 'Mark step as completed' },
+  { name: 'disabled', type: 'boolean', default: 'false', description: 'Disable step interaction' },
+  { name: 'error', type: 'boolean', default: 'false', description: 'Show error state' },
+  { name: 'warning', type: 'boolean', default: 'false', description: 'Show warning state' },
+  { name: 'success', type: 'boolean', default: 'false', description: 'Show success state (uses success color)' },
+  { name: 'icon', type: 'string', default: 'undefined', description: 'Custom icon name (replaces number)' },
+  { name: 'class', type: 'string', default: 'undefined', description: 'Additional CSS classes' },
+];
+---
+
+<DocsLayout title="Stepper" description="Stepper components for displaying progress through a sequence of logical and numbered steps.">
+  <article class="space-y-12">
+    <header class="page-header page-header--compact">
+      <div class="flex items-center gap-3 mb-4">
+        <h1 class="page-header__title page-header__title--sm">Stepper</h1>
+        <span class="badge badge--success">stable</span>
+      </div>
+      <p class="page-header__description">
+        Steppers display progress through a sequence of logical and numbered steps. They provide a wizard-like workflow
+        and can be used for navigation. Steppers support horizontal and vertical orientations, linear and non-linear modes,
+        and error/warning/success states.
+      </p>
+    </header>
+
+    <nav class="article-nav">
+      <a href="#examples" class="article-nav__link"><Icon name="eye" size="sm" /> Examples</a>
+      <a href="#props" class="article-nav__link"><Icon name="queue-list" size="sm" /> Props</a>
+      <a href="#usage" class="article-nav__link"><Icon name="book-open" size="sm" /> Usage</a>
+      <a href="#accessibility" class="article-nav__link"><Icon name="check-badge" size="sm" /> Accessibility</a>
+    </nav>
+
+    <section id="examples" class="space-y-8">
+      <h2 class="section__title">Examples</h2>
+
+      <ExampleSection title="Basic Linear Stepper" description="Standard linear stepper with sequential steps. Future steps are disabled.">
+        <div class="w-full max-w-4xl">
+          <Stepper activeStep={1}>
+            <Step completed>Select campaign settings</Step>
+            <Step>Create an ad group</Step>
+            <Step>Create an ad</Step>
+          </Stepper>
+        </div>
+      </ExampleSection>
+
+      <ExampleSection title="Non-Linear Stepper" description="Non-linear stepper allows jumping to any step. Steps are clickable.">
+        <div class="w-full max-w-4xl">
+          <Stepper activeStep={1} nonLinear>
+            <Step completed>Select campaign settings</Step>
+            <Step>Create an ad group</Step>
+            <Step>Create an ad</Step>
+          </Stepper>
+        </div>
+      </ExampleSection>
+
+      <ExampleSection title="Vertical Stepper" description="Steps arranged vertically with vertical connector lines.">
+        <div class="w-full max-w-2xl">
+          <Stepper activeStep={1} orientation="vertical">
+            <Step completed>Select campaign settings</Step>
+            <Step>Create an ad group</Step>
+            <Step>Create an ad</Step>
+          </Stepper>
+        </div>
+      </ExampleSection>
+
+      <ExampleSection title="Error State" description="Steps can display an error state with an error icon.">
+        <div class="w-full max-w-4xl">
+          <Stepper activeStep={1}>
+            <Step completed>Select campaign settings</Step>
+            <Step error>Create an ad group</Step>
+            <Step>Create an ad</Step>
+          </Stepper>
+        </div>
+      </ExampleSection>
+
+      <ExampleSection title="Warning State" description="Steps can display a warning state with a warning icon.">
+        <div class="w-full max-w-4xl">
+          <Stepper activeStep={1}>
+            <Step completed>Select campaign settings</Step>
+            <Step warning>Review ad group settings</Step>
+            <Step>Create an ad</Step>
+          </Stepper>
+        </div>
+      </ExampleSection>
+
+      <ExampleSection title="Success State" description="Steps can display a success state with a success color and check icon.">
+        <div class="w-full max-w-4xl">
+          <Stepper activeStep={1}>
+            <Step success>Account verified</Step>
+            <Step>Complete profile</Step>
+            <Step>Finalize setup</Step>
+          </Stepper>
+        </div>
+      </ExampleSection>
+
+      <ExampleSection title="Custom Icons" description="Steps can use custom icons instead of numbers.">
+        <div class="w-full max-w-4xl">
+          <Stepper activeStep={1}>
+            <Step completed icon="check">Account Created</Step>
+            <Step icon="user">Profile Setup</Step>
+            <Step icon="cog-6-tooth">Preferences</Step>
+          </Stepper>
+        </div>
+      </ExampleSection>
+
+      <ExampleSection title="Vertical Non-Linear" description="Vertical stepper with non-linear mode enabled.">
+        <div class="w-full max-w-2xl">
+          <Stepper activeStep={1} orientation="vertical" nonLinear>
+            <Step completed>Account Information</Step>
+            <Step>Personal Details</Step>
+            <Step>Review & Submit</Step>
+          </Stepper>
+        </div>
+      </ExampleSection>
+    </section>
+
+    <section id="props" class="space-y-6">
+      <h2 class="section__title">Props</h2>
+      
+      <div class="space-y-8">
+        <div>
+          <h3 class="text-lg font-semibold text-primary mb-4">Stepper</h3>
+          <PropsTable props={stepperProps} />
+        </div>
+
+        <div>
+          <h3 class="text-lg font-semibold text-primary mb-4">Step</h3>
+          <PropsTable props={stepProps} />
+        </div>
+      </div>
+    </section>
+
+    <section id="usage" class="space-y-6">
+      <h2 class="section__title">Usage</h2>
+      
+      <div class="space-y-4">
+        <div class="card">
+          <div class="card__body">
+            <h3 class="font-semibold text-primary mb-3">
+              <Icon name="code-bracket" size="sm" class="inline mr-2" />
+              Basic Structure
+            </h3>
+            <p class="text-sm text-secondary mb-3">
+              The Stepper component is composed of multiple Step components. The step label is provided as slot content.
+            </p>
+            <div class="text-xs bg-elevated p-4 rounded font-mono">
+              &lt;Stepper activeStep={1}&gt;<br />
+              &nbsp;&nbsp;&lt;Step completed&gt;Step 1&lt;/Step&gt;<br />
+              &nbsp;&nbsp;&lt;Step&gt;Step 2&lt;/Step&gt;<br />
+              &nbsp;&nbsp;&lt;Step&gt;Step 3&lt;/Step&gt;<br />
+              &lt;/Stepper&gt;
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card__body">
+            <h3 class="font-semibold text-primary mb-3">
+              <Icon name="code-bracket" size="sm" class="inline mr-2" />
+              Non-Linear Mode
+            </h3>
+            <p class="text-sm text-secondary mb-3">
+              Use the nonLinear prop to allow jumping to any step. Steps become clickable and emit events.
+            </p>
+            <div class="text-xs bg-elevated p-4 rounded font-mono">
+              &lt;Stepper activeStep={1} nonLinear&gt;<br />
+              &nbsp;&nbsp;&lt;Step completed&gt;Step 1&lt;/Step&gt;<br />
+              &nbsp;&nbsp;&lt;Step&gt;Step 2&lt;/Step&gt;<br />
+              &nbsp;&nbsp;&lt;Step&gt;Step 3&lt;/Step&gt;<br />
+              &lt;/Stepper&gt;
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card__body">
+            <h3 class="font-semibold text-primary mb-3">
+              <Icon name="code-bracket" size="sm" class="inline mr-2" />
+              Error, Warning, and Success States
+            </h3>
+            <p class="text-sm text-secondary mb-3">
+              Use the error, warning, or success props to show different states on steps. Success uses the success color token.
+            </p>
+            <div class="text-xs bg-elevated p-4 rounded font-mono">
+              &lt;Stepper activeStep={1}&gt;<br />
+              &nbsp;&nbsp;&lt;Step completed&gt;Step 1&lt;/Step&gt;<br />
+              &nbsp;&nbsp;&lt;Step error&gt;Step 2 (Error)&lt;/Step&gt;<br />
+              &nbsp;&nbsp;&lt;Step warning&gt;Step 3 (Warning)&lt;/Step&gt;<br />
+              &nbsp;&nbsp;&lt;Step success&gt;Step 4 (Success)&lt;/Step&gt;<br />
+              &lt;/Stepper&gt;
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card__body">
+            <h3 class="font-semibold text-primary mb-3">
+              <Icon name="code-bracket" size="sm" class="inline mr-2" />
+              Vertical Orientation
+            </h3>
+            <p class="text-sm text-secondary mb-3">
+              Use the orientation prop to display steps vertically.
+            </p>
+            <div class="text-xs bg-elevated p-4 rounded font-mono">
+              &lt;Stepper activeStep={1} orientation="vertical"&gt;<br />
+              &nbsp;&nbsp;&lt;Step completed&gt;Step 1&lt;/Step&gt;<br />
+              &nbsp;&nbsp;&lt;Step&gt;Step 2&lt;/Step&gt;<br />
+              &nbsp;&nbsp;&lt;Step&gt;Step 3&lt;/Step&gt;<br />
+              &lt;/Stepper&gt;
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="accessibility" class="space-y-4">
+      <h2 class="section__title">Accessibility</h2>
+      
+      <div class="a11y-card">
+        <h3 class="a11y-card__title">
+          <Icon name="keyboard" size="sm" />
+          Keyboard Navigation
+        </h3>
+        <p class="a11y-card__text">
+          In non-linear mode, steps are keyboard accessible. Use <kbd>Tab</kbd> to navigate between steps,
+          and <kbd>Enter</kbd> or <kbd>Space</kbd> to activate a step.
+        </p>
+      </div>
+      
+      <div class="a11y-card">
+        <h3 class="a11y-card__title">
+          <Icon name="tag" size="sm" />
+          ARIA Attributes
+        </h3>
+        <p class="a11y-card__text">
+          The Stepper component uses proper ARIA attributes:
+        </p>
+        <ul class="a11y-card__text" style="list-style: disc; padding-left: 1.5rem; margin-top: 0.5rem;">
+          <li><code>role="group"</code> on the stepper container</li>
+          <li><code>aria-current="step"</code> on the active step label</li>
+          <li><code>aria-label</code> for step descriptions in non-linear mode</li>
+          <li><code>aria-hidden</code> for decorative elements (connectors, indicators)</li>
+        </ul>
+      </div>
+      
+      <div class="a11y-card">
+        <h3 class="a11y-card__title">
+          <Icon name="eye" size="sm" />
+          Screen Reader Support
+        </h3>
+        <p class="a11y-card__text">
+          Screen readers announce the step number, label text, and current state (active, completed, error, warning).
+          The relationship between steps is clearly communicated through ARIA attributes.
+        </p>
+      </div>
+
+      <div class="a11y-card">
+        <h3 class="a11y-card__title">
+          <Icon name="palette" size="sm" />
+          Visual Indicators
+        </h3>
+        <p class="a11y-card__text">
+          All step states are communicated both visually and through ARIA attributes. Color is not the only
+          indicator of state - icons, borders, and text styles also convey information.
+        </p>
+      </div>
+    </section>
+  </article>
+</DocsLayout>

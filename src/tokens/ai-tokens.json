@@ -3,7 +3,7 @@
   "name": "Harmony Design System AI Tokens",
   "version": "1.0.0",
   "description": "Consolidated AI tokens including components, layouts, CSS tokens, and manifest",
-  "generatedAt": "2026-01-14T19:53:23.824Z",
+  "generatedAt": "2026-01-14T21:12:29.146Z",
   "components": {
     "Accordion": {
       "description": "Accordion Component",
@@ -5490,6 +5490,84 @@
         }
       }
     },
+    "Step": {
+      "description": "Step Component",
+      "filePath": "src/components/ui/Step.astro",
+      "dependencies": [
+        "Icon"
+      ],
+      "props": {
+        "completed": {
+          "type": "boolean",
+          "description": null,
+          "optional": true,
+          "default": "false"
+        },
+        "disabled": {
+          "type": "boolean",
+          "description": null,
+          "optional": true,
+          "default": "false"
+        },
+        "error": {
+          "type": "boolean",
+          "description": null,
+          "optional": true,
+          "default": "false"
+        },
+        "warning": {
+          "type": "boolean",
+          "description": null,
+          "optional": true,
+          "default": "false"
+        },
+        "success": {
+          "type": "boolean",
+          "description": null,
+          "optional": true,
+          "default": "false"
+        },
+        "icon": {
+          "type": "string",
+          "description": null,
+          "optional": true
+        },
+        "class": {
+          "type": "string",
+          "description": null,
+          "optional": true
+        }
+      }
+    },
+    "Stepper": {
+      "description": "Stepper Component",
+      "filePath": "src/components/ui/Stepper.astro",
+      "props": {
+        "activeStep": {
+          "type": "number",
+          "description": null,
+          "optional": true,
+          "default": "0"
+        },
+        "orientation": {
+          "type": "'horizontal' | 'vertical'",
+          "description": null,
+          "optional": true,
+          "default": "horizontal"
+        },
+        "nonLinear": {
+          "type": "boolean",
+          "description": null,
+          "optional": true,
+          "default": "false"
+        },
+        "class": {
+          "type": "string",
+          "description": null,
+          "optional": true
+        }
+      }
+    },
     "StepperInput": {
       "description": "StepperInput Component",
       "filePath": "src/components/ui/StepperInput.astro",
@@ -5605,6 +5683,12 @@
               "cssVar": "--space-4",
               "mcpPath": "tokens.spacing.4",
               "value": "16px",
+              "category": "spacing"
+            },
+            {
+              "cssVar": "--table-min-width",
+              "mcpPath": "tokens.spacing.min",
+              "value": "600px",
               "category": "spacing"
             },
             {
@@ -7453,6 +7537,18 @@
       },
       "value": "1300px",
       "mcpPath": "tokens.spacing.width"
+    },
+    "--table-min-width": {
+      "type": "base",
+      "category": "spacing",
+      "definedIn": [
+        ":root"
+      ],
+      "values": {
+        "root": "600px"
+      },
+      "value": "600px",
+      "mcpPath": "tokens.spacing.min"
     },
     "--border-width-thin": {
       "type": "base",
@@ -13155,8 +13251,8 @@
     },
     "componentFile": "./components.json",
     "layoutFile": "./layouts.json",
-    "componentCount": 47,
+    "componentCount": 49,
     "layoutCount": 2,
-    "generatedAt": "2026-01-14T19:53:23.547Z"
+    "generatedAt": "2026-01-14T21:12:28.801Z"
   }
 }

@@ -1,0 +1,77 @@
+---
+/**
+ * Step Component
+ *
+ * Individual step wrapper in a stepper sequence.
+ */
+import Icon from './Icon.astro';
+
+export interface Props {
+  completed?: boolean;
+  disabled?: boolean;
+  error?: boolean;
+  warning?: boolean;
+  success?: boolean;
+  icon?: string;
+  class?: string;
+}
+
+const {
+  completed = false,
+  disabled = false,
+  error = false,
+  warning = false,
+  success = false,
+  icon,
+  class: className = '',
+} = Astro.props;
+
+const stepId = `step-${Math.random().toString(36).substr(2, 9)}`;
+const classes = [
+  'step',
+  completed && 'step--completed',
+  disabled && 'step--disabled',
+  error && 'step--error',
+  warning && 'step--warning',
+  success && 'step--success',
+  className,
+].filter(Boolean).join(' ');
+---
+
+<div
+  class={classes}
+  data-step
+  data-completed={completed}
+  data-disabled={disabled}
+  data-error={error}
+  data-warning={warning}
+  data-success={success}
+  id={stepId}
+  role="group"
+  aria-label={`Step ${stepId}`}
+>
+  <div class="step__indicator" aria-hidden="true">
+    {icon ? (
+      <Icon name={icon} size="sm" class="step__icon" />
+    ) : (
+      <span class="step__number"></span>
+    )}
+    {/* State priority: error > warning > success > completed */}
+    {error && !icon && (
+      <Icon name="exclamation-circle" size="sm" class="step__error-icon" />
+    )}
+    {warning && !error && !icon && (
+      <Icon name="exclamation-triangle" size="sm" class="step__warning-icon" />
+    )}
+    {success && !error && !warning && !icon && (
+      <Icon name="check" size="sm" class="step__success-icon" />
+    )}
+    {completed && !error && !warning && !success && !icon && (
+      <Icon name="check" size="sm" class="step__check" />
+    )}
+  </div>
+  <div class="step__connector" aria-hidden="true"></div>
+  <div class="step__label">
+    <slot />
+  </div>
+</div>

@@ -3735,6 +3735,464 @@
 }
 
 /* ===========================================
+   STEPPER (Progress Stepper)
+   =========================================== */
+
+/* Base Stepper Container - NO BORDER */
+/* More specific selector to override StepperInput's .stepper border */
+[data-stepper].stepper,
+.stepper[data-stepper] {
+  display: flex;
+  width: 100%;
+  font-family: var(--font-sans);
+  border: none !important;
+}
+
+/* Horizontal Stepper (Default) */
+.stepper--horizontal {
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+/* Vertical Stepper */
+.stepper--vertical {
+  flex-direction: column;
+  align-items: stretch;
+}
+
+/* Step Container - Base - NO BORDER */
+.step {
+  display: flex;
+  position: relative;
+  flex-shrink: 0;
+  border: none !important;
+  outline: none;
+  z-index: 0;
+}
+
+/* Horizontal Step Layout - Inline Label */
+.stepper--horizontal .step {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex: 1 1 0;
+  min-width: 0;
+  position: relative;
+  padding-right: var(--space-4);
+}
+
+.stepper--horizontal .step:last-child {
+  flex: 0 0 auto;
+  padding-right: 0;
+}
+
+/* Vertical Step Layout - Inline Label */
+.stepper--vertical .step {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  grid-template-rows: auto;
+  align-items: start;
+  width: 100%;
+  padding-bottom: var(--space-4);
+  position: relative;
+  gap: 0 var(--space-3);
+  border: none !important;
+}
+
+.stepper--vertical .step:last-child {
+  padding-bottom: 0;
+}
+
+/* Vertical: Indicator in first column */
+.stepper--vertical .step__indicator {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+/* Vertical: Label in second column */
+.stepper--vertical .step__label {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+/* Step Indicator (Circle with number/icon) - z-index: 3 (on top) */
+.step__indicator {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  flex-shrink: 0;
+  border-radius: var(--radius-100);
+  background-color: var(--elevated-bg);
+  border: var(--border-width-standard) solid var(--border-color);
+  color: var(--text-secondary);
+  font-family: var(--font-display);
+  font-size: var(--text-base);
+  font-weight: var(--font-semibold);
+  line-height: 1;
+  transition: all var(--transition-base);
+  z-index: 3;
+}
+
+.step__number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.step__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  color: var(--text-secondary);
+  flex-shrink: 0;
+}
+
+.step__check,
+.step__error-icon,
+.step__warning-icon,
+.step__success-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  color: var(--card-bg);
+  display: none;
+  z-index: 1;
+}
+
+/* Step Label - z-index: 2 (above connector, below indicator) */
+.step__label {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  flex: 1;
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  color: var(--text-primary);
+  line-height: var(--leading-normal);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  position: relative;
+  z-index: 2;
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+}
+
+/* Horizontal: Label inline to the right of indicator - consistent spacing */
+/* Label has z-index: 2 to appear above connector line (z-index: 0) */
+/* The connector line goes behind the label text, which is the standard pattern */
+.stepper--horizontal .step__label {
+  margin-left: var(--space-3);
+  flex: 1;
+  min-width: 0;
+  position: relative;
+  z-index: 2;
+  padding-top: 0;
+}
+
+/* Vertical: Label inline to the right of indicator - consistent spacing */
+.stepper--vertical .step__label {
+  margin-left: 0;
+  flex: 1;
+  padding-top: 2px;
+}
+
+/* Step Connector Line - z-index: 0 (behind everything) */
+.step__connector {
+  position: absolute;
+  background-color: var(--border-color);
+  transition: background-color var(--transition-base);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Horizontal Connector - positioned at circle center */
+/* Connector spans from right edge of indicator (40px) to the step's right padding edge */
+/* This aligns with where the next step's indicator begins (since steps are flex: 1) */
+.stepper--horizontal .step__connector {
+  position: absolute;
+  top: 20px;
+  left: 40px;
+  right: var(--space-4);
+  height: var(--border-width-standard);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.stepper--horizontal .step:last-child .step__connector {
+  display: none;
+}
+
+/* Vertical Connector - positioned at circle center */
+.stepper--vertical .step__connector {
+  position: absolute;
+  top: 40px;
+  left: 20px;
+  height: calc(100% - 40px + var(--space-4));
+  width: var(--border-width-standard);
+  transform: translateX(-50%);
+  z-index: 0;
+  grid-column: 1;
+}
+
+.stepper--vertical .step:last-child .step__connector {
+  display: none;
+}
+
+/* Active/Completed Connector */
+.step__connector.is-active,
+.step.is-completed .step__connector {
+  background-color: var(--theme-primary);
+}
+
+/* Success Connector */
+.step.is-success .step__connector {
+  background-color: var(--color-success);
+}
+
+/* Step States - Default/Upcoming */
+.step .step__indicator {
+  background-color: var(--elevated-bg);
+  border-color: var(--border-color);
+  color: var(--text-secondary);
+}
+
+/* Step States - Active */
+.step.is-active .step__indicator {
+  background-color: var(--theme-primary);
+  border-color: var(--theme-primary);
+  color: var(--card-bg);
+}
+
+.step.is-active .step__icon {
+  color: var(--card-bg);
+}
+
+.step.is-completed .step__icon {
+  color: var(--card-bg);
+}
+
+.step.is-error .step__icon {
+  color: var(--card-bg);
+}
+
+.step.is-warning .step__icon {
+  color: var(--card-bg);
+}
+
+.step.is-active .step__label {
+  color: var(--theme-primary);
+  font-weight: var(--font-semibold);
+}
+
+/* Step States - Completed (Success) */
+.step.is-completed .step__indicator {
+  background-color: var(--theme-primary);
+  border-color: var(--theme-primary);
+  color: var(--card-bg);
+}
+
+.step.is-completed .step__number {
+  display: none;
+}
+
+.step.is-completed .step__check {
+  display: block;
+}
+
+.step.is-completed .step__label {
+  color: var(--text-secondary);
+}
+
+/* Step States - Error */
+.step.is-error .step__indicator {
+  background-color: var(--color-error);
+  border-color: var(--color-error);
+  color: var(--card-bg);
+}
+
+.step.is-error .step__number {
+  display: none;
+}
+
+.step.is-error .step__error-icon {
+  display: block;
+}
+
+.step.is-error .step__label {
+  color: var(--color-error);
+}
+
+/* Step States - Warning */
+.step.is-warning .step__indicator {
+  background-color: var(--color-warning);
+  border-color: var(--color-warning);
+  color: var(--card-bg);
+}
+
+.step.is-warning .step__number {
+  display: none;
+}
+
+.step.is-warning .step__warning-icon {
+  display: block;
+}
+
+.step.is-warning .step__label {
+  color: var(--color-warning);
+}
+
+/* Step States - Success */
+.step.is-success .step__indicator {
+  background-color: var(--color-success);
+  border-color: var(--color-success);
+  color: var(--card-bg);
+}
+
+.step.is-success .step__number {
+  display: none;
+}
+
+.step.is-success .step__success-icon {
+  display: block;
+}
+
+.step.is-success .step__label {
+  color: var(--color-success);
+}
+
+.step.is-success .step__icon {
+  color: var(--card-bg);
+}
+
+/* Step States - Disabled */
+.step.is-disabled .step__indicator {
+  background-color: var(--elevated-bg);
+  border-color: var(--border-color);
+  color: var(--text-muted);
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.step.is-disabled .step__icon {
+  color: var(--text-muted);
+}
+
+.step.is-disabled .step__label {
+  color: var(--text-muted);
+}
+
+.step.is-disabled {
+  pointer-events: none;
+}
+
+/* Linear Mode - Visual distinction for future steps */
+.stepper:not(.stepper--non-linear) .step.is-disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.stepper:not(.stepper--non-linear) .step.is-disabled .step__indicator {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.stepper:not(.stepper--non-linear) .step.is-disabled .step__label {
+  opacity: 0.5;
+}
+
+.stepper:not(.stepper--non-linear) .step.is-disabled .step__connector {
+  opacity: 0.3;
+}
+
+/* Non-linear Stepper Interactions - All steps are clickable */
+.stepper--non-linear .step:not(.is-disabled) {
+  cursor: pointer;
+}
+
+.stepper--non-linear .step:not(.is-disabled):hover .step__indicator {
+  background-color: var(--hover-bg);
+  border-color: var(--theme-primary);
+}
+
+.stepper--non-linear .step:not(.is-disabled):hover .step__label {
+  color: var(--theme-primary);
+}
+
+.stepper--non-linear .step:not(.is-disabled):focus-visible {
+  outline: var(--focus-ring-primary);
+  outline-offset: var(--space-1);
+  border-radius: var(--radius-md);
+}
+
+/* Stepper Responsive Styles */
+@media (max-width: var(--breakpoint-md)) {
+  .stepper--horizontal {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    padding-bottom: var(--space-2);
+  }
+
+  .stepper--horizontal::-webkit-scrollbar {
+    height: 4px;
+  }
+
+  .stepper--horizontal::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .stepper--horizontal::-webkit-scrollbar-thumb {
+    background-color: var(--border-color);
+    border-radius: 2px;
+  }
+
+  .stepper--horizontal .step {
+    min-width: 120px;
+    flex-shrink: 0;
+    padding-right: var(--space-3);
+    gap: var(--space-2);
+  }
+
+  .step__indicator {
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+    font-size: var(--text-sm);
+  }
+
+  .stepper--horizontal .step__connector {
+    left: 36px;
+    right: -36px;
+    top: 18px;
+  }
+
+  .stepper--horizontal .step__label {
+    margin-left: 0;
+    font-size: var(--text-xs);
+  }
+
+  .stepper--vertical .step__connector {
+    left: 18px;
+    top: 36px;
+  }
+}
+
+/* ===========================================
    BUTTON GROUP
    =========================================== */
 
@@ -5336,7 +5794,7 @@ html.dark .right-sidebar__item:hover {
   }
 
   .table {
-    min-width: 600px; /* Ensure table doesn't shrink too much */
+    min-width: var(--table-min-width);
     font-size: var(--text-xs);
   }
 

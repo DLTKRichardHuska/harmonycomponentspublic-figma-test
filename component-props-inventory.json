@@ -2431,6 +2431,130 @@
     },
     "rawInterface": "size?: 'sm' | 'md' | 'lg';\n  class?: string;"
   },
+  "Step": {
+    "hasProps": true,
+    "filePath": "src/components/ui/Step.astro",
+    "description": "Step Component",
+    "dependencies": [
+      "Icon"
+    ],
+    "imports": [
+      "./Icon.astro"
+    ],
+    "cssClasses": [
+      "step__indicator",
+      "step__icon",
+      "step__number",
+      "step__error-icon",
+      "step__warning-icon",
+      "step__success-icon",
+      "step__check",
+      "step__connector",
+      "step__label",
+      "step--completed",
+      "step--disabled",
+      "step--error",
+      "step--warning",
+      "step--success"
+    ],
+    "props": {
+      "completed": {
+        "optional": true,
+        "type": "boolean;",
+        "default": "false",
+        "description": null
+      },
+      "disabled": {
+        "optional": true,
+        "type": "boolean;",
+        "default": "false",
+        "description": null
+      },
+      "error": {
+        "optional": true,
+        "type": "boolean;",
+        "default": "false",
+        "description": null
+      },
+      "warning": {
+        "optional": true,
+        "type": "boolean;",
+        "default": "false",
+        "description": null
+      },
+      "success": {
+        "optional": true,
+        "type": "boolean;",
+        "default": "false",
+        "description": null
+      },
+      "icon": {
+        "optional": true,
+        "type": "string;",
+        "default": null,
+        "description": null
+      },
+      "class": {
+        "optional": true,
+        "type": "string;",
+        "default": null,
+        "description": null
+      }
+    },
+    "defaults": {
+      "completed": "false",
+      "disabled": "false",
+      "error": "false",
+      "warning": "false",
+      "success": "false",
+      "className": "''"
+    },
+    "rawInterface": "completed?: boolean;\n  disabled?: boolean;\n  error?: boolean;\n  warning?: boolean;\n  success?: boolean;\n  icon?: string;\n  class?: string;"
+  },
+  "Stepper": {
+    "hasProps": true,
+    "filePath": "src/components/ui/Stepper.astro",
+    "description": "Stepper Component",
+    "dependencies": [],
+    "imports": [],
+    "cssClasses": [
+      "stepper--non-linear",
+      "tabindex"
+    ],
+    "props": {
+      "activeStep": {
+        "optional": true,
+        "type": "number;",
+        "default": "0",
+        "description": null
+      },
+      "orientation": {
+        "optional": true,
+        "type": "'horizontal' | 'vertical';",
+        "default": "'horizontal'",
+        "description": null
+      },
+      "nonLinear": {
+        "optional": true,
+        "type": "boolean;",
+        "default": "false",
+        "description": null
+      },
+      "class": {
+        "optional": true,
+        "type": "string;",
+        "default": null,
+        "description": null
+      }
+    },
+    "defaults": {
+      "activeStep": "0",
+      "orientation": "'horizontal'",
+      "nonLinear": "false",
+      "className": "''"
+    },
+    "rawInterface": "activeStep?: number;\n  orientation?: 'horizontal' | 'vertical';\n  nonLinear?: boolean;\n  class?: string;"
+  },
   "StepperInput": {
     "hasProps": true,
     "filePath": "src/components/ui/StepperInput.astro",

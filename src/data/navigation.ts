@@ -60,6 +60,7 @@ export const navigation: NavSection[] = [
       { title: 'Scrollbar', href: '/components/scrollbar', icon: 'arrows-up-down' },
       { title: 'Specialty Inputs', href: '/components/specialty-inputs', icon: 'hashtag' },
       { title: 'Spinner', href: '/components/spinner', icon: 'arrow-path' },
+      { title: 'Stepper', href: '/components/stepper', icon: 'list-bullet' },
       { title: 'Tab Strip', href: '/components/tab-strip', icon: 'rectangle-group' },
       { title: 'Tables', href: '/components/tables', icon: 'table-cells' },
       { title: 'Toggle Switches', href: '/components/toggle-switches', icon: 'arrow-path' },

@@ -5489,6 +5489,84 @@
         }
       }
     },
+    "Step": {
+      "description": "Step Component",
+      "filePath": "src/components/ui/Step.astro",
+      "dependencies": [
+        "Icon"
+      ],
+      "props": {
+        "completed": {
+          "type": "boolean",
+          "description": null,
+          "optional": true,
+          "default": "false"
+        },
+        "disabled": {
+          "type": "boolean",
+          "description": null,
+          "optional": true,
+          "default": "false"
+        },
+        "error": {
+          "type": "boolean",
+          "description": null,
+          "optional": true,
+          "default": "false"
+        },
+        "warning": {
+          "type": "boolean",
+          "description": null,
+          "optional": true,
+          "default": "false"
+        },
+        "success": {
+          "type": "boolean",
+          "description": null,
+          "optional": true,
+          "default": "false"
+        },
+        "icon": {
+          "type": "string",
+          "description": null,
+          "optional": true
+        },
+        "class": {
+          "type": "string",
+          "description": null,
+          "optional": true
+        }
+      }
+    },
+    "Stepper": {
+      "description": "Stepper Component",
+      "filePath": "src/components/ui/Stepper.astro",
+      "props": {
+        "activeStep": {
+          "type": "number",
+          "description": null,
+          "optional": true,
+          "default": "0"
+        },
+        "orientation": {
+          "type": "'horizontal' | 'vertical'",
+          "description": null,
+          "optional": true,
+          "default": "horizontal"
+        },
+        "nonLinear": {
+          "type": "boolean",
+          "description": null,
+          "optional": true,
+          "default": "false"
+        },
+        "class": {
+          "type": "string",
+          "description": null,
+          "optional": true
+        }
+      }
+    },
     "StepperInput": {
       "description": "StepperInput Component",
       "filePath": "src/components/ui/StepperInput.astro",
@@ -5604,6 +5682,12 @@
               "cssVar": "--space-4",
               "mcpPath": "tokens.spacing.4",
               "value": "16px",
+              "category": "spacing"
+            },
+            {
+              "cssVar": "--table-min-width",
+              "mcpPath": "tokens.spacing.min",
+              "value": "600px",
               "category": "spacing"
             },
             {
