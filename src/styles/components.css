@@ -5752,7 +5752,7 @@ div.shell-panel__header.shell-panel__header--theme,
   justify-content: space-between;
   padding: var(--space-3) var(--space-4);
   border-bottom: 1px solid var(--border-light);
-  background-color: var(--card-bg);
+  background-color: var(--table-header-gray-bg);
   gap: var(--space-4);
 }
 
@@ -5790,12 +5790,20 @@ div.shell-panel__header.shell-panel__header--theme,
 
 /* Column Card */
 .kanban__column-card {
-  flex: 0 0 320px;
-  min-width: 280px;
-  max-width: 400px;
+  flex: 0 0 400px;
+  min-width: 360px;
+  max-width: 500px;
   display: flex;
   flex-direction: column;
   overflow: hidden;
+}
+
+.kanban__column-card--in-progress.card--primary {
+  border-top-color: var(--kanban-in-progress-border);
+}
+
+.kanban__column-card--done.card--primary {
+  border-top-color: var(--kanban-done-border);
 }
 
 .kanban__column-card .card__body {
@@ -5924,7 +5932,7 @@ div.shell-panel__header.shell-panel__header--theme,
   box-shadow: var(--shadow-md);
 }
 
-.kanban-card__body {
+.kanban-card .card__body {
   padding: var(--space-4);
   display: flex;
   flex-direction: column;
@@ -5984,7 +5992,7 @@ div.shell-panel__header.shell-panel__header--theme,
 
 .kanban-card__description {
   font-family: var(--font-sans);
-  font-size: var(--caption);
+  font-size: var(--text-sm);
   font-weight: var(--font-normal);
   line-height: var(--leading-normal);
   color: var(--text-secondary);
@@ -5996,7 +6004,7 @@ div.shell-panel__header.shell-panel__header--theme,
 }
 
 .kanban-card__title {
-  font-family: var(--font-sans);
+  font-family: var(--font-display);
   font-size: var(--body-default);
   font-weight: var(--font-semibold);
   line-height: var(--leading-snug);
@@ -6013,16 +6021,18 @@ div.shell-panel__header.shell-panel__header--theme,
   padding-top: var(--space-2);
   border-top: 1px solid var(--border-light);
   font-family: var(--font-sans);
-  font-size: var(--caption);
-  font-weight: var(--font-normal);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
   line-height: var(--leading-normal);
   color: var(--text-secondary);
   min-height: 20px;
+  flex-wrap: wrap;
 }
 
 .kanban-card__date,
 .kanban-card__time {
   flex-shrink: 0;
+  white-space: nowrap;
 }
 
 .kanban-card__avatar {
@@ -6076,7 +6086,7 @@ div.shell-panel__header.shell-panel__header--theme,
     gap: var(--space-2);
   }
 
-  .kanban-card__body {
+  .kanban-card .card__body {
     padding: var(--space-3);
   }
 }

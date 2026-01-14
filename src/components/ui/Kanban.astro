@@ -143,8 +143,18 @@ const {
 
   <!-- Columns Container -->
   <section class="kanban__columns-wrapper" role="region" aria-label="Kanban board">
-    {columns.map((column) => (
-      <Card primary class="kanban__column-card">
+    {columns.map((column) => {
+      // Determine border color based on column title
+      const columnTitleLower = column.title.toLowerCase();
+      let borderColorClass = '';
+      if (columnTitleLower.includes('in progress') || columnTitleLower.includes('in-progress')) {
+        borderColorClass = 'kanban__column-card--in-progress';
+      } else if (columnTitleLower === 'done') {
+        borderColorClass = 'kanban__column-card--done';
+      }
+      
+      return (
+      <Card primary class={`kanban__column-card ${borderColorClass}`}>
         <article 
           class="kanban__column" 
           role="group" 
@@ -211,6 +221,7 @@ const {
           </div>
         </article>
       </Card>
-    ))}
+      );
+    })}
   </section>
 </div>

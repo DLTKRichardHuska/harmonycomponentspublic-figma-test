@@ -2,7 +2,7 @@
   "$schema": "https://harmony-ds.com/tokens/css-tokens-registry.schema.json",
   "name": "Harmony CSS Tokens Registry",
   "version": "1.0.0",
-  "generatedAt": "2026-01-14T18:49:26.067Z",
+  "generatedAt": "2026-01-14T18:55:29.612Z",
   "tokens": {
     "--font-sans": {
       "type": "base",
@@ -3366,6 +3366,84 @@
         }
       },
       "mcpPath": "tokens.colors.theme.tableHeaderGrayBg"
+    },
+    "--kanban-in-progress-border": {
+      "type": "themeAware",
+      "category": "colors",
+      "definedIn": [
+        "html.theme-cp",
+        "html.theme-vp",
+        "html.theme-ppm",
+        "html.theme-maconomy"
+      ],
+      "values": {
+        "cp": {
+          "light": "#F5A616"
+        },
+        "vp": {
+          "light": "#F5A616"
+        },
+        "ppm": {
+          "light": "#F5A616"
+        },
+        "maconomy": {
+          "light": "#F5A616"
+        }
+      },
+      "themes": {
+        "cp": {
+          "light": "#F5A616"
+        },
+        "vp": {
+          "light": "#F5A616"
+        },
+        "ppm": {
+          "light": "#F5A616"
+        },
+        "maconomy": {
+          "light": "#F5A616"
+        }
+      },
+      "mcpPath": "tokens.colors.theme.kanbanInProgressBorder"
+    },
+    "--kanban-done-border": {
+      "type": "themeAware",
+      "category": "colors",
+      "definedIn": [
+        "html.theme-cp",
+        "html.theme-vp",
+        "html.theme-ppm",
+        "html.theme-maconomy"
+      ],
+      "values": {
+        "cp": {
+          "light": "#37B8B5"
+        },
+        "vp": {
+          "light": "#37B8B5"
+        },
+        "ppm": {
+          "light": "#37B8B5"
+        },
+        "maconomy": {
+          "light": "#37B8B5"
+        }
+      },
+      "themes": {
+        "cp": {
+          "light": "#37B8B5"
+        },
+        "vp": {
+          "light": "#37B8B5"
+        },
+        "ppm": {
+          "light": "#37B8B5"
+        },
+        "maconomy": {
+          "light": "#37B8B5"
+        }
+      },
+      "mcpPath": "tokens.colors.theme.kanbanDoneBorder"
     },
     "--table-row-hover-bg": {
       "type": "themeAware",

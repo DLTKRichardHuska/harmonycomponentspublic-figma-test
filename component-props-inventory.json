@@ -1345,7 +1345,6 @@
       "kanban__action-dropdowns",
       "kanban__action-dropdown",
       "kanban__columns-wrapper",
-      "kanban__column-card",
       "kanban__column",
       "kanban__column-header",
       "kanban__column-header-content",
@@ -1355,7 +1354,9 @@
       "kanban__column-action-icon",
       "kanban__column-content",
       "kanban__add-button",
-      "table"
+      "table",
+      "kanban__column-card--in-progress",
+      "kanban__column-card--done"
     ],
     "props": {
       "columns": {
@@ -1423,7 +1424,6 @@
       "./ProgressBar.astro"
     ],
     "cssClasses": [
-      "kanban-card__body",
       "kanban-card__header",
       "kanban-card__avatar",
       "avatar",

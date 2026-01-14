@@ -342,6 +342,10 @@ html.theme-cp {
   /* Table Header Colors */
   --table-header-gray-bg: #EDF0F6; /* Gray header background */
   
+  /* Kanban Column Border Colors */
+  --kanban-in-progress-border: #F5A616; /* In progress column top border */
+  --kanban-done-border: #37B8B5; /* Done column top border */
+  
   /* Table Row Colors - Blue tints for accessibility and visibility */
   --table-row-hover-bg: #d6ebff; /* Light blue for unselected row hover */
   --table-row-selected-bg: rgba(0, 115, 230, 0.15); /* Blue tint for selected rows (15% for better visibility) */
@@ -559,6 +563,10 @@ html.theme-vp {
   /* Table Header Colors */
   --table-header-gray-bg: #EDF0F6; /* Gray header background */
   
+  /* Kanban Column Border Colors */
+  --kanban-in-progress-border: #F5A616; /* In progress column top border */
+  --kanban-done-border: #37B8B5; /* Done column top border */
+  
   /* Table Row Colors - Blue tints for accessibility and visibility */
   --table-row-hover-bg: #d6ebff; /* Light blue for unselected row hover */
   --table-row-selected-bg: rgba(0, 115, 230, 0.15); /* Blue tint for selected rows (15% for better visibility) */
@@ -755,6 +763,10 @@ html.theme-ppm {
   /* Table Header Colors */
   --table-header-gray-bg: #EDF0F6; /* Gray header background */
   
+  /* Kanban Column Border Colors */
+  --kanban-in-progress-border: #F5A616; /* In progress column top border */
+  --kanban-done-border: #37B8B5; /* Done column top border */
+  
   /* Table Row Colors - Blue tints for accessibility and visibility */
   --table-row-hover-bg: #d6ebff; /* Light blue for unselected row hover */
   --table-row-selected-bg: rgba(0, 115, 230, 0.15); /* Blue tint for selected rows (15% for better visibility) */
@@ -950,6 +962,10 @@ html.theme-maconomy {
   
   /* Table Header Colors */
   --table-header-gray-bg: #EDF0F6; /* Gray header background */
+  
+  /* Kanban Column Border Colors */
+  --kanban-in-progress-border: #F5A616; /* In progress column top border */
+  --kanban-done-border: #37B8B5; /* Done column top border */
   
   /* Table Row Colors - Blue tints for accessibility and visibility */
   --table-row-hover-bg: #d6ebff; /* Light blue for unselected row hover */
