@@ -2301,7 +2301,7 @@
   "ShellHeader": {
     "hasProps": true,
     "filePath": "src/components/ui/ShellHeader.astro",
-    "description": "Skip if already initialized",
+    "description": "Helper: Convert RGB/RGBA to hex",
     "dependencies": [
       "Icon",
       "Avatar"
@@ -2327,7 +2327,10 @@
       "company-picker__option-indicator",
       "company-picker__option-indicator--acme",
       "company-picker__option-name",
-      "company-picker__option-indicator--default",
+      "company-picker__option-indicator--ocean",
+      "company-picker__option-indicator--violet",
+      "company-picker__option-indicator--azure",
+      "company-picker__option-indicator--sunset",
       "divider",
       "header__gradient",
       "company-picker__menu--open"

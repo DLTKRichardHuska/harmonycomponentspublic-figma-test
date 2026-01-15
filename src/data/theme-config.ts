@@ -28,8 +28,10 @@ export const themeConfig: Record<string, ThemeConfig> = {
     ],
     companies: [
       { id: 'acme-corp', name: 'Acme Corporation', gradientColor: '#FF507B' },
-      { id: 'tech-industries', name: 'Tech Industries', gradientColor: '#0073E6' },
-      { id: 'global-services', name: 'Global Services', gradientColor: '#0073E6' }
+      { id: 'ocean-industries', name: 'Ocean Industries', gradientColor: '#285F8C' },
+      { id: 'violet-systems', name: 'Violet Systems', gradientColor: '#DC50FF' },
+      { id: 'azure-dynamics', name: 'Azure Dynamics', gradientColor: '#5077FF' },
+      { id: 'sunset-corporation', name: 'Sunset Corporation', gradientColor: '#FFAF50' }
     ]
   },
   vp: {

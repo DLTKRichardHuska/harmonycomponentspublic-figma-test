@@ -46,17 +46,25 @@ const {
             <Icon name="chevron-down" size="sm" class="company-picker__chevron" />
           </button>
           <div class="company-picker__menu" data-company-picker-menu>
-            <button class="company-picker__option company-picker__option--selected" data-company-option data-company-id="acme-corp" data-company-color="#FF507B">
+            <button class="company-picker__option company-picker__option--selected" data-company-option data-company-id="acme-corp">
               <span class="company-picker__option-indicator company-picker__option-indicator--acme"></span>
               <span class="company-picker__option-name">Acme Corporation</span>
             </button>
-            <button class="company-picker__option" data-company-option data-company-id="tech-industries" data-company-color="#0073E6">
-              <span class="company-picker__option-indicator company-picker__option-indicator--default"></span>
-              <span class="company-picker__option-name">Tech Industries</span>
+            <button class="company-picker__option" data-company-option data-company-id="ocean-industries">
+              <span class="company-picker__option-indicator company-picker__option-indicator--ocean"></span>
+              <span class="company-picker__option-name">Ocean Industries</span>
             </button>
-            <button class="company-picker__option" data-company-option data-company-id="global-services" data-company-color="#0073E6">
-              <span class="company-picker__option-indicator company-picker__option-indicator--default"></span>
-              <span class="company-picker__option-name">Global Services</span>
+            <button class="company-picker__option" data-company-option data-company-id="violet-systems">
+              <span class="company-picker__option-indicator company-picker__option-indicator--violet"></span>
+              <span class="company-picker__option-name">Violet Systems</span>
+            </button>
+            <button class="company-picker__option" data-company-option data-company-id="azure-dynamics">
+              <span class="company-picker__option-indicator company-picker__option-indicator--azure"></span>
+              <span class="company-picker__option-name">Azure Dynamics</span>
+            </button>
+            <button class="company-picker__option" data-company-option data-company-id="sunset-corporation">
+              <span class="company-picker__option-indicator company-picker__option-indicator--sunset"></span>
+              <span class="company-picker__option-name">Sunset Corporation</span>
             </button>
           </div>
         </div>
@@ -79,6 +87,19 @@ const {
 
 <script>
   let outsideClickListenerAdded = false;
+  
+  // Helper: Convert RGB/RGBA to hex
+  function rgbToHex(rgb: string): string {
+    if (!rgb || rgb.startsWith('#')) return rgb;
+    
+    const values = rgb.match(/\d+/g);
+    if (!values || values.length < 3) return rgb;
+    
+    const r = parseInt(values[0]).toString(16).padStart(2, '0');
+    const g = parseInt(values[1]).toString(16).padStart(2, '0');
+    const b = parseInt(values[2]).toString(16).padStart(2, '0');
+    return `#${r}${g}${b}`.toUpperCase();
+  }
   
   function initCompanyPickers() {
     document.querySelectorAll('[data-company-picker-btn]').forEach((pickerBtn) => {
@@ -108,8 +129,6 @@ const {
         option.addEventListener('click', (e) => {
           e.stopPropagation();
           const companyId = option.getAttribute('data-company-id');
-          // Get color for gradient calculation (needs actual hex value)
-          const companyColor = option.getAttribute('data-company-color');
           const optionName = option.querySelector('.company-picker__option-name')?.textContent;
           const indicator = option.querySelector('.company-picker__option-indicator') as HTMLElement;
           
@@ -124,15 +143,16 @@ const {
             companyName.textContent = optionName;
           }
           
-          // Update indicator color - use computed style from the indicator element to get resolved token value
+          // Get color from CSS variable via computed style (reads from token)
           if (companyIndicator && indicator) {
             const computedColor = window.getComputedStyle(indicator).backgroundColor;
             companyIndicator.style.backgroundColor = computedColor;
-          }
-          
-          // Update gradient border - need actual color value for gradient calculation
-          if (headerGradient && companyColor) {
-            headerGradient.style.background = `linear-gradient(to right, ${companyColor}05, ${companyColor} 50%, ${companyColor}05)`;
+            
+            // Update gradient border - convert RGB to hex if needed
+            if (headerGradient && computedColor) {
+              const hexColor = rgbToHex(computedColor);
+              headerGradient.style.background = `linear-gradient(to right, ${hexColor}05, ${hexColor} 50%, ${hexColor}05)`;
+            }
           }
           
           // Close menu

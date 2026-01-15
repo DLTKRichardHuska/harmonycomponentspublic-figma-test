@@ -16,6 +16,7 @@ const componentsFile = path.join(__dirname, '../src/tokens/components.json');
 const layoutsFile = path.join(__dirname, '../src/tokens/layouts.json');
 const cssTokensFile = path.join(__dirname, '../src/tokens/css-tokens-registry.json');
 const manifestFile = path.join(__dirname, '../src/tokens/manifest.json');
+const usageGuideFile = path.join(__dirname, '../src/tokens/ai-usage-guide.json');
 const outputFile = path.join(__dirname, '../src/tokens/ai-tokens.json');
 
 // Load all AI-only JSON files
@@ -23,6 +24,7 @@ let components = {};
 let layouts = {};
 let cssTokens = {};
 let manifest = {};
+let usageGuide = {};
 
 try {
   const componentsData = JSON.parse(fs.readFileSync(componentsFile, 'utf-8'));
@@ -51,17 +53,24 @@ try {
   console.warn('⚠️  Could not read manifest.json:', e.message);
 }
 
+try {
+  usageGuide = JSON.parse(fs.readFileSync(usageGuideFile, 'utf-8'));
+} catch (e) {
+  console.warn('⚠️  Could not read ai-usage-guide.json:', e.message);
+}
+
 // Create consolidated structure
 const aiTokens = {
   "$schema": "https://harmony-ds.com/tokens/ai-tokens.schema.json",
   "name": "Harmony Design System AI Tokens",
   "version": "1.0.0",
-  "description": "Consolidated AI tokens including components, layouts, CSS tokens, and manifest",
+  "description": "Consolidated AI tokens including components, layouts, CSS tokens, manifest, and usage guide",
   "generatedAt": new Date().toISOString(),
   "components": components,
   "layouts": layouts,
   "cssTokens": cssTokens,
-  "manifest": manifest
+  "manifest": manifest,
+  "usageGuide": usageGuide
 };
 
 // Write consolidated file
@@ -70,4 +79,7 @@ console.log(`✅ Generated ai-tokens.json`);
 console.log(`   - Components: ${Object.keys(components).length}`);
 console.log(`   - Layouts: ${Object.keys(layouts).length}`);
 console.log(`   - CSS Tokens: ${Object.keys(cssTokens).length}`);
+if (Object.keys(usageGuide).length > 0) {
+  console.log(`   - Usage Guide: Included`);
+}
 console.log(`📄 Consolidated file written to: ${outputFile}`);

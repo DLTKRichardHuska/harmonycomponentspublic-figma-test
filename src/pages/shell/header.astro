@@ -34,7 +34,7 @@ import { themeConfig } from '../../data/theme-config';
               <!-- Company Dropdown -->
               <div class="company-picker" id="demo-company-picker">
                 <button id="demo-company-picker-btn" class="company-picker__btn">
-                  <span id="demo-company-indicator" class="company-picker__indicator" style="background-color: #FF507B;"></span>
+                  <span id="demo-company-indicator" class="company-picker__indicator company-picker__option-indicator--acme"></span>
                   <span id="demo-company-name" class="company-picker__name">Acme Corporation</span>
                   <Icon name="chevron-down" size="sm" class="company-picker__chevron" />
                 </button>
@@ -50,7 +50,7 @@ import { themeConfig } from '../../data/theme-config';
             </div>
 
             <!-- Gradient Border (outside, at bottom of header) -->
-            <div id="demo-header-gradient" class="header__gradient" style="background: linear-gradient(to right, #FF507B05, #FF507B 50%, #FF507B05);"></div>
+            <div id="demo-header-gradient" class="header__gradient"></div>
           </header>
         </div>
       </ExampleSection>
@@ -116,6 +116,30 @@ import { themeConfig } from '../../data/theme-config';
 </DocsLayout>
 
 <script>
+  // Helper: Convert RGB/RGBA to hex
+  function rgbToHex(rgb: string): string {
+    if (!rgb || rgb.startsWith('#')) return rgb;
+    
+    const values = rgb.match(/\d+/g);
+    if (!values || values.length < 3) return rgb;
+    
+    const r = parseInt(values[0]).toString(16).padStart(2, '0');
+    const g = parseInt(values[1]).toString(16).padStart(2, '0');
+    const b = parseInt(values[2]).toString(16).padStart(2, '0');
+    return `#${r}${g}${b}`.toUpperCase();
+  }
+
+  // Helper: Get CSS variable value as hex
+  function getCSSVariableHex(varName: string): string | null {
+    if (!varName) return null;
+    const value = getComputedStyle(document.documentElement)
+      .getPropertyValue(varName)
+      .trim();
+    if (value.startsWith('#')) return value.toUpperCase();
+    if (value.startsWith('rgb')) return rgbToHex(value);
+    return value;
+  }
+
   // Demo company picker management for the header example
   const demoCompanyPickerBtn = document.getElementById('demo-company-picker-btn');
   const demoCompanyPickerMenu = document.getElementById('demo-company-picker-menu');
@@ -123,11 +147,13 @@ import { themeConfig } from '../../data/theme-config';
   const demoCompanyNameEl = document.getElementById('demo-company-name');
   const demoHeaderGradient = document.getElementById('demo-header-gradient');
 
-  // Use CP companies for demo
+  // Use CP companies for demo - map to CSS variable names
   const demoCompanies = [
-    { id: 'acme-corp', name: 'Acme Corporation', gradientColor: '#FF507B' },
-    { id: 'tech-industries', name: 'Tech Industries', gradientColor: '#0073E6' },
-    { id: 'global-services', name: 'Global Services', gradientColor: '#0073E6' }
+    { id: 'acme-corp', name: 'Acme Corporation', cssVar: '--company-picker-indicator-acme' },
+    { id: 'ocean-industries', name: 'Ocean Industries', cssVar: '--company-picker-indicator-ocean' },
+    { id: 'violet-systems', name: 'Violet Systems', cssVar: '--company-picker-indicator-violet' },
+    { id: 'azure-dynamics', name: 'Azure Dynamics', cssVar: '--company-picker-indicator-azure' },
+    { id: 'sunset-corporation', name: 'Sunset Corporation', cssVar: '--company-picker-indicator-sunset' }
   ];
 
   let selectedDemoCompany = 'acme-corp';
@@ -147,13 +173,25 @@ import { themeConfig } from '../../data/theme-config';
   function renderDemoCompanyMenu() {
     if (!demoCompanyPickerMenu) return;
 
-    demoCompanyPickerMenu.innerHTML = demoCompanies.map(company => `
-      <button class="company-picker__option ${company.id === selectedDemoCompany ? 'company-picker__option--selected' : ''}"
-              data-company-id="${company.id}">
-        <span class="company-picker__option-indicator" style="background-color: ${company.gradientColor};"></span>
-        <span class="company-picker__option-name">${company.name}</span>
-      </button>
-    `).join('');
+    // Map company IDs to CSS classes for indicators
+    const companyClassMap: Record<string, string> = {
+      'acme-corp': 'company-picker__option-indicator--acme',
+      'ocean-industries': 'company-picker__option-indicator--ocean',
+      'violet-systems': 'company-picker__option-indicator--violet',
+      'azure-dynamics': 'company-picker__option-indicator--azure',
+      'sunset-corporation': 'company-picker__option-indicator--sunset'
+    };
+
+    demoCompanyPickerMenu.innerHTML = demoCompanies.map(company => {
+      const indicatorClass = companyClassMap[company.id] || '';
+      return `
+        <button class="company-picker__option ${company.id === selectedDemoCompany ? 'company-picker__option--selected' : ''}"
+                data-company-id="${company.id}">
+          <span class="company-picker__option-indicator ${indicatorClass}"></span>
+          <span class="company-picker__option-name">${company.name}</span>
+        </button>
+      `;
+    }).join('');
 
     // Add click handlers
     demoCompanyPickerMenu.querySelectorAll('.company-picker__option').forEach(btn => {
@@ -173,6 +211,10 @@ import { themeConfig } from '../../data/theme-config';
     const company = demoCompanies.find(c => c.id === selectedDemoCompany);
     if (!company) return;
 
+    // Get color from CSS variable
+    const hexColor = getCSSVariableHex(company.cssVar);
+    if (!hexColor) return;
+
     // Update company name
     if (demoCompanyNameEl) {
       demoCompanyNameEl.textContent = company.name;
@@ -180,18 +222,17 @@ import { themeConfig } from '../../data/theme-config';
 
     // Update indicator color
     if (demoCompanyIndicator) {
-      demoCompanyIndicator.style.backgroundColor = company.gradientColor;
+      demoCompanyIndicator.style.backgroundColor = hexColor;
     }
 
     // Update gradient border
     if (demoHeaderGradient) {
-      const gradientColor = company.gradientColor;
       demoHeaderGradient.style.background = `
         linear-gradient(
           to right,
-          ${gradientColor}05,
-          ${gradientColor} 50%,
-          ${gradientColor}05
+          ${hexColor}05,
+          ${hexColor} 50%,
+          ${hexColor}05
         )
       `;
     }
@@ -202,6 +243,8 @@ import { themeConfig } from '../../data/theme-config';
 
   // Initialize demo
   renderDemoCompanyMenu();
+  // Initialize gradient on page load
+  updateDemoCompany();
 </script>
 
 <style>

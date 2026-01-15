@@ -2,7 +2,7 @@
   "$schema": "https://harmony-ds.com/tokens/css-tokens-registry.schema.json",
   "name": "Harmony CSS Tokens Registry",
   "version": "1.0.0",
-  "generatedAt": "2026-01-15T14:51:32.750Z",
+  "generatedAt": "2026-01-15T16:56:29.018Z",
   "tokens": {
     "--font-sans": {
       "type": "base",
@@ -1372,6 +1372,54 @@
       },
       "value": "#FF507B",
       "mcpPath": "tokens.other.pickerindicatoracme"
+    },
+    "--company-picker-indicator-ocean": {
+      "type": "base",
+      "category": "other",
+      "definedIn": [
+        ":root"
+      ],
+      "values": {
+        "root": "#285F8C"
+      },
+      "value": "#285F8C",
+      "mcpPath": "tokens.other.pickerindicatorocean"
+    },
+    "--company-picker-indicator-violet": {
+      "type": "base",
+      "category": "other",
+      "definedIn": [
+        ":root"
+      ],
+      "values": {
+        "root": "#DC50FF"
+      },
+      "value": "#DC50FF",
+      "mcpPath": "tokens.other.pickerindicatorviolet"
+    },
+    "--company-picker-indicator-azure": {
+      "type": "base",
+      "category": "other",
+      "definedIn": [
+        ":root"
+      ],
+      "values": {
+        "root": "#5077FF"
+      },
+      "value": "#5077FF",
+      "mcpPath": "tokens.other.pickerindicatorazure"
+    },
+    "--company-picker-indicator-sunset": {
+      "type": "base",
+      "category": "other",
+      "definedIn": [
+        ":root"
+      ],
+      "values": {
+        "root": "#FFAF50"
+      },
+      "value": "#FFAF50",
+      "mcpPath": "tokens.other.pickerindicatorsunset"
     },
     "--company-picker-indicator-default": {
       "type": "base",
