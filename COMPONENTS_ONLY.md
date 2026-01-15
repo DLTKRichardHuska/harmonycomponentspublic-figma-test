@@ -34,16 +34,11 @@ When you use sparse checkout with the command above, you'll get:
   - `reset.css` - CSS reset
   - `utilities.css` - Utility classes
 
-- **`src/tokens/`** - Design tokens and AI usage guide
-  - `ai-tokens.json` - Consolidated tokens with usage guide
-  - `ai-usage-guide.json` - Comprehensive usage rules
-  - `components.json` - Component definitions
-  - `layouts.json` - Layout definitions
+- **`src/tokens/`** - Design tokens
   - `colors.json` - Color tokens
   - `typography.json` - Typography tokens
   - `spacing.json` - Spacing tokens
   - `elevations.json` - Shadow/elevation tokens
-  - `manifest.json` - Design system manifest
 
 - **`public/`** - Assets and icons
   - `logos/` - Product logos
@@ -146,21 +141,6 @@ import { Card } from './src/components/ui';
 
 **Important**: When using ShellLayout, the component automatically applies correct spacing to the main content area. Do NOT add custom padding to content inside ShellLayout - use design tokens for internal spacing only.
 
-## Usage Guide
-
-For comprehensive usage rules, component patterns, Figma mapping guidelines, and best practices, see:
-
-- **`ai/ai-usage-guide.json`** - Complete usage guide with:
-  - Setup instructions
-  - Theming rules
-  - Shell layout spacing requirements
-  - Component usage patterns for all 49 components
-  - Figma mapping guidelines
-  - Component selection decision trees
-  - Best practices
-
-The usage guide is also included in `ai/ai-tokens.json` under the `usageGuide` property.
-
 ## Key Rules
 
 ### Shell Layout Spacing
@@ -210,6 +190,5 @@ cp package.json your-project/
 ## Support
 
 For questions or issues:
-1. Check `ai/ai-usage-guide.json` for detailed usage rules
-2. Review component examples in the documentation site (if you have access)
-3. Refer to component prop definitions in `src/tokens/components.json`
+1. Review component examples in the documentation site (if you have access)
+2. Check component source files in `src/components/ui/` for prop definitions and usage
