@@ -10,6 +10,8 @@ on:
 jobs:
   update-changelog:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write  # Required to commit and push changelog updates
 
     steps:
       - name: Checkout repository
@@ -34,8 +36,15 @@ jobs:
         run: |
           git config user.name "Changelog Bot"
           git config user.email "changelog-bot@github-actions"
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
           git add changelog-data/
-          git diff --staged --quiet || git commit -m "chore: update changelog [skip ci]"
-          git push
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          if git diff --staged --quiet; then
+            echo "No changelog changes to commit"
+          else
+            git commit -m "chore: update changelog [skip ci]"
+            git push || {
+              echo "Failed to push changes"
+              git status
+              exit 1
+            }
+          fi
