@@ -3,7 +3,6 @@ import { getCollection } from 'astro:content';
 import DocsLayout from '../layouts/DocsLayout.astro';
 import ChangelogFilters from '../components/ChangelogFilters.astro';
 import Badge from '../components/ui/Badge.astro';
-import Button from '../components/ui/Button.astro';
 import Card from '../components/ui/Card.astro';
 
 const allEntries = await getCollection('changelog');
@@ -55,12 +54,6 @@ const categoryConfig: Record<CategoryKey, { label: string; color: 'success' | 'i
         This changelog follows <a href="https://keepachangelog.com/" target="_blank" rel="noopener">Keep a Changelog</a> format
         and adheres to <a href="https://semver.org/" target="_blank" rel="noopener">Semantic Versioning</a>.
       </p>
-
-      <div class="changelog-actions">
-        <Button variant="secondary" href="/changelog.xml" icon="rss" iconPosition="left">
-          Subscribe via RSS
-        </Button>
-      </div>
     </header>
 
     {allEntries.length > 0 ? (
@@ -215,11 +208,6 @@ const categoryConfig: Record<CategoryKey, { label: string; color: 'success' | 'i
   .changelog-description a {
     color: var(--theme-primary);
     text-decoration: underline;
-  }
-
-  .changelog-actions {
-    display: flex;
-    gap: var(--spacing-3, 12px);
   }
 
   .version-section {
