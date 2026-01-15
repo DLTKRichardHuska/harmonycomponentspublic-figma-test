@@ -15,9 +15,14 @@ function getDateKey(date: Date): string {
   return date.toISOString().split('T')[0];
 }
 
+// Sort all entries by date/time descending first (newest first)
+const sortedAllEntries = [...allEntries].sort((a, b) => {
+  return b.data.date.getTime() - a.data.date.getTime();
+});
+
 // Group by version, then by date within each version
 const groupedByVersionAndDate: Record<string, Record<string, ChangelogEntry[]>> = {};
-for (const entry of allEntries) {
+for (const entry of sortedAllEntries) {
   const version = entry.data.version || 'unreleased';
   const dateKey = getDateKey(entry.data.date);
   
@@ -92,11 +97,19 @@ const categoryConfig: Record<CategoryKey, { label: string; color: 'success' | 'i
                   const entries = versionDates[dateKey];
                   const entryDate = entries[0]?.data.date;
 
-                  // Group entries by category within date
+                  // Sort entries by date/time descending (newest first) within this date group
+                  const sortedEntries = [...entries].sort((a, b) => {
+                    return b.data.date.getTime() - a.data.date.getTime();
+                  });
+
+                  // Group entries by category within date, maintaining time order within each category
                   const categoriesOrder: CategoryKey[] = ['added', 'changed', 'deprecated', 'removed', 'fixed', 'security'];
                   const entriesByCategory: any = {};
                   for (const cat of categoriesOrder) {
-                    const categoryEntries = entries.filter((e: ChangelogEntry) => e.data.category === cat);
+                    // Filter and sort entries within each category by time (newest first)
+                    const categoryEntries = sortedEntries
+                      .filter((e: ChangelogEntry) => e.data.category === cat)
+                      .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
                     if (categoryEntries.length > 0) {
                       entriesByCategory[cat] = categoryEntries;
                     }
