@@ -126,7 +126,10 @@ export function generateEntryId(change, timestamp) {
       category: change.category,
       target: change.target,
       change: change.change,
-      propName: change.propName || null
+      propName: change.propName || null,
+      path: change.path || null, // Include token path for uniqueness
+      before: change.before || null,
+      after: change.after || null
     }))
     .digest('hex')
     .slice(0, 8);

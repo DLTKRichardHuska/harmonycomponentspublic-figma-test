@@ -64,14 +64,15 @@ export function generateDescription(change) {
     return `${category} in ${target}`;
   }
 
-  const template = categoryTemplates[changeType];
-  if (!template) {
-    return `${category} in ${target}`;
-  }
-
   // Call template with appropriate arguments
   try {
     if (type === 'component') {
+      // For components, templates are nested by changeType
+      const template = categoryTemplates[changeType];
+      if (!template) {
+        return `${category} in ${target}`;
+      }
+
       if (changeType === 'file_added' || changeType === 'file_removed' || changeType === 'file_modified') {
         return template(target);
       }
@@ -94,16 +95,18 @@ export function generateDescription(change) {
     }
 
     if (type === 'token') {
-      if (changeType === 'token_added') {
+      // For tokens, categoryTemplates is already the function
+      const template = categoryTemplates;
+      if (typeof template !== 'function') {
+        return `${category} in ${target}`;
+      }
+
+      if (category === 'added' || category === 'removed') {
         return template(target, change.path);
       }
 
-      if (changeType === 'token_changed') {
+      if (category === 'changed') {
         return template(target, change.path, change.before, change.after);
-      }
-
-      if (changeType === 'token_removed') {
-        return template(target, change.path);
       }
     }
 

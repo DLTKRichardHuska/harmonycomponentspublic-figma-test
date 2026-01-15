@@ -27,7 +27,7 @@ export async function generateChangelogEntries(changes) {
 
     const entry = {
       id,
-      version: 'unreleased', // Will be updated during release process
+      version: 'recent', // Recent changes on main branch
       date: new Date(timestamp).toISOString(),
       category: change.category,
       type: change.type,

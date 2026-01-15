@@ -228,12 +228,15 @@ const categories = [...new Set(entries.map(e => e.data.category))].sort();
     cursor: pointer;
     width: 16px;
     height: 16px;
+    flex-shrink: 0;
+    margin: 0;
   }
 
   .filter-label {
     font-size: var(--font-size-body-sm, 0.875rem);
     color: var(--color-text-secondary, #666);
     text-transform: capitalize;
+    line-height: 1.5;
   }
 
   .filter-checkbox:hover .filter-label {
