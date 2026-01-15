@@ -437,6 +437,8 @@
   position: absolute;
   left: var(--space-4);
   top: 50%;
+  /* transform: translateY(-50%) is REQUIRED for vertical centering */
+  /* Do NOT override this in theme-specific styles - it must be inherited */
   transform: translateY(-50%);
   color: var(--text-muted);
   pointer-events: none;
@@ -2928,10 +2930,6 @@
   color: var(--text-primary);
 }
 
-.picker-popup__body {
-  /* Body content */
-}
-
 /* Picker Popup Responsive Styles */
 @media (max-width: var(--breakpoint-md)) {
   .picker-popup {
@@ -3002,14 +3000,6 @@
   font-size: var(--text-base);
   font-weight: var(--font-semibold);
   color: var(--text-primary);
-}
-
-.date-picker__month {
-  /* Month name */
-}
-
-.date-picker__year {
-  /* Year */
 }
 
 .date-picker__weekdays {
@@ -3269,10 +3259,6 @@
   margin-bottom: var(--space-4);
   padding-bottom: var(--space-4);
   border-bottom: 1px solid var(--border-light);
-}
-
-.datetime-picker__time-section {
-  /* Time picker section */
 }
 
 /* DateTime Picker Responsive Styles */
@@ -4597,10 +4583,10 @@
 
 .theme-cp .input,
 .theme-cp .date-input {
-  height: 20px;
+  height: var(--input-height-cp);
   padding: 0 var(--space-2);
   font-size: var(--text-xs);
-  line-height: 20px;
+  line-height: var(--input-height-cp);
 }
 
 .theme-cp .input--with-icon {
@@ -4610,6 +4596,8 @@
 .theme-cp .input-wrapper__icon {
   left: var(--space-2);
   top: calc(50% + 0.5px);
+  /* IMPORTANT: Do NOT override transform here - it must inherit translateY(-50%) from base styles */
+  /* Only left and top should be overridden for CP theme positioning */
 }
 
 .theme-cp .date-input {
@@ -5161,11 +5149,6 @@ html.dark .left-sidebar__item:hover {
 }
 
 /* Backward compatibility: CP-specific styles also apply to unified component */
-.cp-left-sidebar,
-.left-sidebar--cp {
-  /* Inherits all base .left-sidebar styles */
-}
-
 /* CP sidebar spacing adjustments when inside shell layout */
 .shell-layout[data-cp-variant="true"] .cp-left-sidebar {
   gap: var(--space-2);
@@ -5448,10 +5431,6 @@ html.dark .right-sidebar__item:hover {
 }
 
 /* Backward compatibility: CP-specific styles also apply to unified component */
-.cp-right-sidebar,
-.right-sidebar--cp {
-  /* Inherits all base .right-sidebar styles */
-}
 
 /* ===========================================
    CP SIDEBAR DEMO CONTAINER (Documentation)

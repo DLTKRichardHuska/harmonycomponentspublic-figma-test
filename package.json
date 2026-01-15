@@ -3,7 +3,7 @@
   "type": "module",
   "version": "1.0.0",
   "scripts": {
-    "dev": "concurrently \"npm run watch:tokens\" \"astro dev\" --names \"watch,astro\" --prefix-colors \"cyan,green\"",
+    "dev": "concurrently \"npm run watch:changelog\" \"npm run watch:tokens\" \"astro dev\" --names \"changelog,tokens,astro\" --prefix-colors \"yellow,cyan,green\"",
     "start": "serve dist -l ${PORT:-3000}",
     "prebuild": "npm run generate:all",
     "build": "astro build",
@@ -16,8 +16,10 @@
     "generate:layouts": "node scripts/generate-layouts-json.js",
     "generate:manifest": "node scripts/generate-manifest.js",
     "generate:ai-tokens": "node scripts/generate-ai-tokens.js",
-    "generate:all": "npm run generate:props && npm run generate:colors && npm run generate:tokens && npm run generate:components && npm run generate:layouts && npm run generate:manifest && npm run generate:ai-tokens",
-    "watch:tokens": "node scripts/watch-tokens.js"
+    "generate:changes": "node scripts/generate-changes.js",
+    "generate:all": "npm run generate:props && npm run generate:colors && npm run generate:tokens && npm run generate:components && npm run generate:layouts && npm run generate:manifest && npm run generate:ai-tokens && npm run generate:changes",
+    "watch:tokens": "node scripts/watch-tokens.js",
+    "watch:changelog": "node scripts/watch-changelog.js"
   },
   "dependencies": {
     "astro": "^5.16.7",
