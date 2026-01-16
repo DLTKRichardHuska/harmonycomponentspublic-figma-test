@@ -16,11 +16,14 @@ const projectRoot = path.join(__dirname, '..');
 
 // Paths
 const componentsDir = path.join(projectRoot, 'src/components/ui');
+const layoutsDir = path.join(projectRoot, 'src/layouts');
 const tokensDir = path.join(projectRoot, 'src/tokens');
 const stylesDir = path.join(projectRoot, 'src/styles');
+const dataDir = path.join(projectRoot, 'src/data');
 const inventoryFile = path.join(projectRoot, 'component-props-inventory.json');
 const componentsJsonFile = path.join(projectRoot, 'mcp-data/components.json');
 const cacheFile = path.join(projectRoot, '.cache/components-regeneration-cache.json');
+const themeConfigFile = path.join(projectRoot, 'src/data/theme-config.ts');
 
 // Files to track
 const tokenFiles = ['colors.json', 'spacing.json', 'typography.json', 'elevations.json'];
@@ -62,6 +65,141 @@ function getComponentFiles() {
   return fs.readdirSync(componentsDir)
     .filter(f => f.endsWith('.astro'))
     .sort();
+}
+
+/**
+ * Get all layout files
+ */
+function getLayoutFiles() {
+  if (!fs.existsSync(layoutsDir)) {
+    return [];
+  }
+  return fs.readdirSync(layoutsDir)
+    .filter(f => f.endsWith('.astro'))
+    .sort();
+}
+
+/**
+ * Parse Props interface from layout file
+ */
+function parseLayoutProps(filePath) {
+  try {
+    const fileContent = fs.readFileSync(filePath, 'utf-8');
+    const interfaceRegex = /interface\s+Props\s*\{([^}]+)\}/s;
+    const match = fileContent.match(interfaceRegex);
+    
+    if (!match) {
+      return null;
+    }
+    
+    const propsText = match[1];
+    const props = {};
+    const propLines = propsText.split('\n').filter(line => line.trim());
+    
+    for (const line of propLines) {
+      const trimmed = line.trim();
+      if (!trimmed || trimmed.startsWith('//') || trimmed.startsWith('/*')) {
+        continue;
+      }
+      
+      const propMatch = trimmed.match(/^(\w+)(\?)?:\s*([^;]+);?/);
+      if (propMatch) {
+        const [, propName, optional, propType] = propMatch;
+        props[propName] = {
+          type: propType.trim(),
+          optional: !!optional,
+          default: null
+        };
+      }
+    }
+    
+    // Try to extract default values from destructuring
+    const destructureRegex = /const\s*\{([^}]+)\}\s*=\s*Astro\.props/s;
+    const destructureMatch = fileContent.match(destructureRegex);
+    
+    if (destructureMatch) {
+      const destructureText = destructureMatch[1];
+      const assignments = destructureText.split(',');
+      
+      for (const assignment of assignments) {
+        const defaultMatch = assignment.match(/(\w+)\s*=\s*([^,]+)/);
+        if (defaultMatch) {
+          const [, propName, defaultValue] = defaultMatch;
+          const trimmedPropName = propName.trim();
+          const trimmedDefault = defaultValue.trim();
+          
+          if (props[trimmedPropName]) {
+            props[trimmedPropName].default = trimmedDefault;
+          }
+        }
+      }
+    }
+    
+    return props;
+  } catch (error) {
+    console.warn(`⚠️  Failed to parse layout props from ${filePath}:`, error.message);
+    return null;
+  }
+}
+
+/**
+ * Load theme configuration
+ */
+function loadThemeConfig() {
+  if (!fs.existsSync(themeConfigFile)) {
+    return null;
+  }
+  
+  try {
+    // Read the TypeScript file
+    const content = fs.readFileSync(themeConfigFile, 'utf-8');
+    
+    // Extract theme config data using regex patterns
+    // Match each theme block: themeName: { name: '...', fullName: '...', ... }
+    const themeConfig = {};
+    const themeRegex = /(\w+):\s*\{[\s\S]*?name:\s*['"]([^'"]+)['"][\s\S]*?fullName:\s*['"]([^'"]+)['"][\s\S]*?primaryColor:\s*['"]([^'"]+)['"][\s\S]*?\}/g;
+    
+    let match;
+    while ((match = themeRegex.exec(content)) !== null) {
+      const [, themeId, name, fullName, primaryColor] = match;
+      
+      // Extract companies if present
+      const companiesMatch = content.substring(match.index).match(/companies:\s*\[([\s\S]*?)\]/);
+      const companies = [];
+      
+      if (companiesMatch) {
+        const companyRegex = /\{\s*id:\s*['"]([^'"]+)['"][\s\S]*?name:\s*['"]([^'"]+)['"][\s\S]*?gradientColor:\s*['"]([^'"]+)['"]\s*\}/g;
+        let companyMatch;
+        while ((companyMatch = companyRegex.exec(companiesMatch[1])) !== null) {
+          companies.push({
+            id: companyMatch[1],
+            name: companyMatch[2],
+            gradientColor: companyMatch[3]
+          });
+        }
+      }
+      
+      themeConfig[themeId] = {
+        name,
+        fullName,
+        primaryColor,
+        companies: companies.length > 0 ? companies : undefined
+      };
+    }
+    
+    return Object.keys(themeConfig).length > 0 ? themeConfig : {
+      note: 'Theme config file exists but could not be parsed',
+      file: 'src/data/theme-config.ts',
+      availableThemes: ['cp', 'vp', 'ppm', 'maconomy']
+    };
+  } catch (error) {
+    console.warn('⚠️  Failed to load theme config:', error.message);
+    return {
+      note: 'Theme config file exists but could not be loaded',
+      file: 'src/data/theme-config.ts',
+      availableThemes: ['cp', 'vp', 'ppm', 'maconomy']
+    };
+  }
 }
 
 /**
@@ -110,10 +248,14 @@ function shouldRegenerate(cache) {
     componentsAdded: [],
     componentsRemoved: [],
     componentsModified: [],
+    layoutsAdded: [],
+    layoutsRemoved: [],
+    layoutsModified: [],
     tokensChanged: false,
     tokensRemoved: [],
     cssChanged: false,
     inventoryChanged: false,
+    themeConfigChanged: false,
     reason: null
   };
 
@@ -225,20 +367,65 @@ function shouldRegenerate(cache) {
     changes.inventoryChanged = true;
   }
 
+  // Check layout files
+  const currentLayoutFiles = getLayoutFiles();
+  const previousLayoutFiles = cache.layoutFiles || [];
+  
+  changes.layoutsAdded = currentLayoutFiles.filter(f => !previousLayoutFiles.includes(f));
+  changes.layoutsRemoved = previousLayoutFiles.filter(f => !currentLayoutFiles.includes(f));
+  
+  for (const file of currentLayoutFiles) {
+    const filePath = path.join(layoutsDir, file);
+    try {
+      const stats = fs.statSync(filePath);
+      const cachedMtime = cache.layoutMtimes?.[file];
+      
+      if (stats.mtimeMs !== cachedMtime) {
+        const currentHash = safeHashFile(filePath);
+        if (currentHash && currentHash !== cache.layoutHashes?.[file]) {
+          changes.layoutsModified.push(file);
+        }
+      }
+    } catch (error) {
+      changes.layoutsModified.push(file);
+    }
+  }
+
+  // Check theme config file
+  if (fs.existsSync(themeConfigFile)) {
+    try {
+      const stats = fs.statSync(themeConfigFile);
+      const cachedMtime = cache.themeConfigMtime;
+      
+      if (stats.mtimeMs !== cachedMtime) {
+        const currentHash = safeHashFile(themeConfigFile);
+        if (currentHash && currentHash !== cache.themeConfigHash) {
+          changes.themeConfigChanged = true;
+        }
+      }
+    } catch (error) {
+      changes.themeConfigChanged = true;
+    }
+  }
+
   const hasChanges = 
     changes.componentsAdded.length > 0 ||
     changes.componentsRemoved.length > 0 ||
     changes.componentsModified.length > 0 ||
+    changes.layoutsAdded.length > 0 ||
+    changes.layoutsRemoved.length > 0 ||
+    changes.layoutsModified.length > 0 ||
     changes.tokensChanged ||
     changes.tokensRemoved.length > 0 ||
     changes.cssChanged ||
-    changes.inventoryChanged;
+    changes.inventoryChanged ||
+    changes.themeConfigChanged;
 
   return { shouldRegenerate: hasChanges, changes };
 }
 
 /**
- * Generate components.json from inventory
+ * Generate components.json from inventory, layouts, and theme config
  */
 function generateComponentsJson() {
   if (!fs.existsSync(inventoryFile)) {
@@ -247,9 +434,56 @@ function generateComponentsJson() {
 
   const inventory = JSON.parse(fs.readFileSync(inventoryFile, 'utf-8'));
   
-  // Wrap inventory in components key
+  // Parse layout files
+  const layouts = {};
+  const layoutFiles = getLayoutFiles();
+  
+  for (const file of layoutFiles) {
+    const filePath = path.join(layoutsDir, file);
+    const layoutName = file.replace('.astro', '');
+    const props = parseLayoutProps(filePath);
+    
+    layouts[layoutName] = {
+      filePath: `src/layouts/${file}`,
+      hasProps: props !== null,
+      props: props || {},
+      description: `${layoutName} Layout Component`
+    };
+  }
+  
+  // Load theme configuration
+  const themeConfig = loadThemeConfig();
+  
+  // Build the complete JSON structure
   const componentsJson = {
-    components: inventory
+    components: inventory,
+    layouts: layouts,
+    themeConfig: themeConfig,
+    metadata: {
+      lightDarkMode: {
+        description: 'Light/Dark mode is controlled via CSS classes on the <html> element',
+        implementation: {
+          darkMode: 'Add "dark" class to <html> element: <html class="dark">',
+          lightMode: 'Remove "dark" class or omit it: <html> or <html class="theme-cp">',
+          toggle: 'document.documentElement.classList.toggle("dark")',
+          persistence: 'Use localStorage to save user preference'
+        },
+        cssClasses: {
+          dark: 'Applied to <html> element to enable dark mode',
+          theme: 'Applied as "theme-{name}" where name is cp, vp, ppm, or maconomy'
+        },
+        examples: [
+          '<html class="theme-cp dark">',
+          '<html class="theme-vp">',
+          '<html class="theme-ppm dark">'
+        ]
+      },
+      themes: {
+        available: ['cp', 'vp', 'ppm', 'maconomy'],
+        description: 'Each theme has its own color palette and styling. Apply via "theme-{name}" class on <html> element.',
+        lightDarkSupport: 'All themes support both light and dark modes via the "dark" class'
+      }
+    }
   };
 
   return componentsJson;
@@ -264,12 +498,17 @@ function updateCache() {
     componentFiles: [],
     hashes: {},
     mtimes: {},
+    layoutFiles: [],
+    layoutHashes: {},
+    layoutMtimes: {},
     tokenHashes: {},
     tokenMtimes: {},
     cssFileHashes: {},
     cssFileMtimes: {},
     inventoryHash: null,
     inventoryMtime: null,
+    themeConfigHash: null,
+    themeConfigMtime: null,
     lastGenerated: new Date().toISOString()
   };
 
@@ -339,6 +578,40 @@ function updateCache() {
     }
   }
 
+  // Update layout files
+  const layoutFiles = getLayoutFiles();
+  cache.layoutFiles = layoutFiles;
+  
+  for (const file of layoutFiles) {
+    const filePath = path.join(layoutsDir, file);
+    try {
+      const stats = fs.statSync(filePath);
+      if (!cache.layoutMtimes) cache.layoutMtimes = {};
+      if (!cache.layoutHashes) cache.layoutHashes = {};
+      cache.layoutMtimes[file] = stats.mtimeMs;
+      const hash = safeHashFile(filePath);
+      if (hash) {
+        cache.layoutHashes[file] = hash;
+      }
+    } catch (error) {
+      // Skip files we can't read
+    }
+  }
+
+  // Update theme config file
+  if (fs.existsSync(themeConfigFile)) {
+    try {
+      const stats = fs.statSync(themeConfigFile);
+      cache.themeConfigMtime = stats.mtimeMs;
+      const hash = safeHashFile(themeConfigFile);
+      if (hash) {
+        cache.themeConfigHash = hash;
+      }
+    } catch (error) {
+      // Skip if we can't read it
+    }
+  }
+
   return cache;
 }
 
@@ -398,6 +671,12 @@ function main() {
       }
       if (changes.inventoryChanged) {
         changeList.push('inventory changed');
+      }
+      if (changes.layoutsAdded.length > 0 || changes.layoutsRemoved.length > 0 || changes.layoutsModified.length > 0) {
+        changeList.push('layouts changed');
+      }
+      if (changes.themeConfigChanged) {
+        changeList.push('theme config changed');
       }
       if (changeList.length > 0) {
         console.log(`📝 Changes detected: ${changeList.join(', ')}`);

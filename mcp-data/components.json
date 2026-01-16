@@ -3112,5 +3112,271 @@
       },
       "rawInterface": "value?: string; // ISO week string (YYYY-Www)\n  min?: string; // ISO week string\n  max?: string; // ISO week string\n  disabled?: boolean;\n  locale?: string;\n  id?: string;\n  class?: string;"
     }
+  },
+  "layouts": {
+    "DocsLayout": {
+      "filePath": "src/layouts/DocsLayout.astro",
+      "hasProps": true,
+      "props": {
+        "title": {
+          "type": "string",
+          "optional": false,
+          "default": null
+        },
+        "description": {
+          "type": "string",
+          "optional": true,
+          "default": null
+        }
+      },
+      "description": "DocsLayout Layout Component"
+    },
+    "ShellLayout": {
+      "filePath": "src/layouts/ShellLayout.astro",
+      "hasProps": true,
+      "props": {
+        "productName": {
+          "type": "string",
+          "optional": true,
+          "default": "'Harmony'"
+        },
+        "logoSrc": {
+          "type": "string",
+          "optional": true,
+          "default": "'/logos/CPVPLogo.svg'"
+        },
+        "companyName": {
+          "type": "string",
+          "optional": true,
+          "default": "'Company name'"
+        },
+        "showCompanyPicker": {
+          "type": "boolean",
+          "optional": true,
+          "default": "true"
+        },
+        "companyColor": {
+          "type": "string",
+          "optional": true,
+          "default": null
+        },
+        "showFloatingNav": {
+          "type": "boolean",
+          "optional": true,
+          "default": null
+        },
+        "floatingNavVariant": {
+          "type": "'full' | 'compact'",
+          "optional": true,
+          "default": "'full'"
+        },
+        "showExecute": {
+          "type": "boolean",
+          "optional": true,
+          "default": "true"
+        },
+        "saveDisabled": {
+          "type": "boolean",
+          "optional": true,
+          "default": "false"
+        },
+        "tabs": {
+          "type": "Tab[]",
+          "optional": true,
+          "default": "[]"
+        },
+        "showMoreTabs": {
+          "type": "boolean",
+          "optional": true,
+          "default": "false"
+        },
+        "moreCount": {
+          "type": "number",
+          "optional": true,
+          "default": "0"
+        },
+        "overflowTabs": {
+          "type": "Tab[]",
+          "optional": true,
+          "default": "[]"
+        },
+        "showAddTab": {
+          "type": "boolean",
+          "optional": true,
+          "default": "true"
+        },
+        "footerVariant": {
+          "type": "'default' | 'compact'",
+          "optional": true,
+          "default": "'default'"
+        },
+        "leftSidebarVariant": {
+          "type": "'cp' | 'vp' | 'ppm' | 'maconomy'",
+          "optional": true,
+          "default": null
+        },
+        "rightSidebarVariant": {
+          "type": "'cp' | 'vp' | 'ppm' | 'maconomy'",
+          "optional": true,
+          "default": null
+        },
+        "pageHeaderTitle": {
+          "type": "string",
+          "optional": true,
+          "default": null
+        },
+        "pageHeaderSubtitle": {
+          "type": "string",
+          "optional": true,
+          "default": null
+        },
+        "pageHeaderPrimaryButton": {
+          "type": "ButtonConfig",
+          "optional": true,
+          "default": null
+        },
+        "pageHeaderOutlineButton1": {
+          "type": "ButtonConfig",
+          "optional": true,
+          "default": null
+        },
+        "pageHeaderOutlineButton2": {
+          "type": "ButtonConfig",
+          "optional": true,
+          "default": null
+        },
+        "pageHeaderOutlineButton3": {
+          "type": "ButtonConfig",
+          "optional": true,
+          "default": null
+        },
+        "leftPanel": {
+          "type": "PanelConfig",
+          "optional": true,
+          "default": null
+        },
+        "rightPanel": {
+          "type": "PanelConfig",
+          "optional": true,
+          "default": null
+        },
+        "class": {
+          "type": "string",
+          "optional": true,
+          "default": null
+        }
+      },
+      "description": "ShellLayout Layout Component"
+    }
+  },
+  "themeConfig": {
+    "cp": {
+      "name": "CP",
+      "fullName": "Harmony CP Design System",
+      "primaryColor": "#0073E6",
+      "companies": [
+        {
+          "id": "acme-corp",
+          "name": "Acme Corporation",
+          "gradientColor": "#FF507B"
+        },
+        {
+          "id": "ocean-industries",
+          "name": "Ocean Industries",
+          "gradientColor": "#285F8C"
+        },
+        {
+          "id": "violet-systems",
+          "name": "Violet Systems",
+          "gradientColor": "#DC50FF"
+        },
+        {
+          "id": "azure-dynamics",
+          "name": "Azure Dynamics",
+          "gradientColor": "#5077FF"
+        },
+        {
+          "id": "sunset-corporation",
+          "name": "Sunset Corporation",
+          "gradientColor": "#FFAF50"
+        }
+      ]
+    },
+    "vp": {
+      "name": "VP",
+      "fullName": "Harmony VP Design System",
+      "primaryColor": "#0073E6",
+      "companies": [
+        {
+          "id": "vendor-a",
+          "name": "Vendor A",
+          "gradientColor": "#10B981"
+        },
+        {
+          "id": "vendor-b",
+          "name": "Vendor B",
+          "gradientColor": "#F59E0B"
+        }
+      ]
+    },
+    "ppm": {
+      "name": "PPM",
+      "fullName": "Harmony PPM Design System",
+      "primaryColor": "#0073E6",
+      "companies": [
+        {
+          "id": "project-alpha",
+          "name": "Project Alpha",
+          "gradientColor": "#8B5CF6"
+        },
+        {
+          "id": "project-beta",
+          "name": "Project Beta",
+          "gradientColor": "#EC4899"
+        }
+      ]
+    },
+    "maconomy": {
+      "name": "Maconomy",
+      "fullName": "Harmony Maconomy Design System",
+      "primaryColor": "#0073E6",
+      "companies": [
+        {
+          "id": "consulting-firm",
+          "name": "Consulting Firm",
+          "gradientColor": "#0073E6"
+        }
+      ]
+    }
+  },
+  "metadata": {
+    "lightDarkMode": {
+      "description": "Light/Dark mode is controlled via CSS classes on the <html> element",
+      "implementation": {
+        "darkMode": "Add \"dark\" class to <html> element: <html class=\"dark\">",
+        "lightMode": "Remove \"dark\" class or omit it: <html> or <html class=\"theme-cp\">",
+        "toggle": "document.documentElement.classList.toggle(\"dark\")",
+        "persistence": "Use localStorage to save user preference"
+      },
+      "cssClasses": {
+        "dark": "Applied to <html> element to enable dark mode",
+        "theme": "Applied as \"theme-{name}\" where name is cp, vp, ppm, or maconomy"
+      },
+      "examples": [
+        "<html class=\"theme-cp dark\">",
+        "<html class=\"theme-vp\">",
+        "<html class=\"theme-ppm dark\">"
+      ]
+    },
+    "themes": {
+      "available": [
+        "cp",
+        "vp",
+        "ppm",
+        "maconomy"
+      ],
+      "description": "Each theme has its own color palette and styling. Apply via \"theme-{name}\" class on <html> element.",
+      "lightDarkSupport": "All themes support both light and dark modes via the \"dark\" class"
+    }
   }
 }
