@@ -17,18 +17,25 @@ export async function generateChangelogEntries(changes) {
 
   console.log('📝 Generating changelog entries...\n');
 
-  const timestamp = Date.now();
   const commitMeta = await getLastCommitMetadata();
+  
+  // Parse commit date and convert to timestamp for ID generation and ISO string for entry date
+  // commit.date from git can be a Date object or a string in various formats
+  const commitDate = commitMeta.date instanceof Date 
+    ? commitMeta.date 
+    : new Date(commitMeta.date);
+  const commitTimestamp = commitDate.getTime();
+  const commitDateISO = commitDate.toISOString();
 
   const entries = changes.map(change => {
-    const id = generateEntryId(change, timestamp);
+    const id = generateEntryId(change, commitTimestamp);
     const description = generateDescription(change);
     const title = generateTitle(change);
 
     const entry = {
       id,
       version: 'recent', // Recent changes on main branch
-      date: new Date(timestamp).toISOString(),
+      date: commitDateISO,
       category: change.category,
       type: change.type,
       target: change.target,
