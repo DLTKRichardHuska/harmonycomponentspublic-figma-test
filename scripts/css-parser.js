@@ -101,11 +101,44 @@ export function getResolvedValue(cssValue, variableMap, context = 'light') {
       if (node.type === 'function' && node.value === 'var') {
         const varName = node.nodes[0]?.value;
         if (varName && variableMap[varName]) {
-          // Try context-specific first, fall back to light/dark, then default
-          const resolved = variableMap[varName][context] ||
-                          variableMap[varName]['light'] ||
-                          variableMap[varName]['dark'] ||
-                          Object.values(variableMap[varName])[0];
+          // Build list of context variations to try
+          const contextVariations = [];
+          
+          // If context is theme-specific (e.g., 'cp-light'), try it first
+          if (context.includes('-')) {
+            contextVariations.push(context);
+          }
+          
+          // Try all theme variants for the mode (light or dark)
+          const isDark = context.includes('dark') || context === 'dark';
+          const themes = ['cp', 'vp', 'ppm', 'maconomy'];
+          themes.forEach(theme => {
+            const themeContext = isDark ? `${theme}-dark` : `${theme}-light`;
+            if (!contextVariations.includes(themeContext)) {
+              contextVariations.push(themeContext);
+            }
+          });
+          
+          // Try generic light/dark
+          if (isDark) {
+            contextVariations.push('dark');
+          } else {
+            contextVariations.push('light');
+          }
+          
+          // Finally, try any available value
+          let resolved = null;
+          for (const ctx of contextVariations) {
+            if (variableMap[varName][ctx]) {
+              resolved = variableMap[varName][ctx];
+              break;
+            }
+          }
+          
+          // If still no match, get first available value
+          if (!resolved && Object.keys(variableMap[varName]).length > 0) {
+            resolved = Object.values(variableMap[varName])[0];
+          }
           
           if (resolved) {
             // Recursively resolve if the resolved value also contains var()
