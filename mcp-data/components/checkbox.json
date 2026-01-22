@@ -188,7 +188,7 @@
     "children": []
   },
   "_metadata": {
-    "lastGenerated": "2026-01-22T19:40:17.781Z",
+    "lastGenerated": "2026-01-22T20:53:20.179Z",
     "generatedWith": "@astrojs/compiler@2.13.0",
     "includesVisualSpecs": true,
     "availableVariants": [
@@ -285,292 +285,6 @@
         "default": "0.25rem"
       }
     },
-    "colors": {
-      "variants": {
-        "warning": {
-          "cp": {
-            "light": {
-              "default": {
-                "background": "#4C92D9",
-                "text": null,
-                "border": "#4C92D9",
-                "iconColor": null
-              },
-              "focus": {
-                "background": "#4C92D9",
-                "text": null,
-                "border": "#4C92D9",
-                "iconColor": null,
-                "outline": "0 0 0 1px #FFB020, 0 0 0 3px rgba(255, 176, 32, 0.48)",
-                "outlineOffset": "2px"
-              }
-            },
-            "dark": {
-              "default": {
-                "background": "#59ACFF",
-                "text": null,
-                "border": "#59ACFF",
-                "iconColor": null
-              },
-              "focus": {
-                "background": "#59ACFF",
-                "text": null,
-                "border": "#59ACFF",
-                "iconColor": null,
-                "outline": "0 0 0 1px #F9AF00, 0 0 0 3px rgba(249, 175, 0, 0.48)",
-                "outlineOffset": "2px"
-              }
-            }
-          },
-          "vp": {
-            "light": {
-              "default": {
-                "background": "#4C92D9",
-                "text": null,
-                "border": "#4C92D9",
-                "iconColor": null
-              },
-              "focus": {
-                "background": "#4C92D9",
-                "text": null,
-                "border": "#4C92D9",
-                "iconColor": null,
-                "outline": "0 0 0 1px #FFB020, 0 0 0 3px rgba(255, 176, 32, 0.48)",
-                "outlineOffset": "2px"
-              }
-            },
-            "dark": {
-              "default": {
-                "background": "#59ACFF",
-                "text": null,
-                "border": "#59ACFF",
-                "iconColor": null
-              },
-              "focus": {
-                "background": "#59ACFF",
-                "text": null,
-                "border": "#59ACFF",
-                "iconColor": null,
-                "outline": "0 0 0 1px #F9AF00, 0 0 0 3px rgba(249, 175, 0, 0.48)",
-                "outlineOffset": "2px"
-              }
-            }
-          },
-          "ppm": {
-            "light": {
-              "default": {
-                "background": "#4C92D9",
-                "text": null,
-                "border": "#4C92D9",
-                "iconColor": null
-              },
-              "focus": {
-                "background": "#4C92D9",
-                "text": null,
-                "border": "#4C92D9",
-                "iconColor": null,
-                "outline": "0 0 0 1px #FFB020, 0 0 0 3px rgba(255, 176, 32, 0.48)",
-                "outlineOffset": "2px"
-              }
-            },
-            "dark": {
-              "default": {
-                "background": "#59ACFF",
-                "text": null,
-                "border": "#59ACFF",
-                "iconColor": null
-              },
-              "focus": {
-                "background": "#59ACFF",
-                "text": null,
-                "border": "#59ACFF",
-                "iconColor": null,
-                "outline": "0 0 0 1px #F9AF00, 0 0 0 3px rgba(249, 175, 0, 0.48)",
-                "outlineOffset": "2px"
-              }
-            }
-          },
-          "maconomy": {
-            "light": {
-              "default": {
-                "background": "#4C92D9",
-                "text": null,
-                "border": "#4C92D9",
-                "iconColor": null
-              },
-              "focus": {
-                "background": "#4C92D9",
-                "text": null,
-                "border": "#4C92D9",
-                "iconColor": null,
-                "outline": "0 0 0 1px #FFB020, 0 0 0 3px rgba(255, 176, 32, 0.48)",
-                "outlineOffset": "2px"
-              }
-            },
-            "dark": {
-              "default": {
-                "background": "#59ACFF",
-                "text": null,
-                "border": "#59ACFF",
-                "iconColor": null
-              },
-              "focus": {
-                "background": "#59ACFF",
-                "text": null,
-                "border": "#59ACFF",
-                "iconColor": null,
-                "outline": "0 0 0 1px #F9AF00, 0 0 0 3px rgba(249, 175, 0, 0.48)",
-                "outlineOffset": "2px"
-              }
-            }
-          }
-        },
-        "error": {
-          "cp": {
-            "light": {
-              "default": {
-                "background": "#4C92D9",
-                "text": null,
-                "border": "#4C92D9",
-                "iconColor": null
-              },
-              "focus": {
-                "background": "#4C92D9",
-                "text": null,
-                "border": "#4C92D9",
-                "iconColor": null,
-                "outline": "0 0 0 2px #D83148, 0 0 0 3px rgba(216, 49, 72, 0.32)",
-                "outlineOffset": "2px"
-              }
-            },
-            "dark": {
-              "default": {
-                "background": "#59ACFF",
-                "text": null,
-                "border": "#59ACFF",
-                "iconColor": null
-              },
-              "focus": {
-                "background": "#59ACFF",
-                "text": null,
-                "border": "#59ACFF",
-                "iconColor": null,
-                "outline": "0 0 0 2px #F46286, 0 0 0 3px rgba(244, 98, 134, 0.32)",
-                "outlineOffset": "2px"
-              }
-            }
-          },
-          "vp": {
-            "light": {
-              "default": {
-                "background": "#4C92D9",
-                "text": null,
-                "border": "#4C92D9",
-                "iconColor": null
-              },
-              "focus": {
-                "background": "#4C92D9",
-                "text": null,
-                "border": "#4C92D9",
-                "iconColor": null,
-                "outline": "0 0 0 2px #D83148, 0 0 0 3px rgba(216, 49, 72, 0.32)",
-                "outlineOffset": "2px"
-              }
-            },
-            "dark": {
-              "default": {
-                "background": "#59ACFF",
-                "text": null,
-                "border": "#59ACFF",
-                "iconColor": null
-              },
-              "focus": {
-                "background": "#59ACFF",
-                "text": null,
-                "border": "#59ACFF",
-                "iconColor": null,
-                "outline": "0 0 0 2px #F46286, 0 0 0 3px rgba(244, 98, 134, 0.32)",
-                "outlineOffset": "2px"
-              }
-            }
-          },
-          "ppm": {
-            "light": {
-              "default": {
-                "background": "#4C92D9",
-                "text": null,
-                "border": "#4C92D9",
-                "iconColor": null
-              },
-              "focus": {
-                "background": "#4C92D9",
-                "text": null,
-                "border": "#4C92D9",
-                "iconColor": null,
-                "outline": "0 0 0 2px #D83148, 0 0 0 3px rgba(216, 49, 72, 0.32)",
-                "outlineOffset": "2px"
-              }
-            },
-            "dark": {
-              "default": {
-                "background": "#59ACFF",
-                "text": null,
-                "border": "#59ACFF",
-                "iconColor": null
-              },
-              "focus": {
-                "background": "#59ACFF",
-                "text": null,
-                "border": "#59ACFF",
-                "iconColor": null,
-                "outline": "0 0 0 2px #F46286, 0 0 0 3px rgba(244, 98, 134, 0.32)",
-                "outlineOffset": "2px"
-              }
-            }
-          },
-          "maconomy": {
-            "light": {
-              "default": {
-                "background": "#4C92D9",
-                "text": null,
-                "border": "#4C92D9",
-                "iconColor": null
-              },
-              "focus": {
-                "background": "#4C92D9",
-                "text": null,
-                "border": "#4C92D9",
-                "iconColor": null,
-                "outline": "0 0 0 2px #D83148, 0 0 0 3px rgba(216, 49, 72, 0.32)",
-                "outlineOffset": "2px"
-              }
-            },
-            "dark": {
-              "default": {
-                "background": "#59ACFF",
-                "text": null,
-                "border": "#59ACFF",
-                "iconColor": null
-              },
-              "focus": {
-                "background": "#59ACFF",
-                "text": null,
-                "border": "#59ACFF",
-                "iconColor": null,
-                "outline": "0 0 0 2px #F46286, 0 0 0 3px rgba(244, 98, 134, 0.32)",
-                "outlineOffset": "2px"
-              }
-            }
-          }
-        }
-      }
-    },
-    "elevation": {
-      "default": "0 0 0 2px #D83148",
-      "hover": null,
-      "active": null,
-      "focus": "0 0 0 2px #D83148, 0 0 0 3px rgba(216, 49, 72, 0.32)"
-    },
     "transitions": {
       "default": "all 150ms ease",
       "properties": {}
@@ -584,18 +298,6 @@
       "flexDirection": "column"
     },
     "iconSpecs": null
-  },
-  "accessibility": {
-    "role": "checkbox",
-    "tabIndex": 0,
-    "keyboardSupport": {
-      "Space": "toggles checkbox"
-    },
-    "ariaAttributes": {
-      "aria-checked": "true, false, or mixed",
-      "aria-disabled": "true when disabled"
-    },
-    "focusVisible": {}
   },
   "cssClassStyles": {
     ".checkbox-group-wrapper--error .checkbox__box": {
@@ -761,300 +463,404 @@
       "background-color": "rgba(0, 115, 230, 0.15)"
     }
   },
-  "_variantIndex": {
-    "cp-warning": {
-      "variant": "warning",
-      "theme": "cp",
-      "light": {
-        "default": {
-          "background": "#4C92D9",
-          "text": null,
-          "border": "#4C92D9",
-          "iconColor": null
+  "variants": {
+    "warning": {
+      "cp": {
+        "light": {
+          "states": {
+            "default": {
+              "backgroundColor": "#4C92D9",
+              "border": "#4C92D9"
+            }
+          }
         },
-        "focus": {
-          "background": "#4C92D9",
-          "text": null,
-          "border": "#4C92D9",
-          "iconColor": null,
-          "outline": "0 0 0 1px #FFB020, 0 0 0 3px rgba(255, 176, 32, 0.48)",
-          "outlineOffset": "2px"
+        "dark": {
+          "states": {
+            "default": {
+              "backgroundColor": "#59ACFF",
+              "border": "#59ACFF"
+            }
+          }
         }
       },
-      "dark": {
-        "default": {
-          "background": "#59ACFF",
-          "text": null,
-          "border": "#59ACFF",
-          "iconColor": null
+      "vp": {
+        "light": {
+          "states": {
+            "default": {
+              "backgroundColor": "#4C92D9",
+              "border": "#4C92D9"
+            }
+          }
         },
-        "focus": {
-          "background": "#59ACFF",
-          "text": null,
-          "border": "#59ACFF",
-          "iconColor": null,
-          "outline": "0 0 0 1px #F9AF00, 0 0 0 3px rgba(249, 175, 0, 0.48)",
-          "outlineOffset": "2px"
+        "dark": {
+          "states": {
+            "default": {
+              "backgroundColor": "#59ACFF",
+              "border": "#59ACFF"
+            }
+          }
+        }
+      },
+      "ppm": {
+        "light": {
+          "states": {
+            "default": {
+              "backgroundColor": "#4C92D9",
+              "border": "#4C92D9"
+            }
+          }
+        },
+        "dark": {
+          "states": {
+            "default": {
+              "backgroundColor": "#59ACFF",
+              "border": "#59ACFF"
+            }
+          }
+        }
+      },
+      "maconomy": {
+        "light": {
+          "states": {
+            "default": {
+              "backgroundColor": "#4C92D9",
+              "border": "#4C92D9"
+            }
+          }
+        },
+        "dark": {
+          "states": {
+            "default": {
+              "backgroundColor": "#59ACFF",
+              "border": "#59ACFF"
+            }
+          }
         }
       }
     },
-    "vp-warning": {
-      "variant": "warning",
-      "theme": "vp",
-      "light": {
-        "default": {
-          "background": "#4C92D9",
-          "text": null,
-          "border": "#4C92D9",
-          "iconColor": null
+    "error": {
+      "cp": {
+        "light": {
+          "states": {
+            "default": {
+              "backgroundColor": "#4C92D9",
+              "border": "#4C92D9"
+            }
+          }
         },
-        "focus": {
-          "background": "#4C92D9",
-          "text": null,
-          "border": "#4C92D9",
-          "iconColor": null,
-          "outline": "0 0 0 1px #FFB020, 0 0 0 3px rgba(255, 176, 32, 0.48)",
-          "outlineOffset": "2px"
+        "dark": {
+          "states": {
+            "default": {
+              "backgroundColor": "#59ACFF",
+              "border": "#59ACFF"
+            }
+          }
         }
       },
-      "dark": {
-        "default": {
-          "background": "#59ACFF",
-          "text": null,
-          "border": "#59ACFF",
-          "iconColor": null
+      "vp": {
+        "light": {
+          "states": {
+            "default": {
+              "backgroundColor": "#4C92D9",
+              "border": "#4C92D9"
+            }
+          }
         },
-        "focus": {
-          "background": "#59ACFF",
-          "text": null,
-          "border": "#59ACFF",
-          "iconColor": null,
-          "outline": "0 0 0 1px #F9AF00, 0 0 0 3px rgba(249, 175, 0, 0.48)",
-          "outlineOffset": "2px"
-        }
-      }
-    },
-    "ppm-warning": {
-      "variant": "warning",
-      "theme": "ppm",
-      "light": {
-        "default": {
-          "background": "#4C92D9",
-          "text": null,
-          "border": "#4C92D9",
-          "iconColor": null
-        },
-        "focus": {
-          "background": "#4C92D9",
-          "text": null,
-          "border": "#4C92D9",
-          "iconColor": null,
-          "outline": "0 0 0 1px #FFB020, 0 0 0 3px rgba(255, 176, 32, 0.48)",
-          "outlineOffset": "2px"
+        "dark": {
+          "states": {
+            "default": {
+              "backgroundColor": "#59ACFF",
+              "border": "#59ACFF"
+            }
+          }
         }
       },
-      "dark": {
-        "default": {
-          "background": "#59ACFF",
-          "text": null,
-          "border": "#59ACFF",
-          "iconColor": null
+      "ppm": {
+        "light": {
+          "states": {
+            "default": {
+              "backgroundColor": "#4C92D9",
+              "border": "#4C92D9"
+            }
+          }
         },
-        "focus": {
-          "background": "#59ACFF",
-          "text": null,
-          "border": "#59ACFF",
-          "iconColor": null,
-          "outline": "0 0 0 1px #F9AF00, 0 0 0 3px rgba(249, 175, 0, 0.48)",
-          "outlineOffset": "2px"
-        }
-      }
-    },
-    "maconomy-warning": {
-      "variant": "warning",
-      "theme": "maconomy",
-      "light": {
-        "default": {
-          "background": "#4C92D9",
-          "text": null,
-          "border": "#4C92D9",
-          "iconColor": null
-        },
-        "focus": {
-          "background": "#4C92D9",
-          "text": null,
-          "border": "#4C92D9",
-          "iconColor": null,
-          "outline": "0 0 0 1px #FFB020, 0 0 0 3px rgba(255, 176, 32, 0.48)",
-          "outlineOffset": "2px"
+        "dark": {
+          "states": {
+            "default": {
+              "backgroundColor": "#59ACFF",
+              "border": "#59ACFF"
+            }
+          }
         }
       },
-      "dark": {
-        "default": {
-          "background": "#59ACFF",
-          "text": null,
-          "border": "#59ACFF",
-          "iconColor": null
+      "maconomy": {
+        "light": {
+          "states": {
+            "default": {
+              "backgroundColor": "#4C92D9",
+              "border": "#4C92D9"
+            }
+          }
         },
-        "focus": {
-          "background": "#59ACFF",
-          "text": null,
-          "border": "#59ACFF",
-          "iconColor": null,
-          "outline": "0 0 0 1px #F9AF00, 0 0 0 3px rgba(249, 175, 0, 0.48)",
-          "outlineOffset": "2px"
-        }
-      }
-    },
-    "cp-error": {
-      "variant": "error",
-      "theme": "cp",
-      "light": {
-        "default": {
-          "background": "#4C92D9",
-          "text": null,
-          "border": "#4C92D9",
-          "iconColor": null
-        },
-        "focus": {
-          "background": "#4C92D9",
-          "text": null,
-          "border": "#4C92D9",
-          "iconColor": null,
-          "outline": "0 0 0 2px #D83148, 0 0 0 3px rgba(216, 49, 72, 0.32)",
-          "outlineOffset": "2px"
-        }
-      },
-      "dark": {
-        "default": {
-          "background": "#59ACFF",
-          "text": null,
-          "border": "#59ACFF",
-          "iconColor": null
-        },
-        "focus": {
-          "background": "#59ACFF",
-          "text": null,
-          "border": "#59ACFF",
-          "iconColor": null,
-          "outline": "0 0 0 2px #F46286, 0 0 0 3px rgba(244, 98, 134, 0.32)",
-          "outlineOffset": "2px"
-        }
-      }
-    },
-    "vp-error": {
-      "variant": "error",
-      "theme": "vp",
-      "light": {
-        "default": {
-          "background": "#4C92D9",
-          "text": null,
-          "border": "#4C92D9",
-          "iconColor": null
-        },
-        "focus": {
-          "background": "#4C92D9",
-          "text": null,
-          "border": "#4C92D9",
-          "iconColor": null,
-          "outline": "0 0 0 2px #D83148, 0 0 0 3px rgba(216, 49, 72, 0.32)",
-          "outlineOffset": "2px"
-        }
-      },
-      "dark": {
-        "default": {
-          "background": "#59ACFF",
-          "text": null,
-          "border": "#59ACFF",
-          "iconColor": null
-        },
-        "focus": {
-          "background": "#59ACFF",
-          "text": null,
-          "border": "#59ACFF",
-          "iconColor": null,
-          "outline": "0 0 0 2px #F46286, 0 0 0 3px rgba(244, 98, 134, 0.32)",
-          "outlineOffset": "2px"
-        }
-      }
-    },
-    "ppm-error": {
-      "variant": "error",
-      "theme": "ppm",
-      "light": {
-        "default": {
-          "background": "#4C92D9",
-          "text": null,
-          "border": "#4C92D9",
-          "iconColor": null
-        },
-        "focus": {
-          "background": "#4C92D9",
-          "text": null,
-          "border": "#4C92D9",
-          "iconColor": null,
-          "outline": "0 0 0 2px #D83148, 0 0 0 3px rgba(216, 49, 72, 0.32)",
-          "outlineOffset": "2px"
-        }
-      },
-      "dark": {
-        "default": {
-          "background": "#59ACFF",
-          "text": null,
-          "border": "#59ACFF",
-          "iconColor": null
-        },
-        "focus": {
-          "background": "#59ACFF",
-          "text": null,
-          "border": "#59ACFF",
-          "iconColor": null,
-          "outline": "0 0 0 2px #F46286, 0 0 0 3px rgba(244, 98, 134, 0.32)",
-          "outlineOffset": "2px"
-        }
-      }
-    },
-    "maconomy-error": {
-      "variant": "error",
-      "theme": "maconomy",
-      "light": {
-        "default": {
-          "background": "#4C92D9",
-          "text": null,
-          "border": "#4C92D9",
-          "iconColor": null
-        },
-        "focus": {
-          "background": "#4C92D9",
-          "text": null,
-          "border": "#4C92D9",
-          "iconColor": null,
-          "outline": "0 0 0 2px #D83148, 0 0 0 3px rgba(216, 49, 72, 0.32)",
-          "outlineOffset": "2px"
-        }
-      },
-      "dark": {
-        "default": {
-          "background": "#59ACFF",
-          "text": null,
-          "border": "#59ACFF",
-          "iconColor": null
-        },
-        "focus": {
-          "background": "#59ACFF",
-          "text": null,
-          "border": "#59ACFF",
-          "iconColor": null,
-          "outline": "0 0 0 2px #F46286, 0 0 0 3px rgba(244, 98, 134, 0.32)",
-          "outlineOffset": "2px"
+        "dark": {
+          "states": {
+            "default": {
+              "backgroundColor": "#59ACFF",
+              "border": "#59ACFF"
+            }
+          }
         }
       }
     }
   },
-  "_variantMetadata": {
-    "availableVariants": [
-      "warning",
-      "error"
-    ]
+  "elevations": {
+    "focusRings": {
+      "primary": "0 0 0 2px #D83148, 0 0 0 3px rgba(216, 49, 72, 0.32)"
+    },
+    "insetShadows": {},
+    "cssVars": {}
+  },
+  "states": {},
+  "themeColors": {
+    "cp": {
+      "light": {
+        "textPrimary": "#373F4E",
+        "textSecondary": "#525969",
+        "textMuted": "#6B7280",
+        "textInverse": "#FFFFFF",
+        "borderColor": "#BFC6D4",
+        "hoverBg": "#E5E7EB",
+        "elevatedBg": "#F7F8FA",
+        "cardBg": "#F7F8FA",
+        "colorError": "#D83148",
+        "colorErrorFocus": "rgba(216, 49, 72, 0.32)",
+        "themePrimary": "#4C92D9",
+        "themePrimaryHover": "#3D7BC4",
+        "checkbox-group-wrappererror checkbox__input:checked + checkbox__boxBg": "#4C92D9",
+        "checkbox-group-wrapperwarning checkbox__input:checked + checkbox__boxBg": "#4C92D9",
+        "checkbox__input:checked + checkbox__boxBg": "#4C92D9",
+        "checkboxdisabled checkbox__labelColor": "#6B7280",
+        "checkboxwarning checkbox__input:checked + checkbox__boxBg": "#4C92D9",
+        "checkboxerror checkbox__input:checked + checkbox__boxBg": "#4C92D9",
+        "checkbox-wrapper__warning-iconColor": "#FFB020",
+        "checkbox-wrapper__error-iconColor": "#D83148",
+        "table tbody trtable-rowselected,\ntable tbody tr:has(checkbox__input:checked)Bg": "rgba(0, 115, 230, 0.15)",
+        "tablestriped tbody trtable-rowselected,\ntablestriped tbody tr:has(checkbox__input:checked)Bg": "rgba(0, 115, 230, 0.15)",
+        "table tbody tr:hover:not(table-rowselected):not(:has(checkbox__input:checked))Bg": "#d6ebff",
+        "table tbody trtable-rowselected:hover,\ntable tbody tr:has(checkbox__input:checked):hoverBg": "#d6ebff",
+        "tablestriped tbody tr:hover:not(table-rowselected):not(:has(checkbox__input:checked))Bg": "#d6ebff",
+        "tablestriped tbody trtable-rowselected:hover,\ntablestriped tbody tr:has(checkbox__input:checked):hoverBg": "#d6ebff",
+        "table tbody trtable-rowtotaltable-rowselected,\ntable tbody trtable-rowtotal:has(checkbox__input:checked)Bg": "rgba(0, 115, 230, 0.15)"
+      },
+      "dark": {
+        "textPrimary": "#E9ECEF",
+        "textSecondary": "#B6B6C4",
+        "textMuted": "#BBBBC6",
+        "textInverse": "#1F252E",
+        "borderColor": "#5F6871",
+        "hoverBg": "#3D4A5C",
+        "elevatedBg": "#37424D",
+        "cardBg": "#37424D",
+        "colorError": "#F46286",
+        "colorErrorFocus": "rgba(244, 98, 134, 0.32)",
+        "themePrimary": "#59ACFF",
+        "themePrimaryHover": "#7BB8FF",
+        "checkbox-group-wrappererror checkbox__input:checked + checkbox__boxBg": "#4C92D9",
+        "checkbox-group-wrapperwarning checkbox__input:checked + checkbox__boxBg": "#4C92D9",
+        "checkbox__input:checked + checkbox__boxBg": "#4C92D9",
+        "checkboxdisabled checkbox__labelColor": "#6B7280",
+        "checkboxwarning checkbox__input:checked + checkbox__boxBg": "#4C92D9",
+        "checkboxerror checkbox__input:checked + checkbox__boxBg": "#4C92D9",
+        "checkbox-wrapper__warning-iconColor": "#FFB020",
+        "checkbox-wrapper__error-iconColor": "#D83148",
+        "table tbody trtable-rowselected,\ntable tbody tr:has(checkbox__input:checked)Bg": "rgba(0, 115, 230, 0.15)",
+        "tablestriped tbody trtable-rowselected,\ntablestriped tbody tr:has(checkbox__input:checked)Bg": "rgba(0, 115, 230, 0.15)",
+        "table tbody tr:hover:not(table-rowselected):not(:has(checkbox__input:checked))Bg": "#d6ebff",
+        "table tbody trtable-rowselected:hover,\ntable tbody tr:has(checkbox__input:checked):hoverBg": "#d6ebff",
+        "tablestriped tbody tr:hover:not(table-rowselected):not(:has(checkbox__input:checked))Bg": "#d6ebff",
+        "tablestriped tbody trtable-rowselected:hover,\ntablestriped tbody tr:has(checkbox__input:checked):hoverBg": "#d6ebff",
+        "table tbody trtable-rowtotaltable-rowselected,\ntable tbody trtable-rowtotal:has(checkbox__input:checked)Bg": "rgba(0, 115, 230, 0.15)"
+      }
+    },
+    "vp": {
+      "light": {
+        "textPrimary": "#373F4E",
+        "textSecondary": "#525969",
+        "textMuted": "#6B7280",
+        "textInverse": "#FFFFFF",
+        "borderColor": "#BFC6D4",
+        "hoverBg": "#E5E7EB",
+        "elevatedBg": "#F7F8FA",
+        "cardBg": "#F7F8FA",
+        "colorError": "#D83148",
+        "colorErrorFocus": "rgba(216, 49, 72, 0.32)",
+        "themePrimary": "#4C92D9",
+        "themePrimaryHover": "#3D7BC4",
+        "checkbox-group-wrappererror checkbox__input:checked + checkbox__boxBg": "#4C92D9",
+        "checkbox-group-wrapperwarning checkbox__input:checked + checkbox__boxBg": "#4C92D9",
+        "checkbox__input:checked + checkbox__boxBg": "#4C92D9",
+        "checkboxdisabled checkbox__labelColor": "#6B7280",
+        "checkboxwarning checkbox__input:checked + checkbox__boxBg": "#4C92D9",
+        "checkboxerror checkbox__input:checked + checkbox__boxBg": "#4C92D9",
+        "checkbox-wrapper__warning-iconColor": "#FFB020",
+        "checkbox-wrapper__error-iconColor": "#D83148",
+        "table tbody trtable-rowselected,\ntable tbody tr:has(checkbox__input:checked)Bg": "rgba(0, 115, 230, 0.15)",
+        "tablestriped tbody trtable-rowselected,\ntablestriped tbody tr:has(checkbox__input:checked)Bg": "rgba(0, 115, 230, 0.15)",
+        "table tbody tr:hover:not(table-rowselected):not(:has(checkbox__input:checked))Bg": "#d6ebff",
+        "table tbody trtable-rowselected:hover,\ntable tbody tr:has(checkbox__input:checked):hoverBg": "#d6ebff",
+        "tablestriped tbody tr:hover:not(table-rowselected):not(:has(checkbox__input:checked))Bg": "#d6ebff",
+        "tablestriped tbody trtable-rowselected:hover,\ntablestriped tbody tr:has(checkbox__input:checked):hoverBg": "#d6ebff",
+        "table tbody trtable-rowtotaltable-rowselected,\ntable tbody trtable-rowtotal:has(checkbox__input:checked)Bg": "rgba(0, 115, 230, 0.15)"
+      },
+      "dark": {
+        "textPrimary": "#E9ECEF",
+        "textSecondary": "#B6B6C4",
+        "textMuted": "#BBBBC6",
+        "textInverse": "#1F252E",
+        "borderColor": "#5F6871",
+        "hoverBg": "#3D4A5C",
+        "elevatedBg": "#37424D",
+        "cardBg": "#37424D",
+        "colorError": "#F46286",
+        "colorErrorFocus": "rgba(244, 98, 134, 0.32)",
+        "themePrimary": "#59ACFF",
+        "themePrimaryHover": "#7BB8FF",
+        "checkbox-group-wrappererror checkbox__input:checked + checkbox__boxBg": "#4C92D9",
+        "checkbox-group-wrapperwarning checkbox__input:checked + checkbox__boxBg": "#4C92D9",
+        "checkbox__input:checked + checkbox__boxBg": "#4C92D9",
+        "checkboxdisabled checkbox__labelColor": "#6B7280",
+        "checkboxwarning checkbox__input:checked + checkbox__boxBg": "#4C92D9",
+        "checkboxerror checkbox__input:checked + checkbox__boxBg": "#4C92D9",
+        "checkbox-wrapper__warning-iconColor": "#FFB020",
+        "checkbox-wrapper__error-iconColor": "#D83148",
+        "table tbody trtable-rowselected,\ntable tbody tr:has(checkbox__input:checked)Bg": "rgba(0, 115, 230, 0.15)",
+        "tablestriped tbody trtable-rowselected,\ntablestriped tbody tr:has(checkbox__input:checked)Bg": "rgba(0, 115, 230, 0.15)",
+        "table tbody tr:hover:not(table-rowselected):not(:has(checkbox__input:checked))Bg": "#d6ebff",
+        "table tbody trtable-rowselected:hover,\ntable tbody tr:has(checkbox__input:checked):hoverBg": "#d6ebff",
+        "tablestriped tbody tr:hover:not(table-rowselected):not(:has(checkbox__input:checked))Bg": "#d6ebff",
+        "tablestriped tbody trtable-rowselected:hover,\ntablestriped tbody tr:has(checkbox__input:checked):hoverBg": "#d6ebff",
+        "table tbody trtable-rowtotaltable-rowselected,\ntable tbody trtable-rowtotal:has(checkbox__input:checked)Bg": "rgba(0, 115, 230, 0.15)"
+      }
+    },
+    "ppm": {
+      "light": {
+        "textPrimary": "#373F4E",
+        "textSecondary": "#525969",
+        "textMuted": "#6B7280",
+        "textInverse": "#FFFFFF",
+        "borderColor": "#BFC6D4",
+        "hoverBg": "#E5E7EB",
+        "elevatedBg": "#F7F8FA",
+        "cardBg": "#F7F8FA",
+        "colorError": "#D83148",
+        "colorErrorFocus": "rgba(216, 49, 72, 0.32)",
+        "themePrimary": "#4C92D9",
+        "themePrimaryHover": "#3D7BC4",
+        "checkbox-group-wrappererror checkbox__input:checked + checkbox__boxBg": "#4C92D9",
+        "checkbox-group-wrapperwarning checkbox__input:checked + checkbox__boxBg": "#4C92D9",
+        "checkbox__input:checked + checkbox__boxBg": "#4C92D9",
+        "checkboxdisabled checkbox__labelColor": "#6B7280",
+        "checkboxwarning checkbox__input:checked + checkbox__boxBg": "#4C92D9",
+        "checkboxerror checkbox__input:checked + checkbox__boxBg": "#4C92D9",
+        "checkbox-wrapper__warning-iconColor": "#FFB020",
+        "checkbox-wrapper__error-iconColor": "#D83148",
+        "table tbody trtable-rowselected,\ntable tbody tr:has(checkbox__input:checked)Bg": "rgba(0, 115, 230, 0.15)",
+        "tablestriped tbody trtable-rowselected,\ntablestriped tbody tr:has(checkbox__input:checked)Bg": "rgba(0, 115, 230, 0.15)",
+        "table tbody tr:hover:not(table-rowselected):not(:has(checkbox__input:checked))Bg": "#d6ebff",
+        "table tbody trtable-rowselected:hover,\ntable tbody tr:has(checkbox__input:checked):hoverBg": "#d6ebff",
+        "tablestriped tbody tr:hover:not(table-rowselected):not(:has(checkbox__input:checked))Bg": "#d6ebff",
+        "tablestriped tbody trtable-rowselected:hover,\ntablestriped tbody tr:has(checkbox__input:checked):hoverBg": "#d6ebff",
+        "table tbody trtable-rowtotaltable-rowselected,\ntable tbody trtable-rowtotal:has(checkbox__input:checked)Bg": "rgba(0, 115, 230, 0.15)"
+      },
+      "dark": {
+        "textPrimary": "#E9ECEF",
+        "textSecondary": "#B6B6C4",
+        "textMuted": "#BBBBC6",
+        "textInverse": "#1F252E",
+        "borderColor": "#5F6871",
+        "hoverBg": "#3D4A5C",
+        "elevatedBg": "#37424D",
+        "cardBg": "#37424D",
+        "colorError": "#F46286",
+        "colorErrorFocus": "rgba(244, 98, 134, 0.32)",
+        "themePrimary": "#59ACFF",
+        "themePrimaryHover": "#7BB8FF",
+        "checkbox-group-wrappererror checkbox__input:checked + checkbox__boxBg": "#4C92D9",
+        "checkbox-group-wrapperwarning checkbox__input:checked + checkbox__boxBg": "#4C92D9",
+        "checkbox__input:checked + checkbox__boxBg": "#4C92D9",
+        "checkboxdisabled checkbox__labelColor": "#6B7280",
+        "checkboxwarning checkbox__input:checked + checkbox__boxBg": "#4C92D9",
+        "checkboxerror checkbox__input:checked + checkbox__boxBg": "#4C92D9",
+        "checkbox-wrapper__warning-iconColor": "#FFB020",
+        "checkbox-wrapper__error-iconColor": "#D83148",
+        "table tbody trtable-rowselected,\ntable tbody tr:has(checkbox__input:checked)Bg": "rgba(0, 115, 230, 0.15)",
+        "tablestriped tbody trtable-rowselected,\ntablestriped tbody tr:has(checkbox__input:checked)Bg": "rgba(0, 115, 230, 0.15)",
+        "table tbody tr:hover:not(table-rowselected):not(:has(checkbox__input:checked))Bg": "#d6ebff",
+        "table tbody trtable-rowselected:hover,\ntable tbody tr:has(checkbox__input:checked):hoverBg": "#d6ebff",
+        "tablestriped tbody tr:hover:not(table-rowselected):not(:has(checkbox__input:checked))Bg": "#d6ebff",
+        "tablestriped tbody trtable-rowselected:hover,\ntablestriped tbody tr:has(checkbox__input:checked):hoverBg": "#d6ebff",
+        "table tbody trtable-rowtotaltable-rowselected,\ntable tbody trtable-rowtotal:has(checkbox__input:checked)Bg": "rgba(0, 115, 230, 0.15)"
+      }
+    },
+    "maconomy": {
+      "light": {
+        "textPrimary": "#373F4E",
+        "textSecondary": "#525969",
+        "textMuted": "#6B7280",
+        "textInverse": "#FFFFFF",
+        "borderColor": "#BFC6D4",
+        "hoverBg": "#E5E7EB",
+        "elevatedBg": "#F7F8FA",
+        "cardBg": "#F7F8FA",
+        "colorError": "#D83148",
+        "colorErrorFocus": "rgba(216, 49, 72, 0.32)",
+        "themePrimary": "#4C92D9",
+        "themePrimaryHover": "#3D7BC4",
+        "checkbox-group-wrappererror checkbox__input:checked + checkbox__boxBg": "#4C92D9",
+        "checkbox-group-wrapperwarning checkbox__input:checked + checkbox__boxBg": "#4C92D9",
+        "checkbox__input:checked + checkbox__boxBg": "#4C92D9",
+        "checkboxdisabled checkbox__labelColor": "#6B7280",
+        "checkboxwarning checkbox__input:checked + checkbox__boxBg": "#4C92D9",
+        "checkboxerror checkbox__input:checked + checkbox__boxBg": "#4C92D9",
+        "checkbox-wrapper__warning-iconColor": "#FFB020",
+        "checkbox-wrapper__error-iconColor": "#D83148",
+        "table tbody trtable-rowselected,\ntable tbody tr:has(checkbox__input:checked)Bg": "rgba(0, 115, 230, 0.15)",
+        "tablestriped tbody trtable-rowselected,\ntablestriped tbody tr:has(checkbox__input:checked)Bg": "rgba(0, 115, 230, 0.15)",
+        "table tbody tr:hover:not(table-rowselected):not(:has(checkbox__input:checked))Bg": "#d6ebff",
+        "table tbody trtable-rowselected:hover,\ntable tbody tr:has(checkbox__input:checked):hoverBg": "#d6ebff",
+        "tablestriped tbody tr:hover:not(table-rowselected):not(:has(checkbox__input:checked))Bg": "#d6ebff",
+        "tablestriped tbody trtable-rowselected:hover,\ntablestriped tbody tr:has(checkbox__input:checked):hoverBg": "#d6ebff",
+        "table tbody trtable-rowtotaltable-rowselected,\ntable tbody trtable-rowtotal:has(checkbox__input:checked)Bg": "rgba(0, 115, 230, 0.15)"
+      },
+      "dark": {
+        "textPrimary": "#E9ECEF",
+        "textSecondary": "#B6B6C4",
+        "textMuted": "#BBBBC6",
+        "textInverse": "#1F252E",
+        "borderColor": "#5F6871",
+        "hoverBg": "#3D4A5C",
+        "elevatedBg": "#37424D",
+        "cardBg": "#37424D",
+        "colorError": "#F46286",
+        "colorErrorFocus": "rgba(244, 98, 134, 0.32)",
+        "themePrimary": "#59ACFF",
+        "themePrimaryHover": "#7BB8FF",
+        "checkbox-group-wrappererror checkbox__input:checked + checkbox__boxBg": "#4C92D9",
+        "checkbox-group-wrapperwarning checkbox__input:checked + checkbox__boxBg": "#4C92D9",
+        "checkbox__input:checked + checkbox__boxBg": "#4C92D9",
+        "checkboxdisabled checkbox__labelColor": "#6B7280",
+        "checkboxwarning checkbox__input:checked + checkbox__boxBg": "#4C92D9",
+        "checkboxerror checkbox__input:checked + checkbox__boxBg": "#4C92D9",
+        "checkbox-wrapper__warning-iconColor": "#FFB020",
+        "checkbox-wrapper__error-iconColor": "#D83148",
+        "table tbody trtable-rowselected,\ntable tbody tr:has(checkbox__input:checked)Bg": "rgba(0, 115, 230, 0.15)",
+        "tablestriped tbody trtable-rowselected,\ntablestriped tbody tr:has(checkbox__input:checked)Bg": "rgba(0, 115, 230, 0.15)",
+        "table tbody tr:hover:not(table-rowselected):not(:has(checkbox__input:checked))Bg": "#d6ebff",
+        "table tbody trtable-rowselected:hover,\ntable tbody tr:has(checkbox__input:checked):hoverBg": "#d6ebff",
+        "tablestriped tbody tr:hover:not(table-rowselected):not(:has(checkbox__input:checked))Bg": "#d6ebff",
+        "tablestriped tbody trtable-rowselected:hover,\ntablestriped tbody tr:has(checkbox__input:checked):hoverBg": "#d6ebff",
+        "table tbody trtable-rowtotaltable-rowselected,\ntable tbody trtable-rowtotal:has(checkbox__input:checked)Bg": "rgba(0, 115, 230, 0.15)"
+      }
+    }
   }
 }
