@@ -82,9 +82,12 @@
     "children": []
   },
   "_metadata": {
-    "lastGenerated": "2026-01-22T17:07:34.469Z",
+    "lastGenerated": "2026-01-22T19:36:48.351Z",
     "generatedWith": "@astrojs/compiler@2.13.0",
-    "includesVisualSpecs": true
+    "includesVisualSpecs": true,
+    "availableVariants": [
+      "required"
+    ]
   },
   "visualSpecifications": {
     "dimensions": {
@@ -290,5 +293,92 @@
       "font-weight": "400",
       "color": "#6B7280"
     }
+  },
+  "_variantIndex": {
+    "cp-required": {
+      "variant": "required",
+      "theme": "cp",
+      "light": {
+        "default": {
+          "background": "transparent",
+          "text": "#D83148",
+          "border": "transparent",
+          "iconColor": "#D83148"
+        }
+      },
+      "dark": {
+        "default": {
+          "background": "transparent",
+          "text": "#F46286",
+          "border": "transparent",
+          "iconColor": "#F46286"
+        }
+      }
+    },
+    "vp-required": {
+      "variant": "required",
+      "theme": "vp",
+      "light": {
+        "default": {
+          "background": "transparent",
+          "text": "#D83148",
+          "border": "transparent",
+          "iconColor": "#D83148"
+        }
+      },
+      "dark": {
+        "default": {
+          "background": "transparent",
+          "text": "#F46286",
+          "border": "transparent",
+          "iconColor": "#F46286"
+        }
+      }
+    },
+    "ppm-required": {
+      "variant": "required",
+      "theme": "ppm",
+      "light": {
+        "default": {
+          "background": "transparent",
+          "text": "#D83148",
+          "border": "transparent",
+          "iconColor": "#D83148"
+        }
+      },
+      "dark": {
+        "default": {
+          "background": "transparent",
+          "text": "#F46286",
+          "border": "transparent",
+          "iconColor": "#F46286"
+        }
+      }
+    },
+    "maconomy-required": {
+      "variant": "required",
+      "theme": "maconomy",
+      "light": {
+        "default": {
+          "background": "transparent",
+          "text": "#D83148",
+          "border": "transparent",
+          "iconColor": "#D83148"
+        }
+      },
+      "dark": {
+        "default": {
+          "background": "transparent",
+          "text": "#F46286",
+          "border": "transparent",
+          "iconColor": "#F46286"
+        }
+      }
+    }
+  },
+  "_variantMetadata": {
+    "availableVariants": [
+      "required"
+    ]
   }
 }

@@ -132,8 +132,24 @@ async function generateComponentData(componentPath, cssSpacingMap, parsedCSS, va
       componentData.accessibility = visualSpecs.accessibility;
       componentData.cssClassStyles = visualSpecs.cssClassStyles;
       
+      // Add variant index for easy theme+variant queries
+      if (visualSpecs._variantIndex) {
+        componentData._variantIndex = visualSpecs._variantIndex;
+      }
+      
+      // Add variant metadata for MCP filtering
+      if (visualSpecs._variantMetadata) {
+        componentData._variantMetadata = visualSpecs._variantMetadata;
+      }
+      
       // Update metadata
       componentData._metadata.includesVisualSpecs = true;
+      if (visualSpecs._variantMetadata?.availableVariants) {
+        componentData._metadata.availableVariants = visualSpecs._variantMetadata.availableVariants;
+      }
+      if (visualSpecs._variantHelper?.availableVariants) {
+        componentData._metadata.availableVariants = visualSpecs._variantHelper.availableVariants;
+      }
     }
 
     return componentData;

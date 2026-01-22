@@ -81,9 +81,12 @@
     ]
   },
   "_metadata": {
-    "lastGenerated": "2026-01-22T17:07:34.633Z",
+    "lastGenerated": "2026-01-22T19:36:48.511Z",
     "generatedWith": "@astrojs/compiler@2.13.0",
-    "includesVisualSpecs": true
+    "includesVisualSpecs": true,
+    "availableVariants": [
+      "non-linear"
+    ]
   },
   "visualSpecifications": {
     "dimensions": {
@@ -524,5 +527,204 @@
       "background-color": "#BFC6D4",
       "border-radius": "2px"
     }
+  },
+  "_variantIndex": {
+    "cp-non-linear": {
+      "variant": "non-linear",
+      "theme": "cp",
+      "light": {
+        "default": {
+          "background": "transparent",
+          "text": null,
+          "border": "transparent",
+          "iconColor": null
+        },
+        "hover": {
+          "background": "#E5E7EB",
+          "text": "#4C92D9",
+          "border": "#4C92D9",
+          "iconColor": "#4C92D9"
+        },
+        "focus": {
+          "background": "transparent",
+          "text": null,
+          "border": "transparent",
+          "iconColor": null,
+          "outline": "0 0 0 3px rgba(76, 146, 217, 0.1), 0 0 0 4px #F7F8FA",
+          "outlineOffset": "4px"
+        }
+      },
+      "dark": {
+        "default": {
+          "background": "transparent",
+          "text": null,
+          "border": "transparent",
+          "iconColor": null
+        },
+        "hover": {
+          "background": "#3D4A5C",
+          "text": "#59ACFF",
+          "border": "#59ACFF",
+          "iconColor": "#59ACFF"
+        },
+        "focus": {
+          "background": "transparent",
+          "text": null,
+          "border": "transparent",
+          "iconColor": null,
+          "outline": "0 0 0 3px rgba(89, 172, 255, 0.1), 0 0 0 4px #37424D",
+          "outlineOffset": "4px"
+        }
+      }
+    },
+    "vp-non-linear": {
+      "variant": "non-linear",
+      "theme": "vp",
+      "light": {
+        "default": {
+          "background": "transparent",
+          "text": null,
+          "border": "transparent",
+          "iconColor": null
+        },
+        "hover": {
+          "background": "#E5E7EB",
+          "text": "#4C92D9",
+          "border": "#4C92D9",
+          "iconColor": "#4C92D9"
+        },
+        "focus": {
+          "background": "transparent",
+          "text": null,
+          "border": "transparent",
+          "iconColor": null,
+          "outline": "0 0 0 3px rgba(76, 146, 217, 0.1), 0 0 0 4px #F7F8FA",
+          "outlineOffset": "4px"
+        }
+      },
+      "dark": {
+        "default": {
+          "background": "transparent",
+          "text": null,
+          "border": "transparent",
+          "iconColor": null
+        },
+        "hover": {
+          "background": "#2A2D32",
+          "text": "#59ACFF",
+          "border": "#59ACFF",
+          "iconColor": "#59ACFF"
+        },
+        "focus": {
+          "background": "transparent",
+          "text": null,
+          "border": "transparent",
+          "iconColor": null,
+          "outline": "0 0 0 3px rgba(89, 172, 255, 0.1), 0 0 0 4px #1F2124",
+          "outlineOffset": "4px"
+        }
+      }
+    },
+    "ppm-non-linear": {
+      "variant": "non-linear",
+      "theme": "ppm",
+      "light": {
+        "default": {
+          "background": "transparent",
+          "text": null,
+          "border": "transparent",
+          "iconColor": null
+        },
+        "hover": {
+          "background": "#E5E7EB",
+          "text": "#4C92D9",
+          "border": "#4C92D9",
+          "iconColor": "#4C92D9"
+        },
+        "focus": {
+          "background": "transparent",
+          "text": null,
+          "border": "transparent",
+          "iconColor": null,
+          "outline": "0 0 0 3px rgba(76, 146, 217, 0.1), 0 0 0 4px #F7F8FA",
+          "outlineOffset": "4px"
+        }
+      },
+      "dark": {
+        "default": {
+          "background": "transparent",
+          "text": null,
+          "border": "transparent",
+          "iconColor": null
+        },
+        "hover": {
+          "background": "#2A2D32",
+          "text": "#59ACFF",
+          "border": "#59ACFF",
+          "iconColor": "#59ACFF"
+        },
+        "focus": {
+          "background": "transparent",
+          "text": null,
+          "border": "transparent",
+          "iconColor": null,
+          "outline": "0 0 0 3px rgba(89, 172, 255, 0.1), 0 0 0 4px #1F2124",
+          "outlineOffset": "4px"
+        }
+      }
+    },
+    "maconomy-non-linear": {
+      "variant": "non-linear",
+      "theme": "maconomy",
+      "light": {
+        "default": {
+          "background": "transparent",
+          "text": null,
+          "border": "transparent",
+          "iconColor": null
+        },
+        "hover": {
+          "background": "#E5E7EB",
+          "text": "#4C92D9",
+          "border": "#4C92D9",
+          "iconColor": "#4C92D9"
+        },
+        "focus": {
+          "background": "transparent",
+          "text": null,
+          "border": "transparent",
+          "iconColor": null,
+          "outline": "0 0 0 3px rgba(76, 146, 217, 0.1), 0 0 0 4px #F7F8FA",
+          "outlineOffset": "4px"
+        }
+      },
+      "dark": {
+        "default": {
+          "background": "transparent",
+          "text": null,
+          "border": "transparent",
+          "iconColor": null
+        },
+        "hover": {
+          "background": "#2A2D32",
+          "text": "#59ACFF",
+          "border": "#59ACFF",
+          "iconColor": "#59ACFF"
+        },
+        "focus": {
+          "background": "transparent",
+          "text": null,
+          "border": "transparent",
+          "iconColor": null,
+          "outline": "0 0 0 3px rgba(89, 172, 255, 0.1), 0 0 0 4px #1F2124",
+          "outlineOffset": "4px"
+        }
+      }
+    }
+  },
+  "_variantMetadata": {
+    "availableVariants": [
+      "non-linear"
+    ]
   }
 }

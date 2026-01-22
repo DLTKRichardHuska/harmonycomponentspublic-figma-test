@@ -86,9 +86,12 @@
     "children": []
   },
   "_metadata": {
-    "lastGenerated": "2026-01-22T17:07:34.487Z",
+    "lastGenerated": "2026-01-22T19:36:48.371Z",
     "generatedWith": "@astrojs/compiler@2.13.0",
-    "includesVisualSpecs": true
+    "includesVisualSpecs": true,
+    "availableVariants": [
+      "muted"
+    ]
   },
   "visualSpecifications": {
     "dimensions": {
@@ -341,5 +344,140 @@
     ".link--muted:hover": {
       "color": "#373F4E"
     }
+  },
+  "_variantIndex": {
+    "cp-muted": {
+      "variant": "muted",
+      "theme": "cp",
+      "light": {
+        "default": {
+          "background": "transparent",
+          "text": "#6B7280",
+          "border": "transparent",
+          "iconColor": "#6B7280"
+        },
+        "hover": {
+          "background": "transparent",
+          "text": "#373F4E",
+          "border": "transparent",
+          "iconColor": "#373F4E"
+        }
+      },
+      "dark": {
+        "default": {
+          "background": "transparent",
+          "text": "#BBBBC6",
+          "border": "transparent",
+          "iconColor": "#BBBBC6"
+        },
+        "hover": {
+          "background": "transparent",
+          "text": "#E9ECEF",
+          "border": "transparent",
+          "iconColor": "#E9ECEF"
+        }
+      }
+    },
+    "vp-muted": {
+      "variant": "muted",
+      "theme": "vp",
+      "light": {
+        "default": {
+          "background": "transparent",
+          "text": "#6B7280",
+          "border": "transparent",
+          "iconColor": "#6B7280"
+        },
+        "hover": {
+          "background": "transparent",
+          "text": "#373F4E",
+          "border": "transparent",
+          "iconColor": "#373F4E"
+        }
+      },
+      "dark": {
+        "default": {
+          "background": "transparent",
+          "text": "#B5B5BC",
+          "border": "transparent",
+          "iconColor": "#B5B5BC"
+        },
+        "hover": {
+          "background": "transparent",
+          "text": "#FAFAFA",
+          "border": "transparent",
+          "iconColor": "#FAFAFA"
+        }
+      }
+    },
+    "ppm-muted": {
+      "variant": "muted",
+      "theme": "ppm",
+      "light": {
+        "default": {
+          "background": "transparent",
+          "text": "#6B7280",
+          "border": "transparent",
+          "iconColor": "#6B7280"
+        },
+        "hover": {
+          "background": "transparent",
+          "text": "#373F4E",
+          "border": "transparent",
+          "iconColor": "#373F4E"
+        }
+      },
+      "dark": {
+        "default": {
+          "background": "transparent",
+          "text": "#B5B5BC",
+          "border": "transparent",
+          "iconColor": "#B5B5BC"
+        },
+        "hover": {
+          "background": "transparent",
+          "text": "#FAFAFA",
+          "border": "transparent",
+          "iconColor": "#FAFAFA"
+        }
+      }
+    },
+    "maconomy-muted": {
+      "variant": "muted",
+      "theme": "maconomy",
+      "light": {
+        "default": {
+          "background": "transparent",
+          "text": "#6B7280",
+          "border": "transparent",
+          "iconColor": "#6B7280"
+        },
+        "hover": {
+          "background": "transparent",
+          "text": "#373F4E",
+          "border": "transparent",
+          "iconColor": "#373F4E"
+        }
+      },
+      "dark": {
+        "default": {
+          "background": "transparent",
+          "text": "#B5B5BC",
+          "border": "transparent",
+          "iconColor": "#B5B5BC"
+        },
+        "hover": {
+          "background": "transparent",
+          "text": "#FAFAFA",
+          "border": "transparent",
+          "iconColor": "#FAFAFA"
+        }
+      }
+    }
+  },
+  "_variantMetadata": {
+    "availableVariants": [
+      "muted"
+    ]
   }
 }

@@ -86,10 +86,57 @@ export function extractVisualSpecifications(componentData, parsedCSS, variableMa
   const resolvedVisualSpecs = resolveAllVarReferences(visualSpecs, variableMap);
   const resolvedCssClassStyles = resolveAllVarReferences(cssClassStyles, variableMap);
 
+  // Extract available variants for metadata
+  const availableVariants = Object.keys(resolvedVisualSpecs.colors?.variants || {});
+
+  // Build variant index for easy theme+variant queries
+  const variantIndex = buildVariantIndex(resolvedVisualSpecs.colors);
+
   return {
     visualSpecifications: resolvedVisualSpecs,
     accessibility,
-    cssClassStyles: resolvedCssClassStyles
+    cssClassStyles: resolvedCssClassStyles,
+    _variantIndex: variantIndex,
+    _variantMetadata: {
+      availableVariants,
+      // Note: MCPs should use filterVisualSpecsByVariant() helper function
+      // to filter visualSpecifications when a variant is requested
+      // Or use _variantIndex["theme-variant"] for direct access
+    }
+  };
+}
+
+/**
+ * Filter visual specifications to only include a specific variant
+ * This helper makes it easy for MCPs to extract variant-specific data
+ * 
+ * Usage in MCP:
+ * const filteredSpecs = filterVisualSpecsByVariant(component.visualSpecifications, 'secondary');
+ * 
+ * @param {Object} visualSpecs - Full visualSpecifications object
+ * @param {string} variantName - Name of the variant to filter (e.g., 'secondary')
+ * @returns {Object} Filtered visualSpecifications with only the requested variant
+ */
+export function filterVisualSpecsByVariant(visualSpecs, variantName) {
+  if (!visualSpecs || !variantName) {
+    return visualSpecs;
+  }
+
+  const variantData = visualSpecs.colors?.variants?.[variantName];
+  if (!variantData) {
+    // Variant doesn't exist, return original specs
+    return visualSpecs;
+  }
+
+  // Create filtered visual specifications with only the requested variant
+  return {
+    ...visualSpecs,
+    colors: {
+      ...visualSpecs.colors,
+      variants: {
+        [variantName]: variantData
+      }
+    }
   };
 }
 
@@ -488,6 +535,45 @@ function buildColors(variantColors, componentStyles, variableMap) {
   }
 
   return colors;
+}
+
+/**
+ * Build variant index for easy theme+variant queries
+ * Creates a queryable index structure: _variantIndex["theme-variant"] = { variant, theme, light, dark }
+ * 
+ * @param {Object} colors - The colors object with variants structure
+ * @returns {Object} Variant index with theme+variant keys
+ */
+function buildVariantIndex(colors) {
+  const variantIndex = {};
+  const themes = ['cp', 'vp', 'ppm', 'maconomy'];
+
+  // If no variants exist, return empty index
+  if (!colors?.variants || Object.keys(colors.variants).length === 0) {
+    return variantIndex;
+  }
+
+  // Iterate through all variants
+  for (const [variantName, variantData] of Object.entries(colors.variants)) {
+    // Iterate through all themes
+    for (const theme of themes) {
+      // Check if this theme exists for this variant
+      if (variantData[theme]) {
+        // Create index key: "theme-variant" (e.g., "cp-secondary")
+        const indexKey = `${theme}-${variantName}`;
+        
+        // Build index entry with both light and dark modes
+        variantIndex[indexKey] = {
+          variant: variantName,
+          theme: theme,
+          light: variantData[theme].light || {},
+          dark: variantData[theme].dark || {}
+        };
+      }
+    }
+  }
+
+  return variantIndex;
 }
 
 /**
