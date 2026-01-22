@@ -97,7 +97,7 @@
     "children": []
   },
   "_metadata": {
-    "lastGenerated": "2026-01-22T00:40:21.924Z",
+    "lastGenerated": "2026-01-22T01:32:45.375Z",
     "generatedWith": "@astrojs/compiler@2.13.0",
     "includesVisualSpecs": true
   },
@@ -193,38 +193,150 @@
     "colors": {
       "variants": {
         "fill": {
-          "light": {
-            "default": {
-              "background": "#e0e4eb",
-              "text": "#94a3b8",
-              "border": "#e0e4eb",
-              "iconColor": "#94a3b8"
+          "cp": {
+            "light": {
+              "default": {
+                "background": "#e0e4eb",
+                "text": "#94a3b8",
+                "border": "#e0e4eb",
+                "iconColor": "#94a3b8"
+              }
+            },
+            "dark": {
+              "default": {
+                "background": "#e0e4eb",
+                "text": "#94a3b8",
+                "border": "#e0e4eb",
+                "iconColor": "#94a3b8"
+              }
             }
           },
-          "dark": {
-            "default": {
-              "background": "#e0e4eb",
-              "text": "#94a3b8",
-              "border": "#e0e4eb",
-              "iconColor": "#94a3b8"
+          "vp": {
+            "light": {
+              "default": {
+                "background": "#e0e4eb",
+                "text": "#94a3b8",
+                "border": "#e0e4eb",
+                "iconColor": "#94a3b8"
+              }
+            },
+            "dark": {
+              "default": {
+                "background": "#e0e4eb",
+                "text": "#94a3b8",
+                "border": "#e0e4eb",
+                "iconColor": "#94a3b8"
+              }
+            }
+          },
+          "ppm": {
+            "light": {
+              "default": {
+                "background": "#e0e4eb",
+                "text": "#94a3b8",
+                "border": "#e0e4eb",
+                "iconColor": "#94a3b8"
+              }
+            },
+            "dark": {
+              "default": {
+                "background": "#e0e4eb",
+                "text": "#94a3b8",
+                "border": "#e0e4eb",
+                "iconColor": "#94a3b8"
+              }
+            }
+          },
+          "maconomy": {
+            "light": {
+              "default": {
+                "background": "#e0e4eb",
+                "text": "#94a3b8",
+                "border": "#e0e4eb",
+                "iconColor": "#94a3b8"
+              }
+            },
+            "dark": {
+              "default": {
+                "background": "#e0e4eb",
+                "text": "#94a3b8",
+                "border": "#e0e4eb",
+                "iconColor": "#94a3b8"
+              }
             }
           }
         },
         "outline": {
-          "light": {
-            "default": {
-              "background": "transparent",
-              "text": "#94a3b8",
-              "border": "#bfc6d4",
-              "iconColor": "#94a3b8"
+          "cp": {
+            "light": {
+              "default": {
+                "background": "transparent",
+                "text": "#94a3b8",
+                "border": "#bfc6d4",
+                "iconColor": "#94a3b8"
+              }
+            },
+            "dark": {
+              "default": {
+                "background": "transparent",
+                "text": "#94a3b8",
+                "border": "#bfc6d4",
+                "iconColor": "#94a3b8"
+              }
             }
           },
-          "dark": {
-            "default": {
-              "background": "transparent",
-              "text": "#94a3b8",
-              "border": "#bfc6d4",
-              "iconColor": "#94a3b8"
+          "vp": {
+            "light": {
+              "default": {
+                "background": "transparent",
+                "text": "#94a3b8",
+                "border": "#bfc6d4",
+                "iconColor": "#94a3b8"
+              }
+            },
+            "dark": {
+              "default": {
+                "background": "transparent",
+                "text": "#94a3b8",
+                "border": "#bfc6d4",
+                "iconColor": "#94a3b8"
+              }
+            }
+          },
+          "ppm": {
+            "light": {
+              "default": {
+                "background": "transparent",
+                "text": "#94a3b8",
+                "border": "#bfc6d4",
+                "iconColor": "#94a3b8"
+              }
+            },
+            "dark": {
+              "default": {
+                "background": "transparent",
+                "text": "#94a3b8",
+                "border": "#bfc6d4",
+                "iconColor": "#94a3b8"
+              }
+            }
+          },
+          "maconomy": {
+            "light": {
+              "default": {
+                "background": "transparent",
+                "text": "#94a3b8",
+                "border": "#bfc6d4",
+                "iconColor": "#94a3b8"
+              }
+            },
+            "dark": {
+              "default": {
+                "background": "transparent",
+                "text": "#94a3b8",
+                "border": "#bfc6d4",
+                "iconColor": "#94a3b8"
+              }
             }
           }
         }
@@ -248,7 +360,6 @@
     },
     "iconSpecs": null
   },
-  "themeOverrides": {},
   "accessibility": {
     "role": null,
     "tabIndex": null,

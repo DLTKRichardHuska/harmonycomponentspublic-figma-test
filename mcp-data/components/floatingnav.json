@@ -208,7 +208,7 @@
     "children": []
   },
   "_metadata": {
-    "lastGenerated": "2026-01-22T00:40:21.976Z",
+    "lastGenerated": "2026-01-22T01:32:45.452Z",
     "generatedWith": "@astrojs/compiler@2.13.0",
     "includesVisualSpecs": true
   },
@@ -325,27 +325,6 @@
       "position": "relative"
     },
     "iconSpecs": null
-  },
-  "themeOverrides": {
-    "cp": {
-      "customStyles": {
-        "background-color": {
-          "raw": "#3d4a5c",
-          "light": "#3d4a5c",
-          "dark": "#3d4a5c"
-        },
-        "border-color": {
-          "raw": "#4a5568",
-          "light": "#4a5568",
-          "dark": "#4a5568"
-        },
-        "color": {
-          "raw": "#e9ecef",
-          "light": "#e9ecef",
-          "dark": "#e9ecef"
-        }
-      }
-    }
   },
   "accessibility": {
     "role": null,
@@ -483,6 +462,10 @@
     ".floating-nav__pin-icon": {
       "font-size": "18px",
       "transform": "rotate(-45deg)"
+    },
+    "html.theme-cp.dark .floating-nav": {
+      "background-color": "#333d47",
+      "border-color": "#4a5568"
     },
     "html.theme-cp.dark .floating-nav__btn--secondary": {
       "color": "#59acff",

@@ -285,7 +285,7 @@
     ]
   },
   "_metadata": {
-    "lastGenerated": "2026-01-22T00:40:21.842Z",
+    "lastGenerated": "2026-01-22T01:32:45.247Z",
     "generatedWith": "@astrojs/compiler@2.13.0",
     "includesVisualSpecs": true
   },
@@ -381,74 +381,298 @@
     "colors": {
       "variants": {
         "info": {
-          "light": {
-            "default": {
-              "background": "rgba(51, 102, 255, 0.1)",
-              "text": null,
-              "border": "rgba(51, 102, 255, 0.3)",
-              "iconColor": null
+          "cp": {
+            "light": {
+              "default": {
+                "background": "rgba(51, 102, 255, 0.1)",
+                "text": null,
+                "border": "rgba(51, 102, 255, 0.3)",
+                "iconColor": null
+              }
+            },
+            "dark": {
+              "default": {
+                "background": "rgba(0, 173, 253, 0.1)",
+                "text": null,
+                "border": "rgba(0, 173, 253, 0.3)",
+                "iconColor": null
+              }
             }
           },
-          "dark": {
-            "default": {
-              "background": "rgba(0, 173, 253, 0.1)",
-              "text": null,
-              "border": "rgba(0, 173, 253, 0.3)",
-              "iconColor": null
+          "vp": {
+            "light": {
+              "default": {
+                "background": "rgba(51, 102, 255, 0.1)",
+                "text": null,
+                "border": "rgba(51, 102, 255, 0.3)",
+                "iconColor": null
+              }
+            },
+            "dark": {
+              "default": {
+                "background": "rgba(0, 173, 253, 0.1)",
+                "text": null,
+                "border": "rgba(0, 173, 253, 0.3)",
+                "iconColor": null
+              }
+            }
+          },
+          "ppm": {
+            "light": {
+              "default": {
+                "background": "rgba(51, 102, 255, 0.1)",
+                "text": null,
+                "border": "rgba(51, 102, 255, 0.3)",
+                "iconColor": null
+              }
+            },
+            "dark": {
+              "default": {
+                "background": "rgba(0, 173, 253, 0.1)",
+                "text": null,
+                "border": "rgba(0, 173, 253, 0.3)",
+                "iconColor": null
+              }
+            }
+          },
+          "maconomy": {
+            "light": {
+              "default": {
+                "background": "rgba(51, 102, 255, 0.1)",
+                "text": null,
+                "border": "rgba(51, 102, 255, 0.3)",
+                "iconColor": null
+              }
+            },
+            "dark": {
+              "default": {
+                "background": "rgba(0, 173, 253, 0.1)",
+                "text": null,
+                "border": "rgba(0, 173, 253, 0.3)",
+                "iconColor": null
+              }
             }
           }
         },
         "success": {
-          "light": {
-            "default": {
-              "background": "rgba(23, 168, 113, 0.1)",
-              "text": null,
-              "border": "rgba(23, 168, 113, 0.3)",
-              "iconColor": null
+          "cp": {
+            "light": {
+              "default": {
+                "background": "rgba(23, 168, 113, 0.1)",
+                "text": null,
+                "border": "rgba(23, 168, 113, 0.3)",
+                "iconColor": null
+              }
+            },
+            "dark": {
+              "default": {
+                "background": "rgba(0, 231, 142, 0.1)",
+                "text": null,
+                "border": "rgba(0, 231, 142, 0.3)",
+                "iconColor": null
+              }
             }
           },
-          "dark": {
-            "default": {
-              "background": "rgba(0, 231, 142, 0.1)",
-              "text": null,
-              "border": "rgba(0, 231, 142, 0.3)",
-              "iconColor": null
+          "vp": {
+            "light": {
+              "default": {
+                "background": "rgba(23, 168, 113, 0.1)",
+                "text": null,
+                "border": "rgba(23, 168, 113, 0.3)",
+                "iconColor": null
+              }
+            },
+            "dark": {
+              "default": {
+                "background": "rgba(0, 231, 142, 0.1)",
+                "text": null,
+                "border": "rgba(0, 231, 142, 0.3)",
+                "iconColor": null
+              }
+            }
+          },
+          "ppm": {
+            "light": {
+              "default": {
+                "background": "rgba(23, 168, 113, 0.1)",
+                "text": null,
+                "border": "rgba(23, 168, 113, 0.3)",
+                "iconColor": null
+              }
+            },
+            "dark": {
+              "default": {
+                "background": "rgba(0, 231, 142, 0.1)",
+                "text": null,
+                "border": "rgba(0, 231, 142, 0.3)",
+                "iconColor": null
+              }
+            }
+          },
+          "maconomy": {
+            "light": {
+              "default": {
+                "background": "rgba(23, 168, 113, 0.1)",
+                "text": null,
+                "border": "rgba(23, 168, 113, 0.3)",
+                "iconColor": null
+              }
+            },
+            "dark": {
+              "default": {
+                "background": "rgba(0, 231, 142, 0.1)",
+                "text": null,
+                "border": "rgba(0, 231, 142, 0.3)",
+                "iconColor": null
+              }
             }
           }
         },
         "warning": {
-          "light": {
-            "default": {
-              "background": "rgba(255, 176, 32, 0.1)",
-              "text": null,
-              "border": "rgba(255, 176, 32, 0.2)",
-              "iconColor": null
+          "cp": {
+            "light": {
+              "default": {
+                "background": "rgba(255, 176, 32, 0.1)",
+                "text": null,
+                "border": "rgba(255, 176, 32, 0.2)",
+                "iconColor": null
+              }
+            },
+            "dark": {
+              "default": {
+                "background": "rgba(249, 175, 0, 0.1)",
+                "text": null,
+                "border": "rgba(249, 175, 0, 0.2)",
+                "iconColor": null
+              }
             }
           },
-          "dark": {
-            "default": {
-              "background": "rgba(249, 175, 0, 0.1)",
-              "text": null,
-              "border": "rgba(249, 175, 0, 0.2)",
-              "iconColor": null
+          "vp": {
+            "light": {
+              "default": {
+                "background": "rgba(255, 176, 32, 0.1)",
+                "text": null,
+                "border": "rgba(255, 176, 32, 0.2)",
+                "iconColor": null
+              }
+            },
+            "dark": {
+              "default": {
+                "background": "rgba(249, 175, 0, 0.1)",
+                "text": null,
+                "border": "rgba(249, 175, 0, 0.2)",
+                "iconColor": null
+              }
+            }
+          },
+          "ppm": {
+            "light": {
+              "default": {
+                "background": "rgba(255, 176, 32, 0.1)",
+                "text": null,
+                "border": "rgba(255, 176, 32, 0.2)",
+                "iconColor": null
+              }
+            },
+            "dark": {
+              "default": {
+                "background": "rgba(249, 175, 0, 0.1)",
+                "text": null,
+                "border": "rgba(249, 175, 0, 0.2)",
+                "iconColor": null
+              }
+            }
+          },
+          "maconomy": {
+            "light": {
+              "default": {
+                "background": "rgba(255, 176, 32, 0.1)",
+                "text": null,
+                "border": "rgba(255, 176, 32, 0.2)",
+                "iconColor": null
+              }
+            },
+            "dark": {
+              "default": {
+                "background": "rgba(249, 175, 0, 0.1)",
+                "text": null,
+                "border": "rgba(249, 175, 0, 0.2)",
+                "iconColor": null
+              }
             }
           }
         },
         "error": {
-          "light": {
-            "default": {
-              "background": "rgba(216, 49, 72, 0.1)",
-              "text": null,
-              "border": "rgba(216, 49, 72, 0.2)",
-              "iconColor": null
+          "cp": {
+            "light": {
+              "default": {
+                "background": "rgba(216, 49, 72, 0.1)",
+                "text": null,
+                "border": "rgba(216, 49, 72, 0.2)",
+                "iconColor": null
+              }
+            },
+            "dark": {
+              "default": {
+                "background": "rgba(244, 98, 134, 0.1)",
+                "text": null,
+                "border": "rgba(244, 98, 134, 0.2)",
+                "iconColor": null
+              }
             }
           },
-          "dark": {
-            "default": {
-              "background": "rgba(244, 98, 134, 0.1)",
-              "text": null,
-              "border": "rgba(244, 98, 134, 0.2)",
-              "iconColor": null
+          "vp": {
+            "light": {
+              "default": {
+                "background": "rgba(216, 49, 72, 0.1)",
+                "text": null,
+                "border": "rgba(216, 49, 72, 0.2)",
+                "iconColor": null
+              }
+            },
+            "dark": {
+              "default": {
+                "background": "rgba(244, 98, 134, 0.1)",
+                "text": null,
+                "border": "rgba(244, 98, 134, 0.2)",
+                "iconColor": null
+              }
+            }
+          },
+          "ppm": {
+            "light": {
+              "default": {
+                "background": "rgba(216, 49, 72, 0.1)",
+                "text": null,
+                "border": "rgba(216, 49, 72, 0.2)",
+                "iconColor": null
+              }
+            },
+            "dark": {
+              "default": {
+                "background": "rgba(244, 98, 134, 0.1)",
+                "text": null,
+                "border": "rgba(244, 98, 134, 0.2)",
+                "iconColor": null
+              }
+            }
+          },
+          "maconomy": {
+            "light": {
+              "default": {
+                "background": "rgba(216, 49, 72, 0.1)",
+                "text": null,
+                "border": "rgba(216, 49, 72, 0.2)",
+                "iconColor": null
+              }
+            },
+            "dark": {
+              "default": {
+                "background": "rgba(244, 98, 134, 0.1)",
+                "text": null,
+                "border": "rgba(244, 98, 134, 0.2)",
+                "iconColor": null
+              }
             }
           }
         }
@@ -484,7 +708,6 @@
       }
     }
   },
-  "themeOverrides": {},
   "accessibility": {
     "role": null,
     "tabIndex": null,

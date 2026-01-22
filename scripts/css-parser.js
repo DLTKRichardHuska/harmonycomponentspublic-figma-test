@@ -268,6 +268,7 @@ function getVariantProp(componentProps) {
 
 /**
  * Extract component-specific styles by CSS class selectors
+ * Uses exact class matching to prevent false matches
  */
 export function extractComponentStyles(componentName, cssClasses, parsedCSS, variableMap) {
   const styles = {};
@@ -278,6 +279,7 @@ export function extractComponentStyles(componentName, cssClasses, parsedCSS, var
 
   // Get component prefix for precise matching
   const classPrefix = getClassPrefix(componentName);
+  const themes = ['cp', 'vp', 'ppm', 'maconomy'];
   
   // Build a set of valid class names for this component
   const validClasses = new Set();
@@ -289,36 +291,66 @@ export function extractComponentStyles(componentName, cssClasses, parsedCSS, var
     }
   }
 
+  // Helper function to check if selector matches exact class prefix (not substring)
+  const matchesExactClass = (selector, prefix) => {
+    // Match patterns like: .prefix, .prefix--modifier, .prefix:hover, .prefix.is-open
+    // But NOT: .other-prefix, .prefix__other, .other__prefix
+    const exactPattern = new RegExp(`\\.${prefix.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}(--|__|:|$|\\.)`);
+    return exactPattern.test(selector);
+  };
+
   // Find all rules that match the component's classes
   componentsCss.walkRules((rule) => {
     const selector = rule.selector;
     
+    // Check for theme-specific rules (e.g., .theme-cp .input, html.theme-cp.dark .input)
+    let isThemeSpecific = false;
+    let themeSelector = null;
+    
+    for (const theme of themes) {
+      if (selector.includes(`.theme-${theme}`) || selector.includes(`html.theme-${theme}`)) {
+        // Extract the actual class from theme selector (e.g., .theme-cp .input -> .input)
+        const themeMatch = selector.match(new RegExp(`\\.theme-${theme}\\s+(\\.\\S+)`)) ||
+                          selector.match(new RegExp(`html\\.theme-${theme}(?:\\.dark)?\\s+(\\.\\S+)`));
+        if (themeMatch && themeMatch[1]) {
+          themeSelector = themeMatch[1];
+          // Check if this matches our component using exact matching
+          if (themeSelector === `.${classPrefix}` || 
+              (themeSelector.startsWith(`.${classPrefix}--`) && matchesExactClass(themeSelector, classPrefix)) ||
+              (themeSelector.startsWith(`.${classPrefix}__`) && matchesExactClass(themeSelector, classPrefix)) ||
+              Array.from(validClasses).some(cls => themeSelector === `.${cls}` || (themeSelector.startsWith(`.${cls}`) && matchesExactClass(themeSelector, cls)))) {
+            isThemeSpecific = true;
+            break;
+          }
+        }
+      }
+    }
+    
     // Match selectors that belong to this component specifically
     // Match patterns like: .accordion, .accordion__item, .accordion__trigger, etc.
-    // But exclude: .some-other-accordion, .btn (which contains "on" but isn't accordion)
+    // But exclude: .some-other-accordion, .number-input__btn (for Button component)
     const isComponentSelector = 
       // Exact match: .prefix
       selector === `.${classPrefix}` ||
-      // BEM modifier: .prefix--modifier
-      selector.startsWith(`.${classPrefix}--`) ||
-      // BEM element: .prefix__element
-      selector.startsWith(`.${classPrefix}__`) ||
-      // Pseudo-classes: .prefix:hover, .prefix:active, etc.
-      selector.startsWith(`.${classPrefix}:`) ||
-      // State classes: .prefix.is-open, .prefix.disabled, etc.
-      selector.startsWith(`.${classPrefix}.`) ||
-      // Combined: .prefix__element:hover, .prefix__element.is-open, etc.
-      selector.includes(`.${classPrefix}__`) ||
-      // Check if selector contains any of the valid classes
+      // BEM modifier: .prefix--modifier (with exact matching)
+      (selector.startsWith(`.${classPrefix}--`) && matchesExactClass(selector, classPrefix)) ||
+      // BEM element: .prefix__element (with exact matching)
+      (selector.startsWith(`.${classPrefix}__`) && matchesExactClass(selector, classPrefix)) ||
+      // Pseudo-classes: .prefix:hover, .prefix:active, etc. (with exact matching)
+      (selector.startsWith(`.${classPrefix}:`) && matchesExactClass(selector, classPrefix)) ||
+      // State classes: .prefix.is-open, .prefix.disabled, etc. (with exact matching)
+      (selector.startsWith(`.${classPrefix}.`) && matchesExactClass(selector, classPrefix)) ||
+      // Combined: .prefix__element:hover, .prefix__element.is-open, etc. (with exact matching)
+      (selector.includes(`.${classPrefix}__`) && matchesExactClass(selector, classPrefix)) ||
+      // Check if selector contains any of the valid classes (with exact matching)
       Array.from(validClasses).some(cls => {
-        // Match exact class or class with modifiers (e.g., .accordion__item, .accordion__item.is-open)
         return selector === `.${cls}` || 
-               selector.startsWith(`.${cls}`) ||
-               selector.includes(`.${cls}:`) ||
-               selector.includes(`.${cls}.`);
+               (selector.startsWith(`.${cls}`) && matchesExactClass(selector, cls)) ||
+               (selector.includes(`.${cls}:`) && matchesExactClass(selector, cls)) ||
+               (selector.includes(`.${cls}.`) && matchesExactClass(selector, cls));
       });
 
-    if (isComponentSelector) {
+    if (isComponentSelector || isThemeSpecific) {
       if (!styles[selector]) {
         styles[selector] = {};
       }
@@ -328,14 +360,19 @@ export function extractComponentStyles(componentName, cssClasses, parsedCSS, var
         const prop = decl.prop;
         const value = decl.value;
         
-        // Resolve CSS variables for CP theme light and dark modes
-        const resolvedLight = getResolvedValue(value, variableMap, 'cp-light');
-        const resolvedDark = getResolvedValue(value, variableMap, 'cp-dark');
-
+        // Resolve for all themes
+        const resolved = {};
+        for (const theme of themes) {
+          resolved[`${theme}-light`] = getResolvedValue(value, variableMap, `${theme}-light`);
+          resolved[`${theme}-dark`] = getResolvedValue(value, variableMap, `${theme}-dark`);
+        }
+        
+        // Store with backward compatibility: light/dark as aliases to cp-light/cp-dark
         styles[selector][prop] = {
           raw: value,
-          light: resolvedLight,
-          dark: resolvedDark
+          light: resolved['cp-light'], // Backward compatibility
+          dark: resolved['cp-dark'],   // Backward compatibility
+          ...resolved
         };
       });
     }
@@ -378,6 +415,7 @@ export function extractSizeVariants(componentName, parsedCSS, variableMap) {
 
 /**
  * Extract variant colors (primary, secondary, etc.)
+ * Returns structure: variants[variantName][theme][mode][state]
  */
 export function extractVariantColors(componentName, parsedCSS, variableMap, componentProps = null) {
   const variants = {};
@@ -385,6 +423,7 @@ export function extractVariantColors(componentName, parsedCSS, variableMap, comp
   if (!componentsCss) return variants;
 
   const classPrefix = getClassPrefix(componentName);
+  const themes = ['cp', 'vp', 'ppm', 'maconomy'];
   
   // Extract variant names from component props if available
   let variantNames = [];
@@ -404,6 +443,14 @@ export function extractVariantColors(componentName, parsedCSS, variableMap, comp
   const isButton = componentName === 'Button';
   const isButtonGroup = componentName === 'ButtonGroup';
   const pageHeaderPattern = isButton ? `.${classPrefix}--page-header` : null;
+
+  // Helper function to check if selector matches exact class prefix (not substring)
+  const matchesExactClass = (selector, prefix) => {
+    // Match patterns like: .prefix, .prefix--modifier, .prefix:hover, .prefix.is-open
+    // But NOT: .other-prefix, .prefix__other, .other__prefix
+    const exactPattern = new RegExp(`\\.${prefix.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}(--|__|:|$|\\.)`);
+    return exactPattern.test(selector);
+  };
 
   componentsCss.walkRules((rule) => {
     const selector = rule.selector;
@@ -438,6 +485,23 @@ export function extractVariantColors(componentName, parsedCSS, variableMap, comp
       // Only exclude button-group pattern when extracting Button variants, not ButtonGroup variants
       const shouldExcludeButtonGroup = !isButtonGroup && selector.includes(buttonGroupPattern);
       
+      // Check for theme-specific rules (e.g., .theme-cp .btn--secondary, html.theme-cp.dark .btn--secondary)
+      let matchedTheme = null;
+      let matchedMode = null;
+      for (const theme of themes) {
+        if (selector.includes(`.theme-${theme}`) || selector.includes(`html.theme-${theme}`)) {
+          if (matchesExactClass(selector, `${classPrefix}--${variantName}`)) {
+            matchedTheme = theme;
+            if (selector.includes('.dark') || selector.includes('html.theme-${theme}.dark')) {
+              matchedMode = 'dark';
+            } else {
+              matchedMode = 'light';
+            }
+            break;
+          }
+        }
+      }
+      
       if ((isRegularVariant || isPageHeaderApplicable) && 
           !selector.includes(moreSpecificPattern) && 
           !shouldExcludeButtonGroup) {
@@ -452,28 +516,42 @@ export function extractVariantColors(componentName, parsedCSS, variableMap, comp
         // Use different variant key for page header variants
         const variantKey = isPageHeaderVariant ? `pageHeader${variantName.charAt(0).toUpperCase() + variantName.slice(1)}` : variantName;
 
+        // Initialize variant structure if needed
         if (!variants[variantKey]) {
-          variants[variantKey] = { light: {}, dark: {} };
-        }
-
-        if (!variants[variantKey].light[state]) {
-          variants[variantKey].light[state] = {};
-        }
-        if (!variants[variantKey].dark[state]) {
-          variants[variantKey].dark[state] = {};
+          variants[variantKey] = {};
+          for (const theme of themes) {
+            variants[variantKey][theme] = { light: {}, dark: {} };
+          }
         }
 
         rule.walkDecls((decl) => {
           const prop = decl.prop;
           const value = decl.value;
 
-          // Resolve for light and dark modes using CP theme as default
-          // (CP is the primary theme, and specs should reflect actual theme values)
-          const resolvedLight = getResolvedValue(value, variableMap, 'cp-light');
-          const resolvedDark = getResolvedValue(value, variableMap, 'cp-dark');
-
-          variants[variantKey].light[state][prop] = resolvedLight;
-          variants[variantKey].dark[state][prop] = resolvedDark;
+          if (matchedTheme) {
+            // Theme-specific rule: only extract for this theme
+            if (!variants[variantKey][matchedTheme][matchedMode][state]) {
+              variants[variantKey][matchedTheme][matchedMode][state] = {};
+            }
+            const resolved = getResolvedValue(value, variableMap, `${matchedTheme}-${matchedMode}`);
+            variants[variantKey][matchedTheme][matchedMode][state][prop] = resolved;
+          } else {
+            // Base rule: extract for all themes by resolving with each theme context
+            for (const theme of themes) {
+              if (!variants[variantKey][theme].light[state]) {
+                variants[variantKey][theme].light[state] = {};
+              }
+              if (!variants[variantKey][theme].dark[state]) {
+                variants[variantKey][theme].dark[state] = {};
+              }
+              
+              const resolvedLight = getResolvedValue(value, variableMap, `${theme}-light`);
+              const resolvedDark = getResolvedValue(value, variableMap, `${theme}-dark`);
+              
+              variants[variantKey][theme].light[state][prop] = resolvedLight;
+              variants[variantKey][theme].dark[state][prop] = resolvedDark;
+            }
+          }
         });
       }
     }
@@ -541,35 +619,3 @@ function getClassPrefix(componentName) {
   return prefixMap[componentName] || componentName.toLowerCase();
 }
 
-/**
- * Extract theme-specific overrides (CP vs others)
- */
-export function extractThemeOverrides(componentName, parsedCSS, variableMap) {
-  const overrides = { cp: {}, vp: {}, ppm: {}, maconomy: {} };
-  const componentsCss = parsedCSS['components.css'];
-  if (!componentsCss) return overrides;
-
-  const classPrefix = getClassPrefix(componentName);
-
-  componentsCss.walkRules((rule) => {
-    const selector = rule.selector;
-
-    // Check for theme-specific rules
-    for (const theme of ['cp', 'vp', 'ppm', 'maconomy']) {
-      if (selector.includes(`.theme-${theme}`) && selector.includes(classPrefix)) {
-        rule.walkDecls((decl) => {
-          const prop = decl.prop;
-          const value = decl.value;
-
-          overrides[theme][prop] = {
-            raw: value,
-            light: getResolvedValue(value, variableMap, `${theme}-light`),
-            dark: getResolvedValue(value, variableMap, `${theme}-dark`)
-          };
-        });
-      }
-    }
-  });
-
-  return overrides;
-}

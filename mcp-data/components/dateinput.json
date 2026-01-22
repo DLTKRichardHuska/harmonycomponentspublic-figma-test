@@ -249,7 +249,7 @@
     ]
   },
   "_metadata": {
-    "lastGenerated": "2026-01-22T00:40:21.940Z",
+    "lastGenerated": "2026-01-22T01:32:45.392Z",
     "generatedWith": "@astrojs/compiler@2.13.0",
     "includesVisualSpecs": true
   },
@@ -363,77 +363,6 @@
     },
     "iconSpecs": null
   },
-  "themeOverrides": {
-    "cp": {
-      "customStyles": {
-        "display": {
-          "raw": "flex",
-          "light": "flex",
-          "dark": "flex"
-        },
-        "flex-direction": {
-          "raw": "row",
-          "light": "row",
-          "dark": "row"
-        },
-        "align-items": {
-          "raw": "center",
-          "light": "center",
-          "dark": "center"
-        },
-        "gap": {
-          "raw": "4px",
-          "light": "4px",
-          "dark": "4px"
-        },
-        "margin-bottom": {
-          "raw": "0",
-          "light": "0",
-          "dark": "0"
-        },
-        "white-space": {
-          "raw": "nowrap",
-          "light": "nowrap",
-          "dark": "nowrap"
-        },
-        "padding-right": {
-          "raw": "32px",
-          "light": "32px",
-          "dark": "32px"
-        },
-        "right": {
-          "raw": "8px",
-          "light": "8px",
-          "dark": "8px"
-        },
-        "top": {
-          "raw": "calc(50% + 0.5px)",
-          "light": "calc(50% + 0.5px)",
-          "dark": "calc(50% + 0.5px)"
-        },
-        "height": {
-          "raw": "20px",
-          "light": "20px",
-          "dark": "20px"
-        },
-        "padding": {
-          "raw": "0 8px",
-          "light": "0 8px",
-          "dark": "0 8px"
-        },
-        "font-size": {
-          "raw": "0.75rem",
-          "light": "0.75rem",
-          "dark": "0.75rem"
-        },
-        "line-height": {
-          "raw": "20px",
-          "light": "20px",
-          "dark": "20px"
-        }
-      }
-    }
-  },
   "accessibility": {
     "role": null,
     "tabIndex": null,
@@ -506,6 +435,13 @@
     ".date-input-wrapper__icon:disabled": {
       "cursor": "not-allowed",
       "opacity": "0.5"
+    },
+    ".theme-cp .date-input": {
+      "padding-right": "32px"
+    },
+    ".theme-cp .date-input-wrapper__icon": {
+      "right": "8px",
+      "top": "calc(50% + 0.5px)"
     }
   }
 }

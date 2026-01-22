@@ -129,7 +129,6 @@ async function generateComponentData(componentPath, cssSpacingMap, parsedCSS, va
       
       // Merge visual specs into component data
       componentData.visualSpecifications = visualSpecs.visualSpecifications;
-      componentData.themeOverrides = visualSpecs.themeOverrides;
       componentData.accessibility = visualSpecs.accessibility;
       componentData.cssClassStyles = visualSpecs.cssClassStyles;
       

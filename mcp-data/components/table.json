@@ -170,7 +170,7 @@
     "children": []
   },
   "_metadata": {
-    "lastGenerated": "2026-01-22T00:40:22.176Z",
+    "lastGenerated": "2026-01-22T01:32:45.764Z",
     "generatedWith": "@astrojs/compiler@2.13.0",
     "includesVisualSpecs": true
   },
@@ -287,7 +287,6 @@
     },
     "iconSpecs": null
   },
-  "themeOverrides": {},
   "accessibility": {
     "role": null,
     "tabIndex": null,
@@ -435,11 +434,6 @@
     },
     ".table-wrapper:has(.table__action-bar):not(:has(.table__title-bar)) .table thead tr:first-child th": {
       "border-top": "none"
-    },
-    ".table-wrapper,\n  .overflow-x-auto:has(.table)": {
-      "overflow-x": "auto",
-      "-webkit-overflow-scrolling": "touch",
-      "width": "100%"
     }
   }
 }

@@ -166,7 +166,7 @@
     "children": []
   },
   "_metadata": {
-    "lastGenerated": "2026-01-22T00:40:22.015Z",
+    "lastGenerated": "2026-01-22T01:32:45.507Z",
     "generatedWith": "@astrojs/compiler@2.13.0",
     "includesVisualSpecs": true
   },
@@ -199,31 +199,31 @@
     },
     "spacing": {
       "xs": {
-        "paddingTop": "12px",
-        "paddingRight": "12px",
-        "paddingBottom": "12px",
-        "paddingLeft": "12px",
+        "paddingTop": "8px",
+        "paddingRight": "8px",
+        "paddingBottom": "8px",
+        "paddingLeft": "8px",
         "gap": "16px"
       },
       "sm": {
-        "paddingTop": "12px",
-        "paddingRight": "12px",
-        "paddingBottom": "12px",
-        "paddingLeft": "12px",
+        "paddingTop": "8px",
+        "paddingRight": "8px",
+        "paddingBottom": "8px",
+        "paddingLeft": "8px",
         "gap": "16px"
       },
       "md": {
-        "paddingTop": "12px",
-        "paddingRight": "12px",
-        "paddingBottom": "12px",
-        "paddingLeft": "12px",
+        "paddingTop": "8px",
+        "paddingRight": "8px",
+        "paddingBottom": "8px",
+        "paddingLeft": "8px",
         "gap": "16px"
       },
       "lg": {
-        "paddingTop": "12px",
-        "paddingRight": "12px",
-        "paddingBottom": "12px",
-        "paddingLeft": "12px",
+        "paddingTop": "8px",
+        "paddingRight": "8px",
+        "paddingBottom": "8px",
+        "paddingLeft": "8px",
         "gap": "16px"
       }
     },
@@ -275,14 +275,12 @@
     },
     "layout": {
       "display": "flex",
-      "flexDirection": "column",
       "alignItems": "center",
       "justifyContent": "space-between",
       "flexShrink": "0"
     },
     "iconSpecs": null
   },
-  "themeOverrides": {},
   "accessibility": {
     "role": null,
     "tabIndex": null,
@@ -298,12 +296,6 @@
     ".kanban-card:hover": {
       "transform": "translateY(-2px)",
       "box-shadow": "0 4px 6px -1px rgb(15 23 42 / 0.1), 0 2px 4px -2px rgb(15 23 42 / 0.1)"
-    },
-    ".kanban-card .card__body": {
-      "padding": "12px",
-      "display": "flex",
-      "flex-direction": "column",
-      "gap": "12px"
     },
     ".kanban-card__header": {
       "display": "flex",
