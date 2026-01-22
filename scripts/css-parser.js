@@ -536,13 +536,10 @@ export function extractVariantColors(componentName, parsedCSS, variableMap, comp
   const classPrefix = getClassPrefix(componentName);
   const themes = ['cp', 'vp', 'ppm', 'maconomy'];
   
-  // Component-specific configuration
-  const themeSelectionOnly = ['LeftSidebar', 'RightSidebar'];
-  if (themeSelectionOnly.includes(componentName)) {
-    // These components use variant for theme selection, not visual styling
-    // Return empty variants object (correct behavior)
-    return variants;
-  }
+  // Note: LeftSidebar and RightSidebar DO have variants (cp, vp, ppm, maconomy)
+  // These represent different product configurations (e.g., CP has 2 sections, others have 1)
+  // CPLeftSidebar/CPRightSidebar are convenience components that hardcode variant="cp"
+  // So we extract these variants normally - they are product variants, not just theme selection
   
   // Extract variant names from component props
   const variantProps = componentProps ? getAllVariantProps(componentProps) : [];

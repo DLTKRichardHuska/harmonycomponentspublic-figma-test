@@ -1,0 +1,401 @@
+---
+import DocsLayout from '../../layouts/DocsLayout.astro';
+import ExampleSection from '../../components/ExampleSection.astro';
+import RightSidebar from '../../components/ui/RightSidebar.astro';
+import ShellPanel from '../../components/ui/ShellPanel.astro';
+import Icon from '../../components/ui/Icon.astro';
+import Button from '../../components/ui/Button.astro';
+
+// Custom sections for Dela demo with panel configuration
+const delaDemoSections = [
+  {
+    items: [
+      { 
+        label: 'Dela AI', 
+        isCustom: true, 
+        customSrc: '/logos/DelaD.svg',
+        panelTitle: 'Dela AI',
+        useGradientHeader: true
+      },
+      { icon: 'bell', label: 'Notifications' },
+      { icon: 'arrow-up-tray', label: 'Files' },
+    ],
+  },
+  {
+    items: [
+      { icon: 'printer', label: 'Print' },
+      { icon: 'view-columns', label: 'Layout Options' },
+    ],
+  },
+  {
+    items: [
+      { icon: 'mic-slash', label: 'Microphone' },
+      { icon: 'signal-slash', label: 'Offline' },
+      { icon: 'command-line', label: 'Keyboard Shortcuts' },
+      { icon: 'question-mark-circle', label: 'Help' },
+    ],
+  },
+];
+---
+
+<DocsLayout title="Dela" description="Documentation for the AI Dela panel usage in the right sidebar and AI interaction guidelines.">
+  <article class="space-y-12">
+    <header class="page-header page-header--compact">
+      <div class="flex items-center gap-3 mb-4">
+        <h1 class="page-header__title page-header__title--sm">Dela</h1>
+        <span class="badge badge--primary">Foundation</span>
+      </div>
+      <p class="page-header__description">
+        The Dela AI panel provides contextual AI assistance through a slideout panel accessible from the right sidebar. This page documents the panel usage, behavior, and AI interaction guidelines.
+      </p>
+    </header>
+
+    <nav class="article-nav">
+      <a href="#demo" class="article-nav__link"><Icon name="eye" size="sm" /> Demo</a>
+      <a href="#panel-usage" class="article-nav__link"><Icon name="window" size="sm" /> Panel Usage</a>
+      <a href="#ai-guidelines" class="article-nav__link"><Icon name="sparkles" size="sm" /> AI Guidelines</a>
+      <a href="#accessibility" class="article-nav__link"><Icon name="check-badge" size="sm" /> Accessibility</a>
+    </nav>
+
+    <section id="demo" class="space-y-8">
+      <h2 class="section__title">Live Demo</h2>
+      <p class="text-secondary text-sm">
+        The Dela AI panel is accessible from the right sidebar. Click the Dela icon (first icon in the sidebar) to open the panel. Switch themes using the picker in the top header to see how the panel adapts across all themes.
+      </p>
+
+      <ExampleSection title="Dela Panel - Right Sidebar Integration" description="The Dela icon appears as the first item in the right sidebar across all themes. Click it to open the AI panel with a gradient header.">
+        <div class="dela-demo-container">
+          <div class="dela-demo-content">
+            <p class="text-secondary text-sm mb-4">
+              The right sidebar is docked to the right edge. Hover over it to see the expanded state with labels, then click the Dela icon to open the panel.
+            </p>
+            <p class="text-secondary text-sm mb-2">
+              <strong>Key Features:</strong>
+            </p>
+            <ul class="list-disc list-inside text-sm text-secondary space-y-1 mb-4">
+              <li>Dela icon appears first in all themes (CP, VP, PPM, Maconomy)</li>
+              <li>Panel slides out from the right side</li>
+              <li>Gradient header automatically applied for Dela panel</li>
+              <li>Panel maintains sidebar icon positions when open</li>
+            </ul>
+            <Button 
+              variant="outline" 
+              size="sm" 
+              onclick="window.openDelaPanel()"
+            >
+              Open Dela Panel
+            </Button>
+          </div>
+          
+          <div class="dela-demo-sidebar">
+            <RightSidebar variant="cp" sections={delaDemoSections} />
+          </div>
+        </div>
+
+        <ShellPanel
+          side="right"
+          open={false}
+          title="Dela AI"
+          headerVariant="theme"
+          width="narrow"
+          id="dela-demo-panel"
+          class="dela-demo-panel"
+        >
+          <div style="padding: var(--space-4);">
+            <div class="space-y-4">
+              <p class="text-secondary">
+                Welcome to Dela AI. This panel provides contextual AI assistance throughout the application.
+              </p>
+              <div class="card">
+                <div class="card__body">
+                  <h3 class="text-lg font-semibold text-primary mb-2">AI Features</h3>
+                  <ul class="list-disc list-inside text-sm text-secondary space-y-1">
+                    <li>Contextual assistance based on current page</li>
+                    <li>Natural language interactions</li>
+                    <li>Smart suggestions and recommendations</li>
+                    <li>Task automation support</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </ShellPanel>
+      </ExampleSection>
+    </section>
+
+    <section id="panel-usage" class="space-y-6">
+      <h2 class="section__title">Panel Usage</h2>
+      
+      <div class="space-y-6">
+        <div>
+          <h3 class="text-lg font-semibold text-primary mb-2">Accessing the Dela Panel</h3>
+          <p class="text-sm text-secondary mb-4">
+            The Dela AI panel is accessible from the right sidebar in all themes. The Dela icon (DelaD.svg) appears as the first icon in the first section of the right sidebar.
+          </p>
+          <ul class="space-y-2 text-sm text-secondary">
+            <li>• <strong>Location:</strong> Right sidebar, first icon in Section 1</li>
+            <li>• <strong>Icon:</strong> DelaD.svg (36px circular logo)</li>
+            <li>• <strong>Label:</strong> "Dela AI" (visible on hover when sidebar expands)</li>
+            <li>• <strong>Activation:</strong> Click the icon to open the panel</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-lg font-semibold text-primary mb-2">Panel Behavior</h3>
+          <div class="grid gap-4 md:grid-cols-2">
+            <div class="a11y-card">
+              <h4 class="a11y-card__title">
+                <Icon name="arrows-pointing-out" size="sm" class="a11y-card__title-icon" />
+                Slide Animation
+              </h4>
+              <p class="a11y-card__text">
+                The panel slides out from the right edge of the screen, overlaying the main content while maintaining the sidebar icon positions.
+              </p>
+            </div>
+            
+            <div class="a11y-card">
+              <h4 class="a11y-card__title">
+                <Icon name="squares-2x2" size="sm" class="a11y-card__title-icon" />
+                Gradient Header
+              </h4>
+              <p class="a11y-card__text">
+                The Dela panel automatically uses a gradient header variant, providing visual distinction and emphasizing the AI functionality.
+              </p>
+            </div>
+            
+            <div class="a11y-card">
+              <h4 class="a11y-card__title">
+                <Icon name="window" size="sm" class="a11y-card__title-icon" />
+                Panel Width
+              </h4>
+              <p class="a11y-card__text">
+                Default width is narrow (596px) for focused interactions. Users can toggle to full width (100vw) using the maximize button in the header.
+              </p>
+            </div>
+            
+            <div class="a11y-card">
+              <h4 class="a11y-card__title">
+                <Icon name="x-mark" size="sm" class="a11y-card__title-icon" />
+                Closing the Panel
+              </h4>
+              <p class="a11y-card__text">
+                Close the panel using the close button in the header, clicking outside the panel, or pressing the Escape key.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="text-lg font-semibold text-primary mb-2">Integration with Right Sidebar</h3>
+          <p class="text-sm text-secondary mb-4">
+            The Dela panel integrates seamlessly with the right sidebar component:
+          </p>
+          <ul class="space-y-2 text-sm text-secondary">
+            <li>• <strong>Automatic Detection:</strong> The RightSidebar component automatically detects the Dela AI item by checking for "Dela AI" title or DelaD.svg image</li>
+            <li>• <strong>Gradient Header:</strong> When Dela is clicked, the panel header automatically receives the gradient styling</li>
+            <li>• <strong>Active State:</strong> The Dela icon in the sidebar shows an active state when the panel is open</li>
+            <li>• <strong>Theme Support:</strong> Works consistently across all themes (CP, VP, PPM, Maconomy)</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-lg font-semibold text-primary mb-2">Panel Features</h3>
+          <div class="card">
+            <div class="card__body">
+              <ul class="space-y-2 text-sm text-secondary">
+                <li>• <strong>Header Actions:</strong> Maximize/minimize toggle, popout button, and close button</li>
+                <li>• <strong>Content Area:</strong> Flexible content slot for AI interface, chat, suggestions, or contextual tools</li>
+                <li>• <strong>Dynamic Content:</strong> Panel content can be updated dynamically based on context or user interactions</li>
+                <li>• <strong>Keyboard Navigation:</strong> Full keyboard support for all panel actions</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="ai-guidelines" class="space-y-6">
+      <h2 class="section__title">AI Guidelines</h2>
+      
+      <div class="space-y-6">
+        <div>
+          <h3 class="text-lg font-semibold text-primary mb-2">AI Interaction Patterns</h3>
+          <p class="text-sm text-secondary mb-4">
+            Guidelines for implementing AI interactions within the Dela panel and throughout the application.
+          </p>
+          <div class="card">
+            <div class="card__body">
+              <p class="text-secondary text-sm">
+                AI guidelines content will be added here. This section will cover best practices for AI interactions, content structure, user experience patterns, and implementation recommendations.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="text-lg font-semibold text-primary mb-2">Content Structure</h3>
+          <p class="text-sm text-secondary mb-4">
+            Recommended structure and organization for AI panel content.
+          </p>
+          <div class="card">
+            <div class="card__body">
+              <p class="text-secondary text-sm">
+                Content structure guidelines will be documented here, including recommendations for organizing AI features, chat interfaces, suggestions, and contextual tools.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="text-lg font-semibold text-primary mb-2">Best Practices</h3>
+          <p class="text-sm text-secondary mb-4">
+            Best practices for AI feature implementation and user experience.
+          </p>
+          <div class="guidelines">
+            <div class="guideline-card guideline-card--do">
+              <h3 class="guideline-card__header">
+                <Icon name="check" size="sm" /> Do
+              </h3>
+              <ul class="guideline-card__list">
+                <li>• Provide clear, contextual AI assistance</li>
+                <li>• Use natural language for interactions</li>
+                <li>• Show loading states during AI processing</li>
+                <li>• Offer clear explanations of AI capabilities</li>
+                <li>• Maintain consistent panel behavior</li>
+              </ul>
+            </div>
+            <div class="guideline-card guideline-card--dont">
+              <h3 class="guideline-card__header">
+                <Icon name="x-mark" size="sm" /> Don't
+              </h3>
+              <ul class="guideline-card__list">
+                <li>• Overwhelm users with too many options</li>
+                <li>• Hide AI limitations or errors</li>
+                <li>• Use AI for critical actions without confirmation</li>
+                <li>• Ignore accessibility requirements</li>
+                <li>• Break expected panel interaction patterns</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="accessibility" class="space-y-4">
+      <h2 class="section__title">Accessibility</h2>
+      
+      <div class="a11y-card">
+        <h3 class="a11y-card__title">
+          <Icon name="keyboard" size="sm" />
+          Keyboard Navigation
+        </h3>
+        <p class="a11y-card__text">
+          The Dela panel is fully keyboard accessible. Use <kbd>Tab</kbd> to navigate between interactive elements within the panel, <kbd>Enter</kbd> or <kbd>Space</kbd> to activate buttons, and <kbd>Escape</kbd> to close the panel.
+        </p>
+      </div>
+      
+      <div class="a11y-card">
+        <h3 class="a11y-card__title">
+          <Icon name="eye" size="sm" />
+          Screen Reader Support
+        </h3>
+        <p class="a11y-card__text">
+          The panel header uses semantic heading elements (<code>&lt;h2&gt;</code>) for proper screen reader navigation. All action buttons include descriptive <code>aria-label</code> attributes. Panel state (open/closed) is communicated to assistive technologies.
+        </p>
+      </div>
+      
+      <div class="a11y-card">
+        <h3 class="a11y-card__title">
+          <Icon name="cursor-arrow-rays" size="sm" />
+          Focus Management
+        </h3>
+        <p class="a11y-card__text">
+          When the Dela panel opens, focus moves to the panel content area. When closing, focus returns to the Dela icon in the right sidebar. Focus is trapped within the panel when it's open.
+        </p>
+      </div>
+      
+      <div class="a11y-card">
+        <h3 class="a11y-card__title">
+          <Icon name="hand-raised" size="sm" />
+          AI Content Accessibility
+        </h3>
+        <p class="a11y-card__text">
+          Ensure all AI-generated content is accessible to screen readers. Provide text alternatives for visual AI outputs, maintain proper heading hierarchy, and use semantic HTML for AI interactions.
+        </p>
+      </div>
+    </section>
+  </article>
+</DocsLayout>
+
+<style>
+  .dela-demo-container {
+    position: relative;
+    min-height: 500px;
+    background-color: var(--page-bg);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    overflow: hidden;
+    isolation: isolate;
+  }
+
+  .dela-demo-content {
+    position: relative;
+    z-index: 1;
+    margin-bottom: var(--space-4);
+  }
+
+  .dela-demo-sidebar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+  }
+
+  /* Override ShellPanel positioning for demo context */
+  .dela-demo-container :global(.dela-demo-panel) {
+    position: absolute !important;
+    top: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    z-index: 10 !important;
+  }
+</style>
+
+<script>
+  // Function to open Dela panel for demo
+  (function() {
+    // Declare function on window with proper typing
+    (window as any).openDelaPanel = function() {
+      const rightSidebar = document.querySelector('.right-sidebar') as HTMLElement | null;
+      const delaPanel = document.querySelector('#dela-demo-panel') as HTMLElement | null;
+      
+      if (!delaPanel || !rightSidebar) return;
+
+      // Find the Dela AI item in the sidebar
+      const delaItem = rightSidebar.querySelector('[data-right-sidebar-item]') as HTMLElement | null;
+      
+      if (delaItem) {
+        // Trigger click on Dela item
+        delaItem.click();
+      } else {
+        // Fallback: manually open the panel
+        delaPanel.classList.add('shell-panel--open');
+        delaPanel.setAttribute('data-open', 'true');
+        
+        // Apply gradient header
+        const panelHeader = delaPanel.querySelector('.shell-panel__header') as HTMLElement | null;
+        if (panelHeader) {
+          panelHeader.setAttribute('data-gradient-header', 'true');
+        }
+      }
+    };
+
+    // Initialize panel functionality on page load
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', () => {
+        // Panel initialization happens via RightSidebar component script
+      });
+    }
+  })();
+</script>
