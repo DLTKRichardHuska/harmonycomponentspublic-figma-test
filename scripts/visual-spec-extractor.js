@@ -350,6 +350,8 @@ function buildBorders(componentStyles, variableMap) {
 /**
  * Build colors object (most complex - includes all variants and states)
  * Structure: variants[variantName][theme][mode][state]
+ * 
+ * Enhanced to handle CSS inheritance: missing properties inherit from default state
  */
 function buildColors(variantColors, componentStyles, variableMap) {
   const colors = {
@@ -357,6 +359,7 @@ function buildColors(variantColors, componentStyles, variableMap) {
   };
 
   const themes = ['cp', 'vp', 'ppm', 'maconomy'];
+  const stateOrder = ['default', 'hover', 'active', 'focus', 'disabled'];
 
   // Map variant colors to structure
   // variantColors structure: variants[variantName][theme][mode][state]
@@ -375,43 +378,110 @@ function buildColors(variantColors, componentStyles, variableMap) {
         dark: {}
       };
 
-      // Map states for light mode
-      for (const [state, props] of Object.entries(themeData[theme].light || {})) {
-        colors.variants[variantName][theme].light[state] = {
+      // Helper function to build a state (without inheritance - will be applied in second pass)
+      const buildState = (state, props) => {
+        const stateData = {
           background: props['background-color'] || props['background'] || 'transparent',
-          text: props['color'] || null,
+          text: props['color'] !== undefined ? props['color'] : null,
           border: props['border-color'] || props['border'] || 'transparent',
-          iconColor: props['color'] || null
+          iconColor: props['color'] !== undefined ? props['color'] : null
         };
 
-        // Add state-specific properties
+        // Add state-specific properties (these should NOT inherit)
         if (state === 'focus') {
-          colors.variants[variantName][theme].light[state].outline = props['outline'] || props['box-shadow'] || null;
-          colors.variants[variantName][theme].light[state].outlineOffset = props['outline-offset'] || '2px';
+          stateData.outline = props['outline'] || props['box-shadow'] || null;
+          stateData.outlineOffset = props['outline-offset'] || '2px';
         }
         if (state === 'disabled') {
-          colors.variants[variantName][theme].light[state].cursor = props['cursor'] || 'not-allowed';
-          colors.variants[variantName][theme].light[state].opacity = props['opacity'] || '1';
+          stateData.cursor = props['cursor'] || 'not-allowed';
+          stateData.opacity = props['opacity'] || '1';
+        }
+
+        return stateData;
+      };
+
+      // Build light mode states with inheritance
+      const lightStates = themeData[theme].light || {};
+      
+      // First, build the default state
+      let lightDefaultState = null;
+      if (lightStates['default']) {
+        lightDefaultState = buildState('default', lightStates['default']);
+        colors.variants[variantName][theme].light['default'] = lightDefaultState;
+      }
+      
+      // Then build other states with inheritance
+      for (const [state, props] of Object.entries(lightStates)) {
+        if (state !== 'default') {
+          const stateData = buildState(state, props);
+          
+          // Apply inheritance from default state
+          if (lightDefaultState && lightDefaultState.text !== undefined && lightDefaultState.text !== null) {
+            // Inherit text/iconColor if color property doesn't exist in original CSS props
+            const hasColorProp = 'color' in props;
+            if (!hasColorProp) {
+              stateData.text = lightDefaultState.text;
+              stateData.iconColor = lightDefaultState.iconColor !== undefined && lightDefaultState.iconColor !== null 
+                ? lightDefaultState.iconColor 
+                : lightDefaultState.text;
+            }
+          }
+          // Inherit background if not explicitly set
+          if (!('background-color' in props || 'background' in props)) {
+            if (lightDefaultState && lightDefaultState.background && lightDefaultState.background !== 'transparent') {
+              stateData.background = lightDefaultState.background;
+            }
+          }
+          // Inherit border if not explicitly set
+          if (!('border-color' in props || 'border' in props)) {
+            if (lightDefaultState && lightDefaultState.border && lightDefaultState.border !== 'transparent') {
+              stateData.border = lightDefaultState.border;
+            }
+          }
+          
+          colors.variants[variantName][theme].light[state] = stateData;
         }
       }
 
-      // Map states for dark mode
-      for (const [state, props] of Object.entries(themeData[theme].dark || {})) {
-        colors.variants[variantName][theme].dark[state] = {
-          background: props['background-color'] || props['background'] || 'transparent',
-          text: props['color'] || null,
-          border: props['border-color'] || props['border'] || 'transparent',
-          iconColor: props['color'] || null
-        };
-
-        // Add state-specific properties
-        if (state === 'focus') {
-          colors.variants[variantName][theme].dark[state].outline = props['outline'] || props['box-shadow'] || null;
-          colors.variants[variantName][theme].dark[state].outlineOffset = props['outline-offset'] || '2px';
-        }
-        if (state === 'disabled') {
-          colors.variants[variantName][theme].dark[state].cursor = props['cursor'] || 'not-allowed';
-          colors.variants[variantName][theme].dark[state].opacity = props['opacity'] || '1';
+      // Build dark mode states with inheritance
+      const darkStates = themeData[theme].dark || {};
+      
+      // First, build the default state
+      let darkDefaultState = null;
+      if (darkStates['default']) {
+        darkDefaultState = buildState('default', darkStates['default']);
+        colors.variants[variantName][theme].dark['default'] = darkDefaultState;
+      }
+      
+      // Then build other states with inheritance
+      for (const [state, props] of Object.entries(darkStates)) {
+        if (state !== 'default') {
+          const stateData = buildState(state, props);
+          
+          // Apply inheritance from default state
+          if (darkDefaultState && darkDefaultState.text !== undefined && darkDefaultState.text !== null) {
+            // Inherit text/iconColor if color property doesn't exist in original CSS props
+            if (!('color' in props)) {
+              stateData.text = darkDefaultState.text;
+              stateData.iconColor = darkDefaultState.iconColor !== undefined && darkDefaultState.iconColor !== null 
+                ? darkDefaultState.iconColor 
+                : darkDefaultState.text;
+            }
+          }
+          // Inherit background if not explicitly set
+          if (!('background-color' in props || 'background' in props)) {
+            if (darkDefaultState && darkDefaultState.background && darkDefaultState.background !== 'transparent') {
+              stateData.background = darkDefaultState.background;
+            }
+          }
+          // Inherit border if not explicitly set
+          if (!('border-color' in props || 'border' in props)) {
+            if (darkDefaultState && darkDefaultState.border && darkDefaultState.border !== 'transparent') {
+              stateData.border = darkDefaultState.border;
+            }
+          }
+          
+          colors.variants[variantName][theme].dark[state] = stateData;
         }
       }
     }
