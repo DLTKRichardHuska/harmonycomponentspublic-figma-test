@@ -46,7 +46,7 @@ jobs:
         run: |
           git config user.name "MCP Data Bot"
           git config user.email "mcp-data-bot@github-actions"
-          g          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
           
           # Fetch latest changes before committing
           git fetch origin main
@@ -78,5 +78,4 @@ jobs:
               fi
             fi
             echo "Successfully pushed MCP data updates"
-          fi
           fi

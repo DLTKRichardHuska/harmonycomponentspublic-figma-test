@@ -36,7 +36,7 @@ jobs:
         run: |
           git config user.name "Changelog Bot"
           git config user.email "changelog-bot@github-actions"
-                    git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
           
           # Fetch latest changes before committing
           git fetch origin main
