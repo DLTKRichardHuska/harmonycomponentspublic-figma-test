@@ -225,6 +225,48 @@ export function getResolvedValue(cssValue, variableMap, context = 'light') {
 }
 
 /**
+ * Extract variant names from a prop type string
+ * Handles union types like: 'primary' | 'secondary' | 'tertiary'
+ */
+function extractVariantNamesFromType(typeString) {
+  if (!typeString) return [];
+  
+  // Match union types: 'value1' | 'value2' | 'value3'
+  const unionMatch = typeString.match(/^['"]([^'"]+)['"]\s*\|\s*(.+)$/);
+  if (unionMatch) {
+    const first = unionMatch[1];
+    const rest = unionMatch[2];
+    // Recursively extract from the rest
+    const restVariants = extractVariantNamesFromType(rest);
+    return [first, ...restVariants];
+  }
+  
+  // Single quoted value
+  const singleMatch = typeString.match(/^['"]([^'"]+)['"]$/);
+  if (singleMatch) {
+    return [singleMatch[1]];
+  }
+  
+  return [];
+}
+
+/**
+ * Get variant prop from component props
+ */
+function getVariantProp(componentProps) {
+  if (!componentProps || typeof componentProps !== 'object') return null;
+  
+  // Check for variant prop (case-insensitive)
+  for (const [propName, propData] of Object.entries(componentProps)) {
+    if (propName.toLowerCase() === 'variant') {
+      return propData;
+    }
+  }
+  
+  return null;
+}
+
+/**
  * Extract component-specific styles by CSS class selectors
  */
 export function extractComponentStyles(componentName, cssClasses, parsedCSS, variableMap) {
@@ -337,13 +379,31 @@ export function extractSizeVariants(componentName, parsedCSS, variableMap) {
 /**
  * Extract variant colors (primary, secondary, etc.)
  */
-export function extractVariantColors(componentName, parsedCSS, variableMap) {
+export function extractVariantColors(componentName, parsedCSS, variableMap, componentProps = null) {
   const variants = {};
   const componentsCss = parsedCSS['components.css'];
   if (!componentsCss) return variants;
 
   const classPrefix = getClassPrefix(componentName);
-  const variantNames = ['primary', 'secondary', 'tertiary', 'danger', 'success', 'warning', 'info', 'outline', 'ghost', 'destructive'];
+  
+  // Extract variant names from component props if available
+  let variantNames = [];
+  if (componentProps) {
+    const variantProp = getVariantProp(componentProps);
+    if (variantProp && variantProp.type) {
+      variantNames = extractVariantNamesFromType(variantProp.type);
+    }
+  }
+  
+  // Fall back to hardcoded list if no variant prop found
+  if (variantNames.length === 0) {
+    variantNames = ['primary', 'secondary', 'tertiary', 'danger', 'error', 'success', 'warning', 'info', 'outline', 'ghost', 'destructive'];
+  }
+  
+  // Special handling for Button component to extract page header variants
+  const isButton = componentName === 'Button';
+  const isButtonGroup = componentName === 'ButtonGroup';
+  const pageHeaderPattern = isButton ? `.${classPrefix}--page-header` : null;
 
   componentsCss.walkRules((rule) => {
     const selector = rule.selector;
@@ -352,19 +412,36 @@ export function extractVariantColors(componentName, parsedCSS, variableMap) {
       // Match selectors that contain the exact class pattern (e.g., .btn--primary)
       // but exclude:
       // 1. More specific classes (e.g., .floating-nav__btn--primary)
-      // 2. Compound selectors in button groups (e.g., .btn-group .btn--primary)
+      // 2. Compound selectors in button groups (e.g., .btn-group .btn--primary) - but only for Button, not ButtonGroup
       // We want to match: .btn--primary, .btn--primary:hover, etc.
       const exactPattern = `.${classPrefix}--${variantName}`;
       const moreSpecificPattern = `__${classPrefix}--${variantName}`;
       const buttonGroupPattern = `.btn-group`;
       
-      // Only match if it's the base class or a state modifier (hover, active, etc.)
-      // and not part of a button group or more specific component
-      const isBaseClass = selector === exactPattern || 
-                         selector.startsWith(exactPattern + ':') ||
-                         selector.startsWith(exactPattern + '.');
+      // Check for page header variants (e.g., .btn--page-header.btn--primary)
+      const isPageHeaderVariant = isButton && pageHeaderPattern && 
+                                   selector.includes(pageHeaderPattern) && 
+                                   selector.includes(exactPattern) &&
+                                   !selector.includes(moreSpecificPattern) &&
+                                   // Only exclude button-group pattern for Button, not ButtonGroup
+                                   (isButtonGroup || !selector.includes(buttonGroupPattern));
       
-      if (isBaseClass && !selector.includes(moreSpecificPattern) && !selector.includes(buttonGroupPattern)) {
+      // Check for regular variants (e.g., .btn--primary or .btn-group--default)
+      const isRegularVariant = selector === exactPattern || 
+                               selector.startsWith(exactPattern + ':') ||
+                               selector.startsWith(exactPattern + '.');
+      
+      // Only process primary, secondary, tertiary for page header variants
+      const isPageHeaderApplicable = isPageHeaderVariant && 
+                                     ['primary', 'secondary', 'tertiary'].includes(variantName);
+      
+      // Only exclude button-group pattern when extracting Button variants, not ButtonGroup variants
+      const shouldExcludeButtonGroup = !isButtonGroup && selector.includes(buttonGroupPattern);
+      
+      if ((isRegularVariant || isPageHeaderApplicable) && 
+          !selector.includes(moreSpecificPattern) && 
+          !shouldExcludeButtonGroup) {
+        
         // Determine state (hover, active, focus, disabled)
         let state = 'default';
         if (selector.includes(':hover')) state = 'hover';
@@ -372,15 +449,18 @@ export function extractVariantColors(componentName, parsedCSS, variableMap) {
         else if (selector.includes(':focus-visible')) state = 'focus';
         else if (selector.includes(':disabled') || selector.includes('.disabled')) state = 'disabled';
 
-        if (!variants[variantName]) {
-          variants[variantName] = { light: {}, dark: {} };
+        // Use different variant key for page header variants
+        const variantKey = isPageHeaderVariant ? `pageHeader${variantName.charAt(0).toUpperCase() + variantName.slice(1)}` : variantName;
+
+        if (!variants[variantKey]) {
+          variants[variantKey] = { light: {}, dark: {} };
         }
 
-        if (!variants[variantName].light[state]) {
-          variants[variantName].light[state] = {};
+        if (!variants[variantKey].light[state]) {
+          variants[variantKey].light[state] = {};
         }
-        if (!variants[variantName].dark[state]) {
-          variants[variantName].dark[state] = {};
+        if (!variants[variantKey].dark[state]) {
+          variants[variantKey].dark[state] = {};
         }
 
         rule.walkDecls((decl) => {
@@ -392,8 +472,8 @@ export function extractVariantColors(componentName, parsedCSS, variableMap) {
           const resolvedLight = getResolvedValue(value, variableMap, 'cp-light');
           const resolvedDark = getResolvedValue(value, variableMap, 'cp-dark');
 
-          variants[variantName].light[state][prop] = resolvedLight;
-          variants[variantName].dark[state][prop] = resolvedDark;
+          variants[variantKey].light[state][prop] = resolvedLight;
+          variants[variantKey].dark[state][prop] = resolvedDark;
         });
       }
     }
@@ -441,7 +521,7 @@ function getClassPrefix(componentName) {
     'ListMenu': 'list-menu',
     'Kanban': 'kanban',
     'KanbanCard': 'kanban-card',
-    'ButtonGroup': 'button-group',
+    'ButtonGroup': 'btn-group',
     'CheckboxGroup': 'checkbox-group',
     'RadioGroup': 'radio-group',
     'DatePicker': 'date-picker',

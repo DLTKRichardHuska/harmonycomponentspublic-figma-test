@@ -129,25 +129,141 @@ export function extractProps(ast) {
 
   const props = {};
 
-  // Match interface Props { ... }
-  const interfaceRegex = /interface\s+Props\s*\{([^}]+)\}/s;
-  const interfaceMatch = frontmatter.match(interfaceRegex);
-
+  // Find interface Props or ComponentNameProps with proper brace matching
+  const interfaceMatch = frontmatter.match(/(?:export\s+)?interface\s+(\w*Props)\s*\{/);
   if (!interfaceMatch) return props;
 
-  const propsBody = interfaceMatch[1];
+  // Extract interface body by matching braces properly
+  const startPos = interfaceMatch.index + interfaceMatch[0].length;
+  let braceDepth = 1;
+  let i = startPos;
+  let inString = false;
+  let stringChar = '';
+  
+  while (i < frontmatter.length && braceDepth > 0) {
+    const char = frontmatter[i];
+    const prevChar = i > 0 ? frontmatter[i - 1] : '';
 
-  // Match individual prop definitions: name?: type = default
-  const propRegex = /(\w+)(\?)?:\s*([^;=]+)(?:=\s*([^;]+))?;?/g;
-  const propMatches = propsBody.matchAll(propRegex);
+    // Handle string literals
+    if ((char === '"' || char === "'" || char === '`') && prevChar !== '\\') {
+      if (!inString) {
+        inString = true;
+        stringChar = char;
+      } else if (char === stringChar) {
+        inString = false;
+        stringChar = '';
+      }
+    } else if (!inString) {
+      if (char === '{') braceDepth++;
+      else if (char === '}') braceDepth--;
+    }
+    i++;
+  }
 
-  for (const match of propMatches) {
-    const [, name, optional, type, defaultValue] = match;
+  let propsBody = frontmatter.slice(startPos, i - 1);
+  
+  // Remove comments
+  propsBody = propsBody.replace(/\/\/.*$/gm, '').replace(/\/\*[\s\S]*?\*\//g, '');
 
-    props[name] = {
-      type: type.trim(),
-      optional: !!optional,
-      default: defaultValue ? defaultValue.trim() : null,
+  // Parse props by tracking brace/bracket/angle depth
+  i = 0;
+  braceDepth = 0;
+  let bracketDepth = 0;
+  let angleDepth = 0;
+  inString = false;
+  stringChar = '';
+  let currentProp = null;
+  let propStart = -1;
+
+  while (i < propsBody.length) {
+    const char = propsBody[i];
+    const prevChar = i > 0 ? propsBody[i - 1] : '';
+
+    // Handle string literals
+    if ((char === '"' || char === "'" || char === '`') && prevChar !== '\\') {
+      if (!inString) {
+        inString = true;
+        stringChar = char;
+      } else if (char === stringChar) {
+        inString = false;
+        stringChar = '';
+      }
+      i++;
+      continue;
+    }
+
+    if (inString) {
+      i++;
+      continue;
+    }
+
+    // Track depth for nested structures
+    if (char === '{') braceDepth++;
+    else if (char === '}') braceDepth--;
+    else if (char === '[') bracketDepth++;
+    else if (char === ']') bracketDepth--;
+    else if (char === '<') angleDepth++;
+    else if (char === '>') angleDepth--;
+
+    // Look for prop start: word followed by ?: or :
+    if (currentProp === null && braceDepth === 0 && bracketDepth === 0 && angleDepth === 0) {
+      const propMatch = propsBody.slice(i).match(/^(\w+)(\?)?:\s*/);
+      if (propMatch) {
+        currentProp = {
+          name: propMatch[1],
+          optional: !!propMatch[2],
+          type: '',
+          default: null,
+        };
+        propStart = i + propMatch[0].length;
+        i = propStart;
+        continue;
+      }
+    }
+
+    // If we're in a prop, collect the type
+    if (currentProp && propStart >= 0) {
+      // Check for end of prop (semicolon when all depths are 0)
+      if (char === ';' && braceDepth === 0 && bracketDepth === 0 && angleDepth === 0) {
+        let typeText = propsBody.slice(propStart, i).trim();
+        
+        // Check for default value
+        const defaultMatch = typeText.match(/=\s*([^;]+)$/);
+        if (defaultMatch) {
+          currentProp.default = defaultMatch[1].trim();
+          typeText = typeText.replace(/\s*=\s*[^;]+$/, '').trim();
+        }
+        
+        currentProp.type = typeText;
+        
+        props[currentProp.name] = {
+          type: currentProp.type,
+          optional: currentProp.optional,
+          default: currentProp.default,
+        };
+        
+        currentProp = null;
+        propStart = -1;
+      }
+    }
+
+    i++;
+  }
+
+  // Handle last prop if no semicolon
+  if (currentProp && propStart >= 0) {
+    let typeText = propsBody.slice(propStart).trim();
+    const defaultMatch = typeText.match(/=\s*(.+)$/);
+    if (defaultMatch) {
+      currentProp.default = defaultMatch[1].trim();
+      typeText = typeText.replace(/\s*=\s*.+$/, '').trim();
+    }
+    currentProp.type = typeText;
+    
+    props[currentProp.name] = {
+      type: currentProp.type,
+      optional: currentProp.optional,
+      default: currentProp.default,
     };
   }
 

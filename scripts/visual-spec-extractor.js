@@ -61,7 +61,7 @@ export function extractVisualSpecifications(componentData, parsedCSS, variableMa
 
   // Extract base specifications
   const sizeVariants = extractSizeVariants(componentName, parsedCSS, variableMap);
-  const variantColors = extractVariantColors(componentName, parsedCSS, variableMap);
+  const variantColors = extractVariantColors(componentName, parsedCSS, variableMap, componentData.props || {});
   const themeOverrides = extractThemeOverrides(componentName, parsedCSS, variableMap);
   const componentStyles = extractComponentStyles(componentName, componentData.cssClasses || [], parsedCSS, variableMap);
 

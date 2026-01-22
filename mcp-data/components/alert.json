@@ -30,16 +30,31 @@
       "default": null
     },
     "primaryButton": {
-      "type": "{ text: string",
+      "type": "{ text: string; href?: string; onClick?: string }",
       "optional": true,
       "default": null
     },
-    "href": {
+    "secondaryButton": {
+      "type": "{ text: string; href?: string; onClick?: string }",
+      "optional": true,
+      "default": null
+    },
+    "linkText": {
       "type": "string",
       "optional": true,
       "default": null
     },
-    "onClick": {
+    "linkHref": {
+      "type": "string",
+      "optional": true,
+      "default": null
+    },
+    "progressValue": {
+      "type": "number",
+      "optional": true,
+      "default": null
+    },
+    "class": {
       "type": "string",
       "optional": true,
       "default": null
@@ -270,7 +285,7 @@
     ]
   },
   "_metadata": {
-    "lastGenerated": "2026-01-22T00:24:02.016Z",
+    "lastGenerated": "2026-01-22T00:40:21.842Z",
     "generatedWith": "@astrojs/compiler@2.13.0",
     "includesVisualSpecs": true
   },
@@ -415,6 +430,24 @@
               "background": "rgba(249, 175, 0, 0.1)",
               "text": null,
               "border": "rgba(249, 175, 0, 0.2)",
+              "iconColor": null
+            }
+          }
+        },
+        "error": {
+          "light": {
+            "default": {
+              "background": "rgba(216, 49, 72, 0.1)",
+              "text": null,
+              "border": "rgba(216, 49, 72, 0.2)",
+              "iconColor": null
+            }
+          },
+          "dark": {
+            "default": {
+              "background": "rgba(244, 98, 134, 0.1)",
+              "text": null,
+              "border": "rgba(244, 98, 134, 0.2)",
               "iconColor": null
             }
           }

@@ -73,11 +73,6 @@
       "type": "string",
       "optional": true,
       "default": null
-    },
-    "key": {
-      "type": "string]: any",
-      "optional": false,
-      "default": null
     }
   },
   "imports": {
@@ -167,7 +162,7 @@
     "children": []
   },
   "_metadata": {
-    "lastGenerated": "2026-01-22T00:24:02.180Z",
+    "lastGenerated": "2026-01-22T00:40:21.988Z",
     "generatedWith": "@astrojs/compiler@2.13.0",
     "includesVisualSpecs": true
   },
@@ -261,7 +256,26 @@
       }
     },
     "colors": {
-      "variants": {}
+      "variants": {
+        "error": {
+          "light": {
+            "default": {
+              "background": "transparent",
+              "text": null,
+              "border": "#D83148",
+              "iconColor": null
+            }
+          },
+          "dark": {
+            "default": {
+              "background": "transparent",
+              "text": null,
+              "border": "#F46286",
+              "iconColor": null
+            }
+          }
+        }
+      }
     },
     "elevation": {
       "default": "none",

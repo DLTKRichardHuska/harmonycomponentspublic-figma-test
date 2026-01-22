@@ -9,9 +9,9 @@
       "optional": true,
       "default": null
     },
-    "HH": {
-      "type": "MM or HH:MM:SS)\n  min?: string",
-      "optional": false,
+    "min": {
+      "type": "string",
+      "optional": true,
       "default": null
     },
     "max": {
@@ -34,9 +34,9 @@
       "optional": true,
       "default": null
     },
-    "default": {
-      "type": "1)\n  id?: string",
-      "optional": false,
+    "id": {
+      "type": "string",
+      "optional": true,
       "default": null
     },
     "class": {
@@ -259,7 +259,7 @@
     ]
   },
   "_metadata": {
-    "lastGenerated": "2026-01-22T00:24:02.434Z",
+    "lastGenerated": "2026-01-22T00:40:22.192Z",
     "generatedWith": "@astrojs/compiler@2.13.0",
     "includesVisualSpecs": true
   },

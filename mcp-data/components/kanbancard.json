@@ -3,7 +3,58 @@
   "type": "component",
   "filePath": "src/components/ui/KanbanCard.astro",
   "description": "KanbanCard Component",
-  "props": {},
+  "props": {
+    "id": {
+      "type": "string",
+      "optional": false,
+      "default": null
+    },
+    "title": {
+      "type": "string",
+      "optional": true,
+      "default": null
+    },
+    "description": {
+      "type": "string",
+      "optional": true,
+      "default": null
+    },
+    "avatar": {
+      "type": "{ name?: string; size?: 'sm' | 'md' | 'lg' }",
+      "optional": true,
+      "default": null
+    },
+    "badges": {
+      "type": "Array<{ label: string; variant?: BadgeVariant }>",
+      "optional": true,
+      "default": null
+    },
+    "progress": {
+      "type": "number",
+      "optional": true,
+      "default": null
+    },
+    "icons": {
+      "type": "Array<{ name: string; size?: 'xs' | 'sm' | 'md' }>",
+      "optional": true,
+      "default": null
+    },
+    "date": {
+      "type": "string",
+      "optional": true,
+      "default": null
+    },
+    "time": {
+      "type": "string",
+      "optional": true,
+      "default": null
+    },
+    "class": {
+      "type": "string",
+      "optional": true,
+      "default": null
+    }
+  },
   "imports": {
     "Card": "./Card.astro",
     "Avatar": "./Avatar.astro",
@@ -115,7 +166,7 @@
     "children": []
   },
   "_metadata": {
-    "lastGenerated": "2026-01-22T00:24:02.210Z",
+    "lastGenerated": "2026-01-22T00:40:22.015Z",
     "generatedWith": "@astrojs/compiler@2.13.0",
     "includesVisualSpecs": true
   },

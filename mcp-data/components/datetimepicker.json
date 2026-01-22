@@ -9,9 +9,9 @@
       "optional": true,
       "default": null
     },
-    "DDTHH": {
-      "type": "MM)\n  min?: string",
-      "optional": false,
+    "min": {
+      "type": "string",
+      "optional": true,
       "default": null
     },
     "max": {
@@ -131,7 +131,7 @@
     ]
   },
   "_metadata": {
-    "lastGenerated": "2026-01-22T00:24:02.137Z",
+    "lastGenerated": "2026-01-22T00:40:21.954Z",
     "generatedWith": "@astrojs/compiler@2.13.0",
     "includesVisualSpecs": true
   },

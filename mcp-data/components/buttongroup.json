@@ -71,7 +71,7 @@
     "children": []
   },
   "_metadata": {
-    "lastGenerated": "2026-01-22T00:24:02.061Z",
+    "lastGenerated": "2026-01-22T00:40:21.884Z",
     "generatedWith": "@astrojs/compiler@2.13.0",
     "includesVisualSpecs": true
   },
@@ -84,19 +84,19 @@
         "maxWidth": "none"
       },
       "sm": {
-        "height": null,
+        "height": "32px",
         "width": null,
         "minWidth": "auto",
         "maxWidth": "none"
       },
       "md": {
-        "height": null,
+        "height": "40px",
         "width": null,
         "minWidth": "auto",
         "maxWidth": "none"
       },
       "lg": {
-        "height": null,
+        "height": "48px",
         "width": null,
         "minWidth": "auto",
         "maxWidth": "none"
@@ -112,23 +112,23 @@
       },
       "sm": {
         "paddingTop": "0",
-        "paddingRight": "0",
+        "paddingRight": "12px",
         "paddingBottom": "0",
-        "paddingLeft": "0",
+        "paddingLeft": "12px",
         "gap": "0"
       },
       "md": {
         "paddingTop": "0",
-        "paddingRight": "0",
+        "paddingRight": "16px",
         "paddingBottom": "0",
-        "paddingLeft": "0",
+        "paddingLeft": "16px",
         "gap": "0"
       },
       "lg": {
         "paddingTop": "0",
-        "paddingRight": "0",
+        "paddingRight": "24px",
         "paddingBottom": "0",
-        "paddingLeft": "0",
+        "paddingLeft": "24px",
         "gap": "0"
       }
     },
@@ -144,15 +144,15 @@
           "lineHeight": null
         },
         "sm": {
-          "fontSize": null,
+          "fontSize": "0.875rem",
           "lineHeight": null
         },
         "md": {
-          "fontSize": null,
+          "fontSize": "1rem",
           "lineHeight": null
         },
         "lg": {
-          "fontSize": null,
+          "fontSize": "1.125rem",
           "lineHeight": null
         }
       }
@@ -160,22 +160,63 @@
     "borders": {
       "width": null,
       "style": null,
-      "radius": {}
+      "radius": {
+        "default": "0.5rem"
+      }
     },
     "colors": {
-      "variants": {}
+      "variants": {
+        "default": {
+          "light": {
+            "default": {
+              "background": "#FFFFFF",
+              "text": null,
+              "border": "1px solid #BFC6D4",
+              "iconColor": null
+            }
+          },
+          "dark": {
+            "default": {
+              "background": "#1F252E",
+              "text": null,
+              "border": "1px solid #5F6871",
+              "iconColor": null
+            }
+          }
+        },
+        "outline": {
+          "light": {
+            "default": {
+              "background": "transparent",
+              "text": null,
+              "border": "none",
+              "iconColor": null
+            }
+          },
+          "dark": {
+            "default": {
+              "background": "transparent",
+              "text": null,
+              "border": "none",
+              "iconColor": null
+            }
+          }
+        }
+      }
     },
     "elevation": {
       "default": "none",
       "hover": null,
       "active": null,
-      "focus": null
+      "focus": "0 0 0 3px rgba(76, 146, 217, 0.1), 0 0 0 4px #F7F8FA"
     },
     "transitions": {
       "default": null,
       "properties": {}
     },
-    "layout": {},
+    "layout": {
+      "display": "inline-flex"
+    },
     "iconSpecs": null
   },
   "themeOverrides": {},
@@ -186,5 +227,160 @@
     "ariaAttributes": {},
     "focusVisible": {}
   },
-  "cssClassStyles": {}
+  "cssClassStyles": {
+    ".btn-group": {
+      "display": "inline-flex"
+    },
+    ".btn-group--default": {
+      "border": "1px solid #BFC6D4",
+      "border-radius": "8px",
+      "padding": "4px",
+      "background-color": "#FFFFFF",
+      "display": "inline-flex",
+      "gap": "8px",
+      "align-items": "center"
+    },
+    ".btn-group--horizontal": {
+      "flex-direction": "column",
+      "width": "100%"
+    },
+    ".btn-group--horizontal.btn-group--default .btn": {
+      "margin-left": "0",
+      "border": "none",
+      "width": "100%",
+      "border-radius": "0.5rem"
+    },
+    ".btn-group--horizontal.btn-group--default .btn--primary:first-child,\n.btn-group--horizontal.btn-group--default .btn.btn--selected:first-child": {
+      "border-radius": "8px 6px 6px 8px"
+    },
+    ".btn-group--horizontal.btn-group--default .btn--primary:not(:first-child):not(:last-child),\n.btn-group--horizontal.btn-group--default .btn.btn--selected:not(:first-child):not(:last-child)": {
+      "border-radius": "6px"
+    },
+    ".btn-group--horizontal.btn-group--default .btn--primary:last-child,\n.btn-group--horizontal.btn-group--default .btn.btn--selected:last-child": {
+      "border-radius": "6px 8px 8px 6px"
+    },
+    ".btn-group--horizontal.btn-group--default .btn:not(.btn--primary):not(.btn--selected):first-child": {
+      "border-radius": "8px 0 0 8px"
+    },
+    ".btn-group--horizontal.btn-group--default .btn:not(.btn--primary):not(.btn--selected):last-child": {
+      "border-radius": "0 8px 8px 0"
+    },
+    ".btn-group--horizontal.btn-group--default .btn:not(.btn--primary):not(.btn--selected):not(:first-child):not(:last-child)": {
+      "border-radius": "0"
+    },
+    ".btn-group--vertical": {
+      "flex-direction": "column"
+    },
+    ".btn-group--vertical.btn-group--default": {
+      "gap": "0"
+    },
+    ".btn-group--vertical.btn-group--default .btn": {
+      "margin-left": "0",
+      "border": "none",
+      "width": "100%"
+    },
+    ".btn-group--vertical.btn-group--default .btn--primary:first-child,\n.btn-group--vertical.btn-group--default .btn.btn--selected:first-child": {
+      "border-radius": "8px 8px 6px 6px"
+    },
+    ".btn-group--vertical.btn-group--default .btn--primary:not(:first-child):not(:last-child),\n.btn-group--vertical.btn-group--default .btn.btn--selected:not(:first-child):not(:last-child)": {
+      "border-radius": "6px"
+    },
+    ".btn-group--vertical.btn-group--default .btn--primary:last-child,\n.btn-group--vertical.btn-group--default .btn.btn--selected:last-child": {
+      "border-radius": "6px 6px 8px 8px"
+    },
+    ".btn-group--vertical.btn-group--default .btn:not(.btn--primary):not(.btn--selected):first-child": {
+      "border-radius": "8px 8px 0 0"
+    },
+    ".btn-group--vertical.btn-group--default .btn:not(.btn--primary):not(.btn--selected):last-child": {
+      "border-radius": "0 0 8px 8px"
+    },
+    ".btn-group--vertical.btn-group--default .btn:not(.btn--primary):not(.btn--selected):not(:first-child):not(:last-child)": {
+      "border-radius": "0"
+    },
+    ".btn-group--default .btn--primary,\n.btn-group--default .btn.btn--selected": {
+      "background-color": "#4C92D9",
+      "color": "#FFFFFF",
+      "border": "none"
+    },
+    ".btn-group--default .btn--primary:hover,\n.btn-group--default .btn.btn--selected:hover": {
+      "background-color": "#3D7BC4"
+    },
+    ".btn-group--default .btn--primary:focus-visible,\n.btn-group--default .btn.btn--selected:focus-visible": {
+      "outline": "1px solid #F7F8FA",
+      "outline-offset": "0",
+      "box-shadow": "0 0 0 3px rgba(76, 146, 217, 0.1), 0 0 0 4px #F7F8FA"
+    },
+    ".btn-group--default .btn:not(.btn--primary):not(.btn--selected)": {
+      "background-color": "#FFFFFF",
+      "color": "#4C92D9",
+      "border": "none"
+    },
+    ".btn-group--default .btn--outline:not(.btn--primary):not(.btn--selected),\n.btn-group--default .btn--secondary:not(.btn--primary):not(.btn--selected),\n.btn-group--default .btn--tertiary:not(.btn--primary):not(.btn--selected),\n.btn-group--default .btn--ghost:not(.btn--primary):not(.btn--selected)": {
+      "color": "#4C92D9"
+    },
+    ".btn-group--default .btn:not(.btn--primary):not(.btn--selected):hover": {
+      "background-color": "rgba(76, 146, 217, 0.08)"
+    },
+    ".btn-group--default .btn:not(.btn--primary):not(.btn--selected):focus-visible": {
+      "outline": "1px solid #F7F8FA",
+      "outline-offset": "0",
+      "box-shadow": "0 0 0 3px rgba(76, 146, 217, 0.1), 0 0 0 4px #F7F8FA"
+    },
+    ".btn-group--sm .btn": {
+      "height": "32px",
+      "padding": "0 12px",
+      "font-size": "0.875rem"
+    },
+    ".btn-group--md .btn": {
+      "height": "40px",
+      "padding": "0 16px",
+      "font-size": "1rem"
+    },
+    ".btn-group--lg .btn": {
+      "height": "48px",
+      "padding": "0 24px",
+      "font-size": "1.125rem"
+    },
+    ".btn-group--default .btn:disabled,\n.btn-group--default .btn.btn--disabled": {
+      "opacity": "0.5",
+      "cursor": "not-allowed",
+      "pointer-events": "none"
+    },
+    ".btn-group--outline": {
+      "border": "none",
+      "padding": "0",
+      "background-color": "transparent"
+    },
+    ".btn-group--outline .btn": {
+      "border-radius": "0",
+      "margin-left": "-1px"
+    },
+    ".btn-group--outline .btn:first-child": {
+      "border-radius": "0.5rem 0 0 0.5rem"
+    },
+    ".btn-group--outline .btn:last-child": {
+      "border-radius": "0 0.5rem 0.5rem 0"
+    },
+    ".btn-group--outline .btn:not(:last-child)": {
+      "border-right-color": "transparent"
+    },
+    ".btn-group--horizontal.btn-group--default": {
+      "gap": "8px"
+    },
+    ".btn-group--horizontal.btn-group--outline": {
+      "gap": "8px"
+    },
+    ".btn-group--horizontal.btn-group--outline .btn": {
+      "width": "100%",
+      "border-radius": "0.5rem",
+      "margin-left": "0",
+      "border-right-color": "#BFC6D4"
+    },
+    ".btn-group--horizontal.btn-group--outline .btn:first-child": {
+      "border-radius": "0.5rem"
+    },
+    ".btn-group--horizontal.btn-group--outline .btn:last-child": {
+      "border-radius": "0.5rem"
+    }
+  }
 }
