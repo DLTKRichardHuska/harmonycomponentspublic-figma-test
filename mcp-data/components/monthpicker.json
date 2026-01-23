@@ -174,7 +174,7 @@
     ]
   },
   "_metadata": {
-    "lastGenerated": "2026-01-23T01:33:50.731Z",
+    "lastGenerated": "2026-01-23T17:14:26.718Z",
     "generatedWith": "@astrojs/compiler@2.13.0",
     "includesVisualSpecs": true,
     "availableVariants": []
@@ -183,25 +183,25 @@
     "dimensions": {
       "xs": {
         "height": null,
-        "width": null,
+        "width": "100%",
         "minWidth": "auto",
         "maxWidth": "none"
       },
       "sm": {
         "height": null,
-        "width": null,
+        "width": "100%",
         "minWidth": "auto",
         "maxWidth": "none"
       },
       "md": {
         "height": null,
-        "width": null,
+        "width": "100%",
         "minWidth": "auto",
         "maxWidth": "none"
       },
       "lg": {
         "height": null,
-        "width": null,
+        "width": "100%",
         "minWidth": "auto",
         "maxWidth": "none"
       }
@@ -209,31 +209,35 @@
     "spacing": {
       "xs": {
         "paddingTop": "0",
-        "paddingRight": "12px",
+        "paddingRight": "0",
         "paddingBottom": "0",
-        "paddingLeft": "12px",
-        "gap": "8px"
+        "paddingLeft": "0",
+        "gap": "8px",
+        "marginBottom": "16px"
       },
       "sm": {
         "paddingTop": "0",
-        "paddingRight": "12px",
+        "paddingRight": "0",
         "paddingBottom": "0",
-        "paddingLeft": "12px",
-        "gap": "8px"
+        "paddingLeft": "0",
+        "gap": "8px",
+        "marginBottom": "16px"
       },
       "md": {
         "paddingTop": "0",
-        "paddingRight": "12px",
+        "paddingRight": "0",
         "paddingBottom": "0",
-        "paddingLeft": "12px",
-        "gap": "8px"
+        "paddingLeft": "0",
+        "gap": "8px",
+        "marginBottom": "16px"
       },
       "lg": {
         "paddingTop": "0",
-        "paddingRight": "12px",
+        "paddingRight": "0",
         "paddingBottom": "0",
-        "paddingLeft": "12px",
-        "gap": "8px"
+        "paddingLeft": "0",
+        "gap": "8px",
+        "marginBottom": "16px"
       }
     },
     "typography": {
@@ -244,19 +248,19 @@
       "textTransform": null,
       "sizes": {
         "xs": {
-          "fontSize": "1rem",
+          "fontSize": "0.875rem",
           "lineHeight": null
         },
         "sm": {
-          "fontSize": "1rem",
+          "fontSize": "0.875rem",
           "lineHeight": null
         },
         "md": {
-          "fontSize": "1rem",
+          "fontSize": "0.875rem",
           "lineHeight": null
         },
         "lg": {
-          "fontSize": "1rem",
+          "fontSize": "0.875rem",
           "lineHeight": null
         }
       }
@@ -269,7 +273,562 @@
       }
     },
     "colors": {
-      "variants": {}
+      "variants": {
+        "default": {
+          "cp": {
+            "light": {
+              "navigationButton": {
+                "default": {
+                  "text": "#525969",
+                  "background": "transparent",
+                  "border": "1px solid #BFC6D4",
+                  "iconColor": "#525969"
+                },
+                "hover": {
+                  "text": "#373F4E",
+                  "background": "#E5E7EB",
+                  "border": "#BFC6D4",
+                  "iconColor": "#373F4E"
+                },
+                "disabled": {
+                  "text": "#525969",
+                  "background": "transparent",
+                  "border": "1px solid #BFC6D4",
+                  "iconColor": "#525969",
+                  "opacity": "0.5"
+                }
+              },
+              "yearText": {
+                "default": {
+                  "text": "#373F4E"
+                }
+              },
+              "monthButton": {
+                "default": {
+                  "text": "#373F4E",
+                  "background": "transparent",
+                  "border": "1px solid #BFC6D4"
+                },
+                "hover": {
+                  "text": "#373F4E",
+                  "background": "#E5E7EB",
+                  "border": "#BFC6D4"
+                },
+                "selected": {
+                  "text": "#FFFFFF",
+                  "background": "#4C92D9",
+                  "border": "#4C92D9"
+                },
+                "selectedHover": {
+                  "text": "#FFFFFF",
+                  "background": "#3D7BC4",
+                  "border": "#3D7BC4"
+                },
+                "disabled": {
+                  "text": "#6B7280",
+                  "background": "transparent",
+                  "border": "1px solid #BFC6D4",
+                  "opacity": "0.4"
+                },
+                "disabledHover": {
+                  "text": "#6B7280",
+                  "background": "transparent",
+                  "border": "#BFC6D4",
+                  "opacity": "0.4"
+                },
+                "focus": {
+                  "text": "#373F4E",
+                  "background": "transparent",
+                  "border": "1px solid #BFC6D4",
+                  "boxShadow": "0 0 0 2px rgba(76, 146, 217, 0.1)"
+                }
+              }
+            },
+            "dark": {
+              "navigationButton": {
+                "default": {
+                  "text": "#B6B6C4",
+                  "background": "transparent",
+                  "border": "1px solid #5F6871",
+                  "iconColor": "#B6B6C4"
+                },
+                "hover": {
+                  "text": "#E9ECEF",
+                  "background": "#3D4A5C",
+                  "border": "#5F6871",
+                  "iconColor": "#E9ECEF"
+                },
+                "disabled": {
+                  "text": "#B6B6C4",
+                  "background": "transparent",
+                  "border": "1px solid #5F6871",
+                  "iconColor": "#B6B6C4",
+                  "opacity": "0.5"
+                }
+              },
+              "yearText": {
+                "default": {
+                  "text": "#E9ECEF"
+                }
+              },
+              "monthButton": {
+                "default": {
+                  "text": "#E9ECEF",
+                  "background": "transparent",
+                  "border": "1px solid #5F6871"
+                },
+                "hover": {
+                  "text": "#E9ECEF",
+                  "background": "#3D4A5C",
+                  "border": "#5F6871"
+                },
+                "selected": {
+                  "text": "#1F252E",
+                  "background": "#59ACFF",
+                  "border": "#59ACFF"
+                },
+                "selectedHover": {
+                  "text": "#1F252E",
+                  "background": "#7BB8FF",
+                  "border": "#7BB8FF"
+                },
+                "disabled": {
+                  "text": "#BBBBC6",
+                  "background": "transparent",
+                  "border": "1px solid #5F6871",
+                  "opacity": "0.4"
+                },
+                "disabledHover": {
+                  "text": "#BBBBC6",
+                  "background": "transparent",
+                  "border": "#5F6871",
+                  "opacity": "0.4"
+                },
+                "focus": {
+                  "text": "#E9ECEF",
+                  "background": "transparent",
+                  "border": "1px solid #5F6871",
+                  "boxShadow": "0 0 0 2px rgba(89, 172, 255, 0.1)"
+                }
+              }
+            }
+          },
+          "vp": {
+            "light": {
+              "navigationButton": {
+                "default": {
+                  "text": "#525969",
+                  "background": "transparent",
+                  "border": "1px solid #BFC6D4",
+                  "iconColor": "#525969"
+                },
+                "hover": {
+                  "text": "#373F4E",
+                  "background": "#E5E7EB",
+                  "border": "#BFC6D4",
+                  "iconColor": "#373F4E"
+                },
+                "disabled": {
+                  "text": "#525969",
+                  "background": "transparent",
+                  "border": "1px solid #BFC6D4",
+                  "iconColor": "#525969",
+                  "opacity": "0.5"
+                }
+              },
+              "yearText": {
+                "default": {
+                  "text": "#373F4E"
+                }
+              },
+              "monthButton": {
+                "default": {
+                  "text": "#373F4E",
+                  "background": "transparent",
+                  "border": "1px solid #BFC6D4"
+                },
+                "hover": {
+                  "text": "#373F4E",
+                  "background": "#E5E7EB",
+                  "border": "#BFC6D4"
+                },
+                "selected": {
+                  "text": "#FFFFFF",
+                  "background": "#4C92D9",
+                  "border": "#4C92D9"
+                },
+                "selectedHover": {
+                  "text": "#FFFFFF",
+                  "background": "#3D7BC4",
+                  "border": "#3D7BC4"
+                },
+                "disabled": {
+                  "text": "#6B7280",
+                  "background": "transparent",
+                  "border": "1px solid #BFC6D4",
+                  "opacity": "0.4"
+                },
+                "disabledHover": {
+                  "text": "#6B7280",
+                  "background": "transparent",
+                  "border": "#BFC6D4",
+                  "opacity": "0.4"
+                },
+                "focus": {
+                  "text": "#373F4E",
+                  "background": "transparent",
+                  "border": "1px solid #BFC6D4",
+                  "boxShadow": "0 0 0 2px rgba(76, 146, 217, 0.1)"
+                }
+              }
+            },
+            "dark": {
+              "navigationButton": {
+                "default": {
+                  "text": "#B5B5BC",
+                  "background": "transparent",
+                  "border": "1px solid #2A2D32",
+                  "iconColor": "#B5B5BC"
+                },
+                "hover": {
+                  "text": "#FAFAFA",
+                  "background": "#2A2D32",
+                  "border": "#2A2D32",
+                  "iconColor": "#FAFAFA"
+                },
+                "disabled": {
+                  "text": "#B5B5BC",
+                  "background": "transparent",
+                  "border": "1px solid #2A2D32",
+                  "iconColor": "#B5B5BC",
+                  "opacity": "0.5"
+                }
+              },
+              "yearText": {
+                "default": {
+                  "text": "#FAFAFA"
+                }
+              },
+              "monthButton": {
+                "default": {
+                  "text": "#FAFAFA",
+                  "background": "transparent",
+                  "border": "1px solid #2A2D32"
+                },
+                "hover": {
+                  "text": "#FAFAFA",
+                  "background": "#2A2D32",
+                  "border": "#2A2D32"
+                },
+                "selected": {
+                  "text": "#15171A",
+                  "background": "#59ACFF",
+                  "border": "#59ACFF"
+                },
+                "selectedHover": {
+                  "text": "#15171A",
+                  "background": "#7bb8ff",
+                  "border": "#7bb8ff"
+                },
+                "disabled": {
+                  "text": "#B5B5BC",
+                  "background": "transparent",
+                  "border": "1px solid #2A2D32",
+                  "opacity": "0.4"
+                },
+                "disabledHover": {
+                  "text": "#B5B5BC",
+                  "background": "transparent",
+                  "border": "#2A2D32",
+                  "opacity": "0.4"
+                },
+                "focus": {
+                  "text": "#FAFAFA",
+                  "background": "transparent",
+                  "border": "1px solid #2A2D32",
+                  "boxShadow": "0 0 0 2px rgba(89, 172, 255, 0.1)"
+                }
+              }
+            }
+          },
+          "ppm": {
+            "light": {
+              "navigationButton": {
+                "default": {
+                  "text": "#525969",
+                  "background": "transparent",
+                  "border": "1px solid #BFC6D4",
+                  "iconColor": "#525969"
+                },
+                "hover": {
+                  "text": "#373F4E",
+                  "background": "#E5E7EB",
+                  "border": "#BFC6D4",
+                  "iconColor": "#373F4E"
+                },
+                "disabled": {
+                  "text": "#525969",
+                  "background": "transparent",
+                  "border": "1px solid #BFC6D4",
+                  "iconColor": "#525969",
+                  "opacity": "0.5"
+                }
+              },
+              "yearText": {
+                "default": {
+                  "text": "#373F4E"
+                }
+              },
+              "monthButton": {
+                "default": {
+                  "text": "#373F4E",
+                  "background": "transparent",
+                  "border": "1px solid #BFC6D4"
+                },
+                "hover": {
+                  "text": "#373F4E",
+                  "background": "#E5E7EB",
+                  "border": "#BFC6D4"
+                },
+                "selected": {
+                  "text": "#FFFFFF",
+                  "background": "#4C92D9",
+                  "border": "#4C92D9"
+                },
+                "selectedHover": {
+                  "text": "#FFFFFF",
+                  "background": "#3D7BC4",
+                  "border": "#3D7BC4"
+                },
+                "disabled": {
+                  "text": "#6B7280",
+                  "background": "transparent",
+                  "border": "1px solid #BFC6D4",
+                  "opacity": "0.4"
+                },
+                "disabledHover": {
+                  "text": "#6B7280",
+                  "background": "transparent",
+                  "border": "#BFC6D4",
+                  "opacity": "0.4"
+                },
+                "focus": {
+                  "text": "#373F4E",
+                  "background": "transparent",
+                  "border": "1px solid #BFC6D4",
+                  "boxShadow": "0 0 0 2px rgba(76, 146, 217, 0.1)"
+                }
+              }
+            },
+            "dark": {
+              "navigationButton": {
+                "default": {
+                  "text": "#B5B5BC",
+                  "background": "transparent",
+                  "border": "1px solid #2A2D32",
+                  "iconColor": "#B5B5BC"
+                },
+                "hover": {
+                  "text": "#FAFAFA",
+                  "background": "#2A2D32",
+                  "border": "#2A2D32",
+                  "iconColor": "#FAFAFA"
+                },
+                "disabled": {
+                  "text": "#B5B5BC",
+                  "background": "transparent",
+                  "border": "1px solid #2A2D32",
+                  "iconColor": "#B5B5BC",
+                  "opacity": "0.5"
+                }
+              },
+              "yearText": {
+                "default": {
+                  "text": "#FAFAFA"
+                }
+              },
+              "monthButton": {
+                "default": {
+                  "text": "#FAFAFA",
+                  "background": "transparent",
+                  "border": "1px solid #2A2D32"
+                },
+                "hover": {
+                  "text": "#FAFAFA",
+                  "background": "#2A2D32",
+                  "border": "#2A2D32"
+                },
+                "selected": {
+                  "text": "#15171A",
+                  "background": "#59ACFF",
+                  "border": "#59ACFF"
+                },
+                "selectedHover": {
+                  "text": "#15171A",
+                  "background": "#7bb8ff",
+                  "border": "#7bb8ff"
+                },
+                "disabled": {
+                  "text": "#B5B5BC",
+                  "background": "transparent",
+                  "border": "1px solid #2A2D32",
+                  "opacity": "0.4"
+                },
+                "disabledHover": {
+                  "text": "#B5B5BC",
+                  "background": "transparent",
+                  "border": "#2A2D32",
+                  "opacity": "0.4"
+                },
+                "focus": {
+                  "text": "#FAFAFA",
+                  "background": "transparent",
+                  "border": "1px solid #2A2D32",
+                  "boxShadow": "0 0 0 2px rgba(89, 172, 255, 0.1)"
+                }
+              }
+            }
+          },
+          "maconomy": {
+            "light": {
+              "navigationButton": {
+                "default": {
+                  "text": "#525969",
+                  "background": "transparent",
+                  "border": "1px solid #BFC6D4",
+                  "iconColor": "#525969"
+                },
+                "hover": {
+                  "text": "#373F4E",
+                  "background": "#E5E7EB",
+                  "border": "#BFC6D4",
+                  "iconColor": "#373F4E"
+                },
+                "disabled": {
+                  "text": "#525969",
+                  "background": "transparent",
+                  "border": "1px solid #BFC6D4",
+                  "iconColor": "#525969",
+                  "opacity": "0.5"
+                }
+              },
+              "yearText": {
+                "default": {
+                  "text": "#373F4E"
+                }
+              },
+              "monthButton": {
+                "default": {
+                  "text": "#373F4E",
+                  "background": "transparent",
+                  "border": "1px solid #BFC6D4"
+                },
+                "hover": {
+                  "text": "#373F4E",
+                  "background": "#E5E7EB",
+                  "border": "#BFC6D4"
+                },
+                "selected": {
+                  "text": "#FFFFFF",
+                  "background": "#4C92D9",
+                  "border": "#4C92D9"
+                },
+                "selectedHover": {
+                  "text": "#FFFFFF",
+                  "background": "#3D7BC4",
+                  "border": "#3D7BC4"
+                },
+                "disabled": {
+                  "text": "#6B7280",
+                  "background": "transparent",
+                  "border": "1px solid #BFC6D4",
+                  "opacity": "0.4"
+                },
+                "disabledHover": {
+                  "text": "#6B7280",
+                  "background": "transparent",
+                  "border": "#BFC6D4",
+                  "opacity": "0.4"
+                },
+                "focus": {
+                  "text": "#373F4E",
+                  "background": "transparent",
+                  "border": "1px solid #BFC6D4",
+                  "boxShadow": "0 0 0 2px rgba(76, 146, 217, 0.1)"
+                }
+              }
+            },
+            "dark": {
+              "navigationButton": {
+                "default": {
+                  "text": "#B5B5BC",
+                  "background": "transparent",
+                  "border": "1px solid #2A2D32",
+                  "iconColor": "#B5B5BC"
+                },
+                "hover": {
+                  "text": "#FAFAFA",
+                  "background": "#2A2D32",
+                  "border": "#2A2D32",
+                  "iconColor": "#FAFAFA"
+                },
+                "disabled": {
+                  "text": "#B5B5BC",
+                  "background": "transparent",
+                  "border": "1px solid #2A2D32",
+                  "iconColor": "#B5B5BC",
+                  "opacity": "0.5"
+                }
+              },
+              "yearText": {
+                "default": {
+                  "text": "#FAFAFA"
+                }
+              },
+              "monthButton": {
+                "default": {
+                  "text": "#FAFAFA",
+                  "background": "transparent",
+                  "border": "1px solid #2A2D32"
+                },
+                "hover": {
+                  "text": "#FAFAFA",
+                  "background": "#2A2D32",
+                  "border": "#2A2D32"
+                },
+                "selected": {
+                  "text": "#15171A",
+                  "background": "#59ACFF",
+                  "border": "#59ACFF"
+                },
+                "selectedHover": {
+                  "text": "#15171A",
+                  "background": "#7bb8ff",
+                  "border": "#7bb8ff"
+                },
+                "disabled": {
+                  "text": "#B5B5BC",
+                  "background": "transparent",
+                  "border": "1px solid #2A2D32",
+                  "opacity": "0.4"
+                },
+                "disabledHover": {
+                  "text": "#B5B5BC",
+                  "background": "transparent",
+                  "border": "#2A2D32",
+                  "opacity": "0.4"
+                },
+                "focus": {
+                  "text": "#FAFAFA",
+                  "background": "transparent",
+                  "border": "1px solid #2A2D32",
+                  "boxShadow": "0 0 0 2px rgba(89, 172, 255, 0.1)"
+                }
+              }
+            }
+          }
+        }
+      }
     },
     "elevation": {
       "default": "none",
@@ -282,18 +841,41 @@
       "properties": {}
     },
     "layout": {
-      "display": "flex",
-      "alignItems": "center",
-      "justifyContent": "center"
+      "display": "block",
+      "alignItems": null,
+      "justifyContent": null
     },
-    "iconSpecs": null
+    "iconSpecs": {
+      "chevronLeft": {
+        "name": "chevron-left",
+        "size": "sm",
+        "width": "24px",
+        "height": "24px"
+      },
+      "chevronRight": {
+        "name": "chevron-right",
+        "size": "sm",
+        "width": "24px",
+        "height": "24px"
+      }
+    }
   },
   "accessibility": {
-    "role": null,
+    "role": "grid",
     "tabIndex": null,
-    "keyboardSupport": {},
-    "ariaAttributes": {},
-    "focusVisible": {}
+    "keyboardSupport": {
+      "arrowKeys": "Navigate between months",
+      "enter": "Select month",
+      "space": "Select month"
+    },
+    "ariaAttributes": {
+      "aria-label": "Months for {year}",
+      "role": "grid"
+    },
+    "focusVisible": {
+      "enabled": true,
+      "style": "box-shadow"
+    }
   },
   "cssClassStyles": {
     ".month-picker": {
