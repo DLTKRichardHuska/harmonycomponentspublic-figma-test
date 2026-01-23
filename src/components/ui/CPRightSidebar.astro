@@ -5,78 +5,83 @@
  * A CP-specific right navigation sidebar that is docked to the right edge of the screen.
  * Shows only icons when collapsed, expands on hover to show text labels + icon.
  *
+ * @prop {Array} sections - Optional custom sections configuration. If not provided, uses default CP sections.
  * @prop {string} class - Additional CSS classes to apply
  */
 import Icon from './Icon.astro';
 
+interface NavItem {
+  icon: string;
+  label: string;
+  href?: string;
+  active?: boolean;
+  isCustom?: boolean;
+  customSrc?: string;
+  iconSize?: string;
+}
+
+interface Section {
+  items: NavItem[];
+}
+
 interface Props {
+  sections?: Section[];
   class?: string;
 }
 
-const { class: className = '' } = Astro.props;
+const { sections, class: className = '' } = Astro.props;
 
-// Section 1: AI and quick actions
-const section1Items = [
-  { icon: 'dela-ai', label: 'Dela AI', isCustom: true },
-  { icon: 'bell', label: 'Notifications' },
-  { icon: 'arrow-up-tray', label: 'Files' },
+// Default CP sections configuration
+const cpDefaultSections: Section[] = [
+  {
+    items: [
+      { icon: 'dela-ai', label: 'Dela AI', isCustom: true, customSrc: '/logos/DelaD.svg', iconSize: '36px' },
+      { icon: 'bell', label: 'Notifications', iconSize: '24px' },
+      { icon: 'arrow-up-tray', label: 'Files', iconSize: '24px' },
+    ],
+  },
+  {
+    items: [
+      { icon: 'printer', label: 'Print', iconSize: '24px' },
+      { icon: 'view-columns', label: 'Layout Options', iconSize: '24px' },
+    ],
+  },
+  {
+    items: [
+      { icon: 'microphone-slash', label: 'Microphone', iconSize: '24px' },
+      { icon: 'signal-slash', label: 'Offline', iconSize: '24px' },
+      { icon: 'command-line', label: 'Keyboard Shortcuts', iconSize: '24px' },
+      { icon: 'question-mark-circle', label: 'Help', iconSize: '24px' },
+    ],
+  },
 ];
 
-// Section 2: Document actions
-const section2Items = [
-  { icon: 'printer', label: 'Print' },
-  { icon: 'view-columns', label: 'Layout Options' },
-];
-
-// Section 3: Settings and help
-const section3Items = [
-  { icon: 'microphone-slash', label: 'Microphone' },
-  { icon: 'signal-slash', label: 'Offline' },
-  { icon: 'command-line', label: 'Keyboard Shortcuts' },
-  { icon: 'question-mark-circle', label: 'Help' },
-];
+// Use provided sections or fall back to defaults
+const sidebarSections = sections || cpDefaultSections;
 ---
 
 <nav class:list={['cp-right-sidebar', className]}>
-  <!-- Section 1: AI and Quick Actions -->
-  <div class="cp-right-sidebar__section">
-    {section1Items.map((item) => (
-      <a href="#" class="cp-right-sidebar__item">
-        <span class="cp-right-sidebar__label">{item.label}</span>
-        <span class="cp-right-sidebar__icon">
-          {item.isCustom ? (
-            <img src="/logos/DelaD.svg" alt="Dela AI" class="cp-right-sidebar__dela-logo" />
-          ) : (
-            <Icon name={item.icon} />
-          )}
-        </span>
-      </a>
-    ))}
-  </div>
-
-  <!-- Section 2: Document Actions -->
-  <div class="cp-right-sidebar__section">
-    {section2Items.map((item) => (
-      <a href="#" class="cp-right-sidebar__item">
-        <span class="cp-right-sidebar__label">{item.label}</span>
-        <span class="cp-right-sidebar__icon">
-          <Icon name={item.icon} />
-        </span>
-      </a>
-    ))}
-  </div>
-
-  <!-- Section 3: Settings and Help -->
-  <div class="cp-right-sidebar__section">
-    {section3Items.map((item) => (
-      <a href="#" class="cp-right-sidebar__item">
-        <span class="cp-right-sidebar__label">{item.label}</span>
-        <span class="cp-right-sidebar__icon">
-          <Icon name={item.icon} />
-        </span>
-      </a>
-    ))}
-  </div>
+  {sidebarSections.map((section) => (
+    <div class="cp-right-sidebar__section">
+      {section.items.map((item) => {
+        // Use 'lg' size (24px) for standard icons, special class for 36px custom icons
+        const isDelaLogo = item.isCustom && item.iconSize === '36px';
+        
+        return (
+          <a href={item.href || '#'} class:list={['cp-right-sidebar__item', { 'cp-right-sidebar__item--active': item.active }]}>
+            <span class="cp-right-sidebar__label">{item.label}</span>
+            <span class="cp-right-sidebar__icon">
+              {item.isCustom && item.customSrc ? (
+                <img src={item.customSrc} alt={item.label} class={isDelaLogo ? 'cp-right-sidebar__dela-logo' : ''} />
+              ) : (
+                <Icon name={item.icon} size="lg" />
+              )}
+            </span>
+          </a>
+        );
+      })}
+    </div>
+  ))}
 </nav>
 
 

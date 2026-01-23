@@ -5217,21 +5217,21 @@ html.dark .left-sidebar__item:hover {
 
 .cp-right-sidebar__icon {
   flex-shrink: 0;
-  width: 24px;
-  height: 24px;
+  width: var(--icon-lg);
+  height: var(--icon-lg);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .cp-right-sidebar__icon svg {
-  width: 24px;
-  height: 24px;
+  width: var(--icon-lg);
+  height: var(--icon-lg);
 }
 
 .cp-right-sidebar__dela-logo {
-  width: 36px;
-  height: 36px;
+  width: var(--space-9);
+  height: var(--space-9);
   border-radius: 50%;
 }
 
