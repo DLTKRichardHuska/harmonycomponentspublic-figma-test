@@ -132,20 +132,10 @@
         }
       ]
     },
-    "children": [
-      {
-        "element": "script",
-        "class": "",
-        "spacing": {
-          "padding": "0",
-          "margin": "0"
-        },
-        "children": []
-      }
-    ]
+    "children": []
   },
   "_metadata": {
-    "lastGenerated": "2026-01-22T21:00:00.000Z",
+    "lastGenerated": "2026-01-23T00:00:00.000Z",
     "generatedWith": "@astrojs/compiler@2.13.0",
     "includesVisualSpecs": true,
     "availableVariants": []
@@ -241,7 +231,8 @@
         "width": "1px",
         "style": "solid",
         "position": "bottom",
-        "radius": "0px"
+        "radius": "0px",
+        "color": "var(--border-light)"
       },
       "timeSection": {
         "width": "none",
@@ -790,7 +781,7 @@
     ".datetime-picker__date-section": {
       "margin-bottom": "16px",
       "padding-bottom": "16px",
-      "border-bottom": "1px solid #E2E8F0"
+      "border-bottom": "1px solid var(--border-light)"
     },
     "@media (max-width: 768px)": {
       ".datetime-picker": {
