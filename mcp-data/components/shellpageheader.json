@@ -7,37 +7,37 @@
     "title": {
       "type": "string",
       "optional": false,
-      "default": null
+      "default": ""
     },
     "subtitle": {
       "type": "string",
       "optional": true,
-      "default": null
+      "default": ""
     },
     "primaryButton": {
       "type": "ButtonConfig",
       "optional": true,
-      "default": null
+      "default": ""
     },
     "outlineButton1": {
       "type": "ButtonConfig",
       "optional": true,
-      "default": null
+      "default": ""
     },
     "outlineButton2": {
       "type": "ButtonConfig",
       "optional": true,
-      "default": null
+      "default": ""
     },
     "outlineButton3": {
       "type": "ButtonConfig",
       "optional": true,
-      "default": null
+      "default": ""
     },
     "class": {
       "type": "string",
       "optional": true,
-      "default": null
+      "default": ""
     }
   },
   "imports": {
@@ -66,10 +66,11 @@
   "structure": {
     "root": {
       "element": "header",
-      "class": "`shell-page-header ${className}`",
+      "class": "shell-page-header",
       "spacing": {
-        "padding": "0",
-        "margin": "0"
+        "padding": "12px 0",
+        "margin": "0 0 12px 0",
+        "gap": "16px"
       },
       "baseClass": "shell-page-header",
       "modifierClasses": {},
@@ -79,7 +80,8 @@
           "class": "shell-page-header__left",
           "spacing": {
             "padding": "0",
-            "margin": "0"
+            "margin": "0",
+            "gap": "4px"
           },
           "children": [
             {
@@ -107,12 +109,13 @@
           "class": "shell-page-header__actions",
           "spacing": {
             "padding": "0",
-            "margin": "0"
+            "margin": "0",
+            "gap": "8px"
           },
           "children": [
             {
               "element": "Button",
-              "class": null,
+              "class": "",
               "spacing": {
                 "padding": "0",
                 "margin": "0"
@@ -121,7 +124,7 @@
             },
             {
               "element": "Button",
-              "class": null,
+              "class": "",
               "spacing": {
                 "padding": "0",
                 "margin": "0"
@@ -135,7 +138,7 @@
     "children": [
       {
         "element": "style",
-        "class": null,
+        "class": "",
         "spacing": {
           "padding": "0",
           "margin": "0"
@@ -153,114 +156,584 @@
   "visualSpecifications": {
     "dimensions": {
       "xs": {
-        "height": null,
-        "width": null,
-        "minWidth": "auto",
+        "height": "auto",
+        "width": "100%",
+        "minWidth": "0",
         "maxWidth": "none"
       },
       "sm": {
-        "height": null,
-        "width": null,
-        "minWidth": "auto",
+        "height": "auto",
+        "width": "100%",
+        "minWidth": "0",
         "maxWidth": "none"
       },
       "md": {
-        "height": null,
-        "width": null,
-        "minWidth": "auto",
+        "height": "auto",
+        "width": "100%",
+        "minWidth": "0",
         "maxWidth": "none"
       },
       "lg": {
-        "height": null,
-        "width": null,
-        "minWidth": "auto",
+        "height": "auto",
+        "width": "100%",
+        "minWidth": "0",
         "maxWidth": "none"
       }
     },
     "spacing": {
-      "xs": {
-        "paddingTop": "0",
+      "default": {
+        "paddingTop": "12px",
         "paddingRight": "0",
-        "paddingBottom": "0",
+        "paddingBottom": "12px",
         "paddingLeft": "0",
-        "gap": "0"
+        "marginTop": "0",
+        "marginRight": "0",
+        "marginBottom": "12px",
+        "marginLeft": "0",
+        "gap": "16px"
       },
-      "sm": {
-        "paddingTop": "0",
+      "responsive": {
+        "breakpoint": "768px",
+        "paddingTop": "12px",
         "paddingRight": "0",
-        "paddingBottom": "0",
+        "paddingBottom": "12px",
         "paddingLeft": "0",
-        "gap": "0"
-      },
-      "md": {
-        "paddingTop": "0",
-        "paddingRight": "0",
-        "paddingBottom": "0",
-        "paddingLeft": "0",
-        "gap": "0"
-      },
-      "lg": {
-        "paddingTop": "0",
-        "paddingRight": "0",
-        "paddingBottom": "0",
-        "paddingLeft": "0",
-        "gap": "0"
+        "marginTop": "0",
+        "marginRight": "0",
+        "marginBottom": "12px",
+        "marginLeft": "0",
+        "gap": "16px"
       }
     },
     "typography": {
-      "fontFamily": null,
-      "fontWeight": null,
-      "lineHeight": null,
-      "letterSpacing": null,
-      "textTransform": null,
-      "sizes": {
-        "xs": {
-          "fontSize": null,
-          "lineHeight": null
-        },
-        "sm": {
-          "fontSize": null,
-          "lineHeight": null
-        },
-        "md": {
-          "fontSize": null,
-          "lineHeight": null
-        },
-        "lg": {
-          "fontSize": null,
-          "lineHeight": null
-        }
+      "title": {
+        "fontFamily": "'Lexend', sans-serif",
+        "fontSize": "1.5rem",
+        "fontWeight": "600",
+        "lineHeight": "1.375",
+        "letterSpacing": "0em",
+        "textTransform": "none"
+      },
+      "subtitle": {
+        "fontFamily": "'Figtree', sans-serif",
+        "fontSize": "1rem",
+        "fontWeight": "400",
+        "lineHeight": "1.5",
+        "letterSpacing": "0em",
+        "textTransform": "none"
       }
     },
     "borders": {
-      "width": null,
-      "style": null,
-      "radius": {}
+      "width": "0",
+      "style": "none",
+      "radius": {
+        "default": "0"
+      }
     },
     "colors": {
-      "variants": {}
+      "variants": {
+        "default": {
+          "cp": {
+            "light": {
+              "background": "transparent",
+              "title": {
+                "text": "#373F4E"
+              },
+              "subtitle": {
+                "text": "#525969"
+              }
+            },
+            "dark": {
+              "background": "transparent",
+              "title": {
+                "text": "#E9ECEF"
+              },
+              "subtitle": {
+                "text": "#B6B6C4"
+              }
+            }
+          },
+          "vp": {
+            "light": {
+              "background": "transparent",
+              "title": {
+                "text": "#373F4E"
+              },
+              "subtitle": {
+                "text": "#525969"
+              }
+            },
+            "dark": {
+              "background": "transparent",
+              "title": {
+                "text": "#FAFAFA"
+              },
+              "subtitle": {
+                "text": "#B5B5BC"
+              }
+            }
+          },
+          "ppm": {
+            "light": {
+              "background": "transparent",
+              "title": {
+                "text": "#373F4E"
+              },
+              "subtitle": {
+                "text": "#525969"
+              }
+            },
+            "dark": {
+              "background": "transparent",
+              "title": {
+                "text": "#FAFAFA"
+              },
+              "subtitle": {
+                "text": "#B5B5BC"
+              }
+            }
+          },
+          "maconomy": {
+            "light": {
+              "background": "transparent",
+              "title": {
+                "text": "#373F4E"
+              },
+              "subtitle": {
+                "text": "#525969"
+              }
+            },
+            "dark": {
+              "background": "transparent",
+              "title": {
+                "text": "#FAFAFA"
+              },
+              "subtitle": {
+                "text": "#B5B5BC"
+              }
+            }
+          }
+        }
+      }
     },
     "elevation": {
       "default": "none",
-      "hover": null,
-      "active": null,
-      "focus": null
+      "hover": "none",
+      "active": "none",
+      "focus": "none"
     },
     "transitions": {
-      "default": null,
+      "default": "none",
       "properties": {}
     },
-    "layout": {},
-    "iconSpecs": null
+    "layout": {
+      "display": "flex",
+      "flexDirection": "row",
+      "justifyContent": "space-between",
+      "alignItems": "center",
+      "flexWrap": "nowrap",
+      "gap": "16px"
+    },
+    "responsive": {
+      "breakpoint": "768px",
+      "maxWidth": {
+        "display": "flex",
+        "flexDirection": "column",
+        "justifyContent": "flex-start",
+        "alignItems": "stretch",
+        "flexWrap": "nowrap",
+        "gap": "16px"
+      }
+    },
+    "iconSpecs": {
+      "description": "Icons are inherited from Button component. Buttons within shell-page-header__actions can have icons via ButtonConfig.icon property. Icon colors follow Button component specifications for pageHeader buttonType variant.",
+      "iconSupport": true,
+      "iconPosition": "left",
+      "iconSize": "inherited from Button component (md size = 20px)"
+    }
   },
   "accessibility": {
-    "role": null,
-    "tabIndex": null,
+    "role": "banner",
+    "tabIndex": "",
     "keyboardSupport": {},
     "ariaAttributes": {},
     "focusVisible": {}
   },
-  "cssClassStyles": {},
+  "cssClassStyles": {
+    ".shell-page-header": {
+      "display": "flex",
+      "justify-content": "space-between",
+      "align-items": "center",
+      "padding": "12px 0",
+      "margin-bottom": "12px",
+      "gap": "16px",
+      "background-color": "transparent",
+      "border": "none",
+      "box-shadow": "none"
+    },
+    ".shell-page-header__left": {
+      "display": "flex",
+      "flex-direction": "column",
+      "gap": "4px",
+      "flex": "1",
+      "min-width": "0",
+      "padding": "0",
+      "margin": "0",
+      "background-color": "transparent",
+      "border": "none"
+    },
+    ".shell-page-header__title": {
+      "cp": {
+        "light": {
+          "font-family": "'Lexend', sans-serif",
+          "font-size": "1.5rem",
+          "font-weight": "600",
+          "line-height": "1.375",
+          "color": "#373F4E",
+          "margin": "0",
+          "padding": "0"
+        },
+        "dark": {
+          "font-family": "'Lexend', sans-serif",
+          "font-size": "1.5rem",
+          "font-weight": "600",
+          "line-height": "1.375",
+          "color": "#E9ECEF",
+          "margin": "0",
+          "padding": "0"
+        }
+      },
+      "vp": {
+        "light": {
+          "font-family": "'Lexend', sans-serif",
+          "font-size": "1.5rem",
+          "font-weight": "600",
+          "line-height": "1.375",
+          "color": "#373F4E",
+          "margin": "0",
+          "padding": "0"
+        },
+        "dark": {
+          "font-family": "'Lexend', sans-serif",
+          "font-size": "1.5rem",
+          "font-weight": "600",
+          "line-height": "1.375",
+          "color": "#FAFAFA",
+          "margin": "0",
+          "padding": "0"
+        }
+      },
+      "ppm": {
+        "light": {
+          "font-family": "'Lexend', sans-serif",
+          "font-size": "1.5rem",
+          "font-weight": "600",
+          "line-height": "1.375",
+          "color": "#373F4E",
+          "margin": "0",
+          "padding": "0"
+        },
+        "dark": {
+          "font-family": "'Lexend', sans-serif",
+          "font-size": "1.5rem",
+          "font-weight": "600",
+          "line-height": "1.375",
+          "color": "#FAFAFA",
+          "margin": "0",
+          "padding": "0"
+        }
+      },
+      "maconomy": {
+        "light": {
+          "font-family": "'Lexend', sans-serif",
+          "font-size": "1.5rem",
+          "font-weight": "600",
+          "line-height": "1.375",
+          "color": "#373F4E",
+          "margin": "0",
+          "padding": "0"
+        },
+        "dark": {
+          "font-family": "'Lexend', sans-serif",
+          "font-size": "1.5rem",
+          "font-weight": "600",
+          "line-height": "1.375",
+          "color": "#FAFAFA",
+          "margin": "0",
+          "padding": "0"
+        }
+      }
+    },
+    ".shell-page-header__subtitle": {
+      "cp": {
+        "light": {
+          "font-family": "'Figtree', sans-serif",
+          "font-size": "1rem",
+          "font-weight": "400",
+          "line-height": "1.5",
+          "color": "#525969",
+          "margin": "0",
+          "padding": "0"
+        },
+        "dark": {
+          "font-family": "'Figtree', sans-serif",
+          "font-size": "1rem",
+          "font-weight": "400",
+          "line-height": "1.5",
+          "color": "#B6B6C4",
+          "margin": "0",
+          "padding": "0"
+        }
+      },
+      "vp": {
+        "light": {
+          "font-family": "'Figtree', sans-serif",
+          "font-size": "1rem",
+          "font-weight": "400",
+          "line-height": "1.5",
+          "color": "#525969",
+          "margin": "0",
+          "padding": "0"
+        },
+        "dark": {
+          "font-family": "'Figtree', sans-serif",
+          "font-size": "1rem",
+          "font-weight": "400",
+          "line-height": "1.5",
+          "color": "#B5B5BC",
+          "margin": "0",
+          "padding": "0"
+        }
+      },
+      "ppm": {
+        "light": {
+          "font-family": "'Figtree', sans-serif",
+          "font-size": "1rem",
+          "font-weight": "400",
+          "line-height": "1.5",
+          "color": "#525969",
+          "margin": "0",
+          "padding": "0"
+        },
+        "dark": {
+          "font-family": "'Figtree', sans-serif",
+          "font-size": "1rem",
+          "font-weight": "400",
+          "line-height": "1.5",
+          "color": "#B5B5BC",
+          "margin": "0",
+          "padding": "0"
+        }
+      },
+      "maconomy": {
+        "light": {
+          "font-family": "'Figtree', sans-serif",
+          "font-size": "1rem",
+          "font-weight": "400",
+          "line-height": "1.5",
+          "color": "#525969",
+          "margin": "0",
+          "padding": "0"
+        },
+        "dark": {
+          "font-family": "'Figtree', sans-serif",
+          "font-size": "1rem",
+          "font-weight": "400",
+          "line-height": "1.5",
+          "color": "#B5B5BC",
+          "margin": "0",
+          "padding": "0"
+        }
+      }
+    },
+    ".shell-page-header__actions": {
+      "display": "flex",
+      "align-items": "center",
+      "gap": "8px",
+      "flex-shrink": "0",
+      "padding": "0",
+      "margin": "0",
+      "background-color": "transparent",
+      "border": "none"
+    },
+    ".shell-page-header__actions .btn--page-header.btn--secondary": {
+      "cp": {
+        "light": {
+          "default": {
+            "background-color": "transparent",
+            "border": "none",
+            "color": "inherit"
+          },
+          "hover": {
+            "background-color": "#eaeff5",
+            "border": "none",
+            "color": "inherit"
+          },
+          "disabled": {
+            "background-color": "transparent",
+            "border": "none",
+            "color": "inherit",
+            "opacity": "1",
+            "cursor": "not-allowed"
+          }
+        },
+        "dark": {
+          "default": {
+            "background-color": "transparent",
+            "border": "none",
+            "color": "inherit"
+          },
+          "hover": {
+            "background-color": "#3D4A5C",
+            "border": "none",
+            "color": "inherit"
+          },
+          "disabled": {
+            "background-color": "transparent",
+            "border": "none",
+            "color": "inherit",
+            "opacity": "1",
+            "cursor": "not-allowed"
+          }
+        }
+      },
+      "vp": {
+        "light": {
+          "default": {
+            "background-color": "transparent",
+            "border": "none",
+            "color": "inherit"
+          },
+          "hover": {
+            "background-color": "#eaeff5",
+            "border": "none",
+            "color": "inherit"
+          },
+          "disabled": {
+            "background-color": "transparent",
+            "border": "none",
+            "color": "inherit",
+            "opacity": "1",
+            "cursor": "not-allowed"
+          }
+        },
+        "dark": {
+          "default": {
+            "background-color": "transparent",
+            "border": "none",
+            "color": "inherit"
+          },
+          "hover": {
+            "background-color": "#eaeff5",
+            "border": "none",
+            "color": "inherit"
+          },
+          "disabled": {
+            "background-color": "transparent",
+            "border": "none",
+            "color": "inherit",
+            "opacity": "1",
+            "cursor": "not-allowed"
+          }
+        }
+      },
+      "ppm": {
+        "light": {
+          "default": {
+            "background-color": "transparent",
+            "border": "none",
+            "color": "inherit"
+          },
+          "hover": {
+            "background-color": "#eaeff5",
+            "border": "none",
+            "color": "inherit"
+          },
+          "disabled": {
+            "background-color": "transparent",
+            "border": "none",
+            "color": "inherit",
+            "opacity": "1",
+            "cursor": "not-allowed"
+          }
+        },
+        "dark": {
+          "default": {
+            "background-color": "transparent",
+            "border": "none",
+            "color": "inherit"
+          },
+          "hover": {
+            "background-color": "#eaeff5",
+            "border": "none",
+            "color": "inherit"
+          },
+          "disabled": {
+            "background-color": "transparent",
+            "border": "none",
+            "color": "inherit",
+            "opacity": "1",
+            "cursor": "not-allowed"
+          }
+        }
+      },
+      "maconomy": {
+        "light": {
+          "default": {
+            "background-color": "transparent",
+            "border": "none",
+            "color": "inherit"
+          },
+          "hover": {
+            "background-color": "#eaeff5",
+            "border": "none",
+            "color": "inherit"
+          },
+          "disabled": {
+            "background-color": "transparent",
+            "border": "none",
+            "color": "inherit",
+            "opacity": "1",
+            "cursor": "not-allowed"
+          }
+        },
+        "dark": {
+          "default": {
+            "background-color": "transparent",
+            "border": "none",
+            "color": "inherit"
+          },
+          "hover": {
+            "background-color": "#eaeff5",
+            "border": "none",
+            "color": "inherit"
+          },
+          "disabled": {
+            "background-color": "transparent",
+            "border": "none",
+            "color": "inherit",
+            "opacity": "1",
+            "cursor": "not-allowed"
+          }
+        }
+      }
+    },
+    "@media (max-width: 768px)": {
+      ".shell-page-header": {
+        "flex-direction": "column",
+        "align-items": "stretch",
+        "gap": "16px"
+      },
+      ".shell-page-header__actions": {
+        "flex-wrap": "wrap",
+        "width": "100%"
+      },
+      ".shell-page-header__actions .btn": {
+        "flex": "1",
+        "min-width": "120px"
+      }
+    }
+  },
   "_variantIndex": {},
   "_variantMetadata": {
     "availableVariants": []
