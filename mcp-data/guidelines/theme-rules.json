@@ -438,32 +438,6 @@
           "secondaryButtonDark": "#59acff (light blue) in dark mode",
           "note": "FloatingNav buttons use unique colors distinct from theme primary #4C92D9"
         }
-      },
-      "CPLeftSidebar": {
-        "theme": "cp",
-        "filePath": "src/components/ui/CPLeftSidebar.astro",
-        "cssLocation": "src/styles/components.css:4849-4940",
-        "defaultWidth": "52px",
-        "hoverWidth": "220px",
-        "behavior": "Expands on hover to show labels. Labels hidden by default (opacity: 0, visibility: hidden)",
-        "darkModeColors": {
-          "sectionBg": "#333d47",
-          "itemFg": "#e9ecef",
-          "itemHoverBg": "rgba(255, 255, 255, 0.08)"
-        }
-      },
-      "CPRightSidebar": {
-        "theme": "cp",
-        "filePath": "src/components/ui/CPRightSidebar.astro",
-        "cssLocation": "src/styles/components.css:5165-5266",
-        "defaultWidth": "52px",
-        "hoverWidth": "220px",
-        "behavior": "Expands on hover to show labels. Labels hidden by default (opacity: 0, visibility: hidden)",
-        "darkModeColors": {
-          "sectionBg": "#333d47",
-          "itemFg": "#e9ecef",
-          "itemHoverBg": "rgba(255, 255, 255, 0.08)"
-        }
       }
     },
     "excludedComponents": {
@@ -609,7 +583,7 @@
       "id": "cp-exclusive-components",
       "rule": "FloatingNav is CP-exclusive, ShellFooter is excluded from CP",
       "rationale": "Different navigation patterns: CP uses FloatingNav below header, others use footer",
-      "cpExclusive": ["FloatingNav", "CPLeftSidebar", "CPRightSidebar"],
+      "cpExclusive": ["FloatingNav"],
       "cpExcluded": ["ShellFooter"],
       "floatingNavColors": {
         "primaryButton": "#ff507b (pink/red - unique to FloatingNav, NOT theme primary)",
@@ -621,7 +595,7 @@
       "id": "cp-sidebar-hover-expansion",
       "rule": "CP sidebars expand from 52px to 220px on hover to reveal labels",
       "rationale": "Saves horizontal space while providing access to full navigation labels on demand",
-      "components": ["CPLeftSidebar", "CPRightSidebar"],
+      "components": ["LeftSidebar", "RightSidebar"],
       "defaultWidth": "52px (icon-only)",
       "hoverWidth": "220px (with labels)",
       "labelBehavior": "Hidden by default (opacity: 0, visibility: hidden), visible on hover",
@@ -683,7 +657,7 @@
     "whenUsingCPExclusiveComponents": [
       "1. FloatingNav: Only render in CP theme, positioned below header",
       "2. FloatingNav buttons: Use unique colors (#ff507b for primary, NOT theme primary)",
-      "3. CPLeftSidebar/CPRightSidebar: Only use in CP theme, standard themes use LeftSidebar/RightSidebar",
+      "3. LeftSidebar/RightSidebar: Use variant=\"cp\" for CP theme, other variants for standard themes",
       "4. CP sidebars: Default 52px width, expand to 220px on hover with labels appearing",
       "5. ShellFooter: Never include in CP theme layouts"
     ],

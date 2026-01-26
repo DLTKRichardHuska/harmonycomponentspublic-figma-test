@@ -49,7 +49,7 @@
         ],
         "examples": {
           "structural": ["ShellHeader", "ShellFooter", "ShellPageHeader", "ShellPanel", "LeftSidebar", "RightSidebar"],
-          "interactive": ["TabStrip", "FloatingNav", "ListMenu", "CPLeftSidebar", "CPRightSidebar"]
+          "interactive": ["TabStrip", "FloatingNav", "ListMenu", "LeftSidebar", "RightSidebar"]
         },
         "note": "Shell components are in navigation category despite providing layout structure"
       },
@@ -673,8 +673,6 @@
           "ShellPanel",
           "LeftSidebar",
           "RightSidebar",
-          "CPLeftSidebar",
-          "CPRightSidebar",
           "FloatingNav"
         ],
         "note": "All Shell* components are templates - they define application structure",

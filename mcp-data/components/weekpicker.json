@@ -1225,5 +1225,381 @@
   "_variantIndex": {},
   "_variantMetadata": {
     "availableVariants": []
+  },
+  "interactivity": {
+    "hasInteractivity": true,
+    "initialization": {
+      "function": "initWeekPickers",
+      "triggers": [
+        "DOMContentLoaded (implicit via immediate call)",
+        "astro:page-load"
+      ],
+      "preventDoubleInit": true,
+      "preventDoubleInitMethod": "data-init attribute on picker element",
+      "description": "Initializes all week picker components. Calculates weeks for current year, renders week list dynamically, sets up year navigation, week selection, and keyboard navigation."
+    },
+    "state": {
+      "currentYear": {
+        "type": "number",
+        "managedBy": "data-year attribute on picker element and internal variable",
+        "attribute": "data-year",
+        "default": "Current year",
+        "description": "Currently displayed year",
+        "updatedBy": "Year navigation buttons (prev/next)",
+        "displayedIn": ".week-picker__year span textContent"
+      },
+      "selectedWeek": {
+        "type": "number | null",
+        "managedBy": "data-selected-week attribute and CSS class",
+        "attribute": "data-selected-week",
+        "default": null,
+        "description": "Currently selected week number",
+        "setBy": "Week selection click or keyboard",
+        "visualState": "week-picker__week--selected class, tabindex='0', aria-selected='true'"
+      },
+      "weeksList": {
+        "type": "array",
+        "managedBy": "Dynamic DOM creation in renderWeeks()",
+        "description": "List of week objects for current year, calculated and rendered dynamically",
+        "recalculatedBy": "renderWeeks() function on year change",
+        "format": "Array of { week: number, startDate: Date, endDate: Date }"
+      }
+    },
+    "eventHandlers": [
+      {
+        "element": "[data-prev-year]",
+        "event": "click",
+        "handler": "navigatePreviousYear",
+        "description": "Navigates to previous year",
+        "condition": "Button is not disabled",
+        "actions": [
+          "Decrement currentYear variable",
+          "Update data-year attribute on picker",
+          "Update .week-picker__year span textContent",
+          "Call renderWeeks() to regenerate week list for new year"
+        ]
+      },
+      {
+        "element": "[data-next-year]",
+        "event": "click",
+        "handler": "navigateNextYear",
+        "description": "Navigates to next year",
+        "condition": "Button is not disabled",
+        "actions": [
+          "Increment currentYear variable",
+          "Update data-year attribute on picker",
+          "Update .week-picker__year span textContent",
+          "Call renderWeeks() to regenerate week list for new year"
+        ]
+      },
+      {
+        "element": ".week-picker__week button",
+        "event": "click",
+        "handler": "selectWeek",
+        "description": "Selects a week when clicking on week button",
+        "condition": "Week button is not disabled",
+        "actions": [
+          "Get week number and weekStr from button's data-week and data-week-value attributes",
+          "Remove 'week-picker__week--selected' class from all weeks",
+          "Set tabindex='-1' and aria-selected='false' on all weeks",
+          "Find button with matching data-week",
+          "Add 'week-picker__week--selected' class to selected button",
+          "Set tabindex='0' and aria-selected='true' on selected button",
+          "Focus selected button",
+          "Update selectedWeek variable",
+          "Update data-selected-week attribute on picker",
+          "Dispatch 'week-select' custom event with weekStr in detail"
+        ],
+        "note": "Week buttons are created dynamically in renderWeeks(), each gets click handler"
+      },
+      {
+        "element": ".week-picker__list",
+        "event": "keydown",
+        "handler": "handleKeyboardNavigation",
+        "description": "Handles keyboard navigation between weeks",
+        "keys": [
+          "ArrowUp",
+          "ArrowDown",
+          "Home",
+          "End",
+          "Enter",
+          "Space"
+        ],
+        "preventDefault": true,
+        "actions": [
+          "Find currently focused week button",
+          "Get array of all enabled weeks (excluding disabled)",
+          "Get current week index in enabled weeks array",
+          "Calculate new index based on key:",
+          "  ArrowUp: index - 1 (if > 0)",
+          "  ArrowDown: index + 1 (if < length - 1)",
+          "  Home: index 0 (first week)",
+          "  End: last index (last week)",
+          "  Enter/Space: select current week (calls selectWeek)",
+          "If new index calculated: Focus new week button, update tabindex (0 on new, -1 on old)"
+        ],
+        "note": "Keyboard navigation only moves between enabled weeks (skips disabled)"
+      }
+    ],
+    "keyboardSupport": {
+      "ArrowUp": {
+        "context": "When week button has focus",
+        "action": "Moves focus to previous enabled week",
+        "preventDefault": true,
+        "note": "Does not wrap - stops at first week"
+      },
+      "ArrowDown": {
+        "context": "When week button has focus",
+        "action": "Moves focus to next enabled week",
+        "preventDefault": true,
+        "note": "Does not wrap - stops at last week"
+      },
+      "Home": {
+        "context": "When week button has focus",
+        "action": "Moves focus to first enabled week",
+        "preventDefault": true
+      },
+      "End": {
+        "context": "When week button has focus",
+        "action": "Moves focus to last enabled week",
+        "preventDefault": true
+      },
+      "Enter": {
+        "context": "When week button has focus",
+        "action": "Selects the focused week",
+        "preventDefault": true
+      },
+      "Space": {
+        "context": "When week button has focus",
+        "action": "Selects the focused week",
+        "preventDefault": true
+      },
+      "Tab": {
+        "context": "When week button has focus",
+        "action": "Navigates to next focusable element",
+        "note": "Only selected week has tabindex='0', others have '-1'"
+      },
+      "Shift+Tab": {
+        "context": "When week button has focus",
+        "action": "Navigates to previous focusable element"
+      }
+    },
+    "dataAttributes": {
+      "data-week-picker": {
+        "purpose": "Identifies week picker element for initialization",
+        "required": true,
+        "usedBy": "initWeekPickers function to find all week picker instances"
+      },
+      "data-year": {
+        "purpose": "Stores currently displayed year",
+        "default": "Current year",
+        "usedBy": "Week calculation and display",
+        "updatedBy": "Year navigation handlers"
+      },
+      "data-selected-week": {
+        "purpose": "Stores currently selected week number",
+        "optional": true,
+        "usedBy": "Initial selection state and week-select event",
+        "updatedBy": "Week selection handler"
+      },
+      "data-min-year": {
+        "purpose": "Stores minimum selectable year",
+        "optional": true,
+        "usedBy": "Disabled week calculation",
+        "setBy": "min prop (extracted from YYYY-Www format)"
+      },
+      "data-min-week": {
+        "purpose": "Stores minimum selectable week number",
+        "optional": true,
+        "usedBy": "Disabled week calculation",
+        "setBy": "min prop (extracted from YYYY-Www format)"
+      },
+      "data-max-year": {
+        "purpose": "Stores maximum selectable year",
+        "optional": true,
+        "usedBy": "Disabled week calculation",
+        "setBy": "max prop (extracted from YYYY-Www format)"
+      },
+      "data-max-week": {
+        "purpose": "Stores maximum selectable week number",
+        "optional": true,
+        "usedBy": "Disabled week calculation",
+        "setBy": "max prop (extracted from YYYY-Www format)"
+      },
+      "data-disabled": {
+        "purpose": "Indicates if entire picker is disabled",
+        "values": [
+          "true",
+          "false"
+        ],
+        "usedBy": "Disabled week calculation",
+        "setBy": "disabled prop"
+      },
+      "data-locale": {
+        "purpose": "Stores locale for date formatting",
+        "default": "en-US",
+        "usedBy": "Date range formatting in week display",
+        "setBy": "locale prop"
+      },
+      "data-week": {
+        "purpose": "Stores week number for each week button",
+        "location": "On each .week-picker__week button (dynamically created)",
+        "usedBy": "Week selection handler to identify which week was clicked"
+      },
+      "data-week-value": {
+        "purpose": "Stores formatted week string (YYYY-Www) for each week button",
+        "location": "On each .week-picker__week button (dynamically created)",
+        "format": "YYYY-Www (e.g., '2024-W03')",
+        "usedBy": "Week selection handler and keyboard navigation for event dispatch"
+      },
+      "data-prev-year": {
+        "purpose": "Identifies previous year navigation button",
+        "location": "On prev year button",
+        "usedBy": "Year navigation handler"
+      },
+      "data-next-year": {
+        "purpose": "Identifies next year navigation button",
+        "location": "On next year button",
+        "usedBy": "Year navigation handler"
+      },
+      "data-init": {
+        "purpose": "Prevents double initialization",
+        "values": [
+          "true"
+        ],
+        "setBy": "initWeekPickers function after initialization",
+        "checkedBy": "initWeekPickers checks hasAttribute('data-init') before initializing"
+      }
+    },
+    "globalFunctions": {},
+    "customEvents": [
+      {
+        "name": "week-select",
+        "bubbles": true,
+        "detail": {
+          "value": "string (YYYY-Www format, e.g., '2024-W03')"
+        },
+        "description": "Dispatched when a week is selected",
+        "dispatchedBy": "selectWeek function",
+        "listenedBy": "DateInput component to update input value",
+        "format": "YYYY-Www where ww is week number padded to 2 digits"
+      }
+    ],
+    "dependencies": {
+      "internal": [
+        "initWeekPickers function",
+        "renderWeeks function (per-instance closure)",
+        "updateYear function (per-instance closure)",
+        "selectWeek function (per-instance closure)",
+        "getWeeksForYear function (calculates ISO weeks for year)",
+        "querySelector/querySelectorAll for element selection"
+      ],
+      "external": []
+    },
+    "coordination": {
+      "weekCalculation": {
+        "method": "getWeeksForYear() calculates ISO 8601 weeks for given year",
+        "algorithm": "Finds first week of year (first week with Thursday), calculates all weeks",
+        "format": "Array of { week: number, startDate: Date, endDate: Date }",
+        "description": "Weeks are calculated based on ISO 8601 standard (week starts Monday)"
+      },
+      "weekRendering": {
+        "method": "Dynamic DOM creation - clears list and creates new week buttons",
+        "triggers": "Initial render, year navigation",
+        "elements": [
+          "Week button with classes, data attributes, disabled state",
+          "Week number span (Week N)",
+          "Week range span (startDate - endDate formatted)"
+        ],
+        "description": "Week list is completely regenerated on year change"
+      },
+      "weekSelection": {
+        "visualUpdate": "Adds/removes week-picker__week--selected class",
+        "tabindexUpdate": "Sets tabindex='0' on selected, '-1' on others",
+        "ariaUpdate": "Sets aria-selected='true' on selected, 'false' on others",
+        "focusUpdate": "Focuses selected week button",
+        "attributeUpdate": "Updates data-selected-week on picker",
+        "eventDispatch": "Dispatches week-select custom event",
+        "format": "Event value is YYYY-Www format"
+      },
+      "disabledWeekCalculation": {
+        "method": "Calculated in renderWeeks() for each week",
+        "logic": "Week is disabled if:",
+        "conditions": [
+          "Picker is globally disabled (data-disabled='true')",
+          "OR (minYear/minWeek defined AND (currentYear < minYear OR (currentYear === minYear AND week < minWeek)))",
+          "OR (maxYear/maxWeek defined AND (currentYear > maxYear OR (currentYear === maxYear AND week > maxWeek)))"
+        ],
+        "visual": "week-picker__week--disabled class and disabled attribute",
+        "description": "Disabled states calculated during week rendering"
+      },
+      "keyboardNavigation": {
+        "method": "Listens on .week-picker__list container",
+        "enabledWeeksOnly": "Only navigates between enabled weeks (excludes disabled)",
+        "arrowUpDown": "Moves focus up/down list (no wrapping)",
+        "homeEnd": "Moves to first/last enabled week",
+        "enterSpace": "Selects focused week",
+        "focusManagement": "Only focused week has tabindex='0', others have '-1'",
+        "description": "Keyboard navigation skips disabled weeks automatically"
+      },
+      "dateFormatting": {
+        "method": "toLocaleDateString() with locale from data-locale",
+        "format": "Month short name + day (e.g., 'Jan 15')",
+        "usedFor": "Week range display (startDate - endDate)",
+        "description": "Date range shown in each week button"
+      },
+      "withDateInput": {
+        "event": "week-select custom event",
+        "detail": "Contains week value in YYYY-Www format",
+        "listener": "DateInput component listens and updates input value",
+        "description": "WeekPicker is typically used within DateInput component"
+      }
+    },
+    "implementationNotes": [
+      "Initialization runs immediately on script load AND on astro:page-load for SPA navigation",
+      "Double initialization prevented by checking data-init attribute before setting up handlers",
+      "Week list is completely regenerated (innerHTML cleared) on every year change",
+      "Week buttons are created dynamically with addEventListener attached to each",
+      "Week calculation uses ISO 8601 standard (week starts Monday, first week contains January 4th)",
+      "Weeks can span year boundaries - weeks are included if they overlap with current year",
+      "Selected week is tracked both in data-selected-week attribute and via CSS class on button",
+      "Tabindex management ensures only selected week is focusable via keyboard (tabindex='0'), others are '-1'",
+      "Keyboard navigation only moves between enabled weeks - disabled weeks are automatically skipped",
+      "ArrowUp/Down do not wrap - stops at first/last enabled week",
+      "Home/End keys move to first/last enabled week (not first/last in DOM)",
+      "Week range display shows formatted start and end dates using locale",
+      "Week number and range are displayed in separate spans within each button",
+      "Disabled weeks cannot be selected via click or keyboard",
+      "ARIA attributes (aria-selected, aria-label) are dynamically set on week buttons",
+      "Week value format in event is YYYY-Www (ISO 8601 week format)",
+      "Min/max constraints are parsed from YYYY-Www format and stored as separate year/week values",
+      "Week calculation is complex - uses ISO 8601 algorithm to find week boundaries",
+      "All week buttons get click handlers attached during renderWeeks()",
+      "Selected week gets focus automatically after selection",
+      "List aria-label is updated when year changes for accessibility"
+    ]
+  },
+  "iconPaths": {
+    "navIcons": {
+      "left": {
+        "name": "chevron-left",
+        "source": "heroicons",
+        "path": "node_modules/heroicons/24/outline/chevron-left.svg"
+      },
+      "right": {
+        "name": "chevron-right",
+        "source": "heroicons",
+        "path": "node_modules/heroicons/24/outline/chevron-right.svg"
+      }
+    }
+  },
+  "_iconPathMetadata": {
+    "description": "Icon paths document where hardcoded/default icons come from (heroicons or custom SVG)",
+    "resolutionOrder": [
+      "heroicons",
+      "custom",
+      "unknown"
+    ],
+    "lastUpdated": "2026-01-26T21:35:36.787Z"
   }
 }

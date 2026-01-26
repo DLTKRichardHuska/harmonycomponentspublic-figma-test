@@ -1542,5 +1542,21 @@
       "chip",
       "overflow"
     ]
+  },
+  "iconPaths": {
+    "dismissIcon": {
+      "name": "x-mark",
+      "source": "heroicons",
+      "path": "node_modules/heroicons/24/outline/x-mark.svg"
+    }
+  },
+  "_iconPathMetadata": {
+    "description": "Icon paths document where hardcoded/default icons come from (heroicons or custom SVG)",
+    "resolutionOrder": [
+      "heroicons",
+      "custom",
+      "unknown"
+    ],
+    "lastUpdated": "2026-01-26T21:35:36.795Z"
   }
 }

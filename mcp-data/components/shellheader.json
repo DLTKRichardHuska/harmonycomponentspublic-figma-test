@@ -1337,13 +1337,12 @@
     },
     "gradientBorder": {
       "name": "GradientBorder",
-      "description": "Gradient border at bottom of header that changes based on selected company",
+      "description": "Gradient fades at edges (opacity 0.02) and is solid in center (50%)",
       "dimensions": {
         "height": "6px",
         "width": "100%"
       },
       "pattern": "linear-gradient(to right, {color}05, {color} 50%, {color}05)",
-      "description": "Gradient fades at edges (opacity 0.02) and is solid in center (50%)",
       "colors": {
         "acme": "linear-gradient(to right, #FF507B05, #FF507B 50%, #FF507B05)",
         "ocean": "linear-gradient(to right, #285F8C05, #285F8C 50%, #285F8C05)",
@@ -1383,8 +1382,162 @@
       }
     }
   },
+  "interactivity": {
+    "hasInteractivity": true,
+    "initialization": {
+      "function": "initCompanyPickers",
+      "triggers": [
+        "DOMContentLoaded",
+        "astro:page-load"
+      ],
+      "preventDoubleInit": true,
+      "preventDoubleInitMethod": "data-init attribute on picker button"
+    },
+    "state": {
+      "menuOpen": {
+        "type": "boolean",
+        "managedBy": "CSS class",
+        "class": "company-picker__menu--open",
+        "description": "Controls visibility of company picker dropdown menu"
+      },
+      "selectedCompany": {
+        "type": "object",
+        "properties": {
+          "id": "string (data-company-id)",
+          "name": "string (display text)",
+          "color": "string (RGB/hex color)"
+        },
+        "description": "Currently selected company information"
+      }
+    },
+    "eventHandlers": [
+      {
+        "element": "[data-company-picker-btn]",
+        "event": "click",
+        "handler": "toggleCompanyPickerMenu",
+        "description": "Toggles company picker dropdown menu open/closed",
+        "stopsPropagation": true
+      },
+      {
+        "element": "[data-company-option]",
+        "event": "click",
+        "handler": "selectCompany",
+        "description": "Selects a company option, updates display, indicator color, and gradient border",
+        "stopsPropagation": true,
+        "actions": [
+          "Remove 'company-picker__option--selected' from all options",
+          "Add 'company-picker__option--selected' to clicked option",
+          "Update company name display (data-company-name)",
+          "Update company indicator color (data-company-indicator)",
+          "Update header gradient border (data-header-gradient)",
+          "Close menu (remove 'company-picker__menu--open')"
+        ]
+      },
+      {
+        "element": "document",
+        "event": "click",
+        "handler": "closeMenuOnOutsideClick",
+        "description": "Closes company picker menu when clicking outside",
+        "condition": "Click target is not within picker button or menu",
+        "global": true,
+        "singleton": true
+      }
+    ],
+    "keyboardSupport": {
+      "enter": "Opens/closes company picker menu (via button click)",
+      "escape": "Closes company picker menu",
+      "arrowDown": "Navigates company picker options",
+      "arrowUp": "Navigates company picker options"
+    },
+    "dataAttributes": {
+      "data-company-picker-btn": {
+        "purpose": "Identifies company picker button element",
+        "usedBy": "Event handler attachment"
+      },
+      "data-company-picker-menu": {
+        "purpose": "Identifies company picker dropdown menu element",
+        "usedBy": "Menu visibility toggle"
+      },
+      "data-company-option": {
+        "purpose": "Identifies individual company option buttons",
+        "usedBy": "Selection event handlers"
+      },
+      "data-company-id": {
+        "purpose": "Stores unique identifier for each company option",
+        "values": [
+          "acme-corp",
+          "ocean-industries",
+          "violet-systems",
+          "azure-dynamics",
+          "sunset-corporation"
+        ]
+      },
+      "data-company-indicator": {
+        "purpose": "Identifies color indicator element in picker button",
+        "usedBy": "Dynamic color updates"
+      },
+      "data-company-name": {
+        "purpose": "Identifies company name display element",
+        "usedBy": "Dynamic text updates"
+      },
+      "data-header-gradient": {
+        "purpose": "Identifies gradient border element at bottom of header",
+        "usedBy": "Dynamic gradient color updates based on selected company"
+      },
+      "data-init": {
+        "purpose": "Prevents double initialization of picker functionality",
+        "setBy": "initCompanyPickers function"
+      }
+    },
+    "globalFunctions": {},
+    "customEvents": [],
+    "dependencies": {
+      "internal": [
+        "rgbToHex helper function"
+      ],
+      "external": []
+    },
+    "coordination": {
+      "updates": [
+        {
+          "target": "Company indicator color",
+          "method": "Reads computed style from selected option indicator, applies to button indicator"
+        },
+        {
+          "target": "Header gradient border",
+          "method": "Converts RGB color to hex, applies linear gradient with fade edges (opacity 0.02 at edges, solid at 50%)"
+        },
+        {
+          "target": "Company name display",
+          "method": "Updates text content of data-company-name element"
+        }
+      ]
+    },
+    "implementationNotes": [
+      "Uses rgbToHex helper function to convert computed RGB colors to hex format for gradient",
+      "Gradient pattern: linear-gradient(to right, {color}05, {color} 50%, {color}05)",
+      "Outside click handler is added only once globally (singleton pattern)",
+      "Each picker button is initialized independently with data-init flag"
+    ]
+  },
   "_variantIndex": {},
   "_variantMetadata": {
     "availableVariants": []
+  },
+  "iconPaths": {
+    "chevronIcon": {
+      "name": "chevron-down",
+      "source": "heroicons",
+      "path": "node_modules/heroicons/24/outline/chevron-down.svg"
+    }
+  },
+  "_iconPathMetadata": {
+    "description": "Icon paths document where hardcoded/default icons come from (heroicons or custom SVG)",
+    "resolutionOrder": [
+      "heroicons",
+      "custom",
+      "unknown"
+    ],
+    "lastUpdated": "2026-01-26T21:35:36.802Z"
   }
 }

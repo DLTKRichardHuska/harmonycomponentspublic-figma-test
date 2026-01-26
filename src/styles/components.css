@@ -4845,100 +4845,6 @@ html.theme-cp.dark .floating-nav__pin:hover {
 }
 
 /* ===========================================
-   CP LEFT SIDEBAR (CP Theme Only)
-   =========================================== */
-
-.cp-left-sidebar {
-  position: fixed;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: var(--z-sticky);
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-4);
-  width: 52px;
-  transition: width 0.2s ease;
-  overflow: visible;
-}
-
-.cp-left-sidebar:hover {
-  width: 220px;
-}
-
-.cp-left-sidebar__section {
-  background-color: var(--nav-bg);
-  border: 1px solid var(--cp-sidebar-section-border);
-  border-left: none;
-  border-radius: 0 var(--radius-12) var(--radius-12) 0;
-  box-shadow: var(--shadow-xl);
-  padding: var(--space-2) var(--space-2);
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-4);
-  overflow: visible;
-}
-
-.cp-left-sidebar__item {
-  display: flex;
-  align-items: center;
-  gap: var(--space-2);
-  padding: var(--space-1-5);
-  border-radius: var(--radius-08);
-  text-decoration: none;
-  color: var(--cp-sidebar-item-fg);
-  white-space: nowrap;
-  transition: background-color var(--transition-fast);
-}
-
-.cp-left-sidebar__item:hover {
-  background-color: var(--cp-sidebar-item-hover-bg);
-  text-decoration: none;
-}
-
-.cp-left-sidebar__icon {
-  flex-shrink: 0;
-  width: var(--space-6);
-  height: var(--space-6);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.cp-left-sidebar__icon svg {
-  width: var(--space-6);
-  height: var(--space-6);
-}
-
-.cp-left-sidebar__label {
-  font-family: var(--font-sans);
-  font-size: var(--text-sm);
-  font-weight: var(--font-normal);
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.2s ease, visibility 0.2s ease;
-}
-
-.cp-left-sidebar:hover .cp-left-sidebar__label {
-  opacity: 1;
-  visibility: visible;
-}
-
-/* Dark mode */
-html.theme-cp.dark .cp-left-sidebar__section {
-  background-color: var(--cp-sidebar-section-bg-dark);
-  border-color: var(--cp-sidebar-section-border-dark);
-}
-
-html.theme-cp.dark .cp-left-sidebar__item {
-  color: var(--cp-sidebar-item-fg-dark);
-}
-
-html.theme-cp.dark .cp-left-sidebar__item:hover {
-  background-color: var(--cp-sidebar-item-hover-bg-dark);
-}
-
-/* ===========================================
    UNIFIED LEFT SIDEBAR (All Themes)
    =========================================== */
 
@@ -5148,123 +5054,6 @@ html.dark .left-sidebar__item:hover {
   background-color: var(--theme-primary-hover);
 }
 
-/* Backward compatibility: CP-specific styles also apply to unified component */
-/* CP sidebar spacing adjustments when inside shell layout */
-.shell-layout[data-cp-variant="true"] .cp-left-sidebar {
-  gap: var(--space-2);
-  max-height: calc(100vh - var(--shell-header-height) - var(--space-2) - var(--shell-footer-height-default));
-  overflow-y: auto;
-}
-
-.shell-layout[data-cp-variant="true"] .cp-left-sidebar__section {
-  gap: var(--space-1-5);
-}
-
-/* ===========================================
-   CP RIGHT SIDEBAR (CP Theme Only)
-   =========================================== */
-
-.cp-right-sidebar {
-  position: fixed;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: var(--z-sticky);
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-3);
-  width: 52px;
-  transition: width 0.2s ease;
-  overflow: visible;
-}
-
-.cp-right-sidebar:hover {
-  width: 220px;
-}
-
-.cp-right-sidebar__section {
-  background-color: var(--nav-bg);
-  border: 1px solid var(--cp-sidebar-section-border);
-  border-right: none;
-  border-radius: var(--radius-12) 0 0 var(--radius-12);
-  box-shadow: var(--shadow-xl);
-  padding: var(--space-3) var(--space-2);
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: var(--space-2);
-  overflow: visible;
-}
-
-.cp-right-sidebar__item {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: var(--space-2);
-  padding: var(--space-1-5);
-  border-radius: var(--radius-08);
-  text-decoration: none;
-  color: var(--cp-sidebar-item-fg);
-  white-space: nowrap;
-  width: 100%;
-  transition: background-color var(--transition-fast);
-}
-
-.cp-right-sidebar__item:hover {
-  background-color: var(--cp-sidebar-item-hover-bg);
-  text-decoration: none;
-}
-
-.cp-right-sidebar__icon {
-  flex-shrink: 0;
-  width: var(--icon-lg);
-  height: var(--icon-lg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.cp-right-sidebar__icon svg {
-  width: var(--icon-lg);
-  height: var(--icon-lg);
-}
-
-.cp-right-sidebar__dela-logo {
-  width: var(--space-9);
-  height: var(--space-9);
-  border-radius: 50%;
-}
-
-.cp-right-sidebar__label {
-  font-family: var(--font-sans);
-  font-size: var(--text-sm);
-  font-weight: var(--font-normal);
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.2s ease, visibility 0.2s ease;
-  flex: 1;
-  text-align: right;
-}
-
-.cp-right-sidebar:hover .cp-right-sidebar__label {
-  opacity: 1;
-  visibility: visible;
-}
-
-/* Dark mode */
-html.theme-cp.dark .cp-right-sidebar__section {
-  background-color: var(--cp-sidebar-section-bg-dark);
-  border-color: var(--cp-sidebar-section-border-dark);
-}
-
-html.theme-cp.dark .cp-right-sidebar__item {
-  color: var(--cp-sidebar-item-fg-dark);
-}
-
-html.theme-cp.dark .cp-right-sidebar__item:hover {
-  background-color: var(--cp-sidebar-item-hover-bg-dark);
-}
-
 /* ===========================================
    UNIFIED RIGHT SIDEBAR (All Themes)
    =========================================== */
@@ -5463,14 +5252,12 @@ html.dark .right-sidebar__item:hover {
 }
 
 /* Override fixed positioning for demo */
-.cp-sidebar-demo .cp-left-sidebar,
 .cp-sidebar-demo .left-sidebar {
   position: static;
   transform: none;
   height: auto;
 }
 
-.cp-sidebar-demo .cp-right-sidebar,
 .cp-sidebar-demo .right-sidebar {
   position: absolute;
   right: 0;

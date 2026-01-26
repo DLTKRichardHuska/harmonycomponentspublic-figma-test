@@ -331,45 +331,6 @@
       },
       "rawInterface": "variant?: 'default' | 'outline';\n  size?: 'sm' | 'md' | 'lg';\n  orientation?: 'horizontal' | 'vertical';\n  class?: string;"
     },
-    "CPLeftSidebar": {
-      "hasProps": true,
-      "filePath": "src/components/ui/CPLeftSidebar.astro",
-      "description": "CPLeftSidebar Component",
-      "dependencies": [
-        "Icon"
-      ],
-      "imports": [
-        "./Icon.astro"
-      ],
-      "cssClasses": [
-        "cp-left-sidebar__section",
-        "cp-left-sidebar__item",
-        "cp-left-sidebar__icon",
-        "cp-left-sidebar__label"
-      ],
-      "propsInterface": "class?: string;",
-      "raw": "interface Props {\n  class?: string;\n}"
-    },
-    "CPRightSidebar": {
-      "hasProps": true,
-      "filePath": "src/components/ui/CPRightSidebar.astro",
-      "description": "CPRightSidebar Component",
-      "dependencies": [
-        "Icon"
-      ],
-      "imports": [
-        "./Icon.astro"
-      ],
-      "cssClasses": [
-        "cp-right-sidebar__section",
-        "cp-right-sidebar__item",
-        "cp-right-sidebar__label",
-        "cp-right-sidebar__icon",
-        "cp-right-sidebar__dela-logo"
-      ],
-      "propsInterface": "class?: string;",
-      "raw": "interface Props {\n  class?: string;\n}"
-    },
     "Card": {
       "hasProps": true,
       "filePath": "src/components/ui/Card.astro",

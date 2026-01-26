@@ -538,7 +538,6 @@ export function extractVariantColors(componentName, parsedCSS, variableMap, comp
   
   // Note: LeftSidebar and RightSidebar DO have variants (cp, vp, ppm, maconomy)
   // These represent different product configurations (e.g., CP has 2 sections, others have 1)
-  // CPLeftSidebar/CPRightSidebar are convenience components that hardcode variant="cp"
   // So we extract these variants normally - they are product variants, not just theme selection
   
   // Extract variant names from component props
@@ -777,8 +776,6 @@ function getClassPrefix(componentName) {
     'RangeInput': 'range-input',
     'Textarea': 'textarea',
     'PickerPopup': 'picker-popup',
-    'CPLeftSidebar': 'cp-left-sidebar',
-    'CPRightSidebar': 'cp-right-sidebar',
   };
 
   return prefixMap[componentName] || componentName.toLowerCase();

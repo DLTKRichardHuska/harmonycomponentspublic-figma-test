@@ -59,8 +59,6 @@ const CATEGORIES = {
     'FloatingNav',
     'LeftSidebar',
     'RightSidebar',
-    'CPLeftSidebar',
-    'CPRightSidebar',
     'ListMenu',
     'ShellHeader',
     'ShellPageHeader',

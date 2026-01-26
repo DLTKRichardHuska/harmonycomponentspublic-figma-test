@@ -3305,5 +3305,168 @@
         }
       }
     }
+  },
+  "interactivity": {
+    "hasInteractivity": true,
+    "initialization": {
+      "function": "Theme detection function (anonymous IIFE)",
+      "triggers": [
+        "DOMContentLoaded (implicit via script execution)",
+        "Theme change detection (MutationObserver)"
+      ],
+      "condition": "Only runs if data-use-theme-detection='true'",
+      "preventDoubleInit": false,
+      "description": "Detects theme from html class and updates layout dynamically"
+    },
+    "state": {
+      "detectedTheme": {
+        "type": "string",
+        "values": ["cp", "vp", "ppm", "maconomy", null],
+        "managedBy": "detectTheme() function",
+        "source": "document.documentElement.classList (checks for theme-* classes)",
+        "description": "Currently detected theme from HTML element"
+      },
+      "hasFooter": {
+        "type": "boolean",
+        "managedBy": "data attribute on container",
+        "attribute": "data-has-footer",
+        "values": ["true", "false"],
+        "description": "Controls footer visibility (CP has no footer, others do)"
+      },
+      "hasFloatingNav": {
+        "type": "boolean",
+        "managedBy": "data attribute on container",
+        "attribute": "data-has-floating-nav",
+        "values": ["true", "false"],
+        "description": "Controls floating nav visibility (CP has floating nav, others don't)"
+      },
+      "isCPVariant": {
+        "type": "boolean",
+        "managedBy": "data attribute on layout root",
+        "attribute": "data-cp-variant",
+        "values": ["true", "false"],
+        "description": "Indicates if current theme is CP (affects spacing and layout)"
+      }
+    },
+    "eventHandlers": [],
+    "keyboardSupport": {},
+    "dataAttributes": {
+      "data-use-theme-detection": {
+        "purpose": "Enables/disables automatic theme detection",
+        "values": ["true", "false"],
+        "default": "true if sidebar variant or floating nav not explicitly set",
+        "description": "If false, uses props directly without theme detection"
+      },
+      "data-cp-variant": {
+        "purpose": "Indicates if current theme is CP",
+        "values": ["true", "false"],
+        "setBy": "Theme detection script",
+        "usedBy": "CSS for CP-specific spacing adjustments"
+      },
+      "data-has-footer": {
+        "purpose": "Controls footer visibility",
+        "values": ["true", "false"],
+        "setBy": "Theme detection script or props",
+        "usedBy": "CSS grid template rows and footer display"
+      },
+      "data-has-floating-nav": {
+        "purpose": "Controls floating nav visibility",
+        "values": ["true", "false"],
+        "setBy": "Theme detection script or props",
+        "usedBy": "CSS for floating nav display and main content padding"
+      },
+      "data-footer-variant": {
+        "purpose": "Stores footer height variant",
+        "values": ["default", "compact"],
+        "setBy": "Props"
+      }
+    },
+    "globalFunctions": {},
+    "customEvents": [],
+    "dependencies": {
+      "internal": [
+        "detectTheme function",
+        "updateLayout function",
+        "MutationObserver"
+      ],
+      "external": [
+        "ShellHeader component",
+        "LeftSidebar component",
+        "RightSidebar component",
+        "ShellFooter component",
+        "FloatingNav component"
+      ]
+    },
+    "coordination": {
+      "themeDetection": {
+        "method": "Reads html class for theme classes (theme-cp, theme-vp, theme-ppm, theme-maconomy)",
+        "triggers": [
+          "Initial page load",
+          "Theme class changes on document.documentElement (via MutationObserver)"
+        ],
+        "updates": [
+          "Sidebar variant classes (left-sidebar--{theme}, right-sidebar--{theme})",
+          "Header product name and logo",
+          "Container data-has-footer attribute",
+          "Container data-has-floating-nav attribute",
+          "Layout data-cp-variant attribute"
+        ]
+      },
+      "withShellHeader": {
+        "updates": [
+          "Product name (.header__title textContent)",
+          "Logo image source (.header__logo src)"
+        ],
+        "mapping": {
+          "cp": { "name": "Costpoint", "logo": "/logos/CPVPLogo.svg" },
+          "vp": { "name": "Vantagepoint", "logo": "/logos/CPVPLogo.svg" },
+          "ppm": { "name": "Project Performance Management", "logo": "/logos/PPMLogo.svg" },
+          "maconomy": { "name": "Maconomy", "logo": "/logos/MacLogo.svg" }
+        }
+      },
+      "withSidebars": {
+        "updates": [
+          "LeftSidebar variant classes (removes all, adds current theme)",
+          "RightSidebar variant classes (removes all, adds current theme)"
+        ],
+        "note": "Sidebars handle their own panel opening logic - ShellLayout just updates variant classes"
+      },
+      "withFooter": {
+        "controls": "Footer visibility via data-has-footer",
+        "logic": "CP theme: hasFooter = false, others: hasFooter = true"
+      },
+      "withFloatingNav": {
+        "controls": "Floating nav visibility via data-has-floating-nav",
+        "logic": "CP theme: showFloatingNav = true, others: showFloatingNav = false"
+      },
+      "sidebarToPanelStructure": {
+        "description": "ShellLayout provides structural context for sidebar-to-panel coordination",
+        "note": "LeftSidebar and RightSidebar components contain the actual logic to open ShellPanel",
+        "structure": "ShellLayout renders ShellPanel components, sidebars handle opening them"
+      },
+      "responsiveBehavior": {
+        "mobile": {
+          "maxWidth": "768px",
+          "actions": ["Hides sidebars via CSS", "Adjusts main content padding"]
+        },
+        "tablet": {
+          "minWidth": "769px",
+          "maxWidth": "1024px",
+          "actions": ["Reduces side padding"]
+        }
+      }
+    },
+    "implementationNotes": [
+      "Theme detection only runs if data-use-theme-detection='true'",
+      "If props are explicitly set (leftSidebarVariant, showFloatingNav), theme detection may be disabled",
+      "Uses MutationObserver to watch for theme class changes on document.documentElement",
+      "Observer watches only 'class' attribute changes",
+      "Initial layout update runs immediately on script execution",
+      "Sidebar variant classes are updated dynamically (not via props - direct DOM manipulation)",
+      "Header product name and logo are updated via direct DOM manipulation",
+      "Layout provides structure but sidebars contain the logic to open panels",
+      "Responsive behavior hides sidebars on mobile via CSS media queries",
+      "Main content padding adjusts based on floating nav presence and breakpoint"
+    ]
   }
 }

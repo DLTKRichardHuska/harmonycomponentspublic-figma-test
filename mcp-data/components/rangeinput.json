@@ -710,5 +710,173 @@
   "_variantIndex": {},
   "_variantMetadata": {
     "availableVariants": []
+  },
+  "interactivity": {
+    "hasInteractivity": true,
+    "initialization": {
+      "function": "initRanges",
+      "triggers": [
+        "DOMContentLoaded (implicit via immediate call)",
+        "astro:page-load"
+      ],
+      "preventDoubleInit": true,
+      "preventDoubleInitMethod": "data-init attribute on range input element",
+      "description": "Initializes all range input components on the page. Sets up input event handler to update display value when slider changes."
+    },
+    "state": {
+      "inputValue": {
+        "type": "number",
+        "managedBy": "value attribute on range input element",
+        "element": "input[type='range']",
+        "default": 50,
+        "description": "Current numeric value of the range slider",
+        "updatedBy": "User dragging slider, native range input interaction"
+      },
+      "displayValue": {
+        "type": "string",
+        "managedBy": "textContent of .range-value span",
+        "element": ".range-value[data-for='{rangeId}']",
+        "description": "Formatted display value shown next to slider",
+        "format": "Either percentage (if showPercent=true) or raw value with prefix/suffix",
+        "syncsWith": "inputValue - updated on every input change"
+      }
+    },
+    "eventHandlers": [
+      {
+        "element": ".range (input[type='range'])",
+        "event": "input",
+        "handler": "updateDisplayValue",
+        "description": "Updates display value when range slider value changes",
+        "native": true,
+        "actions": [
+          "Get current input value (parseFloat(input.value))",
+          "Get min value (parseFloat(input.min) || 0)",
+          "Get max value (parseFloat(input.max) || 100)",
+          "Check if showPercent is enabled (data-show-percent === 'true')",
+          "Get prefix from data-prefix attribute (default: '')",
+          "Get suffix from data-suffix attribute (default: '')",
+          "If showPercent: Calculate percentage: Math.round((value - min) / (max - min) * 100)",
+          "If showPercent: Format as `${prefix}${percentage}%${suffix}`",
+          "If not showPercent: Format as `${prefix}${value}${suffix}`",
+          "Update .range-value textContent with formatted value"
+        ],
+        "note": "Display value is recalculated and updated on every slider movement"
+      }
+    ],
+    "keyboardSupport": {
+      "native": {
+        "description": "Uses native range input keyboard behavior",
+        "ArrowLeft": "Decrements value by step amount",
+        "ArrowRight": "Increments value by step amount",
+        "ArrowUp": "Increments value by step amount",
+        "ArrowDown": "Decrements value by step amount",
+        "PageUp": "Increments value by larger amount",
+        "PageDown": "Decrements value by larger amount",
+        "Home": "Sets value to minimum",
+        "End": "Sets value to maximum",
+        "Tab": "Navigates to next focusable element",
+        "Shift+Tab": "Navigates to previous focusable element"
+      },
+      "custom": {
+        "description": "Display value updates automatically on keyboard navigation via input event"
+      }
+    },
+    "dataAttributes": {
+      "data-show-percent": {
+        "purpose": "Indicates whether to display value as percentage",
+        "values": ["true"],
+        "optional": true,
+        "setBy": "showPercent prop (only added if true)",
+        "usedBy": "updateDisplayValue function to determine formatting",
+        "note": "If absent, value is displayed as raw number"
+      },
+      "data-prefix": {
+        "purpose": "Stores prefix string to prepend to display value",
+        "optional": true,
+        "default": "'' (empty string)",
+        "setBy": "prefix prop",
+        "usedBy": "updateDisplayValue function for formatting"
+      },
+      "data-suffix": {
+        "purpose": "Stores suffix string to append to display value",
+        "optional": true,
+        "default": "'' (empty string)",
+        "setBy": "suffix prop",
+        "usedBy": "updateDisplayValue function for formatting"
+      },
+      "data-for": {
+        "purpose": "Links display value span to range input by ID",
+        "location": "On .range-value span",
+        "format": "data-for=\"{rangeId}\"",
+        "usedBy": "initRanges to find corresponding display element",
+        "description": "Allows multiple range inputs on page with correct value display pairing"
+      },
+      "data-init": {
+        "purpose": "Prevents double initialization",
+        "values": ["1"],
+        "setBy": "initRanges function after first initialization",
+        "checkedBy": "initRanges checks hasAttribute('data-init') before initializing",
+        "note": "Uses '1' as value (not 'true' like other components)"
+      }
+    },
+    "globalFunctions": {},
+    "customEvents": [],
+    "dependencies": {
+      "internal": [
+        "initRanges function",
+        "updateDisplayValue function (per-instance closure)",
+        "querySelector/querySelectorAll for element selection"
+      ],
+      "external": []
+    },
+    "coordination": {
+      "valueFormatting": {
+        "percentageMode": {
+          "enabled": "When data-show-percent='true'",
+          "calculation": "Math.round((value - min) / (max - min) * 100)",
+          "format": "${prefix}${percentage}%${suffix}",
+          "description": "Calculates percentage of value within min-max range"
+        },
+        "rawValueMode": {
+          "enabled": "When data-show-percent is absent or not 'true'",
+          "format": "${prefix}${value}${suffix}",
+          "description": "Displays raw numeric value with optional prefix/suffix"
+        }
+      },
+      "elementPairing": {
+        "method": "data-for attribute on display span matches input id",
+        "lookup": "querySelector(`.range-value[data-for=\"${input.id}\"]`)",
+        "description": "Allows multiple range inputs on page, each with its own display value"
+      },
+      "formSubmission": {
+        "method": "Native range input participates in form submission",
+        "name": "Uses name prop for form field name",
+        "value": "Current numeric value submitted with form",
+        "description": "Component uses native input element for form integration"
+      },
+      "constraints": {
+        "min": "Read from input.min attribute (parseFloat), defaults to 0",
+        "max": "Read from input.max attribute (parseFloat), defaults to 100",
+        "step": "Read from input.step attribute, defaults to 1",
+        "description": "Constraints are read from native input attributes for percentage calculation"
+      }
+    },
+    "implementationNotes": [
+      "Initialization runs immediately on script load AND on astro:page-load for SPA navigation",
+      "Double initialization prevented by checking data-init attribute before setting up handlers",
+      "Display value is updated on every input event (fires continuously while dragging)",
+      "Percentage calculation: ((value - min) / (max - min) * 100), rounded to nearest integer",
+      "Min defaults to 0 and max defaults to 100 if not specified in attributes",
+      "Prefix and suffix are read from data attributes, default to empty strings if not set",
+      "Display value element is found using data-for attribute matching input id",
+      "If display value element not found, initialization is skipped (early return)",
+      "Update function is created as closure per range input instance",
+      "All value parsing uses parseFloat() to handle decimal step values",
+      "Display value formatting happens in real-time as user drags slider",
+      "Component supports multiple range inputs on same page via unique IDs and data-for pairing",
+      "Native range input handles all slider interaction (drag, keyboard, touch)",
+      "Display value is purely visual - form submission uses raw input value",
+      "Percentage mode calculates percentage of current position within min-max range, not absolute percentage"
+    ]
   }
 }
