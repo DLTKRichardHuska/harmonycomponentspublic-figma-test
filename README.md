@@ -1,157 +1,306 @@
-# Harmony Design System
+# @deltek/harmony-components
 
-A complete design system with foundation elements, shell layout components, and 25+ production-ready UI components with full multi-theme and dark/light mode support.
+> Enterprise design system for Astro applications with 40+ production-ready UI components, layouts, and comprehensive theming support.
 
 ## Features
 
-- 🎨 **Foundation System** - Colors, typography, spacing, and elevations
-- 🏗️ **Shell Layout** - Complete application layout with header, sidebars, and footer
-- ✅ **25+ UI Components** - From basic buttons to complex dialogs
-- 🌓 **Multi-Theme Support** - CP, VP, PPM, and Maconomy themes with light/dark modes
-- 📱 **Fully Responsive** - Optimized for all screen sizes
+- 🎨 **40+ UI Components** - From basic inputs to complex shell layouts
+- 🏗️ **Enterprise Shell Layout** - Complete application structure with header, sidebars, and footer
+- 🎭 **Multi-Theme Support** - CP, VP, PPM, and Maconomy themes with light/dark modes
+- 🎯 **Design Tokens** - Colors, typography, spacing, and elevation scales
 - ♿ **Accessible** - Built with semantic HTML and ARIA attributes
-- ⚡ **Vanilla CSS** - No framework dependencies, uses CSS custom properties
-- 🎯 **Production Ready** - Copy and use immediately
+- 📱 **Responsive** - Optimized for all screen sizes
+- ⚡ **Zero Runtime JS** - Pure Astro components with vanilla CSS
 
-## Technology Stack
+## Installation
 
-- **Astro** - Static site generator
-- **Vanilla CSS** - Custom CSS with CSS variables (no Tailwind)
-- **Tabler Icons** - For UI chrome and navigation
-- **Custom Fonts**:
-  - **Lexend** - Display and headings
-  - **Figtree** - Body text and UI
-  - **JetBrains Mono** - Code blocks
+### Prerequisites
 
-## Foundation System
+Ensure you have Node.js and npm installed, and that your project uses Astro.
+
+### Install from GitHub
+
+```bash
+# Install the design system from GitHub
+npm install git+https://github.com/DLTKfrancesmunoz/harmonycomponents.git
+
+# Or install a specific version
+npm install git+https://github.com/DLTKfrancesmunoz/harmonycomponents.git#v1.0.0
+```
+
+### Peer Dependencies
+
+This package requires the following peer dependencies:
+
+```bash
+npm install astro @tabler/icons heroicons
+```
+
+If you already have Astro in your project, you only need to install the icon libraries.
+
+## Quick Start
+
+### 1. Import Global Styles
+
+In your main layout or `src/pages/_app.astro`:
+
+```astro
+---
+import '@deltek/harmony-components/styles/reset.css';
+import '@deltek/harmony-components/styles/tokens.css';
+import '@deltek/harmony-components/styles/global.css';
+import '@deltek/harmony-components/styles/components.css';
+---
+```
+
+**Recommended import order:**
+1. reset.css
+2. tokens.css
+3. global.css
+4. components.css
+5. layout.css (optional)
+6. utilities.css (optional)
+
+### 2. Use Components
+
+```astro
+---
+import { Button, Card, Input } from '@deltek/harmony-components/ui';
+---
+
+<Card>
+  <h2>Welcome to Harmony</h2>
+  <Input label="Email" type="email" />
+  <Button variant="primary">Submit</Button>
+</Card>
+```
+
+### 3. Use Layouts
+
+```astro
+---
+import ShellLayout from '@deltek/harmony-components/layouts/ShellLayout.astro';
+---
+
+<ShellLayout
+  productName="My App"
+  theme="cp"
+  logoSrc="/my-logo.svg"
+>
+  <div slot="main-content">
+    <!-- Your page content -->
+  </div>
+</ShellLayout>
+```
+
+## Available Imports
+
+### Components
+
+```typescript
+// Import all components at once
+import { Button, Card, Dialog, Input, Dropdown } from '@deltek/harmony-components/ui';
+
+// Import individual components
+import Button from '@deltek/harmony-components/ui/Button.astro';
+import Card from '@deltek/harmony-components/ui/Card.astro';
+```
+
+**Available Components:**
+
+**Form Controls:**
+- Button, ButtonGroup
+- Input, Textarea, NumberInput, RangeInput
+- Checkbox, RadioButton, Toggle
+- DateInput, Label
+
+**Display:**
+- Card, Badge, NotificationBadge, Chip
+- Alert, Tooltip, Spinner, ProgressBar
+- Table, Icon
+
+**Navigation:**
+- TabStrip, Stepper, Step, FloatingNav, Link
+
+**Layout:**
+- LeftSidebar, RightSidebar
+- ShellPageHeader, ShellPanel
+
+**Interactive:**
+- Dialog, Dropdown, Accordion
+- Kanban, KanbanCard
+
+### Layouts
+
+```astro
+import ShellLayout from '@deltek/harmony-components/layouts/ShellLayout.astro';
+import DocsLayout from '@deltek/harmony-components/layouts/DocsLayout.astro';
+```
+
+#### ShellLayout Props
+
+```typescript
+interface ShellLayoutProps {
+  productName?: string;        // Product name in header
+  logoSrc?: string;            // Path to logo SVG
+  theme?: 'cp' | 'vp' | 'ppm' | 'mac';  // Theme selection
+  companyName?: string;        // Company name for picker
+  showCompanyPicker?: boolean; // Show/hide company picker
+  showLeftSidebar?: boolean;   // Show/hide left sidebar
+  showRightSidebar?: boolean;  // Show/hide right sidebar
+  showFooter?: boolean;        // Show/hide footer
+}
+```
+
+**Slots:**
+- `main-content` - Primary page content
+- `left-sidebar` - Custom left sidebar content
+- `right-sidebar` - Custom right sidebar content
+- `header-actions` - Custom header actions
+- `footer-tabs` - Custom footer tabs
+
+### Styles
+
+```typescript
+// Import individual stylesheets
+import '@deltek/harmony-components/styles/reset.css';      // CSS reset
+import '@deltek/harmony-components/styles/tokens.css';     // Design tokens as CSS variables
+import '@deltek/harmony-components/styles/global.css';     // Global styles
+import '@deltek/harmony-components/styles/components.css'; // Component styles
+import '@deltek/harmony-components/styles/layout.css';     // Layout utilities
+import '@deltek/harmony-components/styles/utilities.css';  // Utility classes
+```
 
 ### Design Tokens
-1. **Colors** - Theme-specific palettes, semantic colors
-2. **Typography** - Display, Headings, Body, Caption, Label, Overline scales
-3. **Spacing** - Consistent spacing scale from 2px to 96px
-4. **Border Radius** - Numbered convention (radius-04, radius-08, radius-12, radius-100)
-5. **Elevations** - Shadow system for depth and hierarchy
+
+```typescript
+// Import all tokens
+import { colors, spacing, typography, elevations } from '@deltek/harmony-components/tokens';
+
+// Import specific token sets
+import { semanticColors, themeColors } from '@deltek/harmony-components/tokens';
+
+// Import raw JSON
+import colorsJson from '@deltek/harmony-components/tokens/colors.json';
+import spacingJson from '@deltek/harmony-components/tokens/spacing.json';
+import typographyJson from '@deltek/harmony-components/tokens/typography.json';
+import elevationsJson from '@deltek/harmony-components/tokens/elevations.json';
+```
+
+### Public Assets
+
+Assets like logos are included in the package:
+
+```astro
+---
+// Reference logos from the package's public folder
+// Note: You may need to copy these to your project's public folder
+---
+<img src="/node_modules/@deltek/harmony-components/public/logos/CPVPLogo.svg" alt="Logo" />
+```
 
 ## Theme System
 
-The design system supports four product themes, each with light and dark modes:
+Harmony supports four product themes, each with light and dark modes:
 
-| Theme | Primary Color | Description |
-|-------|--------------|-------------|
-| CP | #0073E6 | Changepoint |
-| VP | #0073E6 | Vendor Portal |
-| PPM | #0073E6 | Project Portfolio Management |
-| Maconomy | #0073E6 | Maconomy |
+| Theme | Code | Products |
+|-------|------|----------|
+| Costpoint/Vantagepoint | `cp` | Costpoint, Vendor Portal |
+| Vantagepoint | `vp` | Vendor Portal |
+| PPM | `ppm` | Project Portfolio Management |
+| Maconomy | `mac` | Maconomy |
 
-## Shell Layout Components
+### Setting Theme
 
-5. **Shell Layout** - Complete application structure
-6. **Shell Header** - Top navigation with branding and user controls
-7. **Shell Footer** - Bottom tab bar for workspace navigation
-8. **Page Content** - Main content area with header and layouts
-9. **Left Sidebar** - Primary navigation with icon menu
-10. **Right Sidebar** - Secondary actions and quick access panel
-
-## UI Components
-
-### Interactive Components
-- Buttons (primary, secondary, outline, ghost, destructive, icon)
-- Button Groups and segmented controls
-- Accordion panels
-- Tab Strip navigation
-- Dialogs and modals
-- Dropdowns and selects
-- Toggle Switches
-
-### Form Components
-- Inputs (text, textarea, password with icons)
-- Specialty Inputs (number, URL, currency, stepper, range)
-- Checkboxes and Checkbox Groups
-- Radio Buttons and Radio Groups
-- Labels with helper text
-- Date Picker
-
-### Display Components
-- Badges and status indicators
-- Cards (basic, interactive, featured)
-- Chips and tags
-- Alerts (success, info, warning, error)
-- Tooltips (top, bottom, left, right)
-- Progress Bar
-- Spinner
-
-### Navigation Components
-- Links with icons and variants
-- List Menu
-- Custom Scrollbar
-
-## CSS Architecture
-
-```
-src/styles/
-├── global.css      # Import orchestrator
-├── tokens.css      # CSS custom properties (colors, spacing, typography)
-├── reset.css       # CSS reset and base styles
-├── layout.css      # Shell and page layout styles
-├── components.css  # All component styles
-└── utilities.css   # Utility classes
+```astro
+<ShellLayout theme="cp">
+  <!-- Content automatically themed -->
+</ShellLayout>
 ```
 
-## Development
+### Dark Mode
+
+Dark mode is automatically applied based on user system preferences using `prefers-color-scheme` media query. All components support both light and dark modes.
+
+## Customization
+
+### Extension Points
+
+Harmony components are designed to be used as-is, with customization through:
+
+1. **Props** - All components accept standard HTML attributes
+2. **Slots** - Layouts and complex components provide named slots
+3. **CSS Custom Properties** - Override design tokens via CSS variables
+4. **Class Names** - Add custom classes via the `class` prop
+
+### DO NOT Modify Source
+
+**Important**: Do not copy and modify component source files. This breaks the upgrade path and prevents bug fixes. Instead:
+
+- Use props to configure behavior
+- Use slots to inject custom content
+- Use CSS custom properties to adjust styling
+- Wrap components if you need additional functionality
+
+### Example: Custom Button Style
+
+```astro
+---
+import { Button } from '@deltek/harmony-components/ui';
+---
+
+<style>
+  .my-custom-button {
+    --button-padding: 1rem 2rem;
+    --button-border-radius: 0.5rem;
+  }
+</style>
+
+<Button class="my-custom-button" variant="primary">
+  Custom Styled Button
+</Button>
+```
+
+## Updating the Design System
+
+To get the latest changes from the design system:
 
 ```bash
-# Install dependencies
-npm install
+# Update to the latest version
+npm update @deltek/harmony-components
 
-# Start dev server
-npm run dev
-
-# Build for production
-npm run build
+# Or install a specific version
+npm install git+https://github.com/DLTKfrancesmunoz/harmonycomponents.git#v1.0.1
 ```
 
-## MCP Integration
+## TypeScript Support
 
-The design system generates a `components.json` file for use with Model Context Protocol (MCP) tools like dsmanager.
+All components export TypeScript interfaces for props:
 
-### MCP Data Location
-
-- **Location**: `mcp-data/components.json`
-- **Purpose**: Component metadata (props, dependencies, CSS classes) for MCP tools
-- **Generation**: Automatically generated before `npm run dev` or `npm run build`
-- **Manual Generation**: Run `npm run generate:components`
-
-### What Gets Generated
-
-The `components.json` file contains:
-- Component props (types, defaults, descriptions)
-- Component dependencies
-- CSS class names used by each component
-- File paths and metadata
-
-This file is **read-only** for MCP tools - it's generated from `component-props-inventory.json` and should not be edited manually.
-
-### Change Detection
-
-The generation script uses smart change detection:
-- Only regenerates when component files, tokens, CSS, or inventory change
-- Uses file hashing for accurate change detection
-- Fast checks (~5-10ms) when nothing changed
-- Full regeneration (~50-200ms) only when needed
-
-**Note**: The `mcp-data/` folder is dedicated to MCP tooling and is separate from component code and design tokens.
+```typescript
+import type { Props as ButtonProps } from '@deltek/harmony-components/ui/Button.astro';
+import type { Props as CardProps } from '@deltek/harmony-components/ui/Card.astro';
+```
 
 ## Browser Support
 
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
+- Modern browsers (Chrome, Firefox, Safari, Edge)
+- ES2020+ JavaScript
+- CSS Grid and Flexbox
+- CSS Custom Properties
 
-## Version
+## Contributing
 
-**v2.0.0** - Migrated to vanilla CSS architecture with multi-theme support
+This package is maintained by the Deltek Design Systems team. For issues, feature requests, or contributions, please contact the design systems team or open an issue in the GitHub repository.
+
+## License
+
+UNLICENSED - Internal use only for Deltek projects.
+
+## Changelog
+
+See [CHANGELOG.md](./CHANGELOG.md) for version history and release notes.
 
 ---
 
-Built with ❤️ for designers and developers
+Built with ❤️ by the Deltek Design Systems Team

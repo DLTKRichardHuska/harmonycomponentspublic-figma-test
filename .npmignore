@@ -1,0 +1,43 @@
+# Build artifacts
+.astro/
+.vite/
+dist/
+node_modules/
+
+# Documentation site files
+src/pages/
+src/content/
+src/data/
+mcp-data/
+
+# Scripts
+scripts/
+
+# Config files
+astro.config.mjs
+tsconfig.json
+
+# Documentation (keep only README)
+*.md
+!README.md
+!CHANGELOG.md
+
+# Development artifacts
+*.log
+.DS_Store
+.env
+.env.*
+
+# Reports and audits
+*-report.json
+*-audit-report.*
+COMPONENTS_ONLY.md
+GUIDELINES_IMPLEMENTATION_SUMMARY.md
+MCP-SETUP.md
+RESPONSIVE_COMPONENTS_CHECKLIST.md
+
+# IDE
+.idea/
+.vscode/
+.git/
+.gitignore

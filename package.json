@@ -1,7 +1,44 @@
 {
-  "name": "design-system-docs",
-  "type": "module",
+  "name": "@deltek/harmony-components",
   "version": "1.0.0",
+  "description": "Harmony Design System - Internal UI components, layouts, and design tokens for Deltek Astro applications",
+  "type": "module",
+  "private": true,
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DLTKfrancesmunoz/harmonycomponents.git"
+  },
+  "keywords": [
+    "astro",
+    "design-system",
+    "ui-components",
+    "deltek",
+    "internal"
+  ],
+  "files": [
+    "src/components/ui",
+    "src/layouts",
+    "src/styles",
+    "src/tokens",
+    "public",
+    "CHANGELOG.md"
+  ],
+  "exports": {
+    "./ui": "./src/components/ui/index.ts",
+    "./ui/*": "./src/components/ui/*.astro",
+    "./layouts/*": "./src/layouts/*.astro",
+    "./styles/*.css": "./src/styles/*.css",
+    "./tokens": "./src/tokens/index.ts",
+    "./tokens/*.json": "./src/tokens/*.json",
+    "./public/*": "./public/*",
+    "./package.json": "./package.json"
+  },
+  "peerDependencies": {
+    "astro": "^5.0.0",
+    "@tabler/icons": "^3.0.0",
+    "heroicons": "^2.0.0"
+  },
   "scripts": {
     "dev": "astro dev",
     "start": "serve dist -l ${PORT:-3000}",
@@ -12,15 +49,13 @@
     "changelog:snapshot": "node scripts/changelog/generate-snapshot.js",
     "generate:mcp-data": "node scripts/extract-design-tokens.js && node scripts/generate-mcp-data.js && node scripts/generate-layout-data.js && node scripts/generate-manifest.js"
   },
-  "dependencies": {
-    "@astrojs/rss": "^4.0.14",
-    "@tabler/icons": "^3.36.1",
-    "astro": "^5.16.7",
-    "fuse.js": "^7.1.0",
-    "heroicons": "^2.2.0",
-    "serve": "^14.2.0"
-  },
   "devDependencies": {
+    "astro": "^5.16.7",
+    "@tabler/icons": "^3.36.1",
+    "heroicons": "^2.2.0",
+    "@astrojs/rss": "^4.0.14",
+    "fuse.js": "^7.1.0",
+    "serve": "^14.2.0",
     "chokidar": "^3.6.0",
     "concurrently": "^8.2.2",
     "deep-diff": "^1.0.2",
