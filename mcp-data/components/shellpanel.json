@@ -257,7 +257,7 @@
     ]
   },
   "_metadata": {
-    "lastGenerated": "2026-01-26T21:42:18.390Z",
+    "lastGenerated": "2026-01-27T13:55:59.510Z",
     "generatedWith": "@astrojs/compiler@2.13.0",
     "includesVisualSpecs": true,
     "availableVariants": [
@@ -586,17 +586,29 @@
             "light": {
               "default": {
                 "background": "transparent",
-                "text": null,
+                "text": "#FFFFFF",
                 "border": "transparent",
-                "iconColor": null
+                "iconColor": "#FFFFFF"
+              },
+              "hover": {
+                "background": "#3D7BC4",
+                "text": "#FFFFFF",
+                "border": "transparent",
+                "iconColor": "#FFFFFF"
               }
             },
             "dark": {
               "default": {
                 "background": "transparent",
-                "text": null,
+                "text": "#1F252E",
                 "border": "transparent",
-                "iconColor": null
+                "iconColor": "#1F252E"
+              },
+              "hover": {
+                "background": "#7BB8FF",
+                "text": "#1F252E",
+                "border": "transparent",
+                "iconColor": "#1F252E"
               }
             }
           },
@@ -604,17 +616,29 @@
             "light": {
               "default": {
                 "background": "transparent",
-                "text": null,
+                "text": "#FFFFFF",
                 "border": "transparent",
-                "iconColor": null
+                "iconColor": "#FFFFFF"
+              },
+              "hover": {
+                "background": "#3D7BC4",
+                "text": "#FFFFFF",
+                "border": "transparent",
+                "iconColor": "#FFFFFF"
               }
             },
             "dark": {
               "default": {
                 "background": "transparent",
-                "text": null,
+                "text": "#15171A",
                 "border": "transparent",
-                "iconColor": null
+                "iconColor": "#15171A"
+              },
+              "hover": {
+                "background": "#7bb8ff",
+                "text": "#15171A",
+                "border": "transparent",
+                "iconColor": "#15171A"
               }
             }
           },
@@ -622,17 +646,29 @@
             "light": {
               "default": {
                 "background": "transparent",
-                "text": null,
+                "text": "#FFFFFF",
                 "border": "transparent",
-                "iconColor": null
+                "iconColor": "#FFFFFF"
+              },
+              "hover": {
+                "background": "#3D7BC4",
+                "text": "#FFFFFF",
+                "border": "transparent",
+                "iconColor": "#FFFFFF"
               }
             },
             "dark": {
               "default": {
                 "background": "transparent",
-                "text": null,
+                "text": "#15171A",
                 "border": "transparent",
-                "iconColor": null
+                "iconColor": "#15171A"
+              },
+              "hover": {
+                "background": "#7bb8ff",
+                "text": "#15171A",
+                "border": "transparent",
+                "iconColor": "#15171A"
               }
             }
           },
@@ -640,17 +676,29 @@
             "light": {
               "default": {
                 "background": "transparent",
-                "text": null,
+                "text": "#FFFFFF",
                 "border": "transparent",
-                "iconColor": null
+                "iconColor": "#FFFFFF"
+              },
+              "hover": {
+                "background": "#3D7BC4",
+                "text": "#FFFFFF",
+                "border": "transparent",
+                "iconColor": "#FFFFFF"
               }
             },
             "dark": {
               "default": {
                 "background": "transparent",
-                "text": null,
+                "text": "#15171A",
                 "border": "transparent",
-                "iconColor": null
+                "iconColor": "#15171A"
+              },
+              "hover": {
+                "background": "#7bb8ff",
+                "text": "#15171A",
+                "border": "transparent",
+                "iconColor": "#15171A"
               }
             }
           }
@@ -659,72 +707,120 @@
           "cp": {
             "light": {
               "default": {
-                "background": "transparent",
-                "text": null,
+                "background": "#BFC6D4",
+                "text": "#373F4E",
                 "border": "transparent",
-                "iconColor": null
+                "iconColor": "#373F4E"
+              },
+              "hover": {
+                "background": "#E5E7EB",
+                "text": "#373F4E",
+                "border": "transparent",
+                "iconColor": "#373F4E"
               }
             },
             "dark": {
               "default": {
-                "background": "transparent",
-                "text": null,
+                "background": "#5F6871",
+                "text": "#E9ECEF",
                 "border": "transparent",
-                "iconColor": null
+                "iconColor": "#E9ECEF"
+              },
+              "hover": {
+                "background": "#3D4A5C",
+                "text": "#E9ECEF",
+                "border": "transparent",
+                "iconColor": "#E9ECEF"
               }
             }
           },
           "vp": {
             "light": {
               "default": {
-                "background": "transparent",
-                "text": null,
+                "background": "#BFC6D4",
+                "text": "#373F4E",
                 "border": "transparent",
-                "iconColor": null
+                "iconColor": "#373F4E"
+              },
+              "hover": {
+                "background": "#E5E7EB",
+                "text": "#373F4E",
+                "border": "transparent",
+                "iconColor": "#373F4E"
               }
             },
             "dark": {
               "default": {
-                "background": "transparent",
-                "text": null,
+                "background": "#2A2D32",
+                "text": "#FAFAFA",
                 "border": "transparent",
-                "iconColor": null
+                "iconColor": "#FAFAFA"
+              },
+              "hover": {
+                "background": "#2A2D32",
+                "text": "#FAFAFA",
+                "border": "transparent",
+                "iconColor": "#FAFAFA"
               }
             }
           },
           "ppm": {
             "light": {
               "default": {
-                "background": "transparent",
-                "text": null,
+                "background": "#BFC6D4",
+                "text": "#373F4E",
                 "border": "transparent",
-                "iconColor": null
+                "iconColor": "#373F4E"
+              },
+              "hover": {
+                "background": "#E5E7EB",
+                "text": "#373F4E",
+                "border": "transparent",
+                "iconColor": "#373F4E"
               }
             },
             "dark": {
               "default": {
-                "background": "transparent",
-                "text": null,
+                "background": "#2A2D32",
+                "text": "#FAFAFA",
                 "border": "transparent",
-                "iconColor": null
+                "iconColor": "#FAFAFA"
+              },
+              "hover": {
+                "background": "#2A2D32",
+                "text": "#FAFAFA",
+                "border": "transparent",
+                "iconColor": "#FAFAFA"
               }
             }
           },
           "maconomy": {
             "light": {
               "default": {
-                "background": "transparent",
-                "text": null,
+                "background": "#BFC6D4",
+                "text": "#373F4E",
                 "border": "transparent",
-                "iconColor": null
+                "iconColor": "#373F4E"
+              },
+              "hover": {
+                "background": "#E5E7EB",
+                "text": "#373F4E",
+                "border": "transparent",
+                "iconColor": "#373F4E"
               }
             },
             "dark": {
               "default": {
-                "background": "transparent",
-                "text": null,
+                "background": "#2A2D32",
+                "text": "#FAFAFA",
                 "border": "transparent",
-                "iconColor": null
+                "iconColor": "#FAFAFA"
+              },
+              "hover": {
+                "background": "#2A2D32",
+                "text": "#FAFAFA",
+                "border": "transparent",
+                "iconColor": "#FAFAFA"
               }
             }
           }
@@ -1192,17 +1288,29 @@
       "light": {
         "default": {
           "background": "transparent",
-          "text": null,
+          "text": "#FFFFFF",
           "border": "transparent",
-          "iconColor": null
+          "iconColor": "#FFFFFF"
+        },
+        "hover": {
+          "background": "#3D7BC4",
+          "text": "#FFFFFF",
+          "border": "transparent",
+          "iconColor": "#FFFFFF"
         }
       },
       "dark": {
         "default": {
           "background": "transparent",
-          "text": null,
+          "text": "#1F252E",
           "border": "transparent",
-          "iconColor": null
+          "iconColor": "#1F252E"
+        },
+        "hover": {
+          "background": "#7BB8FF",
+          "text": "#1F252E",
+          "border": "transparent",
+          "iconColor": "#1F252E"
         }
       }
     },
@@ -1212,17 +1320,29 @@
       "light": {
         "default": {
           "background": "transparent",
-          "text": null,
+          "text": "#FFFFFF",
           "border": "transparent",
-          "iconColor": null
+          "iconColor": "#FFFFFF"
+        },
+        "hover": {
+          "background": "#3D7BC4",
+          "text": "#FFFFFF",
+          "border": "transparent",
+          "iconColor": "#FFFFFF"
         }
       },
       "dark": {
         "default": {
           "background": "transparent",
-          "text": null,
+          "text": "#15171A",
           "border": "transparent",
-          "iconColor": null
+          "iconColor": "#15171A"
+        },
+        "hover": {
+          "background": "#7bb8ff",
+          "text": "#15171A",
+          "border": "transparent",
+          "iconColor": "#15171A"
         }
       }
     },
@@ -1232,17 +1352,29 @@
       "light": {
         "default": {
           "background": "transparent",
-          "text": null,
+          "text": "#FFFFFF",
           "border": "transparent",
-          "iconColor": null
+          "iconColor": "#FFFFFF"
+        },
+        "hover": {
+          "background": "#3D7BC4",
+          "text": "#FFFFFF",
+          "border": "transparent",
+          "iconColor": "#FFFFFF"
         }
       },
       "dark": {
         "default": {
           "background": "transparent",
-          "text": null,
+          "text": "#15171A",
           "border": "transparent",
-          "iconColor": null
+          "iconColor": "#15171A"
+        },
+        "hover": {
+          "background": "#7bb8ff",
+          "text": "#15171A",
+          "border": "transparent",
+          "iconColor": "#15171A"
         }
       }
     },
@@ -1252,17 +1384,29 @@
       "light": {
         "default": {
           "background": "transparent",
-          "text": null,
+          "text": "#FFFFFF",
           "border": "transparent",
-          "iconColor": null
+          "iconColor": "#FFFFFF"
+        },
+        "hover": {
+          "background": "#3D7BC4",
+          "text": "#FFFFFF",
+          "border": "transparent",
+          "iconColor": "#FFFFFF"
         }
       },
       "dark": {
         "default": {
           "background": "transparent",
-          "text": null,
+          "text": "#15171A",
           "border": "transparent",
-          "iconColor": null
+          "iconColor": "#15171A"
+        },
+        "hover": {
+          "background": "#7bb8ff",
+          "text": "#15171A",
+          "border": "transparent",
+          "iconColor": "#15171A"
         }
       }
     },
@@ -1271,18 +1415,30 @@
       "theme": "cp",
       "light": {
         "default": {
-          "background": "transparent",
-          "text": null,
+          "background": "#BFC6D4",
+          "text": "#373F4E",
           "border": "transparent",
-          "iconColor": null
+          "iconColor": "#373F4E"
+        },
+        "hover": {
+          "background": "#E5E7EB",
+          "text": "#373F4E",
+          "border": "transparent",
+          "iconColor": "#373F4E"
         }
       },
       "dark": {
         "default": {
-          "background": "transparent",
-          "text": null,
+          "background": "#5F6871",
+          "text": "#E9ECEF",
           "border": "transparent",
-          "iconColor": null
+          "iconColor": "#E9ECEF"
+        },
+        "hover": {
+          "background": "#3D4A5C",
+          "text": "#E9ECEF",
+          "border": "transparent",
+          "iconColor": "#E9ECEF"
         }
       }
     },
@@ -1291,18 +1447,30 @@
       "theme": "vp",
       "light": {
         "default": {
-          "background": "transparent",
-          "text": null,
+          "background": "#BFC6D4",
+          "text": "#373F4E",
           "border": "transparent",
-          "iconColor": null
+          "iconColor": "#373F4E"
+        },
+        "hover": {
+          "background": "#E5E7EB",
+          "text": "#373F4E",
+          "border": "transparent",
+          "iconColor": "#373F4E"
         }
       },
       "dark": {
         "default": {
-          "background": "transparent",
-          "text": null,
+          "background": "#2A2D32",
+          "text": "#FAFAFA",
           "border": "transparent",
-          "iconColor": null
+          "iconColor": "#FAFAFA"
+        },
+        "hover": {
+          "background": "#2A2D32",
+          "text": "#FAFAFA",
+          "border": "transparent",
+          "iconColor": "#FAFAFA"
         }
       }
     },
@@ -1311,18 +1479,30 @@
       "theme": "ppm",
       "light": {
         "default": {
-          "background": "transparent",
-          "text": null,
+          "background": "#BFC6D4",
+          "text": "#373F4E",
           "border": "transparent",
-          "iconColor": null
+          "iconColor": "#373F4E"
+        },
+        "hover": {
+          "background": "#E5E7EB",
+          "text": "#373F4E",
+          "border": "transparent",
+          "iconColor": "#373F4E"
         }
       },
       "dark": {
         "default": {
-          "background": "transparent",
-          "text": null,
+          "background": "#2A2D32",
+          "text": "#FAFAFA",
           "border": "transparent",
-          "iconColor": null
+          "iconColor": "#FAFAFA"
+        },
+        "hover": {
+          "background": "#2A2D32",
+          "text": "#FAFAFA",
+          "border": "transparent",
+          "iconColor": "#FAFAFA"
         }
       }
     },
@@ -1331,18 +1511,30 @@
       "theme": "maconomy",
       "light": {
         "default": {
-          "background": "transparent",
-          "text": null,
+          "background": "#BFC6D4",
+          "text": "#373F4E",
           "border": "transparent",
-          "iconColor": null
+          "iconColor": "#373F4E"
+        },
+        "hover": {
+          "background": "#E5E7EB",
+          "text": "#373F4E",
+          "border": "transparent",
+          "iconColor": "#373F4E"
         }
       },
       "dark": {
         "default": {
-          "background": "transparent",
-          "text": null,
+          "background": "#2A2D32",
+          "text": "#FAFAFA",
           "border": "transparent",
-          "iconColor": null
+          "iconColor": "#FAFAFA"
+        },
+        "hover": {
+          "background": "#2A2D32",
+          "text": "#FAFAFA",
+          "border": "transparent",
+          "iconColor": "#FAFAFA"
         }
       }
     }
