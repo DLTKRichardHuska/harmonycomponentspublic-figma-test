@@ -10,6 +10,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - **Card Component**: Fixed header styling to match documentation. Card headers now use neutral styling (normal text color, no colored background) as originally documented. The `withHeader` prop creates a neutral header section with standard text styling and a bottom border. The `primary` prop only adds a 6px top border in the theme primary color.
 
+### Fixed
+- **Card Component**: Added missing neutral styles for header elements (`.card__header-title`, `.card__header-subtitle`, `.card__header-content`, `.card__header-actions`). Cards using `headerTitle` prop now have proper font-sizing (18px) instead of falling back to browser h2 defaults (24-32px).
+
 ### Migration Guide
 If you were using `withHeader` and expecting a colored header bar with white text, you can achieve this with custom styling:
 1. Use the header slot with your own styled header element
