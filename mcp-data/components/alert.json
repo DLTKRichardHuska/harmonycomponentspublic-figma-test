@@ -284,9 +284,14 @@
       }
     ]
   },
-  "usagePatterns": {},
+  "usagePatterns": {
+    "default-icons-per-variant": "Each variant has a default icon that renders automatically if no custom icon prop is provided: info→information-circle, success→check-circle, warning→exclamation-triangle, error→exclamation-circle. Override by passing a custom Heroicon name to the icon prop. The icon is always displayed regardless of variant or style.",
+    "enhanced-style-features": "The enhanced style (style='enhanced') unlocks additional features: vertical border accent (alert__border), support for action buttons (primaryButton/secondaryButton props), inline links (linkText/linkHref props), and progress bar (progressValue prop). These features are not available or styled properly with style='default'. Enhanced style also changes the layout to alert__content > alert__inner structure.",
+    "action-buttons-display": "Action buttons (primaryButton, secondaryButton) and links (linkText + linkHref) only render when style='enhanced'. Buttons are rendered as Button components with variant='primary'/'secondary' and size='xs'. Primary button always appears before secondary button in DOM order. Both buttons and links render in the alert__actions container, with buttons in alert__buttons and links as alert__link.",
+    "dismissible-behavior": "When dismissible=true, an X button appears in the top-right corner with aria-label=\"Dismiss\". Clicking it removes the entire alert from the DOM using JavaScript (btn.closest('.alert')?.remove()). The dismissible button works with both default and enhanced styles, but its positioning differs based on the layout structure."
+  },
   "_metadata": {
-    "lastGenerated": "2026-01-28T19:03:23.697Z",
+    "lastGenerated": "2026-01-28T19:32:48.937Z",
     "generatedWith": "@astrojs/compiler@2.13.0",
     "includesVisualSpecs": true,
     "availableVariants": [

@@ -3,6 +3,11 @@
  * Card Component
  *
  * Container for grouped content with optional header and footer.
+ *
+ * @usagePattern header-slot-precedence The card header can be created two ways: (1) using the header slot for custom content, or (2) using headerTitle and headerSubtitle props for automatic rendering. The header slot takes precedence and will completely replace any headerTitle/headerSubtitle props. When using props, set withHeader=true to render the header section.
+ * @usagePattern header-actions-slot The header-actions slot is independent of the main header slot and always renders in the top-right corner of the header when provided. It's typically used for action buttons or icons (e.g., close button, settings icon). This slot works with both custom header slot content and prop-based headers (headerTitle/headerSubtitle).
+ * @usagePattern variant-combinations Card variants can be combined: elevated adds shadow elevation, interactive adds hover effects and pointer cursor, and primary applies theme-colored background to the header. Multiple variants can be applied simultaneously (e.g., elevated + interactive + primary) for layered visual effects.
+ * @usagePattern slot-structure The card uses three slots: 'header' (optional, for custom header content), 'default' (card body, always rendered in card__body), and 'footer' (optional, conditionally rendered only when Astro.slots.has('footer') is true). The default slot is the unnamed slot and receives all non-slotted content.
  */
 
 import Icon from './Icon.astro';

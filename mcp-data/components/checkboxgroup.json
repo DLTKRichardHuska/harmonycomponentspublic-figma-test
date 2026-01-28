@@ -148,9 +148,14 @@
     },
     "children": []
   },
-  "usagePatterns": {},
+  "usagePatterns": {
+    "group-vs-individual-validation": "CheckboxGroup provides group-level error and warning states via error, warning, errorMessage, and warningMessage props. These are distinct from individual Checkbox component error/warning props. Group-level messages appear below all checkboxes in checkbox-group-wrapper__message, while individual checkbox messages appear directly below each checkbox. Use group validation for \"at least one required\" errors, individual validation for per-checkbox constraints.",
+    "fieldset-legend-semantics": "CheckboxGroup renders as a <fieldset> element with optional <legend> for the legend prop. This provides semantic grouping for assistive technologies. The fieldset receives aria-invalid='true' when error=true and aria-describedby linking to the group error/warning message. This is the correct HTML structure for checkbox groups and ensures screen readers announce the group context.",
+    "composition-pattern": "CheckboxGroup uses slot composition - it doesn't generate individual Checkbox components. You must manually nest Checkbox components inside CheckboxGroup's default slot. This allows full control over each checkbox's props (name, value, label, checked) while the group wrapper provides shared styling, layout (orientation prop), and group-level validation states.",
+    "error-takes-precedence": "When both error and warning are true, only the error state displays. The errorMessage is shown with checkbox-group-wrapper__message--error class and exclamation-circle icon. The warning is completely suppressed (conditional !error && warning) to avoid conflicting visual states. Set only one of error or warning to true at a time."
+  },
   "_metadata": {
-    "lastGenerated": "2026-01-28T19:03:24.296Z",
+    "lastGenerated": "2026-01-28T19:32:49.023Z",
     "generatedWith": "@astrojs/compiler@2.13.0",
     "includesVisualSpecs": true,
     "availableVariants": []

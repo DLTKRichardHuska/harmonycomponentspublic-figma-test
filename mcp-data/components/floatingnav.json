@@ -93,9 +93,14 @@
     },
     "children": []
   },
-  "usagePatterns": {},
+  "usagePatterns": {
+    "variant-button-visibility": "The variant prop controls which buttons render: variant='full' (default) shows all 4 buttons (Execute, Actions, Refresh, Save), while variant='compact' hides the Execute button even if showExecute=true. The showExecute prop only takes effect when variant='full'. Actions, Refresh (with dropdown), and Save buttons always render regardless of variant. Compact mode is used for narrow viewports or simplified interfaces.",
+    "actions-slot-override": "The actions slot provides complete override of the default button structure. When Astro.slots.has('actions') is true, the entire default button group (Execute, Actions, Refresh, Save, divider, pin) is replaced with custom slot content. This is an all-or-nothing override - you cannot selectively replace individual buttons while keeping others. Use the actions slot for fully custom toolbar layouts.",
+    "default-button-structure": "The default button structure (when no actions slot is provided) includes: (1) floating-nav__buttons wrapper with 4 buttons, (2) floating-nav__divider vertical separator, (3) floating-nav__pin button with pin icon. The Actions and Save buttons have dropdown chevrons (floating-nav__btn--dropdown), and Refresh is icon-only with dropdown (floating-nav__btn--icon-dropdown). This structure is CP-specific and matches Deltek CP application patterns.",
+    "save-button-states": "The saveDisabled prop controls the Save button's disabled state and visual variant. When saveDisabled=true, the button receives floating-nav__btn--disabled class and disabled attribute. When saveDisabled=false (default), it receives floating-nav__btn--primary class for prominent styling. The Save button always has a dropdown chevron, suggesting multiple save options in the dropdown menu."
+  },
   "_metadata": {
-    "lastGenerated": "2026-01-28T19:03:24.548Z",
+    "lastGenerated": "2026-01-28T19:32:49.036Z",
     "generatedWith": "@astrojs/compiler@2.13.0",
     "includesVisualSpecs": true,
     "availableVariants": [
