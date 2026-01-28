@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generated": "2026-01-28T19:36:07.194Z",
+  "generated": "2026-01-28T21:16:13.736Z",
   "totalComponents": 47,
   "totalLayouts": 1,
   "totalGuidelines": 5,
@@ -56,10 +56,8 @@
     "Card": {
       "name": "Card",
       "category": "display",
-      "dependencies": [
-        "Icon"
-      ],
-      "dependencyCount": 1
+      "dependencies": [],
+      "dependencyCount": 0
     },
     "Checkbox": {
       "name": "Checkbox",
@@ -467,9 +465,7 @@
       "Icon"
     ],
     "ButtonGroup": [],
-    "Card": [
-      "Icon"
-    ],
+    "Card": [],
     "Checkbox": [
       "Icon"
     ],
@@ -631,7 +627,6 @@
       "Avatar",
       "Badge",
       "Button",
-      "Card",
       "Checkbox",
       "CheckboxGroup",
       "Chip",
@@ -776,9 +771,9 @@
   "stats": {
     "totalComponents": 47,
     "mostUsedComponent": "Icon",
-    "mostUsedCount": 32,
-    "averageDependencies": 1.23,
-    "componentsWithNoDependencies": 11,
+    "mostUsedCount": 31,
+    "averageDependencies": 1.21,
+    "componentsWithNoDependencies": 12,
     "componentsNotUsedByOthers": 33
   }
 }

@@ -174,53 +174,8 @@
     "footer-buttons": "When buttonAlignment='left' (default), place primary action button first in footer slot, followed by secondary actions (e.g., Cancel). When buttonAlignment='right', place secondary actions first, then primary action button last. This ensures the visual alignment matches the semantic importance.",
     "sticky-layout": "The dialog uses flexbox column layout with header and footer as flex-shrink: 0 (sticky), and body as flex: 1 with overflow-y: auto. Only the body scrolls when content exceeds available height."
   },
-  "aiContext": {
-    "commonUseCases": [
-      "Confirmation dialogs (delete, save, cancel)",
-      "Form submission dialogs",
-      "Alert dialogs with actions",
-      "Multi-step wizards"
-    ],
-    "typicalCompositions": [
-      {
-        "pattern": "Dialog + 2 Buttons (primary + cancel)",
-        "frequency": "very common",
-        "recipeId": "dialog-with-form-actions"
-      },
-      {
-        "pattern": "Dialog + single OK button",
-        "frequency": "common",
-        "recipeId": "dialog-confirmation"
-      }
-    ],
-    "propGuidance": {
-      "title": {
-        "purpose": "Dialog heading text displayed in header",
-        "required": true,
-        "examples": ["Delete Item?", "Edit Profile", "Confirm Changes"],
-        "tips": "Use question format for confirmations. Keep concise (2-5 words)."
-      },
-      "buttonAlignment": {
-        "purpose": "Align footer buttons left or right",
-        "default": "left",
-        "recommendation": "Use 'left' (default) for most cases - primary action appears first visually"
-      },
-      "headerVariant": {
-        "purpose": "Visual variant for dialog header",
-        "default": "default",
-        "examples": ["default", "primary"],
-        "tips": "Use 'primary' for important actions that need emphasis"
-      }
-    },
-    "antiPatterns": [
-      "Don't nest dialogs - use multi-step pattern instead",
-      "Don't use without footer buttons - dialogs need actions",
-      "Don't exceed 3 buttons in footer - too many choices confuse users"
-    ],
-    "relatedComponents": ["Button", "Input", "Alert"]
-  },
   "_metadata": {
-    "lastGenerated": "2026-01-28T19:36:05.258Z",
+    "lastGenerated": "2026-01-28T21:16:11.796Z",
     "generatedWith": "@astrojs/compiler@2.13.0",
     "includesVisualSpecs": true,
     "availableVariants": [

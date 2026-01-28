@@ -119,59 +119,8 @@
     "icon-size-mapping": "Button sizes (xs, sm, md, lg) map to icon sizes using iconSizeMap: xs→xs(12px), sm→sm(16px), md→sm(16px), lg→md(20px). The Icon component automatically receives the appropriate size prop based on the button size, ensuring visual consistency without manual size specification.",
     "href-button-element": "When href prop is provided, the component renders an <a> tag instead of <button> tag, maintaining identical visual styling and behavior. This allows buttons to function as navigation links while preserving semantics. The type prop is ignored when href is set, as <a> tags don't have a type attribute."
   },
-  "aiContext": {
-    "commonUseCases": [
-      "Primary actions (save, submit, confirm)",
-      "Secondary actions (cancel, close, back)",
-      "Tertiary actions (learn more, view details)",
-      "Destructive actions (delete, remove)"
-    ],
-    "typicalCompositions": [
-      {
-        "pattern": "Dialog footer with primary + secondary buttons",
-        "frequency": "very common",
-        "recipeId": "dialog-with-form-actions"
-      },
-      {
-        "pattern": "Card footer with action buttons",
-        "frequency": "common",
-        "recipeId": "card-with-actions"
-      },
-      {
-        "pattern": "Alert with action button",
-        "frequency": "common",
-        "recipeId": "alert-with-action"
-      }
-    ],
-    "propGuidance": {
-      "variant": {
-        "purpose": "Visual style indicating button importance and action type",
-        "default": "secondary",
-        "examples": ["primary", "secondary", "tertiary", "danger", "ghost"],
-        "recommendation": "Use 'primary' for main action, 'secondary' for cancel, 'danger' for destructive actions"
-      },
-      "size": {
-        "purpose": "Button size",
-        "default": "md",
-        "examples": ["xs", "sm", "md", "lg"],
-        "tips": "Use 'sm' in compact spaces like card footers and dialog headers"
-      },
-      "type": {
-        "purpose": "HTML button type",
-        "default": "button",
-        "examples": ["button", "submit", "reset"],
-        "tips": "Use 'submit' for form submission buttons"
-      }
-    },
-    "antiPatterns": [
-      "Don't use multiple primary buttons in the same context - only one primary action should be emphasized",
-      "Don't use 'danger' variant for non-destructive actions - reserve for delete, remove operations",
-      "Don't rely on icon-only buttons without labels for important actions - add aria-label or visible text"
-    ],
-    "relatedComponents": ["ButtonGroup", "Dialog", "Card", "Alert"]
-  },
   "_metadata": {
-    "lastGenerated": "2026-01-28T19:36:04.889Z",
+    "lastGenerated": "2026-01-28T21:16:11.417Z",
     "generatedWith": "@astrojs/compiler@2.13.0",
     "includesVisualSpecs": true,
     "availableVariants": [

@@ -40,14 +40,14 @@
       "default": "''"
     }
   },
-  "imports": {
-    "Icon": "./Icon.astro"
-  },
-  "dependencies": [
-    "Icon"
-  ],
+  "imports": {},
+  "dependencies": [],
   "cssClasses": [
     "card__header",
+    "card__header-content",
+    "card__header-title",
+    "card__header-subtitle",
+    "card__header-actions",
     "card__body",
     "card__footer"
   ],
@@ -171,60 +171,14 @@
     "variant-combinations": "Card variants can be combined: elevated adds shadow elevation, interactive adds hover effects and pointer cursor, and primary adds a 6px top border in the theme primary color. Multiple variants can be applied simultaneously (e.g., elevated + interactive + primary) for layered visual effects.",
     "slot-structure": "The card uses three slots: 'header' (optional, for custom header content), 'default' (card body, always rendered in card__body), and 'footer' (optional, conditionally rendered only when Astro.slots.has('footer') is true). The default slot is the unnamed slot and receives all non-slotted content."
   },
-  "aiContext": {
-    "commonUseCases": [
-      "Content container with header, body, and footer sections",
-      "List items (user cards, product cards)",
-      "Dashboard widgets and panels",
-      "Feature showcases and content blocks"
-    ],
-    "typicalCompositions": [
-      {
-        "pattern": "Card + Badge (status indicator)",
-        "frequency": "very common",
-        "recipeId": "card-with-badge"
-      },
-      {
-        "pattern": "Card + ButtonGroup (actions)",
-        "frequency": "very common",
-        "recipeId": "card-with-actions"
-      }
-    ],
-    "propGuidance": {
-      "variant": {
-        "purpose": "Visual style of the card - can combine multiple variants",
-        "default": "default",
-        "examples": ["default", "elevated", "interactive", "primary"],
-        "tips": "Use 'elevated' for prominent cards, 'interactive' for clickable cards, 'primary' for emphasized headers"
-      },
-      "padding": {
-        "purpose": "Internal padding for card body",
-        "default": "md",
-        "examples": ["none", "sm", "md", "lg"],
-        "tips": "Use 'sm' for compact cards, 'lg' for spacious layouts, 'none' for custom padding"
-      },
-      "headerTitle": {
-        "purpose": "Card header title text (alternative to header slot)",
-        "examples": ["User Profile", "Project Details", "Settings"],
-        "tips": "Use headerTitle prop for simple text headers, or header slot for complex content"
-      }
-    },
-    "antiPatterns": [
-      "Don't nest cards inside cards - flatten the hierarchy",
-      "Don't use more than 2-3 badges per card - keeps UI clean",
-      "Don't overcrowd card footer with too many actions (max 2-3 buttons)"
-    ],
-    "relatedComponents": ["Badge", "Button", "ButtonGroup", "Avatar", "Icon"]
-  },
   "_metadata": {
-    "lastGenerated": "2026-01-28T19:36:04.986Z",
+    "lastGenerated": "2026-01-28T21:16:11.515Z",
     "generatedWith": "@astrojs/compiler@2.13.0",
     "includesVisualSpecs": true,
     "availableVariants": [
       "elevated",
       "interactive",
-      "primary",
-      "with-header"
+      "primary"
     ]
   },
   "visualSpecifications": {
@@ -285,27 +239,27 @@
       }
     },
     "typography": {
-      "fontFamily": "'Figtree', sans-serif",
+      "fontFamily": "'Lexend', sans-serif",
       "fontWeight": "600",
-      "lineHeight": "20px",
+      "lineHeight": null,
       "letterSpacing": null,
       "textTransform": null,
       "sizes": {
         "xs": {
           "fontSize": "1.125rem",
-          "lineHeight": "20px"
+          "lineHeight": null
         },
         "sm": {
           "fontSize": "1.125rem",
-          "lineHeight": "20px"
+          "lineHeight": null
         },
         "md": {
           "fontSize": "1.125rem",
-          "lineHeight": "20px"
+          "lineHeight": null
         },
         "lg": {
           "fontSize": "1.125rem",
-          "lineHeight": "20px"
+          "lineHeight": null
         }
       }
     },
@@ -515,80 +469,6 @@
           }
         },
         "primary": {
-          "cp": {
-            "light": {
-              "default": {
-                "background": "transparent",
-                "text": null,
-                "border": "transparent",
-                "iconColor": null
-              }
-            },
-            "dark": {
-              "default": {
-                "background": "transparent",
-                "text": null,
-                "border": "transparent",
-                "iconColor": null
-              }
-            }
-          },
-          "vp": {
-            "light": {
-              "default": {
-                "background": "transparent",
-                "text": null,
-                "border": "transparent",
-                "iconColor": null
-              }
-            },
-            "dark": {
-              "default": {
-                "background": "transparent",
-                "text": null,
-                "border": "transparent",
-                "iconColor": null
-              }
-            }
-          },
-          "ppm": {
-            "light": {
-              "default": {
-                "background": "transparent",
-                "text": null,
-                "border": "transparent",
-                "iconColor": null
-              }
-            },
-            "dark": {
-              "default": {
-                "background": "transparent",
-                "text": null,
-                "border": "transparent",
-                "iconColor": null
-              }
-            }
-          },
-          "maconomy": {
-            "light": {
-              "default": {
-                "background": "transparent",
-                "text": null,
-                "border": "transparent",
-                "iconColor": null
-              }
-            },
-            "dark": {
-              "default": {
-                "background": "transparent",
-                "text": null,
-                "border": "transparent",
-                "iconColor": null
-              }
-            }
-          }
-        },
-        "with-header": {
           "cp": {
             "light": {
               "default": {
@@ -1033,94 +913,13 @@
           "iconColor": null
         }
       }
-    },
-    "cp-with-header": {
-      "variant": "with-header",
-      "theme": "cp",
-      "light": {
-        "default": {
-          "background": "transparent",
-          "text": null,
-          "border": "transparent",
-          "iconColor": null
-        }
-      },
-      "dark": {
-        "default": {
-          "background": "transparent",
-          "text": null,
-          "border": "transparent",
-          "iconColor": null
-        }
-      }
-    },
-    "vp-with-header": {
-      "variant": "with-header",
-      "theme": "vp",
-      "light": {
-        "default": {
-          "background": "transparent",
-          "text": null,
-          "border": "transparent",
-          "iconColor": null
-        }
-      },
-      "dark": {
-        "default": {
-          "background": "transparent",
-          "text": null,
-          "border": "transparent",
-          "iconColor": null
-        }
-      }
-    },
-    "ppm-with-header": {
-      "variant": "with-header",
-      "theme": "ppm",
-      "light": {
-        "default": {
-          "background": "transparent",
-          "text": null,
-          "border": "transparent",
-          "iconColor": null
-        }
-      },
-      "dark": {
-        "default": {
-          "background": "transparent",
-          "text": null,
-          "border": "transparent",
-          "iconColor": null
-        }
-      }
-    },
-    "maconomy-with-header": {
-      "variant": "with-header",
-      "theme": "maconomy",
-      "light": {
-        "default": {
-          "background": "transparent",
-          "text": null,
-          "border": "transparent",
-          "iconColor": null
-        }
-      },
-      "dark": {
-        "default": {
-          "background": "transparent",
-          "text": null,
-          "border": "transparent",
-          "iconColor": null
-        }
-      }
     }
   },
   "_variantMetadata": {
     "availableVariants": [
       "elevated",
       "interactive",
-      "primary",
-      "with-header"
+      "primary"
     ]
   }
 }

@@ -167,67 +167,8 @@
     "icon-position-leading": "The icon prop only supports leading (left-side) icon placement. When icon is provided (Heroicon name string), the input renders with input--with-icon class and Icon component with size='sm' in input-wrapper__icon. There is no iconPosition prop; icons are always positioned on the left side of the input field.",
     "error-state-accessibility": "When error=true and errorMessage is provided, the component creates an error paragraph with id={inputId}-error, applies aria-invalid='true' to the input, and links them via aria-describedby={inputId}-error. This ensures screen readers announce errors when the input receives focus. The errorMessage displays in input-wrapper__error class below the input field."
   },
-  "aiContext": {
-    "commonUseCases": [
-      "Text input fields in forms",
-      "Search inputs with icons",
-      "Email, password, and text fields",
-      "Form fields with validation and error display"
-    ],
-    "typicalCompositions": [
-      {
-        "pattern": "Input + Label + validation",
-        "frequency": "very common",
-        "recipeId": "input-with-validation"
-      },
-      {
-        "pattern": "Search input with icon",
-        "frequency": "common",
-        "recipeId": "search-input"
-      },
-      {
-        "pattern": "Form field group (multiple inputs with labels)",
-        "frequency": "common",
-        "recipeId": "form-field-group"
-      }
-    ],
-    "propGuidance": {
-      "type": {
-        "purpose": "HTML input type",
-        "default": "text",
-        "examples": ["text", "email", "password", "search", "tel", "url"],
-        "tips": "Use semantic types (email, tel) for proper keyboard and validation"
-      },
-      "label": {
-        "purpose": "Label text displayed with the input",
-        "examples": ["Email Address", "Password", "Search"],
-        "tips": "Always provide labels for accessibility - don't rely on placeholders alone"
-      },
-      "error": {
-        "purpose": "Shows error state styling",
-        "default": "false",
-        "tips": "Set to true when validation fails, pair with errorMessage"
-      },
-      "errorMessage": {
-        "purpose": "Error message displayed below input when error=true",
-        "examples": ["Email is required", "Invalid format", "Password must be at least 8 characters"],
-        "tips": "Be specific and actionable - tell users how to fix the error"
-      },
-      "icon": {
-        "purpose": "Heroicon name for leading icon",
-        "examples": ["magnifying-glass", "envelope", "lock-closed"],
-        "tips": "Use for search inputs, email fields, or to add visual context"
-      }
-    },
-    "antiPatterns": [
-      "Don't use placeholder as a substitute for label - always include label prop for accessibility",
-      "Don't show error state without errorMessage - users need to know what's wrong",
-      "Don't use generic error messages like 'Invalid input' - be specific"
-    ],
-    "relatedComponents": ["Label", "Button", "Dialog"]
-  },
   "_metadata": {
-    "lastGenerated": "2026-01-28T19:36:05.354Z",
+    "lastGenerated": "2026-01-28T21:16:11.896Z",
     "generatedWith": "@astrojs/compiler@2.13.0",
     "includesVisualSpecs": true,
     "availableVariants": [
