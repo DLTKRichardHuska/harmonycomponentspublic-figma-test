@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Changed
+- **Card Component**: Fixed header styling to match documentation. Card headers now use neutral styling (normal text color, no colored background) as originally documented. The `withHeader` prop creates a neutral header section with standard text styling and a bottom border. The `primary` prop only adds a 6px top border in the theme primary color.
+
+### Migration Guide
+If you were using `withHeader` and expecting a colored header bar with white text, you can achieve this with custom styling:
+1. Use the header slot with your own styled header element
+2. Add inline styles: `style="background: var(--theme-primary); color: var(--text-inverse); padding: var(--space-4);"`
+
 ## [1.0.1] - 2026-01-28
 
 ### Changed

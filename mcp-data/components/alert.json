@@ -290,6 +290,52 @@
     "action-buttons-display": "Action buttons (primaryButton, secondaryButton) and links (linkText + linkHref) only render when style='enhanced'. Buttons are rendered as Button components with variant='primary'/'secondary' and size='xs'. Primary button always appears before secondary button in DOM order. Both buttons and links render in the alert__actions container, with buttons in alert__buttons and links as alert__link.",
     "dismissible-behavior": "When dismissible=true, an X button appears in the top-right corner with aria-label=\"Dismiss\". Clicking it removes the entire alert from the DOM using JavaScript (btn.closest('.alert')?.remove()). The dismissible button works with both default and enhanced styles, but its positioning differs based on the layout structure."
   },
+  "aiContext": {
+    "commonUseCases": [
+      "Inline notifications and feedback messages",
+      "Success confirmations (form submitted, item saved)",
+      "Warning messages (action required, approaching limit)",
+      "Error alerts (operation failed, validation errors)",
+      "Informational banners (tips, announcements)"
+    ],
+    "typicalCompositions": [
+      {
+        "pattern": "Alert with action button",
+        "frequency": "common",
+        "recipeId": "alert-with-action"
+      }
+    ],
+    "propGuidance": {
+      "variant": {
+        "purpose": "Semantic type of alert - determines color and default icon",
+        "default": "info",
+        "examples": ["info", "success", "warning", "error"],
+        "recommendation": "Use semantic variants: 'success' for confirmations, 'error' for failures, 'warning' for cautions, 'info' for general messages"
+      },
+      "style": {
+        "purpose": "Visual style - 'default' is simple, 'enhanced' adds border and supports actions",
+        "default": "default",
+        "examples": ["default", "enhanced"],
+        "tips": "Use 'enhanced' style when you need action buttons, links, or progress bars"
+      },
+      "dismissible": {
+        "purpose": "Adds close button to dismiss the alert",
+        "default": "false",
+        "tips": "Use for non-critical alerts that users can dismiss"
+      },
+      "primaryButton": {
+        "purpose": "Text for primary action button (enhanced style only)",
+        "examples": ["Learn More", "Retry", "View Details"],
+        "tips": "Keep button text short (1-2 words), use action verbs"
+      }
+    },
+    "antiPatterns": [
+      "Don't use for modal confirmations - use Dialog instead for critical actions",
+      "Don't stack multiple alerts - consolidate related messages",
+      "Don't use error variant for warnings - reserve error for actual failures"
+    ],
+    "relatedComponents": ["Button", "Dialog", "ProgressBar"]
+  },
   "_metadata": {
     "lastGenerated": "2026-01-28T19:36:04.454Z",
     "generatedWith": "@astrojs/compiler@2.13.0",

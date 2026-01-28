@@ -1,0 +1,126 @@
+{
+  "version": "1.0.0",
+  "generated": "2026-01-28T19:00:00.000Z",
+  "totalRecipes": 10,
+  "categories": {
+    "feedback": ["dialog-with-form-actions", "dialog-confirmation", "alert-with-action"],
+    "forms": ["input-with-validation", "search-input", "form-field-group"],
+    "display": ["card-with-badge", "card-with-actions"],
+    "layouts": ["shell-layout-cp", "shell-layout-standard"]
+  },
+  "recipes": [
+    {
+      "id": "dialog-with-form-actions",
+      "name": "Dialog with Form Actions",
+      "description": "Standard dialog with primary/secondary action buttons in footer",
+      "category": "feedback",
+      "complexity": "molecule",
+      "tags": ["dialog", "confirmation", "actions", "form", "buttons"],
+      "filePath": "mcp-data/recipes/feedback/dialog-with-form-actions.json",
+      "components": ["Dialog", "Button"]
+    },
+    {
+      "id": "dialog-confirmation",
+      "name": "Simple Confirmation Dialog",
+      "description": "Basic confirmation dialog with single action button",
+      "category": "feedback",
+      "complexity": "molecule",
+      "tags": ["dialog", "confirmation", "simple", "alert"],
+      "filePath": "mcp-data/recipes/feedback/dialog-confirmation.json",
+      "components": ["Dialog", "Button"]
+    },
+    {
+      "id": "alert-with-action",
+      "name": "Alert with Action Button",
+      "description": "Alert banner with optional action button",
+      "category": "feedback",
+      "complexity": "molecule",
+      "tags": ["alert", "banner", "action", "notification"],
+      "filePath": "mcp-data/recipes/feedback/alert-with-action.json",
+      "components": ["Alert", "Button"]
+    },
+    {
+      "id": "card-with-badge",
+      "name": "Card with Badge",
+      "description": "Card component with status or category badge",
+      "category": "display",
+      "complexity": "molecule",
+      "tags": ["card", "badge", "status", "label"],
+      "filePath": "mcp-data/recipes/display/card-with-badge.json",
+      "components": ["Card", "Badge"]
+    },
+    {
+      "id": "card-with-actions",
+      "name": "Card with Action Buttons",
+      "description": "Card component with action buttons in footer",
+      "category": "display",
+      "complexity": "molecule",
+      "tags": ["card", "actions", "buttons", "footer"],
+      "filePath": "mcp-data/recipes/display/card-with-actions.json",
+      "components": ["Card", "ButtonGroup", "Button"]
+    },
+    {
+      "id": "input-with-validation",
+      "name": "Input with Validation",
+      "description": "Form input with label and validation error display",
+      "category": "forms",
+      "complexity": "molecule",
+      "tags": ["input", "form", "validation", "label", "error"],
+      "filePath": "mcp-data/recipes/forms/input-with-validation.json",
+      "components": ["Label", "Input"]
+    },
+    {
+      "id": "search-input",
+      "name": "Search Input with Icon",
+      "description": "Search input field with search icon",
+      "category": "forms",
+      "complexity": "molecule",
+      "tags": ["search", "input", "icon", "filter"],
+      "filePath": "mcp-data/recipes/forms/search-input.json",
+      "components": ["Input"]
+    },
+    {
+      "id": "form-field-group",
+      "name": "Form Field Group",
+      "description": "Multiple related form fields grouped together",
+      "category": "forms",
+      "complexity": "organism",
+      "tags": ["form", "group", "fields", "layout"],
+      "filePath": "mcp-data/recipes/forms/form-field-group.json",
+      "components": ["Label", "Input"]
+    },
+    {
+      "id": "shell-layout-cp",
+      "name": "Shell Layout (CP Theme)",
+      "description": "Complete application shell layout for CP theme with FloatingNav",
+      "category": "layouts",
+      "complexity": "template",
+      "tags": ["layout", "shell", "cp", "navigation", "header"],
+      "filePath": "mcp-data/recipes/layouts/shell-layout-cp.json",
+      "components": ["ShellHeader", "LeftSidebar", "FloatingNav", "ShellPageHeader", "RightSidebar"],
+      "themeSpecific": "cp"
+    },
+    {
+      "id": "shell-layout-standard",
+      "name": "Shell Layout (Standard)",
+      "description": "Complete application shell layout for VP/PPM/Maconomy themes with ShellFooter",
+      "category": "layouts",
+      "complexity": "template",
+      "tags": ["layout", "shell", "standard", "navigation", "header", "footer"],
+      "filePath": "mcp-data/recipes/layouts/shell-layout-standard.json",
+      "components": ["ShellHeader", "LeftSidebar", "ShellPageHeader", "RightSidebar", "ShellFooter"],
+      "themeSpecific": ["vp", "ppm", "maconomy"]
+    }
+  ],
+  "complexityDistribution": {
+    "molecule": 7,
+    "organism": 1,
+    "template": 2
+  },
+  "categoryDistribution": {
+    "feedback": 3,
+    "forms": 3,
+    "display": 2,
+    "layouts": 2
+  }
+}

@@ -48,11 +48,6 @@
   ],
   "cssClasses": [
     "card__header",
-    "card__header--colored",
-    "card__header-content",
-    "card__header-title",
-    "card__header-subtitle",
-    "card__header-actions",
     "card__body",
     "card__footer"
   ],
@@ -108,7 +103,7 @@
       "children": [
         {
           "element": "div",
-          "class": "card__header card__header--colored",
+          "class": "card__header",
           "spacing": {
             "padding": "var(--space-4)",
             "margin": "0"
@@ -173,8 +168,53 @@
   "usagePatterns": {
     "header-slot-precedence": "The card header can be created two ways: (1) using the header slot for custom content, or (2) using headerTitle and headerSubtitle props for automatic rendering. The header slot takes precedence and will completely replace any headerTitle/headerSubtitle props. When using props, set withHeader=true to render the header section.",
     "header-actions-slot": "The header-actions slot is independent of the main header slot and always renders in the top-right corner of the header when provided. It's typically used for action buttons or icons (e.g., close button, settings icon). This slot works with both custom header slot content and prop-based headers (headerTitle/headerSubtitle).",
-    "variant-combinations": "Card variants can be combined: elevated adds shadow elevation, interactive adds hover effects and pointer cursor, and primary applies theme-colored background to the header. Multiple variants can be applied simultaneously (e.g., elevated + interactive + primary) for layered visual effects.",
+    "variant-combinations": "Card variants can be combined: elevated adds shadow elevation, interactive adds hover effects and pointer cursor, and primary adds a 6px top border in the theme primary color. Multiple variants can be applied simultaneously (e.g., elevated + interactive + primary) for layered visual effects.",
     "slot-structure": "The card uses three slots: 'header' (optional, for custom header content), 'default' (card body, always rendered in card__body), and 'footer' (optional, conditionally rendered only when Astro.slots.has('footer') is true). The default slot is the unnamed slot and receives all non-slotted content."
+  },
+  "aiContext": {
+    "commonUseCases": [
+      "Content container with header, body, and footer sections",
+      "List items (user cards, product cards)",
+      "Dashboard widgets and panels",
+      "Feature showcases and content blocks"
+    ],
+    "typicalCompositions": [
+      {
+        "pattern": "Card + Badge (status indicator)",
+        "frequency": "very common",
+        "recipeId": "card-with-badge"
+      },
+      {
+        "pattern": "Card + ButtonGroup (actions)",
+        "frequency": "very common",
+        "recipeId": "card-with-actions"
+      }
+    ],
+    "propGuidance": {
+      "variant": {
+        "purpose": "Visual style of the card - can combine multiple variants",
+        "default": "default",
+        "examples": ["default", "elevated", "interactive", "primary"],
+        "tips": "Use 'elevated' for prominent cards, 'interactive' for clickable cards, 'primary' for emphasized headers"
+      },
+      "padding": {
+        "purpose": "Internal padding for card body",
+        "default": "md",
+        "examples": ["none", "sm", "md", "lg"],
+        "tips": "Use 'sm' for compact cards, 'lg' for spacious layouts, 'none' for custom padding"
+      },
+      "headerTitle": {
+        "purpose": "Card header title text (alternative to header slot)",
+        "examples": ["User Profile", "Project Details", "Settings"],
+        "tips": "Use headerTitle prop for simple text headers, or header slot for complex content"
+      }
+    },
+    "antiPatterns": [
+      "Don't nest cards inside cards - flatten the hierarchy",
+      "Don't use more than 2-3 badges per card - keeps UI clean",
+      "Don't overcrowd card footer with too many actions (max 2-3 buttons)"
+    ],
+    "relatedComponents": ["Badge", "Button", "ButtonGroup", "Avatar", "Icon"]
   },
   "_metadata": {
     "lastGenerated": "2026-01-28T19:36:04.986Z",
@@ -691,58 +731,6 @@
       "padding": "16px",
       "border-top": "1px solid #BFC6D4",
       "background-color": "#F7F8FA"
-    },
-    ".card__header--colored": {
-      "height": "48px",
-      "background-color": "#4C92D9",
-      "padding": "0 16px",
-      "display": "flex",
-      "align-items": "center",
-      "justify-content": "space-between",
-      "border-top-left-radius": "0.75rem",
-      "border-top-right-radius": "0.75rem"
-    },
-    ".card__header--colored,\n.card__header--colored div,\n.card__header--colored span,\n.card__header--colored p": {
-      "color": "#FFFFFF"
-    },
-    ".card__header--colored svg,\n.card__header--colored :global(svg)": {
-      "color": "#FFFFFF",
-      "stroke": "currentColor"
-    },
-    ".card__header--colored .card__header-content": {
-      "display": "flex",
-      "flex-direction": "column",
-      "gap": "4px",
-      "flex": "1"
-    },
-    ".card__header--colored .card__header-title": {
-      "font-family": "'Lexend', sans-serif",
-      "font-size": "1.25rem",
-      "font-weight": "600",
-      "line-height": "24px",
-      "color": "#FFFFFF",
-      "margin": "0"
-    },
-    ".card__header--colored .card__header-subtitle": {
-      "font-family": "'Figtree', sans-serif",
-      "font-size": "0.875rem",
-      "line-height": "20px",
-      "color": "#FFFFFF",
-      "opacity": "0.9",
-      "margin": "0"
-    },
-    ".card__header--colored .card__header-actions": {
-      "display": "flex",
-      "align-items": "center",
-      "gap": "8px"
-    },
-    ".card__header--colored .card__header-actions svg,\n.card__header--colored .card__header-actions :global(svg)": {
-      "color": "#FFFFFF",
-      "stroke": "currentColor"
-    },
-    ".card--with-header .card__body": {
-      "border-top-left-radius": "0",
-      "border-top-right-radius": "0"
     },
     ".kanban__column-card .card__body": {
       "padding": "0",

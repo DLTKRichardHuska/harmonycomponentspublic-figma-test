@@ -180,7 +180,6 @@ Look for CSS selectors in `cssClassStyles` that:
 
 #### Card
 - `.card--interactive:hover` - Hover state for interactive cards
-- `.card__header--colored` - Colored header variant
 
 #### Dialog
 - `.dialog__close:hover` - Hover state for close button
