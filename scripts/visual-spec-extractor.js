@@ -713,7 +713,8 @@ function buildLayout(componentStyles, variableMap) {
 function buildIconSpecs(sizeVariants, componentName) {
   // Check if component uses icons
   const hasIcons = componentName === 'Button' || componentName === 'Input' || 
-                   componentName === 'Alert' || componentName === 'Icon';
+                   componentName === 'Alert' || componentName === 'Icon' ||
+                   componentName === 'Accordion';
 
   if (!hasIcons) return null;
 
@@ -727,7 +728,7 @@ function buildIconSpecs(sizeVariants, componentName) {
 
   // Icon sizes typically match or are slightly smaller than font size
   for (const size of ['xs', 'sm', 'md', 'lg']) {
-    const fontSize = sizeVariants[size]['font-size']?.resolved;
+    const fontSize = sizeVariants[size]?.['font-size']?.resolved;
     if (fontSize) {
       // Convert rem to px for icon size (16px = 1rem base)
       const match = fontSize.match(/(\d+\.?\d*)(rem|px)/);
@@ -807,6 +808,17 @@ function buildAccessibility(componentName, componentData) {
     accessibility.keyboardSupport = {
       Escape: 'closes dialog',
       Tab: 'moves focus within dialog (trapped)'
+    };
+  } else if (componentName === 'Accordion') {
+    accessibility.ariaAttributes = {
+      'aria-expanded': 'true/false on trigger (button)',
+      'aria-controls': 'id of panel controlled by trigger',
+      'role': 'region on panel',
+      'id': 'panel id linked by aria-controls'
+    };
+    accessibility.keyboardSupport = {
+      Enter: 'activates trigger (native button)',
+      Space: 'activates trigger (native button)'
     };
   }
 

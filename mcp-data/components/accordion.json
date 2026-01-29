@@ -182,7 +182,7 @@
     "default-open-state": "Set defaultOpen: true on individual items in the items array to have them open when the accordion first renders. In single-open mode (allowMultiple=false), only the last item with defaultOpen: true will remain open. In multi-open mode, all items marked defaultOpen will be open initially."
   },
   "_metadata": {
-    "lastGenerated": "2026-01-28T21:52:52.216Z",
+    "lastGenerated": "2026-01-29T17:15:00.492Z",
     "generatedWith": "@astrojs/compiler@2.13.0",
     "includesVisualSpecs": true,
     "availableVariants": []
@@ -297,13 +297,31 @@
       "alignItems": "center",
       "justifyContent": "space-between"
     },
-    "iconSpecs": null
+    "iconSpecs": {
+      "sizes": {},
+      "position": {
+        "left": {
+          "marginRight": "gap"
+        },
+        "right": {
+          "marginLeft": "gap"
+        }
+      }
+    }
   },
   "accessibility": {
     "role": null,
     "tabIndex": null,
-    "keyboardSupport": {},
-    "ariaAttributes": {},
+    "keyboardSupport": {
+      "Enter": "activates trigger (native button)",
+      "Space": "activates trigger (native button)"
+    },
+    "ariaAttributes": {
+      "aria-expanded": "true/false on trigger (button)",
+      "aria-controls": "id of panel controlled by trigger",
+      "role": "region on panel",
+      "id": "panel id linked by aria-controls"
+    },
     "focusVisible": {}
   },
   "cssClassStyles": {
