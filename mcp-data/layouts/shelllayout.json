@@ -77,18 +77,6 @@
     ],
     "darkMode": true
   },
-  "requiredPublicAssets": {
-    "description": "Copy these from node_modules/@deltek/harmony-components/public/ into the consuming app's public/ so default sidebar icons (Dela logo and design-system-only icons) display. Re-copy after upgrading the package.",
-    "paths": [
-      "DStar_LM.svg",
-      "Risk Shield.svg",
-      "Report.svg",
-      "Resource.svg",
-      "related.svg",
-      "template.svg"
-    ],
-    "optional": ["logos/CPVPLogo.svg", "logos/PPMLogo.svg", "logos/MacLogo.svg"]
-  },
   "themeComposition": {
     "cp": {
       "productName": "Costpoint",
@@ -340,6 +328,11 @@
       "value": "16px",
       "resolved": "16px"
     },
+    "panelWidthFull": {
+      "token": "--panel-width-full",
+      "value": "1300px",
+      "resolved": "1300px"
+    },
     "footerTabHoverBg": {
       "token": "--shell-footer-tab-hover-bg",
       "value": "rgba(255, 255, 255, 0.1)",
@@ -359,11 +352,6 @@
       "token": "--panel-width-narrow",
       "value": "596px",
       "resolved": "596px"
-    },
-    "panelWidthFull": {
-      "token": "--panel-width-full",
-      "value": "1300px",
-      "resolved": "1300px"
     }
   },
   "gridStructure": {
@@ -594,7 +582,7 @@
     }
   },
   "_metadata": {
-    "lastGenerated": "2026-01-29T18:10:42.902Z",
+    "lastGenerated": "2026-01-29T21:35:20.581Z",
     "version": "1.0.0",
     "includesVisualSpecs": true
   }
