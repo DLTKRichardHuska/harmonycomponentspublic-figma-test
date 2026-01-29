@@ -63,7 +63,7 @@
   },
   "usagePatterns": {},
   "_metadata": {
-    "lastGenerated": "2026-01-29T17:17:39.915Z",
+    "lastGenerated": "2026-01-29T17:20:25.696Z",
     "generatedWith": "@astrojs/compiler@2.13.0",
     "includesVisualSpecs": true,
     "availableVariants": []
@@ -176,7 +176,17 @@
       "justifyContent": "center",
       "flexShrink": "0"
     },
-    "iconSpecs": null
+    "iconSpecs": {
+      "sizes": {},
+      "position": {
+        "left": {
+          "marginRight": "gap"
+        },
+        "right": {
+          "marginLeft": "gap"
+        }
+      }
+    }
   },
   "accessibility": {
     "role": null,

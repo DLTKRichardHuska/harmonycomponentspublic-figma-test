@@ -87,7 +87,7 @@
     "connector-line-state": "Connector lines between steps (step__connector) receive is-active class when the current step is completed, or when the next step is active or completed (lines 116-132). This creates visual continuity showing progress through the stepper sequence. In vertical orientation, connectors appear below each step; in horizontal, they appear to the right."
   },
   "_metadata": {
-    "lastGenerated": "2026-01-29T17:17:41.174Z",
+    "lastGenerated": "2026-01-29T17:20:26.138Z",
     "generatedWith": "@astrojs/compiler@2.13.0",
     "includesVisualSpecs": true,
     "availableVariants": [
@@ -387,10 +387,16 @@
     "iconSpecs": null
   },
   "accessibility": {
-    "role": null,
+    "role": "group",
     "tabIndex": null,
-    "keyboardSupport": {},
-    "ariaAttributes": {},
+    "keyboardSupport": {
+      "Enter": "activates step (native button)",
+      "Space": "activates step (native button)"
+    },
+    "ariaAttributes": {
+      "aria-label": "Stepper",
+      "aria-current": "step when active"
+    },
     "focusVisible": {}
   },
   "cssClassStyles": {

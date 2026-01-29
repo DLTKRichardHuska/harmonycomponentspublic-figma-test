@@ -177,7 +177,7 @@
   },
   "usagePatterns": {},
   "_metadata": {
-    "lastGenerated": "2026-01-29T17:17:40.830Z",
+    "lastGenerated": "2026-01-29T17:20:25.989Z",
     "generatedWith": "@astrojs/compiler@2.13.0",
     "includesVisualSpecs": true,
     "availableVariants": [
@@ -441,13 +441,25 @@
       "alignItems": "center",
       "justifyContent": "center"
     },
-    "iconSpecs": null
+    "iconSpecs": {
+      "sizes": {},
+      "position": {
+        "left": {
+          "marginRight": "gap"
+        },
+        "right": {
+          "marginLeft": "gap"
+        }
+      }
+    }
   },
   "accessibility": {
     "role": null,
     "tabIndex": null,
     "keyboardSupport": {},
-    "ariaAttributes": {},
+    "ariaAttributes": {
+      "aria-label": "Decrease/Increase on stepper buttons"
+    },
     "focusVisible": {}
   },
   "cssClassStyles": {

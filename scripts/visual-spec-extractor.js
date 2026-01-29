@@ -73,7 +73,7 @@ export function extractVisualSpecifications(componentData, parsedCSS, variableMa
     elevation: buildElevation(componentStyles, variableMap),
     transitions: buildTransitions(componentStyles, variableMap),
     layout: buildLayout(componentStyles, variableMap),
-    iconSpecs: buildIconSpecs(sizeVariants, componentName)
+    iconSpecs: buildIconSpecs(sizeVariants, componentName, componentData)
   };
 
   // Build accessibility specs
@@ -710,11 +710,10 @@ function buildLayout(componentStyles, variableMap) {
 /**
  * Build icon specs object
  */
-function buildIconSpecs(sizeVariants, componentName) {
-  // Check if component uses icons
-  const hasIcons = componentName === 'Button' || componentName === 'Input' || 
-                   componentName === 'Alert' || componentName === 'Icon' ||
-                   componentName === 'Accordion';
+function buildIconSpecs(sizeVariants, componentName, componentData) {
+  // Any component that imports Icon gets iconSpecs (sizes may be empty if no size variants)
+  const dependencies = componentData?.dependencies || [];
+  const hasIcons = componentName === 'Icon' || dependencies.includes('Icon');
 
   if (!hasIcons) return null;
 
@@ -819,6 +818,130 @@ function buildAccessibility(componentName, componentData) {
     accessibility.keyboardSupport = {
       Enter: 'activates trigger (native button)',
       Space: 'activates trigger (native button)'
+    };
+  } else if (componentName === 'Alert') {
+    accessibility.role = 'alert';
+    accessibility.ariaAttributes = {
+      'aria-label': 'Dismiss on close button when dismissible'
+    };
+  } else if (componentName === 'Dropdown') {
+    accessibility.ariaAttributes = {
+      'aria-haspopup': 'listbox',
+      'aria-expanded': 'true/false when open',
+      'role': 'listbox on menu, option on items',
+      'aria-selected': 'true/false on selected option'
+    };
+  } else if (componentName === 'TabStrip') {
+    accessibility.role = 'tablist';
+    accessibility.ariaAttributes = {
+      'aria-label': 'Tabs on nav',
+      'role': 'tab on each tab',
+      'aria-selected': 'true/false on active tab',
+      'aria-disabled': 'true when tab disabled',
+      'aria-expanded': 'on overflow button',
+      'aria-haspopup': 'on overflow button'
+    };
+    accessibility.keyboardSupport = {
+      ArrowLeft: 'previous tab',
+      ArrowRight: 'next tab',
+      Home: 'first tab',
+      End: 'last tab'
+    };
+  } else if (componentName === 'PickerPopup') {
+    accessibility.role = 'dialog';
+    accessibility.ariaAttributes = {
+      'aria-modal': 'true',
+      'aria-labelledby': 'references title when present',
+      'aria-label': 'Close picker on close button'
+    };
+  } else if (componentName === 'Step') {
+    accessibility.role = 'group';
+    accessibility.ariaAttributes = {
+      'aria-label': 'Step with step id',
+      'aria-hidden': 'true on indicator and connector'
+    };
+  } else if (componentName === 'Stepper') {
+    accessibility.role = 'group';
+    accessibility.ariaAttributes = {
+      'aria-label': 'Stepper',
+      'aria-current': 'step when active'
+    };
+    accessibility.keyboardSupport = {
+      Enter: 'activates step (native button)',
+      Space: 'activates step (native button)'
+    };
+  } else if (componentName === 'Spinner') {
+    accessibility.role = 'status';
+    accessibility.ariaAttributes = {
+      'aria-label': 'Loading'
+    };
+  } else if (componentName === 'ProgressBar') {
+    accessibility.role = 'progressbar';
+    accessibility.ariaAttributes = {
+      'aria-valuenow': 'current value',
+      'aria-valuemin': '0',
+      'aria-valuemax': 'max value'
+    };
+  } else if (componentName === 'NotificationBadge') {
+    accessibility.ariaAttributes = {
+      'aria-label': 'Notification indicator or count'
+    };
+  } else if (componentName === 'Chip') {
+    accessibility.ariaAttributes = {
+      'aria-label': 'More options on menu trigger, Remove on remove button'
+    };
+  } else if (componentName === 'NumberInput') {
+    accessibility.ariaAttributes = {
+      'aria-label': 'Decrease/Increase on stepper buttons'
+    };
+  } else if (componentName === 'ButtonGroup') {
+    accessibility.role = 'group';
+  } else if (componentName === 'RadioGroup') {
+    accessibility.ariaAttributes = {
+      'aria-invalid': 'true when error',
+      'aria-describedby': 'links to group error message'
+    };
+  } else if (componentName === 'CheckboxGroup') {
+    accessibility.ariaAttributes = {
+      'aria-invalid': 'true when error',
+      'aria-describedby': 'links to group error message'
+    };
+  } else if (componentName === 'Kanban') {
+    accessibility.ariaAttributes = {
+      'role': 'region on board, group on columns',
+      'aria-label': 'Kanban board, column titles, actions'
+    };
+  } else if (componentName === 'ShellPanel') {
+    accessibility.ariaAttributes = {
+      'aria-label': 'Toggle panel width, Pop out panel, Close panel'
+    };
+  } else if (componentName === 'MonthPicker') {
+    accessibility.ariaAttributes = {
+      'role': 'grid on grid, gridcell on cells',
+      'aria-label': 'Previous/Next year, Months for year, month labels'
+    };
+  } else if (componentName === 'DatePicker') {
+    accessibility.ariaAttributes = {
+      'role': 'grid',
+      'aria-label': 'Calendar for month year, weekday labels'
+    };
+  } else if (componentName === 'WeekPicker') {
+    accessibility.ariaAttributes = {
+      'role': 'listbox on list, option on items',
+      'aria-label': 'Weeks for year',
+      'aria-selected': 'true/false on selected week'
+    };
+  } else if (componentName === 'TimePicker') {
+    accessibility.ariaAttributes = {
+      'aria-label': 'Increment/Decrement hour and minute, AM/PM'
+    };
+  } else if (componentName === 'DateInput') {
+    accessibility.ariaAttributes = {
+      'aria-label': 'label or placeholder, Open picker on trigger'
+    };
+  } else if (componentName === 'FloatingNav') {
+    accessibility.ariaAttributes = {
+      'aria-label': 'Pin navigation on pin button'
     };
   }
 

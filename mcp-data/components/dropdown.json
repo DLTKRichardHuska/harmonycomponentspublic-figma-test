@@ -258,7 +258,7 @@
     "label-variant-layout": "When label prop is provided, labelVariant controls layout: 'inline' places label and dropdown side-by-side (default for CP theme), 'stacked' places label above dropdown (default for other themes). The wrapper gets class dropdown-wrapper--inline or dropdown-wrapper--stacked. Without explicit labelVariant, CSS handles theme-specific defaults (lines 50-56)."
   },
   "_metadata": {
-    "lastGenerated": "2026-01-29T17:17:40.525Z",
+    "lastGenerated": "2026-01-29T17:20:25.853Z",
     "generatedWith": "@astrojs/compiler@2.13.0",
     "includesVisualSpecs": true,
     "availableVariants": [
@@ -526,13 +526,28 @@
       "alignItems": "center",
       "justifyContent": "space-between"
     },
-    "iconSpecs": null
+    "iconSpecs": {
+      "sizes": {},
+      "position": {
+        "left": {
+          "marginRight": "gap"
+        },
+        "right": {
+          "marginLeft": "gap"
+        }
+      }
+    }
   },
   "accessibility": {
     "role": null,
     "tabIndex": null,
     "keyboardSupport": {},
-    "ariaAttributes": {},
+    "ariaAttributes": {
+      "aria-haspopup": "listbox",
+      "aria-expanded": "true/false when open",
+      "role": "listbox on menu, option on items",
+      "aria-selected": "true/false on selected option"
+    },
     "focusVisible": {}
   },
   "cssClassStyles": {

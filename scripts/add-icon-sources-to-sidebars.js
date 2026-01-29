@@ -42,7 +42,7 @@ function readSvgContent(filePath) {
 function processIconItem(item) {
   // If it's already a custom icon with customSrc, handle it specially
   if (item.isCustom && item.customSrc) {
-    // Extract the path from customSrc (e.g., "/logos/DelaD.svg" -> "public/logos/DelaD.svg")
+    // Extract the path from customSrc (e.g., "/D_64x64.svg" -> "public/D_64x64.svg")
     const customPath = item.customSrc.startsWith('/')
       ? `public${item.customSrc}`
       : `public/${item.customSrc}`;

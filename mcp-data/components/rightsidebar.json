@@ -134,12 +134,12 @@
     ]
   },
   "usagePatterns": {
-    "theme-variant-icons": "Each theme variant (cp, vp, ppm, maconomy) has its own predefined icon set. All themes start with DelaD.svg custom logo as the first item. CP has 3 sections with 3, 2, and 4 items (lines 42-64). VP, PPM, and Maconomy have 3 sections with 8, 3, and 3 items respectively (currently identical configurations). The appropriate variant is shown via CSS based on html theme class (lines 369-393).",
-    "custom-icon-support": "Navigation items support two icon approaches: standard Icon component (icon: 'icon-name') or custom images (isCustom: true, customSrc: '/path/to/image.svg') like the DelaD.svg logo. Custom images are rendered as <img> tags with class right-sidebar__dela-logo, while standard icons use the Icon component. All theme variants automatically include the Dela AI custom logo as the first item.",
-    "panel-data-attributes": "Items use data attributes to control ShellPanel behavior: panelTitle (defaults to label), panelIcon (defaults to item icon), panelContentId (optional identifier), and useGradientHeader (boolean). The script automatically detects Dela AI items (by title or DelaD.svg icon) and applies gradient header without explicit useGradientHeader attribute (lines 423-428)."
+    "theme-variant-icons": "Each theme variant (cp, vp, ppm, maconomy) has its own predefined icon set. All themes start with D_64x64.svg custom logo as the first item. CP has 3 sections with 3, 2, and 4 items (lines 42-64). VP, PPM, and Maconomy have 3 sections with 8, 3, and 3 items respectively (currently identical configurations). The appropriate variant is shown via CSS based on html theme class (lines 369-393).",
+    "custom-icon-support": "Navigation items support two icon approaches: standard Icon component (icon: 'icon-name') or custom images (isCustom: true, customSrc: '/path/to/image.svg') like the D_64x64.svg logo. Custom images are rendered as <img> tags with class right-sidebar__dela-logo, while standard icons use the Icon component. All theme variants automatically include the Dela AI custom logo as the first item.",
+    "panel-data-attributes": "Items use data attributes to control ShellPanel behavior: panelTitle (defaults to label), panelIcon (defaults to item icon), panelContentId (optional identifier), and useGradientHeader (boolean). The script automatically detects Dela AI items (by title or D_64x64.svg icon) and applies gradient header without explicit useGradientHeader attribute (lines 423-428)."
   },
   "_metadata": {
-    "lastGenerated": "2026-01-29T17:17:41.012Z",
+    "lastGenerated": "2026-01-29T17:20:26.063Z",
     "generatedWith": "@astrojs/compiler@2.13.0",
     "includesVisualSpecs": true,
     "availableVariants": [
@@ -561,7 +561,17 @@
       "justifyContent": "center",
       "flexShrink": "0"
     },
-    "iconSpecs": null
+    "iconSpecs": {
+      "sizes": {},
+      "position": {
+        "left": {
+          "marginRight": "gap"
+        },
+        "right": {
+          "marginLeft": "gap"
+        }
+      }
+    }
   },
   "accessibility": {
     "role": null,

@@ -67,7 +67,7 @@ The `Icon` component resolves icons in this order:
 **Required public assets** when using default section configs (filenames must match exactly):
 
 - Custom SVGs: `Risk Shield.svg`, `Report.svg`, `Resource.svg`, `related.svg`, `template.svg`, `mic-slash.svg` (and `pin.svg` only if you do not install `@tabler/icons`).
-- Logos: `logos/DelaD.svg`; `logos/CPVPLogo.svg` if using ShellHeader’s default `logoSrc`.
+- Logos: `D_64x64.svg` (right sidebar logo, in public root); `logos/CPVPLogo.svg` if using ShellHeader’s default `logoSrc`.
 
 **Sparse checkout vs copy:**
 

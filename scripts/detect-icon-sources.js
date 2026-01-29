@@ -56,7 +56,7 @@ function detectIconSource(iconName) {
   }
 
   // Also check if it's in a subdirectory (like logos/)
-  // This handles cases like DelaD.svg in /logos/DelaD.svg
+  // This handles cases like D_64x64.svg in /D_64x64.svg
   const publicDir = path.join(process.cwd(), 'public');
   if (fs.existsSync(publicDir)) {
     const files = fs.readdirSync(publicDir, { recursive: true, withFileTypes: true });

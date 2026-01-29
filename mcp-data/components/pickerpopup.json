@@ -135,7 +135,7 @@
   },
   "usagePatterns": {},
   "_metadata": {
-    "lastGenerated": "2026-01-29T17:17:40.847Z",
+    "lastGenerated": "2026-01-29T17:20:25.995Z",
     "generatedWith": "@astrojs/compiler@2.13.0",
     "includesVisualSpecs": true,
     "availableVariants": []
@@ -248,13 +248,27 @@
       "alignItems": "center",
       "justifyContent": "center"
     },
-    "iconSpecs": null
+    "iconSpecs": {
+      "sizes": {},
+      "position": {
+        "left": {
+          "marginRight": "gap"
+        },
+        "right": {
+          "marginLeft": "gap"
+        }
+      }
+    }
   },
   "accessibility": {
-    "role": null,
+    "role": "dialog",
     "tabIndex": null,
     "keyboardSupport": {},
-    "ariaAttributes": {},
+    "ariaAttributes": {
+      "aria-modal": "true",
+      "aria-labelledby": "references title when present",
+      "aria-label": "Close picker on close button"
+    },
     "focusVisible": {}
   },
   "cssClassStyles": {

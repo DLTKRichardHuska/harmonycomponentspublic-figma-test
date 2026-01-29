@@ -197,7 +197,7 @@
   },
   "usagePatterns": {},
   "_metadata": {
-    "lastGenerated": "2026-01-29T17:17:40.433Z",
+    "lastGenerated": "2026-01-29T17:20:25.819Z",
     "generatedWith": "@astrojs/compiler@2.13.0",
     "includesVisualSpecs": true,
     "availableVariants": []
@@ -309,13 +309,26 @@
       "alignItems": "center",
       "justifyContent": "center"
     },
-    "iconSpecs": null
+    "iconSpecs": {
+      "sizes": {},
+      "position": {
+        "left": {
+          "marginRight": "gap"
+        },
+        "right": {
+          "marginLeft": "gap"
+        }
+      }
+    }
   },
   "accessibility": {
     "role": null,
     "tabIndex": null,
     "keyboardSupport": {},
-    "ariaAttributes": {},
+    "ariaAttributes": {
+      "role": "grid",
+      "aria-label": "Calendar for month year, weekday labels"
+    },
     "focusVisible": {}
   },
   "cssClassStyles": {
