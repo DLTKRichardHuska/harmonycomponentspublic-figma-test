@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- **Button**: Dela variants `dela` (4px radius) and `dela-pill` (fully rounded) with gradient background and Stars graphic for launching AI/Dela features.
+
 ### Changed
 - **Card Component**: Fixed header styling to match documentation. Card headers now use neutral styling (normal text color, no colored background) as originally documented. The `withHeader` prop creates a neutral header section with standard text styling and a bottom border. The `primary` prop only adds a 6px top border in the theme primary color.
 

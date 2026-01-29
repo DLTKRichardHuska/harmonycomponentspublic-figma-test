@@ -4,6 +4,7 @@ import ExampleSection from '../../components/ExampleSection.astro';
 import RightSidebar from '../../components/ui/RightSidebar.astro';
 import ShellPanel from '../../components/ui/ShellPanel.astro';
 import Icon from '../../components/ui/Icon.astro';
+import Button from '../../components/ui/Button.astro';
 
 // Custom sections for Dela demo with panel configuration
 const delaDemoSections = [
@@ -50,11 +51,69 @@ const delaDemoSections = [
     </header>
 
     <nav class="article-nav">
+      <a href="#dela-brand-guide" class="article-nav__link"><Icon name="document-text" size="sm" /> Dela brand guide</a>
+      <a href="#star-symbol" class="article-nav__link"><Icon name="star" size="sm" /> Star Symbol</a>
+      <a href="#ask-dela-launch-icon" class="article-nav__link"><Icon name="chat-bubble-left" size="sm" /> Ask Dela Launch Icon</a>
+      <a href="#ask-dela-panel" class="article-nav__link"><Icon name="window" size="sm" /> Ask Dela Panel</a>
       <a href="#demo" class="article-nav__link"><Icon name="eye" size="sm" /> Demo</a>
       <a href="#panel-usage" class="article-nav__link"><Icon name="window" size="sm" /> Panel Usage</a>
       <a href="#ai-guidelines" class="article-nav__link"><Icon name="sparkles" size="sm" /> AI Guidelines</a>
       <a href="#accessibility" class="article-nav__link"><Icon name="check-badge" size="sm" /> Accessibility</a>
     </nav>
+
+    <div class="dela-two-column">
+      <section id="dela-brand-guide" class="space-y-6 dela-two-column__col">
+        <h2 class="section__title">Dela brand guide</h2>
+        <p class="text-secondary text-sm">
+          This guide is designed to provide a starting point for your work with Dela. The strategies behind Dela will continue to evolve as the AI landscape breaks new ground.
+        </p>
+        <Button
+          variant="dela"
+          href="https://www.figma.com/proto/miqNBfEbHItRWIsPwAaaEr/2025_Dela_Product_Branding_Guidelines?node-id=3876-1740&p=f&m=dev&scaling=min-zoom&content-scaling=fixed&page-id=3876%3A861&t=EXcT5wMTx92t2hGx-1"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Dela product brand guide
+        </Button>
+      </section>
+
+      <section id="star-symbol" class="space-y-6 dela-two-column__col">
+        <h2 class="section__title">Star Symbol</h2>
+        <p class="text-secondary text-sm">
+          Incorporate the star symbol as an optional complementary graphical element wherever the Dela brand is used within the product you're working on. Use sparingly.
+        </p>
+        <div class="dela-asset-row">
+          <img src="/Stars.svg" alt="Star symbol" class="dela-asset-row__img" style="height: 20px;" />
+          <span class="dela-asset-row__spec text-secondary text-sm">Minimum height: 20px</span>
+        </div>
+      </section>
+    </div>
+
+    <div class="dela-two-column">
+      <section id="ask-dela-launch-icon" class="space-y-6 dela-two-column__col">
+        <h2 class="section__title">Ask Dela Launch Icon</h2>
+        <p class="text-secondary text-sm">
+          The Ask Dela launch icon should exclusively serve the Digital Assistant. Its purpose is solely for initiating the chat window and may be strategically placed within various contexts, including within tables or as part of the primary navigation.
+        </p>
+        <p class="text-secondary text-sm">
+          Ensuring that the launch icon is exclusively reserved for the Digital Assistant fosters a consistent user experience. By limiting its application to launching the application, users can readily identify and access this AI-driven feature.
+        </p>
+        <div class="dela-asset-row">
+          <img src="/AskDelaLaunch.svg" alt="Ask Dela launch icon" class="dela-asset-row__img" style="height: 27px;" />
+          <span class="dela-asset-row__spec text-secondary text-sm">Minimum height: 27px</span>
+        </div>
+      </section>
+
+      <section id="ask-dela-panel" class="space-y-6 dela-two-column__col">
+        <h2 class="section__title">Ask Dela Panel</h2>
+        <p class="text-secondary text-sm">
+          Here's a visual representation of a baseline layout for the drawer version of the Digital Assistant. Use this as a starting point and adapt it according to your product requirements as needed.
+        </p>
+        <p class="text-secondary text-sm">
+          It's important to note that the work on the Digital Assistant experience is ongoing and will evolve over time. The long-term goal is to develop a product agnostic experience that seamlessly integrates across our entire product lineup. This means ensuring that the Digital Assistant functions smoothly regardless of the platform or product it's used in.
+        </p>
+      </section>
+    </div>
 
     <section id="demo" class="space-y-8">
       <h2 class="section__title">Live Demo</h2>
@@ -322,6 +381,37 @@ const delaDemoSections = [
 </DocsLayout>
 
 <style>
+  /* Asset row: logo + minimum height spec side by side */
+  .dela-asset-row {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    margin-top: var(--space-4);
+  }
+
+  .dela-asset-row__img {
+    display: block;
+    flex-shrink: 0;
+  }
+
+  .dela-asset-row__spec {
+    font-weight: 500;
+  }
+
+  /* Two-column layout for Ask Dela Launch Icon + Ask Dela Panel */
+  .dela-two-column {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-8);
+    align-items: start;
+  }
+
+  @media (max-width: 768px) {
+    .dela-two-column {
+      grid-template-columns: 1fr;
+    }
+  }
+
   /* Shell-layout wrapper for demos - provides context for panel CSS */
   .shell-layout {
     /* Override shell-layout default styles for demo context */

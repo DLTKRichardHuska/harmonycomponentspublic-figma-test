@@ -127,7 +127,9 @@ export function generateEntryId(change, timestamp) {
       target: change.target,
       change: change.change,
       propName: change.propName || null,
-      path: change.path || null, // Include token path for uniqueness
+      variantName: change.variantName || null,
+      path: change.path || null,
+      filePath: change.filePath || null,
       before: change.before || null,
       after: change.after || null
     }))
