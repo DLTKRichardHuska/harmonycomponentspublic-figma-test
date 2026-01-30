@@ -78,27 +78,9 @@ When Harmony data is successfully loaded, these 5 tools become available:
 
 ## Regenerating MCP Data
 
-Developers should regenerate the data when components change:
+**Automated:** When you push to `main` (e.g. after changing components, styles, or tokens), CI runs one workflow that regenerates both MCP and changelog data and pushes a single commit. You do not need to run any scripts or commit `mcp-data/` or `changelog-data/` yourself—doing that can cause branch divergence.
 
-```bash
-cd harmonycomponents
-npm run generate:mcp-data
-```
-
-This updates:
-- `mcp-data/design-tokens.json` (31.5 KB)
-- `mcp-data/components/*.json` (49 component files)
-- `mcp-data/layouts/*.json` (layout composition data)
-- `mcp-data/manifest.json` (dependency graph)
-
-**Then commit and push:**
-```bash
-git add mcp-data/
-git commit -m "chore: regenerate MCP data"
-git push
-```
-
-Designers will get the updated data on their next `git pull` or fresh clone.
+**After you push:** In Cursor (or your Git app), use **Pull** or **Sync** once so your computer has CI’s latest commit. That keeps you in sync and avoids “diverged” messages.
 
 ## Guidelines Structure
 
