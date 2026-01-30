@@ -63,7 +63,7 @@
   },
   "usagePatterns": {},
   "_metadata": {
-    "lastGenerated": "2026-01-30T17:43:49.695Z",
+    "lastGenerated": "2026-01-30T18:45:57.289Z",
     "generatedWith": "@astrojs/compiler@2.13.0",
     "includesVisualSpecs": true,
     "availableVariants": []
@@ -224,6 +224,16 @@
   "_variantMetadata": {
     "availableVariants": []
   },
+  "interactivity": {
+    "events": [],
+    "state": [
+      {
+        "name": "—",
+        "type": "—",
+        "description": "Display only; no client-side state or events."
+      }
+    ]
+  },
   "examples": [
     {
       "name": "Initials avatar",
@@ -235,15 +245,5 @@
       "description": "Avatar with image",
       "snippet": "<Avatar src=\"/photo.jpg\" alt=\"User\" />"
     }
-  ],
-  "interactivity": {
-    "events": [],
-    "state": [
-      {
-        "name": "—",
-        "type": "—",
-        "description": "Display only; no client-side state or events."
-      }
-    ]
-  }
+  ]
 }

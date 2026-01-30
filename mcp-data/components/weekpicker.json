@@ -196,7 +196,7 @@
   },
   "usagePatterns": {},
   "_metadata": {
-    "lastGenerated": "2026-01-30T17:43:51.628Z",
+    "lastGenerated": "2026-01-30T18:45:58.861Z",
     "generatedWith": "@astrojs/compiler@2.13.0",
     "includesVisualSpecs": true,
     "availableVariants": []
@@ -442,13 +442,6 @@
   "_variantMetadata": {
     "availableVariants": []
   },
-  "examples": [
-    {
-      "name": "Week selection",
-      "description": "Pick week",
-      "snippet": "<WeekPicker value={...} />"
-    }
-  ],
   "interactivity": {
     "events": [
       {
@@ -463,5 +456,12 @@
         "description": "Selected week (e.g. year and week number)"
       }
     ]
-  }
+  },
+  "examples": [
+    {
+      "name": "Week selection",
+      "description": "Pick week",
+      "snippet": "<WeekPicker value={...} />"
+    }
+  ]
 }

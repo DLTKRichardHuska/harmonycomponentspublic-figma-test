@@ -139,7 +139,7 @@
     "active-state-management": "The sidebar manages two types of active states: class-based (left-sidebar__item--active) for initially active items, and data-attribute-based (data-active) for runtime panel interactions. When a panel is opened, the script clears class-based active states and sets data-active on the clicked item (lines 483-489). This prevents conflicts between static and dynamic active states."
   },
   "_metadata": {
-    "lastGenerated": "2026-01-30T17:43:50.752Z",
+    "lastGenerated": "2026-01-30T18:45:58.287Z",
     "generatedWith": "@astrojs/compiler@2.13.0",
     "includesVisualSpecs": true,
     "availableVariants": [
@@ -1217,6 +1217,21 @@
       "maconomy"
     ]
   },
+  "interactivity": {
+    "events": [
+      {
+        "name": "click",
+        "description": "Navigation item click; sidebar toggle if present"
+      }
+    ],
+    "state": [
+      {
+        "name": "collapsed",
+        "type": "boolean",
+        "description": "Whether sidebar is collapsed (if toggle exists)"
+      }
+    ]
+  },
   "examples": [
     {
       "name": "CP with left sidebar",
@@ -1253,20 +1268,5 @@
       "description": "Standalone sidebar",
       "snippet": "<LeftSidebar items={[...]} />"
     }
-  ],
-  "interactivity": {
-    "events": [
-      {
-        "name": "click",
-        "description": "Navigation item click; sidebar toggle if present"
-      }
-    ],
-    "state": [
-      {
-        "name": "collapsed",
-        "type": "boolean",
-        "description": "Whether sidebar is collapsed (if toggle exists)"
-      }
-    ]
-  }
+  ]
 }

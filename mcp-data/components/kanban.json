@@ -366,7 +366,7 @@
     "action-buttons-vs-dropdowns": "The action bar supports two prop patterns: actionButtons array with {text, icon} for Button components (lines 93-105), or actionDropdowns array with {text, options, value} for Dropdown components. When neither is provided, default actions are rendered (lines 108-127). Use actionButtons for simple click actions, actionDropdowns for selection-based filters or view changes."
   },
   "_metadata": {
-    "lastGenerated": "2026-01-30T17:43:50.583Z",
+    "lastGenerated": "2026-01-30T18:45:58.169Z",
     "generatedWith": "@astrojs/compiler@2.13.0",
     "includesVisualSpecs": true,
     "availableVariants": []
@@ -753,13 +753,6 @@
   "_variantMetadata": {
     "availableVariants": []
   },
-  "examples": [
-    {
-      "name": "Kanban board",
-      "description": "Columns with cards",
-      "snippet": "<Kanban columns={[{ id: '1', title: 'To Do', cards: [...] }]} />"
-    }
-  ],
   "interactivity": {
     "events": [
       {
@@ -774,5 +767,12 @@
         "description": "Column and card data passed as props; reorder/state managed by parent."
       }
     ]
-  }
+  },
+  "examples": [
+    {
+      "name": "Kanban board",
+      "description": "Columns with cards",
+      "snippet": "<Kanban columns={[{ id: '1', title: 'To Do', cards: [...] }]} />"
+    }
+  ]
 }

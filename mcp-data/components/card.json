@@ -172,7 +172,7 @@
     "slot-structure": "The card uses three slots: 'header' (optional, for custom header content), 'default' (card body, always rendered in card__body), and 'footer' (optional, conditionally rendered only when Astro.slots.has('footer') is true). The default slot is the unnamed slot and receives all non-slotted content."
   },
   "_metadata": {
-    "lastGenerated": "2026-01-30T17:43:50.019Z",
+    "lastGenerated": "2026-01-30T18:45:57.722Z",
     "generatedWith": "@astrojs/compiler@2.13.0",
     "includesVisualSpecs": true,
     "availableVariants": [
@@ -949,6 +949,21 @@
       "primary"
     ]
   },
+  "interactivity": {
+    "events": [
+      {
+        "name": "click",
+        "description": "When interactive=true, card is clickable; handle click on the root element or use as link wrapper"
+      }
+    ],
+    "state": [
+      {
+        "name": "—",
+        "type": "—",
+        "description": "No internal state; interactive prop adds hover styling and pointer cursor."
+      }
+    ]
+  },
   "examples": [
     {
       "name": "Status badge",
@@ -985,20 +1000,5 @@
       "description": "Standalone content card",
       "snippet": "<Card><p>Card body content.</p></Card>"
     }
-  ],
-  "interactivity": {
-    "events": [
-      {
-        "name": "click",
-        "description": "When interactive=true, card is clickable; handle click on the root element or use as link wrapper"
-      }
-    ],
-    "state": [
-      {
-        "name": "—",
-        "type": "—",
-        "description": "No internal state; interactive prop adds hover styling and pointer cursor."
-      }
-    ]
-  }
+  ]
 }

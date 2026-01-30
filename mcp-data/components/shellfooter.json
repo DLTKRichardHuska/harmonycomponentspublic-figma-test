@@ -95,7 +95,7 @@
     "variant-height": "The variant prop controls height: default uses --shell-footer-height-default, compact uses --shell-footer-height-compact."
   },
   "_metadata": {
-    "lastGenerated": "2026-01-30T17:43:51.214Z",
+    "lastGenerated": "2026-01-30T18:45:58.582Z",
     "generatedWith": "@astrojs/compiler@2.13.0",
     "includesVisualSpecs": true,
     "availableVariants": [
@@ -531,6 +531,21 @@
       "compact"
     ]
   },
+  "interactivity": {
+    "events": [
+      {
+        "name": "click",
+        "description": "Clicks on footer links or actions"
+      }
+    ],
+    "state": [
+      {
+        "name": "—",
+        "type": "—",
+        "description": "Layout slot; no internal state."
+      }
+    ]
+  },
   "examples": [
     {
       "name": "Standard with sidebars",
@@ -552,20 +567,5 @@
       "description": "Shell footer slot",
       "snippet": "<ShellFooter>Links and copyright</ShellFooter>"
     }
-  ],
-  "interactivity": {
-    "events": [
-      {
-        "name": "click",
-        "description": "Clicks on footer links or actions"
-      }
-    ],
-    "state": [
-      {
-        "name": "—",
-        "type": "—",
-        "description": "Layout slot; no internal state."
-      }
-    ]
-  }
+  ]
 }

@@ -135,7 +135,7 @@
   },
   "usagePatterns": {},
   "_metadata": {
-    "lastGenerated": "2026-01-30T17:43:50.919Z",
+    "lastGenerated": "2026-01-30T18:45:58.394Z",
     "generatedWith": "@astrojs/compiler@2.13.0",
     "includesVisualSpecs": true,
     "availableVariants": []
@@ -333,13 +333,6 @@
   "_variantMetadata": {
     "availableVariants": []
   },
-  "examples": [
-    {
-      "name": "Popup picker",
-      "description": "Popover for picker",
-      "snippet": "<PickerPopup open={open} onclose={...}>...</PickerPopup>"
-    }
-  ],
   "interactivity": {
     "events": [
       {
@@ -358,5 +351,12 @@
         "description": "Whether the popup is visible"
       }
     ]
-  }
+  },
+  "examples": [
+    {
+      "name": "Popup picker",
+      "description": "Popover for picker",
+      "snippet": "<PickerPopup open={open} onclose={...}>...</PickerPopup>"
+    }
+  ]
 }

@@ -250,7 +250,7 @@
   },
   "usagePatterns": {},
   "_metadata": {
-    "lastGenerated": "2026-01-30T17:43:50.279Z",
+    "lastGenerated": "2026-01-30T18:45:57.911Z",
     "generatedWith": "@astrojs/compiler@2.13.0",
     "includesVisualSpecs": true,
     "availableVariants": [
@@ -1558,13 +1558,6 @@
       "stacked"
     ]
   },
-  "examples": [
-    {
-      "name": "Date field",
-      "description": "Input with date picker",
-      "snippet": "<DateInput name=\"date\" placeholder=\"Select date\" />"
-    }
-  ],
   "interactivity": {
     "events": [
       {
@@ -1588,5 +1581,12 @@
         "description": "Whether the date picker popup is open"
       }
     ]
-  }
+  },
+  "examples": [
+    {
+      "name": "Date field",
+      "description": "Input with date picker",
+      "snippet": "<DateInput name=\"date\" placeholder=\"Select date\" />"
+    }
+  ]
 }

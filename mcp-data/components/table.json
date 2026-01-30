@@ -171,7 +171,7 @@
   },
   "usagePatterns": {},
   "_metadata": {
-    "lastGenerated": "2026-01-30T17:43:51.479Z",
+    "lastGenerated": "2026-01-30T18:45:58.773Z",
     "generatedWith": "@astrojs/compiler@2.13.0",
     "includesVisualSpecs": true,
     "availableVariants": [
@@ -1634,13 +1634,6 @@
       "none"
     ]
   },
-  "examples": [
-    {
-      "name": "Data table",
-      "description": "Table with header and body slots",
-      "snippet": "<Table><Fragment slot=\"header\">...</Fragment><Fragment slot=\"body\">...</Fragment></Table>"
-    }
-  ],
   "interactivity": {
     "events": [
       {
@@ -1655,5 +1648,12 @@
         "description": "Layout only; sort/selection state in parent."
       }
     ]
-  }
+  },
+  "examples": [
+    {
+      "name": "Data table",
+      "description": "Table with header and body slots",
+      "snippet": "<Table><Fragment slot=\"header\">...</Fragment><Fragment slot=\"body\">...</Fragment></Table>"
+    }
+  ]
 }

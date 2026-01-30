@@ -197,7 +197,7 @@
   },
   "usagePatterns": {},
   "_metadata": {
-    "lastGenerated": "2026-01-30T17:43:50.321Z",
+    "lastGenerated": "2026-01-30T18:45:57.949Z",
     "generatedWith": "@astrojs/compiler@2.13.0",
     "includesVisualSpecs": true,
     "availableVariants": []
@@ -454,13 +454,6 @@
   "_variantMetadata": {
     "availableVariants": []
   },
-  "examples": [
-    {
-      "name": "Calendar picker",
-      "description": "Standalone calendar",
-      "snippet": "<DatePicker value={date} onchange={...} />"
-    }
-  ],
   "interactivity": {
     "events": [
       {
@@ -480,5 +473,12 @@
         "description": "Currently displayed month/year in calendar view"
       }
     ]
-  }
+  },
+  "examples": [
+    {
+      "name": "Calendar picker",
+      "description": "Standalone calendar",
+      "snippet": "<DatePicker value={date} onchange={...} />"
+    }
+  ]
 }

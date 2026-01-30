@@ -100,7 +100,7 @@
     "save-button-states": "The saveDisabled prop controls the Save button's disabled state and visual variant. When saveDisabled=true, the button receives floating-nav__btn--disabled class and disabled attribute. When saveDisabled=false (default), it receives floating-nav__btn--primary class for prominent styling. The Save button always has a dropdown chevron, suggesting multiple save options in the dropdown menu."
   },
   "_metadata": {
-    "lastGenerated": "2026-01-30T17:43:50.438Z",
+    "lastGenerated": "2026-01-30T18:45:58.061Z",
     "generatedWith": "@astrojs/compiler@2.13.0",
     "includesVisualSpecs": true,
     "availableVariants": [
@@ -721,6 +721,21 @@
       "compact"
     ]
   },
+  "interactivity": {
+    "events": [
+      {
+        "name": "click",
+        "description": "Item click for navigation or action"
+      }
+    ],
+    "state": [
+      {
+        "name": "expanded",
+        "type": "boolean",
+        "description": "Whether the floating nav is expanded or collapsed (if applicable)"
+      }
+    ]
+  },
   "examples": [
     {
       "name": "CP with left sidebar",
@@ -742,20 +757,5 @@
       "description": "Floating navigation",
       "snippet": "<FloatingNav items={[...]} />"
     }
-  ],
-  "interactivity": {
-    "events": [
-      {
-        "name": "click",
-        "description": "Item click for navigation or action"
-      }
-    ],
-    "state": [
-      {
-        "name": "expanded",
-        "type": "boolean",
-        "description": "Whether the floating nav is expanded or collapsed (if applicable)"
-      }
-    ]
-  }
+  ]
 }

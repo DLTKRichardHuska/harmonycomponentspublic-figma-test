@@ -168,7 +168,7 @@
     "error-state-accessibility": "When error=true and errorMessage is provided, the component creates an error paragraph with id={inputId}-error, applies aria-invalid='true' to the input, and links them via aria-describedby={inputId}-error. This ensures screen readers announce errors when the input receives focus. The errorMessage displays in input-wrapper__error class below the input field."
   },
   "_metadata": {
-    "lastGenerated": "2026-01-30T17:43:50.519Z",
+    "lastGenerated": "2026-01-30T18:45:58.110Z",
     "generatedWith": "@astrojs/compiler@2.13.0",
     "includesVisualSpecs": true,
     "availableVariants": [
@@ -2219,6 +2219,29 @@
       "stacked"
     ]
   },
+  "interactivity": {
+    "events": [
+      {
+        "name": "change",
+        "description": "Native change when value changes"
+      },
+      {
+        "name": "focus",
+        "description": "Input received focus"
+      },
+      {
+        "name": "blur",
+        "description": "Input lost focus"
+      }
+    ],
+    "state": [
+      {
+        "name": "value",
+        "type": "string",
+        "description": "Current input value; controlled via value prop or form"
+      }
+    ]
+  },
   "examples": [
     {
       "name": "Text input with label",
@@ -2270,28 +2293,5 @@
       "description": "Standalone text field",
       "snippet": "<Input type=\"text\" placeholder=\"Enter text\" />"
     }
-  ],
-  "interactivity": {
-    "events": [
-      {
-        "name": "change",
-        "description": "Native change when value changes"
-      },
-      {
-        "name": "focus",
-        "description": "Input received focus"
-      },
-      {
-        "name": "blur",
-        "description": "Input lost focus"
-      }
-    ],
-    "state": [
-      {
-        "name": "value",
-        "type": "string",
-        "description": "Current input value; controlled via value prop or form"
-      }
-    ]
-  }
+  ]
 }

@@ -167,7 +167,7 @@
   },
   "usagePatterns": {},
   "_metadata": {
-    "lastGenerated": "2026-01-30T17:43:50.671Z",
+    "lastGenerated": "2026-01-30T18:45:58.232Z",
     "generatedWith": "@astrojs/compiler@2.13.0",
     "includesVisualSpecs": true,
     "availableVariants": []
@@ -385,13 +385,6 @@
   "_variantMetadata": {
     "availableVariants": []
   },
-  "examples": [
-    {
-      "name": "Kanban card",
-      "description": "Card in a column",
-      "snippet": "<KanbanCard title=\"Task\" description=\"...\" />"
-    }
-  ],
   "interactivity": {
     "events": [
       {
@@ -406,5 +399,12 @@
         "description": "Display only; state managed by parent Kanban or app."
       }
     ]
-  }
+  },
+  "examples": [
+    {
+      "name": "Kanban card",
+      "description": "Card in a column",
+      "snippet": "<KanbanCard title=\"Task\" description=\"...\" />"
+    }
+  ]
 }

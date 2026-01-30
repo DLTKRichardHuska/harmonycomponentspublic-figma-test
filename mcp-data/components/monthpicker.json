@@ -175,7 +175,7 @@
   },
   "usagePatterns": {},
   "_metadata": {
-    "lastGenerated": "2026-01-30T17:43:50.820Z",
+    "lastGenerated": "2026-01-30T18:45:58.330Z",
     "generatedWith": "@astrojs/compiler@2.13.0",
     "includesVisualSpecs": true,
     "availableVariants": []
@@ -403,13 +403,6 @@
   "_variantMetadata": {
     "availableVariants": []
   },
-  "examples": [
-    {
-      "name": "Month selection",
-      "description": "Pick month",
-      "snippet": "<MonthPicker value={...} />"
-    }
-  ],
   "interactivity": {
     "events": [
       {
@@ -424,5 +417,12 @@
         "description": "Selected month (e.g. YYYY-MM)"
       }
     ]
-  }
+  },
+  "examples": [
+    {
+      "name": "Month selection",
+      "description": "Pick month",
+      "snippet": "<MonthPicker value={...} />"
+    }
+  ]
 }

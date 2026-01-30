@@ -141,7 +141,7 @@
     "panel-data-attributes": "Items use data attributes to control ShellPanel behavior: panelTitle (defaults to label), panelIcon (defaults to item icon), panelContentId (optional identifier), and useGradientHeader (boolean). The script automatically detects Dela AI items (by title or .right-sidebar__dela-logo) and applies gradient header without explicit useGradientHeader attribute (lines 423-428)."
   },
   "_metadata": {
-    "lastGenerated": "2026-01-30T17:43:51.188Z",
+    "lastGenerated": "2026-01-30T18:45:58.566Z",
     "generatedWith": "@astrojs/compiler@2.13.0",
     "includesVisualSpecs": true,
     "availableVariants": [
@@ -1392,6 +1392,21 @@
       "maconomy"
     ]
   },
+  "interactivity": {
+    "events": [
+      {
+        "name": "click",
+        "description": "Item click or sidebar toggle"
+      }
+    ],
+    "state": [
+      {
+        "name": "collapsed",
+        "type": "boolean",
+        "description": "Whether sidebar is collapsed (if toggle exists)"
+      }
+    ]
+  },
   "examples": [
     {
       "name": "CP with left sidebar",
@@ -1428,20 +1443,5 @@
       "description": "Sidebar on right",
       "snippet": "<RightSidebar>...</RightSidebar>"
     }
-  ],
-  "interactivity": {
-    "events": [
-      {
-        "name": "click",
-        "description": "Item click or sidebar toggle"
-      }
-    ],
-    "state": [
-      {
-        "name": "collapsed",
-        "type": "boolean",
-        "description": "Whether sidebar is collapsed (if toggle exists)"
-      }
-    ]
-  }
+  ]
 }

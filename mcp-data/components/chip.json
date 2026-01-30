@@ -98,7 +98,7 @@
   },
   "usagePatterns": {},
   "_metadata": {
-    "lastGenerated": "2026-01-30T17:43:50.148Z",
+    "lastGenerated": "2026-01-30T18:45:57.821Z",
     "generatedWith": "@astrojs/compiler@2.13.0",
     "includesVisualSpecs": true,
     "availableVariants": [
@@ -1560,18 +1560,6 @@
       "overflow"
     ]
   },
-  "examples": [
-    {
-      "name": "Basic chip",
-      "description": "Tag or filter chip",
-      "snippet": "<Chip>Tag</Chip>"
-    },
-    {
-      "name": "Removable chip",
-      "description": "Chip with remove",
-      "snippet": "<Chip removable>Filter</Chip>"
-    }
-  ],
   "interactivity": {
     "events": [
       {
@@ -1586,5 +1574,17 @@
         "description": "Optional selected prop for fill styling; no internal state"
       }
     ]
-  }
+  },
+  "examples": [
+    {
+      "name": "Basic chip",
+      "description": "Tag or filter chip",
+      "snippet": "<Chip>Tag</Chip>"
+    },
+    {
+      "name": "Removable chip",
+      "description": "Chip with remove",
+      "snippet": "<Chip removable>Filter</Chip>"
+    }
+  ]
 }

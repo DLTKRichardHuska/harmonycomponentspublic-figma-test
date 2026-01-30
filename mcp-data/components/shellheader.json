@@ -179,7 +179,7 @@
     "company-picker-customization": "The companies prop overrides the default company list; companyColor sets the selected company indicator and the header gradient bar color."
   },
   "_metadata": {
-    "lastGenerated": "2026-01-30T17:43:51.242Z",
+    "lastGenerated": "2026-01-30T18:45:58.603Z",
     "generatedWith": "@astrojs/compiler@2.13.0",
     "includesVisualSpecs": true,
     "availableVariants": []
@@ -309,6 +309,21 @@
   "_variantMetadata": {
     "availableVariants": []
   },
+  "interactivity": {
+    "events": [
+      {
+        "name": "click",
+        "description": "Header actions, nav, or menu clicks"
+      }
+    ],
+    "state": [
+      {
+        "name": "menuOpen",
+        "type": "boolean",
+        "description": "Mobile or dropdown menu open state if applicable"
+      }
+    ]
+  },
   "examples": [
     {
       "name": "CP with left sidebar",
@@ -345,20 +360,5 @@
       "description": "Shell header slot",
       "snippet": "<ShellHeader>Logo and nav</ShellHeader>"
     }
-  ],
-  "interactivity": {
-    "events": [
-      {
-        "name": "click",
-        "description": "Header actions, nav, or menu clicks"
-      }
-    ],
-    "state": [
-      {
-        "name": "menuOpen",
-        "type": "boolean",
-        "description": "Mobile or dropdown menu open state if applicable"
-      }
-    ]
-  }
+  ]
 }

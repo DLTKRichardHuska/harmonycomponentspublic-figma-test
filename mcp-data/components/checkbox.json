@@ -189,7 +189,7 @@
   },
   "usagePatterns": {},
   "_metadata": {
-    "lastGenerated": "2026-01-30T17:43:50.066Z",
+    "lastGenerated": "2026-01-30T18:45:57.760Z",
     "generatedWith": "@astrojs/compiler@2.13.0",
     "includesVisualSpecs": true,
     "availableVariants": [
@@ -1068,18 +1068,6 @@
       "error"
     ]
   },
-  "examples": [
-    {
-      "name": "Single checkbox",
-      "description": "Boolean option",
-      "snippet": "<Checkbox label=\"I agree\" name=\"agree\" />"
-    },
-    {
-      "name": "Checked by default",
-      "description": "Pre-checked checkbox",
-      "snippet": "<Checkbox label=\"Subscribe\" checked />"
-    }
-  ],
   "interactivity": {
     "events": [
       {
@@ -1094,5 +1082,17 @@
         "description": "Controlled via checked prop or form value"
       }
     ]
-  }
+  },
+  "examples": [
+    {
+      "name": "Single checkbox",
+      "description": "Boolean option",
+      "snippet": "<Checkbox label=\"I agree\" name=\"agree\" />"
+    },
+    {
+      "name": "Checked by default",
+      "description": "Pre-checked checkbox",
+      "snippet": "<Checkbox label=\"Subscribe\" checked />"
+    }
+  ]
 }

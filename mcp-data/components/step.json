@@ -196,7 +196,7 @@
   },
   "usagePatterns": {},
   "_metadata": {
-    "lastGenerated": "2026-01-30T17:43:51.373Z",
+    "lastGenerated": "2026-01-30T18:45:58.713Z",
     "generatedWith": "@astrojs/compiler@2.13.0",
     "includesVisualSpecs": true,
     "availableVariants": []
@@ -624,13 +624,6 @@
   "_variantMetadata": {
     "availableVariants": []
   },
-  "examples": [
-    {
-      "name": "Step indicator",
-      "description": "One step in stepper",
-      "snippet": "<Step status=\"completed\" label=\"Done\" />"
-    }
-  ],
   "interactivity": {
     "events": [
       {
@@ -645,5 +638,12 @@
         "description": "completed | current | upcoming; passed from parent Stepper"
       }
     ]
-  }
+  },
+  "examples": [
+    {
+      "name": "Step indicator",
+      "description": "One step in stepper",
+      "snippet": "<Step status=\"completed\" label=\"Done\" />"
+    }
+  ]
 }

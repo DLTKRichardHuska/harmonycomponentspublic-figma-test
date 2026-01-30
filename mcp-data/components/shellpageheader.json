@@ -128,7 +128,7 @@
     "actions-order": "In the actions slot, DOM order equals visual order; ShellPageHeader does not reorder. Place outline/secondary buttons first (left), primary button last (right) to match Harmony design. When using props only, the component renders outline buttons then primary by default."
   },
   "_metadata": {
-    "lastGenerated": "2026-01-30T17:43:51.273Z",
+    "lastGenerated": "2026-01-30T18:45:58.639Z",
     "generatedWith": "@astrojs/compiler@2.13.0",
     "includesVisualSpecs": true,
     "availableVariants": []
@@ -248,6 +248,21 @@
   "_variantMetadata": {
     "availableVariants": []
   },
+  "interactivity": {
+    "events": [
+      {
+        "name": "click",
+        "description": "Title, breadcrumb, or action button clicks"
+      }
+    ],
+    "state": [
+      {
+        "name": "—",
+        "type": "—",
+        "description": "Layout slot; state in slots."
+      }
+    ]
+  },
   "examples": [
     {
       "name": "CP with left sidebar",
@@ -284,20 +299,5 @@
       "description": "Page header slot",
       "snippet": "<ShellPageHeader title=\"Page Title\" />"
     }
-  ],
-  "interactivity": {
-    "events": [
-      {
-        "name": "click",
-        "description": "Title, breadcrumb, or action button clicks"
-      }
-    ],
-    "state": [
-      {
-        "name": "—",
-        "type": "—",
-        "description": "Layout slot; state in slots."
-      }
-    ]
-  }
+  ]
 }

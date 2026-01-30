@@ -177,7 +177,7 @@
   },
   "usagePatterns": {},
   "_metadata": {
-    "lastGenerated": "2026-01-30T17:43:50.890Z",
+    "lastGenerated": "2026-01-30T18:45:58.373Z",
     "generatedWith": "@astrojs/compiler@2.13.0",
     "includesVisualSpecs": true,
     "availableVariants": [
@@ -694,13 +694,6 @@
       "stacked"
     ]
   },
-  "examples": [
-    {
-      "name": "Numeric input",
-      "description": "Number with stepper",
-      "snippet": "<NumberInput value={0} min={0} max={100} />"
-    }
-  ],
   "interactivity": {
     "events": [
       {
@@ -715,5 +708,12 @@
         "description": "Current numeric value; controlled via value prop or form"
       }
     ]
-  }
+  },
+  "examples": [
+    {
+      "name": "Numeric input",
+      "description": "Number with stepper",
+      "snippet": "<NumberInput value={0} min={0} max={100} />"
+    }
+  ]
 }

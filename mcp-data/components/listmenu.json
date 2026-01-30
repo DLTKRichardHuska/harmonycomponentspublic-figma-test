@@ -71,7 +71,7 @@
   },
   "usagePatterns": {},
   "_metadata": {
-    "lastGenerated": "2026-01-30T17:43:50.802Z",
+    "lastGenerated": "2026-01-30T18:45:58.318Z",
     "generatedWith": "@astrojs/compiler@2.13.0",
     "includesVisualSpecs": true,
     "availableVariants": [
@@ -569,13 +569,6 @@
       "default"
     ]
   },
-  "examples": [
-    {
-      "name": "Menu list",
-      "description": "Vertical menu",
-      "snippet": "<ListMenu items={[{ label: 'Item 1', icon: 'home' }]} />"
-    }
-  ],
   "interactivity": {
     "events": [
       {
@@ -590,5 +583,12 @@
         "description": "Optional; indicate active item via items[].active prop"
       }
     ]
-  }
+  },
+  "examples": [
+    {
+      "name": "Menu list",
+      "description": "Vertical menu",
+      "snippet": "<ListMenu items={[{ label: 'Item 1', icon: 'home' }]} />"
+    }
+  ]
 }

@@ -260,7 +260,7 @@
   },
   "usagePatterns": {},
   "_metadata": {
-    "lastGenerated": "2026-01-30T17:43:51.540Z",
+    "lastGenerated": "2026-01-30T18:45:58.805Z",
     "generatedWith": "@astrojs/compiler@2.13.0",
     "includesVisualSpecs": true,
     "availableVariants": []
@@ -508,13 +508,6 @@
   "_variantMetadata": {
     "availableVariants": []
   },
-  "examples": [
-    {
-      "name": "Time selection",
-      "description": "Pick time",
-      "snippet": "<TimePicker value={...} />"
-    }
-  ],
   "interactivity": {
     "events": [
       {
@@ -529,5 +522,12 @@
         "description": "Selected time"
       }
     ]
-  }
+  },
+  "examples": [
+    {
+      "name": "Time selection",
+      "description": "Pick time",
+      "snippet": "<TimePicker value={...} />"
+    }
+  ]
 }

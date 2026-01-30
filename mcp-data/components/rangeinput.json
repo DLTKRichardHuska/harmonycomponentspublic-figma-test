@@ -161,7 +161,7 @@
   },
   "usagePatterns": {},
   "_metadata": {
-    "lastGenerated": "2026-01-30T17:43:51.056Z",
+    "lastGenerated": "2026-01-30T18:45:58.477Z",
     "generatedWith": "@astrojs/compiler@2.13.0",
     "includesVisualSpecs": true,
     "availableVariants": [
@@ -665,13 +665,6 @@
       "stacked"
     ]
   },
-  "examples": [
-    {
-      "name": "Slider",
-      "description": "Range slider",
-      "snippet": "<RangeInput min={0} max={100} value={50} />"
-    }
-  ],
   "interactivity": {
     "events": [
       {
@@ -690,5 +683,12 @@
         "description": "Current slider value; controlled via value prop or form"
       }
     ]
-  }
+  },
+  "examples": [
+    {
+      "name": "Slider",
+      "description": "Range slider",
+      "snippet": "<RangeInput min={0} max={100} value={50} />"
+    }
+  ]
 }

@@ -57,7 +57,7 @@
   },
   "usagePatterns": {},
   "_metadata": {
-    "lastGenerated": "2026-01-30T17:43:50.491Z",
+    "lastGenerated": "2026-01-30T18:45:58.081Z",
     "generatedWith": "@astrojs/compiler@2.13.0",
     "includesVisualSpecs": true,
     "availableVariants": [
@@ -503,13 +503,6 @@
       "solid"
     ]
   },
-  "examples": [
-    {
-      "name": "Heroicon",
-      "description": "Named icon",
-      "snippet": "<Icon name=\"check\" size=\"md\" />"
-    }
-  ],
   "interactivity": {
     "events": [],
     "state": [
@@ -519,5 +512,12 @@
         "description": "Display only; no client-side state or events."
       }
     ]
-  }
+  },
+  "examples": [
+    {
+      "name": "Heroicon",
+      "description": "Named icon",
+      "snippet": "<Icon name=\"check\" size=\"md\" />"
+    }
+  ]
 }

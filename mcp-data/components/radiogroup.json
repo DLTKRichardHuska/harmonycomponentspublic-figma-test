@@ -160,7 +160,7 @@
     "fieldset-aria-attributes": "RadioGroup renders as <fieldset> with optional <legend> for semantic grouping. When error=true, the fieldset receives aria-invalid='true' and aria-describedby linking to the group error message. This ensures assistive technologies announce validation state for the entire radio group, not just individual buttons. The fieldset also provides proper keyboard navigation context for radio buttons."
   },
   "_metadata": {
-    "lastGenerated": "2026-01-30T17:43:51.021Z",
+    "lastGenerated": "2026-01-30T18:45:58.450Z",
     "generatedWith": "@astrojs/compiler@2.13.0",
     "includesVisualSpecs": true,
     "availableVariants": []
@@ -300,13 +300,6 @@
   "_variantMetadata": {
     "availableVariants": []
   },
-  "examples": [
-    {
-      "name": "Radio group",
-      "description": "Single choice from list",
-      "snippet": "<RadioGroup name=\"choice\" options={[{ value: 'a', label: 'A' }]} />"
-    }
-  ],
   "interactivity": {
     "events": [
       {
@@ -321,5 +314,12 @@
         "description": "Selected option value; one of the radio values in the group"
       }
     ]
-  }
+  },
+  "examples": [
+    {
+      "name": "Radio group",
+      "description": "Single choice from list",
+      "snippet": "<RadioGroup name=\"choice\" options={[{ value: 'a', label: 'A' }]} />"
+    }
+  ]
 }

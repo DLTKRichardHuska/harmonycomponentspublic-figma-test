@@ -132,7 +132,7 @@
   },
   "usagePatterns": {},
   "_metadata": {
-    "lastGenerated": "2026-01-30T17:43:50.355Z",
+    "lastGenerated": "2026-01-30T18:45:57.985Z",
     "generatedWith": "@astrojs/compiler@2.13.0",
     "includesVisualSpecs": true,
     "availableVariants": []
@@ -261,13 +261,6 @@
   "_variantMetadata": {
     "availableVariants": []
   },
-  "examples": [
-    {
-      "name": "Date and time",
-      "description": "Combined date and time",
-      "snippet": "<DateTimePicker value={...} />"
-    }
-  ],
   "interactivity": {
     "events": [
       {
@@ -282,5 +275,12 @@
         "description": "Selected date-time"
       }
     ]
-  }
+  },
+  "examples": [
+    {
+      "name": "Date and time",
+      "description": "Combined date and time",
+      "snippet": "<DateTimePicker value={...} />"
+    }
+  ]
 }

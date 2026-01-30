@@ -87,7 +87,7 @@
   },
   "usagePatterns": {},
   "_metadata": {
-    "lastGenerated": "2026-01-30T17:43:50.786Z",
+    "lastGenerated": "2026-01-30T18:45:58.308Z",
     "generatedWith": "@astrojs/compiler@2.13.0",
     "includesVisualSpecs": true,
     "availableVariants": [
@@ -491,18 +491,6 @@
       "muted"
     ]
   },
-  "examples": [
-    {
-      "name": "Text link",
-      "description": "Inline link",
-      "snippet": "<Link href=\"/page\">Go to page</Link>"
-    },
-    {
-      "name": "External link",
-      "description": "Link with external icon",
-      "snippet": "<Link href=\"https://...\" external>External</Link>"
-    }
-  ],
   "interactivity": {
     "events": [
       {
@@ -517,5 +505,17 @@
         "description": "No internal state; navigation handled by browser or router."
       }
     ]
-  }
+  },
+  "examples": [
+    {
+      "name": "Text link",
+      "description": "Inline link",
+      "snippet": "<Link href=\"/page\">Go to page</Link>"
+    },
+    {
+      "name": "External link",
+      "description": "Link with external icon",
+      "snippet": "<Link href=\"https://...\" external>External</Link>"
+    }
+  ]
 }

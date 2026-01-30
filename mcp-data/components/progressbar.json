@@ -89,7 +89,7 @@
   },
   "usagePatterns": {},
   "_metadata": {
-    "lastGenerated": "2026-01-30T17:43:50.953Z",
+    "lastGenerated": "2026-01-30T18:45:58.411Z",
     "generatedWith": "@astrojs/compiler@2.13.0",
     "includesVisualSpecs": true,
     "availableVariants": [
@@ -874,13 +874,6 @@
       "default"
     ]
   },
-  "examples": [
-    {
-      "name": "Progress",
-      "description": "Progress indicator",
-      "snippet": "<ProgressBar value={60} max={100} />"
-    }
-  ],
   "interactivity": {
     "events": [],
     "state": [
@@ -890,5 +883,12 @@
         "description": "Display only; progress value set via prop."
       }
     ]
-  }
+  },
+  "examples": [
+    {
+      "name": "Progress",
+      "description": "Progress indicator",
+      "snippet": "<ProgressBar value={60} max={100} />"
+    }
+  ]
 }

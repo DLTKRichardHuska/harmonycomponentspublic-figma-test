@@ -83,7 +83,7 @@
   },
   "usagePatterns": {},
   "_metadata": {
-    "lastGenerated": "2026-01-30T17:43:50.701Z",
+    "lastGenerated": "2026-01-30T18:45:58.251Z",
     "generatedWith": "@astrojs/compiler@2.13.0",
     "includesVisualSpecs": true,
     "availableVariants": [
@@ -382,6 +382,16 @@
       "required"
     ]
   },
+  "interactivity": {
+    "events": [],
+    "state": [
+      {
+        "name": "—",
+        "type": "—",
+        "description": "Display only; associates with form control via for attribute."
+      }
+    ]
+  },
   "examples": [
     {
       "name": "Text input with label",
@@ -418,15 +428,5 @@
       "description": "Label for form control",
       "snippet": "<Label for=\"input-id\">Name</Label>"
     }
-  ],
-  "interactivity": {
-    "events": [],
-    "state": [
-      {
-        "name": "—",
-        "type": "—",
-        "description": "Display only; associates with form control via for attribute."
-      }
-    ]
-  }
+  ]
 }

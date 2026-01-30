@@ -155,7 +155,7 @@
     "error-takes-precedence": "When both error and warning are true, only the error state displays. The errorMessage is shown with checkbox-group-wrapper__message--error class and exclamation-circle icon. The warning is completely suppressed (conditional !error && warning) to avoid conflicting visual states. Set only one of error or warning to true at a time."
   },
   "_metadata": {
-    "lastGenerated": "2026-01-30T17:43:50.105Z",
+    "lastGenerated": "2026-01-30T18:45:57.786Z",
     "generatedWith": "@astrojs/compiler@2.13.0",
     "includesVisualSpecs": true,
     "availableVariants": []
@@ -294,13 +294,6 @@
   "_variantMetadata": {
     "availableVariants": []
   },
-  "examples": [
-    {
-      "name": "Multiple options",
-      "description": "Group of checkboxes",
-      "snippet": "<CheckboxGroup options={[{ value: 'a', label: 'A' }, { value: 'b', label: 'B' }]} name=\"choices\" />"
-    }
-  ],
   "interactivity": {
     "events": [
       {
@@ -315,5 +308,12 @@
         "description": "Values of checked checkboxes; read from form or controlled state"
       }
     ]
-  }
+  },
+  "examples": [
+    {
+      "name": "Multiple options",
+      "description": "Group of checkboxes",
+      "snippet": "<CheckboxGroup options={[{ value: 'a', label: 'A' }, { value: 'b', label: 'B' }]} name=\"choices\" />"
+    }
+  ]
 }

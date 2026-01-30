@@ -189,7 +189,7 @@
   },
   "usagePatterns": {},
   "_metadata": {
-    "lastGenerated": "2026-01-30T17:43:50.985Z",
+    "lastGenerated": "2026-01-30T18:45:58.429Z",
     "generatedWith": "@astrojs/compiler@2.13.0",
     "includesVisualSpecs": true,
     "availableVariants": [
@@ -1046,13 +1046,6 @@
       "error"
     ]
   },
-  "examples": [
-    {
-      "name": "Single radio",
-      "description": "One option in group",
-      "snippet": "<RadioButton name=\"choice\" value=\"a\" label=\"Option A\" />"
-    }
-  ],
   "interactivity": {
     "events": [
       {
@@ -1067,5 +1060,12 @@
         "description": "Controlled via checked prop or shared name in RadioGroup"
       }
     ]
-  }
+  },
+  "examples": [
+    {
+      "name": "Single radio",
+      "description": "One option in group",
+      "snippet": "<RadioButton name=\"choice\" value=\"a\" label=\"Option A\" />"
+    }
+  ]
 }
