@@ -11,6 +11,8 @@
  * @prop {Array} overflowTabs - Array of overflow tabs shown in dropdown (default: [])
  * @prop {boolean} showAddTab - Whether to show "Add Tab" button (default: true)
  * @prop {string} variant - 'default' | 'compact' (default: 'default')
+ * @usagePattern tabstrip-delegation ShellFooter wraps TabStrip and passes tabs, showAddTab, overflowMode, and overflowTabs. When showMore is true and overflowTabs has items, overflowMode is manual; otherwise none. Active tabs display a pin icon.
+ * @usagePattern variant-height The variant prop controls height: default uses --shell-footer-height-default, compact uses --shell-footer-height-compact.
  */
 import TabStrip, { type Tab } from './TabStrip.astro';
 

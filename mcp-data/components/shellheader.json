@@ -2,7 +2,7 @@
   "name": "ShellHeader",
   "type": "component",
   "filePath": "src/components/ui/ShellHeader.astro",
-  "description": "ShellHeader component",
+  "description": "ShellHeader: top bar with brand and optional company picker + avatar.",
   "props": {
     "productName": {
       "type": "string",
@@ -174,9 +174,12 @@
       }
     ]
   },
-  "usagePatterns": {},
+  "usagePatterns": {
+    "actions-slot-override": "When the actions slot is provided, it completely replaces the default right-side content (company picker and Avatar). When the slot is not used, the header shows the company picker when showCompanyPicker is true and the Avatar. Use the companies prop to supply custom company options and companyColor for the selected indicator and gradient bar.",
+    "company-picker-customization": "The companies prop overrides the default company list; companyColor sets the selected company indicator and the header gradient bar color."
+  },
   "_metadata": {
-    "lastGenerated": "2026-01-30T17:09:56.255Z",
+    "lastGenerated": "2026-01-30T17:42:16.098Z",
     "generatedWith": "@astrojs/compiler@2.13.0",
     "includesVisualSpecs": true,
     "availableVariants": []

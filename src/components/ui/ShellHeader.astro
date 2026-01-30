@@ -1,4 +1,9 @@
 ---
+/**
+ * ShellHeader: top bar with brand and optional company picker + avatar.
+ * @usagePattern actions-slot-override When the actions slot is provided, it completely replaces the default right-side content (company picker and Avatar). When the slot is not used, the header shows the company picker when showCompanyPicker is true and the Avatar. Use the companies prop to supply custom company options and companyColor for the selected indicator and gradient bar.
+ * @usagePattern company-picker-customization The companies prop overrides the default company list; companyColor sets the selected company indicator and the header gradient bar color.
+ */
 import Icon from './Icon.astro';
 import Avatar from './Avatar.astro';
 

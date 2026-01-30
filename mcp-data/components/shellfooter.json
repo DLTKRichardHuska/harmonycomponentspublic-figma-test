@@ -90,9 +90,12 @@
       }
     ]
   },
-  "usagePatterns": {},
+  "usagePatterns": {
+    "tabstrip-delegation": "ShellFooter wraps TabStrip and passes tabs, showAddTab, overflowMode, and overflowTabs. When showMore is true and overflowTabs has items, overflowMode is manual; otherwise none. Active tabs display a pin icon.",
+    "variant-height": "The variant prop controls height: default uses --shell-footer-height-default, compact uses --shell-footer-height-compact."
+  },
   "_metadata": {
-    "lastGenerated": "2026-01-30T17:09:56.201Z",
+    "lastGenerated": "2026-01-30T17:42:16.079Z",
     "generatedWith": "@astrojs/compiler@2.13.0",
     "includesVisualSpecs": true,
     "availableVariants": [
