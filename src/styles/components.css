@@ -5796,17 +5796,18 @@ html.dark .right-sidebar__item:hover {
 
 /* Right sidebar in shell: max-height only (footer-aware); vertical centering unchanged */
 .shell-layout__container[data-has-footer="true"] .shell-layout__right-sidebar {
-  max-height: calc(100vh - var(--shell-header-height) - var(--shell-footer-height-default) - var(--space-2-5));
+  max-height: min(calc(100vh - 2 * var(--shell-header-height) - var(--space-2-5)), calc(100vh - 2 * var(--shell-footer-height-default) - var(--space-2-5)));
 }
 .shell-layout__container[data-has-footer="false"] .shell-layout__right-sidebar {
-  max-height: calc(100vh - var(--shell-header-height) - var(--space-2-5));
+  max-height: calc(100vh - 2 * var(--shell-header-height) - var(--space-2-5));
 }
 .shell-layout__container[data-has-footer="true"][data-footer-variant="compact"] .shell-layout__right-sidebar {
-  max-height: calc(100vh - var(--shell-header-height) - var(--shell-footer-height-compact) - var(--space-2-5));
+  max-height: min(calc(100vh - 2 * var(--shell-header-height) - var(--space-2-5)), calc(100vh - 2 * var(--shell-footer-height-compact) - var(--space-2-5)));
 }
 
 /* Compact sidebars in shell: smaller icons and padding so strip fits in header-footer band (no scroll) */
-@media (max-width: var(--breakpoint-lg)) {
+/* 1024px = --breakpoint-lg; var() is invalid in media queries */
+@media (max-width: 1024px) {
   .shell-layout .shell-layout__left-sidebar {
     width: var(--left-sidebar-width-compact);
     gap: var(--space-1-5);
