@@ -196,7 +196,7 @@
   },
   "usagePatterns": {},
   "_metadata": {
-    "lastGenerated": "2026-02-02T15:50:59.518Z",
+    "lastGenerated": "2026-02-02T20:32:11.059Z",
     "generatedWith": "@astrojs/compiler@2.13.0",
     "includesVisualSpecs": true,
     "availableVariants": []
@@ -342,81 +342,81 @@
       "display": "flex",
       "align-items": "center",
       "justify-content": "space-between",
-      "margin-bottom": "16px",
-      "padding-bottom": "12px",
-      "border-bottom": "1px solid #E2E8F0"
+      "margin-bottom": "var(--space-4)",
+      "padding-bottom": "var(--space-3)",
+      "border-bottom": "1px solid var(--border-light)"
     },
     ".week-picker__nav-btn": {
       "display": "flex",
       "align-items": "center",
       "justify-content": "center",
-      "width": "32px",
-      "height": "32px",
+      "width": "var(--space-8)",
+      "height": "var(--space-8)",
       "padding": "0",
       "background": "transparent",
-      "border": "1px solid #BFC6D4",
-      "border-radius": "0.375rem",
-      "color": "#525969",
+      "border": "1px solid var(--border-color)",
+      "border-radius": "var(--radius-md)",
+      "color": "var(--text-secondary)",
       "cursor": "pointer",
-      "transition": "all 150ms ease",
+      "transition": "all var(--transition-fast)",
       "min-width": "44px",
       "min-height": "44px"
     },
     ".week-picker__nav-btn:hover:not(:disabled)": {
-      "background-color": "#E5E7EB",
-      "color": "#373F4E",
-      "border-color": "#BFC6D4"
+      "background-color": "var(--hover-bg)",
+      "color": "var(--text-primary)",
+      "border-color": "var(--border-color)"
     },
     ".week-picker__nav-btn:disabled": {
       "opacity": "0.5",
       "cursor": "not-allowed"
     },
     ".week-picker__year": {
-      "font-family": "'Lexend', sans-serif",
-      "font-size": "1rem",
-      "font-weight": "600",
-      "color": "#373F4E"
+      "font-family": "var(--font-display)",
+      "font-size": "var(--text-base)",
+      "font-weight": "var(--font-semibold)",
+      "color": "var(--text-primary)"
     },
     ".week-picker__list": {
       "display": "flex",
       "flex-direction": "column",
-      "gap": "4px"
+      "gap": "var(--space-1)"
     },
     ".week-picker__week": {
       "display": "flex",
       "align-items": "center",
       "justify-content": "space-between",
       "width": "100%",
-      "padding": "8px 12px",
-      "font-size": "0.875rem",
-      "font-family": "'Figtree', sans-serif",
+      "padding": "var(--space-2) var(--space-3)",
+      "font-size": "var(--text-sm)",
+      "font-family": "var(--font-sans)",
       "text-align": "left",
-      "color": "#373F4E",
+      "color": "var(--text-primary)",
       "background": "transparent",
       "border": "1px solid transparent",
-      "border-radius": "0.375rem",
+      "border-radius": "var(--radius-md)",
       "cursor": "pointer",
-      "transition": "all 150ms ease",
+      "transition": "all var(--transition-fast)",
       "min-height": "44px"
     },
     ".week-picker__week:hover:not(:disabled)": {
-      "background-color": "#E5E7EB",
-      "border-color": "#BFC6D4"
+      "background-color": "var(--hover-bg)",
+      "border-color": "var(--border-color)"
     },
     ".week-picker__week--selected": {
-      "background-color": "#4C92D9",
-      "color": "#FFFFFF",
-      "border-color": "#4C92D9",
-      "font-weight": "600"
+      "background-color": "var(--theme-primary)",
+      "color": "var(--text-inverse)",
+      "border-color": "var(--theme-primary)",
+      "font-weight": "var(--font-semibold)"
     },
     ".week-picker__week--selected:hover:not(:disabled)": {
-      "background-color": "#3D7BC4",
-      "border-color": "#3D7BC4"
+      "background-color": "var(--theme-primary-hover)",
+      "border-color": "var(--theme-primary-hover)"
     },
     ".week-picker__week--disabled": {
       "opacity": "0.4",
       "cursor": "not-allowed",
-      "color": "#6B7280"
+      "color": "var(--text-muted)"
     },
     ".week-picker__week--disabled:hover": {
       "background": "transparent",
@@ -424,17 +424,17 @@
     },
     ".week-picker__week:focus": {
       "outline": "none",
-      "box-shadow": "0 0 0 2px rgba(76, 146, 217, 0.1)"
+      "box-shadow": "var(--focus-ring-date-picker)"
     },
     ".week-picker__week-number": {
-      "font-weight": "500"
+      "font-weight": "var(--font-medium)"
     },
     ".week-picker__week-range": {
-      "font-size": "0.75rem",
-      "color": "#525969"
+      "font-size": "var(--text-xs)",
+      "color": "var(--text-secondary)"
     },
     ".week-picker__week--selected .week-picker__week-range": {
-      "color": "#FFFFFF",
+      "color": "var(--text-inverse)",
       "opacity": "0.9"
     }
   },

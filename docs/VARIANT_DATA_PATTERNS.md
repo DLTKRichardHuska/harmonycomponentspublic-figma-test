@@ -160,6 +160,18 @@ Component JSON files have variant data stored in `visualSpecifications.colors.va
 
 ---
 
+## Optional state keys: item, icon, label
+
+For composite components (e.g. sidebars, nav), the same `[theme][mode]` object may include optional state keys beyond the base five:
+
+- **`item`** – Selected item / `[data-active="true"]` (e.g. selected nav item, Dela icon active container).
+- **`icon`** – Icon-specific state when different from the container (optional).
+- **`label`** – Label-specific state when different from the container (optional).
+
+**Example**: RightSidebar and LeftSidebar include `item` under each variant/theme/mode with design tokens (`var(--theme-primary)`, `var(--text-inverse)`) so the MCP can read selected-item and active-state colors. Extractor or post-process scripts should preserve these keys when present.
+
+---
+
 ## Important: Child Element States
 
 Many components have nested child components that have their own states, even when variant colors only show default. These child element states are stored in `cssClassStyles`, **not** in `colors.variants`.

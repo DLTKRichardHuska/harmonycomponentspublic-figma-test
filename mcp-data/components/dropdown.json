@@ -258,7 +258,7 @@
     "label-variant-layout": "When label prop is provided, labelVariant controls layout: 'inline' places label and dropdown side-by-side (default for CP theme), 'stacked' places label above dropdown (default for other themes). The wrapper gets class dropdown-wrapper--inline or dropdown-wrapper--stacked. Without explicit labelVariant, CSS handles theme-specific defaults (lines 50-56)."
   },
   "_metadata": {
-    "lastGenerated": "2026-02-02T15:50:59.166Z",
+    "lastGenerated": "2026-02-02T20:32:10.711Z",
     "generatedWith": "@astrojs/compiler@2.13.0",
     "includesVisualSpecs": true,
     "availableVariants": [
@@ -365,7 +365,11 @@
                 "text": null,
                 "border": "transparent",
                 "iconColor": null
-              }
+              },
+              "hover": {},
+              "active": {},
+              "focus": {},
+              "disabled": {}
             },
             "dark": {
               "default": {
@@ -373,7 +377,11 @@
                 "text": null,
                 "border": "transparent",
                 "iconColor": null
-              }
+              },
+              "hover": {},
+              "active": {},
+              "focus": {},
+              "disabled": {}
             }
           },
           "vp": {
@@ -383,7 +391,11 @@
                 "text": null,
                 "border": "transparent",
                 "iconColor": null
-              }
+              },
+              "hover": {},
+              "active": {},
+              "focus": {},
+              "disabled": {}
             },
             "dark": {
               "default": {
@@ -391,7 +403,11 @@
                 "text": null,
                 "border": "transparent",
                 "iconColor": null
-              }
+              },
+              "hover": {},
+              "active": {},
+              "focus": {},
+              "disabled": {}
             }
           },
           "ppm": {
@@ -401,7 +417,11 @@
                 "text": null,
                 "border": "transparent",
                 "iconColor": null
-              }
+              },
+              "hover": {},
+              "active": {},
+              "focus": {},
+              "disabled": {}
             },
             "dark": {
               "default": {
@@ -409,7 +429,11 @@
                 "text": null,
                 "border": "transparent",
                 "iconColor": null
-              }
+              },
+              "hover": {},
+              "active": {},
+              "focus": {},
+              "disabled": {}
             }
           },
           "maconomy": {
@@ -419,7 +443,11 @@
                 "text": null,
                 "border": "transparent",
                 "iconColor": null
-              }
+              },
+              "hover": {},
+              "active": {},
+              "focus": {},
+              "disabled": {}
             },
             "dark": {
               "default": {
@@ -427,7 +455,11 @@
                 "text": null,
                 "border": "transparent",
                 "iconColor": null
-              }
+              },
+              "hover": {},
+              "active": {},
+              "focus": {},
+              "disabled": {}
             }
           }
         },
@@ -439,7 +471,11 @@
                 "text": null,
                 "border": "transparent",
                 "iconColor": null
-              }
+              },
+              "hover": {},
+              "active": {},
+              "focus": {},
+              "disabled": {}
             },
             "dark": {
               "default": {
@@ -447,7 +483,11 @@
                 "text": null,
                 "border": "transparent",
                 "iconColor": null
-              }
+              },
+              "hover": {},
+              "active": {},
+              "focus": {},
+              "disabled": {}
             }
           },
           "vp": {
@@ -457,7 +497,11 @@
                 "text": null,
                 "border": "transparent",
                 "iconColor": null
-              }
+              },
+              "hover": {},
+              "active": {},
+              "focus": {},
+              "disabled": {}
             },
             "dark": {
               "default": {
@@ -465,7 +509,11 @@
                 "text": null,
                 "border": "transparent",
                 "iconColor": null
-              }
+              },
+              "hover": {},
+              "active": {},
+              "focus": {},
+              "disabled": {}
             }
           },
           "ppm": {
@@ -475,7 +523,11 @@
                 "text": null,
                 "border": "transparent",
                 "iconColor": null
-              }
+              },
+              "hover": {},
+              "active": {},
+              "focus": {},
+              "disabled": {}
             },
             "dark": {
               "default": {
@@ -483,7 +535,11 @@
                 "text": null,
                 "border": "transparent",
                 "iconColor": null
-              }
+              },
+              "hover": {},
+              "active": {},
+              "focus": {},
+              "disabled": {}
             }
           },
           "maconomy": {
@@ -493,7 +549,11 @@
                 "text": null,
                 "border": "transparent",
                 "iconColor": null
-              }
+              },
+              "hover": {},
+              "active": {},
+              "focus": {},
+              "disabled": {}
             },
             "dark": {
               "default": {
@@ -501,7 +561,11 @@
                 "text": null,
                 "border": "transparent",
                 "iconColor": null
-              }
+              },
+              "hover": {},
+              "active": {},
+              "focus": {},
+              "disabled": {}
             }
           }
         }
@@ -560,18 +624,18 @@
       "display": "inline-flex",
       "align-items": "center",
       "justify-content": "space-between",
-      "gap": "8px",
+      "gap": "var(--space-2)",
       "min-width": "100%",
-      "height": "40px",
-      "padding": "0 16px 0 16px",
-      "font-family": "'Figtree', sans-serif",
-      "font-size": "1rem",
-      "color": "#373F4E",
-      "background-color": "#FFFFFF",
-      "border": "1px solid #BFC6D4",
-      "border-radius": "0.5rem",
+      "height": "var(--dropdown-height)",
+      "padding": "0 var(--space-4) 0 var(--space-4)",
+      "font-family": "var(--font-sans)",
+      "font-size": "var(--text-base)",
+      "color": "var(--text-primary)",
+      "background-color": "var(--input-bg)",
+      "border": "1px solid var(--border-color)",
+      "border-radius": "var(--radius-lg)",
       "cursor": "pointer",
-      "transition": "all 150ms ease",
+      "transition": "all var(--transition-fast)",
       "width": "100%",
       "min-height": "44px"
     },
@@ -583,16 +647,16 @@
       "white-space": "nowrap"
     },
     ".dropdown__trigger:hover": {
-      "background-color": "#E5E7EB"
+      "background-color": "var(--hover-bg)"
     },
     ".dropdown__trigger:focus": {
       "outline": "none",
-      "border-color": "#4C92D9",
-      "box-shadow": "0 0 0 3px rgba(76, 146, 217, 0.1), 0 0 0 4px #F7F8FA"
+      "border-color": "var(--theme-primary)",
+      "box-shadow": "var(--focus-ring-primary)"
     },
     ".dropdown__chevron": {
-      "color": "#6B7280",
-      "transition": "transform 150ms ease"
+      "color": "var(--text-muted)",
+      "transition": "transform var(--transition-fast)"
     },
     ".dropdown.is-open .dropdown__chevron": {
       "transform": "rotate(180deg)"
@@ -602,14 +666,14 @@
       "position": "absolute",
       "top": "100%",
       "left": "0",
-      "margin-top": "4px",
+      "margin-top": "var(--space-1)",
       "min-width": "100%",
-      "background-color": "#F7F8FA",
-      "border": "1px solid #BFC6D4",
-      "border-radius": "0.5rem",
-      "box-shadow": "0 10px 15px -3px rgb(15 23 42 / 0.1), 0 4px 6px -4px rgb(15 23 42 / 0.1)",
-      "padding": "4px 0",
-      "z-index": "100",
+      "background-color": "var(--card-bg)",
+      "border": "1px solid var(--border-color)",
+      "border-radius": "var(--radius-lg)",
+      "box-shadow": "var(--shadow-lg)",
+      "padding": "var(--space-1) 0",
+      "z-index": "var(--z-dropdown)",
       "max-height": "calc(100vh - 200px)",
       "overflow-y": "auto",
       "right": "0",
@@ -622,25 +686,25 @@
     ".dropdown__item": {
       "display": "flex",
       "align-items": "center",
-      "gap": "8px",
+      "gap": "var(--space-2)",
       "width": "100%",
-      "padding": "12px 16px",
-      "font-size": "0.875rem",
-      "color": "#373F4E",
+      "padding": "var(--space-3) var(--space-4)",
+      "font-size": "var(--text-sm)",
+      "color": "var(--text-primary)",
       "text-align": "left",
       "cursor": "pointer",
-      "transition": "background-color 150ms ease",
+      "transition": "background-color var(--transition-fast)",
       "min-height": "44px"
     },
     ".dropdown__item:hover": {
-      "background-color": "#E5E7EB"
+      "background-color": "var(--hover-bg)"
     },
     ".dropdown__item.is-selected": {
-      "background-color": "rgba(76, 146, 217, 0.1)",
-      "color": "#4C92D9"
+      "background-color": "var(--theme-primary-light)",
+      "color": "var(--theme-primary)"
     },
     ".dropdown__item:disabled,\n.dropdown__item--disabled": {
-      "color": "#6B7280",
+      "color": "var(--text-muted)",
       "cursor": "not-allowed"
     },
     ".dropdown-wrapper__label": {
@@ -648,9 +712,9 @@
       "white-space": "nowrap"
     },
     ".theme-cp .dropdown__trigger": {
-      "height": "20px",
-      "padding": "0 8px 0 8px",
-      "font-size": "0.75rem"
+      "height": "var(--dropdown-height-cp)",
+      "padding": "0 var(--space-2) 0 var(--space-2)",
+      "font-size": "var(--text-xs)"
     }
   },
   "_variantIndex": {

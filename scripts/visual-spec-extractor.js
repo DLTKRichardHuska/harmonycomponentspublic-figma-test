@@ -79,12 +79,12 @@ export function extractVisualSpecifications(componentData, parsedCSS, variableMa
   // Build accessibility specs
   const accessibility = buildAccessibility(componentName, componentData);
 
-  // Build CSS class styles mapping
+  // Build CSS class styles mapping (tokens preserved so get_specs and build_component align)
   const cssClassStyles = buildCSSClassStyles(componentStyles, variableMap);
 
-  // Final resolution pass: ensure all var() references are resolved
+  // Final resolution pass: ensure all var() references are resolved in visualSpecs only
   const resolvedVisualSpecs = resolveAllVarReferences(visualSpecs, variableMap);
-  const resolvedCssClassStyles = resolveAllVarReferences(cssClassStyles, variableMap);
+  // Do not resolve cssClassStyles; keep design tokens (var(--space-*), var(--radius-*), etc.) as-is
 
   // Extract available variants for metadata
   const availableVariants = Object.keys(resolvedVisualSpecs.colors?.variants || {});
@@ -95,7 +95,7 @@ export function extractVisualSpecifications(componentData, parsedCSS, variableMa
   return {
     visualSpecifications: resolvedVisualSpecs,
     accessibility,
-    cssClassStyles: resolvedCssClassStyles,
+    cssClassStyles,
     _variantIndex: variantIndex,
     _variantMetadata: {
       availableVariants,
@@ -708,10 +708,11 @@ function buildLayout(componentStyles, variableMap) {
 }
 
 /**
- * Build icon specs object
+ * Build icon specs object.
+ * Returns null when the component does not use the shared Icon component (no import).
+ * iconSpecs (sizes + position) are only set when componentName === 'Icon' or dependencies include 'Icon'.
  */
 function buildIconSpecs(sizeVariants, componentName, componentData) {
-  // Any component that imports Icon gets iconSpecs (sizes may be empty if no size variants)
   const dependencies = componentData?.dependencies || [];
   const hasIcons = componentName === 'Icon' || dependencies.includes('Icon');
 
@@ -961,13 +962,9 @@ function buildCSSClassStyles(componentStyles, variableMap) {
     cssClassStyles[cleanSelector] = {};
     
     for (const [prop, value] of Object.entries(styles)) {
-      // Use light mode resolved value as default
-      let resolvedValue = value.light || value.raw;
-      // Ensure it's fully resolved
-      if (resolvedValue && resolvedValue.includes('var(')) {
-        resolvedValue = getResolvedValue(resolvedValue, variableMap, 'cp-light');
-      }
-      cssClassStyles[cleanSelector][prop] = resolvedValue;
+      // Preserve design tokens (var(--space-*), var(--radius-*), etc.) as-is so get_specs and build_component align
+      const outputValue = value.raw != null ? value.raw : (value.light || value.raw);
+      cssClassStyles[cleanSelector][prop] = outputValue;
     }
   }
 

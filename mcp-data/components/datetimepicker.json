@@ -132,7 +132,7 @@
   },
   "usagePatterns": {},
   "_metadata": {
-    "lastGenerated": "2026-02-02T15:50:59.142Z",
+    "lastGenerated": "2026-02-02T20:32:10.688Z",
     "generatedWith": "@astrojs/compiler@2.13.0",
     "includesVisualSpecs": true,
     "availableVariants": []
@@ -252,9 +252,9 @@
       "width": "100%"
     },
     ".datetime-picker__date-section": {
-      "margin-bottom": "12px",
-      "padding-bottom": "12px",
-      "border-bottom": "1px solid #E2E8F0"
+      "margin-bottom": "var(--space-3)",
+      "padding-bottom": "var(--space-3)",
+      "border-bottom": "1px solid var(--border-light)"
     }
   },
   "_variantIndex": {},

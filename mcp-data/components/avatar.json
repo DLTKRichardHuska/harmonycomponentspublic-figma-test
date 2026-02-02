@@ -63,7 +63,7 @@
   },
   "usagePatterns": {},
   "_metadata": {
-    "lastGenerated": "2026-02-02T15:50:59.015Z",
+    "lastGenerated": "2026-02-02T20:32:10.567Z",
     "generatedWith": "@astrojs/compiler@2.13.0",
     "includesVisualSpecs": true,
     "availableVariants": []
@@ -200,21 +200,21 @@
       "display": "inline-flex",
       "align-items": "center",
       "justify-content": "center",
-      "border-radius": "8px",
-      "background-color": "#4C92D9",
+      "border-radius": "var(--radius-08)",
+      "background-color": "var(--theme-primary)",
       "flex-shrink": "0"
     },
     ".avatar--sm": {
-      "width": "32px",
-      "height": "32px"
+      "width": "var(--avatar-size-sm)",
+      "height": "var(--avatar-size-sm)"
     },
     ".avatar--md": {
-      "width": "40px",
-      "height": "40px"
+      "width": "var(--avatar-size-md)",
+      "height": "var(--avatar-size-md)"
     },
     ".avatar--lg": {
-      "width": "48px",
-      "height": "48px"
+      "width": "var(--avatar-size-lg)",
+      "height": "var(--avatar-size-lg)"
     },
     ".avatar__icon": {
       "color": "white"

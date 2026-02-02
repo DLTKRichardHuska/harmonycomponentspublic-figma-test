@@ -167,7 +167,7 @@
   },
   "usagePatterns": {},
   "_metadata": {
-    "lastGenerated": "2026-02-02T15:50:59.235Z",
+    "lastGenerated": "2026-02-02T20:32:10.777Z",
     "generatedWith": "@astrojs/compiler@2.13.0",
     "includesVisualSpecs": true,
     "availableVariants": []
@@ -303,18 +303,18 @@
   "cssClassStyles": {
     ".kanban-card": {
       "cursor": "pointer",
-      "transition": "transform 150ms ease, box-shadow 150ms ease"
+      "transition": "transform var(--transition-fast), box-shadow var(--transition-fast)"
     },
     ".kanban-card:hover": {
       "transform": "translateY(-2px)",
-      "box-shadow": "0 4px 6px -1px rgb(15 23 42 / 0.1), 0 2px 4px -2px rgb(15 23 42 / 0.1)"
+      "box-shadow": "var(--shadow-md)"
     },
     ".kanban-card__header": {
       "display": "flex",
       "align-items": "flex-start",
       "justify-content": "space-between",
-      "gap": "12px",
-      "margin-bottom": "8px",
+      "gap": "var(--space-3)",
+      "margin-bottom": "var(--space-2)",
       "min-height": "32px"
     },
     ".kanban-card__avatar": {
@@ -323,57 +323,57 @@
     ".kanban-card__header-right": {
       "display": "flex",
       "align-items": "center",
-      "gap": "8px",
+      "gap": "var(--space-2)",
       "flex-wrap": "wrap",
       "flex-shrink": "0"
     },
     ".kanban-card__icons": {
       "display": "flex",
       "align-items": "center",
-      "gap": "8px"
+      "gap": "var(--space-2)"
     },
     ".kanban-card__icon": {
-      "color": "#525969",
+      "color": "var(--text-secondary)",
       "flex-shrink": "0"
     },
     ".kanban-card__badges": {
       "display": "flex",
       "flex-wrap": "wrap",
-      "gap": "4px"
+      "gap": "var(--space-1)"
     },
     ".kanban-card__description": {
-      "font-family": "'Figtree', sans-serif",
-      "font-size": "0.875rem",
-      "font-weight": "400",
-      "line-height": "1.5",
-      "color": "#525969",
+      "font-family": "var(--font-sans)",
+      "font-size": "var(--text-sm)",
+      "font-weight": "var(--font-normal)",
+      "line-height": "var(--leading-normal)",
+      "color": "var(--text-secondary)",
       "margin": "0"
     },
     ".kanban-card__progress": {
       "width": "100%"
     },
     ".kanban-card__title": {
-      "font-family": "'Lexend', sans-serif",
-      "font-size": "1rem",
-      "font-weight": "600",
-      "line-height": "1.375",
-      "color": "#373F4E",
-      "margin": "0 0 8px 0"
+      "font-family": "var(--font-display)",
+      "font-size": "var(--body-default)",
+      "font-weight": "var(--font-semibold)",
+      "line-height": "var(--leading-snug)",
+      "color": "var(--text-primary)",
+      "margin": "0 0 var(--space-2) 0"
     },
     ".kanban-card__date-time": {
       "display": "flex",
       "align-items": "center",
       "justify-content": "space-between",
-      "gap": "16px",
-      "margin-top": "8px",
-      "padding-top": "8px",
-      "border-top": "1px solid #E2E8F0",
-      "font-family": "'Figtree', sans-serif",
-      "font-size": "0.875rem",
-      "font-weight": "500",
-      "line-height": "1.5",
-      "color": "#525969",
-      "min-height": "20px",
+      "gap": "var(--space-4)",
+      "margin-top": "var(--space-2)",
+      "padding-top": "var(--space-2)",
+      "border-top": "1px solid var(--border-light)",
+      "font-family": "var(--font-sans)",
+      "font-size": "var(--text-sm)",
+      "font-weight": "var(--font-medium)",
+      "line-height": "var(--leading-normal)",
+      "color": "var(--text-secondary)",
+      "min-height": "var(--space-5)",
       "flex-wrap": "wrap"
     },
     ".kanban-card__date,\n.kanban-card__time": {

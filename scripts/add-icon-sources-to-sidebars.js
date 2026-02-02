@@ -1,9 +1,11 @@
 #!/usr/bin/env node
 /**
  * Add Icon Source Information to Sidebar JSON Files
- * 
+ *
  * Reads leftsidebar.json and rightsidebar.json, detects icon sources,
- * and adds iconSource and iconPath fields to all icons in defaultSections.
+ * adds iconSource and iconPath to all icons in defaultSections, and
+ * embeds iconSvg (inner SVG content) for heroicons, tabler, and custom
+ * when the file exists so MCP data is self-contained at generation time.
  */
 
 import fs from 'fs';
@@ -73,8 +75,8 @@ function processIconItem(item) {
       iconPath: sourceInfo.path
     };
     
-    // For custom icons, also include SVG code
-    if (sourceInfo.source === 'custom' && sourceInfo.path) {
+    // Embed SVG for all sources (heroicons, tabler, custom) when file exists (MCP needs it at generation time)
+    if (sourceInfo.path) {
       const svgContent = readSvgContent(sourceInfo.path);
       if (svgContent) {
         result.iconSvg = svgContent;

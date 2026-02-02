@@ -160,7 +160,7 @@
     "fieldset-aria-attributes": "RadioGroup renders as <fieldset> with optional <legend> for semantic grouping. When error=true, the fieldset receives aria-invalid='true' and aria-describedby linking to the group error message. This ensures assistive technologies announce validation state for the entire radio group, not just individual buttons. The fieldset also provides proper keyboard navigation context for radio buttons."
   },
   "_metadata": {
-    "lastGenerated": "2026-02-02T15:50:59.334Z",
+    "lastGenerated": "2026-02-02T20:32:10.877Z",
     "generatedWith": "@astrojs/compiler@2.13.0",
     "includesVisualSpecs": true,
     "availableVariants": []
@@ -290,10 +290,10 @@
   },
   "cssClassStyles": {
     ".radio-group-wrapper__message--error .radio-group-wrapper__message-icon,\n.checkbox-group-wrapper__message--error .checkbox-group-wrapper__message-icon": {
-      "color": "#D83148"
+      "color": "var(--color-error)"
     },
     ".radio-group-wrapper__message--warning .radio-group-wrapper__message-icon,\n.checkbox-group-wrapper__message--warning .checkbox-group-wrapper__message-icon": {
-      "color": "#FFB020"
+      "color": "var(--color-warning)"
     }
   },
   "_variantIndex": {},

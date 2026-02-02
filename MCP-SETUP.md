@@ -233,13 +233,27 @@ mcp-data/
 │   └── ... (49 total)
 ├── layouts/                    # Layout composition data
 │   └── shelllayout.json        # ShellLayout theme-specific data
-└── guidelines/                 # Design system rules & best practices
-    ├── component-rules.json    # Component creation rules (variants, props, composition)
-    ├── token-rules.json        # Design token usage rules (spacing, colors, typography)
-    ├── theme-rules.json        # Theme-specific composition rules
-    ├── category-rules.json     # Category-specific patterns (forms, layouts, etc.) ✨ NEW
-    └── decisions.json          # Design decision log with rationale
+├── guidelines/                 # Design system rules & best practices
+│   ├── component-rules.json    # Component creation rules (variants, props, composition)
+│   ├── token-rules.json        # Design token usage rules (spacing, colors, typography)
+│   ├── theme-rules.json        # Theme-specific composition rules
+│   ├── category-rules.json     # Category-specific patterns (forms, layouts, etc.) ✨ NEW
+│   └── decisions.json          # Design decision log with rationale
+└── icon-mappings/              # Theme-specific icon name → path (e.g. cp-default.json)
 ```
+
+### Icon Handling in MCP Data
+
+Component JSON (e.g. sidebar `defaultSections` items) can include:
+
+- **iconPath** – Repo-relative path to the SVG file (e.g. `node_modules/heroicons/24/outline/bell.svg`, `public/RS_DelaDefault.svg`). For reference only when `iconSvg` is missing.
+- **iconSvg** – Inner SVG content (everything between `<svg>` tags) embedded at generation time so MCP data is self-contained.
+
+**MCP consumers should prefer `iconSvg` over `iconPath` when present.** Use `iconSvg` to output or render icon SVG without resolving files at runtime. Use `iconPath` only when `iconSvg` is absent (e.g. for display or debugging). `npm run generate:mcp-data` runs after `npm install` and embeds `iconSvg` for heroicons, tabler, and custom icons when the files exist.
+
+### cssClassStyles and design tokens
+
+**cssClassStyles** in component JSON use design tokens (`var(--space-*)`, `var(--radius-*)`, etc.) where the source CSS does, so get_specs and build_component align on token-based values. Consumers should have design-token CSS loaded when using build_component output.
 
 ## Layout MCP Data
 

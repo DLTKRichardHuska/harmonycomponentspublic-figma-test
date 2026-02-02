@@ -45,6 +45,9 @@ Checks if a variant exists.
 #### `filterComponentByVariant(componentData, variantName)`
 Filters entire component data by variant.
 
+#### `getStateKeysForVariantThemeMode(modeObj)`
+Returns state keys (default, hover, active, focus, disabled, and optionally item, icon, label) for a variant/theme/mode object so MCP can iterate and expose all states. See [STATE_COLORS_CONTRACT.md](STATE_COLORS_CONTRACT.md).
+
 ## MCP Implementation
 
 ### Step-by-Step Implementation
@@ -207,3 +210,7 @@ This solution works for **all 49 components** automatically:
 2. Update `get_component_basic` to filter by variant when requested
 3. Test with multiple components and variants
 4. Ensure backward compatibility (components without variants still work)
+
+## See also
+
+- [STATE_COLORS_CONTRACT.md](STATE_COLORS_CONTRACT.md) – How state colors (default, hover, active, focus, disabled, item, icon, label) are stored and how MCP should read and expose them.

@@ -112,7 +112,7 @@
   },
   "usagePatterns": {},
   "_metadata": {
-    "lastGenerated": "2026-02-02T15:50:59.500Z",
+    "lastGenerated": "2026-02-02T20:32:11.041Z",
     "generatedWith": "@astrojs/compiler@2.13.0",
     "includesVisualSpecs": true,
     "availableVariants": []
@@ -241,7 +241,7 @@
     ".toggle": {
       "display": "inline-flex",
       "align-items": "center",
-      "gap": "8px",
+      "gap": "var(--space-2)",
       "cursor": "pointer"
     },
     ".toggle__input": {
@@ -251,21 +251,21 @@
       "height": "0"
     },
     ".toggle__track": {
-      "width": "44px",
-      "height": "24px",
-      "background-color": "#BFC6D4",
-      "border-radius": "9999px",
+      "width": "var(--space-11)",
+      "height": "var(--space-6)",
+      "background-color": "var(--border-color)",
+      "border-radius": "var(--radius-full)",
       "position": "relative",
-      "transition": "background-color 150ms ease",
+      "transition": "background-color var(--transition-fast)",
       "flex-shrink": "0",
       "min-width": "44px",
       "min-height": "24px"
     },
     ".toggle__input:checked + .toggle__track": {
-      "background-color": "#4C92D9"
+      "background-color": "var(--theme-primary)"
     },
     ".toggle__input:focus + .toggle__track": {
-      "box-shadow": "0 0 0 3px rgba(76, 146, 217, 0.1), 0 0 0 4px #F7F8FA"
+      "box-shadow": "var(--focus-ring-primary)"
     },
     ".toggle__input:disabled + .toggle__track": {
       "opacity": "0.5",
@@ -273,32 +273,32 @@
     },
     ".toggle__thumb": {
       "position": "absolute",
-      "top": "2px",
-      "left": "2px",
-      "width": "20px",
-      "height": "20px",
+      "top": "var(--space-0-5)",
+      "left": "var(--space-0-5)",
+      "width": "var(--space-5)",
+      "height": "var(--space-5)",
       "background-color": "white",
-      "border-radius": "9999px",
-      "box-shadow": "0 1px 2px 0 rgb(15 23 42 / 0.05)",
-      "transition": "transform 150ms ease"
+      "border-radius": "var(--radius-full)",
+      "box-shadow": "var(--shadow-sm)",
+      "transition": "transform var(--transition-fast)"
     },
     ".toggle__input:checked + .toggle__track .toggle__thumb": {
-      "transform": "translateX(20px)"
+      "transform": "translateX(var(--space-5))"
     },
     ".toggle__label": {
-      "font-size": "0.875rem",
-      "color": "#373F4E"
+      "font-size": "var(--text-sm)",
+      "color": "var(--text-primary)"
     },
     ".toggle--sm .toggle__track": {
-      "width": "36px",
-      "height": "20px"
+      "width": "var(--space-9)",
+      "height": "var(--space-5)"
     },
     ".toggle--sm .toggle__thumb": {
-      "width": "16px",
-      "height": "16px"
+      "width": "var(--space-4)",
+      "height": "var(--space-4)"
     },
     ".toggle--sm .toggle__input:checked + .toggle__track .toggle__thumb": {
-      "transform": "translateX(16px)"
+      "transform": "translateX(var(--space-4))"
     }
   },
   "_variantIndex": {},

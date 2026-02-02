@@ -260,7 +260,7 @@
   },
   "usagePatterns": {},
   "_metadata": {
-    "lastGenerated": "2026-02-02T15:50:59.490Z",
+    "lastGenerated": "2026-02-02T20:32:11.031Z",
     "generatedWith": "@astrojs/compiler@2.13.0",
     "includesVisualSpecs": true,
     "availableVariants": []
@@ -402,98 +402,98 @@
       "display": "flex",
       "align-items": "center",
       "justify-content": "center",
-      "gap": "8px"
+      "gap": "var(--space-2)"
     },
     ".time-picker__hour,\n.time-picker__minute": {
       "display": "flex",
       "flex-direction": "column",
       "align-items": "center",
-      "gap": "4px"
+      "gap": "var(--space-1)"
     },
     ".time-picker__increment,\n.time-picker__decrement": {
       "display": "flex",
       "align-items": "center",
       "justify-content": "center",
-      "width": "32px",
-      "height": "24px",
+      "width": "var(--space-8)",
+      "height": "var(--space-6)",
       "padding": "0",
       "background": "transparent",
-      "border": "1px solid #BFC6D4",
-      "border-radius": "0.375rem",
-      "color": "#525969",
+      "border": "1px solid var(--border-color)",
+      "border-radius": "var(--radius-md)",
+      "color": "var(--text-secondary)",
       "cursor": "pointer",
-      "transition": "all 150ms ease"
+      "transition": "all var(--transition-fast)"
     },
     ".time-picker__increment:hover:not(:disabled),\n.time-picker__decrement:hover:not(:disabled)": {
-      "background-color": "#E5E7EB",
-      "color": "#373F4E",
-      "border-color": "#BFC6D4"
+      "background-color": "var(--hover-bg)",
+      "color": "var(--text-primary)",
+      "border-color": "var(--border-color)"
     },
     ".time-picker__increment:disabled,\n.time-picker__decrement:disabled": {
       "opacity": "0.5",
       "cursor": "not-allowed"
     },
     ".time-picker__input": {
-      "width": "48px",
-      "height": "40px",
-      "padding": "0 8px",
-      "font-size": "1.125rem",
-      "font-weight": "600",
-      "font-family": "'Figtree', sans-serif",
+      "width": "var(--space-12)",
+      "height": "var(--space-10)",
+      "padding": "0 var(--space-2)",
+      "font-size": "var(--text-lg)",
+      "font-weight": "var(--font-semibold)",
+      "font-family": "var(--font-sans)",
       "text-align": "center",
-      "color": "#373F4E",
-      "background-color": "#FFFFFF",
-      "border": "1px solid #BFC6D4",
-      "border-radius": "0.375rem",
+      "color": "var(--text-primary)",
+      "background-color": "var(--input-bg)",
+      "border": "1px solid var(--border-color)",
+      "border-radius": "var(--radius-md)",
       "cursor": "default"
     },
     ".time-picker__input:focus": {
       "outline": "none",
-      "border-color": "#4C92D9",
-      "box-shadow": "0 0 0 3px rgba(76, 146, 217, 0.1), 0 0 0 4px #F7F8FA"
+      "border-color": "var(--theme-primary)",
+      "box-shadow": "var(--focus-ring-primary)"
     },
     ".time-picker__separator": {
-      "font-size": "1.125rem",
-      "font-weight": "600",
-      "color": "#373F4E",
-      "padding": "0 4px"
+      "font-size": "var(--text-lg)",
+      "font-weight": "var(--font-semibold)",
+      "color": "var(--text-primary)",
+      "padding": "0 var(--space-1)"
     },
     ".time-picker__period": {
       "display": "flex",
       "flex-direction": "column",
-      "gap": "4px",
-      "margin-left": "8px"
+      "gap": "var(--space-1)",
+      "margin-left": "var(--space-2)"
     },
     ".time-picker__period-btn": {
-      "width": "48px",
-      "height": "32px",
-      "padding": "0 8px",
-      "font-size": "0.875rem",
-      "font-weight": "500",
-      "font-family": "'Figtree', sans-serif",
-      "color": "#525969",
-      "background-color": "#FFFFFF",
-      "border": "1px solid #BFC6D4",
-      "border-radius": "0.375rem",
+      "width": "var(--space-12)",
+      "height": "var(--space-8)",
+      "padding": "0 var(--space-2)",
+      "font-size": "var(--text-sm)",
+      "font-weight": "var(--font-medium)",
+      "font-family": "var(--font-sans)",
+      "color": "var(--text-secondary)",
+      "background-color": "var(--input-bg)",
+      "border": "1px solid var(--border-color)",
+      "border-radius": "var(--radius-md)",
       "cursor": "pointer",
-      "transition": "all 150ms ease",
+      "transition": "all var(--transition-fast)",
       "min-width": "44px",
       "min-height": "44px"
     },
     ".time-picker__period-btn:hover:not(:disabled)": {
-      "background-color": "#E5E7EB",
-      "color": "#373F4E",
-      "border-color": "#BFC6D4"
+      "background-color": "var(--hover-bg)",
+      "color": "var(--text-primary)",
+      "border-color": "var(--border-color)"
     },
     ".time-picker__period-btn--active": {
-      "background-color": "#4C92D9",
-      "color": "#FFFFFF",
-      "border-color": "#4C92D9",
-      "font-weight": "600"
+      "background-color": "var(--theme-primary)",
+      "color": "var(--text-inverse)",
+      "border-color": "var(--theme-primary)",
+      "font-weight": "var(--font-semibold)"
     },
     ".time-picker__period-btn--active:hover:not(:disabled)": {
-      "background-color": "#3D7BC4",
-      "border-color": "#3D7BC4"
+      "background-color": "var(--theme-primary-hover)",
+      "border-color": "var(--theme-primary-hover)"
     },
     ".time-picker__period-btn:disabled": {
       "opacity": "0.5",

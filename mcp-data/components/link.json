@@ -87,7 +87,7 @@
   },
   "usagePatterns": {},
   "_metadata": {
-    "lastGenerated": "2026-02-02T15:50:59.269Z",
+    "lastGenerated": "2026-02-02T20:32:10.813Z",
     "generatedWith": "@astrojs/compiler@2.13.0",
     "includesVisualSpecs": true,
     "availableVariants": [
@@ -197,7 +197,10 @@
                 "text": "#373F4E",
                 "border": "transparent",
                 "iconColor": "#373F4E"
-              }
+              },
+              "active": {},
+              "focus": {},
+              "disabled": {}
             },
             "dark": {
               "default": {
@@ -211,7 +214,10 @@
                 "text": "#E9ECEF",
                 "border": "transparent",
                 "iconColor": "#E9ECEF"
-              }
+              },
+              "active": {},
+              "focus": {},
+              "disabled": {}
             }
           },
           "vp": {
@@ -227,7 +233,10 @@
                 "text": "#373F4E",
                 "border": "transparent",
                 "iconColor": "#373F4E"
-              }
+              },
+              "active": {},
+              "focus": {},
+              "disabled": {}
             },
             "dark": {
               "default": {
@@ -241,7 +250,10 @@
                 "text": "#FAFAFA",
                 "border": "transparent",
                 "iconColor": "#FAFAFA"
-              }
+              },
+              "active": {},
+              "focus": {},
+              "disabled": {}
             }
           },
           "ppm": {
@@ -257,7 +269,10 @@
                 "text": "#373F4E",
                 "border": "transparent",
                 "iconColor": "#373F4E"
-              }
+              },
+              "active": {},
+              "focus": {},
+              "disabled": {}
             },
             "dark": {
               "default": {
@@ -271,7 +286,10 @@
                 "text": "#FAFAFA",
                 "border": "transparent",
                 "iconColor": "#FAFAFA"
-              }
+              },
+              "active": {},
+              "focus": {},
+              "disabled": {}
             }
           },
           "maconomy": {
@@ -287,7 +305,10 @@
                 "text": "#373F4E",
                 "border": "transparent",
                 "iconColor": "#373F4E"
-              }
+              },
+              "active": {},
+              "focus": {},
+              "disabled": {}
             },
             "dark": {
               "default": {
@@ -301,7 +322,10 @@
                 "text": "#FAFAFA",
                 "border": "transparent",
                 "iconColor": "#FAFAFA"
-              }
+              },
+              "active": {},
+              "focus": {},
+              "disabled": {}
             }
           }
         }
@@ -341,19 +365,19 @@
   },
   "cssClassStyles": {
     ".link": {
-      "color": "#005bb3",
+      "color": "var(--link-color)",
       "text-decoration": "none",
-      "transition": "color 150ms ease",
-      "font-size": "0.875rem"
+      "transition": "color var(--transition-fast)",
+      "font-size": "var(--text-sm)"
     },
     ".link:hover": {
       "text-decoration": "underline"
     },
     ".link--muted": {
-      "color": "#6B7280"
+      "color": "var(--text-muted)"
     },
     ".link--muted:hover": {
-      "color": "#373F4E"
+      "color": "var(--text-primary)"
     }
   },
   "_variantIndex": {

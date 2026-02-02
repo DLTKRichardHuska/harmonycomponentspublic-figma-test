@@ -155,7 +155,7 @@
     "error-takes-precedence": "When both error and warning are true, only the error state displays. The errorMessage is shown with checkbox-group-wrapper__message--error class and exclamation-circle icon. The warning is completely suppressed (conditional !error && warning) to avoid conflicting visual states. Set only one of error or warning to true at a time."
   },
   "_metadata": {
-    "lastGenerated": "2026-02-02T15:50:59.085Z",
+    "lastGenerated": "2026-02-02T20:32:10.636Z",
     "generatedWith": "@astrojs/compiler@2.13.0",
     "includesVisualSpecs": true,
     "availableVariants": []
@@ -287,7 +287,7 @@
     ".checkbox-group--horizontal,\n.radio-group--horizontal": {
       "flex-direction": "row",
       "flex-wrap": "wrap",
-      "gap": "16px"
+      "gap": "var(--space-4)"
     }
   },
   "_variantIndex": {},
