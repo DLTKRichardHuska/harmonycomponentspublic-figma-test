@@ -20,7 +20,22 @@
     "mode": "light",
     "size": "'md'"
   },
-  "specs": {},
+  "specs": {
+    "cp-light-md": {
+      "layout": { "display": "inline-flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "center", "gap": "0" },
+      "spacing": { "paddingTop": "0", "paddingRight": "0", "paddingBottom": "0", "paddingLeft": "0" },
+      "dimensions": { "width": "16px", "height": "16px", "minWidth": "16px", "maxWidth": "16px" },
+      "typography": { "fontFamily": "'Figtree', sans-serif", "fontSize": "0.875rem", "fontWeight": "400", "lineHeight": "1.5" },
+      "borders": { "width": "0", "style": "solid", "radius": "0", "border": "none" },
+      "states": {
+        "default": { "background": "transparent", "text": "#4C92D9", "border": "none", "iconColor": "#4C92D9" },
+        "hover": { "background": "transparent", "text": "#4C92D9", "border": "none", "iconColor": "#4C92D9" },
+        "active": { "background": "transparent", "text": "#4C92D9", "border": "none", "iconColor": "#4C92D9" },
+        "focus": { "background": "transparent", "text": "#4C92D9", "border": "none", "iconColor": "#4C92D9" },
+        "disabled": { "background": "transparent", "text": "#373F4E", "border": "none", "iconColor": "#373F4E" }
+      }
+    }
+  },
   "guidance": {
     "patterns": {},
     "guidelines": {}

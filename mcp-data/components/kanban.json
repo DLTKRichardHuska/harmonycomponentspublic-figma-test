@@ -39,7 +39,22 @@
     "theme": "cp",
     "mode": "light"
   },
-  "specs": {},
+  "specs": {
+    "cp-light": {
+      "layout": { "display": "flex", "flexDirection": "row", "alignItems": "stretch", "justifyContent": "flex-start", "gap": "16px" },
+      "spacing": { "paddingTop": "0", "paddingRight": "0", "paddingBottom": "0", "paddingLeft": "0" },
+      "dimensions": { "width": "100%", "height": "auto", "minWidth": "auto", "maxWidth": "none" },
+      "typography": { "fontFamily": "'Figtree', sans-serif", "fontSize": "0.875rem", "fontWeight": "400", "lineHeight": "1.5" },
+      "borders": { "width": "1px", "style": "solid", "radius": "12px", "border": "1px solid #BFC6D4" },
+      "states": {
+        "default": { "background": "#F7F8FA", "text": "#373F4E", "border": "1px solid #BFC6D4", "iconColor": "#373F4E" },
+        "hover": { "background": "#F7F8FA", "text": "#373F4E", "border": "1px solid #BFC6D4", "iconColor": "#373F4E" },
+        "active": { "background": "#F7F8FA", "text": "#373F4E", "border": "1px solid #BFC6D4", "iconColor": "#373F4E" },
+        "focus": { "background": "#F7F8FA", "text": "#373F4E", "border": "1px solid #BFC6D4", "iconColor": "#373F4E" },
+        "disabled": { "background": "#F7F8FA", "text": "#373F4E", "border": "1px solid #BFC6D4", "iconColor": "#373F4E" }
+      }
+    }
+  },
   "guidance": {
     "patterns": {
       "slot-areas-customization": "Kanban provides three customization slots: 'title-bar-actions' (lines 59-82) replaces default title bar icons (expand, collapse, help, minimize, window, close), 'action-bar' (lines 91-127) replaces default action buttons and filters, and 'action-dropdown' for dropdown controls. When slots are not provided, default UI elements are rendered. Title bar actions include 6 icon buttons, action bar includes delete, group, customize, and view controls.",

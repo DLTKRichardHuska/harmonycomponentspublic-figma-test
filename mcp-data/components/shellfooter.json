@@ -98,7 +98,8 @@
         "paddingLeft": "0"
       },
       "dimensions": {
-        "height": "auto",
+        "width": "100%",
+        "height": "48px",
         "minWidth": "auto",
         "maxWidth": "none"
       },
@@ -112,6 +113,13 @@
         "width": "0",
         "style": "solid",
         "radius": "4px"
+      },
+      "positioning": {
+        "position": "fixed",
+        "bottom": "0",
+        "left": "0",
+        "right": "0",
+        "zIndex": "40"
       },
       "states": {
         "default": {

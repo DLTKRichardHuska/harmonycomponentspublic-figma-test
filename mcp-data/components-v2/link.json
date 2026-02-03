@@ -1,0 +1,1153 @@
+{
+  "name": "Link",
+  "type": "component",
+  "filePath": "src/components/ui/Link.astro",
+  "description": "Link Component",
+  "props": {
+    "href": {
+      "type": "string",
+      "optional": false,
+      "default": null
+    },
+    "external": {
+      "type": "boolean",
+      "optional": true,
+      "default": "false"
+    },
+    "muted": {
+      "type": "boolean",
+      "optional": true,
+      "default": "false"
+    },
+    "class": {
+      "type": "string",
+      "optional": true,
+      "default": "''"
+    }
+  },
+  "defaults": {
+    "theme": "cp",
+    "mode": "light"
+  },
+  "specs": {
+    "muted-cp-light-xs": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".link": {},
+          ".link__text": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".link",
+          "tag": "a",
+          "styles": {},
+          "children": [
+            ".link__text"
+          ]
+        },
+        {
+          "selector": ".link__text",
+          "tag": "span",
+          "styles": {},
+          "parent": ".link"
+        }
+      ]
+    },
+    "muted-cp-light-sm": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".link": {},
+          ".link__text": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".link",
+          "tag": "a",
+          "styles": {},
+          "children": [
+            ".link__text"
+          ]
+        },
+        {
+          "selector": ".link__text",
+          "tag": "span",
+          "styles": {},
+          "parent": ".link"
+        }
+      ]
+    },
+    "muted-cp-light-md": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".link": {},
+          ".link__text": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".link",
+          "tag": "a",
+          "styles": {},
+          "children": [
+            ".link__text"
+          ]
+        },
+        {
+          "selector": ".link__text",
+          "tag": "span",
+          "styles": {},
+          "parent": ".link"
+        }
+      ]
+    },
+    "muted-cp-light-lg": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".link": {},
+          ".link__text": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".link",
+          "tag": "a",
+          "styles": {},
+          "children": [
+            ".link__text"
+          ]
+        },
+        {
+          "selector": ".link__text",
+          "tag": "span",
+          "styles": {},
+          "parent": ".link"
+        }
+      ]
+    },
+    "muted-cp-dark-xs": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".link": {},
+          ".link__text": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".link",
+          "tag": "a",
+          "styles": {},
+          "children": [
+            ".link__text"
+          ]
+        },
+        {
+          "selector": ".link__text",
+          "tag": "span",
+          "styles": {},
+          "parent": ".link"
+        }
+      ]
+    },
+    "muted-cp-dark-sm": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".link": {},
+          ".link__text": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".link",
+          "tag": "a",
+          "styles": {},
+          "children": [
+            ".link__text"
+          ]
+        },
+        {
+          "selector": ".link__text",
+          "tag": "span",
+          "styles": {},
+          "parent": ".link"
+        }
+      ]
+    },
+    "muted-cp-dark-md": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".link": {},
+          ".link__text": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".link",
+          "tag": "a",
+          "styles": {},
+          "children": [
+            ".link__text"
+          ]
+        },
+        {
+          "selector": ".link__text",
+          "tag": "span",
+          "styles": {},
+          "parent": ".link"
+        }
+      ]
+    },
+    "muted-cp-dark-lg": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".link": {},
+          ".link__text": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".link",
+          "tag": "a",
+          "styles": {},
+          "children": [
+            ".link__text"
+          ]
+        },
+        {
+          "selector": ".link__text",
+          "tag": "span",
+          "styles": {},
+          "parent": ".link"
+        }
+      ]
+    },
+    "muted-vp-light-xs": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".link": {},
+          ".link__text": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".link",
+          "tag": "a",
+          "styles": {},
+          "children": [
+            ".link__text"
+          ]
+        },
+        {
+          "selector": ".link__text",
+          "tag": "span",
+          "styles": {},
+          "parent": ".link"
+        }
+      ]
+    },
+    "muted-vp-light-sm": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".link": {},
+          ".link__text": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".link",
+          "tag": "a",
+          "styles": {},
+          "children": [
+            ".link__text"
+          ]
+        },
+        {
+          "selector": ".link__text",
+          "tag": "span",
+          "styles": {},
+          "parent": ".link"
+        }
+      ]
+    },
+    "muted-vp-light-md": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".link": {},
+          ".link__text": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".link",
+          "tag": "a",
+          "styles": {},
+          "children": [
+            ".link__text"
+          ]
+        },
+        {
+          "selector": ".link__text",
+          "tag": "span",
+          "styles": {},
+          "parent": ".link"
+        }
+      ]
+    },
+    "muted-vp-light-lg": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".link": {},
+          ".link__text": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".link",
+          "tag": "a",
+          "styles": {},
+          "children": [
+            ".link__text"
+          ]
+        },
+        {
+          "selector": ".link__text",
+          "tag": "span",
+          "styles": {},
+          "parent": ".link"
+        }
+      ]
+    },
+    "muted-vp-dark-xs": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".link": {},
+          ".link__text": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".link",
+          "tag": "a",
+          "styles": {},
+          "children": [
+            ".link__text"
+          ]
+        },
+        {
+          "selector": ".link__text",
+          "tag": "span",
+          "styles": {},
+          "parent": ".link"
+        }
+      ]
+    },
+    "muted-vp-dark-sm": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".link": {},
+          ".link__text": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".link",
+          "tag": "a",
+          "styles": {},
+          "children": [
+            ".link__text"
+          ]
+        },
+        {
+          "selector": ".link__text",
+          "tag": "span",
+          "styles": {},
+          "parent": ".link"
+        }
+      ]
+    },
+    "muted-vp-dark-md": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".link": {},
+          ".link__text": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".link",
+          "tag": "a",
+          "styles": {},
+          "children": [
+            ".link__text"
+          ]
+        },
+        {
+          "selector": ".link__text",
+          "tag": "span",
+          "styles": {},
+          "parent": ".link"
+        }
+      ]
+    },
+    "muted-vp-dark-lg": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".link": {},
+          ".link__text": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".link",
+          "tag": "a",
+          "styles": {},
+          "children": [
+            ".link__text"
+          ]
+        },
+        {
+          "selector": ".link__text",
+          "tag": "span",
+          "styles": {},
+          "parent": ".link"
+        }
+      ]
+    },
+    "muted-ppm-light-xs": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".link": {},
+          ".link__text": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".link",
+          "tag": "a",
+          "styles": {},
+          "children": [
+            ".link__text"
+          ]
+        },
+        {
+          "selector": ".link__text",
+          "tag": "span",
+          "styles": {},
+          "parent": ".link"
+        }
+      ]
+    },
+    "muted-ppm-light-sm": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".link": {},
+          ".link__text": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".link",
+          "tag": "a",
+          "styles": {},
+          "children": [
+            ".link__text"
+          ]
+        },
+        {
+          "selector": ".link__text",
+          "tag": "span",
+          "styles": {},
+          "parent": ".link"
+        }
+      ]
+    },
+    "muted-ppm-light-md": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".link": {},
+          ".link__text": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".link",
+          "tag": "a",
+          "styles": {},
+          "children": [
+            ".link__text"
+          ]
+        },
+        {
+          "selector": ".link__text",
+          "tag": "span",
+          "styles": {},
+          "parent": ".link"
+        }
+      ]
+    },
+    "muted-ppm-light-lg": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".link": {},
+          ".link__text": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".link",
+          "tag": "a",
+          "styles": {},
+          "children": [
+            ".link__text"
+          ]
+        },
+        {
+          "selector": ".link__text",
+          "tag": "span",
+          "styles": {},
+          "parent": ".link"
+        }
+      ]
+    },
+    "muted-ppm-dark-xs": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".link": {},
+          ".link__text": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".link",
+          "tag": "a",
+          "styles": {},
+          "children": [
+            ".link__text"
+          ]
+        },
+        {
+          "selector": ".link__text",
+          "tag": "span",
+          "styles": {},
+          "parent": ".link"
+        }
+      ]
+    },
+    "muted-ppm-dark-sm": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".link": {},
+          ".link__text": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".link",
+          "tag": "a",
+          "styles": {},
+          "children": [
+            ".link__text"
+          ]
+        },
+        {
+          "selector": ".link__text",
+          "tag": "span",
+          "styles": {},
+          "parent": ".link"
+        }
+      ]
+    },
+    "muted-ppm-dark-md": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".link": {},
+          ".link__text": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".link",
+          "tag": "a",
+          "styles": {},
+          "children": [
+            ".link__text"
+          ]
+        },
+        {
+          "selector": ".link__text",
+          "tag": "span",
+          "styles": {},
+          "parent": ".link"
+        }
+      ]
+    },
+    "muted-ppm-dark-lg": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".link": {},
+          ".link__text": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".link",
+          "tag": "a",
+          "styles": {},
+          "children": [
+            ".link__text"
+          ]
+        },
+        {
+          "selector": ".link__text",
+          "tag": "span",
+          "styles": {},
+          "parent": ".link"
+        }
+      ]
+    },
+    "muted-maconomy-light-xs": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".link": {},
+          ".link__text": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".link",
+          "tag": "a",
+          "styles": {},
+          "children": [
+            ".link__text"
+          ]
+        },
+        {
+          "selector": ".link__text",
+          "tag": "span",
+          "styles": {},
+          "parent": ".link"
+        }
+      ]
+    },
+    "muted-maconomy-light-sm": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".link": {},
+          ".link__text": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".link",
+          "tag": "a",
+          "styles": {},
+          "children": [
+            ".link__text"
+          ]
+        },
+        {
+          "selector": ".link__text",
+          "tag": "span",
+          "styles": {},
+          "parent": ".link"
+        }
+      ]
+    },
+    "muted-maconomy-light-md": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".link": {},
+          ".link__text": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".link",
+          "tag": "a",
+          "styles": {},
+          "children": [
+            ".link__text"
+          ]
+        },
+        {
+          "selector": ".link__text",
+          "tag": "span",
+          "styles": {},
+          "parent": ".link"
+        }
+      ]
+    },
+    "muted-maconomy-light-lg": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".link": {},
+          ".link__text": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".link",
+          "tag": "a",
+          "styles": {},
+          "children": [
+            ".link__text"
+          ]
+        },
+        {
+          "selector": ".link__text",
+          "tag": "span",
+          "styles": {},
+          "parent": ".link"
+        }
+      ]
+    },
+    "muted-maconomy-dark-xs": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".link": {},
+          ".link__text": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".link",
+          "tag": "a",
+          "styles": {},
+          "children": [
+            ".link__text"
+          ]
+        },
+        {
+          "selector": ".link__text",
+          "tag": "span",
+          "styles": {},
+          "parent": ".link"
+        }
+      ]
+    },
+    "muted-maconomy-dark-sm": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".link": {},
+          ".link__text": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".link",
+          "tag": "a",
+          "styles": {},
+          "children": [
+            ".link__text"
+          ]
+        },
+        {
+          "selector": ".link__text",
+          "tag": "span",
+          "styles": {},
+          "parent": ".link"
+        }
+      ]
+    },
+    "muted-maconomy-dark-md": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".link": {},
+          ".link__text": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".link",
+          "tag": "a",
+          "styles": {},
+          "children": [
+            ".link__text"
+          ]
+        },
+        {
+          "selector": ".link__text",
+          "tag": "span",
+          "styles": {},
+          "parent": ".link"
+        }
+      ]
+    },
+    "muted-maconomy-dark-lg": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".link": {},
+          ".link__text": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".link",
+          "tag": "a",
+          "styles": {},
+          "children": [
+            ".link__text"
+          ]
+        },
+        {
+          "selector": ".link__text",
+          "tag": "span",
+          "styles": {},
+          "parent": ".link"
+        }
+      ]
+    }
+  },
+  "guidance": {
+    "patterns": {},
+    "guidelines": {}
+  },
+  "interactivity": {
+    "events": [
+      {
+        "name": "click",
+        "description": "Native click; navigates to href (or preventDefault for SPA)"
+      }
+    ],
+    "state": [
+      {
+        "name": "—",
+        "type": "—",
+        "description": "No internal state; navigation handled by browser or router."
+      }
+    ]
+  },
+  "examples": [
+    {
+      "name": "Text link",
+      "description": "Inline link",
+      "snippet": "<Link href=\"/page\">Go to page</Link>"
+    },
+    {
+      "name": "External link",
+      "description": "Link with external icon",
+      "snippet": "<Link href=\"https://...\" external>External</Link>"
+    }
+  ]
+}

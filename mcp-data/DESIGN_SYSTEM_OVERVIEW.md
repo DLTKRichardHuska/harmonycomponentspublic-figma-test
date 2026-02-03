@@ -118,5 +118,5 @@ Use the spacing scale for padding, margin, and gap; prefer tokens over hardcoded
 ## How to use this with the build spec
 
 1. **First:** Apply this overview (fonts, icons, fallback icons, themes, modes, spacing scale, typography, radius) so global setup is correct.
-2. **Then:** For each component, use the **build spec** returned by get_specs / get_build_spec for that component (variant, theme, mode, size). The build spec has resolved values for layout, spacing, dimensions, typography, borders, states, and icons—apply them exactly.
+2. **Then:** For each component, use the **build spec** returned by get_specs / get_build_spec for that component (variant, theme, mode, size). The build spec has resolved values for layout, spacing, dimensions, typography, borders, states, and icons—apply them exactly. All components are audited for full spec completeness so exact rebuilds are possible without inferring missing values.
 3. **Guidance:** Use **usage patterns** for behavior (e.g. icon-only mode, loading state) and **usage guidelines** for when to use and how to compose; do not use them to override build spec values.

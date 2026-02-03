@@ -1,0 +1,2262 @@
+{
+  "name": "TabStrip",
+  "type": "component",
+  "filePath": "src/components/ui/TabStrip.astro",
+  "description": "TabStrip Component",
+  "props": {
+    "tabs": {
+      "type": "Tab[]",
+      "optional": false,
+      "default": "[]"
+    },
+    "showAddTab": {
+      "type": "boolean",
+      "optional": true,
+      "default": "false"
+    },
+    "addTabLabel": {
+      "type": "string",
+      "optional": true,
+      "default": "'Add Tab'"
+    },
+    "overflowMode": {
+      "type": "'auto' | 'manual' | 'none'",
+      "optional": true,
+      "default": "'auto'"
+    },
+    "overflowTabs": {
+      "type": "Tab[]",
+      "optional": true,
+      "default": "[]"
+    },
+    "variant": {
+      "type": "'default' | 'compact'",
+      "optional": true,
+      "default": "'default'"
+    },
+    "iconPosition": {
+      "type": "'left' | 'right' | 'top'",
+      "optional": true,
+      "default": null
+    },
+    "class": {
+      "type": "string",
+      "optional": true,
+      "default": "''"
+    }
+  },
+  "defaults": {
+    "theme": "cp",
+    "mode": "light",
+    "variant": "'default'"
+  },
+  "specs": {
+    "default-cp-light-xs": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".tab-panel": {},
+          ".tab-panel__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".tab-panel",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".tab-panel__content"
+          ]
+        },
+        {
+          "selector": ".tab-panel__content",
+          "tag": "div",
+          "styles": {},
+          "parent": ".tab-panel"
+        }
+      ]
+    },
+    "default-cp-light-sm": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".tab-panel": {},
+          ".tab-panel__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".tab-panel",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".tab-panel__content"
+          ]
+        },
+        {
+          "selector": ".tab-panel__content",
+          "tag": "div",
+          "styles": {},
+          "parent": ".tab-panel"
+        }
+      ]
+    },
+    "default-cp-light-md": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".tab-panel": {},
+          ".tab-panel__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".tab-panel",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".tab-panel__content"
+          ]
+        },
+        {
+          "selector": ".tab-panel__content",
+          "tag": "div",
+          "styles": {},
+          "parent": ".tab-panel"
+        }
+      ]
+    },
+    "default-cp-light-lg": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".tab-panel": {},
+          ".tab-panel__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".tab-panel",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".tab-panel__content"
+          ]
+        },
+        {
+          "selector": ".tab-panel__content",
+          "tag": "div",
+          "styles": {},
+          "parent": ".tab-panel"
+        }
+      ]
+    },
+    "default-cp-dark-xs": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".tab-panel": {},
+          ".tab-panel__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".tab-panel",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".tab-panel__content"
+          ]
+        },
+        {
+          "selector": ".tab-panel__content",
+          "tag": "div",
+          "styles": {},
+          "parent": ".tab-panel"
+        }
+      ]
+    },
+    "default-cp-dark-sm": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".tab-panel": {},
+          ".tab-panel__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".tab-panel",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".tab-panel__content"
+          ]
+        },
+        {
+          "selector": ".tab-panel__content",
+          "tag": "div",
+          "styles": {},
+          "parent": ".tab-panel"
+        }
+      ]
+    },
+    "default-cp-dark-md": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".tab-panel": {},
+          ".tab-panel__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".tab-panel",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".tab-panel__content"
+          ]
+        },
+        {
+          "selector": ".tab-panel__content",
+          "tag": "div",
+          "styles": {},
+          "parent": ".tab-panel"
+        }
+      ]
+    },
+    "default-cp-dark-lg": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".tab-panel": {},
+          ".tab-panel__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".tab-panel",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".tab-panel__content"
+          ]
+        },
+        {
+          "selector": ".tab-panel__content",
+          "tag": "div",
+          "styles": {},
+          "parent": ".tab-panel"
+        }
+      ]
+    },
+    "default-vp-light-xs": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".tab-panel": {},
+          ".tab-panel__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".tab-panel",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".tab-panel__content"
+          ]
+        },
+        {
+          "selector": ".tab-panel__content",
+          "tag": "div",
+          "styles": {},
+          "parent": ".tab-panel"
+        }
+      ]
+    },
+    "default-vp-light-sm": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".tab-panel": {},
+          ".tab-panel__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".tab-panel",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".tab-panel__content"
+          ]
+        },
+        {
+          "selector": ".tab-panel__content",
+          "tag": "div",
+          "styles": {},
+          "parent": ".tab-panel"
+        }
+      ]
+    },
+    "default-vp-light-md": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".tab-panel": {},
+          ".tab-panel__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".tab-panel",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".tab-panel__content"
+          ]
+        },
+        {
+          "selector": ".tab-panel__content",
+          "tag": "div",
+          "styles": {},
+          "parent": ".tab-panel"
+        }
+      ]
+    },
+    "default-vp-light-lg": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".tab-panel": {},
+          ".tab-panel__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".tab-panel",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".tab-panel__content"
+          ]
+        },
+        {
+          "selector": ".tab-panel__content",
+          "tag": "div",
+          "styles": {},
+          "parent": ".tab-panel"
+        }
+      ]
+    },
+    "default-vp-dark-xs": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".tab-panel": {},
+          ".tab-panel__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".tab-panel",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".tab-panel__content"
+          ]
+        },
+        {
+          "selector": ".tab-panel__content",
+          "tag": "div",
+          "styles": {},
+          "parent": ".tab-panel"
+        }
+      ]
+    },
+    "default-vp-dark-sm": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".tab-panel": {},
+          ".tab-panel__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".tab-panel",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".tab-panel__content"
+          ]
+        },
+        {
+          "selector": ".tab-panel__content",
+          "tag": "div",
+          "styles": {},
+          "parent": ".tab-panel"
+        }
+      ]
+    },
+    "default-vp-dark-md": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".tab-panel": {},
+          ".tab-panel__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".tab-panel",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".tab-panel__content"
+          ]
+        },
+        {
+          "selector": ".tab-panel__content",
+          "tag": "div",
+          "styles": {},
+          "parent": ".tab-panel"
+        }
+      ]
+    },
+    "default-vp-dark-lg": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".tab-panel": {},
+          ".tab-panel__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".tab-panel",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".tab-panel__content"
+          ]
+        },
+        {
+          "selector": ".tab-panel__content",
+          "tag": "div",
+          "styles": {},
+          "parent": ".tab-panel"
+        }
+      ]
+    },
+    "default-ppm-light-xs": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".tab-panel": {},
+          ".tab-panel__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".tab-panel",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".tab-panel__content"
+          ]
+        },
+        {
+          "selector": ".tab-panel__content",
+          "tag": "div",
+          "styles": {},
+          "parent": ".tab-panel"
+        }
+      ]
+    },
+    "default-ppm-light-sm": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".tab-panel": {},
+          ".tab-panel__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".tab-panel",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".tab-panel__content"
+          ]
+        },
+        {
+          "selector": ".tab-panel__content",
+          "tag": "div",
+          "styles": {},
+          "parent": ".tab-panel"
+        }
+      ]
+    },
+    "default-ppm-light-md": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".tab-panel": {},
+          ".tab-panel__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".tab-panel",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".tab-panel__content"
+          ]
+        },
+        {
+          "selector": ".tab-panel__content",
+          "tag": "div",
+          "styles": {},
+          "parent": ".tab-panel"
+        }
+      ]
+    },
+    "default-ppm-light-lg": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".tab-panel": {},
+          ".tab-panel__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".tab-panel",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".tab-panel__content"
+          ]
+        },
+        {
+          "selector": ".tab-panel__content",
+          "tag": "div",
+          "styles": {},
+          "parent": ".tab-panel"
+        }
+      ]
+    },
+    "default-ppm-dark-xs": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".tab-panel": {},
+          ".tab-panel__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".tab-panel",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".tab-panel__content"
+          ]
+        },
+        {
+          "selector": ".tab-panel__content",
+          "tag": "div",
+          "styles": {},
+          "parent": ".tab-panel"
+        }
+      ]
+    },
+    "default-ppm-dark-sm": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".tab-panel": {},
+          ".tab-panel__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".tab-panel",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".tab-panel__content"
+          ]
+        },
+        {
+          "selector": ".tab-panel__content",
+          "tag": "div",
+          "styles": {},
+          "parent": ".tab-panel"
+        }
+      ]
+    },
+    "default-ppm-dark-md": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".tab-panel": {},
+          ".tab-panel__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".tab-panel",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".tab-panel__content"
+          ]
+        },
+        {
+          "selector": ".tab-panel__content",
+          "tag": "div",
+          "styles": {},
+          "parent": ".tab-panel"
+        }
+      ]
+    },
+    "default-ppm-dark-lg": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".tab-panel": {},
+          ".tab-panel__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".tab-panel",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".tab-panel__content"
+          ]
+        },
+        {
+          "selector": ".tab-panel__content",
+          "tag": "div",
+          "styles": {},
+          "parent": ".tab-panel"
+        }
+      ]
+    },
+    "default-maconomy-light-xs": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".tab-panel": {},
+          ".tab-panel__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".tab-panel",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".tab-panel__content"
+          ]
+        },
+        {
+          "selector": ".tab-panel__content",
+          "tag": "div",
+          "styles": {},
+          "parent": ".tab-panel"
+        }
+      ]
+    },
+    "default-maconomy-light-sm": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".tab-panel": {},
+          ".tab-panel__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".tab-panel",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".tab-panel__content"
+          ]
+        },
+        {
+          "selector": ".tab-panel__content",
+          "tag": "div",
+          "styles": {},
+          "parent": ".tab-panel"
+        }
+      ]
+    },
+    "default-maconomy-light-md": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".tab-panel": {},
+          ".tab-panel__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".tab-panel",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".tab-panel__content"
+          ]
+        },
+        {
+          "selector": ".tab-panel__content",
+          "tag": "div",
+          "styles": {},
+          "parent": ".tab-panel"
+        }
+      ]
+    },
+    "default-maconomy-light-lg": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".tab-panel": {},
+          ".tab-panel__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".tab-panel",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".tab-panel__content"
+          ]
+        },
+        {
+          "selector": ".tab-panel__content",
+          "tag": "div",
+          "styles": {},
+          "parent": ".tab-panel"
+        }
+      ]
+    },
+    "default-maconomy-dark-xs": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".tab-panel": {},
+          ".tab-panel__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".tab-panel",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".tab-panel__content"
+          ]
+        },
+        {
+          "selector": ".tab-panel__content",
+          "tag": "div",
+          "styles": {},
+          "parent": ".tab-panel"
+        }
+      ]
+    },
+    "default-maconomy-dark-sm": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".tab-panel": {},
+          ".tab-panel__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".tab-panel",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".tab-panel__content"
+          ]
+        },
+        {
+          "selector": ".tab-panel__content",
+          "tag": "div",
+          "styles": {},
+          "parent": ".tab-panel"
+        }
+      ]
+    },
+    "default-maconomy-dark-md": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".tab-panel": {},
+          ".tab-panel__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".tab-panel",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".tab-panel__content"
+          ]
+        },
+        {
+          "selector": ".tab-panel__content",
+          "tag": "div",
+          "styles": {},
+          "parent": ".tab-panel"
+        }
+      ]
+    },
+    "default-maconomy-dark-lg": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".tab-panel": {},
+          ".tab-panel__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".tab-panel",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".tab-panel__content"
+          ]
+        },
+        {
+          "selector": ".tab-panel__content",
+          "tag": "div",
+          "styles": {},
+          "parent": ".tab-panel"
+        }
+      ]
+    },
+    "compact-cp-light-xs": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".tab-panel": {},
+          ".tab-panel__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".tab-panel",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".tab-panel__content"
+          ]
+        },
+        {
+          "selector": ".tab-panel__content",
+          "tag": "div",
+          "styles": {},
+          "parent": ".tab-panel"
+        }
+      ]
+    },
+    "compact-cp-light-sm": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".tab-panel": {},
+          ".tab-panel__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".tab-panel",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".tab-panel__content"
+          ]
+        },
+        {
+          "selector": ".tab-panel__content",
+          "tag": "div",
+          "styles": {},
+          "parent": ".tab-panel"
+        }
+      ]
+    },
+    "compact-cp-light-md": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".tab-panel": {},
+          ".tab-panel__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".tab-panel",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".tab-panel__content"
+          ]
+        },
+        {
+          "selector": ".tab-panel__content",
+          "tag": "div",
+          "styles": {},
+          "parent": ".tab-panel"
+        }
+      ]
+    },
+    "compact-cp-light-lg": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".tab-panel": {},
+          ".tab-panel__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".tab-panel",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".tab-panel__content"
+          ]
+        },
+        {
+          "selector": ".tab-panel__content",
+          "tag": "div",
+          "styles": {},
+          "parent": ".tab-panel"
+        }
+      ]
+    },
+    "compact-cp-dark-xs": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".tab-panel": {},
+          ".tab-panel__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".tab-panel",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".tab-panel__content"
+          ]
+        },
+        {
+          "selector": ".tab-panel__content",
+          "tag": "div",
+          "styles": {},
+          "parent": ".tab-panel"
+        }
+      ]
+    },
+    "compact-cp-dark-sm": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".tab-panel": {},
+          ".tab-panel__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".tab-panel",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".tab-panel__content"
+          ]
+        },
+        {
+          "selector": ".tab-panel__content",
+          "tag": "div",
+          "styles": {},
+          "parent": ".tab-panel"
+        }
+      ]
+    },
+    "compact-cp-dark-md": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".tab-panel": {},
+          ".tab-panel__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".tab-panel",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".tab-panel__content"
+          ]
+        },
+        {
+          "selector": ".tab-panel__content",
+          "tag": "div",
+          "styles": {},
+          "parent": ".tab-panel"
+        }
+      ]
+    },
+    "compact-cp-dark-lg": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".tab-panel": {},
+          ".tab-panel__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".tab-panel",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".tab-panel__content"
+          ]
+        },
+        {
+          "selector": ".tab-panel__content",
+          "tag": "div",
+          "styles": {},
+          "parent": ".tab-panel"
+        }
+      ]
+    },
+    "compact-vp-light-xs": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".tab-panel": {},
+          ".tab-panel__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".tab-panel",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".tab-panel__content"
+          ]
+        },
+        {
+          "selector": ".tab-panel__content",
+          "tag": "div",
+          "styles": {},
+          "parent": ".tab-panel"
+        }
+      ]
+    },
+    "compact-vp-light-sm": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".tab-panel": {},
+          ".tab-panel__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".tab-panel",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".tab-panel__content"
+          ]
+        },
+        {
+          "selector": ".tab-panel__content",
+          "tag": "div",
+          "styles": {},
+          "parent": ".tab-panel"
+        }
+      ]
+    },
+    "compact-vp-light-md": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".tab-panel": {},
+          ".tab-panel__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".tab-panel",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".tab-panel__content"
+          ]
+        },
+        {
+          "selector": ".tab-panel__content",
+          "tag": "div",
+          "styles": {},
+          "parent": ".tab-panel"
+        }
+      ]
+    },
+    "compact-vp-light-lg": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".tab-panel": {},
+          ".tab-panel__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".tab-panel",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".tab-panel__content"
+          ]
+        },
+        {
+          "selector": ".tab-panel__content",
+          "tag": "div",
+          "styles": {},
+          "parent": ".tab-panel"
+        }
+      ]
+    },
+    "compact-vp-dark-xs": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".tab-panel": {},
+          ".tab-panel__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".tab-panel",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".tab-panel__content"
+          ]
+        },
+        {
+          "selector": ".tab-panel__content",
+          "tag": "div",
+          "styles": {},
+          "parent": ".tab-panel"
+        }
+      ]
+    },
+    "compact-vp-dark-sm": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".tab-panel": {},
+          ".tab-panel__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".tab-panel",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".tab-panel__content"
+          ]
+        },
+        {
+          "selector": ".tab-panel__content",
+          "tag": "div",
+          "styles": {},
+          "parent": ".tab-panel"
+        }
+      ]
+    },
+    "compact-vp-dark-md": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".tab-panel": {},
+          ".tab-panel__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".tab-panel",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".tab-panel__content"
+          ]
+        },
+        {
+          "selector": ".tab-panel__content",
+          "tag": "div",
+          "styles": {},
+          "parent": ".tab-panel"
+        }
+      ]
+    },
+    "compact-vp-dark-lg": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".tab-panel": {},
+          ".tab-panel__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".tab-panel",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".tab-panel__content"
+          ]
+        },
+        {
+          "selector": ".tab-panel__content",
+          "tag": "div",
+          "styles": {},
+          "parent": ".tab-panel"
+        }
+      ]
+    },
+    "compact-ppm-light-xs": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".tab-panel": {},
+          ".tab-panel__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".tab-panel",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".tab-panel__content"
+          ]
+        },
+        {
+          "selector": ".tab-panel__content",
+          "tag": "div",
+          "styles": {},
+          "parent": ".tab-panel"
+        }
+      ]
+    },
+    "compact-ppm-light-sm": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".tab-panel": {},
+          ".tab-panel__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".tab-panel",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".tab-panel__content"
+          ]
+        },
+        {
+          "selector": ".tab-panel__content",
+          "tag": "div",
+          "styles": {},
+          "parent": ".tab-panel"
+        }
+      ]
+    },
+    "compact-ppm-light-md": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".tab-panel": {},
+          ".tab-panel__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".tab-panel",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".tab-panel__content"
+          ]
+        },
+        {
+          "selector": ".tab-panel__content",
+          "tag": "div",
+          "styles": {},
+          "parent": ".tab-panel"
+        }
+      ]
+    },
+    "compact-ppm-light-lg": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".tab-panel": {},
+          ".tab-panel__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".tab-panel",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".tab-panel__content"
+          ]
+        },
+        {
+          "selector": ".tab-panel__content",
+          "tag": "div",
+          "styles": {},
+          "parent": ".tab-panel"
+        }
+      ]
+    },
+    "compact-ppm-dark-xs": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".tab-panel": {},
+          ".tab-panel__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".tab-panel",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".tab-panel__content"
+          ]
+        },
+        {
+          "selector": ".tab-panel__content",
+          "tag": "div",
+          "styles": {},
+          "parent": ".tab-panel"
+        }
+      ]
+    },
+    "compact-ppm-dark-sm": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".tab-panel": {},
+          ".tab-panel__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".tab-panel",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".tab-panel__content"
+          ]
+        },
+        {
+          "selector": ".tab-panel__content",
+          "tag": "div",
+          "styles": {},
+          "parent": ".tab-panel"
+        }
+      ]
+    },
+    "compact-ppm-dark-md": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".tab-panel": {},
+          ".tab-panel__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".tab-panel",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".tab-panel__content"
+          ]
+        },
+        {
+          "selector": ".tab-panel__content",
+          "tag": "div",
+          "styles": {},
+          "parent": ".tab-panel"
+        }
+      ]
+    },
+    "compact-ppm-dark-lg": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".tab-panel": {},
+          ".tab-panel__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".tab-panel",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".tab-panel__content"
+          ]
+        },
+        {
+          "selector": ".tab-panel__content",
+          "tag": "div",
+          "styles": {},
+          "parent": ".tab-panel"
+        }
+      ]
+    },
+    "compact-maconomy-light-xs": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".tab-panel": {},
+          ".tab-panel__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".tab-panel",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".tab-panel__content"
+          ]
+        },
+        {
+          "selector": ".tab-panel__content",
+          "tag": "div",
+          "styles": {},
+          "parent": ".tab-panel"
+        }
+      ]
+    },
+    "compact-maconomy-light-sm": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".tab-panel": {},
+          ".tab-panel__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".tab-panel",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".tab-panel__content"
+          ]
+        },
+        {
+          "selector": ".tab-panel__content",
+          "tag": "div",
+          "styles": {},
+          "parent": ".tab-panel"
+        }
+      ]
+    },
+    "compact-maconomy-light-md": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".tab-panel": {},
+          ".tab-panel__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".tab-panel",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".tab-panel__content"
+          ]
+        },
+        {
+          "selector": ".tab-panel__content",
+          "tag": "div",
+          "styles": {},
+          "parent": ".tab-panel"
+        }
+      ]
+    },
+    "compact-maconomy-light-lg": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".tab-panel": {},
+          ".tab-panel__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".tab-panel",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".tab-panel__content"
+          ]
+        },
+        {
+          "selector": ".tab-panel__content",
+          "tag": "div",
+          "styles": {},
+          "parent": ".tab-panel"
+        }
+      ]
+    },
+    "compact-maconomy-dark-xs": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".tab-panel": {},
+          ".tab-panel__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".tab-panel",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".tab-panel__content"
+          ]
+        },
+        {
+          "selector": ".tab-panel__content",
+          "tag": "div",
+          "styles": {},
+          "parent": ".tab-panel"
+        }
+      ]
+    },
+    "compact-maconomy-dark-sm": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".tab-panel": {},
+          ".tab-panel__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".tab-panel",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".tab-panel__content"
+          ]
+        },
+        {
+          "selector": ".tab-panel__content",
+          "tag": "div",
+          "styles": {},
+          "parent": ".tab-panel"
+        }
+      ]
+    },
+    "compact-maconomy-dark-md": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".tab-panel": {},
+          ".tab-panel__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".tab-panel",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".tab-panel__content"
+          ]
+        },
+        {
+          "selector": ".tab-panel__content",
+          "tag": "div",
+          "styles": {},
+          "parent": ".tab-panel"
+        }
+      ]
+    },
+    "compact-maconomy-dark-lg": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".tab-panel": {},
+          ".tab-panel__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".tab-panel",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".tab-panel__content"
+          ]
+        },
+        {
+          "selector": ".tab-panel__content",
+          "tag": "div",
+          "styles": {},
+          "parent": ".tab-panel"
+        }
+      ]
+    }
+  },
+  "guidance": {
+    "patterns": {
+      "icon-position-consistency": "All tabs must use either inline icon positioning (left/right) OR stacked (top), but cannot mix both. Use the component-level iconPosition prop to enforce consistency across all tabs, or ensure individual tab iconPosition values follow this rule. The component will log a warning if mixed positions are detected (lines 52-68).",
+      "overflow-modes": "The overflowMode prop has three behaviors: 'auto' (default) uses ResizeObserver to automatically detect and move tabs to dropdown when they don't fit; 'manual' requires you to provide overflowTabs prop with specific tabs to show in dropdown; 'none' disables overflow handling entirely and may cause horizontal scrolling.",
+      "named-slots-limitation": "Custom tab content can only be provided via named slots tab-0 through tab-9, supporting a maximum of 10 tabs with custom content. This is an Astro limitation requiring static slot names. For tabs beyond index 9, only the standard tab rendering is available.",
+      "custom-events": "TabStrip dispatches three custom events: 'tab-strip:tab-selected' (bubbles, includes tabId), 'tab-strip:close-tab' (from overflow dropdown close action), and 'tab-strip:open-new-window' (from overflow dropdown). Listen for these events on the TabStrip container to handle user interactions. The 'tab-strip:add-tab' event is dispatched when the optional Add Tab button is clicked."
+    },
+    "guidelines": {}
+  },
+  "interactivity": {
+    "events": [
+      {
+        "name": "change",
+        "description": "Triggered when user selects a different tab"
+      }
+    ],
+    "state": [
+      {
+        "name": "activeTab",
+        "type": "string",
+        "description": "Id or index of the active tab; controlled via props or script"
+      }
+    ]
+  },
+  "examples": [
+    {
+      "name": "Tabs",
+      "description": "Tab navigation",
+      "snippet": "<TabStrip tabs={[{ id: '1', label: 'Tab 1' }]} activeTab=\"1\" />"
+    }
+  ]
+}

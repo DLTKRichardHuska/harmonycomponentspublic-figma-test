@@ -1,0 +1,190 @@
+{
+  "name": "PickerPopup",
+  "type": "component",
+  "filePath": "src/components/ui/PickerPopup.astro",
+  "description": "PickerPopup Component",
+  "props": {
+    "id": {
+      "type": "string",
+      "optional": false,
+      "default": null
+    },
+    "triggerId": {
+      "type": "string",
+      "optional": true,
+      "default": null
+    },
+    "class": {
+      "type": "string",
+      "optional": true,
+      "default": "''"
+    },
+    "title": {
+      "type": "string",
+      "optional": true,
+      "default": null
+    }
+  },
+  "defaults": {
+    "theme": "cp",
+    "mode": "light"
+  },
+  "specs": {
+    "cp-light": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".picker-popup": {
+            "display": "none",
+            "position": "absolute",
+            "top": "calc(100% + 8px)",
+            "left": "0",
+            "background-color": "#F7F8FA",
+            "border": "1px solid #BFC6D4",
+            "border-radius": "0.5rem",
+            "box-shadow": "0 20px 25px -5px rgb(15 23 42 / 0.1), 0 8px 10px -6px rgb(15 23 42 / 0.1)",
+            "padding": "16px",
+            "z-index": "400",
+            "min-width": "280px",
+            "max-width": "320px"
+          },
+          ".picker-popup__close": {
+            "display": "flex",
+            "align-items": "center",
+            "justify-content": "center",
+            "width": "32px",
+            "height": "32px",
+            "padding": "0",
+            "background": "transparent",
+            "border": "none",
+            "border-radius": "0.375rem",
+            "color": "#525969",
+            "cursor": "pointer",
+            "transition": "all 150ms ease"
+          },
+          ".picker-popup__header": {
+            "display": "flex",
+            "align-items": "center",
+            "justify-content": "space-between",
+            "margin-bottom": "16px",
+            "padding-bottom": "12px",
+            "border-bottom": "1px solid #BFC6D4"
+          },
+          ".picker-popup__title": {
+            "font-size": "1rem",
+            "font-weight": "600",
+            "color": "#373F4E",
+            "margin": "0"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".picker-popup",
+          "tag": "div",
+          "styles": {
+            "display": "none",
+            "position": "absolute",
+            "top": "calc(100% + 8px)",
+            "left": "0",
+            "background-color": "#F7F8FA",
+            "border": "1px solid #BFC6D4",
+            "border-radius": "0.5rem",
+            "box-shadow": "0 20px 25px -5px rgb(15 23 42 / 0.1), 0 8px 10px -6px rgb(15 23 42 / 0.1)",
+            "padding": "16px",
+            "z-index": "400",
+            "min-width": "280px",
+            "max-width": "320px"
+          },
+          "children": [
+            ".picker-popup__close",
+            ".picker-popup__header",
+            ".picker-popup__title"
+          ]
+        },
+        {
+          "selector": ".picker-popup__close",
+          "tag": "span",
+          "styles": {
+            "display": "flex",
+            "align-items": "center",
+            "justify-content": "center",
+            "width": "32px",
+            "height": "32px",
+            "padding": "0",
+            "background": "transparent",
+            "border": "none",
+            "border-radius": "0.375rem",
+            "color": "#525969",
+            "cursor": "pointer",
+            "transition": "all 150ms ease"
+          },
+          "parent": ".picker-popup"
+        },
+        {
+          "selector": ".picker-popup__header",
+          "tag": "span",
+          "styles": {
+            "display": "flex",
+            "align-items": "center",
+            "justify-content": "space-between",
+            "margin-bottom": "16px",
+            "padding-bottom": "12px",
+            "border-bottom": "1px solid #BFC6D4"
+          },
+          "parent": ".picker-popup"
+        },
+        {
+          "selector": ".picker-popup__title",
+          "tag": "span",
+          "styles": {
+            "font-size": "1rem",
+            "font-weight": "600",
+            "color": "#373F4E",
+            "margin": "0"
+          },
+          "parent": ".picker-popup"
+        }
+      ]
+    }
+  },
+  "guidance": {
+    "patterns": {},
+    "guidelines": {}
+  },
+  "interactivity": {
+    "events": [
+      {
+        "name": "open",
+        "description": "Popup opened"
+      },
+      {
+        "name": "close",
+        "description": "Popup closed (outside click, Escape, or selection)"
+      }
+    ],
+    "state": [
+      {
+        "name": "open",
+        "type": "boolean",
+        "description": "Whether the popup is visible"
+      }
+    ]
+  },
+  "examples": [
+    {
+      "name": "Popup picker",
+      "description": "Popover for picker",
+      "snippet": "<PickerPopup open={open} onclose={...}>...</PickerPopup>"
+    }
+  ]
+}

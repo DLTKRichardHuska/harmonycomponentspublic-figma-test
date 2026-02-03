@@ -1,0 +1,80 @@
+{
+  "name": "Spinner",
+  "type": "component",
+  "filePath": "src/components/ui/Spinner.astro",
+  "description": "Spinner Component",
+  "props": {
+    "size": {
+      "type": "'sm' | 'md' | 'lg'",
+      "optional": true,
+      "default": "'md'"
+    },
+    "class": {
+      "type": "string",
+      "optional": true,
+      "default": "''"
+    }
+  },
+  "defaults": {
+    "theme": "cp",
+    "mode": "light",
+    "size": "'md'"
+  },
+  "specs": {
+    "cp-light-md": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".spinner": {},
+          ".spinner__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".spinner",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".spinner__content"
+          ]
+        },
+        {
+          "selector": ".spinner__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".spinner"
+        }
+      ]
+    }
+  },
+  "guidance": {
+    "patterns": {},
+    "guidelines": {}
+  },
+  "interactivity": {
+    "events": [],
+    "state": [
+      {
+        "name": "—",
+        "type": "—",
+        "description": "Display only; no client-side state or events."
+      }
+    ]
+  },
+  "examples": [
+    {
+      "name": "Loading spinner",
+      "description": "Loading indicator",
+      "snippet": "<Spinner />"
+    }
+  ]
+}

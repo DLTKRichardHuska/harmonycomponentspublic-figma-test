@@ -1,0 +1,3111 @@
+{
+  "name": "RightSidebar",
+  "type": "component",
+  "filePath": "src/components/ui/RightSidebar.astro",
+  "description": "RightSidebar Component",
+  "props": {
+    "variant": {
+      "type": "'cp' | 'vp' | 'ppm' | 'maconomy'",
+      "optional": true,
+      "default": "'cp'"
+    },
+    "sections": {
+      "type": "Section[]",
+      "optional": true,
+      "default": null
+    },
+    "class": {
+      "type": "string",
+      "optional": true,
+      "default": "''"
+    }
+  },
+  "defaults": {
+    "theme": "cp",
+    "mode": "light"
+  },
+  "specs": {
+    "cp-light": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".right-sidebar": {
+            "display": "flex",
+            "flex-direction": "column",
+            "align-items": "stretch",
+            "justify-content": "flex-start",
+            "gap": "12px",
+            "position": "fixed",
+            "right": "0",
+            "top": "50%",
+            "transform": "translateY(-50%)",
+            "z-index": "200",
+            "width": "52px",
+            "height": "auto",
+            "min-width": "52px",
+            "max-width": "220px",
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "400",
+            "line-height": "1.5",
+            "border": "1px solid #BFC6D4",
+            "border-width": "1px",
+            "border-style": "solid",
+            "border-radius": "12px",
+            "background": "#F7F8FA",
+            "icon-color": "#373F4E",
+            "color": "#373F4E",
+            "padding": "12px 8px 12px 8px"
+          },
+          ".right-sidebar__section": {
+            "border-radius": "12px 0 0 12px",
+            "border-right": "none",
+            "box-shadow": "0 20px 25px -5px rgb(15 23 42 / 0.1), 0 8px 10px -6px rgb(15 23 42 / 0.1)",
+            "padding": "12px 8px",
+            "gap": "6px",
+            "background": "#F7F8FA",
+            "color": "#373F4E",
+            "icon-color": "#373F4E",
+            "border": "1px solid #BFC6D4",
+            "display": "flex",
+            "flex-direction": "column"
+          },
+          ".right-sidebar__item": {
+            "background": "#4C92D9",
+            "color": "#FFFFFF",
+            "border": "none",
+            "icon-color": "#FFFFFF",
+            "display": "flex",
+            "align-items": "center",
+            "justify-content": "center"
+          },
+          ".right-sidebar__icon": {
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "400",
+            "line-height": "1.5",
+            "width": "24px",
+            "height": "24px"
+          },
+          ".right-sidebar__label": {
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "400",
+            "line-height": "1.5"
+          },
+          ".right-sidebar__dela-logo": {
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "400",
+            "line-height": "1.5",
+            "width": "36px",
+            "height": "36px"
+          },
+          ".right-sidebar__dela-logo.right-sidebar__dela-logo--active": {
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "400",
+            "line-height": "1.5",
+            "width": "36px",
+            "height": "36px"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".right-sidebar",
+          "tag": "nav",
+          "styles": {
+            "display": "flex",
+            "flex-direction": "column",
+            "align-items": "stretch",
+            "justify-content": "flex-start",
+            "gap": "12px",
+            "position": "fixed",
+            "right": "0",
+            "top": "50%",
+            "transform": "translateY(-50%)",
+            "z-index": "200",
+            "width": "52px",
+            "height": "auto",
+            "min-width": "52px",
+            "max-width": "220px",
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "400",
+            "line-height": "1.5",
+            "border": "1px solid #BFC6D4",
+            "border-width": "1px",
+            "border-style": "solid",
+            "border-radius": "12px",
+            "background": "#F7F8FA",
+            "icon-color": "#373F4E",
+            "color": "#373F4E",
+            "padding": "12px 8px 12px 8px"
+          },
+          "role": "complementary",
+          "states": {
+            "hover": {
+              "background": "#E5E7EB",
+              "border": "1px solid #BFC6D4",
+              "icon-color": "#373F4E",
+              "width": "220px",
+              "color": "#373F4E"
+            },
+            "active": {
+              "background": "#E5E7EB",
+              "border": "1px solid #BFC6D4",
+              "icon-color": "#373F4E",
+              "color": "#373F4E"
+            },
+            "focus": {
+              "background": "#F7F8FA",
+              "border": "1px solid #BFC6D4",
+              "icon-color": "#373F4E",
+              "color": "#373F4E"
+            },
+            "disabled": {
+              "background": "#F7F8FA",
+              "border": "1px solid #BFC6D4",
+              "icon-color": "#373F4E",
+              "color": "#373F4E"
+            }
+          },
+          "children": [
+            ".right-sidebar__section"
+          ]
+        },
+        {
+          "selector": ".right-sidebar__section",
+          "tag": "div",
+          "parent": ".right-sidebar",
+          "styles": {
+            "border-radius": "12px 0 0 12px",
+            "border-right": "none",
+            "box-shadow": "0 20px 25px -5px rgb(15 23 42 / 0.1), 0 8px 10px -6px rgb(15 23 42 / 0.1)",
+            "padding": "12px 8px",
+            "gap": "6px",
+            "background": "#F7F8FA",
+            "color": "#373F4E",
+            "icon-color": "#373F4E",
+            "border": "1px solid #BFC6D4",
+            "display": "flex",
+            "flex-direction": "column"
+          },
+          "children": [
+            ".right-sidebar__item"
+          ]
+        },
+        {
+          "selector": ".right-sidebar__item",
+          "tag": "a",
+          "parent": ".right-sidebar__section",
+          "styles": {
+            "background": "#4C92D9",
+            "color": "#FFFFFF",
+            "border": "none",
+            "icon-color": "#FFFFFF",
+            "display": "flex",
+            "align-items": "center",
+            "justify-content": "center"
+          },
+          "repeat": "icons",
+          "states": {
+            "hover": {
+              "background": "#E5E7EB",
+              "border": "1px solid #BFC6D4",
+              "icon-color": "#373F4E",
+              "width": "220px",
+              "color": "#373F4E"
+            },
+            "active": {
+              "background": "#E5E7EB",
+              "border": "1px solid #BFC6D4",
+              "icon-color": "#373F4E",
+              "color": "#373F4E"
+            }
+          },
+          "children": [
+            ".right-sidebar__icon",
+            ".right-sidebar__label",
+            ".right-sidebar__dela-logo",
+            ".right-sidebar__dela-logo.right-sidebar__dela-logo--active"
+          ]
+        },
+        {
+          "selector": ".right-sidebar__icon",
+          "tag": "span",
+          "parent": ".right-sidebar__item",
+          "styles": {
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "400",
+            "line-height": "1.5",
+            "width": "24px",
+            "height": "24px"
+          }
+        },
+        {
+          "selector": ".right-sidebar__label",
+          "tag": "span",
+          "parent": ".right-sidebar__item",
+          "styles": {
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "400",
+            "line-height": "1.5"
+          }
+        },
+        {
+          "selector": ".right-sidebar__dela-logo",
+          "tag": "img",
+          "parent": ".right-sidebar__item",
+          "styles": {
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "400",
+            "line-height": "1.5",
+            "width": "36px",
+            "height": "36px"
+          }
+        },
+        {
+          "selector": ".right-sidebar__dela-logo.right-sidebar__dela-logo--active",
+          "tag": "img",
+          "parent": ".right-sidebar__item",
+          "styles": {
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "400",
+            "line-height": "1.5",
+            "width": "36px",
+            "height": "36px"
+          }
+        }
+      ],
+      "icons": [
+        {
+          "name": "dela-ai",
+          "library": "custom",
+          "icon": "RS_DelaDefault",
+          "style": "outline"
+        },
+        {
+          "name": "bell",
+          "library": "heroicons",
+          "icon": "BellIcon",
+          "style": "outline"
+        },
+        {
+          "name": "arrow-up-tray",
+          "library": "heroicons",
+          "icon": "ArrowUpTrayIcon",
+          "style": "outline"
+        },
+        {
+          "name": "printer",
+          "library": "heroicons",
+          "icon": "PrinterIcon",
+          "style": "outline"
+        },
+        {
+          "name": "view-columns",
+          "library": "heroicons",
+          "icon": "ViewColumnsIcon",
+          "style": "outline"
+        },
+        {
+          "name": "mic-slash",
+          "library": "custom",
+          "icon": "mic-slash",
+          "style": "outline"
+        },
+        {
+          "name": "signal-slash",
+          "library": "heroicons",
+          "icon": "SignalSlashIcon",
+          "style": "outline"
+        },
+        {
+          "name": "command-line",
+          "library": "heroicons",
+          "icon": "CommandLineIcon",
+          "style": "outline"
+        },
+        {
+          "name": "question-mark-circle",
+          "library": "heroicons",
+          "icon": "QuestionMarkCircleIcon",
+          "style": "outline"
+        }
+      ],
+      "props": {
+        "variant": {
+          "type": "'cp' | 'vp' | 'ppm' | 'maconomy'",
+          "optional": true,
+          "default": "'cp'"
+        },
+        "sections": {
+          "type": "Section[]",
+          "optional": true,
+          "default": null
+        },
+        "class": {
+          "type": "string",
+          "optional": true,
+          "default": "''"
+        }
+      },
+      "panelOpen": {
+        "when": "data-panel-open=\"true\"",
+        "section": {
+          "boxShadow": "none",
+          "border": "none",
+          "backgroundColor": "transparent",
+          "borderRadius": "0"
+        },
+        "rootHoverWidth": "52px",
+        "labelVisible": false,
+        "tooltipOnHover": true
+      }
+    },
+    "cp-dark": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".right-sidebar": {
+            "display": "flex",
+            "flex-direction": "column",
+            "align-items": "stretch",
+            "justify-content": "flex-start",
+            "gap": "12px",
+            "position": "fixed",
+            "right": "0",
+            "top": "50%",
+            "transform": "translateY(-50%)",
+            "z-index": "200",
+            "width": "52px",
+            "height": "auto",
+            "min-width": "52px",
+            "max-width": "220px",
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "400",
+            "line-height": "1.5",
+            "border": "1px solid #5F6871",
+            "border-width": "1px",
+            "border-style": "solid",
+            "border-radius": "12px",
+            "background": "#37424D",
+            "icon-color": "#E9ECEF",
+            "color": "#E9ECEF",
+            "padding": "12px 8px 12px 8px"
+          },
+          ".right-sidebar__section": {
+            "border-radius": "12px 0 0 12px",
+            "border-right": "none",
+            "box-shadow": "0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 8px 10px -6px rgba(0, 0, 0, 0.3)",
+            "padding": "12px 8px",
+            "gap": "6px",
+            "background": "#37424D",
+            "color": "#E9ECEF",
+            "icon-color": "#E9ECEF",
+            "border": "1px solid #5F6871",
+            "display": "flex",
+            "flex-direction": "column"
+          },
+          ".right-sidebar__item": {
+            "background": "#59ACFF",
+            "color": "#FFFFFF",
+            "border": "none",
+            "icon-color": "#FFFFFF",
+            "display": "flex",
+            "align-items": "center",
+            "justify-content": "center"
+          },
+          ".right-sidebar__icon": {
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "400",
+            "line-height": "1.5",
+            "width": "24px",
+            "height": "24px"
+          },
+          ".right-sidebar__label": {
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "400",
+            "line-height": "1.5"
+          },
+          ".right-sidebar__dela-logo": {
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "400",
+            "line-height": "1.5",
+            "width": "36px",
+            "height": "36px"
+          },
+          ".right-sidebar__dela-logo.right-sidebar__dela-logo--active": {
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "400",
+            "line-height": "1.5",
+            "width": "36px",
+            "height": "36px"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".right-sidebar",
+          "tag": "nav",
+          "styles": {
+            "display": "flex",
+            "flex-direction": "column",
+            "align-items": "stretch",
+            "justify-content": "flex-start",
+            "gap": "12px",
+            "position": "fixed",
+            "right": "0",
+            "top": "50%",
+            "transform": "translateY(-50%)",
+            "z-index": "200",
+            "width": "52px",
+            "height": "auto",
+            "min-width": "52px",
+            "max-width": "220px",
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "400",
+            "line-height": "1.5",
+            "border": "1px solid #5F6871",
+            "border-width": "1px",
+            "border-style": "solid",
+            "border-radius": "12px",
+            "background": "#37424D",
+            "icon-color": "#E9ECEF",
+            "color": "#E9ECEF",
+            "padding": "12px 8px 12px 8px"
+          },
+          "role": "complementary",
+          "states": {
+            "hover": {
+              "background": "#3D4A5C",
+              "border": "1px solid #5F6871",
+              "icon-color": "#E9ECEF",
+              "width": "220px",
+              "color": "#E9ECEF"
+            },
+            "active": {
+              "background": "#3D4A5C",
+              "border": "1px solid #5F6871",
+              "icon-color": "#E9ECEF",
+              "color": "#E9ECEF"
+            },
+            "focus": {
+              "background": "#37424D",
+              "border": "1px solid #5F6871",
+              "icon-color": "#E9ECEF",
+              "color": "#E9ECEF"
+            },
+            "disabled": {
+              "background": "#37424D",
+              "border": "1px solid #5F6871",
+              "icon-color": "#E9ECEF",
+              "color": "#E9ECEF"
+            }
+          },
+          "children": [
+            ".right-sidebar__section"
+          ]
+        },
+        {
+          "selector": ".right-sidebar__section",
+          "tag": "div",
+          "parent": ".right-sidebar",
+          "styles": {
+            "border-radius": "12px 0 0 12px",
+            "border-right": "none",
+            "box-shadow": "0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 8px 10px -6px rgba(0, 0, 0, 0.3)",
+            "padding": "12px 8px",
+            "gap": "6px",
+            "background": "#37424D",
+            "color": "#E9ECEF",
+            "icon-color": "#E9ECEF",
+            "border": "1px solid #5F6871",
+            "display": "flex",
+            "flex-direction": "column"
+          },
+          "children": [
+            ".right-sidebar__item"
+          ]
+        },
+        {
+          "selector": ".right-sidebar__item",
+          "tag": "a",
+          "parent": ".right-sidebar__section",
+          "styles": {
+            "background": "#59ACFF",
+            "color": "#FFFFFF",
+            "border": "none",
+            "icon-color": "#FFFFFF",
+            "display": "flex",
+            "align-items": "center",
+            "justify-content": "center"
+          },
+          "repeat": "icons",
+          "states": {
+            "hover": {
+              "background": "#3D4A5C",
+              "border": "1px solid #5F6871",
+              "icon-color": "#E9ECEF",
+              "width": "220px",
+              "color": "#E9ECEF"
+            },
+            "active": {
+              "background": "#3D4A5C",
+              "border": "1px solid #5F6871",
+              "icon-color": "#E9ECEF",
+              "color": "#E9ECEF"
+            }
+          },
+          "children": [
+            ".right-sidebar__icon",
+            ".right-sidebar__label",
+            ".right-sidebar__dela-logo",
+            ".right-sidebar__dela-logo.right-sidebar__dela-logo--active"
+          ]
+        },
+        {
+          "selector": ".right-sidebar__icon",
+          "tag": "span",
+          "parent": ".right-sidebar__item",
+          "styles": {
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "400",
+            "line-height": "1.5",
+            "width": "24px",
+            "height": "24px"
+          }
+        },
+        {
+          "selector": ".right-sidebar__label",
+          "tag": "span",
+          "parent": ".right-sidebar__item",
+          "styles": {
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "400",
+            "line-height": "1.5"
+          }
+        },
+        {
+          "selector": ".right-sidebar__dela-logo",
+          "tag": "img",
+          "parent": ".right-sidebar__item",
+          "styles": {
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "400",
+            "line-height": "1.5",
+            "width": "36px",
+            "height": "36px"
+          }
+        },
+        {
+          "selector": ".right-sidebar__dela-logo.right-sidebar__dela-logo--active",
+          "tag": "img",
+          "parent": ".right-sidebar__item",
+          "styles": {
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "400",
+            "line-height": "1.5",
+            "width": "36px",
+            "height": "36px"
+          }
+        }
+      ],
+      "icons": [
+        {
+          "name": "dela-ai",
+          "library": "custom",
+          "icon": "RS_DelaDefault",
+          "style": "outline"
+        },
+        {
+          "name": "bell",
+          "library": "heroicons",
+          "icon": "BellIcon",
+          "style": "outline"
+        },
+        {
+          "name": "arrow-up-tray",
+          "library": "heroicons",
+          "icon": "ArrowUpTrayIcon",
+          "style": "outline"
+        },
+        {
+          "name": "printer",
+          "library": "heroicons",
+          "icon": "PrinterIcon",
+          "style": "outline"
+        },
+        {
+          "name": "view-columns",
+          "library": "heroicons",
+          "icon": "ViewColumnsIcon",
+          "style": "outline"
+        },
+        {
+          "name": "mic-slash",
+          "library": "custom",
+          "icon": "mic-slash",
+          "style": "outline"
+        },
+        {
+          "name": "signal-slash",
+          "library": "heroicons",
+          "icon": "SignalSlashIcon",
+          "style": "outline"
+        },
+        {
+          "name": "command-line",
+          "library": "heroicons",
+          "icon": "CommandLineIcon",
+          "style": "outline"
+        },
+        {
+          "name": "question-mark-circle",
+          "library": "heroicons",
+          "icon": "QuestionMarkCircleIcon",
+          "style": "outline"
+        }
+      ],
+      "props": {
+        "variant": {
+          "type": "'cp' | 'vp' | 'ppm' | 'maconomy'",
+          "optional": true,
+          "default": "'cp'"
+        },
+        "sections": {
+          "type": "Section[]",
+          "optional": true,
+          "default": null
+        },
+        "class": {
+          "type": "string",
+          "optional": true,
+          "default": "''"
+        }
+      },
+      "panelOpen": {
+        "when": "data-panel-open=\"true\"",
+        "section": {
+          "boxShadow": "none",
+          "border": "none",
+          "backgroundColor": "transparent",
+          "borderRadius": "0"
+        },
+        "rootHoverWidth": "52px",
+        "labelVisible": false,
+        "tooltipOnHover": true
+      }
+    },
+    "vp-light": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".right-sidebar": {
+            "display": "flex",
+            "flex-direction": "column",
+            "align-items": "stretch",
+            "justify-content": "flex-start",
+            "gap": "12px",
+            "position": "fixed",
+            "right": "0",
+            "top": "50%",
+            "transform": "translateY(-50%)",
+            "z-index": "200",
+            "width": "52px",
+            "height": "auto",
+            "min-width": "52px",
+            "max-width": "220px",
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "400",
+            "line-height": "1.5",
+            "border": "1px solid #BFC6D4",
+            "border-width": "1px",
+            "border-style": "solid",
+            "border-radius": "12px",
+            "background": "#F7F8FA",
+            "icon-color": "#373F4E",
+            "color": "#373F4E",
+            "padding": "12px 8px 12px 8px"
+          },
+          ".right-sidebar__section": {
+            "border-radius": "12px 0 0 12px",
+            "border-right": "none",
+            "box-shadow": "0 20px 25px -5px rgb(15 23 42 / 0.1), 0 8px 10px -6px rgb(15 23 42 / 0.1)",
+            "padding": "12px 8px",
+            "gap": "6px",
+            "background": "#F7F8FA",
+            "color": "#373F4E",
+            "icon-color": "#373F4E",
+            "border": "1px solid #BFC6D4",
+            "display": "flex",
+            "flex-direction": "column"
+          },
+          ".right-sidebar__item": {
+            "background": "#4C92D9",
+            "color": "#FFFFFF",
+            "border": "none",
+            "icon-color": "#FFFFFF",
+            "display": "flex",
+            "align-items": "center",
+            "justify-content": "center"
+          },
+          ".right-sidebar__icon": {
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "400",
+            "line-height": "1.5",
+            "width": "24px",
+            "height": "24px"
+          },
+          ".right-sidebar__label": {
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "400",
+            "line-height": "1.5"
+          },
+          ".right-sidebar__dela-logo": {
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "400",
+            "line-height": "1.5",
+            "width": "36px",
+            "height": "36px"
+          },
+          ".right-sidebar__dela-logo.right-sidebar__dela-logo--active": {
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "400",
+            "line-height": "1.5",
+            "width": "36px",
+            "height": "36px"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".right-sidebar",
+          "tag": "nav",
+          "styles": {
+            "display": "flex",
+            "flex-direction": "column",
+            "align-items": "stretch",
+            "justify-content": "flex-start",
+            "gap": "12px",
+            "position": "fixed",
+            "right": "0",
+            "top": "50%",
+            "transform": "translateY(-50%)",
+            "z-index": "200",
+            "width": "52px",
+            "height": "auto",
+            "min-width": "52px",
+            "max-width": "220px",
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "400",
+            "line-height": "1.5",
+            "border": "1px solid #BFC6D4",
+            "border-width": "1px",
+            "border-style": "solid",
+            "border-radius": "12px",
+            "background": "#F7F8FA",
+            "icon-color": "#373F4E",
+            "color": "#373F4E",
+            "padding": "12px 8px 12px 8px"
+          },
+          "role": "complementary",
+          "states": {
+            "hover": {
+              "background": "#E5E7EB",
+              "border": "1px solid #BFC6D4",
+              "icon-color": "#373F4E",
+              "width": "220px",
+              "color": "#373F4E"
+            },
+            "active": {
+              "background": "#E5E7EB",
+              "border": "1px solid #BFC6D4",
+              "icon-color": "#373F4E",
+              "color": "#373F4E"
+            },
+            "focus": {
+              "background": "#F7F8FA",
+              "border": "1px solid #BFC6D4",
+              "icon-color": "#373F4E",
+              "color": "#373F4E"
+            },
+            "disabled": {
+              "background": "#F7F8FA",
+              "border": "1px solid #BFC6D4",
+              "icon-color": "#373F4E",
+              "color": "#373F4E"
+            }
+          },
+          "children": [
+            ".right-sidebar__section"
+          ]
+        },
+        {
+          "selector": ".right-sidebar__section",
+          "tag": "div",
+          "parent": ".right-sidebar",
+          "styles": {
+            "border-radius": "12px 0 0 12px",
+            "border-right": "none",
+            "box-shadow": "0 20px 25px -5px rgb(15 23 42 / 0.1), 0 8px 10px -6px rgb(15 23 42 / 0.1)",
+            "padding": "12px 8px",
+            "gap": "6px",
+            "background": "#F7F8FA",
+            "color": "#373F4E",
+            "icon-color": "#373F4E",
+            "border": "1px solid #BFC6D4",
+            "display": "flex",
+            "flex-direction": "column"
+          },
+          "children": [
+            ".right-sidebar__item"
+          ]
+        },
+        {
+          "selector": ".right-sidebar__item",
+          "tag": "a",
+          "parent": ".right-sidebar__section",
+          "styles": {
+            "background": "#4C92D9",
+            "color": "#FFFFFF",
+            "border": "none",
+            "icon-color": "#FFFFFF",
+            "display": "flex",
+            "align-items": "center",
+            "justify-content": "center"
+          },
+          "repeat": "icons",
+          "states": {
+            "hover": {
+              "background": "#E5E7EB",
+              "border": "1px solid #BFC6D4",
+              "icon-color": "#373F4E",
+              "width": "220px",
+              "color": "#373F4E"
+            },
+            "active": {
+              "background": "#E5E7EB",
+              "border": "1px solid #BFC6D4",
+              "icon-color": "#373F4E",
+              "color": "#373F4E"
+            }
+          },
+          "children": [
+            ".right-sidebar__icon",
+            ".right-sidebar__label",
+            ".right-sidebar__dela-logo",
+            ".right-sidebar__dela-logo.right-sidebar__dela-logo--active"
+          ]
+        },
+        {
+          "selector": ".right-sidebar__icon",
+          "tag": "span",
+          "parent": ".right-sidebar__item",
+          "styles": {
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "400",
+            "line-height": "1.5",
+            "width": "24px",
+            "height": "24px"
+          }
+        },
+        {
+          "selector": ".right-sidebar__label",
+          "tag": "span",
+          "parent": ".right-sidebar__item",
+          "styles": {
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "400",
+            "line-height": "1.5"
+          }
+        },
+        {
+          "selector": ".right-sidebar__dela-logo",
+          "tag": "img",
+          "parent": ".right-sidebar__item",
+          "styles": {
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "400",
+            "line-height": "1.5",
+            "width": "36px",
+            "height": "36px"
+          }
+        },
+        {
+          "selector": ".right-sidebar__dela-logo.right-sidebar__dela-logo--active",
+          "tag": "img",
+          "parent": ".right-sidebar__item",
+          "styles": {
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "400",
+            "line-height": "1.5",
+            "width": "36px",
+            "height": "36px"
+          }
+        }
+      ],
+      "icons": [
+        {
+          "name": "dela-ai",
+          "library": "custom",
+          "icon": "RS_DelaDefault",
+          "style": "outline"
+        },
+        {
+          "name": "pencil-square",
+          "library": "heroicons",
+          "icon": "PencilSquareIcon",
+          "style": "outline"
+        },
+        {
+          "name": "magnifying-glass",
+          "library": "heroicons",
+          "icon": "MagnifyingGlassIcon",
+          "style": "outline"
+        },
+        {
+          "name": "ellipsis-horizontal-circle",
+          "library": "heroicons",
+          "icon": "EllipsisHorizontalCircleIcon",
+          "style": "outline"
+        },
+        {
+          "name": "related",
+          "library": "custom",
+          "icon": "related",
+          "style": "outline"
+        },
+        {
+          "name": "template",
+          "library": "custom",
+          "icon": "template",
+          "style": "outline"
+        },
+        {
+          "name": "cloud-arrow-up",
+          "library": "heroicons",
+          "icon": "CloudArrowUpIcon",
+          "style": "outline"
+        },
+        {
+          "name": "cloud-arrow-down",
+          "library": "heroicons",
+          "icon": "CloudArrowDownIcon",
+          "style": "outline"
+        },
+        {
+          "name": "bell",
+          "library": "heroicons",
+          "icon": "BellIcon",
+          "style": "outline"
+        },
+        {
+          "name": "question-mark-circle",
+          "library": "heroicons",
+          "icon": "QuestionMarkCircleIcon",
+          "style": "outline"
+        },
+        {
+          "name": "share",
+          "library": "heroicons",
+          "icon": "ShareIcon",
+          "style": "outline"
+        },
+        {
+          "name": "globe-alt",
+          "library": "heroicons",
+          "icon": "GlobeAltIcon",
+          "style": "outline"
+        },
+        {
+          "name": "language",
+          "library": "heroicons",
+          "icon": "LanguageIcon",
+          "style": "outline"
+        },
+        {
+          "name": "moon",
+          "library": "heroicons",
+          "icon": "MoonIcon",
+          "style": "outline"
+        }
+      ],
+      "props": {
+        "variant": {
+          "type": "'cp' | 'vp' | 'ppm' | 'maconomy'",
+          "optional": true,
+          "default": "'vp'"
+        },
+        "sections": {
+          "type": "Section[]",
+          "optional": true,
+          "default": null
+        },
+        "class": {
+          "type": "string",
+          "optional": true,
+          "default": "''"
+        }
+      },
+      "panelOpen": {
+        "when": "data-panel-open=\"true\"",
+        "section": {
+          "boxShadow": "none",
+          "border": "none",
+          "backgroundColor": "transparent",
+          "borderRadius": "0"
+        },
+        "rootHoverWidth": "52px",
+        "labelVisible": false,
+        "tooltipOnHover": true
+      }
+    },
+    "vp-dark": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".right-sidebar": {
+            "display": "flex",
+            "flex-direction": "column",
+            "align-items": "stretch",
+            "justify-content": "flex-start",
+            "gap": "12px",
+            "position": "fixed",
+            "right": "0",
+            "top": "50%",
+            "transform": "translateY(-50%)",
+            "z-index": "200",
+            "width": "52px",
+            "height": "auto",
+            "min-width": "52px",
+            "max-width": "220px",
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "400",
+            "line-height": "1.5",
+            "border": "1px solid #2A2D32",
+            "border-width": "1px",
+            "border-style": "solid",
+            "border-radius": "12px",
+            "background": "#1F2124",
+            "icon-color": "#FAFAFA",
+            "color": "#FAFAFA",
+            "padding": "12px 8px 12px 8px"
+          },
+          ".right-sidebar__section": {
+            "border-radius": "12px 0 0 12px",
+            "border-right": "none",
+            "box-shadow": "0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 8px 10px -6px rgba(0, 0, 0, 0.3)",
+            "padding": "12px 8px",
+            "gap": "6px",
+            "background": "#1F2124",
+            "color": "#FAFAFA",
+            "icon-color": "#FAFAFA",
+            "border": "1px solid #2A2D32",
+            "display": "flex",
+            "flex-direction": "column"
+          },
+          ".right-sidebar__item": {
+            "background": "#59ACFF",
+            "color": "#FFFFFF",
+            "border": "none",
+            "icon-color": "#FFFFFF",
+            "display": "flex",
+            "align-items": "center",
+            "justify-content": "center"
+          },
+          ".right-sidebar__icon": {
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "400",
+            "line-height": "1.5",
+            "width": "24px",
+            "height": "24px"
+          },
+          ".right-sidebar__label": {
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "400",
+            "line-height": "1.5"
+          },
+          ".right-sidebar__dela-logo": {
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "400",
+            "line-height": "1.5",
+            "width": "36px",
+            "height": "36px"
+          },
+          ".right-sidebar__dela-logo.right-sidebar__dela-logo--active": {
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "400",
+            "line-height": "1.5",
+            "width": "36px",
+            "height": "36px"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".right-sidebar",
+          "tag": "nav",
+          "styles": {
+            "display": "flex",
+            "flex-direction": "column",
+            "align-items": "stretch",
+            "justify-content": "flex-start",
+            "gap": "12px",
+            "position": "fixed",
+            "right": "0",
+            "top": "50%",
+            "transform": "translateY(-50%)",
+            "z-index": "200",
+            "width": "52px",
+            "height": "auto",
+            "min-width": "52px",
+            "max-width": "220px",
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "400",
+            "line-height": "1.5",
+            "border": "1px solid #2A2D32",
+            "border-width": "1px",
+            "border-style": "solid",
+            "border-radius": "12px",
+            "background": "#1F2124",
+            "icon-color": "#FAFAFA",
+            "color": "#FAFAFA",
+            "padding": "12px 8px 12px 8px"
+          },
+          "role": "complementary",
+          "states": {
+            "hover": {
+              "background": "#2A2D32",
+              "border": "1px solid #2A2D32",
+              "icon-color": "#FAFAFA",
+              "width": "220px",
+              "color": "#FAFAFA"
+            },
+            "active": {
+              "background": "#2A2D32",
+              "border": "1px solid #2A2D32",
+              "icon-color": "#FAFAFA",
+              "color": "#FAFAFA"
+            },
+            "focus": {
+              "background": "#1F2124",
+              "border": "1px solid #2A2D32",
+              "icon-color": "#FAFAFA",
+              "color": "#FAFAFA"
+            },
+            "disabled": {
+              "background": "#1F2124",
+              "border": "1px solid #2A2D32",
+              "icon-color": "#FAFAFA",
+              "color": "#FAFAFA"
+            }
+          },
+          "children": [
+            ".right-sidebar__section"
+          ]
+        },
+        {
+          "selector": ".right-sidebar__section",
+          "tag": "div",
+          "parent": ".right-sidebar",
+          "styles": {
+            "border-radius": "12px 0 0 12px",
+            "border-right": "none",
+            "box-shadow": "0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 8px 10px -6px rgba(0, 0, 0, 0.3)",
+            "padding": "12px 8px",
+            "gap": "6px",
+            "background": "#1F2124",
+            "color": "#FAFAFA",
+            "icon-color": "#FAFAFA",
+            "border": "1px solid #2A2D32",
+            "display": "flex",
+            "flex-direction": "column"
+          },
+          "children": [
+            ".right-sidebar__item"
+          ]
+        },
+        {
+          "selector": ".right-sidebar__item",
+          "tag": "a",
+          "parent": ".right-sidebar__section",
+          "styles": {
+            "background": "#59ACFF",
+            "color": "#FFFFFF",
+            "border": "none",
+            "icon-color": "#FFFFFF",
+            "display": "flex",
+            "align-items": "center",
+            "justify-content": "center"
+          },
+          "repeat": "icons",
+          "states": {
+            "hover": {
+              "background": "#2A2D32",
+              "border": "1px solid #2A2D32",
+              "icon-color": "#FAFAFA",
+              "width": "220px",
+              "color": "#FAFAFA"
+            },
+            "active": {
+              "background": "#2A2D32",
+              "border": "1px solid #2A2D32",
+              "icon-color": "#FAFAFA",
+              "color": "#FAFAFA"
+            }
+          },
+          "children": [
+            ".right-sidebar__icon",
+            ".right-sidebar__label",
+            ".right-sidebar__dela-logo",
+            ".right-sidebar__dela-logo.right-sidebar__dela-logo--active"
+          ]
+        },
+        {
+          "selector": ".right-sidebar__icon",
+          "tag": "span",
+          "parent": ".right-sidebar__item",
+          "styles": {
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "400",
+            "line-height": "1.5",
+            "width": "24px",
+            "height": "24px"
+          }
+        },
+        {
+          "selector": ".right-sidebar__label",
+          "tag": "span",
+          "parent": ".right-sidebar__item",
+          "styles": {
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "400",
+            "line-height": "1.5"
+          }
+        },
+        {
+          "selector": ".right-sidebar__dela-logo",
+          "tag": "img",
+          "parent": ".right-sidebar__item",
+          "styles": {
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "400",
+            "line-height": "1.5",
+            "width": "36px",
+            "height": "36px"
+          }
+        },
+        {
+          "selector": ".right-sidebar__dela-logo.right-sidebar__dela-logo--active",
+          "tag": "img",
+          "parent": ".right-sidebar__item",
+          "styles": {
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "400",
+            "line-height": "1.5",
+            "width": "36px",
+            "height": "36px"
+          }
+        }
+      ],
+      "icons": [
+        {
+          "name": "dela-ai",
+          "library": "custom",
+          "icon": "RS_DelaDefault",
+          "style": "outline"
+        },
+        {
+          "name": "pencil-square",
+          "library": "heroicons",
+          "icon": "PencilSquareIcon",
+          "style": "outline"
+        },
+        {
+          "name": "magnifying-glass",
+          "library": "heroicons",
+          "icon": "MagnifyingGlassIcon",
+          "style": "outline"
+        },
+        {
+          "name": "ellipsis-horizontal-circle",
+          "library": "heroicons",
+          "icon": "EllipsisHorizontalCircleIcon",
+          "style": "outline"
+        },
+        {
+          "name": "related",
+          "library": "custom",
+          "icon": "related",
+          "style": "outline"
+        },
+        {
+          "name": "template",
+          "library": "custom",
+          "icon": "template",
+          "style": "outline"
+        },
+        {
+          "name": "cloud-arrow-up",
+          "library": "heroicons",
+          "icon": "CloudArrowUpIcon",
+          "style": "outline"
+        },
+        {
+          "name": "cloud-arrow-down",
+          "library": "heroicons",
+          "icon": "CloudArrowDownIcon",
+          "style": "outline"
+        },
+        {
+          "name": "bell",
+          "library": "heroicons",
+          "icon": "BellIcon",
+          "style": "outline"
+        },
+        {
+          "name": "question-mark-circle",
+          "library": "heroicons",
+          "icon": "QuestionMarkCircleIcon",
+          "style": "outline"
+        },
+        {
+          "name": "share",
+          "library": "heroicons",
+          "icon": "ShareIcon",
+          "style": "outline"
+        },
+        {
+          "name": "globe-alt",
+          "library": "heroicons",
+          "icon": "GlobeAltIcon",
+          "style": "outline"
+        },
+        {
+          "name": "language",
+          "library": "heroicons",
+          "icon": "LanguageIcon",
+          "style": "outline"
+        },
+        {
+          "name": "moon",
+          "library": "heroicons",
+          "icon": "MoonIcon",
+          "style": "outline"
+        }
+      ],
+      "props": {
+        "variant": {
+          "type": "'cp' | 'vp' | 'ppm' | 'maconomy'",
+          "optional": true,
+          "default": "'vp'"
+        },
+        "sections": {
+          "type": "Section[]",
+          "optional": true,
+          "default": null
+        },
+        "class": {
+          "type": "string",
+          "optional": true,
+          "default": "''"
+        }
+      },
+      "panelOpen": {
+        "when": "data-panel-open=\"true\"",
+        "section": {
+          "boxShadow": "none",
+          "border": "none",
+          "backgroundColor": "transparent",
+          "borderRadius": "0"
+        },
+        "rootHoverWidth": "52px",
+        "labelVisible": false,
+        "tooltipOnHover": true
+      }
+    },
+    "ppm-light": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".right-sidebar": {
+            "display": "flex",
+            "flex-direction": "column",
+            "align-items": "stretch",
+            "justify-content": "flex-start",
+            "gap": "12px",
+            "position": "fixed",
+            "right": "0",
+            "top": "50%",
+            "transform": "translateY(-50%)",
+            "z-index": "200",
+            "width": "52px",
+            "height": "auto",
+            "min-width": "52px",
+            "max-width": "220px",
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "400",
+            "line-height": "1.5",
+            "border": "1px solid #BFC6D4",
+            "border-width": "1px",
+            "border-style": "solid",
+            "border-radius": "12px",
+            "background": "#F7F8FA",
+            "icon-color": "#373F4E",
+            "color": "#373F4E",
+            "padding": "12px 8px 12px 8px"
+          },
+          ".right-sidebar__section": {
+            "border-radius": "12px 0 0 12px",
+            "border-right": "none",
+            "box-shadow": "0 20px 25px -5px rgb(15 23 42 / 0.1), 0 8px 10px -6px rgb(15 23 42 / 0.1)",
+            "padding": "12px 8px",
+            "gap": "6px",
+            "background": "#F7F8FA",
+            "color": "#373F4E",
+            "icon-color": "#373F4E",
+            "border": "1px solid #BFC6D4",
+            "display": "flex",
+            "flex-direction": "column"
+          },
+          ".right-sidebar__item": {
+            "background": "#4C92D9",
+            "color": "#FFFFFF",
+            "border": "none",
+            "icon-color": "#FFFFFF",
+            "display": "flex",
+            "align-items": "center",
+            "justify-content": "center"
+          },
+          ".right-sidebar__icon": {
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "400",
+            "line-height": "1.5",
+            "width": "24px",
+            "height": "24px"
+          },
+          ".right-sidebar__label": {
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "400",
+            "line-height": "1.5"
+          },
+          ".right-sidebar__dela-logo": {
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "400",
+            "line-height": "1.5",
+            "width": "36px",
+            "height": "36px"
+          },
+          ".right-sidebar__dela-logo.right-sidebar__dela-logo--active": {
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "400",
+            "line-height": "1.5",
+            "width": "36px",
+            "height": "36px"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".right-sidebar",
+          "tag": "nav",
+          "styles": {
+            "display": "flex",
+            "flex-direction": "column",
+            "align-items": "stretch",
+            "justify-content": "flex-start",
+            "gap": "12px",
+            "position": "fixed",
+            "right": "0",
+            "top": "50%",
+            "transform": "translateY(-50%)",
+            "z-index": "200",
+            "width": "52px",
+            "height": "auto",
+            "min-width": "52px",
+            "max-width": "220px",
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "400",
+            "line-height": "1.5",
+            "border": "1px solid #BFC6D4",
+            "border-width": "1px",
+            "border-style": "solid",
+            "border-radius": "12px",
+            "background": "#F7F8FA",
+            "icon-color": "#373F4E",
+            "color": "#373F4E",
+            "padding": "12px 8px 12px 8px"
+          },
+          "role": "complementary",
+          "states": {
+            "hover": {
+              "background": "#E5E7EB",
+              "border": "1px solid #BFC6D4",
+              "icon-color": "#373F4E",
+              "width": "220px",
+              "color": "#373F4E"
+            },
+            "active": {
+              "background": "#E5E7EB",
+              "border": "1px solid #BFC6D4",
+              "icon-color": "#373F4E",
+              "color": "#373F4E"
+            },
+            "focus": {
+              "background": "#F7F8FA",
+              "border": "1px solid #BFC6D4",
+              "icon-color": "#373F4E",
+              "color": "#373F4E"
+            },
+            "disabled": {
+              "background": "#F7F8FA",
+              "border": "1px solid #BFC6D4",
+              "icon-color": "#373F4E",
+              "color": "#373F4E"
+            }
+          },
+          "children": [
+            ".right-sidebar__section"
+          ]
+        },
+        {
+          "selector": ".right-sidebar__section",
+          "tag": "div",
+          "parent": ".right-sidebar",
+          "styles": {
+            "border-radius": "12px 0 0 12px",
+            "border-right": "none",
+            "box-shadow": "0 20px 25px -5px rgb(15 23 42 / 0.1), 0 8px 10px -6px rgb(15 23 42 / 0.1)",
+            "padding": "12px 8px",
+            "gap": "6px",
+            "background": "#F7F8FA",
+            "color": "#373F4E",
+            "icon-color": "#373F4E",
+            "border": "1px solid #BFC6D4",
+            "display": "flex",
+            "flex-direction": "column"
+          },
+          "children": [
+            ".right-sidebar__item"
+          ]
+        },
+        {
+          "selector": ".right-sidebar__item",
+          "tag": "a",
+          "parent": ".right-sidebar__section",
+          "styles": {
+            "background": "#4C92D9",
+            "color": "#FFFFFF",
+            "border": "none",
+            "icon-color": "#FFFFFF",
+            "display": "flex",
+            "align-items": "center",
+            "justify-content": "center"
+          },
+          "repeat": "icons",
+          "states": {
+            "hover": {
+              "background": "#E5E7EB",
+              "border": "1px solid #BFC6D4",
+              "icon-color": "#373F4E",
+              "width": "220px",
+              "color": "#373F4E"
+            },
+            "active": {
+              "background": "#E5E7EB",
+              "border": "1px solid #BFC6D4",
+              "icon-color": "#373F4E",
+              "color": "#373F4E"
+            }
+          },
+          "children": [
+            ".right-sidebar__icon",
+            ".right-sidebar__label",
+            ".right-sidebar__dela-logo",
+            ".right-sidebar__dela-logo.right-sidebar__dela-logo--active"
+          ]
+        },
+        {
+          "selector": ".right-sidebar__icon",
+          "tag": "span",
+          "parent": ".right-sidebar__item",
+          "styles": {
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "400",
+            "line-height": "1.5",
+            "width": "24px",
+            "height": "24px"
+          }
+        },
+        {
+          "selector": ".right-sidebar__label",
+          "tag": "span",
+          "parent": ".right-sidebar__item",
+          "styles": {
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "400",
+            "line-height": "1.5"
+          }
+        },
+        {
+          "selector": ".right-sidebar__dela-logo",
+          "tag": "img",
+          "parent": ".right-sidebar__item",
+          "styles": {
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "400",
+            "line-height": "1.5",
+            "width": "36px",
+            "height": "36px"
+          }
+        },
+        {
+          "selector": ".right-sidebar__dela-logo.right-sidebar__dela-logo--active",
+          "tag": "img",
+          "parent": ".right-sidebar__item",
+          "styles": {
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "400",
+            "line-height": "1.5",
+            "width": "36px",
+            "height": "36px"
+          }
+        }
+      ],
+      "icons": [
+        {
+          "name": "dela-ai",
+          "library": "custom",
+          "icon": "RS_DelaDefault",
+          "style": "outline"
+        },
+        {
+          "name": "pencil-square",
+          "library": "heroicons",
+          "icon": "PencilSquareIcon",
+          "style": "outline"
+        },
+        {
+          "name": "magnifying-glass",
+          "library": "heroicons",
+          "icon": "MagnifyingGlassIcon",
+          "style": "outline"
+        },
+        {
+          "name": "ellipsis-horizontal-circle",
+          "library": "heroicons",
+          "icon": "EllipsisHorizontalCircleIcon",
+          "style": "outline"
+        },
+        {
+          "name": "related",
+          "library": "custom",
+          "icon": "related",
+          "style": "outline"
+        },
+        {
+          "name": "template",
+          "library": "custom",
+          "icon": "template",
+          "style": "outline"
+        },
+        {
+          "name": "cloud-arrow-up",
+          "library": "heroicons",
+          "icon": "CloudArrowUpIcon",
+          "style": "outline"
+        },
+        {
+          "name": "cloud-arrow-down",
+          "library": "heroicons",
+          "icon": "CloudArrowDownIcon",
+          "style": "outline"
+        },
+        {
+          "name": "bell",
+          "library": "heroicons",
+          "icon": "BellIcon",
+          "style": "outline"
+        },
+        {
+          "name": "question-mark-circle",
+          "library": "heroicons",
+          "icon": "QuestionMarkCircleIcon",
+          "style": "outline"
+        },
+        {
+          "name": "share",
+          "library": "heroicons",
+          "icon": "ShareIcon",
+          "style": "outline"
+        },
+        {
+          "name": "globe-alt",
+          "library": "heroicons",
+          "icon": "GlobeAltIcon",
+          "style": "outline"
+        },
+        {
+          "name": "language",
+          "library": "heroicons",
+          "icon": "LanguageIcon",
+          "style": "outline"
+        },
+        {
+          "name": "moon",
+          "library": "heroicons",
+          "icon": "MoonIcon",
+          "style": "outline"
+        }
+      ],
+      "props": {
+        "variant": {
+          "type": "'cp' | 'vp' | 'ppm' | 'maconomy'",
+          "optional": true,
+          "default": "'ppm'"
+        },
+        "sections": {
+          "type": "Section[]",
+          "optional": true,
+          "default": null
+        },
+        "class": {
+          "type": "string",
+          "optional": true,
+          "default": "''"
+        }
+      },
+      "panelOpen": {
+        "when": "data-panel-open=\"true\"",
+        "section": {
+          "boxShadow": "none",
+          "border": "none",
+          "backgroundColor": "transparent",
+          "borderRadius": "0"
+        },
+        "rootHoverWidth": "52px",
+        "labelVisible": false,
+        "tooltipOnHover": true
+      }
+    },
+    "ppm-dark": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".right-sidebar": {
+            "display": "flex",
+            "flex-direction": "column",
+            "align-items": "stretch",
+            "justify-content": "flex-start",
+            "gap": "12px",
+            "position": "fixed",
+            "right": "0",
+            "top": "50%",
+            "transform": "translateY(-50%)",
+            "z-index": "200",
+            "width": "52px",
+            "height": "auto",
+            "min-width": "52px",
+            "max-width": "220px",
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "400",
+            "line-height": "1.5",
+            "border": "1px solid #2A2D32",
+            "border-width": "1px",
+            "border-style": "solid",
+            "border-radius": "12px",
+            "background": "#1F2124",
+            "icon-color": "#FAFAFA",
+            "color": "#FAFAFA",
+            "padding": "12px 8px 12px 8px"
+          },
+          ".right-sidebar__section": {
+            "border-radius": "12px 0 0 12px",
+            "border-right": "none",
+            "box-shadow": "0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 8px 10px -6px rgba(0, 0, 0, 0.3)",
+            "padding": "12px 8px",
+            "gap": "6px",
+            "background": "#1F2124",
+            "color": "#FAFAFA",
+            "icon-color": "#FAFAFA",
+            "border": "1px solid #2A2D32",
+            "display": "flex",
+            "flex-direction": "column"
+          },
+          ".right-sidebar__item": {
+            "background": "#59ACFF",
+            "color": "#FFFFFF",
+            "border": "none",
+            "icon-color": "#FFFFFF",
+            "display": "flex",
+            "align-items": "center",
+            "justify-content": "center"
+          },
+          ".right-sidebar__icon": {
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "400",
+            "line-height": "1.5",
+            "width": "24px",
+            "height": "24px"
+          },
+          ".right-sidebar__label": {
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "400",
+            "line-height": "1.5"
+          },
+          ".right-sidebar__dela-logo": {
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "400",
+            "line-height": "1.5",
+            "width": "36px",
+            "height": "36px"
+          },
+          ".right-sidebar__dela-logo.right-sidebar__dela-logo--active": {
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "400",
+            "line-height": "1.5",
+            "width": "36px",
+            "height": "36px"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".right-sidebar",
+          "tag": "nav",
+          "styles": {
+            "display": "flex",
+            "flex-direction": "column",
+            "align-items": "stretch",
+            "justify-content": "flex-start",
+            "gap": "12px",
+            "position": "fixed",
+            "right": "0",
+            "top": "50%",
+            "transform": "translateY(-50%)",
+            "z-index": "200",
+            "width": "52px",
+            "height": "auto",
+            "min-width": "52px",
+            "max-width": "220px",
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "400",
+            "line-height": "1.5",
+            "border": "1px solid #2A2D32",
+            "border-width": "1px",
+            "border-style": "solid",
+            "border-radius": "12px",
+            "background": "#1F2124",
+            "icon-color": "#FAFAFA",
+            "color": "#FAFAFA",
+            "padding": "12px 8px 12px 8px"
+          },
+          "role": "complementary",
+          "states": {
+            "hover": {
+              "background": "#2A2D32",
+              "border": "1px solid #2A2D32",
+              "icon-color": "#FAFAFA",
+              "width": "220px",
+              "color": "#FAFAFA"
+            },
+            "active": {
+              "background": "#2A2D32",
+              "border": "1px solid #2A2D32",
+              "icon-color": "#FAFAFA",
+              "color": "#FAFAFA"
+            },
+            "focus": {
+              "background": "#1F2124",
+              "border": "1px solid #2A2D32",
+              "icon-color": "#FAFAFA",
+              "color": "#FAFAFA"
+            },
+            "disabled": {
+              "background": "#1F2124",
+              "border": "1px solid #2A2D32",
+              "icon-color": "#FAFAFA",
+              "color": "#FAFAFA"
+            }
+          },
+          "children": [
+            ".right-sidebar__section"
+          ]
+        },
+        {
+          "selector": ".right-sidebar__section",
+          "tag": "div",
+          "parent": ".right-sidebar",
+          "styles": {
+            "border-radius": "12px 0 0 12px",
+            "border-right": "none",
+            "box-shadow": "0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 8px 10px -6px rgba(0, 0, 0, 0.3)",
+            "padding": "12px 8px",
+            "gap": "6px",
+            "background": "#1F2124",
+            "color": "#FAFAFA",
+            "icon-color": "#FAFAFA",
+            "border": "1px solid #2A2D32",
+            "display": "flex",
+            "flex-direction": "column"
+          },
+          "children": [
+            ".right-sidebar__item"
+          ]
+        },
+        {
+          "selector": ".right-sidebar__item",
+          "tag": "a",
+          "parent": ".right-sidebar__section",
+          "styles": {
+            "background": "#59ACFF",
+            "color": "#FFFFFF",
+            "border": "none",
+            "icon-color": "#FFFFFF",
+            "display": "flex",
+            "align-items": "center",
+            "justify-content": "center"
+          },
+          "repeat": "icons",
+          "states": {
+            "hover": {
+              "background": "#2A2D32",
+              "border": "1px solid #2A2D32",
+              "icon-color": "#FAFAFA",
+              "width": "220px",
+              "color": "#FAFAFA"
+            },
+            "active": {
+              "background": "#2A2D32",
+              "border": "1px solid #2A2D32",
+              "icon-color": "#FAFAFA",
+              "color": "#FAFAFA"
+            }
+          },
+          "children": [
+            ".right-sidebar__icon",
+            ".right-sidebar__label",
+            ".right-sidebar__dela-logo",
+            ".right-sidebar__dela-logo.right-sidebar__dela-logo--active"
+          ]
+        },
+        {
+          "selector": ".right-sidebar__icon",
+          "tag": "span",
+          "parent": ".right-sidebar__item",
+          "styles": {
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "400",
+            "line-height": "1.5",
+            "width": "24px",
+            "height": "24px"
+          }
+        },
+        {
+          "selector": ".right-sidebar__label",
+          "tag": "span",
+          "parent": ".right-sidebar__item",
+          "styles": {
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "400",
+            "line-height": "1.5"
+          }
+        },
+        {
+          "selector": ".right-sidebar__dela-logo",
+          "tag": "img",
+          "parent": ".right-sidebar__item",
+          "styles": {
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "400",
+            "line-height": "1.5",
+            "width": "36px",
+            "height": "36px"
+          }
+        },
+        {
+          "selector": ".right-sidebar__dela-logo.right-sidebar__dela-logo--active",
+          "tag": "img",
+          "parent": ".right-sidebar__item",
+          "styles": {
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "400",
+            "line-height": "1.5",
+            "width": "36px",
+            "height": "36px"
+          }
+        }
+      ],
+      "icons": [
+        {
+          "name": "dela-ai",
+          "library": "custom",
+          "icon": "RS_DelaDefault",
+          "style": "outline"
+        },
+        {
+          "name": "pencil-square",
+          "library": "heroicons",
+          "icon": "PencilSquareIcon",
+          "style": "outline"
+        },
+        {
+          "name": "magnifying-glass",
+          "library": "heroicons",
+          "icon": "MagnifyingGlassIcon",
+          "style": "outline"
+        },
+        {
+          "name": "ellipsis-horizontal-circle",
+          "library": "heroicons",
+          "icon": "EllipsisHorizontalCircleIcon",
+          "style": "outline"
+        },
+        {
+          "name": "related",
+          "library": "custom",
+          "icon": "related",
+          "style": "outline"
+        },
+        {
+          "name": "template",
+          "library": "custom",
+          "icon": "template",
+          "style": "outline"
+        },
+        {
+          "name": "cloud-arrow-up",
+          "library": "heroicons",
+          "icon": "CloudArrowUpIcon",
+          "style": "outline"
+        },
+        {
+          "name": "cloud-arrow-down",
+          "library": "heroicons",
+          "icon": "CloudArrowDownIcon",
+          "style": "outline"
+        },
+        {
+          "name": "bell",
+          "library": "heroicons",
+          "icon": "BellIcon",
+          "style": "outline"
+        },
+        {
+          "name": "question-mark-circle",
+          "library": "heroicons",
+          "icon": "QuestionMarkCircleIcon",
+          "style": "outline"
+        },
+        {
+          "name": "share",
+          "library": "heroicons",
+          "icon": "ShareIcon",
+          "style": "outline"
+        },
+        {
+          "name": "globe-alt",
+          "library": "heroicons",
+          "icon": "GlobeAltIcon",
+          "style": "outline"
+        },
+        {
+          "name": "language",
+          "library": "heroicons",
+          "icon": "LanguageIcon",
+          "style": "outline"
+        },
+        {
+          "name": "moon",
+          "library": "heroicons",
+          "icon": "MoonIcon",
+          "style": "outline"
+        }
+      ],
+      "props": {
+        "variant": {
+          "type": "'cp' | 'vp' | 'ppm' | 'maconomy'",
+          "optional": true,
+          "default": "'ppm'"
+        },
+        "sections": {
+          "type": "Section[]",
+          "optional": true,
+          "default": null
+        },
+        "class": {
+          "type": "string",
+          "optional": true,
+          "default": "''"
+        }
+      },
+      "panelOpen": {
+        "when": "data-panel-open=\"true\"",
+        "section": {
+          "boxShadow": "none",
+          "border": "none",
+          "backgroundColor": "transparent",
+          "borderRadius": "0"
+        },
+        "rootHoverWidth": "52px",
+        "labelVisible": false,
+        "tooltipOnHover": true
+      }
+    },
+    "maconomy-light": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".right-sidebar": {
+            "display": "flex",
+            "flex-direction": "column",
+            "align-items": "stretch",
+            "justify-content": "flex-start",
+            "gap": "12px",
+            "position": "fixed",
+            "right": "0",
+            "top": "50%",
+            "transform": "translateY(-50%)",
+            "z-index": "200",
+            "width": "52px",
+            "height": "auto",
+            "min-width": "52px",
+            "max-width": "220px",
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "400",
+            "line-height": "1.5",
+            "border": "1px solid #BFC6D4",
+            "border-width": "1px",
+            "border-style": "solid",
+            "border-radius": "12px",
+            "background": "#F7F8FA",
+            "icon-color": "#373F4E",
+            "color": "#373F4E",
+            "padding": "12px 8px 12px 8px"
+          },
+          ".right-sidebar__section": {
+            "border-radius": "12px 0 0 12px",
+            "border-right": "none",
+            "box-shadow": "0 20px 25px -5px rgb(15 23 42 / 0.1), 0 8px 10px -6px rgb(15 23 42 / 0.1)",
+            "padding": "12px 8px",
+            "gap": "6px",
+            "background": "#F7F8FA",
+            "color": "#373F4E",
+            "icon-color": "#373F4E",
+            "border": "1px solid #BFC6D4",
+            "display": "flex",
+            "flex-direction": "column"
+          },
+          ".right-sidebar__item": {
+            "background": "#4C92D9",
+            "color": "#FFFFFF",
+            "border": "none",
+            "icon-color": "#FFFFFF",
+            "display": "flex",
+            "align-items": "center",
+            "justify-content": "center"
+          },
+          ".right-sidebar__icon": {
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "400",
+            "line-height": "1.5",
+            "width": "24px",
+            "height": "24px"
+          },
+          ".right-sidebar__label": {
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "400",
+            "line-height": "1.5"
+          },
+          ".right-sidebar__dela-logo": {
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "400",
+            "line-height": "1.5",
+            "width": "36px",
+            "height": "36px"
+          },
+          ".right-sidebar__dela-logo.right-sidebar__dela-logo--active": {
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "400",
+            "line-height": "1.5",
+            "width": "36px",
+            "height": "36px"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".right-sidebar",
+          "tag": "nav",
+          "styles": {
+            "display": "flex",
+            "flex-direction": "column",
+            "align-items": "stretch",
+            "justify-content": "flex-start",
+            "gap": "12px",
+            "position": "fixed",
+            "right": "0",
+            "top": "50%",
+            "transform": "translateY(-50%)",
+            "z-index": "200",
+            "width": "52px",
+            "height": "auto",
+            "min-width": "52px",
+            "max-width": "220px",
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "400",
+            "line-height": "1.5",
+            "border": "1px solid #BFC6D4",
+            "border-width": "1px",
+            "border-style": "solid",
+            "border-radius": "12px",
+            "background": "#F7F8FA",
+            "icon-color": "#373F4E",
+            "color": "#373F4E",
+            "padding": "12px 8px 12px 8px"
+          },
+          "role": "complementary",
+          "states": {
+            "hover": {
+              "background": "#E5E7EB",
+              "border": "1px solid #BFC6D4",
+              "icon-color": "#373F4E",
+              "width": "220px",
+              "color": "#373F4E"
+            },
+            "active": {
+              "background": "#E5E7EB",
+              "border": "1px solid #BFC6D4",
+              "icon-color": "#373F4E",
+              "color": "#373F4E"
+            },
+            "focus": {
+              "background": "#F7F8FA",
+              "border": "1px solid #BFC6D4",
+              "icon-color": "#373F4E",
+              "color": "#373F4E"
+            },
+            "disabled": {
+              "background": "#F7F8FA",
+              "border": "1px solid #BFC6D4",
+              "icon-color": "#373F4E",
+              "color": "#373F4E"
+            }
+          },
+          "children": [
+            ".right-sidebar__section"
+          ]
+        },
+        {
+          "selector": ".right-sidebar__section",
+          "tag": "div",
+          "parent": ".right-sidebar",
+          "styles": {
+            "border-radius": "12px 0 0 12px",
+            "border-right": "none",
+            "box-shadow": "0 20px 25px -5px rgb(15 23 42 / 0.1), 0 8px 10px -6px rgb(15 23 42 / 0.1)",
+            "padding": "12px 8px",
+            "gap": "6px",
+            "background": "#F7F8FA",
+            "color": "#373F4E",
+            "icon-color": "#373F4E",
+            "border": "1px solid #BFC6D4",
+            "display": "flex",
+            "flex-direction": "column"
+          },
+          "children": [
+            ".right-sidebar__item"
+          ]
+        },
+        {
+          "selector": ".right-sidebar__item",
+          "tag": "a",
+          "parent": ".right-sidebar__section",
+          "styles": {
+            "background": "#4C92D9",
+            "color": "#FFFFFF",
+            "border": "none",
+            "icon-color": "#FFFFFF",
+            "display": "flex",
+            "align-items": "center",
+            "justify-content": "center"
+          },
+          "repeat": "icons",
+          "states": {
+            "hover": {
+              "background": "#E5E7EB",
+              "border": "1px solid #BFC6D4",
+              "icon-color": "#373F4E",
+              "width": "220px",
+              "color": "#373F4E"
+            },
+            "active": {
+              "background": "#E5E7EB",
+              "border": "1px solid #BFC6D4",
+              "icon-color": "#373F4E",
+              "color": "#373F4E"
+            }
+          },
+          "children": [
+            ".right-sidebar__icon",
+            ".right-sidebar__label",
+            ".right-sidebar__dela-logo",
+            ".right-sidebar__dela-logo.right-sidebar__dela-logo--active"
+          ]
+        },
+        {
+          "selector": ".right-sidebar__icon",
+          "tag": "span",
+          "parent": ".right-sidebar__item",
+          "styles": {
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "400",
+            "line-height": "1.5",
+            "width": "24px",
+            "height": "24px"
+          }
+        },
+        {
+          "selector": ".right-sidebar__label",
+          "tag": "span",
+          "parent": ".right-sidebar__item",
+          "styles": {
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "400",
+            "line-height": "1.5"
+          }
+        },
+        {
+          "selector": ".right-sidebar__dela-logo",
+          "tag": "img",
+          "parent": ".right-sidebar__item",
+          "styles": {
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "400",
+            "line-height": "1.5",
+            "width": "36px",
+            "height": "36px"
+          }
+        },
+        {
+          "selector": ".right-sidebar__dela-logo.right-sidebar__dela-logo--active",
+          "tag": "img",
+          "parent": ".right-sidebar__item",
+          "styles": {
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "400",
+            "line-height": "1.5",
+            "width": "36px",
+            "height": "36px"
+          }
+        }
+      ],
+      "icons": [
+        {
+          "name": "dela-ai",
+          "library": "custom",
+          "icon": "RS_DelaDefault",
+          "style": "outline"
+        },
+        {
+          "name": "pencil-square",
+          "library": "heroicons",
+          "icon": "PencilSquareIcon",
+          "style": "outline"
+        },
+        {
+          "name": "magnifying-glass",
+          "library": "heroicons",
+          "icon": "MagnifyingGlassIcon",
+          "style": "outline"
+        },
+        {
+          "name": "ellipsis-horizontal-circle",
+          "library": "heroicons",
+          "icon": "EllipsisHorizontalCircleIcon",
+          "style": "outline"
+        },
+        {
+          "name": "related",
+          "library": "custom",
+          "icon": "related",
+          "style": "outline"
+        },
+        {
+          "name": "template",
+          "library": "custom",
+          "icon": "template",
+          "style": "outline"
+        },
+        {
+          "name": "cloud-arrow-up",
+          "library": "heroicons",
+          "icon": "CloudArrowUpIcon",
+          "style": "outline"
+        },
+        {
+          "name": "cloud-arrow-down",
+          "library": "heroicons",
+          "icon": "CloudArrowDownIcon",
+          "style": "outline"
+        },
+        {
+          "name": "bell",
+          "library": "heroicons",
+          "icon": "BellIcon",
+          "style": "outline"
+        },
+        {
+          "name": "question-mark-circle",
+          "library": "heroicons",
+          "icon": "QuestionMarkCircleIcon",
+          "style": "outline"
+        },
+        {
+          "name": "share",
+          "library": "heroicons",
+          "icon": "ShareIcon",
+          "style": "outline"
+        },
+        {
+          "name": "globe-alt",
+          "library": "heroicons",
+          "icon": "GlobeAltIcon",
+          "style": "outline"
+        },
+        {
+          "name": "language",
+          "library": "heroicons",
+          "icon": "LanguageIcon",
+          "style": "outline"
+        },
+        {
+          "name": "moon",
+          "library": "heroicons",
+          "icon": "MoonIcon",
+          "style": "outline"
+        }
+      ],
+      "props": {
+        "variant": {
+          "type": "'cp' | 'vp' | 'ppm' | 'maconomy'",
+          "optional": true,
+          "default": "'maconomy'"
+        },
+        "sections": {
+          "type": "Section[]",
+          "optional": true,
+          "default": null
+        },
+        "class": {
+          "type": "string",
+          "optional": true,
+          "default": "''"
+        }
+      },
+      "panelOpen": {
+        "when": "data-panel-open=\"true\"",
+        "section": {
+          "boxShadow": "none",
+          "border": "none",
+          "backgroundColor": "transparent",
+          "borderRadius": "0"
+        },
+        "rootHoverWidth": "52px",
+        "labelVisible": false,
+        "tooltipOnHover": true
+      }
+    },
+    "maconomy-dark": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".right-sidebar": {
+            "display": "flex",
+            "flex-direction": "column",
+            "align-items": "stretch",
+            "justify-content": "flex-start",
+            "gap": "12px",
+            "position": "fixed",
+            "right": "0",
+            "top": "50%",
+            "transform": "translateY(-50%)",
+            "z-index": "200",
+            "width": "52px",
+            "height": "auto",
+            "min-width": "52px",
+            "max-width": "220px",
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "400",
+            "line-height": "1.5",
+            "border": "1px solid #2A2D32",
+            "border-width": "1px",
+            "border-style": "solid",
+            "border-radius": "12px",
+            "background": "#1F2124",
+            "icon-color": "#FAFAFA",
+            "color": "#FAFAFA",
+            "padding": "12px 8px 12px 8px"
+          },
+          ".right-sidebar__section": {
+            "border-radius": "12px 0 0 12px",
+            "border-right": "none",
+            "box-shadow": "0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 8px 10px -6px rgba(0, 0, 0, 0.3)",
+            "padding": "12px 8px",
+            "gap": "6px",
+            "background": "#1F2124",
+            "color": "#FAFAFA",
+            "icon-color": "#FAFAFA",
+            "border": "1px solid #2A2D32",
+            "display": "flex",
+            "flex-direction": "column"
+          },
+          ".right-sidebar__item": {
+            "background": "#59ACFF",
+            "color": "#FFFFFF",
+            "border": "none",
+            "icon-color": "#FFFFFF",
+            "display": "flex",
+            "align-items": "center",
+            "justify-content": "center"
+          },
+          ".right-sidebar__icon": {
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "400",
+            "line-height": "1.5",
+            "width": "24px",
+            "height": "24px"
+          },
+          ".right-sidebar__label": {
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "400",
+            "line-height": "1.5"
+          },
+          ".right-sidebar__dela-logo": {
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "400",
+            "line-height": "1.5",
+            "width": "36px",
+            "height": "36px"
+          },
+          ".right-sidebar__dela-logo.right-sidebar__dela-logo--active": {
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "400",
+            "line-height": "1.5",
+            "width": "36px",
+            "height": "36px"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".right-sidebar",
+          "tag": "nav",
+          "styles": {
+            "display": "flex",
+            "flex-direction": "column",
+            "align-items": "stretch",
+            "justify-content": "flex-start",
+            "gap": "12px",
+            "position": "fixed",
+            "right": "0",
+            "top": "50%",
+            "transform": "translateY(-50%)",
+            "z-index": "200",
+            "width": "52px",
+            "height": "auto",
+            "min-width": "52px",
+            "max-width": "220px",
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "400",
+            "line-height": "1.5",
+            "border": "1px solid #2A2D32",
+            "border-width": "1px",
+            "border-style": "solid",
+            "border-radius": "12px",
+            "background": "#1F2124",
+            "icon-color": "#FAFAFA",
+            "color": "#FAFAFA",
+            "padding": "12px 8px 12px 8px"
+          },
+          "role": "complementary",
+          "states": {
+            "hover": {
+              "background": "#2A2D32",
+              "border": "1px solid #2A2D32",
+              "icon-color": "#FAFAFA",
+              "width": "220px",
+              "color": "#FAFAFA"
+            },
+            "active": {
+              "background": "#2A2D32",
+              "border": "1px solid #2A2D32",
+              "icon-color": "#FAFAFA",
+              "color": "#FAFAFA"
+            },
+            "focus": {
+              "background": "#1F2124",
+              "border": "1px solid #2A2D32",
+              "icon-color": "#FAFAFA",
+              "color": "#FAFAFA"
+            },
+            "disabled": {
+              "background": "#1F2124",
+              "border": "1px solid #2A2D32",
+              "icon-color": "#FAFAFA",
+              "color": "#FAFAFA"
+            }
+          },
+          "children": [
+            ".right-sidebar__section"
+          ]
+        },
+        {
+          "selector": ".right-sidebar__section",
+          "tag": "div",
+          "parent": ".right-sidebar",
+          "styles": {
+            "border-radius": "12px 0 0 12px",
+            "border-right": "none",
+            "box-shadow": "0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 8px 10px -6px rgba(0, 0, 0, 0.3)",
+            "padding": "12px 8px",
+            "gap": "6px",
+            "background": "#1F2124",
+            "color": "#FAFAFA",
+            "icon-color": "#FAFAFA",
+            "border": "1px solid #2A2D32",
+            "display": "flex",
+            "flex-direction": "column"
+          },
+          "children": [
+            ".right-sidebar__item"
+          ]
+        },
+        {
+          "selector": ".right-sidebar__item",
+          "tag": "a",
+          "parent": ".right-sidebar__section",
+          "styles": {
+            "background": "#59ACFF",
+            "color": "#FFFFFF",
+            "border": "none",
+            "icon-color": "#FFFFFF",
+            "display": "flex",
+            "align-items": "center",
+            "justify-content": "center"
+          },
+          "repeat": "icons",
+          "states": {
+            "hover": {
+              "background": "#2A2D32",
+              "border": "1px solid #2A2D32",
+              "icon-color": "#FAFAFA",
+              "width": "220px",
+              "color": "#FAFAFA"
+            },
+            "active": {
+              "background": "#2A2D32",
+              "border": "1px solid #2A2D32",
+              "icon-color": "#FAFAFA",
+              "color": "#FAFAFA"
+            }
+          },
+          "children": [
+            ".right-sidebar__icon",
+            ".right-sidebar__label",
+            ".right-sidebar__dela-logo",
+            ".right-sidebar__dela-logo.right-sidebar__dela-logo--active"
+          ]
+        },
+        {
+          "selector": ".right-sidebar__icon",
+          "tag": "span",
+          "parent": ".right-sidebar__item",
+          "styles": {
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "400",
+            "line-height": "1.5",
+            "width": "24px",
+            "height": "24px"
+          }
+        },
+        {
+          "selector": ".right-sidebar__label",
+          "tag": "span",
+          "parent": ".right-sidebar__item",
+          "styles": {
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "400",
+            "line-height": "1.5"
+          }
+        },
+        {
+          "selector": ".right-sidebar__dela-logo",
+          "tag": "img",
+          "parent": ".right-sidebar__item",
+          "styles": {
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "400",
+            "line-height": "1.5",
+            "width": "36px",
+            "height": "36px"
+          }
+        },
+        {
+          "selector": ".right-sidebar__dela-logo.right-sidebar__dela-logo--active",
+          "tag": "img",
+          "parent": ".right-sidebar__item",
+          "styles": {
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "400",
+            "line-height": "1.5",
+            "width": "36px",
+            "height": "36px"
+          }
+        }
+      ],
+      "icons": [
+        {
+          "name": "dela-ai",
+          "library": "custom",
+          "icon": "RS_DelaDefault",
+          "style": "outline"
+        },
+        {
+          "name": "pencil-square",
+          "library": "heroicons",
+          "icon": "PencilSquareIcon",
+          "style": "outline"
+        },
+        {
+          "name": "magnifying-glass",
+          "library": "heroicons",
+          "icon": "MagnifyingGlassIcon",
+          "style": "outline"
+        },
+        {
+          "name": "ellipsis-horizontal-circle",
+          "library": "heroicons",
+          "icon": "EllipsisHorizontalCircleIcon",
+          "style": "outline"
+        },
+        {
+          "name": "related",
+          "library": "custom",
+          "icon": "related",
+          "style": "outline"
+        },
+        {
+          "name": "template",
+          "library": "custom",
+          "icon": "template",
+          "style": "outline"
+        },
+        {
+          "name": "cloud-arrow-up",
+          "library": "heroicons",
+          "icon": "CloudArrowUpIcon",
+          "style": "outline"
+        },
+        {
+          "name": "cloud-arrow-down",
+          "library": "heroicons",
+          "icon": "CloudArrowDownIcon",
+          "style": "outline"
+        },
+        {
+          "name": "bell",
+          "library": "heroicons",
+          "icon": "BellIcon",
+          "style": "outline"
+        },
+        {
+          "name": "question-mark-circle",
+          "library": "heroicons",
+          "icon": "QuestionMarkCircleIcon",
+          "style": "outline"
+        },
+        {
+          "name": "share",
+          "library": "heroicons",
+          "icon": "ShareIcon",
+          "style": "outline"
+        },
+        {
+          "name": "globe-alt",
+          "library": "heroicons",
+          "icon": "GlobeAltIcon",
+          "style": "outline"
+        },
+        {
+          "name": "language",
+          "library": "heroicons",
+          "icon": "LanguageIcon",
+          "style": "outline"
+        },
+        {
+          "name": "moon",
+          "library": "heroicons",
+          "icon": "MoonIcon",
+          "style": "outline"
+        }
+      ],
+      "props": {
+        "variant": {
+          "type": "'cp' | 'vp' | 'ppm' | 'maconomy'",
+          "optional": true,
+          "default": "'maconomy'"
+        },
+        "sections": {
+          "type": "Section[]",
+          "optional": true,
+          "default": null
+        },
+        "class": {
+          "type": "string",
+          "optional": true,
+          "default": "''"
+        }
+      },
+      "panelOpen": {
+        "when": "data-panel-open=\"true\"",
+        "section": {
+          "boxShadow": "none",
+          "border": "none",
+          "backgroundColor": "transparent",
+          "borderRadius": "0"
+        },
+        "rootHoverWidth": "52px",
+        "labelVisible": false,
+        "tooltipOnHover": true
+      }
+    }
+  },
+  "guidance": {
+    "patterns": {
+      "theme-variant-icons": "Each theme variant (cp, vp, ppm, maconomy) has its own predefined icon set. All themes start with Dela custom logo (RS_DelaDefault.svg default, RS_Dela_Active.svg active) as the first item. CP has 3 sections with 3, 2, and 4 items. VP, PPM, and Maconomy have 3 sections with 8, 3, and 3 items. Use the template in the spec for the exact sections and items.",
+      "custom-icon-support": "Navigation items support two icon approaches: standard Icon component (icon: Heroicons name) or custom images (isCustom: true, customSrc, customSrcActive). Custom images use right-sidebar__dela-logo classes.",
+      "panel-data-attributes": "Items use data attributes for ShellPanel: panelTitle, panelIcon, panelContentId, useGradientHeader. Dela AI items get gradient header automatically."
+    },
+    "guidelines": {
+      "when-to-use": "Use RightSidebar for unified right navigation. Collapsed shows icons only (52px); hover expands to 220px with labels. Theme variant controls which default sections/items are shown.",
+      "composition": "Place inside shell layout; connect to ShellPanel for panel content when item is clicked."
+    }
+  },
+  "interactivity": {
+    "events": [
+      {
+        "name": "click",
+        "description": "Item click or sidebar toggle"
+      }
+    ],
+    "state": [
+      {
+        "name": "collapsed",
+        "type": "boolean",
+        "description": "Whether sidebar is collapsed (if toggle exists)"
+      }
+    ]
+  },
+  "examples": [
+    {
+      "name": "CP with left sidebar",
+      "description": "CP layout with collapsible left sidebar",
+      "recipeId": "shell-layout-cp"
+    },
+    {
+      "name": "CP minimal",
+      "description": "Minimal CP layout with header and floating nav only",
+      "recipeId": "shell-layout-cp"
+    },
+    {
+      "name": "CP with page header",
+      "description": "CP layout with page-specific header",
+      "recipeId": "shell-layout-cp"
+    },
+    {
+      "name": "Standard with sidebars",
+      "description": "Full layout with left and right sidebars",
+      "recipeId": "shell-layout-standard"
+    },
+    {
+      "name": "Standard minimal",
+      "description": "Minimal layout with header and footer only",
+      "recipeId": "shell-layout-standard"
+    },
+    {
+      "name": "Standard with page header",
+      "description": "Standard layout with page-specific header",
+      "recipeId": "shell-layout-standard"
+    },
+    {
+      "name": "Default right sidebar",
+      "description": "Right sidebar with default variant",
+      "recipeId": "right-sidebar"
+    },
+    {
+      "name": "PPM theme sidebar",
+      "description": "Right sidebar for PPM theme",
+      "recipeId": "right-sidebar"
+    },
+    {
+      "name": "With sections",
+      "description": "Multiple visual blocks with gaps, each with elevation and stroke (see component JSON).",
+      "recipeId": "right-sidebar"
+    },
+    {
+      "name": "Right sidebar",
+      "description": "Sidebar on right",
+      "snippet": "<RightSidebar>...</RightSidebar>"
+    }
+  ]
+}

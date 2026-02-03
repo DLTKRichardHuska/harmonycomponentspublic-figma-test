@@ -1,0 +1,336 @@
+{
+  "name": "TimePicker",
+  "type": "component",
+  "filePath": "src/components/ui/TimePicker.astro",
+  "description": "TimePicker Component",
+  "props": {
+    "value": {
+      "type": "string",
+      "optional": true,
+      "default": null
+    },
+    "min": {
+      "type": "string",
+      "optional": true,
+      "default": null
+    },
+    "max": {
+      "type": "string",
+      "optional": true,
+      "default": null
+    },
+    "disabled": {
+      "type": "boolean",
+      "optional": true,
+      "default": "false"
+    },
+    "format": {
+      "type": "'12' | '24'",
+      "optional": true,
+      "default": "'24'"
+    },
+    "step": {
+      "type": "number",
+      "optional": true,
+      "default": "1"
+    },
+    "id": {
+      "type": "string",
+      "optional": true,
+      "default": null
+    },
+    "class": {
+      "type": "string",
+      "optional": true,
+      "default": "''"
+    }
+  },
+  "defaults": {
+    "theme": "cp",
+    "mode": "light"
+  },
+  "specs": {
+    "cp-light": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".time-picker": {
+            "width": "100%"
+          },
+          ".time-picker__controls": {
+            "display": "flex",
+            "align-items": "center",
+            "justify-content": "center",
+            "gap": "8px"
+          },
+          ".time-picker__decrement": {
+            "display": "flex",
+            "align-items": "center",
+            "justify-content": "center",
+            "width": "32px",
+            "height": "24px",
+            "padding": "0",
+            "background": "transparent",
+            "border": "1px solid #BFC6D4",
+            "border-radius": "0.375rem",
+            "color": "#525969",
+            "cursor": "pointer",
+            "transition": "all 150ms ease"
+          },
+          ".time-picker__hour": {
+            "display": "flex",
+            "flex-direction": "column",
+            "align-items": "center",
+            "gap": "4px"
+          },
+          ".time-picker__increment": {
+            "display": "flex",
+            "align-items": "center",
+            "justify-content": "center",
+            "width": "32px",
+            "height": "24px",
+            "padding": "0",
+            "background": "transparent",
+            "border": "1px solid #BFC6D4",
+            "border-radius": "0.375rem",
+            "color": "#525969",
+            "cursor": "pointer",
+            "transition": "all 150ms ease"
+          },
+          ".time-picker__input": {
+            "width": "48px",
+            "height": "40px",
+            "padding": "0 8px",
+            "font-size": "1.125rem",
+            "font-weight": "600",
+            "font-family": "'Figtree', sans-serif",
+            "text-align": "center",
+            "color": "#373F4E",
+            "background-color": "#FFFFFF",
+            "border": "1px solid #BFC6D4",
+            "border-radius": "0.375rem",
+            "cursor": "default"
+          },
+          ".time-picker__minute": {
+            "display": "flex",
+            "flex-direction": "column",
+            "align-items": "center",
+            "gap": "4px"
+          },
+          ".time-picker__period": {
+            "display": "flex",
+            "flex-direction": "column",
+            "gap": "4px",
+            "margin-left": "8px"
+          },
+          ".time-picker__period-btn": {
+            "width": "48px",
+            "height": "32px",
+            "padding": "0 8px",
+            "font-size": "0.875rem",
+            "font-weight": "500",
+            "font-family": "'Figtree', sans-serif",
+            "color": "#525969",
+            "background-color": "#FFFFFF",
+            "border": "1px solid #BFC6D4",
+            "border-radius": "0.375rem",
+            "cursor": "pointer",
+            "transition": "all 150ms ease"
+          },
+          ".time-picker__separator": {
+            "font-size": "1.125rem",
+            "font-weight": "600",
+            "color": "#373F4E",
+            "padding": "0 4px"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".time-picker",
+          "tag": "div",
+          "styles": {
+            "width": "100%"
+          },
+          "children": [
+            ".time-picker__controls",
+            ".time-picker__decrement",
+            ".time-picker__hour",
+            ".time-picker__increment",
+            ".time-picker__input",
+            ".time-picker__minute",
+            ".time-picker__period",
+            ".time-picker__period-btn",
+            ".time-picker__separator"
+          ]
+        },
+        {
+          "selector": ".time-picker__controls",
+          "tag": "span",
+          "styles": {
+            "display": "flex",
+            "align-items": "center",
+            "justify-content": "center",
+            "gap": "8px"
+          },
+          "parent": ".time-picker"
+        },
+        {
+          "selector": ".time-picker__decrement",
+          "tag": "span",
+          "styles": {
+            "display": "flex",
+            "align-items": "center",
+            "justify-content": "center",
+            "width": "32px",
+            "height": "24px",
+            "padding": "0",
+            "background": "transparent",
+            "border": "1px solid #BFC6D4",
+            "border-radius": "0.375rem",
+            "color": "#525969",
+            "cursor": "pointer",
+            "transition": "all 150ms ease"
+          },
+          "parent": ".time-picker"
+        },
+        {
+          "selector": ".time-picker__hour",
+          "tag": "span",
+          "styles": {
+            "display": "flex",
+            "flex-direction": "column",
+            "align-items": "center",
+            "gap": "4px"
+          },
+          "parent": ".time-picker"
+        },
+        {
+          "selector": ".time-picker__increment",
+          "tag": "span",
+          "styles": {
+            "display": "flex",
+            "align-items": "center",
+            "justify-content": "center",
+            "width": "32px",
+            "height": "24px",
+            "padding": "0",
+            "background": "transparent",
+            "border": "1px solid #BFC6D4",
+            "border-radius": "0.375rem",
+            "color": "#525969",
+            "cursor": "pointer",
+            "transition": "all 150ms ease"
+          },
+          "parent": ".time-picker"
+        },
+        {
+          "selector": ".time-picker__input",
+          "tag": "span",
+          "styles": {
+            "width": "48px",
+            "height": "40px",
+            "padding": "0 8px",
+            "font-size": "1.125rem",
+            "font-weight": "600",
+            "font-family": "'Figtree', sans-serif",
+            "text-align": "center",
+            "color": "#373F4E",
+            "background-color": "#FFFFFF",
+            "border": "1px solid #BFC6D4",
+            "border-radius": "0.375rem",
+            "cursor": "default"
+          },
+          "parent": ".time-picker"
+        },
+        {
+          "selector": ".time-picker__minute",
+          "tag": "span",
+          "styles": {
+            "display": "flex",
+            "flex-direction": "column",
+            "align-items": "center",
+            "gap": "4px"
+          },
+          "parent": ".time-picker"
+        },
+        {
+          "selector": ".time-picker__period",
+          "tag": "span",
+          "styles": {
+            "display": "flex",
+            "flex-direction": "column",
+            "gap": "4px",
+            "margin-left": "8px"
+          },
+          "parent": ".time-picker"
+        },
+        {
+          "selector": ".time-picker__period-btn",
+          "tag": "span",
+          "styles": {
+            "width": "48px",
+            "height": "32px",
+            "padding": "0 8px",
+            "font-size": "0.875rem",
+            "font-weight": "500",
+            "font-family": "'Figtree', sans-serif",
+            "color": "#525969",
+            "background-color": "#FFFFFF",
+            "border": "1px solid #BFC6D4",
+            "border-radius": "0.375rem",
+            "cursor": "pointer",
+            "transition": "all 150ms ease"
+          },
+          "parent": ".time-picker"
+        },
+        {
+          "selector": ".time-picker__separator",
+          "tag": "span",
+          "styles": {
+            "font-size": "1.125rem",
+            "font-weight": "600",
+            "color": "#373F4E",
+            "padding": "0 4px"
+          },
+          "parent": ".time-picker"
+        }
+      ]
+    }
+  },
+  "guidance": {
+    "patterns": {},
+    "guidelines": {}
+  },
+  "interactivity": {
+    "events": [
+      {
+        "name": "change",
+        "description": "Triggered when time is selected"
+      }
+    ],
+    "state": [
+      {
+        "name": "value",
+        "type": "string",
+        "description": "Selected time"
+      }
+    ]
+  },
+  "examples": [
+    {
+      "name": "Time selection",
+      "description": "Pick time",
+      "snippet": "<TimePicker value={...} />"
+    }
+  ]
+}

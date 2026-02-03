@@ -1,0 +1,103 @@
+{
+  "name": "Avatar",
+  "type": "component",
+  "filePath": "src/components/ui/Avatar.astro",
+  "description": "Avatar Component",
+  "props": {
+    "size": {
+      "type": "'sm' | 'md' | 'lg'",
+      "optional": true,
+      "default": "'md'"
+    },
+    "class": {
+      "type": "string",
+      "optional": true,
+      "default": "''"
+    }
+  },
+  "defaults": {
+    "theme": "cp",
+    "mode": "light",
+    "size": "'md'"
+  },
+  "specs": {
+    "cp-light-md": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".avatar": {
+            "display": "inline-flex",
+            "align-items": "center",
+            "justify-content": "center",
+            "border-radius": "8px",
+            "background-color": "#4C92D9",
+            "flex-shrink": "0"
+          },
+          ".avatar__icon": {
+            "color": "white"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".avatar",
+          "tag": "div",
+          "styles": {
+            "display": "inline-flex",
+            "align-items": "center",
+            "justify-content": "center",
+            "border-radius": "8px",
+            "background-color": "#4C92D9",
+            "flex-shrink": "0"
+          },
+          "children": [
+            ".avatar__icon"
+          ]
+        },
+        {
+          "selector": ".avatar__icon",
+          "tag": "span",
+          "styles": {
+            "color": "white"
+          },
+          "parent": ".avatar"
+        }
+      ]
+    }
+  },
+  "guidance": {
+    "patterns": {},
+    "guidelines": {}
+  },
+  "interactivity": {
+    "events": [],
+    "state": [
+      {
+        "name": "—",
+        "type": "—",
+        "description": "Display only; no client-side state or events."
+      }
+    ]
+  },
+  "examples": [
+    {
+      "name": "Initials avatar",
+      "description": "Avatar with initials",
+      "snippet": "<Avatar initials=\"JD\" />"
+    },
+    {
+      "name": "Image avatar",
+      "description": "Avatar with image",
+      "snippet": "<Avatar src=\"/photo.jpg\" alt=\"User\" />"
+    }
+  ]
+}

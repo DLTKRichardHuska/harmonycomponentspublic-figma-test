@@ -1,0 +1,1704 @@
+{
+  "name": "ButtonGroup",
+  "type": "component",
+  "filePath": "src/components/ui/ButtonGroup.astro",
+  "description": "ButtonGroup Component",
+  "props": {
+    "variant": {
+      "type": "'default' | 'outline'",
+      "optional": true,
+      "default": "'default'"
+    },
+    "size": {
+      "type": "'sm' | 'md' | 'lg'",
+      "optional": true,
+      "default": "'md'"
+    },
+    "orientation": {
+      "type": "'horizontal' | 'vertical'",
+      "optional": true,
+      "default": "'horizontal'"
+    },
+    "class": {
+      "type": "string",
+      "optional": true,
+      "default": "''"
+    }
+  },
+  "defaults": {
+    "theme": "cp",
+    "mode": "light",
+    "variant": "'default'",
+    "size": "'md'"
+  },
+  "specs": {
+    "default-cp-light-sm": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".btn-group": {},
+          ".btn-group__inner": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".btn-group",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".btn-group__inner"
+          ]
+        },
+        {
+          "selector": ".btn-group__inner",
+          "tag": "div",
+          "styles": {},
+          "parent": ".btn-group"
+        }
+      ]
+    },
+    "default-cp-light-md": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".btn-group": {},
+          ".btn-group__inner": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".btn-group",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".btn-group__inner"
+          ]
+        },
+        {
+          "selector": ".btn-group__inner",
+          "tag": "div",
+          "styles": {},
+          "parent": ".btn-group"
+        }
+      ]
+    },
+    "default-cp-light-lg": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".btn-group": {},
+          ".btn-group__inner": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".btn-group",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".btn-group__inner"
+          ]
+        },
+        {
+          "selector": ".btn-group__inner",
+          "tag": "div",
+          "styles": {},
+          "parent": ".btn-group"
+        }
+      ]
+    },
+    "default-cp-dark-sm": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".btn-group": {},
+          ".btn-group__inner": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".btn-group",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".btn-group__inner"
+          ]
+        },
+        {
+          "selector": ".btn-group__inner",
+          "tag": "div",
+          "styles": {},
+          "parent": ".btn-group"
+        }
+      ]
+    },
+    "default-cp-dark-md": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".btn-group": {},
+          ".btn-group__inner": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".btn-group",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".btn-group__inner"
+          ]
+        },
+        {
+          "selector": ".btn-group__inner",
+          "tag": "div",
+          "styles": {},
+          "parent": ".btn-group"
+        }
+      ]
+    },
+    "default-cp-dark-lg": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".btn-group": {},
+          ".btn-group__inner": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".btn-group",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".btn-group__inner"
+          ]
+        },
+        {
+          "selector": ".btn-group__inner",
+          "tag": "div",
+          "styles": {},
+          "parent": ".btn-group"
+        }
+      ]
+    },
+    "default-vp-light-sm": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".btn-group": {},
+          ".btn-group__inner": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".btn-group",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".btn-group__inner"
+          ]
+        },
+        {
+          "selector": ".btn-group__inner",
+          "tag": "div",
+          "styles": {},
+          "parent": ".btn-group"
+        }
+      ]
+    },
+    "default-vp-light-md": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".btn-group": {},
+          ".btn-group__inner": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".btn-group",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".btn-group__inner"
+          ]
+        },
+        {
+          "selector": ".btn-group__inner",
+          "tag": "div",
+          "styles": {},
+          "parent": ".btn-group"
+        }
+      ]
+    },
+    "default-vp-light-lg": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".btn-group": {},
+          ".btn-group__inner": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".btn-group",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".btn-group__inner"
+          ]
+        },
+        {
+          "selector": ".btn-group__inner",
+          "tag": "div",
+          "styles": {},
+          "parent": ".btn-group"
+        }
+      ]
+    },
+    "default-vp-dark-sm": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".btn-group": {},
+          ".btn-group__inner": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".btn-group",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".btn-group__inner"
+          ]
+        },
+        {
+          "selector": ".btn-group__inner",
+          "tag": "div",
+          "styles": {},
+          "parent": ".btn-group"
+        }
+      ]
+    },
+    "default-vp-dark-md": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".btn-group": {},
+          ".btn-group__inner": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".btn-group",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".btn-group__inner"
+          ]
+        },
+        {
+          "selector": ".btn-group__inner",
+          "tag": "div",
+          "styles": {},
+          "parent": ".btn-group"
+        }
+      ]
+    },
+    "default-vp-dark-lg": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".btn-group": {},
+          ".btn-group__inner": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".btn-group",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".btn-group__inner"
+          ]
+        },
+        {
+          "selector": ".btn-group__inner",
+          "tag": "div",
+          "styles": {},
+          "parent": ".btn-group"
+        }
+      ]
+    },
+    "default-ppm-light-sm": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".btn-group": {},
+          ".btn-group__inner": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".btn-group",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".btn-group__inner"
+          ]
+        },
+        {
+          "selector": ".btn-group__inner",
+          "tag": "div",
+          "styles": {},
+          "parent": ".btn-group"
+        }
+      ]
+    },
+    "default-ppm-light-md": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".btn-group": {},
+          ".btn-group__inner": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".btn-group",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".btn-group__inner"
+          ]
+        },
+        {
+          "selector": ".btn-group__inner",
+          "tag": "div",
+          "styles": {},
+          "parent": ".btn-group"
+        }
+      ]
+    },
+    "default-ppm-light-lg": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".btn-group": {},
+          ".btn-group__inner": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".btn-group",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".btn-group__inner"
+          ]
+        },
+        {
+          "selector": ".btn-group__inner",
+          "tag": "div",
+          "styles": {},
+          "parent": ".btn-group"
+        }
+      ]
+    },
+    "default-ppm-dark-sm": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".btn-group": {},
+          ".btn-group__inner": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".btn-group",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".btn-group__inner"
+          ]
+        },
+        {
+          "selector": ".btn-group__inner",
+          "tag": "div",
+          "styles": {},
+          "parent": ".btn-group"
+        }
+      ]
+    },
+    "default-ppm-dark-md": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".btn-group": {},
+          ".btn-group__inner": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".btn-group",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".btn-group__inner"
+          ]
+        },
+        {
+          "selector": ".btn-group__inner",
+          "tag": "div",
+          "styles": {},
+          "parent": ".btn-group"
+        }
+      ]
+    },
+    "default-ppm-dark-lg": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".btn-group": {},
+          ".btn-group__inner": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".btn-group",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".btn-group__inner"
+          ]
+        },
+        {
+          "selector": ".btn-group__inner",
+          "tag": "div",
+          "styles": {},
+          "parent": ".btn-group"
+        }
+      ]
+    },
+    "default-maconomy-light-sm": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".btn-group": {},
+          ".btn-group__inner": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".btn-group",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".btn-group__inner"
+          ]
+        },
+        {
+          "selector": ".btn-group__inner",
+          "tag": "div",
+          "styles": {},
+          "parent": ".btn-group"
+        }
+      ]
+    },
+    "default-maconomy-light-md": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".btn-group": {},
+          ".btn-group__inner": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".btn-group",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".btn-group__inner"
+          ]
+        },
+        {
+          "selector": ".btn-group__inner",
+          "tag": "div",
+          "styles": {},
+          "parent": ".btn-group"
+        }
+      ]
+    },
+    "default-maconomy-light-lg": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".btn-group": {},
+          ".btn-group__inner": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".btn-group",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".btn-group__inner"
+          ]
+        },
+        {
+          "selector": ".btn-group__inner",
+          "tag": "div",
+          "styles": {},
+          "parent": ".btn-group"
+        }
+      ]
+    },
+    "default-maconomy-dark-sm": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".btn-group": {},
+          ".btn-group__inner": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".btn-group",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".btn-group__inner"
+          ]
+        },
+        {
+          "selector": ".btn-group__inner",
+          "tag": "div",
+          "styles": {},
+          "parent": ".btn-group"
+        }
+      ]
+    },
+    "default-maconomy-dark-md": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".btn-group": {},
+          ".btn-group__inner": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".btn-group",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".btn-group__inner"
+          ]
+        },
+        {
+          "selector": ".btn-group__inner",
+          "tag": "div",
+          "styles": {},
+          "parent": ".btn-group"
+        }
+      ]
+    },
+    "default-maconomy-dark-lg": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".btn-group": {},
+          ".btn-group__inner": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".btn-group",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".btn-group__inner"
+          ]
+        },
+        {
+          "selector": ".btn-group__inner",
+          "tag": "div",
+          "styles": {},
+          "parent": ".btn-group"
+        }
+      ]
+    },
+    "outline-cp-light-sm": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".btn-group": {},
+          ".btn-group__inner": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".btn-group",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".btn-group__inner"
+          ]
+        },
+        {
+          "selector": ".btn-group__inner",
+          "tag": "div",
+          "styles": {},
+          "parent": ".btn-group"
+        }
+      ]
+    },
+    "outline-cp-light-md": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".btn-group": {},
+          ".btn-group__inner": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".btn-group",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".btn-group__inner"
+          ]
+        },
+        {
+          "selector": ".btn-group__inner",
+          "tag": "div",
+          "styles": {},
+          "parent": ".btn-group"
+        }
+      ]
+    },
+    "outline-cp-light-lg": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".btn-group": {},
+          ".btn-group__inner": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".btn-group",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".btn-group__inner"
+          ]
+        },
+        {
+          "selector": ".btn-group__inner",
+          "tag": "div",
+          "styles": {},
+          "parent": ".btn-group"
+        }
+      ]
+    },
+    "outline-cp-dark-sm": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".btn-group": {},
+          ".btn-group__inner": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".btn-group",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".btn-group__inner"
+          ]
+        },
+        {
+          "selector": ".btn-group__inner",
+          "tag": "div",
+          "styles": {},
+          "parent": ".btn-group"
+        }
+      ]
+    },
+    "outline-cp-dark-md": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".btn-group": {},
+          ".btn-group__inner": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".btn-group",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".btn-group__inner"
+          ]
+        },
+        {
+          "selector": ".btn-group__inner",
+          "tag": "div",
+          "styles": {},
+          "parent": ".btn-group"
+        }
+      ]
+    },
+    "outline-cp-dark-lg": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".btn-group": {},
+          ".btn-group__inner": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".btn-group",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".btn-group__inner"
+          ]
+        },
+        {
+          "selector": ".btn-group__inner",
+          "tag": "div",
+          "styles": {},
+          "parent": ".btn-group"
+        }
+      ]
+    },
+    "outline-vp-light-sm": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".btn-group": {},
+          ".btn-group__inner": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".btn-group",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".btn-group__inner"
+          ]
+        },
+        {
+          "selector": ".btn-group__inner",
+          "tag": "div",
+          "styles": {},
+          "parent": ".btn-group"
+        }
+      ]
+    },
+    "outline-vp-light-md": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".btn-group": {},
+          ".btn-group__inner": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".btn-group",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".btn-group__inner"
+          ]
+        },
+        {
+          "selector": ".btn-group__inner",
+          "tag": "div",
+          "styles": {},
+          "parent": ".btn-group"
+        }
+      ]
+    },
+    "outline-vp-light-lg": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".btn-group": {},
+          ".btn-group__inner": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".btn-group",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".btn-group__inner"
+          ]
+        },
+        {
+          "selector": ".btn-group__inner",
+          "tag": "div",
+          "styles": {},
+          "parent": ".btn-group"
+        }
+      ]
+    },
+    "outline-vp-dark-sm": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".btn-group": {},
+          ".btn-group__inner": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".btn-group",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".btn-group__inner"
+          ]
+        },
+        {
+          "selector": ".btn-group__inner",
+          "tag": "div",
+          "styles": {},
+          "parent": ".btn-group"
+        }
+      ]
+    },
+    "outline-vp-dark-md": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".btn-group": {},
+          ".btn-group__inner": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".btn-group",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".btn-group__inner"
+          ]
+        },
+        {
+          "selector": ".btn-group__inner",
+          "tag": "div",
+          "styles": {},
+          "parent": ".btn-group"
+        }
+      ]
+    },
+    "outline-vp-dark-lg": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".btn-group": {},
+          ".btn-group__inner": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".btn-group",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".btn-group__inner"
+          ]
+        },
+        {
+          "selector": ".btn-group__inner",
+          "tag": "div",
+          "styles": {},
+          "parent": ".btn-group"
+        }
+      ]
+    },
+    "outline-ppm-light-sm": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".btn-group": {},
+          ".btn-group__inner": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".btn-group",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".btn-group__inner"
+          ]
+        },
+        {
+          "selector": ".btn-group__inner",
+          "tag": "div",
+          "styles": {},
+          "parent": ".btn-group"
+        }
+      ]
+    },
+    "outline-ppm-light-md": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".btn-group": {},
+          ".btn-group__inner": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".btn-group",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".btn-group__inner"
+          ]
+        },
+        {
+          "selector": ".btn-group__inner",
+          "tag": "div",
+          "styles": {},
+          "parent": ".btn-group"
+        }
+      ]
+    },
+    "outline-ppm-light-lg": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".btn-group": {},
+          ".btn-group__inner": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".btn-group",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".btn-group__inner"
+          ]
+        },
+        {
+          "selector": ".btn-group__inner",
+          "tag": "div",
+          "styles": {},
+          "parent": ".btn-group"
+        }
+      ]
+    },
+    "outline-ppm-dark-sm": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".btn-group": {},
+          ".btn-group__inner": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".btn-group",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".btn-group__inner"
+          ]
+        },
+        {
+          "selector": ".btn-group__inner",
+          "tag": "div",
+          "styles": {},
+          "parent": ".btn-group"
+        }
+      ]
+    },
+    "outline-ppm-dark-md": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".btn-group": {},
+          ".btn-group__inner": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".btn-group",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".btn-group__inner"
+          ]
+        },
+        {
+          "selector": ".btn-group__inner",
+          "tag": "div",
+          "styles": {},
+          "parent": ".btn-group"
+        }
+      ]
+    },
+    "outline-ppm-dark-lg": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".btn-group": {},
+          ".btn-group__inner": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".btn-group",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".btn-group__inner"
+          ]
+        },
+        {
+          "selector": ".btn-group__inner",
+          "tag": "div",
+          "styles": {},
+          "parent": ".btn-group"
+        }
+      ]
+    },
+    "outline-maconomy-light-sm": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".btn-group": {},
+          ".btn-group__inner": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".btn-group",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".btn-group__inner"
+          ]
+        },
+        {
+          "selector": ".btn-group__inner",
+          "tag": "div",
+          "styles": {},
+          "parent": ".btn-group"
+        }
+      ]
+    },
+    "outline-maconomy-light-md": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".btn-group": {},
+          ".btn-group__inner": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".btn-group",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".btn-group__inner"
+          ]
+        },
+        {
+          "selector": ".btn-group__inner",
+          "tag": "div",
+          "styles": {},
+          "parent": ".btn-group"
+        }
+      ]
+    },
+    "outline-maconomy-light-lg": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".btn-group": {},
+          ".btn-group__inner": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".btn-group",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".btn-group__inner"
+          ]
+        },
+        {
+          "selector": ".btn-group__inner",
+          "tag": "div",
+          "styles": {},
+          "parent": ".btn-group"
+        }
+      ]
+    },
+    "outline-maconomy-dark-sm": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".btn-group": {},
+          ".btn-group__inner": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".btn-group",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".btn-group__inner"
+          ]
+        },
+        {
+          "selector": ".btn-group__inner",
+          "tag": "div",
+          "styles": {},
+          "parent": ".btn-group"
+        }
+      ]
+    },
+    "outline-maconomy-dark-md": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".btn-group": {},
+          ".btn-group__inner": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".btn-group",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".btn-group__inner"
+          ]
+        },
+        {
+          "selector": ".btn-group__inner",
+          "tag": "div",
+          "styles": {},
+          "parent": ".btn-group"
+        }
+      ]
+    },
+    "outline-maconomy-dark-lg": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".btn-group": {},
+          ".btn-group__inner": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".btn-group",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".btn-group__inner"
+          ]
+        },
+        {
+          "selector": ".btn-group__inner",
+          "tag": "div",
+          "styles": {},
+          "parent": ".btn-group"
+        }
+      ]
+    }
+  },
+  "guidance": {
+    "patterns": {},
+    "guidelines": {}
+  },
+  "interactivity": {
+    "events": [],
+    "state": [
+      {
+        "name": "—",
+        "type": "—",
+        "description": "Layout only; wraps buttons. No client state; each button handles its own click."
+      }
+    ]
+  },
+  "examples": [
+    {
+      "name": "Edit and delete actions",
+      "description": "Card with edit and delete buttons",
+      "recipeId": "card-with-actions"
+    },
+    {
+      "name": "Single action",
+      "description": "Card with single view action",
+      "recipeId": "card-with-actions"
+    },
+    {
+      "name": "Three actions",
+      "description": "Card with view, edit, and delete",
+      "recipeId": "card-with-actions"
+    },
+    {
+      "name": "Action group",
+      "description": "Standalone button group",
+      "snippet": "<ButtonGroup><Button>Save</Button><Button variant=\"ghost\">Cancel</Button></ButtonGroup>"
+    }
+  ]
+}

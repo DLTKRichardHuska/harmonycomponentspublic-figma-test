@@ -20,12 +20,15 @@ This document defines the **canonical JSON format** for Harmony component specs,
 | **props**  | For each prop: `name`, `type`, `default`, `optional` (or `required`) | Component API; ensures correct interface (variant, size, disabled, icon, etc.). |
 | **layout** | `display`, `flexDirection`, `alignItems`, `justifyContent`, `gap` | All resolved (e.g. `"8px"` for gap). |
 | **spacing** | `paddingTop`, `paddingRight`, `paddingBottom`, `paddingLeft` | Resolved px. |
-| **dimensions** | `height`, `minWidth`, `maxWidth` (for the size) | Resolved. |
+| **positioning** | Where component is positioned in layout: `position`, `right`/`left`/`top`/`bottom`, `transform`, `zIndex` | Omit when N/A (e.g. inline components). Use for fixed/absolute placement (e.g. sidebars, dialogs). |
+| **dimensions** | `width`, `height`, `minWidth`, `maxWidth` (for the size) | Resolved. Include `width` when collapsed/expanded or hover changes it. |
 | **typography** | `fontFamily`, `fontSize`, `fontWeight`, `lineHeight` (for the size) | Resolved. |
 | **borders** | `width`, `style`, `radius` | All resolved; full border expression when CSS uses it (e.g. `1px solid #hex`). |
 | **states** | Per states contract below | `default`, `hover`, `active`, `focus`, `disabled` (and `item`, `icon`, `label` where applicable); each state: `background`, `text`, `border`, `iconColor` (and focus `outline`/`outlineOffset`). |
-| **icons** | Where applicable: `iconSizePx`, `gapBetweenIconAndText` | Resolved (e.g. `"16px"`, `"8px"`). Omit or `{}` when N/A. |
-| **template** | When component has default content | Exact default content for that theme/variant (e.g. `sections` with `items`, `label`, `icon` or `isCustom`/`customSrc`/`customSrcActive`) so section count and icons are never inferred. |
+| **icons** | Where applicable: `iconSizePx`, `delaLogoSizePx`, `gapBetweenIconAndText`; optional `iconSizeCompactPx`, `delaLogoSizeCompactPx` for responsive/compact | Resolved. Compact sizes apply at breakpoint or inside shell layout when documented. |
+| **section** | When component has inner blocks (e.g. sidebar section): `borderRadius`, `borderRight`/etc., `boxShadow`, `padding`, `gap` | Resolved; use for subsection styling so rebuild matches CSS. |
+| **panelOpen** / **contexts** | When component has data-attribute or context-driven overrides (e.g. `data-panel-open="true"`): `when`, overrides for `section`, `rootHoverWidth`, `labelVisible`, `tooltipOnHover` | Describes state-dependent visuals so exact replica includes panel-open behavior. |
+| **template** | When component has default content | Exact default content for that theme/variant (e.g. `sections` with `items`, `label`, `icon` or `isCustom`/`customSrc`/`customSrcActive`) so section count and icons are never inferred. Template items with a named `icon` may include **iconPath** (resolved path to the icon asset) so the build spec is self-contained and the consumer does not need a separate icon-mappings lookup. |
 | **structure** | When component has fixed DOM shape | Explicit DOM hierarchy and BEM classes so markup and classes are identical every time. |
 
 ### 1.3 Provenance (where values come from)
@@ -36,6 +39,8 @@ This document defines the **canonical JSON format** for Harmony component specs,
 - **Canonical JSON:** Authored manually (copy resolved values from tokens + components.css into `specs["..."]`) or produced by one auditable script that reads tokens + CSS and emits canonical JSON. No css-parser, visual-spec-extractor, or generate-build-specs in their current role for this data. The JSON file is the source of truth for exact builds.
 
 - **Where state data lives:** In the canonical format, state data lives in `specs["<key>"].states`. get_specs returns that single spec; no merging of multiple blobs.
+
+- **Full spec completeness:** All components in `mcp-data/components/` are audited for full spec completeness (layout, spacing, padding, radius, dimensions, typography, borders, states, and where applicable positioning, section, panelOpen/contexts). Exact rebuilds are possible from get_specs alone; no inference of missing values.
 
 ---
 

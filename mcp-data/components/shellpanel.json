@@ -138,6 +138,7 @@
         "paddingLeft": "16px"
       },
       "dimensions": {
+        "width": "596px",
         "height": "auto",
         "minWidth": "auto",
         "maxWidth": "none"
@@ -152,6 +153,13 @@
         "width": "0",
         "style": "solid",
         "radius": "4px"
+      },
+      "positioning": {
+        "position": "fixed",
+        "top": "calc(56px + 5px)",
+        "bottom": "calc(48px + 5px)",
+        "left": "0",
+        "zIndex": "44"
       },
       "states": {
         "default": {

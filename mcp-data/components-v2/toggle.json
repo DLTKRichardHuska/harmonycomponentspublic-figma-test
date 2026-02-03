@@ -1,0 +1,196 @@
+{
+  "name": "Toggle",
+  "type": "component",
+  "filePath": "src/components/ui/Toggle.astro",
+  "description": "Toggle Component",
+  "props": {
+    "name": {
+      "type": "string",
+      "optional": true,
+      "default": null
+    },
+    "id": {
+      "type": "string",
+      "optional": true,
+      "default": null
+    },
+    "checked": {
+      "type": "boolean",
+      "optional": true,
+      "default": "false"
+    },
+    "disabled": {
+      "type": "boolean",
+      "optional": true,
+      "default": "false"
+    },
+    "label": {
+      "type": "string",
+      "optional": true,
+      "default": null
+    },
+    "size": {
+      "type": "'sm' | 'md'",
+      "optional": true,
+      "default": "'md'"
+    },
+    "class": {
+      "type": "string",
+      "optional": true,
+      "default": "''"
+    }
+  },
+  "defaults": {
+    "theme": "cp",
+    "mode": "light",
+    "size": "'md'"
+  },
+  "specs": {
+    "cp-light-md": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".toggle": {
+            "display": "inline-flex",
+            "align-items": "center",
+            "gap": "8px",
+            "cursor": "pointer"
+          },
+          ".toggle__input": {
+            "position": "absolute",
+            "opacity": "0",
+            "width": "0",
+            "height": "0"
+          },
+          ".toggle__label": {
+            "font-size": "0.875rem",
+            "color": "#373F4E"
+          },
+          ".toggle__thumb": {
+            "position": "absolute",
+            "top": "2px",
+            "left": "2px",
+            "width": "20px",
+            "height": "20px",
+            "background-color": "white",
+            "border-radius": "9999px",
+            "box-shadow": "0 1px 2px 0 rgb(15 23 42 / 0.05)",
+            "transition": "transform 150ms ease"
+          },
+          ".toggle__track": {
+            "width": "44px",
+            "height": "24px",
+            "background-color": "#BFC6D4",
+            "border-radius": "9999px",
+            "position": "relative",
+            "transition": "background-color 150ms ease",
+            "flex-shrink": "0"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".toggle",
+          "tag": "div",
+          "styles": {
+            "display": "inline-flex",
+            "align-items": "center",
+            "gap": "8px",
+            "cursor": "pointer"
+          },
+          "children": [
+            ".toggle__input",
+            ".toggle__label",
+            ".toggle__thumb",
+            ".toggle__track"
+          ]
+        },
+        {
+          "selector": ".toggle__input",
+          "tag": "span",
+          "styles": {
+            "position": "absolute",
+            "opacity": "0",
+            "width": "0",
+            "height": "0"
+          },
+          "parent": ".toggle"
+        },
+        {
+          "selector": ".toggle__label",
+          "tag": "span",
+          "styles": {
+            "font-size": "0.875rem",
+            "color": "#373F4E"
+          },
+          "parent": ".toggle"
+        },
+        {
+          "selector": ".toggle__thumb",
+          "tag": "span",
+          "styles": {
+            "position": "absolute",
+            "top": "2px",
+            "left": "2px",
+            "width": "20px",
+            "height": "20px",
+            "background-color": "white",
+            "border-radius": "9999px",
+            "box-shadow": "0 1px 2px 0 rgb(15 23 42 / 0.05)",
+            "transition": "transform 150ms ease"
+          },
+          "parent": ".toggle"
+        },
+        {
+          "selector": ".toggle__track",
+          "tag": "span",
+          "styles": {
+            "width": "44px",
+            "height": "24px",
+            "background-color": "#BFC6D4",
+            "border-radius": "9999px",
+            "position": "relative",
+            "transition": "background-color 150ms ease",
+            "flex-shrink": "0"
+          },
+          "parent": ".toggle"
+        }
+      ]
+    }
+  },
+  "guidance": {
+    "patterns": {},
+    "guidelines": {}
+  },
+  "interactivity": {
+    "events": [
+      {
+        "name": "change",
+        "description": "Native change when the switch is toggled; use for form binding or controlled state"
+      }
+    ],
+    "state": [
+      {
+        "name": "checked",
+        "type": "boolean",
+        "description": "Controlled via the checked prop or form value"
+      }
+    ]
+  },
+  "examples": [
+    {
+      "name": "Switch",
+      "description": "On/off toggle",
+      "snippet": "<Toggle label=\"Enable\" name=\"enabled\" />"
+    }
+  ]
+}

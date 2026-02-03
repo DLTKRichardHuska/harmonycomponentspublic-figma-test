@@ -44,7 +44,73 @@
     "theme": "cp",
     "mode": "light"
   },
-  "specs": {},
+  "specs": {
+    "cp-light": {
+      "layout": {
+        "display": "flex",
+        "flexDirection": "row",
+        "alignItems": "center",
+        "justifyContent": "space-between",
+        "gap": "12px"
+      },
+      "spacing": {
+        "paddingTop": "12px",
+        "paddingRight": "16px",
+        "paddingBottom": "12px",
+        "paddingLeft": "0"
+      },
+      "dimensions": {
+        "width": "100%",
+        "height": "auto",
+        "minWidth": "auto",
+        "maxWidth": "none"
+      },
+      "typography": {
+        "fontFamily": "'Figtree', sans-serif",
+        "fontSize": "1.25rem",
+        "fontWeight": "600",
+        "lineHeight": "1.5"
+      },
+      "borders": {
+        "width": "0",
+        "style": "solid",
+        "radius": "0",
+        "border": "none"
+      },
+      "states": {
+        "default": {
+          "background": "transparent",
+          "text": "#373F4E",
+          "border": "none",
+          "iconColor": "#373F4E"
+        },
+        "hover": {
+          "background": "transparent",
+          "text": "#373F4E",
+          "border": "none",
+          "iconColor": "#373F4E"
+        },
+        "active": {
+          "background": "transparent",
+          "text": "#373F4E",
+          "border": "none",
+          "iconColor": "#373F4E"
+        },
+        "focus": {
+          "background": "transparent",
+          "text": "#373F4E",
+          "border": "none",
+          "iconColor": "#373F4E"
+        },
+        "disabled": {
+          "background": "transparent",
+          "text": "#373F4E",
+          "border": "none",
+          "iconColor": "#373F4E"
+        }
+      }
+    }
+  },
   "guidance": {
     "patterns": {
       "actions-order": "In the actions slot, DOM order equals visual order; ShellPageHeader does not reorder. Place outline/secondary buttons first (left), primary button last (right) to match Harmony design. When using props only, the component renders outline buttons then primary by default."

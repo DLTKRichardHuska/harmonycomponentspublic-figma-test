@@ -77,9 +77,10 @@
         "paddingLeft": "16px"
       },
       "dimensions": {
-        "height": "auto",
-        "minWidth": "auto",
-        "maxWidth": "none"
+        "minWidth": "600px",
+        "maxWidth": "700px",
+        "width": "90%",
+        "height": "auto"
       },
       "typography": {
         "fontFamily": "'Lexend', sans-serif",
@@ -91,6 +92,13 @@
         "width": "0",
         "style": "solid",
         "radius": "0.75rem"
+      },
+      "positioning": {
+        "position": "fixed",
+        "top": "50%",
+        "left": "50%",
+        "transform": "translate(-50%, -50%)",
+        "zIndex": "300"
       },
       "states": {
         "default": {

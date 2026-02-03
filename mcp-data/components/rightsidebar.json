@@ -56,7 +56,15 @@
         "paddingBottom": "12px",
         "paddingLeft": "8px"
       },
+      "positioning": {
+        "position": "fixed",
+        "right": "0",
+        "top": "50%",
+        "transform": "translateY(-50%)",
+        "zIndex": "200"
+      },
       "dimensions": {
+        "width": "52px",
         "height": "auto",
         "minWidth": "52px",
         "maxWidth": "220px"
@@ -73,6 +81,13 @@
         "radius": "12px",
         "border": "1px solid #BFC6D4"
       },
+      "section": {
+        "borderRadius": "12px 0 0 12px",
+        "borderRight": "none",
+        "boxShadow": "0 20px 25px -5px rgb(15 23 42 / 0.1), 0 8px 10px -6px rgb(15 23 42 / 0.1)",
+        "padding": "12px 8px",
+        "gap": "6px"
+      },
       "states": {
         "default": {
           "background": "#FCFDFF",
@@ -84,7 +99,8 @@
           "background": "#E5E7EB",
           "text": "#373F4E",
           "border": "1px solid #BFC6D4",
-          "iconColor": "#373F4E"
+          "iconColor": "#373F4E",
+          "width": "220px"
         },
         "active": {
           "background": "#E5E7EB",
@@ -113,7 +129,22 @@
       },
       "icons": {
         "iconSizePx": "24",
-        "gapBetweenIconAndText": "8"
+        "delaLogoSizePx": "36",
+        "gapBetweenIconAndText": "8",
+        "iconSizeCompactPx": "20",
+        "delaLogoSizeCompactPx": "28"
+      },
+      "panelOpen": {
+        "when": "data-panel-open=\"true\"",
+        "section": {
+          "boxShadow": "none",
+          "border": "none",
+          "backgroundColor": "transparent",
+          "borderRadius": "0"
+        },
+        "rootHoverWidth": "52px",
+        "labelVisible": false,
+        "tooltipOnHover": true
       },
       "template": {
         "sections": [
@@ -127,10 +158,12 @@
               },
               {
                 "icon": "bell",
+                "iconPath": "node_modules/heroicons/24/outline/bell.svg",
                 "label": "Notifications"
               },
               {
                 "icon": "arrow-up-tray",
+                "iconPath": "node_modules/heroicons/24/outline/arrow-up-tray.svg",
                 "label": "Files"
               }
             ]
@@ -139,10 +172,12 @@
             "items": [
               {
                 "icon": "printer",
+                "iconPath": "node_modules/heroicons/24/outline/printer.svg",
                 "label": "Print"
               },
               {
                 "icon": "view-columns",
+                "iconPath": "node_modules/heroicons/24/outline/view-columns.svg",
                 "label": "Layout Options"
               }
             ]
@@ -151,18 +186,22 @@
             "items": [
               {
                 "icon": "mic-slash",
+                "iconPath": "public/mic-slash.svg",
                 "label": "Microphone"
               },
               {
                 "icon": "signal-slash",
+                "iconPath": "node_modules/heroicons/24/outline/signal-slash.svg",
                 "label": "Offline"
               },
               {
                 "icon": "command-line",
+                "iconPath": "node_modules/heroicons/24/outline/command-line.svg",
                 "label": "Keyboard Shortcuts"
               },
               {
                 "icon": "question-mark-circle",
+                "iconPath": "node_modules/heroicons/24/outline/question-mark-circle.svg",
                 "label": "Help"
               }
             ]
@@ -231,7 +270,15 @@
         "paddingBottom": "12px",
         "paddingLeft": "8px"
       },
+      "positioning": {
+        "position": "fixed",
+        "right": "0",
+        "top": "50%",
+        "transform": "translateY(-50%)",
+        "zIndex": "200"
+      },
       "dimensions": {
+        "width": "52px",
         "height": "auto",
         "minWidth": "52px",
         "maxWidth": "220px"
@@ -248,6 +295,13 @@
         "radius": "12px",
         "border": "1px solid #5F6871"
       },
+      "section": {
+        "borderRadius": "12px 0 0 12px",
+        "borderRight": "none",
+        "boxShadow": "0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 8px 10px -6px rgba(0, 0, 0, 0.3)",
+        "padding": "12px 8px",
+        "gap": "6px"
+      },
       "states": {
         "default": {
           "background": "#333D47",
@@ -259,7 +313,8 @@
           "background": "#3D4A5C",
           "text": "#E9ECEF",
           "border": "1px solid #5F6871",
-          "iconColor": "#E9ECEF"
+          "iconColor": "#E9ECEF",
+          "width": "220px"
         },
         "active": {
           "background": "#3D4A5C",
@@ -288,7 +343,22 @@
       },
       "icons": {
         "iconSizePx": "24",
-        "gapBetweenIconAndText": "8"
+        "delaLogoSizePx": "36",
+        "gapBetweenIconAndText": "8",
+        "iconSizeCompactPx": "20",
+        "delaLogoSizeCompactPx": "28"
+      },
+      "panelOpen": {
+        "when": "data-panel-open=\"true\"",
+        "section": {
+          "boxShadow": "none",
+          "border": "none",
+          "backgroundColor": "transparent",
+          "borderRadius": "0"
+        },
+        "rootHoverWidth": "52px",
+        "labelVisible": false,
+        "tooltipOnHover": true
       },
       "template": {
         "sections": [
@@ -302,10 +372,12 @@
               },
               {
                 "icon": "bell",
+                "iconPath": "node_modules/heroicons/24/outline/bell.svg",
                 "label": "Notifications"
               },
               {
                 "icon": "arrow-up-tray",
+                "iconPath": "node_modules/heroicons/24/outline/arrow-up-tray.svg",
                 "label": "Files"
               }
             ]
@@ -314,10 +386,12 @@
             "items": [
               {
                 "icon": "printer",
+                "iconPath": "node_modules/heroicons/24/outline/printer.svg",
                 "label": "Print"
               },
               {
                 "icon": "view-columns",
+                "iconPath": "node_modules/heroicons/24/outline/view-columns.svg",
                 "label": "Layout Options"
               }
             ]
@@ -326,18 +400,22 @@
             "items": [
               {
                 "icon": "mic-slash",
+                "iconPath": "public/mic-slash.svg",
                 "label": "Microphone"
               },
               {
                 "icon": "signal-slash",
+                "iconPath": "node_modules/heroicons/24/outline/signal-slash.svg",
                 "label": "Offline"
               },
               {
                 "icon": "command-line",
+                "iconPath": "node_modules/heroicons/24/outline/command-line.svg",
                 "label": "Keyboard Shortcuts"
               },
               {
                 "icon": "question-mark-circle",
+                "iconPath": "node_modules/heroicons/24/outline/question-mark-circle.svg",
                 "label": "Help"
               }
             ]
@@ -406,7 +484,15 @@
         "paddingBottom": "12px",
         "paddingLeft": "8px"
       },
+      "positioning": {
+        "position": "fixed",
+        "right": "0",
+        "top": "50%",
+        "transform": "translateY(-50%)",
+        "zIndex": "200"
+      },
       "dimensions": {
+        "width": "52px",
         "height": "auto",
         "minWidth": "52px",
         "maxWidth": "220px"
@@ -423,6 +509,13 @@
         "radius": "12px",
         "border": "1px solid #BFC6D4"
       },
+      "section": {
+        "borderRadius": "12px 0 0 12px",
+        "borderRight": "none",
+        "boxShadow": "0 20px 25px -5px rgb(15 23 42 / 0.1), 0 8px 10px -6px rgb(15 23 42 / 0.1)",
+        "padding": "12px 8px",
+        "gap": "6px"
+      },
       "states": {
         "default": {
           "background": "#FCFDFF",
@@ -434,7 +527,8 @@
           "background": "#E5E7EB",
           "text": "#373F4E",
           "border": "1px solid #BFC6D4",
-          "iconColor": "#373F4E"
+          "iconColor": "#373F4E",
+          "width": "220px"
         },
         "active": {
           "background": "#E5E7EB",
@@ -463,7 +557,22 @@
       },
       "icons": {
         "iconSizePx": "24",
-        "gapBetweenIconAndText": "8"
+        "delaLogoSizePx": "36",
+        "gapBetweenIconAndText": "8",
+        "iconSizeCompactPx": "20",
+        "delaLogoSizeCompactPx": "28"
+      },
+      "panelOpen": {
+        "when": "data-panel-open=\"true\"",
+        "section": {
+          "boxShadow": "none",
+          "border": "none",
+          "backgroundColor": "transparent",
+          "borderRadius": "0"
+        },
+        "rootHoverWidth": "52px",
+        "labelVisible": false,
+        "tooltipOnHover": true
       },
       "template": {
         "sections": [
@@ -477,30 +586,37 @@
               },
               {
                 "icon": "pencil-square",
+                "iconPath": "node_modules/heroicons/24/outline/pencil-square.svg",
                 "label": "Edit"
               },
               {
                 "icon": "magnifying-glass",
+                "iconPath": "node_modules/heroicons/24/outline/magnifying-glass.svg",
                 "label": "Search"
               },
               {
                 "icon": "ellipsis-horizontal-circle",
+                "iconPath": "node_modules/heroicons/24/outline/ellipsis-horizontal-circle.svg",
                 "label": "Actions"
               },
               {
                 "icon": "related",
+                "iconPath": "public/related.svg",
                 "label": "Related"
               },
               {
                 "icon": "template",
+                "iconPath": "public/template.svg",
                 "label": "Templates"
               },
               {
                 "icon": "cloud-arrow-up",
+                "iconPath": "node_modules/heroicons/24/outline/cloud-arrow-up.svg",
                 "label": "Upload"
               },
               {
                 "icon": "cloud-arrow-down",
+                "iconPath": "node_modules/heroicons/24/outline/cloud-arrow-down.svg",
                 "label": "Download"
               }
             ]
@@ -509,14 +625,17 @@
             "items": [
               {
                 "icon": "bell",
+                "iconPath": "node_modules/heroicons/24/outline/bell.svg",
                 "label": "Notifications"
               },
               {
                 "icon": "question-mark-circle",
+                "iconPath": "node_modules/heroicons/24/outline/question-mark-circle.svg",
                 "label": "Help"
               },
               {
                 "icon": "share",
+                "iconPath": "node_modules/heroicons/24/outline/share.svg",
                 "label": "Share"
               }
             ]
@@ -525,14 +644,17 @@
             "items": [
               {
                 "icon": "globe-alt",
+                "iconPath": "node_modules/heroicons/24/outline/globe-alt.svg",
                 "label": "Accessibility"
               },
               {
                 "icon": "language",
+                "iconPath": "node_modules/heroicons/24/outline/language.svg",
                 "label": "Language"
               },
               {
                 "icon": "moon",
+                "iconPath": "node_modules/heroicons/24/outline/moon.svg",
                 "label": "Dark Mode"
               }
             ]
@@ -601,7 +723,15 @@
         "paddingBottom": "12px",
         "paddingLeft": "8px"
       },
+      "positioning": {
+        "position": "fixed",
+        "right": "0",
+        "top": "50%",
+        "transform": "translateY(-50%)",
+        "zIndex": "200"
+      },
       "dimensions": {
+        "width": "52px",
         "height": "auto",
         "minWidth": "52px",
         "maxWidth": "220px"
@@ -618,6 +748,13 @@
         "radius": "12px",
         "border": "1px solid #2A2D32"
       },
+      "section": {
+        "borderRadius": "12px 0 0 12px",
+        "borderRight": "none",
+        "boxShadow": "0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 8px 10px -6px rgba(0, 0, 0, 0.3)",
+        "padding": "12px 8px",
+        "gap": "6px"
+      },
       "states": {
         "default": {
           "background": "#1A1C1F",
@@ -629,7 +766,8 @@
           "background": "#2A2D32",
           "text": "#FAFAFA",
           "border": "1px solid #2A2D32",
-          "iconColor": "#FAFAFA"
+          "iconColor": "#FAFAFA",
+          "width": "220px"
         },
         "active": {
           "background": "#2A2D32",
@@ -658,7 +796,22 @@
       },
       "icons": {
         "iconSizePx": "24",
-        "gapBetweenIconAndText": "8"
+        "delaLogoSizePx": "36",
+        "gapBetweenIconAndText": "8",
+        "iconSizeCompactPx": "20",
+        "delaLogoSizeCompactPx": "28"
+      },
+      "panelOpen": {
+        "when": "data-panel-open=\"true\"",
+        "section": {
+          "boxShadow": "none",
+          "border": "none",
+          "backgroundColor": "transparent",
+          "borderRadius": "0"
+        },
+        "rootHoverWidth": "52px",
+        "labelVisible": false,
+        "tooltipOnHover": true
       },
       "template": {
         "sections": [
@@ -672,30 +825,37 @@
               },
               {
                 "icon": "pencil-square",
+                "iconPath": "node_modules/heroicons/24/outline/pencil-square.svg",
                 "label": "Edit"
               },
               {
                 "icon": "magnifying-glass",
+                "iconPath": "node_modules/heroicons/24/outline/magnifying-glass.svg",
                 "label": "Search"
               },
               {
                 "icon": "ellipsis-horizontal-circle",
+                "iconPath": "node_modules/heroicons/24/outline/ellipsis-horizontal-circle.svg",
                 "label": "Actions"
               },
               {
                 "icon": "related",
+                "iconPath": "public/related.svg",
                 "label": "Related"
               },
               {
                 "icon": "template",
+                "iconPath": "public/template.svg",
                 "label": "Templates"
               },
               {
                 "icon": "cloud-arrow-up",
+                "iconPath": "node_modules/heroicons/24/outline/cloud-arrow-up.svg",
                 "label": "Upload"
               },
               {
                 "icon": "cloud-arrow-down",
+                "iconPath": "node_modules/heroicons/24/outline/cloud-arrow-down.svg",
                 "label": "Download"
               }
             ]
@@ -704,14 +864,17 @@
             "items": [
               {
                 "icon": "bell",
+                "iconPath": "node_modules/heroicons/24/outline/bell.svg",
                 "label": "Notifications"
               },
               {
                 "icon": "question-mark-circle",
+                "iconPath": "node_modules/heroicons/24/outline/question-mark-circle.svg",
                 "label": "Help"
               },
               {
                 "icon": "share",
+                "iconPath": "node_modules/heroicons/24/outline/share.svg",
                 "label": "Share"
               }
             ]
@@ -720,14 +883,17 @@
             "items": [
               {
                 "icon": "globe-alt",
+                "iconPath": "node_modules/heroicons/24/outline/globe-alt.svg",
                 "label": "Accessibility"
               },
               {
                 "icon": "language",
+                "iconPath": "node_modules/heroicons/24/outline/language.svg",
                 "label": "Language"
               },
               {
                 "icon": "moon",
+                "iconPath": "node_modules/heroicons/24/outline/moon.svg",
                 "label": "Dark Mode"
               }
             ]
@@ -796,7 +962,15 @@
         "paddingBottom": "12px",
         "paddingLeft": "8px"
       },
+      "positioning": {
+        "position": "fixed",
+        "right": "0",
+        "top": "50%",
+        "transform": "translateY(-50%)",
+        "zIndex": "200"
+      },
       "dimensions": {
+        "width": "52px",
         "height": "auto",
         "minWidth": "52px",
         "maxWidth": "220px"
@@ -813,6 +987,13 @@
         "radius": "12px",
         "border": "1px solid #BFC6D4"
       },
+      "section": {
+        "borderRadius": "12px 0 0 12px",
+        "borderRight": "none",
+        "boxShadow": "0 20px 25px -5px rgb(15 23 42 / 0.1), 0 8px 10px -6px rgb(15 23 42 / 0.1)",
+        "padding": "12px 8px",
+        "gap": "6px"
+      },
       "states": {
         "default": {
           "background": "#FCFDFF",
@@ -824,7 +1005,8 @@
           "background": "#E5E7EB",
           "text": "#373F4E",
           "border": "1px solid #BFC6D4",
-          "iconColor": "#373F4E"
+          "iconColor": "#373F4E",
+          "width": "220px"
         },
         "active": {
           "background": "#E5E7EB",
@@ -853,7 +1035,22 @@
       },
       "icons": {
         "iconSizePx": "24",
-        "gapBetweenIconAndText": "8"
+        "delaLogoSizePx": "36",
+        "gapBetweenIconAndText": "8",
+        "iconSizeCompactPx": "20",
+        "delaLogoSizeCompactPx": "28"
+      },
+      "panelOpen": {
+        "when": "data-panel-open=\"true\"",
+        "section": {
+          "boxShadow": "none",
+          "border": "none",
+          "backgroundColor": "transparent",
+          "borderRadius": "0"
+        },
+        "rootHoverWidth": "52px",
+        "labelVisible": false,
+        "tooltipOnHover": true
       },
       "template": {
         "sections": [
@@ -867,30 +1064,37 @@
               },
               {
                 "icon": "pencil-square",
+                "iconPath": "node_modules/heroicons/24/outline/pencil-square.svg",
                 "label": "Edit"
               },
               {
                 "icon": "magnifying-glass",
+                "iconPath": "node_modules/heroicons/24/outline/magnifying-glass.svg",
                 "label": "Search"
               },
               {
                 "icon": "ellipsis-horizontal-circle",
+                "iconPath": "node_modules/heroicons/24/outline/ellipsis-horizontal-circle.svg",
                 "label": "Actions"
               },
               {
                 "icon": "related",
+                "iconPath": "public/related.svg",
                 "label": "Related"
               },
               {
                 "icon": "template",
+                "iconPath": "public/template.svg",
                 "label": "Templates"
               },
               {
                 "icon": "cloud-arrow-up",
+                "iconPath": "node_modules/heroicons/24/outline/cloud-arrow-up.svg",
                 "label": "Upload"
               },
               {
                 "icon": "cloud-arrow-down",
+                "iconPath": "node_modules/heroicons/24/outline/cloud-arrow-down.svg",
                 "label": "Download"
               }
             ]
@@ -899,14 +1103,17 @@
             "items": [
               {
                 "icon": "bell",
+                "iconPath": "node_modules/heroicons/24/outline/bell.svg",
                 "label": "Notifications"
               },
               {
                 "icon": "question-mark-circle",
+                "iconPath": "node_modules/heroicons/24/outline/question-mark-circle.svg",
                 "label": "Help"
               },
               {
                 "icon": "share",
+                "iconPath": "node_modules/heroicons/24/outline/share.svg",
                 "label": "Share"
               }
             ]
@@ -915,14 +1122,17 @@
             "items": [
               {
                 "icon": "globe-alt",
+                "iconPath": "node_modules/heroicons/24/outline/globe-alt.svg",
                 "label": "Accessibility"
               },
               {
                 "icon": "language",
+                "iconPath": "node_modules/heroicons/24/outline/language.svg",
                 "label": "Language"
               },
               {
                 "icon": "moon",
+                "iconPath": "node_modules/heroicons/24/outline/moon.svg",
                 "label": "Dark Mode"
               }
             ]
@@ -991,7 +1201,15 @@
         "paddingBottom": "12px",
         "paddingLeft": "8px"
       },
+      "positioning": {
+        "position": "fixed",
+        "right": "0",
+        "top": "50%",
+        "transform": "translateY(-50%)",
+        "zIndex": "200"
+      },
       "dimensions": {
+        "width": "52px",
         "height": "auto",
         "minWidth": "52px",
         "maxWidth": "220px"
@@ -1008,6 +1226,13 @@
         "radius": "12px",
         "border": "1px solid #2A2D32"
       },
+      "section": {
+        "borderRadius": "12px 0 0 12px",
+        "borderRight": "none",
+        "boxShadow": "0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 8px 10px -6px rgba(0, 0, 0, 0.3)",
+        "padding": "12px 8px",
+        "gap": "6px"
+      },
       "states": {
         "default": {
           "background": "#1A1C1F",
@@ -1019,7 +1244,8 @@
           "background": "#2A2D32",
           "text": "#FAFAFA",
           "border": "1px solid #2A2D32",
-          "iconColor": "#FAFAFA"
+          "iconColor": "#FAFAFA",
+          "width": "220px"
         },
         "active": {
           "background": "#2A2D32",
@@ -1048,7 +1274,22 @@
       },
       "icons": {
         "iconSizePx": "24",
-        "gapBetweenIconAndText": "8"
+        "delaLogoSizePx": "36",
+        "gapBetweenIconAndText": "8",
+        "iconSizeCompactPx": "20",
+        "delaLogoSizeCompactPx": "28"
+      },
+      "panelOpen": {
+        "when": "data-panel-open=\"true\"",
+        "section": {
+          "boxShadow": "none",
+          "border": "none",
+          "backgroundColor": "transparent",
+          "borderRadius": "0"
+        },
+        "rootHoverWidth": "52px",
+        "labelVisible": false,
+        "tooltipOnHover": true
       },
       "template": {
         "sections": [
@@ -1062,30 +1303,37 @@
               },
               {
                 "icon": "pencil-square",
+                "iconPath": "node_modules/heroicons/24/outline/pencil-square.svg",
                 "label": "Edit"
               },
               {
                 "icon": "magnifying-glass",
+                "iconPath": "node_modules/heroicons/24/outline/magnifying-glass.svg",
                 "label": "Search"
               },
               {
                 "icon": "ellipsis-horizontal-circle",
+                "iconPath": "node_modules/heroicons/24/outline/ellipsis-horizontal-circle.svg",
                 "label": "Actions"
               },
               {
                 "icon": "related",
+                "iconPath": "public/related.svg",
                 "label": "Related"
               },
               {
                 "icon": "template",
+                "iconPath": "public/template.svg",
                 "label": "Templates"
               },
               {
                 "icon": "cloud-arrow-up",
+                "iconPath": "node_modules/heroicons/24/outline/cloud-arrow-up.svg",
                 "label": "Upload"
               },
               {
                 "icon": "cloud-arrow-down",
+                "iconPath": "node_modules/heroicons/24/outline/cloud-arrow-down.svg",
                 "label": "Download"
               }
             ]
@@ -1094,14 +1342,17 @@
             "items": [
               {
                 "icon": "bell",
+                "iconPath": "node_modules/heroicons/24/outline/bell.svg",
                 "label": "Notifications"
               },
               {
                 "icon": "question-mark-circle",
+                "iconPath": "node_modules/heroicons/24/outline/question-mark-circle.svg",
                 "label": "Help"
               },
               {
                 "icon": "share",
+                "iconPath": "node_modules/heroicons/24/outline/share.svg",
                 "label": "Share"
               }
             ]
@@ -1110,14 +1361,17 @@
             "items": [
               {
                 "icon": "globe-alt",
+                "iconPath": "node_modules/heroicons/24/outline/globe-alt.svg",
                 "label": "Accessibility"
               },
               {
                 "icon": "language",
+                "iconPath": "node_modules/heroicons/24/outline/language.svg",
                 "label": "Language"
               },
               {
                 "icon": "moon",
+                "iconPath": "node_modules/heroicons/24/outline/moon.svg",
                 "label": "Dark Mode"
               }
             ]
@@ -1186,7 +1440,15 @@
         "paddingBottom": "12px",
         "paddingLeft": "8px"
       },
+      "positioning": {
+        "position": "fixed",
+        "right": "0",
+        "top": "50%",
+        "transform": "translateY(-50%)",
+        "zIndex": "200"
+      },
       "dimensions": {
+        "width": "52px",
         "height": "auto",
         "minWidth": "52px",
         "maxWidth": "220px"
@@ -1203,6 +1465,13 @@
         "radius": "12px",
         "border": "1px solid #BFC6D4"
       },
+      "section": {
+        "borderRadius": "12px 0 0 12px",
+        "borderRight": "none",
+        "boxShadow": "0 20px 25px -5px rgb(15 23 42 / 0.1), 0 8px 10px -6px rgb(15 23 42 / 0.1)",
+        "padding": "12px 8px",
+        "gap": "6px"
+      },
       "states": {
         "default": {
           "background": "#FCFDFF",
@@ -1214,7 +1483,8 @@
           "background": "#E5E7EB",
           "text": "#373F4E",
           "border": "1px solid #BFC6D4",
-          "iconColor": "#373F4E"
+          "iconColor": "#373F4E",
+          "width": "220px"
         },
         "active": {
           "background": "#E5E7EB",
@@ -1243,7 +1513,22 @@
       },
       "icons": {
         "iconSizePx": "24",
-        "gapBetweenIconAndText": "8"
+        "delaLogoSizePx": "36",
+        "gapBetweenIconAndText": "8",
+        "iconSizeCompactPx": "20",
+        "delaLogoSizeCompactPx": "28"
+      },
+      "panelOpen": {
+        "when": "data-panel-open=\"true\"",
+        "section": {
+          "boxShadow": "none",
+          "border": "none",
+          "backgroundColor": "transparent",
+          "borderRadius": "0"
+        },
+        "rootHoverWidth": "52px",
+        "labelVisible": false,
+        "tooltipOnHover": true
       },
       "template": {
         "sections": [
@@ -1257,30 +1542,37 @@
               },
               {
                 "icon": "pencil-square",
+                "iconPath": "node_modules/heroicons/24/outline/pencil-square.svg",
                 "label": "Edit"
               },
               {
                 "icon": "magnifying-glass",
+                "iconPath": "node_modules/heroicons/24/outline/magnifying-glass.svg",
                 "label": "Search"
               },
               {
                 "icon": "ellipsis-horizontal-circle",
+                "iconPath": "node_modules/heroicons/24/outline/ellipsis-horizontal-circle.svg",
                 "label": "Actions"
               },
               {
                 "icon": "related",
+                "iconPath": "public/related.svg",
                 "label": "Related"
               },
               {
                 "icon": "template",
+                "iconPath": "public/template.svg",
                 "label": "Templates"
               },
               {
                 "icon": "cloud-arrow-up",
+                "iconPath": "node_modules/heroicons/24/outline/cloud-arrow-up.svg",
                 "label": "Upload"
               },
               {
                 "icon": "cloud-arrow-down",
+                "iconPath": "node_modules/heroicons/24/outline/cloud-arrow-down.svg",
                 "label": "Download"
               }
             ]
@@ -1289,14 +1581,17 @@
             "items": [
               {
                 "icon": "bell",
+                "iconPath": "node_modules/heroicons/24/outline/bell.svg",
                 "label": "Notifications"
               },
               {
                 "icon": "question-mark-circle",
+                "iconPath": "node_modules/heroicons/24/outline/question-mark-circle.svg",
                 "label": "Help"
               },
               {
                 "icon": "share",
+                "iconPath": "node_modules/heroicons/24/outline/share.svg",
                 "label": "Share"
               }
             ]
@@ -1305,14 +1600,17 @@
             "items": [
               {
                 "icon": "globe-alt",
+                "iconPath": "node_modules/heroicons/24/outline/globe-alt.svg",
                 "label": "Accessibility"
               },
               {
                 "icon": "language",
+                "iconPath": "node_modules/heroicons/24/outline/language.svg",
                 "label": "Language"
               },
               {
                 "icon": "moon",
+                "iconPath": "node_modules/heroicons/24/outline/moon.svg",
                 "label": "Dark Mode"
               }
             ]
@@ -1381,7 +1679,15 @@
         "paddingBottom": "12px",
         "paddingLeft": "8px"
       },
+      "positioning": {
+        "position": "fixed",
+        "right": "0",
+        "top": "50%",
+        "transform": "translateY(-50%)",
+        "zIndex": "200"
+      },
       "dimensions": {
+        "width": "52px",
         "height": "auto",
         "minWidth": "52px",
         "maxWidth": "220px"
@@ -1398,6 +1704,13 @@
         "radius": "12px",
         "border": "1px solid #2A2D32"
       },
+      "section": {
+        "borderRadius": "12px 0 0 12px",
+        "borderRight": "none",
+        "boxShadow": "0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 8px 10px -6px rgba(0, 0, 0, 0.3)",
+        "padding": "12px 8px",
+        "gap": "6px"
+      },
       "states": {
         "default": {
           "background": "#1A1C1F",
@@ -1409,7 +1722,8 @@
           "background": "#2A2D32",
           "text": "#FAFAFA",
           "border": "1px solid #2A2D32",
-          "iconColor": "#FAFAFA"
+          "iconColor": "#FAFAFA",
+          "width": "220px"
         },
         "active": {
           "background": "#2A2D32",
@@ -1438,7 +1752,22 @@
       },
       "icons": {
         "iconSizePx": "24",
-        "gapBetweenIconAndText": "8"
+        "delaLogoSizePx": "36",
+        "gapBetweenIconAndText": "8",
+        "iconSizeCompactPx": "20",
+        "delaLogoSizeCompactPx": "28"
+      },
+      "panelOpen": {
+        "when": "data-panel-open=\"true\"",
+        "section": {
+          "boxShadow": "none",
+          "border": "none",
+          "backgroundColor": "transparent",
+          "borderRadius": "0"
+        },
+        "rootHoverWidth": "52px",
+        "labelVisible": false,
+        "tooltipOnHover": true
       },
       "template": {
         "sections": [
@@ -1452,30 +1781,37 @@
               },
               {
                 "icon": "pencil-square",
+                "iconPath": "node_modules/heroicons/24/outline/pencil-square.svg",
                 "label": "Edit"
               },
               {
                 "icon": "magnifying-glass",
+                "iconPath": "node_modules/heroicons/24/outline/magnifying-glass.svg",
                 "label": "Search"
               },
               {
                 "icon": "ellipsis-horizontal-circle",
+                "iconPath": "node_modules/heroicons/24/outline/ellipsis-horizontal-circle.svg",
                 "label": "Actions"
               },
               {
                 "icon": "related",
+                "iconPath": "public/related.svg",
                 "label": "Related"
               },
               {
                 "icon": "template",
+                "iconPath": "public/template.svg",
                 "label": "Templates"
               },
               {
                 "icon": "cloud-arrow-up",
+                "iconPath": "node_modules/heroicons/24/outline/cloud-arrow-up.svg",
                 "label": "Upload"
               },
               {
                 "icon": "cloud-arrow-down",
+                "iconPath": "node_modules/heroicons/24/outline/cloud-arrow-down.svg",
                 "label": "Download"
               }
             ]
@@ -1484,14 +1820,17 @@
             "items": [
               {
                 "icon": "bell",
+                "iconPath": "node_modules/heroicons/24/outline/bell.svg",
                 "label": "Notifications"
               },
               {
                 "icon": "question-mark-circle",
+                "iconPath": "node_modules/heroicons/24/outline/question-mark-circle.svg",
                 "label": "Help"
               },
               {
                 "icon": "share",
+                "iconPath": "node_modules/heroicons/24/outline/share.svg",
                 "label": "Share"
               }
             ]
@@ -1500,14 +1839,17 @@
             "items": [
               {
                 "icon": "globe-alt",
+                "iconPath": "node_modules/heroicons/24/outline/globe-alt.svg",
                 "label": "Accessibility"
               },
               {
                 "icon": "language",
+                "iconPath": "node_modules/heroicons/24/outline/language.svg",
                 "label": "Language"
               },
               {
                 "icon": "moon",
+                "iconPath": "node_modules/heroicons/24/outline/moon.svg",
                 "label": "Dark Mode"
               }
             ]

@@ -1,0 +1,344 @@
+{
+  "name": "KanbanCard",
+  "type": "component",
+  "filePath": "src/components/ui/KanbanCard.astro",
+  "description": "KanbanCard Component",
+  "props": {
+    "id": {
+      "type": "string",
+      "optional": false,
+      "default": null
+    },
+    "title": {
+      "type": "string",
+      "optional": true,
+      "default": null
+    },
+    "description": {
+      "type": "string",
+      "optional": true,
+      "default": null
+    },
+    "avatar": {
+      "type": "{ name?: string; size?: 'sm' | 'md' | 'lg' }",
+      "optional": true,
+      "default": null
+    },
+    "badges": {
+      "type": "Array<{ label: string; variant?: BadgeVariant }>",
+      "optional": true,
+      "default": "[]"
+    },
+    "progress": {
+      "type": "number",
+      "optional": true,
+      "default": null
+    },
+    "icons": {
+      "type": "Array<{ name: string; size?: 'xs' | 'sm' | 'md' }>",
+      "optional": true,
+      "default": "[]"
+    },
+    "date": {
+      "type": "string",
+      "optional": true,
+      "default": null
+    },
+    "time": {
+      "type": "string",
+      "optional": true,
+      "default": null
+    },
+    "class": {
+      "type": "string",
+      "optional": true,
+      "default": "''"
+    }
+  },
+  "defaults": {
+    "theme": "cp",
+    "mode": "light"
+  },
+  "specs": {
+    "cp-light": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".kanban-card": {
+            "cursor": "pointer",
+            "transition": "transform 150ms ease, box-shadow 150ms ease"
+          },
+          ".kanban-card__avatar": {
+            "flex-shrink": "0"
+          },
+          ".kanban-card__badges": {
+            "display": "flex",
+            "flex-wrap": "wrap",
+            "gap": "4px"
+          },
+          ".kanban-card__date": {
+            "flex-shrink": "0",
+            "white-space": "nowrap"
+          },
+          ".kanban-card__date-time": {
+            "display": "flex",
+            "align-items": "center",
+            "justify-content": "space-between",
+            "gap": "16px",
+            "margin-top": "8px",
+            "padding-top": "8px",
+            "border-top": "1px solid #BFC6D4",
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "500",
+            "line-height": "1.5",
+            "color": "#525969",
+            "min-height": "20px",
+            "flex-wrap": "wrap"
+          },
+          ".kanban-card__description": {
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "400",
+            "line-height": "1.5",
+            "color": "#525969",
+            "margin": "0"
+          },
+          ".kanban-card__header": {
+            "display": "flex",
+            "align-items": "flex-start",
+            "justify-content": "space-between",
+            "gap": "12px",
+            "margin-bottom": "8px",
+            "min-height": "32px"
+          },
+          ".kanban-card__header-right": {
+            "display": "flex",
+            "align-items": "center",
+            "gap": "8px",
+            "flex-wrap": "wrap",
+            "flex-shrink": "0"
+          },
+          ".kanban-card__icon": {
+            "color": "#525969",
+            "flex-shrink": "0"
+          },
+          ".kanban-card__icons": {
+            "display": "flex",
+            "align-items": "center",
+            "gap": "8px"
+          },
+          ".kanban-card__progress": {
+            "width": "100%"
+          },
+          ".kanban-card__time": {
+            "flex-shrink": "0",
+            "white-space": "nowrap"
+          },
+          ".kanban-card__title": {
+            "font-family": "'Lexend', sans-serif",
+            "font-size": "1rem",
+            "font-weight": "600",
+            "line-height": "1.375",
+            "color": "#373F4E",
+            "margin": "0 0 8px 0"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".kanban-card",
+          "tag": "div",
+          "styles": {
+            "cursor": "pointer",
+            "transition": "transform 150ms ease, box-shadow 150ms ease"
+          },
+          "children": [
+            ".kanban-card__avatar",
+            ".kanban-card__badges",
+            ".kanban-card__date",
+            ".kanban-card__date-time",
+            ".kanban-card__description",
+            ".kanban-card__header",
+            ".kanban-card__header-right",
+            ".kanban-card__icon",
+            ".kanban-card__icons",
+            ".kanban-card__progress",
+            ".kanban-card__time",
+            ".kanban-card__title"
+          ]
+        },
+        {
+          "selector": ".kanban-card__avatar",
+          "tag": "span",
+          "styles": {
+            "flex-shrink": "0"
+          },
+          "parent": ".kanban-card"
+        },
+        {
+          "selector": ".kanban-card__badges",
+          "tag": "span",
+          "styles": {
+            "display": "flex",
+            "flex-wrap": "wrap",
+            "gap": "4px"
+          },
+          "parent": ".kanban-card"
+        },
+        {
+          "selector": ".kanban-card__date",
+          "tag": "span",
+          "styles": {
+            "flex-shrink": "0",
+            "white-space": "nowrap"
+          },
+          "parent": ".kanban-card"
+        },
+        {
+          "selector": ".kanban-card__date-time",
+          "tag": "span",
+          "styles": {
+            "display": "flex",
+            "align-items": "center",
+            "justify-content": "space-between",
+            "gap": "16px",
+            "margin-top": "8px",
+            "padding-top": "8px",
+            "border-top": "1px solid #BFC6D4",
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "500",
+            "line-height": "1.5",
+            "color": "#525969",
+            "min-height": "20px",
+            "flex-wrap": "wrap"
+          },
+          "parent": ".kanban-card"
+        },
+        {
+          "selector": ".kanban-card__description",
+          "tag": "span",
+          "styles": {
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "400",
+            "line-height": "1.5",
+            "color": "#525969",
+            "margin": "0"
+          },
+          "parent": ".kanban-card"
+        },
+        {
+          "selector": ".kanban-card__header",
+          "tag": "span",
+          "styles": {
+            "display": "flex",
+            "align-items": "flex-start",
+            "justify-content": "space-between",
+            "gap": "12px",
+            "margin-bottom": "8px",
+            "min-height": "32px"
+          },
+          "parent": ".kanban-card"
+        },
+        {
+          "selector": ".kanban-card__header-right",
+          "tag": "span",
+          "styles": {
+            "display": "flex",
+            "align-items": "center",
+            "gap": "8px",
+            "flex-wrap": "wrap",
+            "flex-shrink": "0"
+          },
+          "parent": ".kanban-card"
+        },
+        {
+          "selector": ".kanban-card__icon",
+          "tag": "span",
+          "styles": {
+            "color": "#525969",
+            "flex-shrink": "0"
+          },
+          "parent": ".kanban-card"
+        },
+        {
+          "selector": ".kanban-card__icons",
+          "tag": "span",
+          "styles": {
+            "display": "flex",
+            "align-items": "center",
+            "gap": "8px"
+          },
+          "parent": ".kanban-card"
+        },
+        {
+          "selector": ".kanban-card__progress",
+          "tag": "span",
+          "styles": {
+            "width": "100%"
+          },
+          "parent": ".kanban-card"
+        },
+        {
+          "selector": ".kanban-card__time",
+          "tag": "span",
+          "styles": {
+            "flex-shrink": "0",
+            "white-space": "nowrap"
+          },
+          "parent": ".kanban-card"
+        },
+        {
+          "selector": ".kanban-card__title",
+          "tag": "span",
+          "styles": {
+            "font-family": "'Lexend', sans-serif",
+            "font-size": "1rem",
+            "font-weight": "600",
+            "line-height": "1.375",
+            "color": "#373F4E",
+            "margin": "0 0 8px 0"
+          },
+          "parent": ".kanban-card"
+        }
+      ]
+    }
+  },
+  "guidance": {
+    "patterns": {},
+    "guidelines": {}
+  },
+  "interactivity": {
+    "events": [
+      {
+        "name": "click",
+        "description": "Card or action click; parent handles selection or navigation"
+      }
+    ],
+    "state": [
+      {
+        "name": "—",
+        "type": "—",
+        "description": "Display only; state managed by parent Kanban or app."
+      }
+    ]
+  },
+  "examples": [
+    {
+      "name": "Kanban card",
+      "description": "Card in a column",
+      "snippet": "<KanbanCard title=\"Task\" description=\"...\" />"
+    }
+  ]
+}

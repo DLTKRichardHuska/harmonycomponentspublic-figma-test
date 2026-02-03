@@ -44,7 +44,77 @@
     "theme": "cp",
     "mode": "light"
   },
-  "specs": {},
+  "specs": {
+    "cp-light": {
+      "layout": {
+        "display": "flex",
+        "flexDirection": "row",
+        "alignItems": "center",
+        "justifyContent": "space-between",
+        "gap": "12px"
+      },
+      "spacing": {
+        "paddingTop": "0",
+        "paddingRight": "16px",
+        "paddingBottom": "0",
+        "paddingLeft": "16px"
+      },
+      "dimensions": {
+        "width": "100%",
+        "height": "56px",
+        "minWidth": "auto",
+        "maxWidth": "none"
+      },
+      "typography": {
+        "fontFamily": "'Figtree', sans-serif",
+        "fontSize": "0.875rem",
+        "fontWeight": "600",
+        "lineHeight": "1.5"
+      },
+      "borders": {
+        "width": "0",
+        "style": "solid",
+        "radius": "0",
+        "border": "none"
+      },
+      "positioning": {
+        "position": "relative",
+        "zIndex": "50"
+      },
+      "states": {
+        "default": {
+          "background": "#F7F8FA",
+          "text": "#373F4E",
+          "border": "none",
+          "iconColor": "#373F4E"
+        },
+        "hover": {
+          "background": "#F7F8FA",
+          "text": "#373F4E",
+          "border": "none",
+          "iconColor": "#373F4E"
+        },
+        "active": {
+          "background": "#F7F8FA",
+          "text": "#373F4E",
+          "border": "none",
+          "iconColor": "#373F4E"
+        },
+        "focus": {
+          "background": "#F7F8FA",
+          "text": "#373F4E",
+          "border": "none",
+          "iconColor": "#373F4E"
+        },
+        "disabled": {
+          "background": "#F7F8FA",
+          "text": "#373F4E",
+          "border": "none",
+          "iconColor": "#373F4E"
+        }
+      }
+    }
+  },
   "guidance": {
     "patterns": {
       "actions-slot-override": "When the actions slot is provided, it completely replaces the default right-side content (company picker and Avatar). When the slot is not used, the header shows the company picker when showCompanyPicker is true and the Avatar. Use the companies prop to supply custom company options and companyColor for the selected indicator and gradient bar.",

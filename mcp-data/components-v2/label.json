@@ -1,0 +1,1813 @@
+{
+  "name": "Label",
+  "type": "component",
+  "filePath": "src/components/ui/Label.astro",
+  "description": "Label Component",
+  "props": {
+    "for": {
+      "type": "string",
+      "optional": true,
+      "default": null
+    },
+    "required": {
+      "type": "boolean",
+      "optional": true,
+      "default": "false"
+    },
+    "helper": {
+      "type": "string",
+      "optional": true,
+      "default": null
+    },
+    "class": {
+      "type": "string",
+      "optional": true,
+      "default": "''"
+    }
+  },
+  "defaults": {
+    "theme": "cp",
+    "mode": "light"
+  },
+  "specs": {
+    "required-cp-light-xs": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".label": {
+            "display": "block",
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "500",
+            "color": "#373F4E",
+            "margin-bottom": "6px"
+          },
+          ".label__helper": {
+            "font-weight": "400",
+            "color": "#6B7280"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".label",
+          "tag": "label",
+          "styles": {
+            "display": "block",
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "500",
+            "color": "#373F4E",
+            "margin-bottom": "6px"
+          },
+          "children": [
+            ".label__helper"
+          ]
+        },
+        {
+          "selector": ".label__helper",
+          "tag": "span",
+          "styles": {
+            "font-weight": "400",
+            "color": "#6B7280"
+          },
+          "parent": ".label"
+        }
+      ]
+    },
+    "required-cp-light-sm": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".label": {
+            "display": "block",
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "500",
+            "color": "#373F4E",
+            "margin-bottom": "6px"
+          },
+          ".label__helper": {
+            "font-weight": "400",
+            "color": "#6B7280"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".label",
+          "tag": "label",
+          "styles": {
+            "display": "block",
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "500",
+            "color": "#373F4E",
+            "margin-bottom": "6px"
+          },
+          "children": [
+            ".label__helper"
+          ]
+        },
+        {
+          "selector": ".label__helper",
+          "tag": "span",
+          "styles": {
+            "font-weight": "400",
+            "color": "#6B7280"
+          },
+          "parent": ".label"
+        }
+      ]
+    },
+    "required-cp-light-md": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".label": {
+            "display": "block",
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "500",
+            "color": "#373F4E",
+            "margin-bottom": "6px"
+          },
+          ".label__helper": {
+            "font-weight": "400",
+            "color": "#6B7280"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".label",
+          "tag": "label",
+          "styles": {
+            "display": "block",
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "500",
+            "color": "#373F4E",
+            "margin-bottom": "6px"
+          },
+          "children": [
+            ".label__helper"
+          ]
+        },
+        {
+          "selector": ".label__helper",
+          "tag": "span",
+          "styles": {
+            "font-weight": "400",
+            "color": "#6B7280"
+          },
+          "parent": ".label"
+        }
+      ]
+    },
+    "required-cp-light-lg": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".label": {
+            "display": "block",
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "500",
+            "color": "#373F4E",
+            "margin-bottom": "6px"
+          },
+          ".label__helper": {
+            "font-weight": "400",
+            "color": "#6B7280"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".label",
+          "tag": "label",
+          "styles": {
+            "display": "block",
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "500",
+            "color": "#373F4E",
+            "margin-bottom": "6px"
+          },
+          "children": [
+            ".label__helper"
+          ]
+        },
+        {
+          "selector": ".label__helper",
+          "tag": "span",
+          "styles": {
+            "font-weight": "400",
+            "color": "#6B7280"
+          },
+          "parent": ".label"
+        }
+      ]
+    },
+    "required-cp-dark-xs": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".label": {
+            "display": "block",
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "500",
+            "color": "#E9ECEF",
+            "margin-bottom": "6px"
+          },
+          ".label__helper": {
+            "font-weight": "400",
+            "color": "#BBBBC6"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".label",
+          "tag": "label",
+          "styles": {
+            "display": "block",
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "500",
+            "color": "#E9ECEF",
+            "margin-bottom": "6px"
+          },
+          "children": [
+            ".label__helper"
+          ]
+        },
+        {
+          "selector": ".label__helper",
+          "tag": "span",
+          "styles": {
+            "font-weight": "400",
+            "color": "#BBBBC6"
+          },
+          "parent": ".label"
+        }
+      ]
+    },
+    "required-cp-dark-sm": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".label": {
+            "display": "block",
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "500",
+            "color": "#E9ECEF",
+            "margin-bottom": "6px"
+          },
+          ".label__helper": {
+            "font-weight": "400",
+            "color": "#BBBBC6"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".label",
+          "tag": "label",
+          "styles": {
+            "display": "block",
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "500",
+            "color": "#E9ECEF",
+            "margin-bottom": "6px"
+          },
+          "children": [
+            ".label__helper"
+          ]
+        },
+        {
+          "selector": ".label__helper",
+          "tag": "span",
+          "styles": {
+            "font-weight": "400",
+            "color": "#BBBBC6"
+          },
+          "parent": ".label"
+        }
+      ]
+    },
+    "required-cp-dark-md": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".label": {
+            "display": "block",
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "500",
+            "color": "#E9ECEF",
+            "margin-bottom": "6px"
+          },
+          ".label__helper": {
+            "font-weight": "400",
+            "color": "#BBBBC6"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".label",
+          "tag": "label",
+          "styles": {
+            "display": "block",
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "500",
+            "color": "#E9ECEF",
+            "margin-bottom": "6px"
+          },
+          "children": [
+            ".label__helper"
+          ]
+        },
+        {
+          "selector": ".label__helper",
+          "tag": "span",
+          "styles": {
+            "font-weight": "400",
+            "color": "#BBBBC6"
+          },
+          "parent": ".label"
+        }
+      ]
+    },
+    "required-cp-dark-lg": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".label": {
+            "display": "block",
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "500",
+            "color": "#E9ECEF",
+            "margin-bottom": "6px"
+          },
+          ".label__helper": {
+            "font-weight": "400",
+            "color": "#BBBBC6"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".label",
+          "tag": "label",
+          "styles": {
+            "display": "block",
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "500",
+            "color": "#E9ECEF",
+            "margin-bottom": "6px"
+          },
+          "children": [
+            ".label__helper"
+          ]
+        },
+        {
+          "selector": ".label__helper",
+          "tag": "span",
+          "styles": {
+            "font-weight": "400",
+            "color": "#BBBBC6"
+          },
+          "parent": ".label"
+        }
+      ]
+    },
+    "required-vp-light-xs": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".label": {
+            "display": "block",
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "500",
+            "color": "#373F4E",
+            "margin-bottom": "6px"
+          },
+          ".label__helper": {
+            "font-weight": "400",
+            "color": "#6B7280"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".label",
+          "tag": "label",
+          "styles": {
+            "display": "block",
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "500",
+            "color": "#373F4E",
+            "margin-bottom": "6px"
+          },
+          "children": [
+            ".label__helper"
+          ]
+        },
+        {
+          "selector": ".label__helper",
+          "tag": "span",
+          "styles": {
+            "font-weight": "400",
+            "color": "#6B7280"
+          },
+          "parent": ".label"
+        }
+      ]
+    },
+    "required-vp-light-sm": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".label": {
+            "display": "block",
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "500",
+            "color": "#373F4E",
+            "margin-bottom": "6px"
+          },
+          ".label__helper": {
+            "font-weight": "400",
+            "color": "#6B7280"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".label",
+          "tag": "label",
+          "styles": {
+            "display": "block",
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "500",
+            "color": "#373F4E",
+            "margin-bottom": "6px"
+          },
+          "children": [
+            ".label__helper"
+          ]
+        },
+        {
+          "selector": ".label__helper",
+          "tag": "span",
+          "styles": {
+            "font-weight": "400",
+            "color": "#6B7280"
+          },
+          "parent": ".label"
+        }
+      ]
+    },
+    "required-vp-light-md": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".label": {
+            "display": "block",
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "500",
+            "color": "#373F4E",
+            "margin-bottom": "6px"
+          },
+          ".label__helper": {
+            "font-weight": "400",
+            "color": "#6B7280"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".label",
+          "tag": "label",
+          "styles": {
+            "display": "block",
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "500",
+            "color": "#373F4E",
+            "margin-bottom": "6px"
+          },
+          "children": [
+            ".label__helper"
+          ]
+        },
+        {
+          "selector": ".label__helper",
+          "tag": "span",
+          "styles": {
+            "font-weight": "400",
+            "color": "#6B7280"
+          },
+          "parent": ".label"
+        }
+      ]
+    },
+    "required-vp-light-lg": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".label": {
+            "display": "block",
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "500",
+            "color": "#373F4E",
+            "margin-bottom": "6px"
+          },
+          ".label__helper": {
+            "font-weight": "400",
+            "color": "#6B7280"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".label",
+          "tag": "label",
+          "styles": {
+            "display": "block",
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "500",
+            "color": "#373F4E",
+            "margin-bottom": "6px"
+          },
+          "children": [
+            ".label__helper"
+          ]
+        },
+        {
+          "selector": ".label__helper",
+          "tag": "span",
+          "styles": {
+            "font-weight": "400",
+            "color": "#6B7280"
+          },
+          "parent": ".label"
+        }
+      ]
+    },
+    "required-vp-dark-xs": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".label": {
+            "display": "block",
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "500",
+            "color": "#FAFAFA",
+            "margin-bottom": "6px"
+          },
+          ".label__helper": {
+            "font-weight": "400",
+            "color": "#B5B5BC"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".label",
+          "tag": "label",
+          "styles": {
+            "display": "block",
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "500",
+            "color": "#FAFAFA",
+            "margin-bottom": "6px"
+          },
+          "children": [
+            ".label__helper"
+          ]
+        },
+        {
+          "selector": ".label__helper",
+          "tag": "span",
+          "styles": {
+            "font-weight": "400",
+            "color": "#B5B5BC"
+          },
+          "parent": ".label"
+        }
+      ]
+    },
+    "required-vp-dark-sm": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".label": {
+            "display": "block",
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "500",
+            "color": "#FAFAFA",
+            "margin-bottom": "6px"
+          },
+          ".label__helper": {
+            "font-weight": "400",
+            "color": "#B5B5BC"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".label",
+          "tag": "label",
+          "styles": {
+            "display": "block",
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "500",
+            "color": "#FAFAFA",
+            "margin-bottom": "6px"
+          },
+          "children": [
+            ".label__helper"
+          ]
+        },
+        {
+          "selector": ".label__helper",
+          "tag": "span",
+          "styles": {
+            "font-weight": "400",
+            "color": "#B5B5BC"
+          },
+          "parent": ".label"
+        }
+      ]
+    },
+    "required-vp-dark-md": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".label": {
+            "display": "block",
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "500",
+            "color": "#FAFAFA",
+            "margin-bottom": "6px"
+          },
+          ".label__helper": {
+            "font-weight": "400",
+            "color": "#B5B5BC"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".label",
+          "tag": "label",
+          "styles": {
+            "display": "block",
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "500",
+            "color": "#FAFAFA",
+            "margin-bottom": "6px"
+          },
+          "children": [
+            ".label__helper"
+          ]
+        },
+        {
+          "selector": ".label__helper",
+          "tag": "span",
+          "styles": {
+            "font-weight": "400",
+            "color": "#B5B5BC"
+          },
+          "parent": ".label"
+        }
+      ]
+    },
+    "required-vp-dark-lg": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".label": {
+            "display": "block",
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "500",
+            "color": "#FAFAFA",
+            "margin-bottom": "6px"
+          },
+          ".label__helper": {
+            "font-weight": "400",
+            "color": "#B5B5BC"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".label",
+          "tag": "label",
+          "styles": {
+            "display": "block",
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "500",
+            "color": "#FAFAFA",
+            "margin-bottom": "6px"
+          },
+          "children": [
+            ".label__helper"
+          ]
+        },
+        {
+          "selector": ".label__helper",
+          "tag": "span",
+          "styles": {
+            "font-weight": "400",
+            "color": "#B5B5BC"
+          },
+          "parent": ".label"
+        }
+      ]
+    },
+    "required-ppm-light-xs": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".label": {
+            "display": "block",
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "500",
+            "color": "#373F4E",
+            "margin-bottom": "6px"
+          },
+          ".label__helper": {
+            "font-weight": "400",
+            "color": "#6B7280"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".label",
+          "tag": "label",
+          "styles": {
+            "display": "block",
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "500",
+            "color": "#373F4E",
+            "margin-bottom": "6px"
+          },
+          "children": [
+            ".label__helper"
+          ]
+        },
+        {
+          "selector": ".label__helper",
+          "tag": "span",
+          "styles": {
+            "font-weight": "400",
+            "color": "#6B7280"
+          },
+          "parent": ".label"
+        }
+      ]
+    },
+    "required-ppm-light-sm": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".label": {
+            "display": "block",
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "500",
+            "color": "#373F4E",
+            "margin-bottom": "6px"
+          },
+          ".label__helper": {
+            "font-weight": "400",
+            "color": "#6B7280"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".label",
+          "tag": "label",
+          "styles": {
+            "display": "block",
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "500",
+            "color": "#373F4E",
+            "margin-bottom": "6px"
+          },
+          "children": [
+            ".label__helper"
+          ]
+        },
+        {
+          "selector": ".label__helper",
+          "tag": "span",
+          "styles": {
+            "font-weight": "400",
+            "color": "#6B7280"
+          },
+          "parent": ".label"
+        }
+      ]
+    },
+    "required-ppm-light-md": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".label": {
+            "display": "block",
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "500",
+            "color": "#373F4E",
+            "margin-bottom": "6px"
+          },
+          ".label__helper": {
+            "font-weight": "400",
+            "color": "#6B7280"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".label",
+          "tag": "label",
+          "styles": {
+            "display": "block",
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "500",
+            "color": "#373F4E",
+            "margin-bottom": "6px"
+          },
+          "children": [
+            ".label__helper"
+          ]
+        },
+        {
+          "selector": ".label__helper",
+          "tag": "span",
+          "styles": {
+            "font-weight": "400",
+            "color": "#6B7280"
+          },
+          "parent": ".label"
+        }
+      ]
+    },
+    "required-ppm-light-lg": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".label": {
+            "display": "block",
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "500",
+            "color": "#373F4E",
+            "margin-bottom": "6px"
+          },
+          ".label__helper": {
+            "font-weight": "400",
+            "color": "#6B7280"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".label",
+          "tag": "label",
+          "styles": {
+            "display": "block",
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "500",
+            "color": "#373F4E",
+            "margin-bottom": "6px"
+          },
+          "children": [
+            ".label__helper"
+          ]
+        },
+        {
+          "selector": ".label__helper",
+          "tag": "span",
+          "styles": {
+            "font-weight": "400",
+            "color": "#6B7280"
+          },
+          "parent": ".label"
+        }
+      ]
+    },
+    "required-ppm-dark-xs": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".label": {
+            "display": "block",
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "500",
+            "color": "#FAFAFA",
+            "margin-bottom": "6px"
+          },
+          ".label__helper": {
+            "font-weight": "400",
+            "color": "#B5B5BC"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".label",
+          "tag": "label",
+          "styles": {
+            "display": "block",
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "500",
+            "color": "#FAFAFA",
+            "margin-bottom": "6px"
+          },
+          "children": [
+            ".label__helper"
+          ]
+        },
+        {
+          "selector": ".label__helper",
+          "tag": "span",
+          "styles": {
+            "font-weight": "400",
+            "color": "#B5B5BC"
+          },
+          "parent": ".label"
+        }
+      ]
+    },
+    "required-ppm-dark-sm": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".label": {
+            "display": "block",
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "500",
+            "color": "#FAFAFA",
+            "margin-bottom": "6px"
+          },
+          ".label__helper": {
+            "font-weight": "400",
+            "color": "#B5B5BC"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".label",
+          "tag": "label",
+          "styles": {
+            "display": "block",
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "500",
+            "color": "#FAFAFA",
+            "margin-bottom": "6px"
+          },
+          "children": [
+            ".label__helper"
+          ]
+        },
+        {
+          "selector": ".label__helper",
+          "tag": "span",
+          "styles": {
+            "font-weight": "400",
+            "color": "#B5B5BC"
+          },
+          "parent": ".label"
+        }
+      ]
+    },
+    "required-ppm-dark-md": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".label": {
+            "display": "block",
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "500",
+            "color": "#FAFAFA",
+            "margin-bottom": "6px"
+          },
+          ".label__helper": {
+            "font-weight": "400",
+            "color": "#B5B5BC"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".label",
+          "tag": "label",
+          "styles": {
+            "display": "block",
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "500",
+            "color": "#FAFAFA",
+            "margin-bottom": "6px"
+          },
+          "children": [
+            ".label__helper"
+          ]
+        },
+        {
+          "selector": ".label__helper",
+          "tag": "span",
+          "styles": {
+            "font-weight": "400",
+            "color": "#B5B5BC"
+          },
+          "parent": ".label"
+        }
+      ]
+    },
+    "required-ppm-dark-lg": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".label": {
+            "display": "block",
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "500",
+            "color": "#FAFAFA",
+            "margin-bottom": "6px"
+          },
+          ".label__helper": {
+            "font-weight": "400",
+            "color": "#B5B5BC"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".label",
+          "tag": "label",
+          "styles": {
+            "display": "block",
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "500",
+            "color": "#FAFAFA",
+            "margin-bottom": "6px"
+          },
+          "children": [
+            ".label__helper"
+          ]
+        },
+        {
+          "selector": ".label__helper",
+          "tag": "span",
+          "styles": {
+            "font-weight": "400",
+            "color": "#B5B5BC"
+          },
+          "parent": ".label"
+        }
+      ]
+    },
+    "required-maconomy-light-xs": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".label": {
+            "display": "block",
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "500",
+            "color": "#373F4E",
+            "margin-bottom": "6px"
+          },
+          ".label__helper": {
+            "font-weight": "400",
+            "color": "#6B7280"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".label",
+          "tag": "label",
+          "styles": {
+            "display": "block",
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "500",
+            "color": "#373F4E",
+            "margin-bottom": "6px"
+          },
+          "children": [
+            ".label__helper"
+          ]
+        },
+        {
+          "selector": ".label__helper",
+          "tag": "span",
+          "styles": {
+            "font-weight": "400",
+            "color": "#6B7280"
+          },
+          "parent": ".label"
+        }
+      ]
+    },
+    "required-maconomy-light-sm": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".label": {
+            "display": "block",
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "500",
+            "color": "#373F4E",
+            "margin-bottom": "6px"
+          },
+          ".label__helper": {
+            "font-weight": "400",
+            "color": "#6B7280"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".label",
+          "tag": "label",
+          "styles": {
+            "display": "block",
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "500",
+            "color": "#373F4E",
+            "margin-bottom": "6px"
+          },
+          "children": [
+            ".label__helper"
+          ]
+        },
+        {
+          "selector": ".label__helper",
+          "tag": "span",
+          "styles": {
+            "font-weight": "400",
+            "color": "#6B7280"
+          },
+          "parent": ".label"
+        }
+      ]
+    },
+    "required-maconomy-light-md": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".label": {
+            "display": "block",
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "500",
+            "color": "#373F4E",
+            "margin-bottom": "6px"
+          },
+          ".label__helper": {
+            "font-weight": "400",
+            "color": "#6B7280"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".label",
+          "tag": "label",
+          "styles": {
+            "display": "block",
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "500",
+            "color": "#373F4E",
+            "margin-bottom": "6px"
+          },
+          "children": [
+            ".label__helper"
+          ]
+        },
+        {
+          "selector": ".label__helper",
+          "tag": "span",
+          "styles": {
+            "font-weight": "400",
+            "color": "#6B7280"
+          },
+          "parent": ".label"
+        }
+      ]
+    },
+    "required-maconomy-light-lg": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".label": {
+            "display": "block",
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "500",
+            "color": "#373F4E",
+            "margin-bottom": "6px"
+          },
+          ".label__helper": {
+            "font-weight": "400",
+            "color": "#6B7280"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".label",
+          "tag": "label",
+          "styles": {
+            "display": "block",
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "500",
+            "color": "#373F4E",
+            "margin-bottom": "6px"
+          },
+          "children": [
+            ".label__helper"
+          ]
+        },
+        {
+          "selector": ".label__helper",
+          "tag": "span",
+          "styles": {
+            "font-weight": "400",
+            "color": "#6B7280"
+          },
+          "parent": ".label"
+        }
+      ]
+    },
+    "required-maconomy-dark-xs": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".label": {
+            "display": "block",
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "500",
+            "color": "#FAFAFA",
+            "margin-bottom": "6px"
+          },
+          ".label__helper": {
+            "font-weight": "400",
+            "color": "#B5B5BC"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".label",
+          "tag": "label",
+          "styles": {
+            "display": "block",
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "500",
+            "color": "#FAFAFA",
+            "margin-bottom": "6px"
+          },
+          "children": [
+            ".label__helper"
+          ]
+        },
+        {
+          "selector": ".label__helper",
+          "tag": "span",
+          "styles": {
+            "font-weight": "400",
+            "color": "#B5B5BC"
+          },
+          "parent": ".label"
+        }
+      ]
+    },
+    "required-maconomy-dark-sm": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".label": {
+            "display": "block",
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "500",
+            "color": "#FAFAFA",
+            "margin-bottom": "6px"
+          },
+          ".label__helper": {
+            "font-weight": "400",
+            "color": "#B5B5BC"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".label",
+          "tag": "label",
+          "styles": {
+            "display": "block",
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "500",
+            "color": "#FAFAFA",
+            "margin-bottom": "6px"
+          },
+          "children": [
+            ".label__helper"
+          ]
+        },
+        {
+          "selector": ".label__helper",
+          "tag": "span",
+          "styles": {
+            "font-weight": "400",
+            "color": "#B5B5BC"
+          },
+          "parent": ".label"
+        }
+      ]
+    },
+    "required-maconomy-dark-md": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".label": {
+            "display": "block",
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "500",
+            "color": "#FAFAFA",
+            "margin-bottom": "6px"
+          },
+          ".label__helper": {
+            "font-weight": "400",
+            "color": "#B5B5BC"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".label",
+          "tag": "label",
+          "styles": {
+            "display": "block",
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "500",
+            "color": "#FAFAFA",
+            "margin-bottom": "6px"
+          },
+          "children": [
+            ".label__helper"
+          ]
+        },
+        {
+          "selector": ".label__helper",
+          "tag": "span",
+          "styles": {
+            "font-weight": "400",
+            "color": "#B5B5BC"
+          },
+          "parent": ".label"
+        }
+      ]
+    },
+    "required-maconomy-dark-lg": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".label": {
+            "display": "block",
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "500",
+            "color": "#FAFAFA",
+            "margin-bottom": "6px"
+          },
+          ".label__helper": {
+            "font-weight": "400",
+            "color": "#B5B5BC"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".label",
+          "tag": "label",
+          "styles": {
+            "display": "block",
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "font-weight": "500",
+            "color": "#FAFAFA",
+            "margin-bottom": "6px"
+          },
+          "children": [
+            ".label__helper"
+          ]
+        },
+        {
+          "selector": ".label__helper",
+          "tag": "span",
+          "styles": {
+            "font-weight": "400",
+            "color": "#B5B5BC"
+          },
+          "parent": ".label"
+        }
+      ]
+    }
+  },
+  "guidance": {
+    "patterns": {},
+    "guidelines": {}
+  },
+  "interactivity": {
+    "events": [],
+    "state": [
+      {
+        "name": "—",
+        "type": "—",
+        "description": "Display only; associates with form control via for attribute."
+      }
+    ]
+  },
+  "examples": [
+    {
+      "name": "Text input with label",
+      "description": "Basic text input with label",
+      "recipeId": "input-with-validation"
+    },
+    {
+      "name": "Input with error state",
+      "description": "Input showing validation error",
+      "recipeId": "input-with-validation"
+    },
+    {
+      "name": "Input with success state",
+      "description": "Input showing validation success",
+      "recipeId": "input-with-validation"
+    },
+    {
+      "name": "Name fields",
+      "description": "First and last name input group",
+      "recipeId": "form-field-group"
+    },
+    {
+      "name": "Address fields",
+      "description": "Street address input group",
+      "recipeId": "form-field-group"
+    },
+    {
+      "name": "Contact fields",
+      "description": "Email and phone input group",
+      "recipeId": "form-field-group"
+    },
+    {
+      "name": "Form label",
+      "description": "Label for form control",
+      "snippet": "<Label for=\"input-id\">Name</Label>"
+    }
+  ]
+}

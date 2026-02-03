@@ -1,0 +1,126 @@
+{
+  "name": "DateTimePicker",
+  "type": "component",
+  "filePath": "src/components/ui/DateTimePicker.astro",
+  "description": "DateTimePicker Component",
+  "props": {
+    "value": {
+      "type": "string",
+      "optional": true,
+      "default": null
+    },
+    "min": {
+      "type": "string",
+      "optional": true,
+      "default": null
+    },
+    "max": {
+      "type": "string",
+      "optional": true,
+      "default": null
+    },
+    "disabled": {
+      "type": "boolean",
+      "optional": true,
+      "default": "false"
+    },
+    "timeFormat": {
+      "type": "'12' | '24'",
+      "optional": true,
+      "default": "'24'"
+    },
+    "locale": {
+      "type": "string",
+      "optional": true,
+      "default": "'en-US'"
+    },
+    "id": {
+      "type": "string",
+      "optional": true,
+      "default": null
+    },
+    "class": {
+      "type": "string",
+      "optional": true,
+      "default": "''"
+    }
+  },
+  "defaults": {
+    "theme": "cp",
+    "mode": "light"
+  },
+  "specs": {
+    "cp-light": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".datetime-picker": {
+            "width": "100%"
+          },
+          ".datetime-picker__date-section": {
+            "margin-bottom": "16px",
+            "padding-bottom": "16px",
+            "border-bottom": "1px solid #BFC6D4"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".datetime-picker",
+          "tag": "div",
+          "styles": {
+            "width": "100%"
+          },
+          "children": [
+            ".datetime-picker__date-section"
+          ]
+        },
+        {
+          "selector": ".datetime-picker__date-section",
+          "tag": "span",
+          "styles": {
+            "margin-bottom": "16px",
+            "padding-bottom": "16px",
+            "border-bottom": "1px solid #BFC6D4"
+          },
+          "parent": ".datetime-picker"
+        }
+      ]
+    }
+  },
+  "guidance": {
+    "patterns": {},
+    "guidelines": {}
+  },
+  "interactivity": {
+    "events": [
+      {
+        "name": "change",
+        "description": "Triggered when date or time is selected"
+      }
+    ],
+    "state": [
+      {
+        "name": "value",
+        "type": "string",
+        "description": "Selected date-time"
+      }
+    ]
+  },
+  "examples": [
+    {
+      "name": "Date and time",
+      "description": "Combined date and time",
+      "snippet": "<DateTimePicker value={...} />"
+    }
+  ]
+}

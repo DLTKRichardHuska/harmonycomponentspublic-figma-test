@@ -1,0 +1,2233 @@
+{
+  "name": "Icon",
+  "type": "component",
+  "filePath": "src/components/ui/Icon.astro",
+  "description": "Icon component",
+  "props": {
+    "name": {
+      "type": "string",
+      "optional": false,
+      "default": null
+    },
+    "size": {
+      "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+      "optional": true,
+      "default": "'md'"
+    },
+    "class": {
+      "type": "string",
+      "optional": true,
+      "default": "''"
+    },
+    "variant": {
+      "type": "'outline' | 'solid'",
+      "optional": true,
+      "default": "'outline'"
+    }
+  },
+  "defaults": {
+    "theme": "cp",
+    "mode": "light",
+    "variant": "'outline'",
+    "size": "'md'"
+  },
+  "specs": {
+    "outline-cp-light-xs": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".icon": {},
+          ".icon__svg": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".icon",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".icon__svg"
+          ]
+        },
+        {
+          "selector": ".icon__svg",
+          "tag": "svg",
+          "styles": {},
+          "parent": ".icon"
+        }
+      ]
+    },
+    "outline-cp-light-sm": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".icon": {},
+          ".icon__svg": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".icon",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".icon__svg"
+          ]
+        },
+        {
+          "selector": ".icon__svg",
+          "tag": "svg",
+          "styles": {},
+          "parent": ".icon"
+        }
+      ]
+    },
+    "outline-cp-light-md": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".icon": {},
+          ".icon__svg": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".icon",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".icon__svg"
+          ]
+        },
+        {
+          "selector": ".icon__svg",
+          "tag": "svg",
+          "styles": {},
+          "parent": ".icon"
+        }
+      ]
+    },
+    "outline-cp-light-lg": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".icon": {},
+          ".icon__svg": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".icon",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".icon__svg"
+          ]
+        },
+        {
+          "selector": ".icon__svg",
+          "tag": "svg",
+          "styles": {},
+          "parent": ".icon"
+        }
+      ]
+    },
+    "outline-cp-dark-xs": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".icon": {},
+          ".icon__svg": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".icon",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".icon__svg"
+          ]
+        },
+        {
+          "selector": ".icon__svg",
+          "tag": "svg",
+          "styles": {},
+          "parent": ".icon"
+        }
+      ]
+    },
+    "outline-cp-dark-sm": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".icon": {},
+          ".icon__svg": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".icon",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".icon__svg"
+          ]
+        },
+        {
+          "selector": ".icon__svg",
+          "tag": "svg",
+          "styles": {},
+          "parent": ".icon"
+        }
+      ]
+    },
+    "outline-cp-dark-md": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".icon": {},
+          ".icon__svg": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".icon",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".icon__svg"
+          ]
+        },
+        {
+          "selector": ".icon__svg",
+          "tag": "svg",
+          "styles": {},
+          "parent": ".icon"
+        }
+      ]
+    },
+    "outline-cp-dark-lg": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".icon": {},
+          ".icon__svg": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".icon",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".icon__svg"
+          ]
+        },
+        {
+          "selector": ".icon__svg",
+          "tag": "svg",
+          "styles": {},
+          "parent": ".icon"
+        }
+      ]
+    },
+    "outline-vp-light-xs": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".icon": {},
+          ".icon__svg": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".icon",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".icon__svg"
+          ]
+        },
+        {
+          "selector": ".icon__svg",
+          "tag": "svg",
+          "styles": {},
+          "parent": ".icon"
+        }
+      ]
+    },
+    "outline-vp-light-sm": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".icon": {},
+          ".icon__svg": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".icon",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".icon__svg"
+          ]
+        },
+        {
+          "selector": ".icon__svg",
+          "tag": "svg",
+          "styles": {},
+          "parent": ".icon"
+        }
+      ]
+    },
+    "outline-vp-light-md": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".icon": {},
+          ".icon__svg": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".icon",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".icon__svg"
+          ]
+        },
+        {
+          "selector": ".icon__svg",
+          "tag": "svg",
+          "styles": {},
+          "parent": ".icon"
+        }
+      ]
+    },
+    "outline-vp-light-lg": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".icon": {},
+          ".icon__svg": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".icon",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".icon__svg"
+          ]
+        },
+        {
+          "selector": ".icon__svg",
+          "tag": "svg",
+          "styles": {},
+          "parent": ".icon"
+        }
+      ]
+    },
+    "outline-vp-dark-xs": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".icon": {},
+          ".icon__svg": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".icon",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".icon__svg"
+          ]
+        },
+        {
+          "selector": ".icon__svg",
+          "tag": "svg",
+          "styles": {},
+          "parent": ".icon"
+        }
+      ]
+    },
+    "outline-vp-dark-sm": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".icon": {},
+          ".icon__svg": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".icon",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".icon__svg"
+          ]
+        },
+        {
+          "selector": ".icon__svg",
+          "tag": "svg",
+          "styles": {},
+          "parent": ".icon"
+        }
+      ]
+    },
+    "outline-vp-dark-md": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".icon": {},
+          ".icon__svg": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".icon",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".icon__svg"
+          ]
+        },
+        {
+          "selector": ".icon__svg",
+          "tag": "svg",
+          "styles": {},
+          "parent": ".icon"
+        }
+      ]
+    },
+    "outline-vp-dark-lg": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".icon": {},
+          ".icon__svg": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".icon",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".icon__svg"
+          ]
+        },
+        {
+          "selector": ".icon__svg",
+          "tag": "svg",
+          "styles": {},
+          "parent": ".icon"
+        }
+      ]
+    },
+    "outline-ppm-light-xs": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".icon": {},
+          ".icon__svg": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".icon",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".icon__svg"
+          ]
+        },
+        {
+          "selector": ".icon__svg",
+          "tag": "svg",
+          "styles": {},
+          "parent": ".icon"
+        }
+      ]
+    },
+    "outline-ppm-light-sm": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".icon": {},
+          ".icon__svg": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".icon",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".icon__svg"
+          ]
+        },
+        {
+          "selector": ".icon__svg",
+          "tag": "svg",
+          "styles": {},
+          "parent": ".icon"
+        }
+      ]
+    },
+    "outline-ppm-light-md": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".icon": {},
+          ".icon__svg": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".icon",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".icon__svg"
+          ]
+        },
+        {
+          "selector": ".icon__svg",
+          "tag": "svg",
+          "styles": {},
+          "parent": ".icon"
+        }
+      ]
+    },
+    "outline-ppm-light-lg": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".icon": {},
+          ".icon__svg": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".icon",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".icon__svg"
+          ]
+        },
+        {
+          "selector": ".icon__svg",
+          "tag": "svg",
+          "styles": {},
+          "parent": ".icon"
+        }
+      ]
+    },
+    "outline-ppm-dark-xs": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".icon": {},
+          ".icon__svg": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".icon",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".icon__svg"
+          ]
+        },
+        {
+          "selector": ".icon__svg",
+          "tag": "svg",
+          "styles": {},
+          "parent": ".icon"
+        }
+      ]
+    },
+    "outline-ppm-dark-sm": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".icon": {},
+          ".icon__svg": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".icon",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".icon__svg"
+          ]
+        },
+        {
+          "selector": ".icon__svg",
+          "tag": "svg",
+          "styles": {},
+          "parent": ".icon"
+        }
+      ]
+    },
+    "outline-ppm-dark-md": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".icon": {},
+          ".icon__svg": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".icon",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".icon__svg"
+          ]
+        },
+        {
+          "selector": ".icon__svg",
+          "tag": "svg",
+          "styles": {},
+          "parent": ".icon"
+        }
+      ]
+    },
+    "outline-ppm-dark-lg": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".icon": {},
+          ".icon__svg": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".icon",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".icon__svg"
+          ]
+        },
+        {
+          "selector": ".icon__svg",
+          "tag": "svg",
+          "styles": {},
+          "parent": ".icon"
+        }
+      ]
+    },
+    "outline-maconomy-light-xs": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".icon": {},
+          ".icon__svg": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".icon",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".icon__svg"
+          ]
+        },
+        {
+          "selector": ".icon__svg",
+          "tag": "svg",
+          "styles": {},
+          "parent": ".icon"
+        }
+      ]
+    },
+    "outline-maconomy-light-sm": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".icon": {},
+          ".icon__svg": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".icon",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".icon__svg"
+          ]
+        },
+        {
+          "selector": ".icon__svg",
+          "tag": "svg",
+          "styles": {},
+          "parent": ".icon"
+        }
+      ]
+    },
+    "outline-maconomy-light-md": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".icon": {},
+          ".icon__svg": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".icon",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".icon__svg"
+          ]
+        },
+        {
+          "selector": ".icon__svg",
+          "tag": "svg",
+          "styles": {},
+          "parent": ".icon"
+        }
+      ]
+    },
+    "outline-maconomy-light-lg": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".icon": {},
+          ".icon__svg": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".icon",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".icon__svg"
+          ]
+        },
+        {
+          "selector": ".icon__svg",
+          "tag": "svg",
+          "styles": {},
+          "parent": ".icon"
+        }
+      ]
+    },
+    "outline-maconomy-dark-xs": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".icon": {},
+          ".icon__svg": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".icon",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".icon__svg"
+          ]
+        },
+        {
+          "selector": ".icon__svg",
+          "tag": "svg",
+          "styles": {},
+          "parent": ".icon"
+        }
+      ]
+    },
+    "outline-maconomy-dark-sm": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".icon": {},
+          ".icon__svg": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".icon",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".icon__svg"
+          ]
+        },
+        {
+          "selector": ".icon__svg",
+          "tag": "svg",
+          "styles": {},
+          "parent": ".icon"
+        }
+      ]
+    },
+    "outline-maconomy-dark-md": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".icon": {},
+          ".icon__svg": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".icon",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".icon__svg"
+          ]
+        },
+        {
+          "selector": ".icon__svg",
+          "tag": "svg",
+          "styles": {},
+          "parent": ".icon"
+        }
+      ]
+    },
+    "outline-maconomy-dark-lg": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".icon": {},
+          ".icon__svg": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".icon",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".icon__svg"
+          ]
+        },
+        {
+          "selector": ".icon__svg",
+          "tag": "svg",
+          "styles": {},
+          "parent": ".icon"
+        }
+      ]
+    },
+    "solid-cp-light-xs": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".icon": {},
+          ".icon__svg": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".icon",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".icon__svg"
+          ]
+        },
+        {
+          "selector": ".icon__svg",
+          "tag": "svg",
+          "styles": {},
+          "parent": ".icon"
+        }
+      ]
+    },
+    "solid-cp-light-sm": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".icon": {},
+          ".icon__svg": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".icon",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".icon__svg"
+          ]
+        },
+        {
+          "selector": ".icon__svg",
+          "tag": "svg",
+          "styles": {},
+          "parent": ".icon"
+        }
+      ]
+    },
+    "solid-cp-light-md": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".icon": {},
+          ".icon__svg": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".icon",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".icon__svg"
+          ]
+        },
+        {
+          "selector": ".icon__svg",
+          "tag": "svg",
+          "styles": {},
+          "parent": ".icon"
+        }
+      ]
+    },
+    "solid-cp-light-lg": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".icon": {},
+          ".icon__svg": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".icon",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".icon__svg"
+          ]
+        },
+        {
+          "selector": ".icon__svg",
+          "tag": "svg",
+          "styles": {},
+          "parent": ".icon"
+        }
+      ]
+    },
+    "solid-cp-dark-xs": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".icon": {},
+          ".icon__svg": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".icon",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".icon__svg"
+          ]
+        },
+        {
+          "selector": ".icon__svg",
+          "tag": "svg",
+          "styles": {},
+          "parent": ".icon"
+        }
+      ]
+    },
+    "solid-cp-dark-sm": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".icon": {},
+          ".icon__svg": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".icon",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".icon__svg"
+          ]
+        },
+        {
+          "selector": ".icon__svg",
+          "tag": "svg",
+          "styles": {},
+          "parent": ".icon"
+        }
+      ]
+    },
+    "solid-cp-dark-md": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".icon": {},
+          ".icon__svg": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".icon",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".icon__svg"
+          ]
+        },
+        {
+          "selector": ".icon__svg",
+          "tag": "svg",
+          "styles": {},
+          "parent": ".icon"
+        }
+      ]
+    },
+    "solid-cp-dark-lg": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".icon": {},
+          ".icon__svg": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".icon",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".icon__svg"
+          ]
+        },
+        {
+          "selector": ".icon__svg",
+          "tag": "svg",
+          "styles": {},
+          "parent": ".icon"
+        }
+      ]
+    },
+    "solid-vp-light-xs": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".icon": {},
+          ".icon__svg": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".icon",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".icon__svg"
+          ]
+        },
+        {
+          "selector": ".icon__svg",
+          "tag": "svg",
+          "styles": {},
+          "parent": ".icon"
+        }
+      ]
+    },
+    "solid-vp-light-sm": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".icon": {},
+          ".icon__svg": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".icon",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".icon__svg"
+          ]
+        },
+        {
+          "selector": ".icon__svg",
+          "tag": "svg",
+          "styles": {},
+          "parent": ".icon"
+        }
+      ]
+    },
+    "solid-vp-light-md": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".icon": {},
+          ".icon__svg": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".icon",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".icon__svg"
+          ]
+        },
+        {
+          "selector": ".icon__svg",
+          "tag": "svg",
+          "styles": {},
+          "parent": ".icon"
+        }
+      ]
+    },
+    "solid-vp-light-lg": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".icon": {},
+          ".icon__svg": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".icon",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".icon__svg"
+          ]
+        },
+        {
+          "selector": ".icon__svg",
+          "tag": "svg",
+          "styles": {},
+          "parent": ".icon"
+        }
+      ]
+    },
+    "solid-vp-dark-xs": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".icon": {},
+          ".icon__svg": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".icon",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".icon__svg"
+          ]
+        },
+        {
+          "selector": ".icon__svg",
+          "tag": "svg",
+          "styles": {},
+          "parent": ".icon"
+        }
+      ]
+    },
+    "solid-vp-dark-sm": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".icon": {},
+          ".icon__svg": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".icon",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".icon__svg"
+          ]
+        },
+        {
+          "selector": ".icon__svg",
+          "tag": "svg",
+          "styles": {},
+          "parent": ".icon"
+        }
+      ]
+    },
+    "solid-vp-dark-md": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".icon": {},
+          ".icon__svg": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".icon",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".icon__svg"
+          ]
+        },
+        {
+          "selector": ".icon__svg",
+          "tag": "svg",
+          "styles": {},
+          "parent": ".icon"
+        }
+      ]
+    },
+    "solid-vp-dark-lg": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".icon": {},
+          ".icon__svg": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".icon",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".icon__svg"
+          ]
+        },
+        {
+          "selector": ".icon__svg",
+          "tag": "svg",
+          "styles": {},
+          "parent": ".icon"
+        }
+      ]
+    },
+    "solid-ppm-light-xs": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".icon": {},
+          ".icon__svg": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".icon",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".icon__svg"
+          ]
+        },
+        {
+          "selector": ".icon__svg",
+          "tag": "svg",
+          "styles": {},
+          "parent": ".icon"
+        }
+      ]
+    },
+    "solid-ppm-light-sm": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".icon": {},
+          ".icon__svg": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".icon",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".icon__svg"
+          ]
+        },
+        {
+          "selector": ".icon__svg",
+          "tag": "svg",
+          "styles": {},
+          "parent": ".icon"
+        }
+      ]
+    },
+    "solid-ppm-light-md": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".icon": {},
+          ".icon__svg": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".icon",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".icon__svg"
+          ]
+        },
+        {
+          "selector": ".icon__svg",
+          "tag": "svg",
+          "styles": {},
+          "parent": ".icon"
+        }
+      ]
+    },
+    "solid-ppm-light-lg": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".icon": {},
+          ".icon__svg": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".icon",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".icon__svg"
+          ]
+        },
+        {
+          "selector": ".icon__svg",
+          "tag": "svg",
+          "styles": {},
+          "parent": ".icon"
+        }
+      ]
+    },
+    "solid-ppm-dark-xs": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".icon": {},
+          ".icon__svg": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".icon",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".icon__svg"
+          ]
+        },
+        {
+          "selector": ".icon__svg",
+          "tag": "svg",
+          "styles": {},
+          "parent": ".icon"
+        }
+      ]
+    },
+    "solid-ppm-dark-sm": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".icon": {},
+          ".icon__svg": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".icon",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".icon__svg"
+          ]
+        },
+        {
+          "selector": ".icon__svg",
+          "tag": "svg",
+          "styles": {},
+          "parent": ".icon"
+        }
+      ]
+    },
+    "solid-ppm-dark-md": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".icon": {},
+          ".icon__svg": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".icon",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".icon__svg"
+          ]
+        },
+        {
+          "selector": ".icon__svg",
+          "tag": "svg",
+          "styles": {},
+          "parent": ".icon"
+        }
+      ]
+    },
+    "solid-ppm-dark-lg": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".icon": {},
+          ".icon__svg": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".icon",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".icon__svg"
+          ]
+        },
+        {
+          "selector": ".icon__svg",
+          "tag": "svg",
+          "styles": {},
+          "parent": ".icon"
+        }
+      ]
+    },
+    "solid-maconomy-light-xs": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".icon": {},
+          ".icon__svg": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".icon",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".icon__svg"
+          ]
+        },
+        {
+          "selector": ".icon__svg",
+          "tag": "svg",
+          "styles": {},
+          "parent": ".icon"
+        }
+      ]
+    },
+    "solid-maconomy-light-sm": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".icon": {},
+          ".icon__svg": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".icon",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".icon__svg"
+          ]
+        },
+        {
+          "selector": ".icon__svg",
+          "tag": "svg",
+          "styles": {},
+          "parent": ".icon"
+        }
+      ]
+    },
+    "solid-maconomy-light-md": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".icon": {},
+          ".icon__svg": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".icon",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".icon__svg"
+          ]
+        },
+        {
+          "selector": ".icon__svg",
+          "tag": "svg",
+          "styles": {},
+          "parent": ".icon"
+        }
+      ]
+    },
+    "solid-maconomy-light-lg": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".icon": {},
+          ".icon__svg": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".icon",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".icon__svg"
+          ]
+        },
+        {
+          "selector": ".icon__svg",
+          "tag": "svg",
+          "styles": {},
+          "parent": ".icon"
+        }
+      ]
+    },
+    "solid-maconomy-dark-xs": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".icon": {},
+          ".icon__svg": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".icon",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".icon__svg"
+          ]
+        },
+        {
+          "selector": ".icon__svg",
+          "tag": "svg",
+          "styles": {},
+          "parent": ".icon"
+        }
+      ]
+    },
+    "solid-maconomy-dark-sm": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".icon": {},
+          ".icon__svg": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".icon",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".icon__svg"
+          ]
+        },
+        {
+          "selector": ".icon__svg",
+          "tag": "svg",
+          "styles": {},
+          "parent": ".icon"
+        }
+      ]
+    },
+    "solid-maconomy-dark-md": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".icon": {},
+          ".icon__svg": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".icon",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".icon__svg"
+          ]
+        },
+        {
+          "selector": ".icon__svg",
+          "tag": "svg",
+          "styles": {},
+          "parent": ".icon"
+        }
+      ]
+    },
+    "solid-maconomy-dark-lg": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".icon": {},
+          ".icon__svg": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".icon",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".icon__svg"
+          ]
+        },
+        {
+          "selector": ".icon__svg",
+          "tag": "svg",
+          "styles": {},
+          "parent": ".icon"
+        }
+      ]
+    }
+  },
+  "guidance": {
+    "patterns": {},
+    "guidelines": {}
+  },
+  "interactivity": {
+    "events": [],
+    "state": [
+      {
+        "name": "—",
+        "type": "—",
+        "description": "Display only; no client-side state or events."
+      }
+    ]
+  },
+  "examples": [
+    {
+      "name": "Heroicon",
+      "description": "Named icon",
+      "snippet": "<Icon name=\"check\" size=\"md\" />"
+    }
+  ]
+}

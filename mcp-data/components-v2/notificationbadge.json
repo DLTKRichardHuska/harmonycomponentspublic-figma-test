@@ -1,0 +1,4147 @@
+{
+  "name": "NotificationBadge",
+  "type": "component",
+  "filePath": "src/components/ui/NotificationBadge.astro",
+  "description": "NotificationBadge Component",
+  "props": {
+    "type": {
+      "type": "'dot' | 'number' | 'overflow'",
+      "optional": true,
+      "default": "'number'"
+    },
+    "size": {
+      "type": "'sm' | 'md' | 'lg'",
+      "optional": true,
+      "default": "'md'"
+    },
+    "variant": {
+      "type": "'error' | 'primary'",
+      "optional": true,
+      "default": "'primary'"
+    },
+    "value": {
+      "type": "string | number",
+      "optional": true,
+      "default": "1"
+    },
+    "border": {
+      "type": "boolean",
+      "optional": true,
+      "default": "false"
+    },
+    "class": {
+      "type": "string",
+      "optional": true,
+      "default": "''"
+    }
+  },
+  "defaults": {
+    "theme": "cp",
+    "mode": "light",
+    "variant": "'primary'",
+    "size": "'md'"
+  },
+  "specs": {
+    "dot-cp-light-sm": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "dot-cp-light-md": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "dot-cp-light-lg": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "dot-cp-dark-sm": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "dot-cp-dark-md": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "dot-cp-dark-lg": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "dot-vp-light-sm": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "dot-vp-light-md": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "dot-vp-light-lg": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "dot-vp-dark-sm": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "dot-vp-dark-md": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "dot-vp-dark-lg": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "dot-ppm-light-sm": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "dot-ppm-light-md": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "dot-ppm-light-lg": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "dot-ppm-dark-sm": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "dot-ppm-dark-md": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "dot-ppm-dark-lg": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "dot-maconomy-light-sm": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "dot-maconomy-light-md": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "dot-maconomy-light-lg": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "dot-maconomy-dark-sm": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "dot-maconomy-dark-md": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "dot-maconomy-dark-lg": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "number-cp-light-sm": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "number-cp-light-md": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "number-cp-light-lg": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "number-cp-dark-sm": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "number-cp-dark-md": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "number-cp-dark-lg": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "number-vp-light-sm": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "number-vp-light-md": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "number-vp-light-lg": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "number-vp-dark-sm": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "number-vp-dark-md": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "number-vp-dark-lg": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "number-ppm-light-sm": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "number-ppm-light-md": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "number-ppm-light-lg": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "number-ppm-dark-sm": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "number-ppm-dark-md": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "number-ppm-dark-lg": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "number-maconomy-light-sm": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "number-maconomy-light-md": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "number-maconomy-light-lg": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "number-maconomy-dark-sm": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "number-maconomy-dark-md": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "number-maconomy-dark-lg": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "overflow-cp-light-sm": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "overflow-cp-light-md": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "overflow-cp-light-lg": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "overflow-cp-dark-sm": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "overflow-cp-dark-md": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "overflow-cp-dark-lg": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "overflow-vp-light-sm": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "overflow-vp-light-md": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "overflow-vp-light-lg": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "overflow-vp-dark-sm": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "overflow-vp-dark-md": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "overflow-vp-dark-lg": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "overflow-ppm-light-sm": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "overflow-ppm-light-md": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "overflow-ppm-light-lg": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "overflow-ppm-dark-sm": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "overflow-ppm-dark-md": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "overflow-ppm-dark-lg": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "overflow-maconomy-light-sm": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "overflow-maconomy-light-md": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "overflow-maconomy-light-lg": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "overflow-maconomy-dark-sm": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "overflow-maconomy-dark-md": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "overflow-maconomy-dark-lg": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "error-cp-light-sm": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "error-cp-light-md": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "error-cp-light-lg": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "error-cp-dark-sm": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "error-cp-dark-md": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "error-cp-dark-lg": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "error-vp-light-sm": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "error-vp-light-md": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "error-vp-light-lg": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "error-vp-dark-sm": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "error-vp-dark-md": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "error-vp-dark-lg": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "error-ppm-light-sm": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "error-ppm-light-md": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "error-ppm-light-lg": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "error-ppm-dark-sm": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "error-ppm-dark-md": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "error-ppm-dark-lg": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "error-maconomy-light-sm": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "error-maconomy-light-md": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "error-maconomy-light-lg": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "error-maconomy-dark-sm": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "error-maconomy-dark-md": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "error-maconomy-dark-lg": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "primary-cp-light-sm": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "primary-cp-light-md": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "primary-cp-light-lg": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "primary-cp-dark-sm": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "primary-cp-dark-md": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "primary-cp-dark-lg": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "primary-vp-light-sm": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "primary-vp-light-md": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "primary-vp-light-lg": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "primary-vp-dark-sm": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "primary-vp-dark-md": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "primary-vp-dark-lg": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "primary-ppm-light-sm": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "primary-ppm-light-md": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "primary-ppm-light-lg": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "primary-ppm-dark-sm": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "primary-ppm-dark-md": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "primary-ppm-dark-lg": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "primary-maconomy-light-sm": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "primary-maconomy-light-md": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "primary-maconomy-light-lg": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "primary-maconomy-dark-sm": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "primary-maconomy-dark-md": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    },
+    "primary-maconomy-dark-lg": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".notification-badge": {},
+          ".notification-badge__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".notification-badge",
+          "tag": "span",
+          "styles": {},
+          "children": [
+            ".notification-badge__content"
+          ]
+        },
+        {
+          "selector": ".notification-badge__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".notification-badge"
+        }
+      ]
+    }
+  },
+  "guidance": {
+    "patterns": {},
+    "guidelines": {}
+  },
+  "interactivity": {
+    "events": [],
+    "state": [
+      {
+        "name": "—",
+        "type": "—",
+        "description": "Display only; shows count or dot. Update count via prop."
+      }
+    ]
+  },
+  "examples": [
+    {
+      "name": "Count badge",
+      "description": "Badge with count",
+      "snippet": "<NotificationBadge count={3} />"
+    }
+  ]
+}

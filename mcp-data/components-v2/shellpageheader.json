@@ -1,0 +1,178 @@
+{
+  "name": "ShellPageHeader",
+  "type": "component",
+  "filePath": "src/components/ui/ShellPageHeader.astro",
+  "description": "Shell Page Header Component",
+  "props": {
+    "title": {
+      "type": "string",
+      "optional": false,
+      "default": null
+    },
+    "subtitle": {
+      "type": "string",
+      "optional": true,
+      "default": null
+    },
+    "primaryButton": {
+      "type": "ButtonConfig",
+      "optional": true,
+      "default": null
+    },
+    "outlineButton1": {
+      "type": "ButtonConfig",
+      "optional": true,
+      "default": null
+    },
+    "outlineButton2": {
+      "type": "ButtonConfig",
+      "optional": true,
+      "default": null
+    },
+    "outlineButton3": {
+      "type": "ButtonConfig",
+      "optional": true,
+      "default": null
+    },
+    "class": {
+      "type": "string",
+      "optional": true,
+      "default": "''"
+    }
+  },
+  "defaults": {
+    "theme": "cp",
+    "mode": "light"
+  },
+  "specs": {
+    "cp-light": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".shell-page-header": {},
+          ".shell-page-header__left": {},
+          ".shell-page-header__title": {},
+          ".shell-page-header__subtitle": {},
+          ".shell-page-header__actions": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".shell-page-header",
+          "tag": "header",
+          "styles": {},
+          "children": [
+            ".shell-page-header__left",
+            ".shell-page-header__actions"
+          ]
+        },
+        {
+          "selector": ".shell-page-header__left",
+          "tag": "div",
+          "styles": {},
+          "parent": ".shell-page-header"
+        },
+        {
+          "selector": ".shell-page-header__title",
+          "tag": "h1",
+          "styles": {},
+          "parent": ".shell-page-header"
+        },
+        {
+          "selector": ".shell-page-header__subtitle",
+          "tag": "p",
+          "styles": {},
+          "parent": ".shell-page-header"
+        },
+        {
+          "selector": ".shell-page-header__actions",
+          "tag": "div",
+          "styles": {},
+          "parent": ".shell-page-header"
+        }
+      ]
+    }
+  },
+  "guidance": {
+    "patterns": {
+      "actions-order": "In the actions slot, DOM order equals visual order; ShellPageHeader does not reorder. Place outline/secondary buttons first (left), primary button last (right) to match Harmony design. When using props only, the component renders outline buttons then primary by default."
+    },
+    "guidelines": {}
+  },
+  "interactivity": {
+    "events": [
+      {
+        "name": "click",
+        "description": "Title, breadcrumb, or action button clicks"
+      }
+    ],
+    "state": [
+      {
+        "name": "—",
+        "type": "—",
+        "description": "Layout slot; state in slots."
+      }
+    ]
+  },
+  "examples": [
+    {
+      "name": "CP with left sidebar",
+      "description": "CP layout with collapsible left sidebar",
+      "recipeId": "shell-layout-cp"
+    },
+    {
+      "name": "CP minimal",
+      "description": "Minimal CP layout with header and floating nav only",
+      "recipeId": "shell-layout-cp"
+    },
+    {
+      "name": "CP with page header",
+      "description": "CP layout with page-specific header",
+      "recipeId": "shell-layout-cp"
+    },
+    {
+      "name": "Standard with sidebars",
+      "description": "Full layout with left and right sidebars",
+      "recipeId": "shell-layout-standard"
+    },
+    {
+      "name": "Standard minimal",
+      "description": "Minimal layout with header and footer only",
+      "recipeId": "shell-layout-standard"
+    },
+    {
+      "name": "Standard with page header",
+      "description": "Standard layout with page-specific header",
+      "recipeId": "shell-layout-standard"
+    },
+    {
+      "name": "Title only",
+      "description": "Minimal page header with title",
+      "recipeId": "shell-page-header"
+    },
+    {
+      "name": "Title and subtitle",
+      "description": "Page header with subtitle",
+      "recipeId": "shell-page-header"
+    },
+    {
+      "name": "With primary action",
+      "description": "Page header with primary button",
+      "recipeId": "shell-page-header"
+    },
+    {
+      "name": "Page title",
+      "description": "Page header slot",
+      "snippet": "<ShellPageHeader title=\"Page Title\" />"
+    }
+  ]
+}

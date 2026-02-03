@@ -1,0 +1,3058 @@
+{
+  "name": "RangeInput",
+  "type": "component",
+  "filePath": "src/components/ui/RangeInput.astro",
+  "description": "RangeInput Component",
+  "props": {
+    "value": {
+      "type": "number",
+      "optional": true,
+      "default": "50"
+    },
+    "min": {
+      "type": "number",
+      "optional": true,
+      "default": "0"
+    },
+    "max": {
+      "type": "number",
+      "optional": true,
+      "default": "100"
+    },
+    "step": {
+      "type": "number",
+      "optional": true,
+      "default": "1"
+    },
+    "name": {
+      "type": "string",
+      "optional": true,
+      "default": null
+    },
+    "id": {
+      "type": "string",
+      "optional": true,
+      "default": null
+    },
+    "disabled": {
+      "type": "boolean",
+      "optional": true,
+      "default": "false"
+    },
+    "showPercent": {
+      "type": "boolean",
+      "optional": true,
+      "default": "false"
+    },
+    "prefix": {
+      "type": "string",
+      "optional": true,
+      "default": "''"
+    },
+    "suffix": {
+      "type": "string",
+      "optional": true,
+      "default": "''"
+    },
+    "label": {
+      "type": "string",
+      "optional": true,
+      "default": null
+    },
+    "labelVariant": {
+      "type": "'inline' | 'stacked'",
+      "optional": true,
+      "default": null
+    },
+    "labelFor": {
+      "type": "string",
+      "optional": true,
+      "default": null
+    },
+    "class": {
+      "type": "string",
+      "optional": true,
+      "default": "''"
+    }
+  },
+  "defaults": {
+    "theme": "cp",
+    "mode": "light"
+  },
+  "specs": {
+    "inline-cp-light-xs": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".range-input-form-wrapper__label": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          ".range-input-form-wrapper": {
+            "display": "flex",
+            "flex-direction": "column"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".range-input-form-wrapper__label",
+          "tag": "div",
+          "styles": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          "children": [
+            ".range-input-form-wrapper"
+          ]
+        },
+        {
+          "selector": ".range-input-form-wrapper",
+          "tag": "div",
+          "styles": {
+            "display": "flex",
+            "flex-direction": "column"
+          },
+          "parent": ".range-input-form-wrapper__label"
+        }
+      ]
+    },
+    "inline-cp-light-sm": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".range-input-form-wrapper__label": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          ".range-input-form-wrapper": {
+            "display": "flex",
+            "flex-direction": "column"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".range-input-form-wrapper__label",
+          "tag": "div",
+          "styles": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          "children": [
+            ".range-input-form-wrapper"
+          ]
+        },
+        {
+          "selector": ".range-input-form-wrapper",
+          "tag": "div",
+          "styles": {
+            "display": "flex",
+            "flex-direction": "column"
+          },
+          "parent": ".range-input-form-wrapper__label"
+        }
+      ]
+    },
+    "inline-cp-light-md": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".range-input-form-wrapper__label": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          ".range-input-form-wrapper": {
+            "display": "flex",
+            "flex-direction": "column"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".range-input-form-wrapper__label",
+          "tag": "div",
+          "styles": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          "children": [
+            ".range-input-form-wrapper"
+          ]
+        },
+        {
+          "selector": ".range-input-form-wrapper",
+          "tag": "div",
+          "styles": {
+            "display": "flex",
+            "flex-direction": "column"
+          },
+          "parent": ".range-input-form-wrapper__label"
+        }
+      ]
+    },
+    "inline-cp-light-lg": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".range-input-form-wrapper__label": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          ".range-input-form-wrapper": {
+            "display": "flex",
+            "flex-direction": "column"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".range-input-form-wrapper__label",
+          "tag": "div",
+          "styles": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          "children": [
+            ".range-input-form-wrapper"
+          ]
+        },
+        {
+          "selector": ".range-input-form-wrapper",
+          "tag": "div",
+          "styles": {
+            "display": "flex",
+            "flex-direction": "column"
+          },
+          "parent": ".range-input-form-wrapper__label"
+        }
+      ]
+    },
+    "inline-cp-dark-xs": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".range-input-form-wrapper__label": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          ".range-input-form-wrapper": {
+            "display": "flex",
+            "flex-direction": "column"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".range-input-form-wrapper__label",
+          "tag": "div",
+          "styles": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          "children": [
+            ".range-input-form-wrapper"
+          ]
+        },
+        {
+          "selector": ".range-input-form-wrapper",
+          "tag": "div",
+          "styles": {
+            "display": "flex",
+            "flex-direction": "column"
+          },
+          "parent": ".range-input-form-wrapper__label"
+        }
+      ]
+    },
+    "inline-cp-dark-sm": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".range-input-form-wrapper__label": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          ".range-input-form-wrapper": {
+            "display": "flex",
+            "flex-direction": "column"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".range-input-form-wrapper__label",
+          "tag": "div",
+          "styles": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          "children": [
+            ".range-input-form-wrapper"
+          ]
+        },
+        {
+          "selector": ".range-input-form-wrapper",
+          "tag": "div",
+          "styles": {
+            "display": "flex",
+            "flex-direction": "column"
+          },
+          "parent": ".range-input-form-wrapper__label"
+        }
+      ]
+    },
+    "inline-cp-dark-md": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".range-input-form-wrapper__label": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          ".range-input-form-wrapper": {
+            "display": "flex",
+            "flex-direction": "column"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".range-input-form-wrapper__label",
+          "tag": "div",
+          "styles": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          "children": [
+            ".range-input-form-wrapper"
+          ]
+        },
+        {
+          "selector": ".range-input-form-wrapper",
+          "tag": "div",
+          "styles": {
+            "display": "flex",
+            "flex-direction": "column"
+          },
+          "parent": ".range-input-form-wrapper__label"
+        }
+      ]
+    },
+    "inline-cp-dark-lg": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".range-input-form-wrapper__label": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          ".range-input-form-wrapper": {
+            "display": "flex",
+            "flex-direction": "column"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".range-input-form-wrapper__label",
+          "tag": "div",
+          "styles": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          "children": [
+            ".range-input-form-wrapper"
+          ]
+        },
+        {
+          "selector": ".range-input-form-wrapper",
+          "tag": "div",
+          "styles": {
+            "display": "flex",
+            "flex-direction": "column"
+          },
+          "parent": ".range-input-form-wrapper__label"
+        }
+      ]
+    },
+    "inline-vp-light-xs": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".range-input-form-wrapper__label": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          ".range-input-form-wrapper": {
+            "display": "flex",
+            "flex-direction": "column"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".range-input-form-wrapper__label",
+          "tag": "div",
+          "styles": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          "children": [
+            ".range-input-form-wrapper"
+          ]
+        },
+        {
+          "selector": ".range-input-form-wrapper",
+          "tag": "div",
+          "styles": {
+            "display": "flex",
+            "flex-direction": "column"
+          },
+          "parent": ".range-input-form-wrapper__label"
+        }
+      ]
+    },
+    "inline-vp-light-sm": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".range-input-form-wrapper__label": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          ".range-input-form-wrapper": {
+            "display": "flex",
+            "flex-direction": "column"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".range-input-form-wrapper__label",
+          "tag": "div",
+          "styles": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          "children": [
+            ".range-input-form-wrapper"
+          ]
+        },
+        {
+          "selector": ".range-input-form-wrapper",
+          "tag": "div",
+          "styles": {
+            "display": "flex",
+            "flex-direction": "column"
+          },
+          "parent": ".range-input-form-wrapper__label"
+        }
+      ]
+    },
+    "inline-vp-light-md": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".range-input-form-wrapper__label": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          ".range-input-form-wrapper": {
+            "display": "flex",
+            "flex-direction": "column"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".range-input-form-wrapper__label",
+          "tag": "div",
+          "styles": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          "children": [
+            ".range-input-form-wrapper"
+          ]
+        },
+        {
+          "selector": ".range-input-form-wrapper",
+          "tag": "div",
+          "styles": {
+            "display": "flex",
+            "flex-direction": "column"
+          },
+          "parent": ".range-input-form-wrapper__label"
+        }
+      ]
+    },
+    "inline-vp-light-lg": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".range-input-form-wrapper__label": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          ".range-input-form-wrapper": {
+            "display": "flex",
+            "flex-direction": "column"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".range-input-form-wrapper__label",
+          "tag": "div",
+          "styles": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          "children": [
+            ".range-input-form-wrapper"
+          ]
+        },
+        {
+          "selector": ".range-input-form-wrapper",
+          "tag": "div",
+          "styles": {
+            "display": "flex",
+            "flex-direction": "column"
+          },
+          "parent": ".range-input-form-wrapper__label"
+        }
+      ]
+    },
+    "inline-vp-dark-xs": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".range-input-form-wrapper__label": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          ".range-input-form-wrapper": {
+            "display": "flex",
+            "flex-direction": "column"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".range-input-form-wrapper__label",
+          "tag": "div",
+          "styles": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          "children": [
+            ".range-input-form-wrapper"
+          ]
+        },
+        {
+          "selector": ".range-input-form-wrapper",
+          "tag": "div",
+          "styles": {
+            "display": "flex",
+            "flex-direction": "column"
+          },
+          "parent": ".range-input-form-wrapper__label"
+        }
+      ]
+    },
+    "inline-vp-dark-sm": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".range-input-form-wrapper__label": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          ".range-input-form-wrapper": {
+            "display": "flex",
+            "flex-direction": "column"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".range-input-form-wrapper__label",
+          "tag": "div",
+          "styles": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          "children": [
+            ".range-input-form-wrapper"
+          ]
+        },
+        {
+          "selector": ".range-input-form-wrapper",
+          "tag": "div",
+          "styles": {
+            "display": "flex",
+            "flex-direction": "column"
+          },
+          "parent": ".range-input-form-wrapper__label"
+        }
+      ]
+    },
+    "inline-vp-dark-md": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".range-input-form-wrapper__label": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          ".range-input-form-wrapper": {
+            "display": "flex",
+            "flex-direction": "column"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".range-input-form-wrapper__label",
+          "tag": "div",
+          "styles": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          "children": [
+            ".range-input-form-wrapper"
+          ]
+        },
+        {
+          "selector": ".range-input-form-wrapper",
+          "tag": "div",
+          "styles": {
+            "display": "flex",
+            "flex-direction": "column"
+          },
+          "parent": ".range-input-form-wrapper__label"
+        }
+      ]
+    },
+    "inline-vp-dark-lg": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".range-input-form-wrapper__label": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          ".range-input-form-wrapper": {
+            "display": "flex",
+            "flex-direction": "column"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".range-input-form-wrapper__label",
+          "tag": "div",
+          "styles": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          "children": [
+            ".range-input-form-wrapper"
+          ]
+        },
+        {
+          "selector": ".range-input-form-wrapper",
+          "tag": "div",
+          "styles": {
+            "display": "flex",
+            "flex-direction": "column"
+          },
+          "parent": ".range-input-form-wrapper__label"
+        }
+      ]
+    },
+    "inline-ppm-light-xs": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".range-input-form-wrapper__label": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          ".range-input-form-wrapper": {
+            "display": "flex",
+            "flex-direction": "column"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".range-input-form-wrapper__label",
+          "tag": "div",
+          "styles": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          "children": [
+            ".range-input-form-wrapper"
+          ]
+        },
+        {
+          "selector": ".range-input-form-wrapper",
+          "tag": "div",
+          "styles": {
+            "display": "flex",
+            "flex-direction": "column"
+          },
+          "parent": ".range-input-form-wrapper__label"
+        }
+      ]
+    },
+    "inline-ppm-light-sm": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".range-input-form-wrapper__label": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          ".range-input-form-wrapper": {
+            "display": "flex",
+            "flex-direction": "column"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".range-input-form-wrapper__label",
+          "tag": "div",
+          "styles": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          "children": [
+            ".range-input-form-wrapper"
+          ]
+        },
+        {
+          "selector": ".range-input-form-wrapper",
+          "tag": "div",
+          "styles": {
+            "display": "flex",
+            "flex-direction": "column"
+          },
+          "parent": ".range-input-form-wrapper__label"
+        }
+      ]
+    },
+    "inline-ppm-light-md": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".range-input-form-wrapper__label": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          ".range-input-form-wrapper": {
+            "display": "flex",
+            "flex-direction": "column"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".range-input-form-wrapper__label",
+          "tag": "div",
+          "styles": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          "children": [
+            ".range-input-form-wrapper"
+          ]
+        },
+        {
+          "selector": ".range-input-form-wrapper",
+          "tag": "div",
+          "styles": {
+            "display": "flex",
+            "flex-direction": "column"
+          },
+          "parent": ".range-input-form-wrapper__label"
+        }
+      ]
+    },
+    "inline-ppm-light-lg": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".range-input-form-wrapper__label": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          ".range-input-form-wrapper": {
+            "display": "flex",
+            "flex-direction": "column"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".range-input-form-wrapper__label",
+          "tag": "div",
+          "styles": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          "children": [
+            ".range-input-form-wrapper"
+          ]
+        },
+        {
+          "selector": ".range-input-form-wrapper",
+          "tag": "div",
+          "styles": {
+            "display": "flex",
+            "flex-direction": "column"
+          },
+          "parent": ".range-input-form-wrapper__label"
+        }
+      ]
+    },
+    "inline-ppm-dark-xs": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".range-input-form-wrapper__label": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          ".range-input-form-wrapper": {
+            "display": "flex",
+            "flex-direction": "column"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".range-input-form-wrapper__label",
+          "tag": "div",
+          "styles": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          "children": [
+            ".range-input-form-wrapper"
+          ]
+        },
+        {
+          "selector": ".range-input-form-wrapper",
+          "tag": "div",
+          "styles": {
+            "display": "flex",
+            "flex-direction": "column"
+          },
+          "parent": ".range-input-form-wrapper__label"
+        }
+      ]
+    },
+    "inline-ppm-dark-sm": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".range-input-form-wrapper__label": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          ".range-input-form-wrapper": {
+            "display": "flex",
+            "flex-direction": "column"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".range-input-form-wrapper__label",
+          "tag": "div",
+          "styles": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          "children": [
+            ".range-input-form-wrapper"
+          ]
+        },
+        {
+          "selector": ".range-input-form-wrapper",
+          "tag": "div",
+          "styles": {
+            "display": "flex",
+            "flex-direction": "column"
+          },
+          "parent": ".range-input-form-wrapper__label"
+        }
+      ]
+    },
+    "inline-ppm-dark-md": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".range-input-form-wrapper__label": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          ".range-input-form-wrapper": {
+            "display": "flex",
+            "flex-direction": "column"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".range-input-form-wrapper__label",
+          "tag": "div",
+          "styles": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          "children": [
+            ".range-input-form-wrapper"
+          ]
+        },
+        {
+          "selector": ".range-input-form-wrapper",
+          "tag": "div",
+          "styles": {
+            "display": "flex",
+            "flex-direction": "column"
+          },
+          "parent": ".range-input-form-wrapper__label"
+        }
+      ]
+    },
+    "inline-ppm-dark-lg": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".range-input-form-wrapper__label": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          ".range-input-form-wrapper": {
+            "display": "flex",
+            "flex-direction": "column"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".range-input-form-wrapper__label",
+          "tag": "div",
+          "styles": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          "children": [
+            ".range-input-form-wrapper"
+          ]
+        },
+        {
+          "selector": ".range-input-form-wrapper",
+          "tag": "div",
+          "styles": {
+            "display": "flex",
+            "flex-direction": "column"
+          },
+          "parent": ".range-input-form-wrapper__label"
+        }
+      ]
+    },
+    "inline-maconomy-light-xs": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".range-input-form-wrapper__label": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          ".range-input-form-wrapper": {
+            "display": "flex",
+            "flex-direction": "column"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".range-input-form-wrapper__label",
+          "tag": "div",
+          "styles": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          "children": [
+            ".range-input-form-wrapper"
+          ]
+        },
+        {
+          "selector": ".range-input-form-wrapper",
+          "tag": "div",
+          "styles": {
+            "display": "flex",
+            "flex-direction": "column"
+          },
+          "parent": ".range-input-form-wrapper__label"
+        }
+      ]
+    },
+    "inline-maconomy-light-sm": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".range-input-form-wrapper__label": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          ".range-input-form-wrapper": {
+            "display": "flex",
+            "flex-direction": "column"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".range-input-form-wrapper__label",
+          "tag": "div",
+          "styles": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          "children": [
+            ".range-input-form-wrapper"
+          ]
+        },
+        {
+          "selector": ".range-input-form-wrapper",
+          "tag": "div",
+          "styles": {
+            "display": "flex",
+            "flex-direction": "column"
+          },
+          "parent": ".range-input-form-wrapper__label"
+        }
+      ]
+    },
+    "inline-maconomy-light-md": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".range-input-form-wrapper__label": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          ".range-input-form-wrapper": {
+            "display": "flex",
+            "flex-direction": "column"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".range-input-form-wrapper__label",
+          "tag": "div",
+          "styles": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          "children": [
+            ".range-input-form-wrapper"
+          ]
+        },
+        {
+          "selector": ".range-input-form-wrapper",
+          "tag": "div",
+          "styles": {
+            "display": "flex",
+            "flex-direction": "column"
+          },
+          "parent": ".range-input-form-wrapper__label"
+        }
+      ]
+    },
+    "inline-maconomy-light-lg": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".range-input-form-wrapper__label": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          ".range-input-form-wrapper": {
+            "display": "flex",
+            "flex-direction": "column"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".range-input-form-wrapper__label",
+          "tag": "div",
+          "styles": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          "children": [
+            ".range-input-form-wrapper"
+          ]
+        },
+        {
+          "selector": ".range-input-form-wrapper",
+          "tag": "div",
+          "styles": {
+            "display": "flex",
+            "flex-direction": "column"
+          },
+          "parent": ".range-input-form-wrapper__label"
+        }
+      ]
+    },
+    "inline-maconomy-dark-xs": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".range-input-form-wrapper__label": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          ".range-input-form-wrapper": {
+            "display": "flex",
+            "flex-direction": "column"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".range-input-form-wrapper__label",
+          "tag": "div",
+          "styles": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          "children": [
+            ".range-input-form-wrapper"
+          ]
+        },
+        {
+          "selector": ".range-input-form-wrapper",
+          "tag": "div",
+          "styles": {
+            "display": "flex",
+            "flex-direction": "column"
+          },
+          "parent": ".range-input-form-wrapper__label"
+        }
+      ]
+    },
+    "inline-maconomy-dark-sm": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".range-input-form-wrapper__label": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          ".range-input-form-wrapper": {
+            "display": "flex",
+            "flex-direction": "column"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".range-input-form-wrapper__label",
+          "tag": "div",
+          "styles": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          "children": [
+            ".range-input-form-wrapper"
+          ]
+        },
+        {
+          "selector": ".range-input-form-wrapper",
+          "tag": "div",
+          "styles": {
+            "display": "flex",
+            "flex-direction": "column"
+          },
+          "parent": ".range-input-form-wrapper__label"
+        }
+      ]
+    },
+    "inline-maconomy-dark-md": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".range-input-form-wrapper__label": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          ".range-input-form-wrapper": {
+            "display": "flex",
+            "flex-direction": "column"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".range-input-form-wrapper__label",
+          "tag": "div",
+          "styles": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          "children": [
+            ".range-input-form-wrapper"
+          ]
+        },
+        {
+          "selector": ".range-input-form-wrapper",
+          "tag": "div",
+          "styles": {
+            "display": "flex",
+            "flex-direction": "column"
+          },
+          "parent": ".range-input-form-wrapper__label"
+        }
+      ]
+    },
+    "inline-maconomy-dark-lg": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".range-input-form-wrapper__label": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          ".range-input-form-wrapper": {
+            "display": "flex",
+            "flex-direction": "column"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".range-input-form-wrapper__label",
+          "tag": "div",
+          "styles": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          "children": [
+            ".range-input-form-wrapper"
+          ]
+        },
+        {
+          "selector": ".range-input-form-wrapper",
+          "tag": "div",
+          "styles": {
+            "display": "flex",
+            "flex-direction": "column"
+          },
+          "parent": ".range-input-form-wrapper__label"
+        }
+      ]
+    },
+    "stacked-cp-light-xs": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".range-input-form-wrapper__label": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          ".range-input-form-wrapper": {
+            "display": "flex",
+            "flex-direction": "column"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".range-input-form-wrapper__label",
+          "tag": "div",
+          "styles": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          "children": [
+            ".range-input-form-wrapper"
+          ]
+        },
+        {
+          "selector": ".range-input-form-wrapper",
+          "tag": "div",
+          "styles": {
+            "display": "flex",
+            "flex-direction": "column"
+          },
+          "parent": ".range-input-form-wrapper__label"
+        }
+      ]
+    },
+    "stacked-cp-light-sm": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".range-input-form-wrapper__label": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          ".range-input-form-wrapper": {
+            "display": "flex",
+            "flex-direction": "column"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".range-input-form-wrapper__label",
+          "tag": "div",
+          "styles": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          "children": [
+            ".range-input-form-wrapper"
+          ]
+        },
+        {
+          "selector": ".range-input-form-wrapper",
+          "tag": "div",
+          "styles": {
+            "display": "flex",
+            "flex-direction": "column"
+          },
+          "parent": ".range-input-form-wrapper__label"
+        }
+      ]
+    },
+    "stacked-cp-light-md": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".range-input-form-wrapper__label": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          ".range-input-form-wrapper": {
+            "display": "flex",
+            "flex-direction": "column"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".range-input-form-wrapper__label",
+          "tag": "div",
+          "styles": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          "children": [
+            ".range-input-form-wrapper"
+          ]
+        },
+        {
+          "selector": ".range-input-form-wrapper",
+          "tag": "div",
+          "styles": {
+            "display": "flex",
+            "flex-direction": "column"
+          },
+          "parent": ".range-input-form-wrapper__label"
+        }
+      ]
+    },
+    "stacked-cp-light-lg": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".range-input-form-wrapper__label": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          ".range-input-form-wrapper": {
+            "display": "flex",
+            "flex-direction": "column"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".range-input-form-wrapper__label",
+          "tag": "div",
+          "styles": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          "children": [
+            ".range-input-form-wrapper"
+          ]
+        },
+        {
+          "selector": ".range-input-form-wrapper",
+          "tag": "div",
+          "styles": {
+            "display": "flex",
+            "flex-direction": "column"
+          },
+          "parent": ".range-input-form-wrapper__label"
+        }
+      ]
+    },
+    "stacked-cp-dark-xs": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".range-input-form-wrapper__label": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          ".range-input-form-wrapper": {
+            "display": "flex",
+            "flex-direction": "column"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".range-input-form-wrapper__label",
+          "tag": "div",
+          "styles": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          "children": [
+            ".range-input-form-wrapper"
+          ]
+        },
+        {
+          "selector": ".range-input-form-wrapper",
+          "tag": "div",
+          "styles": {
+            "display": "flex",
+            "flex-direction": "column"
+          },
+          "parent": ".range-input-form-wrapper__label"
+        }
+      ]
+    },
+    "stacked-cp-dark-sm": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".range-input-form-wrapper__label": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          ".range-input-form-wrapper": {
+            "display": "flex",
+            "flex-direction": "column"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".range-input-form-wrapper__label",
+          "tag": "div",
+          "styles": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          "children": [
+            ".range-input-form-wrapper"
+          ]
+        },
+        {
+          "selector": ".range-input-form-wrapper",
+          "tag": "div",
+          "styles": {
+            "display": "flex",
+            "flex-direction": "column"
+          },
+          "parent": ".range-input-form-wrapper__label"
+        }
+      ]
+    },
+    "stacked-cp-dark-md": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".range-input-form-wrapper__label": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          ".range-input-form-wrapper": {
+            "display": "flex",
+            "flex-direction": "column"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".range-input-form-wrapper__label",
+          "tag": "div",
+          "styles": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          "children": [
+            ".range-input-form-wrapper"
+          ]
+        },
+        {
+          "selector": ".range-input-form-wrapper",
+          "tag": "div",
+          "styles": {
+            "display": "flex",
+            "flex-direction": "column"
+          },
+          "parent": ".range-input-form-wrapper__label"
+        }
+      ]
+    },
+    "stacked-cp-dark-lg": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".range-input-form-wrapper__label": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          ".range-input-form-wrapper": {
+            "display": "flex",
+            "flex-direction": "column"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".range-input-form-wrapper__label",
+          "tag": "div",
+          "styles": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          "children": [
+            ".range-input-form-wrapper"
+          ]
+        },
+        {
+          "selector": ".range-input-form-wrapper",
+          "tag": "div",
+          "styles": {
+            "display": "flex",
+            "flex-direction": "column"
+          },
+          "parent": ".range-input-form-wrapper__label"
+        }
+      ]
+    },
+    "stacked-vp-light-xs": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".range-input-form-wrapper__label": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          ".range-input-form-wrapper": {
+            "display": "flex",
+            "flex-direction": "column"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".range-input-form-wrapper__label",
+          "tag": "div",
+          "styles": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          "children": [
+            ".range-input-form-wrapper"
+          ]
+        },
+        {
+          "selector": ".range-input-form-wrapper",
+          "tag": "div",
+          "styles": {
+            "display": "flex",
+            "flex-direction": "column"
+          },
+          "parent": ".range-input-form-wrapper__label"
+        }
+      ]
+    },
+    "stacked-vp-light-sm": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".range-input-form-wrapper__label": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          ".range-input-form-wrapper": {
+            "display": "flex",
+            "flex-direction": "column"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".range-input-form-wrapper__label",
+          "tag": "div",
+          "styles": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          "children": [
+            ".range-input-form-wrapper"
+          ]
+        },
+        {
+          "selector": ".range-input-form-wrapper",
+          "tag": "div",
+          "styles": {
+            "display": "flex",
+            "flex-direction": "column"
+          },
+          "parent": ".range-input-form-wrapper__label"
+        }
+      ]
+    },
+    "stacked-vp-light-md": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".range-input-form-wrapper__label": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          ".range-input-form-wrapper": {
+            "display": "flex",
+            "flex-direction": "column"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".range-input-form-wrapper__label",
+          "tag": "div",
+          "styles": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          "children": [
+            ".range-input-form-wrapper"
+          ]
+        },
+        {
+          "selector": ".range-input-form-wrapper",
+          "tag": "div",
+          "styles": {
+            "display": "flex",
+            "flex-direction": "column"
+          },
+          "parent": ".range-input-form-wrapper__label"
+        }
+      ]
+    },
+    "stacked-vp-light-lg": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".range-input-form-wrapper__label": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          ".range-input-form-wrapper": {
+            "display": "flex",
+            "flex-direction": "column"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".range-input-form-wrapper__label",
+          "tag": "div",
+          "styles": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          "children": [
+            ".range-input-form-wrapper"
+          ]
+        },
+        {
+          "selector": ".range-input-form-wrapper",
+          "tag": "div",
+          "styles": {
+            "display": "flex",
+            "flex-direction": "column"
+          },
+          "parent": ".range-input-form-wrapper__label"
+        }
+      ]
+    },
+    "stacked-vp-dark-xs": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".range-input-form-wrapper__label": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          ".range-input-form-wrapper": {
+            "display": "flex",
+            "flex-direction": "column"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".range-input-form-wrapper__label",
+          "tag": "div",
+          "styles": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          "children": [
+            ".range-input-form-wrapper"
+          ]
+        },
+        {
+          "selector": ".range-input-form-wrapper",
+          "tag": "div",
+          "styles": {
+            "display": "flex",
+            "flex-direction": "column"
+          },
+          "parent": ".range-input-form-wrapper__label"
+        }
+      ]
+    },
+    "stacked-vp-dark-sm": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".range-input-form-wrapper__label": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          ".range-input-form-wrapper": {
+            "display": "flex",
+            "flex-direction": "column"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".range-input-form-wrapper__label",
+          "tag": "div",
+          "styles": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          "children": [
+            ".range-input-form-wrapper"
+          ]
+        },
+        {
+          "selector": ".range-input-form-wrapper",
+          "tag": "div",
+          "styles": {
+            "display": "flex",
+            "flex-direction": "column"
+          },
+          "parent": ".range-input-form-wrapper__label"
+        }
+      ]
+    },
+    "stacked-vp-dark-md": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".range-input-form-wrapper__label": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          ".range-input-form-wrapper": {
+            "display": "flex",
+            "flex-direction": "column"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".range-input-form-wrapper__label",
+          "tag": "div",
+          "styles": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          "children": [
+            ".range-input-form-wrapper"
+          ]
+        },
+        {
+          "selector": ".range-input-form-wrapper",
+          "tag": "div",
+          "styles": {
+            "display": "flex",
+            "flex-direction": "column"
+          },
+          "parent": ".range-input-form-wrapper__label"
+        }
+      ]
+    },
+    "stacked-vp-dark-lg": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".range-input-form-wrapper__label": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          ".range-input-form-wrapper": {
+            "display": "flex",
+            "flex-direction": "column"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".range-input-form-wrapper__label",
+          "tag": "div",
+          "styles": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          "children": [
+            ".range-input-form-wrapper"
+          ]
+        },
+        {
+          "selector": ".range-input-form-wrapper",
+          "tag": "div",
+          "styles": {
+            "display": "flex",
+            "flex-direction": "column"
+          },
+          "parent": ".range-input-form-wrapper__label"
+        }
+      ]
+    },
+    "stacked-ppm-light-xs": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".range-input-form-wrapper__label": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          ".range-input-form-wrapper": {
+            "display": "flex",
+            "flex-direction": "column"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".range-input-form-wrapper__label",
+          "tag": "div",
+          "styles": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          "children": [
+            ".range-input-form-wrapper"
+          ]
+        },
+        {
+          "selector": ".range-input-form-wrapper",
+          "tag": "div",
+          "styles": {
+            "display": "flex",
+            "flex-direction": "column"
+          },
+          "parent": ".range-input-form-wrapper__label"
+        }
+      ]
+    },
+    "stacked-ppm-light-sm": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".range-input-form-wrapper__label": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          ".range-input-form-wrapper": {
+            "display": "flex",
+            "flex-direction": "column"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".range-input-form-wrapper__label",
+          "tag": "div",
+          "styles": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          "children": [
+            ".range-input-form-wrapper"
+          ]
+        },
+        {
+          "selector": ".range-input-form-wrapper",
+          "tag": "div",
+          "styles": {
+            "display": "flex",
+            "flex-direction": "column"
+          },
+          "parent": ".range-input-form-wrapper__label"
+        }
+      ]
+    },
+    "stacked-ppm-light-md": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".range-input-form-wrapper__label": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          ".range-input-form-wrapper": {
+            "display": "flex",
+            "flex-direction": "column"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".range-input-form-wrapper__label",
+          "tag": "div",
+          "styles": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          "children": [
+            ".range-input-form-wrapper"
+          ]
+        },
+        {
+          "selector": ".range-input-form-wrapper",
+          "tag": "div",
+          "styles": {
+            "display": "flex",
+            "flex-direction": "column"
+          },
+          "parent": ".range-input-form-wrapper__label"
+        }
+      ]
+    },
+    "stacked-ppm-light-lg": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".range-input-form-wrapper__label": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          ".range-input-form-wrapper": {
+            "display": "flex",
+            "flex-direction": "column"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".range-input-form-wrapper__label",
+          "tag": "div",
+          "styles": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          "children": [
+            ".range-input-form-wrapper"
+          ]
+        },
+        {
+          "selector": ".range-input-form-wrapper",
+          "tag": "div",
+          "styles": {
+            "display": "flex",
+            "flex-direction": "column"
+          },
+          "parent": ".range-input-form-wrapper__label"
+        }
+      ]
+    },
+    "stacked-ppm-dark-xs": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".range-input-form-wrapper__label": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          ".range-input-form-wrapper": {
+            "display": "flex",
+            "flex-direction": "column"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".range-input-form-wrapper__label",
+          "tag": "div",
+          "styles": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          "children": [
+            ".range-input-form-wrapper"
+          ]
+        },
+        {
+          "selector": ".range-input-form-wrapper",
+          "tag": "div",
+          "styles": {
+            "display": "flex",
+            "flex-direction": "column"
+          },
+          "parent": ".range-input-form-wrapper__label"
+        }
+      ]
+    },
+    "stacked-ppm-dark-sm": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".range-input-form-wrapper__label": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          ".range-input-form-wrapper": {
+            "display": "flex",
+            "flex-direction": "column"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".range-input-form-wrapper__label",
+          "tag": "div",
+          "styles": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          "children": [
+            ".range-input-form-wrapper"
+          ]
+        },
+        {
+          "selector": ".range-input-form-wrapper",
+          "tag": "div",
+          "styles": {
+            "display": "flex",
+            "flex-direction": "column"
+          },
+          "parent": ".range-input-form-wrapper__label"
+        }
+      ]
+    },
+    "stacked-ppm-dark-md": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".range-input-form-wrapper__label": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          ".range-input-form-wrapper": {
+            "display": "flex",
+            "flex-direction": "column"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".range-input-form-wrapper__label",
+          "tag": "div",
+          "styles": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          "children": [
+            ".range-input-form-wrapper"
+          ]
+        },
+        {
+          "selector": ".range-input-form-wrapper",
+          "tag": "div",
+          "styles": {
+            "display": "flex",
+            "flex-direction": "column"
+          },
+          "parent": ".range-input-form-wrapper__label"
+        }
+      ]
+    },
+    "stacked-ppm-dark-lg": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".range-input-form-wrapper__label": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          ".range-input-form-wrapper": {
+            "display": "flex",
+            "flex-direction": "column"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".range-input-form-wrapper__label",
+          "tag": "div",
+          "styles": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          "children": [
+            ".range-input-form-wrapper"
+          ]
+        },
+        {
+          "selector": ".range-input-form-wrapper",
+          "tag": "div",
+          "styles": {
+            "display": "flex",
+            "flex-direction": "column"
+          },
+          "parent": ".range-input-form-wrapper__label"
+        }
+      ]
+    },
+    "stacked-maconomy-light-xs": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".range-input-form-wrapper__label": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          ".range-input-form-wrapper": {
+            "display": "flex",
+            "flex-direction": "column"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".range-input-form-wrapper__label",
+          "tag": "div",
+          "styles": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          "children": [
+            ".range-input-form-wrapper"
+          ]
+        },
+        {
+          "selector": ".range-input-form-wrapper",
+          "tag": "div",
+          "styles": {
+            "display": "flex",
+            "flex-direction": "column"
+          },
+          "parent": ".range-input-form-wrapper__label"
+        }
+      ]
+    },
+    "stacked-maconomy-light-sm": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".range-input-form-wrapper__label": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          ".range-input-form-wrapper": {
+            "display": "flex",
+            "flex-direction": "column"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".range-input-form-wrapper__label",
+          "tag": "div",
+          "styles": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          "children": [
+            ".range-input-form-wrapper"
+          ]
+        },
+        {
+          "selector": ".range-input-form-wrapper",
+          "tag": "div",
+          "styles": {
+            "display": "flex",
+            "flex-direction": "column"
+          },
+          "parent": ".range-input-form-wrapper__label"
+        }
+      ]
+    },
+    "stacked-maconomy-light-md": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".range-input-form-wrapper__label": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          ".range-input-form-wrapper": {
+            "display": "flex",
+            "flex-direction": "column"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".range-input-form-wrapper__label",
+          "tag": "div",
+          "styles": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          "children": [
+            ".range-input-form-wrapper"
+          ]
+        },
+        {
+          "selector": ".range-input-form-wrapper",
+          "tag": "div",
+          "styles": {
+            "display": "flex",
+            "flex-direction": "column"
+          },
+          "parent": ".range-input-form-wrapper__label"
+        }
+      ]
+    },
+    "stacked-maconomy-light-lg": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".range-input-form-wrapper__label": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          ".range-input-form-wrapper": {
+            "display": "flex",
+            "flex-direction": "column"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".range-input-form-wrapper__label",
+          "tag": "div",
+          "styles": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          "children": [
+            ".range-input-form-wrapper"
+          ]
+        },
+        {
+          "selector": ".range-input-form-wrapper",
+          "tag": "div",
+          "styles": {
+            "display": "flex",
+            "flex-direction": "column"
+          },
+          "parent": ".range-input-form-wrapper__label"
+        }
+      ]
+    },
+    "stacked-maconomy-dark-xs": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".range-input-form-wrapper__label": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          ".range-input-form-wrapper": {
+            "display": "flex",
+            "flex-direction": "column"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".range-input-form-wrapper__label",
+          "tag": "div",
+          "styles": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          "children": [
+            ".range-input-form-wrapper"
+          ]
+        },
+        {
+          "selector": ".range-input-form-wrapper",
+          "tag": "div",
+          "styles": {
+            "display": "flex",
+            "flex-direction": "column"
+          },
+          "parent": ".range-input-form-wrapper__label"
+        }
+      ]
+    },
+    "stacked-maconomy-dark-sm": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".range-input-form-wrapper__label": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          ".range-input-form-wrapper": {
+            "display": "flex",
+            "flex-direction": "column"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".range-input-form-wrapper__label",
+          "tag": "div",
+          "styles": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          "children": [
+            ".range-input-form-wrapper"
+          ]
+        },
+        {
+          "selector": ".range-input-form-wrapper",
+          "tag": "div",
+          "styles": {
+            "display": "flex",
+            "flex-direction": "column"
+          },
+          "parent": ".range-input-form-wrapper__label"
+        }
+      ]
+    },
+    "stacked-maconomy-dark-md": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".range-input-form-wrapper__label": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          ".range-input-form-wrapper": {
+            "display": "flex",
+            "flex-direction": "column"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".range-input-form-wrapper__label",
+          "tag": "div",
+          "styles": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          "children": [
+            ".range-input-form-wrapper"
+          ]
+        },
+        {
+          "selector": ".range-input-form-wrapper",
+          "tag": "div",
+          "styles": {
+            "display": "flex",
+            "flex-direction": "column"
+          },
+          "parent": ".range-input-form-wrapper__label"
+        }
+      ]
+    },
+    "stacked-maconomy-dark-lg": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".range-input-form-wrapper__label": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          ".range-input-form-wrapper": {
+            "display": "flex",
+            "flex-direction": "column"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values"
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".range-input-form-wrapper__label",
+          "tag": "div",
+          "styles": {
+            "margin-bottom": "0",
+            "white-space": "nowrap"
+          },
+          "children": [
+            ".range-input-form-wrapper"
+          ]
+        },
+        {
+          "selector": ".range-input-form-wrapper",
+          "tag": "div",
+          "styles": {
+            "display": "flex",
+            "flex-direction": "column"
+          },
+          "parent": ".range-input-form-wrapper__label"
+        }
+      ]
+    }
+  },
+  "guidance": {
+    "patterns": {},
+    "guidelines": {}
+  },
+  "interactivity": {
+    "events": [
+      {
+        "name": "change",
+        "description": "Triggered when slider value changes"
+      },
+      {
+        "name": "input",
+        "description": "Fired continuously while dragging"
+      }
+    ],
+    "state": [
+      {
+        "name": "value",
+        "type": "number",
+        "description": "Current slider value; controlled via value prop or form"
+      }
+    ]
+  },
+  "examples": [
+    {
+      "name": "Slider",
+      "description": "Range slider",
+      "snippet": "<RangeInput min={0} max={100} value={50} />"
+    }
+  ]
+}
