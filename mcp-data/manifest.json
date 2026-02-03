@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generated": "2026-02-02T23:28:24.140Z",
+  "generated": "2026-02-03T15:22:13.399Z",
   "totalComponents": 47,
   "totalLayouts": 1,
   "totalGuidelines": 5,
@@ -8,32 +8,44 @@
     "Accordion": {
       "name": "Accordion",
       "category": "display",
-      "dependencies": [],
-      "dependencyCount": 0
+      "dependencies": [
+        "Icon"
+      ],
+      "dependencyCount": 1
     },
     "Alert": {
       "name": "Alert",
       "category": "feedback",
-      "dependencies": [],
-      "dependencyCount": 0
+      "dependencies": [
+        "Icon",
+        "Button",
+        "ProgressBar"
+      ],
+      "dependencyCount": 3
     },
     "Avatar": {
       "name": "Avatar",
       "category": "display",
-      "dependencies": [],
-      "dependencyCount": 0
+      "dependencies": [
+        "Icon"
+      ],
+      "dependencyCount": 1
     },
     "Badge": {
       "name": "Badge",
       "category": "display",
-      "dependencies": [],
-      "dependencyCount": 0
+      "dependencies": [
+        "Icon"
+      ],
+      "dependencyCount": 1
     },
     "Button": {
       "name": "Button",
       "category": "form",
-      "dependencies": [],
-      "dependencyCount": 0
+      "dependencies": [
+        "Icon"
+      ],
+      "dependencyCount": 1
     },
     "ButtonGroup": {
       "name": "ButtonGroup",
@@ -50,56 +62,83 @@
     "Checkbox": {
       "name": "Checkbox",
       "category": "form",
-      "dependencies": [],
-      "dependencyCount": 0
+      "dependencies": [
+        "Icon"
+      ],
+      "dependencyCount": 1
     },
     "CheckboxGroup": {
       "name": "CheckboxGroup",
       "category": "form",
-      "dependencies": [],
-      "dependencyCount": 0
+      "dependencies": [
+        "Icon"
+      ],
+      "dependencyCount": 1
     },
     "Chip": {
       "name": "Chip",
       "category": "display",
-      "dependencies": [],
-      "dependencyCount": 0
+      "dependencies": [
+        "Icon"
+      ],
+      "dependencyCount": 1
     },
     "DateInput": {
       "name": "DateInput",
       "category": "form",
-      "dependencies": [],
-      "dependencyCount": 0
+      "dependencies": [
+        "Icon",
+        "Label",
+        "DatePicker",
+        "TimePicker",
+        "DateTimePicker",
+        "MonthPicker",
+        "WeekPicker",
+        "PickerPopup"
+      ],
+      "dependencyCount": 8
     },
     "DatePicker": {
       "name": "DatePicker",
       "category": "form",
-      "dependencies": [],
-      "dependencyCount": 0
+      "dependencies": [
+        "Icon"
+      ],
+      "dependencyCount": 1
     },
     "DateTimePicker": {
       "name": "DateTimePicker",
       "category": "form",
-      "dependencies": [],
-      "dependencyCount": 0
+      "dependencies": [
+        "DatePicker",
+        "TimePicker"
+      ],
+      "dependencyCount": 2
     },
     "Dialog": {
       "name": "Dialog",
       "category": "feedback",
-      "dependencies": [],
-      "dependencyCount": 0
+      "dependencies": [
+        "Icon"
+      ],
+      "dependencyCount": 1
     },
     "Dropdown": {
       "name": "Dropdown",
       "category": "form",
-      "dependencies": [],
-      "dependencyCount": 0
+      "dependencies": [
+        "Icon",
+        "Label"
+      ],
+      "dependencyCount": 2
     },
     "FloatingNav": {
       "name": "FloatingNav",
       "category": "navigation",
-      "dependencies": [],
-      "dependencyCount": 0
+      "dependencies": [
+        "Icon"
+      ],
+      "dependencyCount": 1
     },
     "Icon": {
       "name": "Icon",
@@ -110,20 +149,33 @@
     "Input": {
       "name": "Input",
       "category": "form",
-      "dependencies": [],
-      "dependencyCount": 0
+      "dependencies": [
+        "Icon",
+        "Label"
+      ],
+      "dependencyCount": 2
     },
     "Kanban": {
       "name": "Kanban",
       "category": "display",
-      "dependencies": [],
-      "dependencyCount": 0
+      "dependencies": [
+        "Button",
+        "Icon",
+        "Card"
+      ],
+      "dependencyCount": 3
     },
     "KanbanCard": {
       "name": "KanbanCard",
       "category": "display",
-      "dependencies": [],
-      "dependencyCount": 0
+      "dependencies": [
+        "Card",
+        "Avatar",
+        "Badge",
+        "Icon",
+        "ProgressBar"
+      ],
+      "dependencyCount": 5
     },
     "Label": {
       "name": "Label",
@@ -134,26 +186,35 @@
     "LeftSidebar": {
       "name": "LeftSidebar",
       "category": "navigation",
-      "dependencies": [],
-      "dependencyCount": 0
+      "dependencies": [
+        "Icon",
+        "Tooltip"
+      ],
+      "dependencyCount": 2
     },
     "Link": {
       "name": "Link",
       "category": "display",
-      "dependencies": [],
-      "dependencyCount": 0
+      "dependencies": [
+        "Icon"
+      ],
+      "dependencyCount": 1
     },
     "ListMenu": {
       "name": "ListMenu",
       "category": "navigation",
-      "dependencies": [],
-      "dependencyCount": 0
+      "dependencies": [
+        "Icon"
+      ],
+      "dependencyCount": 1
     },
     "MonthPicker": {
       "name": "MonthPicker",
       "category": "form",
-      "dependencies": [],
-      "dependencyCount": 0
+      "dependencies": [
+        "Icon"
+      ],
+      "dependencyCount": 1
     },
     "NotificationBadge": {
       "name": "NotificationBadge",
@@ -164,14 +225,19 @@
     "NumberInput": {
       "name": "NumberInput",
       "category": "form",
-      "dependencies": [],
-      "dependencyCount": 0
+      "dependencies": [
+        "Icon",
+        "Label"
+      ],
+      "dependencyCount": 2
     },
     "PickerPopup": {
       "name": "PickerPopup",
       "category": "pickers",
-      "dependencies": [],
-      "dependencyCount": 0
+      "dependencies": [
+        "Icon"
+      ],
+      "dependencyCount": 1
     },
     "ProgressBar": {
       "name": "ProgressBar",
@@ -182,26 +248,35 @@
     "RadioButton": {
       "name": "RadioButton",
       "category": "form",
-      "dependencies": [],
-      "dependencyCount": 0
+      "dependencies": [
+        "Icon"
+      ],
+      "dependencyCount": 1
     },
     "RadioGroup": {
       "name": "RadioGroup",
       "category": "form",
-      "dependencies": [],
-      "dependencyCount": 0
+      "dependencies": [
+        "Icon"
+      ],
+      "dependencyCount": 1
     },
     "RangeInput": {
       "name": "RangeInput",
       "category": "form",
-      "dependencies": [],
-      "dependencyCount": 0
+      "dependencies": [
+        "Label"
+      ],
+      "dependencyCount": 1
     },
     "RightSidebar": {
       "name": "RightSidebar",
       "category": "navigation",
-      "dependencies": [],
-      "dependencyCount": 0
+      "dependencies": [
+        "Icon",
+        "Tooltip"
+      ],
+      "dependencyCount": 2
     },
     "ShellFooter": {
       "name": "ShellFooter",
@@ -212,20 +287,27 @@
     "ShellHeader": {
       "name": "ShellHeader",
       "category": "navigation",
-      "dependencies": [],
-      "dependencyCount": 0
+      "dependencies": [
+        "Icon",
+        "Avatar"
+      ],
+      "dependencyCount": 2
     },
     "ShellPageHeader": {
       "name": "ShellPageHeader",
       "category": "navigation",
-      "dependencies": [],
-      "dependencyCount": 0
+      "dependencies": [
+        "Button"
+      ],
+      "dependencyCount": 1
     },
     "ShellPanel": {
       "name": "ShellPanel",
       "category": "navigation",
-      "dependencies": [],
-      "dependencyCount": 0
+      "dependencies": [
+        "Icon"
+      ],
+      "dependencyCount": 1
     },
     "Spinner": {
       "name": "Spinner",
@@ -236,8 +318,10 @@
     "Step": {
       "name": "Step",
       "category": "layout",
-      "dependencies": [],
-      "dependencyCount": 0
+      "dependencies": [
+        "Icon"
+      ],
+      "dependencyCount": 1
     },
     "Stepper": {
       "name": "Stepper",
@@ -254,20 +338,26 @@
     "TabStrip": {
       "name": "TabStrip",
       "category": "navigation",
-      "dependencies": [],
-      "dependencyCount": 0
+      "dependencies": [
+        "Icon"
+      ],
+      "dependencyCount": 1
     },
     "Textarea": {
       "name": "Textarea",
       "category": "form",
-      "dependencies": [],
-      "dependencyCount": 0
+      "dependencies": [
+        "Label"
+      ],
+      "dependencyCount": 1
     },
     "TimePicker": {
       "name": "TimePicker",
       "category": "form",
-      "dependencies": [],
-      "dependencyCount": 0
+      "dependencies": [
+        "Icon"
+      ],
+      "dependencyCount": 1
     },
     "Toggle": {
       "name": "Toggle",
@@ -284,8 +374,10 @@
     "WeekPicker": {
       "name": "WeekPicker",
       "category": "form",
-      "dependencies": [],
-      "dependencyCount": 0
+      "dependencies": [
+        "Icon"
+      ],
+      "dependencyCount": 1
     }
   },
   "layouts": {
@@ -355,84 +447,239 @@
     }
   },
   "dependencyGraph": {
-    "Accordion": [],
-    "Alert": [],
-    "Avatar": [],
-    "Badge": [],
-    "Button": [],
+    "Accordion": [
+      "Icon"
+    ],
+    "Alert": [
+      "Icon",
+      "Button",
+      "ProgressBar"
+    ],
+    "Avatar": [
+      "Icon"
+    ],
+    "Badge": [
+      "Icon"
+    ],
+    "Button": [
+      "Icon"
+    ],
     "ButtonGroup": [],
     "Card": [],
-    "Checkbox": [],
-    "CheckboxGroup": [],
-    "Chip": [],
-    "DateInput": [],
-    "DatePicker": [],
-    "DateTimePicker": [],
-    "Dialog": [],
-    "Dropdown": [],
-    "FloatingNav": [],
+    "Checkbox": [
+      "Icon"
+    ],
+    "CheckboxGroup": [
+      "Icon"
+    ],
+    "Chip": [
+      "Icon"
+    ],
+    "DateInput": [
+      "Icon",
+      "Label",
+      "DatePicker",
+      "TimePicker",
+      "DateTimePicker",
+      "MonthPicker",
+      "WeekPicker",
+      "PickerPopup"
+    ],
+    "DatePicker": [
+      "Icon"
+    ],
+    "DateTimePicker": [
+      "DatePicker",
+      "TimePicker"
+    ],
+    "Dialog": [
+      "Icon"
+    ],
+    "Dropdown": [
+      "Icon",
+      "Label"
+    ],
+    "FloatingNav": [
+      "Icon"
+    ],
     "Icon": [],
-    "Input": [],
-    "Kanban": [],
-    "KanbanCard": [],
+    "Input": [
+      "Icon",
+      "Label"
+    ],
+    "Kanban": [
+      "Button",
+      "Icon",
+      "Card"
+    ],
+    "KanbanCard": [
+      "Card",
+      "Avatar",
+      "Badge",
+      "Icon",
+      "ProgressBar"
+    ],
     "Label": [],
-    "LeftSidebar": [],
-    "Link": [],
-    "ListMenu": [],
-    "MonthPicker": [],
+    "LeftSidebar": [
+      "Icon",
+      "Tooltip"
+    ],
+    "Link": [
+      "Icon"
+    ],
+    "ListMenu": [
+      "Icon"
+    ],
+    "MonthPicker": [
+      "Icon"
+    ],
     "NotificationBadge": [],
-    "NumberInput": [],
-    "PickerPopup": [],
+    "NumberInput": [
+      "Icon",
+      "Label"
+    ],
+    "PickerPopup": [
+      "Icon"
+    ],
     "ProgressBar": [],
-    "RadioButton": [],
-    "RadioGroup": [],
-    "RangeInput": [],
-    "RightSidebar": [],
+    "RadioButton": [
+      "Icon"
+    ],
+    "RadioGroup": [
+      "Icon"
+    ],
+    "RangeInput": [
+      "Label"
+    ],
+    "RightSidebar": [
+      "Icon",
+      "Tooltip"
+    ],
     "ShellFooter": [],
-    "ShellHeader": [],
-    "ShellPageHeader": [],
-    "ShellPanel": [],
+    "ShellHeader": [
+      "Icon",
+      "Avatar"
+    ],
+    "ShellPageHeader": [
+      "Button"
+    ],
+    "ShellPanel": [
+      "Icon"
+    ],
     "Spinner": [],
-    "Step": [],
+    "Step": [
+      "Icon"
+    ],
     "Stepper": [],
     "Table": [],
-    "TabStrip": [],
-    "Textarea": [],
-    "TimePicker": [],
+    "TabStrip": [
+      "Icon"
+    ],
+    "Textarea": [
+      "Label"
+    ],
+    "TimePicker": [
+      "Icon"
+    ],
     "Toggle": [],
     "Tooltip": [],
-    "WeekPicker": []
+    "WeekPicker": [
+      "Icon"
+    ]
   },
   "reverseDependencies": {
     "Accordion": [],
     "Alert": [],
-    "Avatar": [],
-    "Badge": [],
-    "Button": [],
+    "Avatar": [
+      "KanbanCard",
+      "ShellHeader"
+    ],
+    "Badge": [
+      "KanbanCard"
+    ],
+    "Button": [
+      "Alert",
+      "Kanban",
+      "ShellPageHeader"
+    ],
     "ButtonGroup": [],
-    "Card": [],
+    "Card": [
+      "Kanban",
+      "KanbanCard"
+    ],
     "Checkbox": [],
     "CheckboxGroup": [],
     "Chip": [],
     "DateInput": [],
-    "DatePicker": [],
-    "DateTimePicker": [],
+    "DatePicker": [
+      "DateInput",
+      "DateTimePicker"
+    ],
+    "DateTimePicker": [
+      "DateInput"
+    ],
     "Dialog": [],
     "Dropdown": [],
     "FloatingNav": [],
-    "Icon": [],
+    "Icon": [
+      "Accordion",
+      "Alert",
+      "Avatar",
+      "Badge",
+      "Button",
+      "Checkbox",
+      "CheckboxGroup",
+      "Chip",
+      "DateInput",
+      "DatePicker",
+      "Dialog",
+      "Dropdown",
+      "FloatingNav",
+      "Input",
+      "Kanban",
+      "KanbanCard",
+      "LeftSidebar",
+      "Link",
+      "ListMenu",
+      "MonthPicker",
+      "NumberInput",
+      "PickerPopup",
+      "RadioButton",
+      "RadioGroup",
+      "RightSidebar",
+      "ShellHeader",
+      "ShellPanel",
+      "Step",
+      "TabStrip",
+      "TimePicker",
+      "WeekPicker"
+    ],
     "Input": [],
     "Kanban": [],
     "KanbanCard": [],
-    "Label": [],
+    "Label": [
+      "DateInput",
+      "Dropdown",
+      "Input",
+      "NumberInput",
+      "RangeInput",
+      "Textarea"
+    ],
     "LeftSidebar": [],
     "Link": [],
     "ListMenu": [],
-    "MonthPicker": [],
+    "MonthPicker": [
+      "DateInput"
+    ],
     "NotificationBadge": [],
     "NumberInput": [],
-    "PickerPopup": [],
-    "ProgressBar": [],
+    "PickerPopup": [
+      "DateInput"
+    ],
+    "ProgressBar": [
+      "Alert",
+      "KanbanCard"
+    ],
     "RadioButton": [],
     "RadioGroup": [],
     "RangeInput": [],
@@ -447,10 +694,18 @@
     "Table": [],
     "TabStrip": [],
     "Textarea": [],
-    "TimePicker": [],
+    "TimePicker": [
+      "DateInput",
+      "DateTimePicker"
+    ],
     "Toggle": [],
-    "Tooltip": [],
-    "WeekPicker": []
+    "Tooltip": [
+      "LeftSidebar",
+      "RightSidebar"
+    ],
+    "WeekPicker": [
+      "DateInput"
+    ]
   },
   "categories": {
     "form": [
@@ -515,10 +770,10 @@
   },
   "stats": {
     "totalComponents": 47,
-    "mostUsedComponent": null,
-    "mostUsedCount": 0,
-    "averageDependencies": 0,
-    "componentsWithNoDependencies": 47,
-    "componentsNotUsedByOthers": 47
+    "mostUsedComponent": "Icon",
+    "mostUsedCount": 31,
+    "averageDependencies": 1.21,
+    "componentsWithNoDependencies": 12,
+    "componentsNotUsedByOthers": 33
   }
 }
