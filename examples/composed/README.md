@@ -44,7 +44,7 @@ cat > src/components/composed/README.md << 'EOF'
 
 This folder contains wrapper components that extend Harmony components.
 
-See: @deltek/harmony-components/docs/customization/COMPONENT_PATTERNS.md
+See: @deltek/harmony-components/docs/customization/CONSUMER_GUIDE.md#component-patterns
 
 ## Our Wrappers
 
@@ -75,9 +75,7 @@ Choose what makes sense for your team.
 ## Documentation
 
 See the complete setup guide:
-- [For Consuming Projects](../../docs/customization/FOR_CONSUMING_PROJECTS.md)
-- [Customization Guide](../../docs/customization/CUSTOMIZATION_GUIDE.md)
-- [Component Patterns](../../docs/customization/COMPONENT_PATTERNS.md)
+- [Consumer Guide](../../docs/customization/CONSUMER_GUIDE.md)
 
 ## Example Wrappers
 

@@ -259,5 +259,5 @@ console.log('   - You can achieve the same with wrapper (Tier 2)');
 console.log('');
 console.log('📚 Documentation:');
 console.log('   - src/components/harmony/README.md');
-console.log('   - docs/HARMONY_UPDATES.md');
+console.log('   - docs/customization/CONSUMER_GUIDE.md');
 console.log('');

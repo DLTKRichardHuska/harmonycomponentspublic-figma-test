@@ -93,7 +93,7 @@ import ShellLayout from '@deltek/harmony-components/layouts/ShellLayout.astro';
 </ShellLayout>
 ```
 
-**Shell Layout with default sidebars:** Install peer dependencies (`heroicons`, `@tabler/icons`) and copy the design-system-only assets from the package’s `public/` into your app’s `public/` so all sidebar icons (including the Dela logo and custom icons like Risk Shield, Report, Resource) display. See [Setting Up Customization](docs/customization/FOR_CONSUMING_PROJECTS.md#icons-and-static-assets-shell-layout) for the exact list and copy commands. After upgrading the package, re-copy those assets so logos and icons stay in sync.
+**Shell Layout with default sidebars:** Install peer dependencies (`heroicons`, `@tabler/icons`) and copy the design-system-only assets from the package’s `public/` into your app’s `public/` so all sidebar icons (including the Dela logo and custom icons like Risk Shield, Report, Resource) display. See [Consumer Guide](docs/customization/CONSUMER_GUIDE.md#step-5-icons-and-static-assets-shell-layout--sidebars) for the exact list and copy commands. After upgrading the package, re-copy those assets so logos and icons stay in sync.
 
 ## Available Imports
 
@@ -261,12 +261,7 @@ html.theme-myproject {
 
 ### Getting Started with Customization
 
-**For consuming projects**, see the complete guides:
-
-- **[Customization Guide](docs/customization/CUSTOMIZATION_GUIDE.md)** - Complete guide for all tiers
-- **[Component Patterns](docs/customization/COMPONENT_PATTERNS.md)** - Real-world examples
-- **[Handling Updates](docs/customization/HARMONY_UPDATES.md)** - Update procedures
-- **[For Consuming Projects](docs/customization/FOR_CONSUMING_PROJECTS.md)** - Setup guide
+**Designers and consuming projects:** See the **[Consumer Guide](docs/customization/CONSUMER_GUIDE.md)** for the full journey—install, use, customize (four tiers), update, and deploy.
 
 ### Helper Scripts
 

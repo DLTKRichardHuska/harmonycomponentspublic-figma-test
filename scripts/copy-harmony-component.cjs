@@ -246,5 +246,4 @@ log('   - Test your customizations work', 'yellow');
 
 console.log('\n📚 Documentation:');
 console.log('   - src/components/harmony/README.md');
-console.log('   - docs/CUSTOMIZATION_GUIDE.md');
-console.log('   - docs/COMPONENT_PATTERNS.md\n');
+console.log('   - docs/customization/CONSUMER_GUIDE.md\n');

@@ -229,7 +229,7 @@ if (needsReview.length > 0) {
 
 console.log('📖 Documentation:');
 console.log('   - src/components/harmony/README.md');
-console.log('   - docs/HARMONY_UPDATES.md');
+console.log('   - docs/customization/CONSUMER_GUIDE.md');
 console.log('');
 
 // Exit with warning code if updates needed (useful for CI)

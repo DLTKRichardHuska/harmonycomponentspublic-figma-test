@@ -2,6 +2,8 @@
 
 This guide explains how to clone only the Harmony Design System components without the full documentation site.
 
+**When to use this:** Use sparse checkout when you need a clone of the repo (e.g. components-only embed or design-system work). For most app projects, install Harmony as a package from Git instead; see the [Consumer Guide](docs/customization/CONSUMER_GUIDE.md#two-ways-to-get-harmony).
+
 ## What is Sparse Checkout?
 
 Git sparse checkout allows you to clone only specific directories from a repository, reducing download size and excluding files you don't need. This is perfect for when you only want the components, styles, and tokens without the documentation site.

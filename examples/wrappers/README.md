@@ -330,14 +330,12 @@ import Button from '../../../node_modules/@deltek/harmony-components/src/compone
 
 ## Documentation
 
-- [Customization Guide](../../docs/customization/CUSTOMIZATION_GUIDE.md) - Four-tier system
-- [Component Patterns](../../docs/customization/COMPONENT_PATTERNS.md) - More examples
-- [For Consuming Projects](../../docs/customization/FOR_CONSUMING_PROJECTS.md) - Setup guide
+- [Consumer Guide](../../docs/customization/CONSUMER_GUIDE.md) - Install, use, customize, update, deploy
 
 ## Need to Modify Markup?
 
 If you need to change the component's HTML structure, wrappers won't work. You need Tier 3 (Component Forks).
 
 See:
-- [CUSTOMIZATION_GUIDE.md](../../docs/customization/CUSTOMIZATION_GUIDE.md#tier-3-component-forks)
+- [CONSUMER_GUIDE.md](../../docs/customization/CONSUMER_GUIDE.md#customization-four-tiers)
 - Helper scripts: `npm run harmony:copy ComponentName`

@@ -49,10 +49,7 @@ cp node_modules/@deltek/harmony-components/examples/wrappers/*.astro \
 
 For complete customization guidance:
 
-- **[Customization Guide](../docs/customization/CUSTOMIZATION_GUIDE.md)** - Four-tier system overview
-- **[Component Patterns](../docs/customization/COMPONENT_PATTERNS.md)** - More examples
-- **[For Consuming Projects](../docs/customization/FOR_CONSUMING_PROJECTS.md)** - Setup guide
-- **[Handling Updates](../docs/customization/HARMONY_UPDATES.md)** - Update procedures
+- **[Consumer Guide](../docs/customization/CONSUMER_GUIDE.md)** - Install, use, customize, update, deploy
 
 ## Creating Your Own Wrappers
 
@@ -109,4 +106,4 @@ your-project/
 
 ## Questions?
 
-See the [For Consuming Projects](../docs/customization/FOR_CONSUMING_PROJECTS.md) guide for complete setup instructions.
+See the [Consumer Guide](../docs/customization/CONSUMER_GUIDE.md) for complete setup instructions.
