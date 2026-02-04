@@ -45,7 +45,7 @@
     "mode": "light"
   },
   "specs": {
-    "base-cp-light": {
+    "cp-light": {
       "_meta": {
         "theme": "cp",
         "mode": "light",
@@ -54,56 +54,70 @@
       "_buildContract": {
         "criticalSelectors": {
           ".card": {
-            "display": "block",
-            "flex-direction": "column",
-            "align-items": "stretch",
-            "justify-content": "flex-start",
-            "gap": "0",
-            "height": "auto",
-            "min-width": "auto",
-            "max-width": "none",
-            "font-family": "'Lexend', sans-serif",
-            "font-size": "1.125rem",
-            "font-weight": "600",
-            "line-height": "24px",
+            "background-color": "#F7F8FA",
             "border": "1px solid #BFC6D4",
-            "border-width": "1px",
-            "border-style": "solid",
-            "border-radius": "12px",
-            "background": "#F7F8FA",
-            "icon-color": "#373F4E",
-            "box-shadow": "0 1px 2px 0 rgb(15 23 42 / 0.05)",
-            "color": "#373F4E",
-            "padding": "0 0 0 0"
-          },
-          ".card__header": {
-            "padding": "16px",
-            "border-bottom": "1px solid #BFC6D4",
-            "background": "#F7F8FA",
-            "color": "#373F4E",
-            "border": "1px solid #BFC6D4",
-            "icon-color": "#373F4E"
+            "border-radius": "0.75rem",
+            "overflow": "hidden",
+            "box-shadow": "0 1px 2px 0 rgb(15 23 42 / 0.05)"
           },
           ".card__body": {
-            "padding": "16px",
-            "background": "#F7F8FA",
-            "color": "#373F4E",
-            "border": "1px solid #BFC6D4",
-            "icon-color": "#373F4E"
+            "padding": "16px"
           },
           ".card__footer": {
             "padding": "16px",
             "border-top": "1px solid #BFC6D4",
-            "background": "#F7F8FA",
+            "background-color": "#F7F8FA"
+          },
+          ".card__header": {
+            "padding": "16px",
+            "border-bottom": "1px solid #BFC6D4"
+          },
+          ".card__header-actions": {
+            "display": "flex",
+            "align-items": "center",
+            "gap": "8px"
+          },
+          ".card__header-content": {
+            "display": "flex",
+            "flex-direction": "column",
+            "gap": "4px",
+            "flex": "1"
+          },
+          ".card__header-subtitle": {
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "line-height": "20px",
+            "color": "#525969",
+            "margin": "0"
+          },
+          ".card__header-title": {
+            "font-family": "'Lexend', sans-serif",
+            "font-size": "1.125rem",
+            "font-weight": "600",
+            "line-height": "24px",
             "color": "#373F4E",
-            "border": "1px solid #BFC6D4",
-            "icon-color": "#373F4E"
+            "margin": "0"
+          },
+          ".card__subtitle": {
+            "font-size": "0.875rem",
+            "color": "#525969",
+            "margin-top": "4px",
+            "font-family": "'Figtree', sans-serif"
+          },
+          ".card__title": {
+            "font-family": "'Lexend', sans-serif",
+            "font-size": "1.125rem",
+            "font-weight": "600",
+            "color": "#373F4E"
           }
         },
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -111,142 +125,122 @@
           "selector": ".card",
           "tag": "div",
           "styles": {
-            "display": "block",
+            "background-color": "#F7F8FA",
+            "border": "1px solid #BFC6D4",
+            "border-radius": "0.75rem",
+            "overflow": "hidden",
+            "box-shadow": "0 1px 2px 0 rgb(15 23 42 / 0.05)"
+          },
+          "children": [
+            ".card__body",
+            ".card__footer",
+            ".card__header",
+            ".card__header-actions",
+            ".card__header-content",
+            ".card__header-subtitle",
+            ".card__header-title",
+            ".card__subtitle",
+            ".card__title"
+          ]
+        },
+        {
+          "selector": ".card__body",
+          "tag": "span",
+          "styles": {
+            "padding": "16px"
+          },
+          "parent": ".card"
+        },
+        {
+          "selector": ".card__footer",
+          "tag": "span",
+          "styles": {
+            "padding": "16px",
+            "border-top": "1px solid #BFC6D4",
+            "background-color": "#F7F8FA"
+          },
+          "parent": ".card"
+        },
+        {
+          "selector": ".card__header",
+          "tag": "span",
+          "styles": {
+            "padding": "16px",
+            "border-bottom": "1px solid #BFC6D4"
+          },
+          "parent": ".card"
+        },
+        {
+          "selector": ".card__header-actions",
+          "tag": "span",
+          "styles": {
+            "display": "flex",
+            "align-items": "center",
+            "gap": "8px"
+          },
+          "parent": ".card__header"
+        },
+        {
+          "selector": ".card__header-content",
+          "tag": "span",
+          "styles": {
+            "display": "flex",
             "flex-direction": "column",
-            "align-items": "stretch",
-            "justify-content": "flex-start",
-            "gap": "0",
-            "height": "auto",
-            "min-width": "auto",
-            "max-width": "none",
+            "gap": "4px",
+            "flex": "1"
+          },
+          "parent": ".card"
+        },
+        {
+          "selector": ".card__header-subtitle",
+          "tag": "span",
+          "styles": {
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "line-height": "20px",
+            "color": "#525969",
+            "margin": "0"
+          },
+          "parent": ".card"
+        },
+        {
+          "selector": ".card__header-title",
+          "tag": "span",
+          "styles": {
             "font-family": "'Lexend', sans-serif",
             "font-size": "1.125rem",
             "font-weight": "600",
             "line-height": "24px",
-            "border": "1px solid #BFC6D4",
-            "border-width": "1px",
-            "border-style": "solid",
-            "border-radius": "12px",
-            "background": "#F7F8FA",
-            "icon-color": "#373F4E",
-            "box-shadow": "0 1px 2px 0 rgb(15 23 42 / 0.05)",
             "color": "#373F4E",
-            "padding": "0 0 0 0"
+            "margin": "0"
           },
-          "states": {
-            "hover": {
-              "background": "#E5E7EB",
-              "border": "1px solid #BFC6D4",
-              "icon-color": "#373F4E",
-              "box-shadow": "0 1px 2px 0 rgb(15 23 42 / 0.05)",
-              "color": "#373F4E"
-            },
-            "active": {
-              "background": "#E5E7EB",
-              "border": "1px solid #BFC6D4",
-              "icon-color": "#373F4E",
-              "box-shadow": "0 1px 2px 0 rgb(15 23 42 / 0.05)",
-              "color": "#373F4E"
-            },
-            "focus": {
-              "background": "#F7F8FA",
-              "border": "1px solid #BFC6D4",
-              "icon-color": "#373F4E",
-              "box-shadow": "0 1px 2px 0 rgb(15 23 42 / 0.05)",
-              "color": "#373F4E"
-            },
-            "disabled": {
-              "background": "#F7F8FA",
-              "border": "1px solid #BFC6D4",
-              "icon-color": "#373F4E",
-              "box-shadow": "0 1px 2px 0 rgb(15 23 42 / 0.05)",
-              "color": "#373F4E"
-            }
+          "parent": ".card"
+        },
+        {
+          "selector": ".card__subtitle",
+          "tag": "span",
+          "styles": {
+            "font-size": "0.875rem",
+            "color": "#525969",
+            "margin-top": "4px",
+            "font-family": "'Figtree', sans-serif"
           },
-          "children": [
-            ".card__header",
-            ".card__body",
-            ".card__footer"
-          ]
+          "parent": ".card"
         },
         {
-          "selector": ".card__header",
-          "tag": "div",
-          "parent": ".card",
+          "selector": ".card__title",
+          "tag": "span",
           "styles": {
-            "padding": "16px",
-            "border-bottom": "1px solid #BFC6D4",
-            "background": "#F7F8FA",
-            "color": "#373F4E",
-            "border": "1px solid #BFC6D4",
-            "icon-color": "#373F4E"
-          }
-        },
-        {
-          "selector": ".card__body",
-          "tag": "div",
-          "parent": ".card",
-          "styles": {
-            "padding": "16px",
-            "background": "#F7F8FA",
-            "color": "#373F4E",
-            "border": "1px solid #BFC6D4",
-            "icon-color": "#373F4E"
-          }
-        },
-        {
-          "selector": ".card__footer",
-          "tag": "div",
-          "parent": ".card",
-          "styles": {
-            "padding": "16px",
-            "border-top": "1px solid #BFC6D4",
-            "background": "#F7F8FA",
-            "color": "#373F4E",
-            "border": "1px solid #BFC6D4",
-            "icon-color": "#373F4E"
-          }
+            "font-family": "'Lexend', sans-serif",
+            "font-size": "1.125rem",
+            "font-weight": "600",
+            "color": "#373F4E"
+          },
+          "parent": ".card"
         }
-      ],
-      "props": {
-        "elevated": {
-          "type": "boolean",
-          "optional": true,
-          "default": "false"
-        },
-        "interactive": {
-          "type": "boolean",
-          "optional": true,
-          "default": "false"
-        },
-        "primary": {
-          "type": "boolean",
-          "optional": true,
-          "default": "false"
-        },
-        "withHeader": {
-          "type": "boolean",
-          "optional": true,
-          "default": "false"
-        },
-        "headerTitle": {
-          "type": "string",
-          "optional": true,
-          "default": "''"
-        },
-        "headerSubtitle": {
-          "type": "string",
-          "optional": true,
-          "default": "''"
-        },
-        "class": {
-          "type": "string",
-          "optional": true,
-          "default": "''"
-        }
-      }
+      ]
     },
-    "base-cp-dark": {
+    "cp-dark": {
       "_meta": {
         "theme": "cp",
         "mode": "dark",
@@ -255,56 +249,70 @@
       "_buildContract": {
         "criticalSelectors": {
           ".card": {
-            "display": "block",
-            "flex-direction": "column",
-            "align-items": "stretch",
-            "justify-content": "flex-start",
-            "gap": "0",
-            "height": "auto",
-            "min-width": "auto",
-            "max-width": "none",
-            "font-family": "'Lexend', sans-serif",
-            "font-size": "1.125rem",
-            "font-weight": "600",
-            "line-height": "24px",
+            "background-color": "#37424D",
             "border": "1px solid #5F6871",
-            "border-width": "1px",
-            "border-style": "solid",
-            "border-radius": "12px",
-            "background": "#37424D",
-            "icon-color": "#E9ECEF",
-            "box-shadow": "0 1px 2px 0 rgba(0, 0, 0, 0.3)",
-            "color": "#E9ECEF",
-            "padding": "0 0 0 0"
-          },
-          ".card__header": {
-            "padding": "16px",
-            "border-bottom": "1px solid #5F6871",
-            "background": "#37424D",
-            "color": "#E9ECEF",
-            "border": "1px solid #5F6871",
-            "icon-color": "#E9ECEF"
+            "border-radius": "0.75rem",
+            "overflow": "hidden",
+            "box-shadow": "0 1px 2px 0 rgb(15 23 42 / 0.05)"
           },
           ".card__body": {
-            "padding": "16px",
-            "background": "#37424D",
-            "color": "#E9ECEF",
-            "border": "1px solid #5F6871",
-            "icon-color": "#E9ECEF"
+            "padding": "16px"
           },
           ".card__footer": {
             "padding": "16px",
             "border-top": "1px solid #5F6871",
-            "background": "#37424D",
+            "background-color": "#37424D"
+          },
+          ".card__header": {
+            "padding": "16px",
+            "border-bottom": "1px solid #5F6871"
+          },
+          ".card__header-actions": {
+            "display": "flex",
+            "align-items": "center",
+            "gap": "8px"
+          },
+          ".card__header-content": {
+            "display": "flex",
+            "flex-direction": "column",
+            "gap": "4px",
+            "flex": "1"
+          },
+          ".card__header-subtitle": {
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "line-height": "20px",
+            "color": "#B6B6C4",
+            "margin": "0"
+          },
+          ".card__header-title": {
+            "font-family": "'Lexend', sans-serif",
+            "font-size": "1.125rem",
+            "font-weight": "600",
+            "line-height": "24px",
             "color": "#E9ECEF",
-            "border": "1px solid #5F6871",
-            "icon-color": "#E9ECEF"
+            "margin": "0"
+          },
+          ".card__subtitle": {
+            "font-size": "0.875rem",
+            "color": "#B6B6C4",
+            "margin-top": "4px",
+            "font-family": "'Figtree', sans-serif"
+          },
+          ".card__title": {
+            "font-family": "'Lexend', sans-serif",
+            "font-size": "1.125rem",
+            "font-weight": "600",
+            "color": "#E9ECEF"
           }
         },
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -312,200 +320,194 @@
           "selector": ".card",
           "tag": "div",
           "styles": {
-            "display": "block",
+            "background-color": "#37424D",
+            "border": "1px solid #5F6871",
+            "border-radius": "0.75rem",
+            "overflow": "hidden",
+            "box-shadow": "0 1px 2px 0 rgb(15 23 42 / 0.05)"
+          },
+          "children": [
+            ".card__body",
+            ".card__footer",
+            ".card__header",
+            ".card__header-actions",
+            ".card__header-content",
+            ".card__header-subtitle",
+            ".card__header-title",
+            ".card__subtitle",
+            ".card__title"
+          ]
+        },
+        {
+          "selector": ".card__body",
+          "tag": "span",
+          "styles": {
+            "padding": "16px"
+          },
+          "parent": ".card"
+        },
+        {
+          "selector": ".card__footer",
+          "tag": "span",
+          "styles": {
+            "padding": "16px",
+            "border-top": "1px solid #5F6871",
+            "background-color": "#37424D"
+          },
+          "parent": ".card"
+        },
+        {
+          "selector": ".card__header",
+          "tag": "span",
+          "styles": {
+            "padding": "16px",
+            "border-bottom": "1px solid #5F6871"
+          },
+          "parent": ".card"
+        },
+        {
+          "selector": ".card__header-actions",
+          "tag": "span",
+          "styles": {
+            "display": "flex",
+            "align-items": "center",
+            "gap": "8px"
+          },
+          "parent": ".card__header"
+        },
+        {
+          "selector": ".card__header-content",
+          "tag": "span",
+          "styles": {
+            "display": "flex",
             "flex-direction": "column",
-            "align-items": "stretch",
-            "justify-content": "flex-start",
-            "gap": "0",
-            "height": "auto",
-            "min-width": "auto",
-            "max-width": "none",
+            "gap": "4px",
+            "flex": "1"
+          },
+          "parent": ".card"
+        },
+        {
+          "selector": ".card__header-subtitle",
+          "tag": "span",
+          "styles": {
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "line-height": "20px",
+            "color": "#B6B6C4",
+            "margin": "0"
+          },
+          "parent": ".card"
+        },
+        {
+          "selector": ".card__header-title",
+          "tag": "span",
+          "styles": {
             "font-family": "'Lexend', sans-serif",
             "font-size": "1.125rem",
             "font-weight": "600",
             "line-height": "24px",
-            "border": "1px solid #5F6871",
-            "border-width": "1px",
-            "border-style": "solid",
-            "border-radius": "12px",
-            "background": "#37424D",
-            "icon-color": "#E9ECEF",
-            "box-shadow": "0 1px 2px 0 rgba(0, 0, 0, 0.3)",
             "color": "#E9ECEF",
-            "padding": "0 0 0 0"
+            "margin": "0"
           },
-          "states": {
-            "hover": {
-              "background": "#3D4A5C",
-              "border": "1px solid #5F6871",
-              "icon-color": "#E9ECEF",
-              "box-shadow": "0 1px 2px 0 rgba(0, 0, 0, 0.3)",
-              "color": "#E9ECEF"
-            },
-            "active": {
-              "background": "#3D4A5C",
-              "border": "1px solid #5F6871",
-              "icon-color": "#E9ECEF",
-              "box-shadow": "0 1px 2px 0 rgba(0, 0, 0, 0.3)",
-              "color": "#E9ECEF"
-            },
-            "focus": {
-              "background": "#37424D",
-              "border": "1px solid #5F6871",
-              "icon-color": "#E9ECEF",
-              "box-shadow": "0 1px 2px 0 rgba(0, 0, 0, 0.3)",
-              "color": "#E9ECEF"
-            },
-            "disabled": {
-              "background": "#37424D",
-              "border": "1px solid #5F6871",
-              "icon-color": "#E9ECEF",
-              "box-shadow": "0 1px 2px 0 rgba(0, 0, 0, 0.3)",
-              "color": "#E9ECEF"
-            }
+          "parent": ".card"
+        },
+        {
+          "selector": ".card__subtitle",
+          "tag": "span",
+          "styles": {
+            "font-size": "0.875rem",
+            "color": "#B6B6C4",
+            "margin-top": "4px",
+            "font-family": "'Figtree', sans-serif"
           },
-          "children": [
-            ".card__header",
-            ".card__body",
-            ".card__footer"
-          ]
+          "parent": ".card"
         },
         {
-          "selector": ".card__header",
-          "tag": "div",
-          "parent": ".card",
+          "selector": ".card__title",
+          "tag": "span",
           "styles": {
-            "padding": "16px",
-            "border-bottom": "1px solid #5F6871",
-            "background": "#37424D",
-            "color": "#E9ECEF",
-            "border": "1px solid #5F6871",
-            "icon-color": "#E9ECEF"
-          }
-        },
-        {
-          "selector": ".card__body",
-          "tag": "div",
-          "parent": ".card",
-          "styles": {
-            "padding": "16px",
-            "background": "#37424D",
-            "color": "#E9ECEF",
-            "border": "1px solid #5F6871",
-            "icon-color": "#E9ECEF"
-          }
-        },
-        {
-          "selector": ".card__footer",
-          "tag": "div",
-          "parent": ".card",
-          "styles": {
-            "padding": "16px",
-            "border-top": "1px solid #5F6871",
-            "background": "#37424D",
-            "color": "#E9ECEF",
-            "border": "1px solid #5F6871",
-            "icon-color": "#E9ECEF"
-          }
+            "font-family": "'Lexend', sans-serif",
+            "font-size": "1.125rem",
+            "font-weight": "600",
+            "color": "#E9ECEF"
+          },
+          "parent": ".card"
         }
-      ],
-      "props": {
-        "elevated": {
-          "type": "boolean",
-          "optional": true,
-          "default": "false"
-        },
-        "interactive": {
-          "type": "boolean",
-          "optional": true,
-          "default": "false"
-        },
-        "primary": {
-          "type": "boolean",
-          "optional": true,
-          "default": "false"
-        },
-        "withHeader": {
-          "type": "boolean",
-          "optional": true,
-          "default": "false"
-        },
-        "headerTitle": {
-          "type": "string",
-          "optional": true,
-          "default": "''"
-        },
-        "headerSubtitle": {
-          "type": "string",
-          "optional": true,
-          "default": "''"
-        },
-        "class": {
-          "type": "string",
-          "optional": true,
-          "default": "''"
-        }
-      }
+      ]
     },
-    "elevated-cp-light": {
+    "vp-light": {
       "_meta": {
-        "theme": "cp",
+        "theme": "vp",
         "mode": "light",
         "locked": true
       },
       "_buildContract": {
         "criticalSelectors": {
           ".card": {
-            "display": "block",
-            "flex-direction": "column",
-            "align-items": "stretch",
-            "justify-content": "flex-start",
-            "gap": "0",
-            "height": "auto",
-            "min-width": "auto",
-            "max-width": "none",
-            "font-family": "'Lexend', sans-serif",
-            "font-size": "1.125rem",
-            "font-weight": "600",
-            "line-height": "24px",
+            "background-color": "#F7F8FA",
             "border": "1px solid #BFC6D4",
-            "border-width": "1px",
-            "border-style": "solid",
-            "border-radius": "12px",
-            "background": "#F7F8FA",
-            "icon-color": "#373F4E",
-            "box-shadow": "0 10px 15px -3px rgb(15 23 42 / 0.1), 0 4px 6px -4px rgb(15 23 42 / 0.1)",
-            "color": "#373F4E",
-            "padding": "0 0 0 0"
-          },
-          ".card__header": {
-            "padding": "16px",
-            "border-bottom": "1px solid #BFC6D4",
-            "background": "#F7F8FA",
-            "color": "#373F4E",
-            "border": "1px solid #BFC6D4",
-            "icon-color": "#373F4E"
+            "border-radius": "0.75rem",
+            "overflow": "hidden",
+            "box-shadow": "0 1px 2px 0 rgb(15 23 42 / 0.05)"
           },
           ".card__body": {
-            "padding": "16px",
-            "background": "#F7F8FA",
-            "color": "#373F4E",
-            "border": "1px solid #BFC6D4",
-            "icon-color": "#373F4E"
+            "padding": "16px"
           },
           ".card__footer": {
             "padding": "16px",
             "border-top": "1px solid #BFC6D4",
-            "background": "#F7F8FA",
+            "background-color": "#F7F8FA"
+          },
+          ".card__header": {
+            "padding": "16px",
+            "border-bottom": "1px solid #BFC6D4"
+          },
+          ".card__header-actions": {
+            "display": "flex",
+            "align-items": "center",
+            "gap": "8px"
+          },
+          ".card__header-content": {
+            "display": "flex",
+            "flex-direction": "column",
+            "gap": "4px",
+            "flex": "1"
+          },
+          ".card__header-subtitle": {
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "line-height": "20px",
+            "color": "#525969",
+            "margin": "0"
+          },
+          ".card__header-title": {
+            "font-family": "'Lexend', sans-serif",
+            "font-size": "1.125rem",
+            "font-weight": "600",
+            "line-height": "24px",
             "color": "#373F4E",
-            "border": "1px solid #BFC6D4",
-            "icon-color": "#373F4E"
+            "margin": "0"
+          },
+          ".card__subtitle": {
+            "font-size": "0.875rem",
+            "color": "#525969",
+            "margin-top": "4px",
+            "font-family": "'Figtree', sans-serif"
+          },
+          ".card__title": {
+            "font-family": "'Lexend', sans-serif",
+            "font-size": "1.125rem",
+            "font-weight": "600",
+            "color": "#373F4E"
           }
         },
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -513,200 +515,194 @@
           "selector": ".card",
           "tag": "div",
           "styles": {
-            "display": "block",
+            "background-color": "#F7F8FA",
+            "border": "1px solid #BFC6D4",
+            "border-radius": "0.75rem",
+            "overflow": "hidden",
+            "box-shadow": "0 1px 2px 0 rgb(15 23 42 / 0.05)"
+          },
+          "children": [
+            ".card__body",
+            ".card__footer",
+            ".card__header",
+            ".card__header-actions",
+            ".card__header-content",
+            ".card__header-subtitle",
+            ".card__header-title",
+            ".card__subtitle",
+            ".card__title"
+          ]
+        },
+        {
+          "selector": ".card__body",
+          "tag": "span",
+          "styles": {
+            "padding": "16px"
+          },
+          "parent": ".card"
+        },
+        {
+          "selector": ".card__footer",
+          "tag": "span",
+          "styles": {
+            "padding": "16px",
+            "border-top": "1px solid #BFC6D4",
+            "background-color": "#F7F8FA"
+          },
+          "parent": ".card"
+        },
+        {
+          "selector": ".card__header",
+          "tag": "span",
+          "styles": {
+            "padding": "16px",
+            "border-bottom": "1px solid #BFC6D4"
+          },
+          "parent": ".card"
+        },
+        {
+          "selector": ".card__header-actions",
+          "tag": "span",
+          "styles": {
+            "display": "flex",
+            "align-items": "center",
+            "gap": "8px"
+          },
+          "parent": ".card__header"
+        },
+        {
+          "selector": ".card__header-content",
+          "tag": "span",
+          "styles": {
+            "display": "flex",
             "flex-direction": "column",
-            "align-items": "stretch",
-            "justify-content": "flex-start",
-            "gap": "0",
-            "height": "auto",
-            "min-width": "auto",
-            "max-width": "none",
+            "gap": "4px",
+            "flex": "1"
+          },
+          "parent": ".card"
+        },
+        {
+          "selector": ".card__header-subtitle",
+          "tag": "span",
+          "styles": {
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "line-height": "20px",
+            "color": "#525969",
+            "margin": "0"
+          },
+          "parent": ".card"
+        },
+        {
+          "selector": ".card__header-title",
+          "tag": "span",
+          "styles": {
             "font-family": "'Lexend', sans-serif",
             "font-size": "1.125rem",
             "font-weight": "600",
             "line-height": "24px",
-            "border": "1px solid #BFC6D4",
-            "border-width": "1px",
-            "border-style": "solid",
-            "border-radius": "12px",
-            "background": "#F7F8FA",
-            "icon-color": "#373F4E",
-            "box-shadow": "0 10px 15px -3px rgb(15 23 42 / 0.1), 0 4px 6px -4px rgb(15 23 42 / 0.1)",
             "color": "#373F4E",
-            "padding": "0 0 0 0"
+            "margin": "0"
           },
-          "states": {
-            "hover": {
-              "background": "#E5E7EB",
-              "border": "1px solid #BFC6D4",
-              "icon-color": "#373F4E",
-              "box-shadow": "0 10px 15px -3px rgb(15 23 42 / 0.1), 0 4px 6px -4px rgb(15 23 42 / 0.1)",
-              "color": "#373F4E"
-            },
-            "active": {
-              "background": "#E5E7EB",
-              "border": "1px solid #BFC6D4",
-              "icon-color": "#373F4E",
-              "box-shadow": "0 10px 15px -3px rgb(15 23 42 / 0.1), 0 4px 6px -4px rgb(15 23 42 / 0.1)",
-              "color": "#373F4E"
-            },
-            "focus": {
-              "background": "#F7F8FA",
-              "border": "1px solid #BFC6D4",
-              "icon-color": "#373F4E",
-              "box-shadow": "0 10px 15px -3px rgb(15 23 42 / 0.1), 0 4px 6px -4px rgb(15 23 42 / 0.1)",
-              "color": "#373F4E"
-            },
-            "disabled": {
-              "background": "#F7F8FA",
-              "border": "1px solid #BFC6D4",
-              "icon-color": "#373F4E",
-              "box-shadow": "0 10px 15px -3px rgb(15 23 42 / 0.1), 0 4px 6px -4px rgb(15 23 42 / 0.1)",
-              "color": "#373F4E"
-            }
+          "parent": ".card"
+        },
+        {
+          "selector": ".card__subtitle",
+          "tag": "span",
+          "styles": {
+            "font-size": "0.875rem",
+            "color": "#525969",
+            "margin-top": "4px",
+            "font-family": "'Figtree', sans-serif"
           },
-          "children": [
-            ".card__header",
-            ".card__body",
-            ".card__footer"
-          ]
+          "parent": ".card"
         },
         {
-          "selector": ".card__header",
-          "tag": "div",
-          "parent": ".card",
+          "selector": ".card__title",
+          "tag": "span",
           "styles": {
-            "padding": "16px",
-            "border-bottom": "1px solid #BFC6D4",
-            "background": "#F7F8FA",
-            "color": "#373F4E",
-            "border": "1px solid #BFC6D4",
-            "icon-color": "#373F4E"
-          }
-        },
-        {
-          "selector": ".card__body",
-          "tag": "div",
-          "parent": ".card",
-          "styles": {
-            "padding": "16px",
-            "background": "#F7F8FA",
-            "color": "#373F4E",
-            "border": "1px solid #BFC6D4",
-            "icon-color": "#373F4E"
-          }
-        },
-        {
-          "selector": ".card__footer",
-          "tag": "div",
-          "parent": ".card",
-          "styles": {
-            "padding": "16px",
-            "border-top": "1px solid #BFC6D4",
-            "background": "#F7F8FA",
-            "color": "#373F4E",
-            "border": "1px solid #BFC6D4",
-            "icon-color": "#373F4E"
-          }
+            "font-family": "'Lexend', sans-serif",
+            "font-size": "1.125rem",
+            "font-weight": "600",
+            "color": "#373F4E"
+          },
+          "parent": ".card"
         }
-      ],
-      "props": {
-        "elevated": {
-          "type": "boolean",
-          "optional": true,
-          "default": "true"
-        },
-        "interactive": {
-          "type": "boolean",
-          "optional": true,
-          "default": "false"
-        },
-        "primary": {
-          "type": "boolean",
-          "optional": true,
-          "default": "false"
-        },
-        "withHeader": {
-          "type": "boolean",
-          "optional": true,
-          "default": "false"
-        },
-        "headerTitle": {
-          "type": "string",
-          "optional": true,
-          "default": "''"
-        },
-        "headerSubtitle": {
-          "type": "string",
-          "optional": true,
-          "default": "''"
-        },
-        "class": {
-          "type": "string",
-          "optional": true,
-          "default": "''"
-        }
-      }
+      ]
     },
-    "elevated-cp-dark": {
+    "vp-dark": {
       "_meta": {
-        "theme": "cp",
+        "theme": "vp",
         "mode": "dark",
         "locked": true
       },
       "_buildContract": {
         "criticalSelectors": {
           ".card": {
-            "display": "block",
+            "background-color": "#1F2124",
+            "border": "1px solid #2A2D32",
+            "border-radius": "0.75rem",
+            "overflow": "hidden",
+            "box-shadow": "0 1px 2px 0 rgb(15 23 42 / 0.05)"
+          },
+          ".card__body": {
+            "padding": "16px"
+          },
+          ".card__footer": {
+            "padding": "16px",
+            "border-top": "1px solid #2A2D32",
+            "background-color": "#1F2124"
+          },
+          ".card__header": {
+            "padding": "16px",
+            "border-bottom": "1px solid #2A2D32"
+          },
+          ".card__header-actions": {
+            "display": "flex",
+            "align-items": "center",
+            "gap": "8px"
+          },
+          ".card__header-content": {
+            "display": "flex",
             "flex-direction": "column",
-            "align-items": "stretch",
-            "justify-content": "flex-start",
-            "gap": "0",
-            "height": "auto",
-            "min-width": "auto",
-            "max-width": "none",
+            "gap": "4px",
+            "flex": "1"
+          },
+          ".card__header-subtitle": {
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "line-height": "20px",
+            "color": "#B5B5BC",
+            "margin": "0"
+          },
+          ".card__header-title": {
             "font-family": "'Lexend', sans-serif",
             "font-size": "1.125rem",
             "font-weight": "600",
             "line-height": "24px",
-            "border": "1px solid #5F6871",
-            "border-width": "1px",
-            "border-style": "solid",
-            "border-radius": "12px",
-            "background": "#37424D",
-            "icon-color": "#E9ECEF",
-            "box-shadow": "0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -4px rgba(0, 0, 0, 0.3)",
-            "color": "#E9ECEF",
-            "padding": "0 0 0 0"
+            "color": "#FAFAFA",
+            "margin": "0"
           },
-          ".card__header": {
-            "padding": "16px",
-            "border-bottom": "1px solid #5F6871",
-            "background": "#37424D",
-            "color": "#E9ECEF",
-            "border": "1px solid #5F6871",
-            "icon-color": "#E9ECEF"
+          ".card__subtitle": {
+            "font-size": "0.875rem",
+            "color": "#B5B5BC",
+            "margin-top": "4px",
+            "font-family": "'Figtree', sans-serif"
           },
-          ".card__body": {
-            "padding": "16px",
-            "background": "#37424D",
-            "color": "#E9ECEF",
-            "border": "1px solid #5F6871",
-            "icon-color": "#E9ECEF"
-          },
-          ".card__footer": {
-            "padding": "16px",
-            "border-top": "1px solid #5F6871",
-            "background": "#37424D",
-            "color": "#E9ECEF",
-            "border": "1px solid #5F6871",
-            "icon-color": "#E9ECEF"
+          ".card__title": {
+            "font-family": "'Lexend', sans-serif",
+            "font-size": "1.125rem",
+            "font-weight": "600",
+            "color": "#FAFAFA"
           }
         },
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -714,200 +710,194 @@
           "selector": ".card",
           "tag": "div",
           "styles": {
-            "display": "block",
+            "background-color": "#1F2124",
+            "border": "1px solid #2A2D32",
+            "border-radius": "0.75rem",
+            "overflow": "hidden",
+            "box-shadow": "0 1px 2px 0 rgb(15 23 42 / 0.05)"
+          },
+          "children": [
+            ".card__body",
+            ".card__footer",
+            ".card__header",
+            ".card__header-actions",
+            ".card__header-content",
+            ".card__header-subtitle",
+            ".card__header-title",
+            ".card__subtitle",
+            ".card__title"
+          ]
+        },
+        {
+          "selector": ".card__body",
+          "tag": "span",
+          "styles": {
+            "padding": "16px"
+          },
+          "parent": ".card"
+        },
+        {
+          "selector": ".card__footer",
+          "tag": "span",
+          "styles": {
+            "padding": "16px",
+            "border-top": "1px solid #2A2D32",
+            "background-color": "#1F2124"
+          },
+          "parent": ".card"
+        },
+        {
+          "selector": ".card__header",
+          "tag": "span",
+          "styles": {
+            "padding": "16px",
+            "border-bottom": "1px solid #2A2D32"
+          },
+          "parent": ".card"
+        },
+        {
+          "selector": ".card__header-actions",
+          "tag": "span",
+          "styles": {
+            "display": "flex",
+            "align-items": "center",
+            "gap": "8px"
+          },
+          "parent": ".card__header"
+        },
+        {
+          "selector": ".card__header-content",
+          "tag": "span",
+          "styles": {
+            "display": "flex",
             "flex-direction": "column",
-            "align-items": "stretch",
-            "justify-content": "flex-start",
-            "gap": "0",
-            "height": "auto",
-            "min-width": "auto",
-            "max-width": "none",
+            "gap": "4px",
+            "flex": "1"
+          },
+          "parent": ".card"
+        },
+        {
+          "selector": ".card__header-subtitle",
+          "tag": "span",
+          "styles": {
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "line-height": "20px",
+            "color": "#B5B5BC",
+            "margin": "0"
+          },
+          "parent": ".card"
+        },
+        {
+          "selector": ".card__header-title",
+          "tag": "span",
+          "styles": {
             "font-family": "'Lexend', sans-serif",
             "font-size": "1.125rem",
             "font-weight": "600",
             "line-height": "24px",
-            "border": "1px solid #5F6871",
-            "border-width": "1px",
-            "border-style": "solid",
-            "border-radius": "12px",
-            "background": "#37424D",
-            "icon-color": "#E9ECEF",
-            "box-shadow": "0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -4px rgba(0, 0, 0, 0.3)",
-            "color": "#E9ECEF",
-            "padding": "0 0 0 0"
+            "color": "#FAFAFA",
+            "margin": "0"
           },
-          "states": {
-            "hover": {
-              "background": "#3D4A5C",
-              "border": "1px solid #5F6871",
-              "icon-color": "#E9ECEF",
-              "box-shadow": "0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -4px rgba(0, 0, 0, 0.3)",
-              "color": "#E9ECEF"
-            },
-            "active": {
-              "background": "#3D4A5C",
-              "border": "1px solid #5F6871",
-              "icon-color": "#E9ECEF",
-              "box-shadow": "0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -4px rgba(0, 0, 0, 0.3)",
-              "color": "#E9ECEF"
-            },
-            "focus": {
-              "background": "#37424D",
-              "border": "1px solid #5F6871",
-              "icon-color": "#E9ECEF",
-              "box-shadow": "0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -4px rgba(0, 0, 0, 0.3)",
-              "color": "#E9ECEF"
-            },
-            "disabled": {
-              "background": "#37424D",
-              "border": "1px solid #5F6871",
-              "icon-color": "#E9ECEF",
-              "box-shadow": "0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -4px rgba(0, 0, 0, 0.3)",
-              "color": "#E9ECEF"
-            }
+          "parent": ".card"
+        },
+        {
+          "selector": ".card__subtitle",
+          "tag": "span",
+          "styles": {
+            "font-size": "0.875rem",
+            "color": "#B5B5BC",
+            "margin-top": "4px",
+            "font-family": "'Figtree', sans-serif"
           },
-          "children": [
-            ".card__header",
-            ".card__body",
-            ".card__footer"
-          ]
+          "parent": ".card"
         },
         {
-          "selector": ".card__header",
-          "tag": "div",
-          "parent": ".card",
+          "selector": ".card__title",
+          "tag": "span",
           "styles": {
-            "padding": "16px",
-            "border-bottom": "1px solid #5F6871",
-            "background": "#37424D",
-            "color": "#E9ECEF",
-            "border": "1px solid #5F6871",
-            "icon-color": "#E9ECEF"
-          }
-        },
-        {
-          "selector": ".card__body",
-          "tag": "div",
-          "parent": ".card",
-          "styles": {
-            "padding": "16px",
-            "background": "#37424D",
-            "color": "#E9ECEF",
-            "border": "1px solid #5F6871",
-            "icon-color": "#E9ECEF"
-          }
-        },
-        {
-          "selector": ".card__footer",
-          "tag": "div",
-          "parent": ".card",
-          "styles": {
-            "padding": "16px",
-            "border-top": "1px solid #5F6871",
-            "background": "#37424D",
-            "color": "#E9ECEF",
-            "border": "1px solid #5F6871",
-            "icon-color": "#E9ECEF"
-          }
+            "font-family": "'Lexend', sans-serif",
+            "font-size": "1.125rem",
+            "font-weight": "600",
+            "color": "#FAFAFA"
+          },
+          "parent": ".card"
         }
-      ],
-      "props": {
-        "elevated": {
-          "type": "boolean",
-          "optional": true,
-          "default": "true"
-        },
-        "interactive": {
-          "type": "boolean",
-          "optional": true,
-          "default": "false"
-        },
-        "primary": {
-          "type": "boolean",
-          "optional": true,
-          "default": "false"
-        },
-        "withHeader": {
-          "type": "boolean",
-          "optional": true,
-          "default": "false"
-        },
-        "headerTitle": {
-          "type": "string",
-          "optional": true,
-          "default": "''"
-        },
-        "headerSubtitle": {
-          "type": "string",
-          "optional": true,
-          "default": "''"
-        },
-        "class": {
-          "type": "string",
-          "optional": true,
-          "default": "''"
-        }
-      }
+      ]
     },
-    "interactive-cp-light": {
+    "ppm-light": {
       "_meta": {
-        "theme": "cp",
+        "theme": "ppm",
         "mode": "light",
         "locked": true
       },
       "_buildContract": {
         "criticalSelectors": {
           ".card": {
-            "display": "block",
-            "flex-direction": "column",
-            "align-items": "stretch",
-            "justify-content": "flex-start",
-            "gap": "0",
-            "height": "auto",
-            "min-width": "auto",
-            "max-width": "none",
-            "font-family": "'Lexend', sans-serif",
-            "font-size": "1.125rem",
-            "font-weight": "600",
-            "line-height": "24px",
+            "background-color": "#F7F8FA",
             "border": "1px solid #BFC6D4",
-            "border-width": "1px",
-            "border-style": "solid",
-            "border-radius": "12px",
-            "background": "#F7F8FA",
-            "icon-color": "#373F4E",
-            "box-shadow": "0 1px 2px 0 rgb(15 23 42 / 0.05)",
-            "color": "#373F4E",
-            "padding": "0 0 0 0"
-          },
-          ".card__header": {
-            "padding": "16px",
-            "border-bottom": "1px solid #BFC6D4",
-            "background": "#F7F8FA",
-            "color": "#373F4E",
-            "border": "1px solid #BFC6D4",
-            "icon-color": "#373F4E"
+            "border-radius": "0.75rem",
+            "overflow": "hidden",
+            "box-shadow": "0 1px 2px 0 rgb(15 23 42 / 0.05)"
           },
           ".card__body": {
-            "padding": "16px",
-            "background": "#F7F8FA",
-            "color": "#373F4E",
-            "border": "1px solid #BFC6D4",
-            "icon-color": "#373F4E"
+            "padding": "16px"
           },
           ".card__footer": {
             "padding": "16px",
             "border-top": "1px solid #BFC6D4",
-            "background": "#F7F8FA",
+            "background-color": "#F7F8FA"
+          },
+          ".card__header": {
+            "padding": "16px",
+            "border-bottom": "1px solid #BFC6D4"
+          },
+          ".card__header-actions": {
+            "display": "flex",
+            "align-items": "center",
+            "gap": "8px"
+          },
+          ".card__header-content": {
+            "display": "flex",
+            "flex-direction": "column",
+            "gap": "4px",
+            "flex": "1"
+          },
+          ".card__header-subtitle": {
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "line-height": "20px",
+            "color": "#525969",
+            "margin": "0"
+          },
+          ".card__header-title": {
+            "font-family": "'Lexend', sans-serif",
+            "font-size": "1.125rem",
+            "font-weight": "600",
+            "line-height": "24px",
             "color": "#373F4E",
-            "border": "1px solid #BFC6D4",
-            "icon-color": "#373F4E"
+            "margin": "0"
+          },
+          ".card__subtitle": {
+            "font-size": "0.875rem",
+            "color": "#525969",
+            "margin-top": "4px",
+            "font-family": "'Figtree', sans-serif"
+          },
+          ".card__title": {
+            "font-family": "'Lexend', sans-serif",
+            "font-size": "1.125rem",
+            "font-weight": "600",
+            "color": "#373F4E"
           }
         },
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -915,200 +905,194 @@
           "selector": ".card",
           "tag": "div",
           "styles": {
-            "display": "block",
+            "background-color": "#F7F8FA",
+            "border": "1px solid #BFC6D4",
+            "border-radius": "0.75rem",
+            "overflow": "hidden",
+            "box-shadow": "0 1px 2px 0 rgb(15 23 42 / 0.05)"
+          },
+          "children": [
+            ".card__body",
+            ".card__footer",
+            ".card__header",
+            ".card__header-actions",
+            ".card__header-content",
+            ".card__header-subtitle",
+            ".card__header-title",
+            ".card__subtitle",
+            ".card__title"
+          ]
+        },
+        {
+          "selector": ".card__body",
+          "tag": "span",
+          "styles": {
+            "padding": "16px"
+          },
+          "parent": ".card"
+        },
+        {
+          "selector": ".card__footer",
+          "tag": "span",
+          "styles": {
+            "padding": "16px",
+            "border-top": "1px solid #BFC6D4",
+            "background-color": "#F7F8FA"
+          },
+          "parent": ".card"
+        },
+        {
+          "selector": ".card__header",
+          "tag": "span",
+          "styles": {
+            "padding": "16px",
+            "border-bottom": "1px solid #BFC6D4"
+          },
+          "parent": ".card"
+        },
+        {
+          "selector": ".card__header-actions",
+          "tag": "span",
+          "styles": {
+            "display": "flex",
+            "align-items": "center",
+            "gap": "8px"
+          },
+          "parent": ".card__header"
+        },
+        {
+          "selector": ".card__header-content",
+          "tag": "span",
+          "styles": {
+            "display": "flex",
             "flex-direction": "column",
-            "align-items": "stretch",
-            "justify-content": "flex-start",
-            "gap": "0",
-            "height": "auto",
-            "min-width": "auto",
-            "max-width": "none",
+            "gap": "4px",
+            "flex": "1"
+          },
+          "parent": ".card"
+        },
+        {
+          "selector": ".card__header-subtitle",
+          "tag": "span",
+          "styles": {
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "line-height": "20px",
+            "color": "#525969",
+            "margin": "0"
+          },
+          "parent": ".card"
+        },
+        {
+          "selector": ".card__header-title",
+          "tag": "span",
+          "styles": {
             "font-family": "'Lexend', sans-serif",
             "font-size": "1.125rem",
             "font-weight": "600",
             "line-height": "24px",
-            "border": "1px solid #BFC6D4",
-            "border-width": "1px",
-            "border-style": "solid",
-            "border-radius": "12px",
-            "background": "#F7F8FA",
-            "icon-color": "#373F4E",
-            "box-shadow": "0 1px 2px 0 rgb(15 23 42 / 0.05)",
             "color": "#373F4E",
-            "padding": "0 0 0 0"
+            "margin": "0"
           },
-          "states": {
-            "hover": {
-              "background": "#E5E7EB",
-              "border": "1px solid #BFC6D4",
-              "icon-color": "#373F4E",
-              "box-shadow": "0 10px 15px -3px rgb(15 23 42 / 0.1), 0 4px 6px -4px rgb(15 23 42 / 0.1)",
-              "color": "#373F4E"
-            },
-            "active": {
-              "background": "#E5E7EB",
-              "border": "1px solid #BFC6D4",
-              "icon-color": "#373F4E",
-              "box-shadow": "0 10px 15px -3px rgb(15 23 42 / 0.1), 0 4px 6px -4px rgb(15 23 42 / 0.1)",
-              "color": "#373F4E"
-            },
-            "focus": {
-              "background": "#F7F8FA",
-              "border": "1px solid #BFC6D4",
-              "icon-color": "#373F4E",
-              "box-shadow": "0 10px 15px -3px rgb(15 23 42 / 0.1), 0 4px 6px -4px rgb(15 23 42 / 0.1)",
-              "color": "#373F4E"
-            },
-            "disabled": {
-              "background": "#F7F8FA",
-              "border": "1px solid #BFC6D4",
-              "icon-color": "#373F4E",
-              "box-shadow": "0 1px 2px 0 rgb(15 23 42 / 0.05)",
-              "color": "#373F4E"
-            }
+          "parent": ".card"
+        },
+        {
+          "selector": ".card__subtitle",
+          "tag": "span",
+          "styles": {
+            "font-size": "0.875rem",
+            "color": "#525969",
+            "margin-top": "4px",
+            "font-family": "'Figtree', sans-serif"
           },
-          "children": [
-            ".card__header",
-            ".card__body",
-            ".card__footer"
-          ]
+          "parent": ".card"
         },
         {
-          "selector": ".card__header",
-          "tag": "div",
-          "parent": ".card",
+          "selector": ".card__title",
+          "tag": "span",
           "styles": {
-            "padding": "16px",
-            "border-bottom": "1px solid #BFC6D4",
-            "background": "#F7F8FA",
-            "color": "#373F4E",
-            "border": "1px solid #BFC6D4",
-            "icon-color": "#373F4E"
-          }
-        },
-        {
-          "selector": ".card__body",
-          "tag": "div",
-          "parent": ".card",
-          "styles": {
-            "padding": "16px",
-            "background": "#F7F8FA",
-            "color": "#373F4E",
-            "border": "1px solid #BFC6D4",
-            "icon-color": "#373F4E"
-          }
-        },
-        {
-          "selector": ".card__footer",
-          "tag": "div",
-          "parent": ".card",
-          "styles": {
-            "padding": "16px",
-            "border-top": "1px solid #BFC6D4",
-            "background": "#F7F8FA",
-            "color": "#373F4E",
-            "border": "1px solid #BFC6D4",
-            "icon-color": "#373F4E"
-          }
+            "font-family": "'Lexend', sans-serif",
+            "font-size": "1.125rem",
+            "font-weight": "600",
+            "color": "#373F4E"
+          },
+          "parent": ".card"
         }
-      ],
-      "props": {
-        "elevated": {
-          "type": "boolean",
-          "optional": true,
-          "default": "false"
-        },
-        "interactive": {
-          "type": "boolean",
-          "optional": true,
-          "default": "true"
-        },
-        "primary": {
-          "type": "boolean",
-          "optional": true,
-          "default": "false"
-        },
-        "withHeader": {
-          "type": "boolean",
-          "optional": true,
-          "default": "false"
-        },
-        "headerTitle": {
-          "type": "string",
-          "optional": true,
-          "default": "''"
-        },
-        "headerSubtitle": {
-          "type": "string",
-          "optional": true,
-          "default": "''"
-        },
-        "class": {
-          "type": "string",
-          "optional": true,
-          "default": "''"
-        }
-      }
+      ]
     },
-    "interactive-cp-dark": {
+    "ppm-dark": {
       "_meta": {
-        "theme": "cp",
+        "theme": "ppm",
         "mode": "dark",
         "locked": true
       },
       "_buildContract": {
         "criticalSelectors": {
           ".card": {
-            "display": "block",
+            "background-color": "#1F2124",
+            "border": "1px solid #2A2D32",
+            "border-radius": "0.75rem",
+            "overflow": "hidden",
+            "box-shadow": "0 1px 2px 0 rgb(15 23 42 / 0.05)"
+          },
+          ".card__body": {
+            "padding": "16px"
+          },
+          ".card__footer": {
+            "padding": "16px",
+            "border-top": "1px solid #2A2D32",
+            "background-color": "#1F2124"
+          },
+          ".card__header": {
+            "padding": "16px",
+            "border-bottom": "1px solid #2A2D32"
+          },
+          ".card__header-actions": {
+            "display": "flex",
+            "align-items": "center",
+            "gap": "8px"
+          },
+          ".card__header-content": {
+            "display": "flex",
             "flex-direction": "column",
-            "align-items": "stretch",
-            "justify-content": "flex-start",
-            "gap": "0",
-            "height": "auto",
-            "min-width": "auto",
-            "max-width": "none",
+            "gap": "4px",
+            "flex": "1"
+          },
+          ".card__header-subtitle": {
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "line-height": "20px",
+            "color": "#B5B5BC",
+            "margin": "0"
+          },
+          ".card__header-title": {
             "font-family": "'Lexend', sans-serif",
             "font-size": "1.125rem",
             "font-weight": "600",
             "line-height": "24px",
-            "border": "1px solid #5F6871",
-            "border-width": "1px",
-            "border-style": "solid",
-            "border-radius": "12px",
-            "background": "#37424D",
-            "icon-color": "#E9ECEF",
-            "box-shadow": "0 1px 2px 0 rgba(0, 0, 0, 0.3)",
-            "color": "#E9ECEF",
-            "padding": "0 0 0 0"
+            "color": "#FAFAFA",
+            "margin": "0"
           },
-          ".card__header": {
-            "padding": "16px",
-            "border-bottom": "1px solid #5F6871",
-            "background": "#37424D",
-            "color": "#E9ECEF",
-            "border": "1px solid #5F6871",
-            "icon-color": "#E9ECEF"
+          ".card__subtitle": {
+            "font-size": "0.875rem",
+            "color": "#B5B5BC",
+            "margin-top": "4px",
+            "font-family": "'Figtree', sans-serif"
           },
-          ".card__body": {
-            "padding": "16px",
-            "background": "#37424D",
-            "color": "#E9ECEF",
-            "border": "1px solid #5F6871",
-            "icon-color": "#E9ECEF"
-          },
-          ".card__footer": {
-            "padding": "16px",
-            "border-top": "1px solid #5F6871",
-            "background": "#37424D",
-            "color": "#E9ECEF",
-            "border": "1px solid #5F6871",
-            "icon-color": "#E9ECEF"
+          ".card__title": {
+            "font-family": "'Lexend', sans-serif",
+            "font-size": "1.125rem",
+            "font-weight": "600",
+            "color": "#FAFAFA"
           }
         },
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -1116,200 +1100,194 @@
           "selector": ".card",
           "tag": "div",
           "styles": {
-            "display": "block",
+            "background-color": "#1F2124",
+            "border": "1px solid #2A2D32",
+            "border-radius": "0.75rem",
+            "overflow": "hidden",
+            "box-shadow": "0 1px 2px 0 rgb(15 23 42 / 0.05)"
+          },
+          "children": [
+            ".card__body",
+            ".card__footer",
+            ".card__header",
+            ".card__header-actions",
+            ".card__header-content",
+            ".card__header-subtitle",
+            ".card__header-title",
+            ".card__subtitle",
+            ".card__title"
+          ]
+        },
+        {
+          "selector": ".card__body",
+          "tag": "span",
+          "styles": {
+            "padding": "16px"
+          },
+          "parent": ".card"
+        },
+        {
+          "selector": ".card__footer",
+          "tag": "span",
+          "styles": {
+            "padding": "16px",
+            "border-top": "1px solid #2A2D32",
+            "background-color": "#1F2124"
+          },
+          "parent": ".card"
+        },
+        {
+          "selector": ".card__header",
+          "tag": "span",
+          "styles": {
+            "padding": "16px",
+            "border-bottom": "1px solid #2A2D32"
+          },
+          "parent": ".card"
+        },
+        {
+          "selector": ".card__header-actions",
+          "tag": "span",
+          "styles": {
+            "display": "flex",
+            "align-items": "center",
+            "gap": "8px"
+          },
+          "parent": ".card__header"
+        },
+        {
+          "selector": ".card__header-content",
+          "tag": "span",
+          "styles": {
+            "display": "flex",
             "flex-direction": "column",
-            "align-items": "stretch",
-            "justify-content": "flex-start",
-            "gap": "0",
-            "height": "auto",
-            "min-width": "auto",
-            "max-width": "none",
+            "gap": "4px",
+            "flex": "1"
+          },
+          "parent": ".card"
+        },
+        {
+          "selector": ".card__header-subtitle",
+          "tag": "span",
+          "styles": {
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "line-height": "20px",
+            "color": "#B5B5BC",
+            "margin": "0"
+          },
+          "parent": ".card"
+        },
+        {
+          "selector": ".card__header-title",
+          "tag": "span",
+          "styles": {
             "font-family": "'Lexend', sans-serif",
             "font-size": "1.125rem",
             "font-weight": "600",
             "line-height": "24px",
-            "border": "1px solid #5F6871",
-            "border-width": "1px",
-            "border-style": "solid",
-            "border-radius": "12px",
-            "background": "#37424D",
-            "icon-color": "#E9ECEF",
-            "box-shadow": "0 1px 2px 0 rgba(0, 0, 0, 0.3)",
-            "color": "#E9ECEF",
-            "padding": "0 0 0 0"
+            "color": "#FAFAFA",
+            "margin": "0"
           },
-          "states": {
-            "hover": {
-              "background": "#3D4A5C",
-              "border": "1px solid #5F6871",
-              "icon-color": "#E9ECEF",
-              "box-shadow": "0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -4px rgba(0, 0, 0, 0.3)",
-              "color": "#E9ECEF"
-            },
-            "active": {
-              "background": "#3D4A5C",
-              "border": "1px solid #5F6871",
-              "icon-color": "#E9ECEF",
-              "box-shadow": "0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -4px rgba(0, 0, 0, 0.3)",
-              "color": "#E9ECEF"
-            },
-            "focus": {
-              "background": "#37424D",
-              "border": "1px solid #5F6871",
-              "icon-color": "#E9ECEF",
-              "box-shadow": "0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -4px rgba(0, 0, 0, 0.3)",
-              "color": "#E9ECEF"
-            },
-            "disabled": {
-              "background": "#37424D",
-              "border": "1px solid #5F6871",
-              "icon-color": "#E9ECEF",
-              "box-shadow": "0 1px 2px 0 rgba(0, 0, 0, 0.3)",
-              "color": "#E9ECEF"
-            }
+          "parent": ".card"
+        },
+        {
+          "selector": ".card__subtitle",
+          "tag": "span",
+          "styles": {
+            "font-size": "0.875rem",
+            "color": "#B5B5BC",
+            "margin-top": "4px",
+            "font-family": "'Figtree', sans-serif"
           },
-          "children": [
-            ".card__header",
-            ".card__body",
-            ".card__footer"
-          ]
+          "parent": ".card"
         },
         {
-          "selector": ".card__header",
-          "tag": "div",
-          "parent": ".card",
+          "selector": ".card__title",
+          "tag": "span",
           "styles": {
-            "padding": "16px",
-            "border-bottom": "1px solid #5F6871",
-            "background": "#37424D",
-            "color": "#E9ECEF",
-            "border": "1px solid #5F6871",
-            "icon-color": "#E9ECEF"
-          }
-        },
-        {
-          "selector": ".card__body",
-          "tag": "div",
-          "parent": ".card",
-          "styles": {
-            "padding": "16px",
-            "background": "#37424D",
-            "color": "#E9ECEF",
-            "border": "1px solid #5F6871",
-            "icon-color": "#E9ECEF"
-          }
-        },
-        {
-          "selector": ".card__footer",
-          "tag": "div",
-          "parent": ".card",
-          "styles": {
-            "padding": "16px",
-            "border-top": "1px solid #5F6871",
-            "background": "#37424D",
-            "color": "#E9ECEF",
-            "border": "1px solid #5F6871",
-            "icon-color": "#E9ECEF"
-          }
+            "font-family": "'Lexend', sans-serif",
+            "font-size": "1.125rem",
+            "font-weight": "600",
+            "color": "#FAFAFA"
+          },
+          "parent": ".card"
         }
-      ],
-      "props": {
-        "elevated": {
-          "type": "boolean",
-          "optional": true,
-          "default": "false"
-        },
-        "interactive": {
-          "type": "boolean",
-          "optional": true,
-          "default": "true"
-        },
-        "primary": {
-          "type": "boolean",
-          "optional": true,
-          "default": "false"
-        },
-        "withHeader": {
-          "type": "boolean",
-          "optional": true,
-          "default": "false"
-        },
-        "headerTitle": {
-          "type": "string",
-          "optional": true,
-          "default": "''"
-        },
-        "headerSubtitle": {
-          "type": "string",
-          "optional": true,
-          "default": "''"
-        },
-        "class": {
-          "type": "string",
-          "optional": true,
-          "default": "''"
-        }
-      }
+      ]
     },
-    "primary-cp-light": {
+    "maconomy-light": {
       "_meta": {
-        "theme": "cp",
+        "theme": "maconomy",
         "mode": "light",
         "locked": true
       },
       "_buildContract": {
         "criticalSelectors": {
           ".card": {
-            "display": "block",
-            "flex-direction": "column",
-            "align-items": "stretch",
-            "justify-content": "flex-start",
-            "gap": "0",
-            "height": "auto",
-            "min-width": "auto",
-            "max-width": "none",
-            "font-family": "'Lexend', sans-serif",
-            "font-size": "1.125rem",
-            "font-weight": "600",
-            "line-height": "24px",
+            "background-color": "#F7F8FA",
             "border": "1px solid #BFC6D4",
-            "border-width": "1px",
-            "border-style": "solid",
-            "border-radius": "12px",
-            "background": "#F7F8FA",
-            "icon-color": "#373F4E",
-            "box-shadow": "0 1px 2px 0 rgb(15 23 42 / 0.05)",
-            "color": "#373F4E",
-            "padding": "0 0 0 0"
-          },
-          ".card__header": {
-            "padding": "16px",
-            "border-bottom": "1px solid #BFC6D4",
-            "background": "#F7F8FA",
-            "color": "#373F4E",
-            "border": "1px solid #BFC6D4",
-            "icon-color": "#373F4E"
+            "border-radius": "0.75rem",
+            "overflow": "hidden",
+            "box-shadow": "0 1px 2px 0 rgb(15 23 42 / 0.05)"
           },
           ".card__body": {
-            "padding": "16px",
-            "background": "#F7F8FA",
-            "color": "#373F4E",
-            "border": "1px solid #BFC6D4",
-            "icon-color": "#373F4E"
+            "padding": "16px"
           },
           ".card__footer": {
             "padding": "16px",
             "border-top": "1px solid #BFC6D4",
-            "background": "#F7F8FA",
+            "background-color": "#F7F8FA"
+          },
+          ".card__header": {
+            "padding": "16px",
+            "border-bottom": "1px solid #BFC6D4"
+          },
+          ".card__header-actions": {
+            "display": "flex",
+            "align-items": "center",
+            "gap": "8px"
+          },
+          ".card__header-content": {
+            "display": "flex",
+            "flex-direction": "column",
+            "gap": "4px",
+            "flex": "1"
+          },
+          ".card__header-subtitle": {
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "line-height": "20px",
+            "color": "#525969",
+            "margin": "0"
+          },
+          ".card__header-title": {
+            "font-family": "'Lexend', sans-serif",
+            "font-size": "1.125rem",
+            "font-weight": "600",
+            "line-height": "24px",
             "color": "#373F4E",
-            "border": "1px solid #BFC6D4",
-            "icon-color": "#373F4E"
+            "margin": "0"
+          },
+          ".card__subtitle": {
+            "font-size": "0.875rem",
+            "color": "#525969",
+            "margin-top": "4px",
+            "font-family": "'Figtree', sans-serif"
+          },
+          ".card__title": {
+            "font-family": "'Lexend', sans-serif",
+            "font-size": "1.125rem",
+            "font-weight": "600",
+            "color": "#373F4E"
           }
         },
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -1317,200 +1295,194 @@
           "selector": ".card",
           "tag": "div",
           "styles": {
-            "display": "block",
+            "background-color": "#F7F8FA",
+            "border": "1px solid #BFC6D4",
+            "border-radius": "0.75rem",
+            "overflow": "hidden",
+            "box-shadow": "0 1px 2px 0 rgb(15 23 42 / 0.05)"
+          },
+          "children": [
+            ".card__body",
+            ".card__footer",
+            ".card__header",
+            ".card__header-actions",
+            ".card__header-content",
+            ".card__header-subtitle",
+            ".card__header-title",
+            ".card__subtitle",
+            ".card__title"
+          ]
+        },
+        {
+          "selector": ".card__body",
+          "tag": "span",
+          "styles": {
+            "padding": "16px"
+          },
+          "parent": ".card"
+        },
+        {
+          "selector": ".card__footer",
+          "tag": "span",
+          "styles": {
+            "padding": "16px",
+            "border-top": "1px solid #BFC6D4",
+            "background-color": "#F7F8FA"
+          },
+          "parent": ".card"
+        },
+        {
+          "selector": ".card__header",
+          "tag": "span",
+          "styles": {
+            "padding": "16px",
+            "border-bottom": "1px solid #BFC6D4"
+          },
+          "parent": ".card"
+        },
+        {
+          "selector": ".card__header-actions",
+          "tag": "span",
+          "styles": {
+            "display": "flex",
+            "align-items": "center",
+            "gap": "8px"
+          },
+          "parent": ".card__header"
+        },
+        {
+          "selector": ".card__header-content",
+          "tag": "span",
+          "styles": {
+            "display": "flex",
             "flex-direction": "column",
-            "align-items": "stretch",
-            "justify-content": "flex-start",
-            "gap": "0",
-            "height": "auto",
-            "min-width": "auto",
-            "max-width": "none",
+            "gap": "4px",
+            "flex": "1"
+          },
+          "parent": ".card"
+        },
+        {
+          "selector": ".card__header-subtitle",
+          "tag": "span",
+          "styles": {
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "line-height": "20px",
+            "color": "#525969",
+            "margin": "0"
+          },
+          "parent": ".card"
+        },
+        {
+          "selector": ".card__header-title",
+          "tag": "span",
+          "styles": {
             "font-family": "'Lexend', sans-serif",
             "font-size": "1.125rem",
             "font-weight": "600",
             "line-height": "24px",
-            "border": "1px solid #BFC6D4",
-            "border-width": "1px",
-            "border-style": "solid",
-            "border-radius": "12px",
-            "background": "#F7F8FA",
-            "icon-color": "#373F4E",
-            "box-shadow": "0 1px 2px 0 rgb(15 23 42 / 0.05)",
             "color": "#373F4E",
-            "padding": "0 0 0 0"
+            "margin": "0"
           },
-          "states": {
-            "hover": {
-              "background": "#E5E7EB",
-              "border": "1px solid #BFC6D4",
-              "icon-color": "#373F4E",
-              "box-shadow": "0 1px 2px 0 rgb(15 23 42 / 0.05)",
-              "color": "#373F4E"
-            },
-            "active": {
-              "background": "#E5E7EB",
-              "border": "1px solid #BFC6D4",
-              "icon-color": "#373F4E",
-              "box-shadow": "0 1px 2px 0 rgb(15 23 42 / 0.05)",
-              "color": "#373F4E"
-            },
-            "focus": {
-              "background": "#F7F8FA",
-              "border": "1px solid #BFC6D4",
-              "icon-color": "#373F4E",
-              "box-shadow": "0 1px 2px 0 rgb(15 23 42 / 0.05)",
-              "color": "#373F4E"
-            },
-            "disabled": {
-              "background": "#F7F8FA",
-              "border": "1px solid #BFC6D4",
-              "icon-color": "#373F4E",
-              "box-shadow": "0 1px 2px 0 rgb(15 23 42 / 0.05)",
-              "color": "#373F4E"
-            }
+          "parent": ".card"
+        },
+        {
+          "selector": ".card__subtitle",
+          "tag": "span",
+          "styles": {
+            "font-size": "0.875rem",
+            "color": "#525969",
+            "margin-top": "4px",
+            "font-family": "'Figtree', sans-serif"
           },
-          "children": [
-            ".card__header",
-            ".card__body",
-            ".card__footer"
-          ]
+          "parent": ".card"
         },
         {
-          "selector": ".card__header",
-          "tag": "div",
-          "parent": ".card",
+          "selector": ".card__title",
+          "tag": "span",
           "styles": {
-            "padding": "16px",
-            "border-bottom": "1px solid #BFC6D4",
-            "background": "#F7F8FA",
-            "color": "#373F4E",
-            "border": "1px solid #BFC6D4",
-            "icon-color": "#373F4E"
-          }
-        },
-        {
-          "selector": ".card__body",
-          "tag": "div",
-          "parent": ".card",
-          "styles": {
-            "padding": "16px",
-            "background": "#F7F8FA",
-            "color": "#373F4E",
-            "border": "1px solid #BFC6D4",
-            "icon-color": "#373F4E"
-          }
-        },
-        {
-          "selector": ".card__footer",
-          "tag": "div",
-          "parent": ".card",
-          "styles": {
-            "padding": "16px",
-            "border-top": "1px solid #BFC6D4",
-            "background": "#F7F8FA",
-            "color": "#373F4E",
-            "border": "1px solid #BFC6D4",
-            "icon-color": "#373F4E"
-          }
+            "font-family": "'Lexend', sans-serif",
+            "font-size": "1.125rem",
+            "font-weight": "600",
+            "color": "#373F4E"
+          },
+          "parent": ".card"
         }
-      ],
-      "props": {
-        "elevated": {
-          "type": "boolean",
-          "optional": true,
-          "default": "false"
-        },
-        "interactive": {
-          "type": "boolean",
-          "optional": true,
-          "default": "false"
-        },
-        "primary": {
-          "type": "boolean",
-          "optional": true,
-          "default": "true"
-        },
-        "withHeader": {
-          "type": "boolean",
-          "optional": true,
-          "default": "false"
-        },
-        "headerTitle": {
-          "type": "string",
-          "optional": true,
-          "default": "''"
-        },
-        "headerSubtitle": {
-          "type": "string",
-          "optional": true,
-          "default": "''"
-        },
-        "class": {
-          "type": "string",
-          "optional": true,
-          "default": "''"
-        }
-      }
+      ]
     },
-    "primary-cp-dark": {
+    "maconomy-dark": {
       "_meta": {
-        "theme": "cp",
+        "theme": "maconomy",
         "mode": "dark",
         "locked": true
       },
       "_buildContract": {
         "criticalSelectors": {
           ".card": {
-            "display": "block",
+            "background-color": "#1F2124",
+            "border": "1px solid #2A2D32",
+            "border-radius": "0.75rem",
+            "overflow": "hidden",
+            "box-shadow": "0 1px 2px 0 rgb(15 23 42 / 0.05)"
+          },
+          ".card__body": {
+            "padding": "16px"
+          },
+          ".card__footer": {
+            "padding": "16px",
+            "border-top": "1px solid #2A2D32",
+            "background-color": "#1F2124"
+          },
+          ".card__header": {
+            "padding": "16px",
+            "border-bottom": "1px solid #2A2D32"
+          },
+          ".card__header-actions": {
+            "display": "flex",
+            "align-items": "center",
+            "gap": "8px"
+          },
+          ".card__header-content": {
+            "display": "flex",
             "flex-direction": "column",
-            "align-items": "stretch",
-            "justify-content": "flex-start",
-            "gap": "0",
-            "height": "auto",
-            "min-width": "auto",
-            "max-width": "none",
+            "gap": "4px",
+            "flex": "1"
+          },
+          ".card__header-subtitle": {
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "line-height": "20px",
+            "color": "#B5B5BC",
+            "margin": "0"
+          },
+          ".card__header-title": {
             "font-family": "'Lexend', sans-serif",
             "font-size": "1.125rem",
             "font-weight": "600",
             "line-height": "24px",
-            "border": "1px solid #5F6871",
-            "border-width": "1px",
-            "border-style": "solid",
-            "border-radius": "12px",
-            "background": "#37424D",
-            "icon-color": "#E9ECEF",
-            "box-shadow": "0 1px 2px 0 rgba(0, 0, 0, 0.3)",
-            "color": "#E9ECEF",
-            "padding": "0 0 0 0"
+            "color": "#FAFAFA",
+            "margin": "0"
           },
-          ".card__header": {
-            "padding": "16px",
-            "border-bottom": "1px solid #5F6871",
-            "background": "#37424D",
-            "color": "#E9ECEF",
-            "border": "1px solid #5F6871",
-            "icon-color": "#E9ECEF"
+          ".card__subtitle": {
+            "font-size": "0.875rem",
+            "color": "#B5B5BC",
+            "margin-top": "4px",
+            "font-family": "'Figtree', sans-serif"
           },
-          ".card__body": {
-            "padding": "16px",
-            "background": "#37424D",
-            "color": "#E9ECEF",
-            "border": "1px solid #5F6871",
-            "icon-color": "#E9ECEF"
-          },
-          ".card__footer": {
-            "padding": "16px",
-            "border-top": "1px solid #5F6871",
-            "background": "#37424D",
-            "color": "#E9ECEF",
-            "border": "1px solid #5F6871",
-            "icon-color": "#E9ECEF"
+          ".card__title": {
+            "font-family": "'Lexend', sans-serif",
+            "font-size": "1.125rem",
+            "font-weight": "600",
+            "color": "#FAFAFA"
           }
         },
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -1518,140 +1490,120 @@
           "selector": ".card",
           "tag": "div",
           "styles": {
-            "display": "block",
+            "background-color": "#1F2124",
+            "border": "1px solid #2A2D32",
+            "border-radius": "0.75rem",
+            "overflow": "hidden",
+            "box-shadow": "0 1px 2px 0 rgb(15 23 42 / 0.05)"
+          },
+          "children": [
+            ".card__body",
+            ".card__footer",
+            ".card__header",
+            ".card__header-actions",
+            ".card__header-content",
+            ".card__header-subtitle",
+            ".card__header-title",
+            ".card__subtitle",
+            ".card__title"
+          ]
+        },
+        {
+          "selector": ".card__body",
+          "tag": "span",
+          "styles": {
+            "padding": "16px"
+          },
+          "parent": ".card"
+        },
+        {
+          "selector": ".card__footer",
+          "tag": "span",
+          "styles": {
+            "padding": "16px",
+            "border-top": "1px solid #2A2D32",
+            "background-color": "#1F2124"
+          },
+          "parent": ".card"
+        },
+        {
+          "selector": ".card__header",
+          "tag": "span",
+          "styles": {
+            "padding": "16px",
+            "border-bottom": "1px solid #2A2D32"
+          },
+          "parent": ".card"
+        },
+        {
+          "selector": ".card__header-actions",
+          "tag": "span",
+          "styles": {
+            "display": "flex",
+            "align-items": "center",
+            "gap": "8px"
+          },
+          "parent": ".card__header"
+        },
+        {
+          "selector": ".card__header-content",
+          "tag": "span",
+          "styles": {
+            "display": "flex",
             "flex-direction": "column",
-            "align-items": "stretch",
-            "justify-content": "flex-start",
-            "gap": "0",
-            "height": "auto",
-            "min-width": "auto",
-            "max-width": "none",
+            "gap": "4px",
+            "flex": "1"
+          },
+          "parent": ".card"
+        },
+        {
+          "selector": ".card__header-subtitle",
+          "tag": "span",
+          "styles": {
+            "font-family": "'Figtree', sans-serif",
+            "font-size": "0.875rem",
+            "line-height": "20px",
+            "color": "#B5B5BC",
+            "margin": "0"
+          },
+          "parent": ".card"
+        },
+        {
+          "selector": ".card__header-title",
+          "tag": "span",
+          "styles": {
             "font-family": "'Lexend', sans-serif",
             "font-size": "1.125rem",
             "font-weight": "600",
             "line-height": "24px",
-            "border": "1px solid #5F6871",
-            "border-width": "1px",
-            "border-style": "solid",
-            "border-radius": "12px",
-            "background": "#37424D",
-            "icon-color": "#E9ECEF",
-            "box-shadow": "0 1px 2px 0 rgba(0, 0, 0, 0.3)",
-            "color": "#E9ECEF",
-            "padding": "0 0 0 0"
+            "color": "#FAFAFA",
+            "margin": "0"
           },
-          "states": {
-            "hover": {
-              "background": "#3D4A5C",
-              "border": "1px solid #5F6871",
-              "icon-color": "#E9ECEF",
-              "box-shadow": "0 1px 2px 0 rgba(0, 0, 0, 0.3)",
-              "color": "#E9ECEF"
-            },
-            "active": {
-              "background": "#3D4A5C",
-              "border": "1px solid #5F6871",
-              "icon-color": "#E9ECEF",
-              "box-shadow": "0 1px 2px 0 rgba(0, 0, 0, 0.3)",
-              "color": "#E9ECEF"
-            },
-            "focus": {
-              "background": "#37424D",
-              "border": "1px solid #5F6871",
-              "icon-color": "#E9ECEF",
-              "box-shadow": "0 1px 2px 0 rgba(0, 0, 0, 0.3)",
-              "color": "#E9ECEF"
-            },
-            "disabled": {
-              "background": "#37424D",
-              "border": "1px solid #5F6871",
-              "icon-color": "#E9ECEF",
-              "box-shadow": "0 1px 2px 0 rgba(0, 0, 0, 0.3)",
-              "color": "#E9ECEF"
-            }
+          "parent": ".card"
+        },
+        {
+          "selector": ".card__subtitle",
+          "tag": "span",
+          "styles": {
+            "font-size": "0.875rem",
+            "color": "#B5B5BC",
+            "margin-top": "4px",
+            "font-family": "'Figtree', sans-serif"
           },
-          "children": [
-            ".card__header",
-            ".card__body",
-            ".card__footer"
-          ]
+          "parent": ".card"
         },
         {
-          "selector": ".card__header",
-          "tag": "div",
-          "parent": ".card",
+          "selector": ".card__title",
+          "tag": "span",
           "styles": {
-            "padding": "16px",
-            "border-bottom": "1px solid #5F6871",
-            "background": "#37424D",
-            "color": "#E9ECEF",
-            "border": "1px solid #5F6871",
-            "icon-color": "#E9ECEF"
-          }
-        },
-        {
-          "selector": ".card__body",
-          "tag": "div",
-          "parent": ".card",
-          "styles": {
-            "padding": "16px",
-            "background": "#37424D",
-            "color": "#E9ECEF",
-            "border": "1px solid #5F6871",
-            "icon-color": "#E9ECEF"
-          }
-        },
-        {
-          "selector": ".card__footer",
-          "tag": "div",
-          "parent": ".card",
-          "styles": {
-            "padding": "16px",
-            "border-top": "1px solid #5F6871",
-            "background": "#37424D",
-            "color": "#E9ECEF",
-            "border": "1px solid #5F6871",
-            "icon-color": "#E9ECEF"
-          }
+            "font-family": "'Lexend', sans-serif",
+            "font-size": "1.125rem",
+            "font-weight": "600",
+            "color": "#FAFAFA"
+          },
+          "parent": ".card"
         }
-      ],
-      "props": {
-        "elevated": {
-          "type": "boolean",
-          "optional": true,
-          "default": "false"
-        },
-        "interactive": {
-          "type": "boolean",
-          "optional": true,
-          "default": "false"
-        },
-        "primary": {
-          "type": "boolean",
-          "optional": true,
-          "default": "true"
-        },
-        "withHeader": {
-          "type": "boolean",
-          "optional": true,
-          "default": "false"
-        },
-        "headerTitle": {
-          "type": "string",
-          "optional": true,
-          "default": "''"
-        },
-        "headerSubtitle": {
-          "type": "string",
-          "optional": true,
-          "default": "''"
-        },
-        "class": {
-          "type": "string",
-          "optional": true,
-          "default": "''"
-        }
-      }
+      ]
     }
   },
   "guidance": {
@@ -1717,5 +1669,59 @@
       "description": "Standalone content card",
       "snippet": "<Card><p>Card body content.</p></Card>"
     }
-  ]
+  ],
+  "specKeyOrder": [
+    "theme",
+    "mode"
+  ],
+  "dimensionDefaults": {
+    "theme": "cp",
+    "mode": "light"
+  },
+  "contentOrder": [
+    ".card__header",
+    ".card__body",
+    ".card__footer"
+  ],
+  "contentOrder.card__header": [
+    ".card__header-actions"
+  ],
+  "structure": {
+    "root": ".card",
+    "children": [
+      {
+        "class": ".card__header",
+        "children": [
+          {
+            "class": ".card__header-actions",
+            "children": []
+          }
+        ]
+      },
+      {
+        "class": ".card__body",
+        "children": []
+      },
+      {
+        "class": ".card__footer",
+        "children": []
+      }
+    ]
+  },
+  "fonts": {
+    "Figtree": "https://fonts.googleapis.com/css2?family=Figtree:wght@300..900&display=swap",
+    "Lexend": "https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700;800;900&display=swap",
+    "JetBrains Mono": "https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap"
+  },
+  "defaultContent": {
+    "footer": {
+      "defaultEmpty": true,
+      "description": "Footer slot is optional; when present use slot content only. Do not invent buttons or links."
+    }
+  },
+  "layoutRules": {
+    ".card__footer": {
+      "defaultEmpty": true
+    }
+  }
 }

@@ -469,6 +469,98 @@
       "required": true
     }
   },
+  "contentOrder": [
+    ".shell-layout__header",
+    ".shell-layout__floating-nav-wrap",
+    ".shell-layout__left-sidebar",
+    ".shell-layout__right-sidebar",
+    ".shell-layout__right-panel",
+    ".shell-layout__left-panel",
+    ".shell-layout__main",
+    ".shell-layout__footer"
+  ],
+  "contentOrder.shell-layout__main": [
+    "ShellPageHeader (optional when pageHeaderTitle provided)",
+    "default slot (main content)"
+  ],
+  "defaultContent": {
+    "defaultProps": {
+      "productName": "Harmony",
+      "logoSrc": "/logos/CPVPLogo.svg",
+      "companyName": "Company name",
+      "showCompanyPicker": true,
+      "showRightSidebar": true,
+      "leftSidebarVariant": "cp",
+      "rightSidebarVariant": "cp",
+      "tabs": [],
+      "showAddTab": true,
+      "footerVariant": "default",
+      "floatingNavVariant": "full",
+      "showExecute": true,
+      "saveDisabled": false
+    },
+    "perTheme": {
+      "cp": {
+        "hasFooter": false,
+        "hasFloatingNav": true,
+        "productName": "Costpoint",
+        "gridRows": "var(--shell-header-height) 1fr",
+        "mainPadding": {
+          "top": "var(--shell-layout-padding-top)",
+          "right": "calc(var(--shell-layout-padding-side-default) + var(--space-5))",
+          "bottom": "var(--space-6)",
+          "left": "calc(var(--shell-layout-padding-side-default) + var(--space-5))"
+        }
+      },
+      "vp": {
+        "hasFooter": true,
+        "hasFloatingNav": false,
+        "productName": "Vantagepoint",
+        "gridRows": "var(--shell-header-height) 1fr var(--shell-footer-height-default)",
+        "mainPadding": {
+          "top": "var(--space-5)",
+          "right": "calc(var(--shell-layout-padding-side-default) + var(--space-5))",
+          "bottom": "var(--space-6)",
+          "left": "calc(var(--shell-layout-padding-side-default) + var(--space-5))"
+        }
+      },
+      "ppm": {
+        "hasFooter": true,
+        "hasFloatingNav": false,
+        "productName": "Project Performance Management",
+        "gridRows": "var(--shell-header-height) 1fr var(--shell-footer-height-default)",
+        "mainPadding": {
+          "top": "var(--space-5)",
+          "right": "calc(var(--shell-layout-padding-side-default) + var(--space-5))",
+          "bottom": "var(--space-6)",
+          "left": "calc(var(--shell-layout-padding-side-default) + var(--space-5))"
+        }
+      },
+      "maconomy": {
+        "hasFooter": true,
+        "hasFloatingNav": false,
+        "productName": "Maconomy",
+        "gridRows": "var(--shell-header-height) 1fr var(--shell-footer-height-default)",
+        "mainPadding": {
+          "top": "var(--space-5)",
+          "right": "calc(var(--shell-layout-padding-side-default) + var(--space-5))",
+          "bottom": "var(--space-6)",
+          "left": "calc(var(--shell-layout-padding-side-default) + var(--space-5))"
+        }
+      }
+    },
+    "_rule": "Use defaultProps when not overridden. For LeftSidebar/RightSidebar/ShellHeader/ShellFooter content, use each component's defaultContent from its component spec. Do not invent sections, tabs, labels, or company names."
+  },
+  "_buildContract": {
+    "forbiddenModifications": [
+      "Do not use Tailwind arbitrary values",
+      "Do not change hex colors to named colors",
+      "Do not simplify box-shadow values",
+      "Do not add CSS properties that are not in the layout spec or positioning/gridStructure",
+      "Do not reorder children: follow contentOrder exactly (header, floating-nav-wrap, left-sidebar, right-sidebar, panels, main, footer)",
+      "Build exactly what is in the spec: structure, styles, and defaultContent from the layout and child component specs only; no inference, no additions, no \"fixes\""
+    ]
+  },
   "visualSpecifications": {
     "cp": {
       "componentDimensions": {
@@ -582,7 +674,7 @@
     }
   },
   "_metadata": {
-    "lastGenerated": "2026-02-02T23:28:24.043Z",
+    "lastGenerated": "2026-02-04T17:58:27.034Z",
     "version": "1.0.0",
     "includesVisualSpecs": true
   }

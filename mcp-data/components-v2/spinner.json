@@ -21,6 +21,43 @@
     "size": "'md'"
   },
   "specs": {
+    "cp-light-sm": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".spinner": {},
+          ".spinner__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".spinner",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".spinner__content"
+          ]
+        },
+        {
+          "selector": ".spinner__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".spinner"
+        }
+      ]
+    },
     "cp-light-md": {
       "_meta": {
         "theme": "cp",
@@ -35,7 +72,824 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".spinner",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".spinner__content"
+          ]
+        },
+        {
+          "selector": ".spinner__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".spinner"
+        }
+      ]
+    },
+    "cp-light-lg": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".spinner": {},
+          ".spinner__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".spinner",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".spinner__content"
+          ]
+        },
+        {
+          "selector": ".spinner__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".spinner"
+        }
+      ]
+    },
+    "cp-dark-sm": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".spinner": {},
+          ".spinner__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".spinner",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".spinner__content"
+          ]
+        },
+        {
+          "selector": ".spinner__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".spinner"
+        }
+      ]
+    },
+    "cp-dark-md": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".spinner": {},
+          ".spinner__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".spinner",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".spinner__content"
+          ]
+        },
+        {
+          "selector": ".spinner__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".spinner"
+        }
+      ]
+    },
+    "cp-dark-lg": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".spinner": {},
+          ".spinner__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".spinner",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".spinner__content"
+          ]
+        },
+        {
+          "selector": ".spinner__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".spinner"
+        }
+      ]
+    },
+    "vp-light-sm": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".spinner": {},
+          ".spinner__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".spinner",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".spinner__content"
+          ]
+        },
+        {
+          "selector": ".spinner__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".spinner"
+        }
+      ]
+    },
+    "vp-light-md": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".spinner": {},
+          ".spinner__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".spinner",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".spinner__content"
+          ]
+        },
+        {
+          "selector": ".spinner__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".spinner"
+        }
+      ]
+    },
+    "vp-light-lg": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".spinner": {},
+          ".spinner__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".spinner",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".spinner__content"
+          ]
+        },
+        {
+          "selector": ".spinner__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".spinner"
+        }
+      ]
+    },
+    "vp-dark-sm": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".spinner": {},
+          ".spinner__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".spinner",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".spinner__content"
+          ]
+        },
+        {
+          "selector": ".spinner__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".spinner"
+        }
+      ]
+    },
+    "vp-dark-md": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".spinner": {},
+          ".spinner__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".spinner",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".spinner__content"
+          ]
+        },
+        {
+          "selector": ".spinner__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".spinner"
+        }
+      ]
+    },
+    "vp-dark-lg": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".spinner": {},
+          ".spinner__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".spinner",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".spinner__content"
+          ]
+        },
+        {
+          "selector": ".spinner__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".spinner"
+        }
+      ]
+    },
+    "ppm-light-sm": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".spinner": {},
+          ".spinner__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".spinner",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".spinner__content"
+          ]
+        },
+        {
+          "selector": ".spinner__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".spinner"
+        }
+      ]
+    },
+    "ppm-light-md": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".spinner": {},
+          ".spinner__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".spinner",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".spinner__content"
+          ]
+        },
+        {
+          "selector": ".spinner__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".spinner"
+        }
+      ]
+    },
+    "ppm-light-lg": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".spinner": {},
+          ".spinner__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".spinner",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".spinner__content"
+          ]
+        },
+        {
+          "selector": ".spinner__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".spinner"
+        }
+      ]
+    },
+    "ppm-dark-sm": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".spinner": {},
+          ".spinner__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".spinner",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".spinner__content"
+          ]
+        },
+        {
+          "selector": ".spinner__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".spinner"
+        }
+      ]
+    },
+    "ppm-dark-md": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".spinner": {},
+          ".spinner__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".spinner",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".spinner__content"
+          ]
+        },
+        {
+          "selector": ".spinner__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".spinner"
+        }
+      ]
+    },
+    "ppm-dark-lg": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".spinner": {},
+          ".spinner__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".spinner",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".spinner__content"
+          ]
+        },
+        {
+          "selector": ".spinner__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".spinner"
+        }
+      ]
+    },
+    "maconomy-light-sm": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".spinner": {},
+          ".spinner__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".spinner",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".spinner__content"
+          ]
+        },
+        {
+          "selector": ".spinner__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".spinner"
+        }
+      ]
+    },
+    "maconomy-light-md": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".spinner": {},
+          ".spinner__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".spinner",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".spinner__content"
+          ]
+        },
+        {
+          "selector": ".spinner__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".spinner"
+        }
+      ]
+    },
+    "maconomy-light-lg": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".spinner": {},
+          ".spinner__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".spinner",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".spinner__content"
+          ]
+        },
+        {
+          "selector": ".spinner__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".spinner"
+        }
+      ]
+    },
+    "maconomy-dark-sm": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".spinner": {},
+          ".spinner__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".spinner",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".spinner__content"
+          ]
+        },
+        {
+          "selector": ".spinner__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".spinner"
+        }
+      ]
+    },
+    "maconomy-dark-md": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".spinner": {},
+          ".spinner__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".spinner",
+          "tag": "div",
+          "styles": {},
+          "children": [
+            ".spinner__content"
+          ]
+        },
+        {
+          "selector": ".spinner__content",
+          "tag": "span",
+          "styles": {},
+          "parent": ".spinner"
+        }
+      ]
+    },
+    "maconomy-dark-lg": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".spinner": {},
+          ".spinner__content": {}
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -76,5 +930,34 @@
       "description": "Loading indicator",
       "snippet": "<Spinner />"
     }
-  ]
+  ],
+  "specKeyOrder": [
+    "theme",
+    "mode",
+    "size"
+  ],
+  "dimensionDefaults": {
+    "theme": "cp",
+    "mode": "light",
+    "size": "md"
+  },
+  "contentOrder": [
+    ".sr-only"
+  ],
+  "structure": {
+    "root": ".spinner",
+    "children": [
+      {
+        "class": ".sr-only"
+      }
+    ]
+  },
+  "fonts": {
+    "Figtree": "https://fonts.googleapis.com/css2?family=Figtree:wght@300..900&display=swap",
+    "Lexend": "https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700;800;900&display=swap",
+    "JetBrains Mono": "https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap"
+  },
+  "defaultContent": {
+    "_rule": "No default content defined; do not invent labels, icons, or copy. Use only what is in the spec or leave slots empty."
+  }
 }

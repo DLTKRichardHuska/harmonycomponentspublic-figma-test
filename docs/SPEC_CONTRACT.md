@@ -1,6 +1,6 @@
 # Canonical Spec Contract for Exact Builds
 
-This document defines the **canonical JSON format** for Harmony component specs, the **states contract**, **usage patterns and guidelines**, and how MCP tools use them for exact builds (component, template, recipe, apply tokens to framework). It is the single reference for the spec format; read [DESIGN_SYSTEM_OVERVIEW](mcp-data/DESIGN_SYSTEM_OVERVIEW.md) first for global rules.
+This document defines the **canonical JSON format** for Harmony component specs, the **states contract**, **usage patterns and guidelines**, and how MCP tools use them for exact builds (component, template, recipe, apply tokens to framework). It is the single reference for the spec format and global rules (fonts, icons, themes, modes, spacing, typography).
 
 ---
 
@@ -10,7 +10,7 @@ This document defines the **canonical JSON format** for Harmony component specs,
 
 ### 1.1 Specs keying
 
-- **Key:** `"[variant]-[theme]-[mode]-[size]"` (e.g. `base-cp-light`, `elevated-cp-light`, `cp-light`, `cp-dark`, `vp-light`).
+- **Key:** One spec per combination of **all** dimension props. Every component with **specs** must include **specKeyOrder** and **dimensionDefaults**. The key is built by joining resolved dimension values in **specKeyOrder** order (e.g. Alert `info-default-cp-light`, `info-enhanced-cp-light`; Button `primary-cp-light-md-theme`; Accordion `cp-light`). Resolution uses one model only; there is no fallback key shape.
 - **Value:** One complete spec object so the AI builds the same component every time (exact replica).
 
 ### 1.2 Single spec object shape (all values hardcoded)
@@ -70,6 +70,10 @@ Every interactive component (or interactive part of a template/recipe) must have
 
 If a variant has no distinct hover/focus/etc., the generator still emits that key with the same values as `default` (or an explicit “no change”). The AI never infers or invents a state; every state key is present with a concrete value.
 
+### Descendant state keys (root-relative)
+
+Element states may include keys like **rootHover**, **rootFocus**, **rootFocusVisible**. These mean: apply these styles to this element when the component root is in that state (e.g. when the root has `:hover`). The builder must emit the equivalent CSS from the spec (e.g. `.root:hover .child { ... }`) and must not add CSS outside the spec.
+
 ### Where state data lives (canonical format)
 
 - MCP: get_specs returns the single spec for the requested (component, variant, theme, mode, size) from `specs[key]`; build_component applies it to the letter. No merging of multiple blobs; no inference.
@@ -94,11 +98,16 @@ Both are first-class and returned with the build spec so the AI has exact values
 
 ### MCP response shape
 
-get_specs / get_build_spec returns **both** the build spec and the guidance in one response:
+get_specs / get_build_spec returns **both** the build spec and the guidance in one response. The response must include root-level build-critical fields (**contentOrder**, **structure**, **defaultContent**, **fonts**, **icons**) when present on the component JSON, so the AI has one authoritative payload and does not infer order or content. The build payload includes **icons** (name → resolved SVG) when present so the builder can render icons exactly. See [EXACT_BUILD_MCP.md](EXACT_BUILD_MCP.md).
 
 ```json
 {
   "buildSpec": { /* canonical spec for variant/theme/mode/size */ },
+  "contentOrder": [ /* when present at component root */ ],
+  "structure": { /* when present at component root */ },
+  "defaultContent": { /* when present at component root */ },
+  "fonts": { /* when present at component root */ },
+  "icons": { /* when present at component root: name -> resolved SVG */ },
   "defaultsUsed": { "variant": "primary", "theme": "cp", "mode": "light", "size": "md" },
   "guidance": {
     "patterns": { "icon-only-detection": "...", "loading-state-behavior": "..." },
@@ -109,12 +118,20 @@ get_specs / get_build_spec returns **both** the build spec and the guidance in o
 
 ---
 
-## 4. Defaults (variant, size, theme, mode)
+## 4. Defaults (variant, size, theme, mode, and other dimensions)
 
 - **Default variant:** From `props.variant.default` (e.g. Button `'primary'`). When the user does not pass variant, use this.
 - **Default size:** From `props.size.default` (e.g. `'md'`). When size is omitted, return the build spec for this size.
 - **Default theme and mode:** theme `cp`, mode `light`.
-- **Build spec key:** When pre-generating, use keys like `primary-cp-light-md`; document that get_specs returns the spec for `variant || props.variant.default`, `theme || 'cp'`, `mode || 'light'`, `size || props.size.default`.
+- **Other dimensions:** When component JSON has **dimensionDefaults**, use it for any omitted dimension (e.g. `style: 'default'`, `buttonType: 'theme'`, `headerVariant: 'default'`, `width`). Otherwise fall back to `props[prop].default` or component `defaults`.
+- **Build spec key:** When **specKeyOrder** is present, resolve each dimension from request params, then `dimensionDefaults`, then `defaults`/props; join in **specKeyOrder** to form the key. When absent, use keys like `primary-cp-light-md`; get_specs returns the spec for `variant || props.variant.default`, `theme || 'cp'`, `mode || 'light'`, `size || props.size.default`.
+
+### 4.1 Defaults and null (props, default component, default content)
+
+- **Props schema:** In component JSON, **`default: null`** means “no default value; for the default (dimension) build, use component **defaultContent** for this concern (e.g. `sections`/`items`), or the caller must provide.” Other prop defaults (`"false"`/`"true"`, `"''"`, `"'cp'"`, etc.) are explicit defaults. Every optional prop is present in the schema (key never omitted); use `null` or the documented default so the intent is clear.
+- **Default component:** The default version of a component is the spec at the key built from **dimensionDefaults** and **specKeyOrder**. There is always at least one such key (e.g. `cp-light` for Accordion). When the user does not pass dimensions, the MCP uses dimensionDefaults (§6); so there is always a default (dimension-wise) spec.
+- **Data-driven components:** Components that take list/data (e.g. `items`, `sections`) must have **defaultContent** or placeholder items (e.g. from `mcp-data/default-content/<slug>.json` or generator placeholders) so the AI never invents content. When defaultContent for that data is missing, use only placeholders explicitly listed in the spec or leave slots empty; never invent.
+- **Default-content files:** Many files exist in `mcp-data/default-content/` (one per component slug). Only some supply real list/section data (e.g. `right-sidebar.json`, `left-sidebar.json`); others supply only the `_rule` so the contract applies. The generator merges file content into **defaultContent** in `scripts/generate-specs.js` (lines 1149–1153) via `getDefaultContent` and `loadDefaultContentFromFile`.
 
 ---
 
@@ -124,6 +141,8 @@ get_specs / get_build_spec returns **both** the build spec and the guidance in o
 2. **Template to spec** — Same format; template is a composition of components; spec lists components + layout/spacing. MCP returns build specs for each component in the template + template composition.
 3. **Recipe to spec** — Same format; recipe is a multi-component pattern; spec lists each component’s spec + composition (order, slots). MCP returns build specs + guidance per component and recipe-level guidance.
 4. **Apply tokens to framework (e.g. shadcn)** — Export the same resolved values as a framework-specific bundle (CSS variables or config). Run `npm run export:framework` (or `node scripts/export-for-framework.js`) to write `mcp-data/exports/harmony-variables.css` and optionally `harmony-export.json` from the design system overview and component build specs.
+
+**Exact build rule (single source of truth):** The component JSON is the **only authority**. Structure (DOM order), styles, and default content must be taken **only** from the spec; no inference, no additions, no "fixes." When **defaultContent** is present (e.g. `sections` with items, labels, icon paths), use it **exactly**—do not substitute or invent labels, icons, or copy. When defaultContent is missing or empty, use only placeholders explicitly listed in the spec or leave slots empty; **never** invent labels, icons, or copy.
 
 **MCP instructions for build_component (and template/recipe tools):**
 
@@ -135,8 +154,8 @@ get_specs / get_build_spec returns **both** the build spec and the guidance in o
 
 ## 6. Variant filtering (for MCP implementation)
 
-- **Lookup:** Given (variant, theme, mode, size), compute the spec key (e.g. `primary-cp-light-md`, `cp-light`) and read `specs[key]` from the canonical component JSON. Return that single spec plus `guidance`. No merging of visualSpec + buildSpec; no fill-nulls.
-- **Defaults:** When variant/theme/mode/size are omitted, use component `defaults` (e.g. theme `cp`, mode `light`, size `md`) to form the key.
+- **Lookup:** Resolve all dimensions from request params, then `component.dimensionDefaults` (when present), then `component.defaults` or `props[prop].default`. If the component has **specKeyOrder**, build the key by joining resolved values in that order (e.g. `info-enhanced-cp-light`); otherwise build from variant, theme, mode, size only (e.g. `primary-cp-light-md`, `cp-light`). Read `specs[key]` from the canonical component JSON. If the key is missing, the MCP may try fallback keys by dropping trailing dimensions and use the first key that exists in `specs`. Return that single spec plus `guidance`. No merging of visualSpec + buildSpec; no fill-nulls.
+- **Defaults:** When any dimension is omitted, use `dimensionDefaults` (when present) or component `defaults` to form the key.
 
 ---
 
@@ -145,15 +164,15 @@ get_specs / get_build_spec returns **both** the build spec and the guidance in o
 - **Canonical format:** One schema per component: identity, props, defaults, **specs** (keyed by variant–theme–mode–size), guidance. Each spec object: props, layout, spacing, dimensions, typography, borders, states, icons, and when applicable **template** (exact default content) and **structure** (DOM + BEM classes). All values resolved (no null, no transparent, no var()).
 - **States:** default, hover, active, focus, disabled (and item, icon, label where applicable); all keys always present with explicit values.
 - **Guidance:** patterns (behavior) + guidelines (when to use, composition); returned with build spec; AI must not use them to override build spec.
-- **MCP:** get_specs reads **only** `specs` and `guidance` from canonical component JSON; returns one spec + guidance. build_component applies that spec to the letter (same structure, template, layout, states, spacing). Design system overview exposed for global rules.
+- **MCP:** get_specs reads `specs`, `guidance`, and root-level **contentOrder**, **structure**, **defaultContent**, **fonts** from canonical component JSON; returns one build payload (spec + those root fields when present) + guidance. build_component applies that payload to the letter (same structure, template, layout, states, spacing). Design system overview exposed for global rules.
 
 ---
 
-## Appendix: Retired docs
+## Appendix: Retired docs (removed)
 
-The following docs are **retired** for the purpose of exact builds and canonical spec. The single reference is this contract (SPEC_CONTRACT.md).
+The following docs were retired and removed from the repo. The single reference for exact builds and canonical spec is this contract (SPEC_CONTRACT.md).
 
-- **STATE_COLORS_CONTRACT.md** — State keys and where state data lives are now defined in § 2 and § 1.2; state data lives in `specs[key].states`.
-- **VARIANT_FILTERING.md** — Variant/key lookup is now § 6; use `specs[key]` and `defaults`.
+- **STATE_COLORS_CONTRACT.md** — State keys and where state data lives are defined in § 2 and § 1.2; state data lives in `specs[key].states`.
+- **VARIANT_FILTERING.md** — Variant/key lookup is § 6; use `specs[key]` and `defaults`.
 - **VARIANT_DATA_PATTERNS.md** — Superseded by canonical format; no visualSpecifications.
 - **MCP_VARIANT_FILTERING_GUIDE.md** — get_specs behavior is defined in this contract and in EXACT_BUILD_MCP.md.

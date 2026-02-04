@@ -30,7 +30,7 @@
     "mode": "light"
   },
   "specs": {
-    "muted-cp-light-xs": {
+    "cp-light": {
       "_meta": {
         "theme": "cp",
         "mode": "light",
@@ -44,7 +44,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -64,109 +67,7 @@
         }
       ]
     },
-    "muted-cp-light-sm": {
-      "_meta": {
-        "theme": "cp",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".link": {},
-          ".link__text": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".link",
-          "tag": "a",
-          "styles": {},
-          "children": [
-            ".link__text"
-          ]
-        },
-        {
-          "selector": ".link__text",
-          "tag": "span",
-          "styles": {},
-          "parent": ".link"
-        }
-      ]
-    },
-    "muted-cp-light-md": {
-      "_meta": {
-        "theme": "cp",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".link": {},
-          ".link__text": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".link",
-          "tag": "a",
-          "styles": {},
-          "children": [
-            ".link__text"
-          ]
-        },
-        {
-          "selector": ".link__text",
-          "tag": "span",
-          "styles": {},
-          "parent": ".link"
-        }
-      ]
-    },
-    "muted-cp-light-lg": {
-      "_meta": {
-        "theme": "cp",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".link": {},
-          ".link__text": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".link",
-          "tag": "a",
-          "styles": {},
-          "children": [
-            ".link__text"
-          ]
-        },
-        {
-          "selector": ".link__text",
-          "tag": "span",
-          "styles": {},
-          "parent": ".link"
-        }
-      ]
-    },
-    "muted-cp-dark-xs": {
+    "cp-dark": {
       "_meta": {
         "theme": "cp",
         "mode": "dark",
@@ -180,7 +81,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -200,109 +104,7 @@
         }
       ]
     },
-    "muted-cp-dark-sm": {
-      "_meta": {
-        "theme": "cp",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".link": {},
-          ".link__text": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".link",
-          "tag": "a",
-          "styles": {},
-          "children": [
-            ".link__text"
-          ]
-        },
-        {
-          "selector": ".link__text",
-          "tag": "span",
-          "styles": {},
-          "parent": ".link"
-        }
-      ]
-    },
-    "muted-cp-dark-md": {
-      "_meta": {
-        "theme": "cp",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".link": {},
-          ".link__text": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".link",
-          "tag": "a",
-          "styles": {},
-          "children": [
-            ".link__text"
-          ]
-        },
-        {
-          "selector": ".link__text",
-          "tag": "span",
-          "styles": {},
-          "parent": ".link"
-        }
-      ]
-    },
-    "muted-cp-dark-lg": {
-      "_meta": {
-        "theme": "cp",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".link": {},
-          ".link__text": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".link",
-          "tag": "a",
-          "styles": {},
-          "children": [
-            ".link__text"
-          ]
-        },
-        {
-          "selector": ".link__text",
-          "tag": "span",
-          "styles": {},
-          "parent": ".link"
-        }
-      ]
-    },
-    "muted-vp-light-xs": {
+    "vp-light": {
       "_meta": {
         "theme": "vp",
         "mode": "light",
@@ -316,7 +118,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -336,109 +141,7 @@
         }
       ]
     },
-    "muted-vp-light-sm": {
-      "_meta": {
-        "theme": "vp",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".link": {},
-          ".link__text": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".link",
-          "tag": "a",
-          "styles": {},
-          "children": [
-            ".link__text"
-          ]
-        },
-        {
-          "selector": ".link__text",
-          "tag": "span",
-          "styles": {},
-          "parent": ".link"
-        }
-      ]
-    },
-    "muted-vp-light-md": {
-      "_meta": {
-        "theme": "vp",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".link": {},
-          ".link__text": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".link",
-          "tag": "a",
-          "styles": {},
-          "children": [
-            ".link__text"
-          ]
-        },
-        {
-          "selector": ".link__text",
-          "tag": "span",
-          "styles": {},
-          "parent": ".link"
-        }
-      ]
-    },
-    "muted-vp-light-lg": {
-      "_meta": {
-        "theme": "vp",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".link": {},
-          ".link__text": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".link",
-          "tag": "a",
-          "styles": {},
-          "children": [
-            ".link__text"
-          ]
-        },
-        {
-          "selector": ".link__text",
-          "tag": "span",
-          "styles": {},
-          "parent": ".link"
-        }
-      ]
-    },
-    "muted-vp-dark-xs": {
+    "vp-dark": {
       "_meta": {
         "theme": "vp",
         "mode": "dark",
@@ -452,7 +155,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -472,109 +178,7 @@
         }
       ]
     },
-    "muted-vp-dark-sm": {
-      "_meta": {
-        "theme": "vp",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".link": {},
-          ".link__text": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".link",
-          "tag": "a",
-          "styles": {},
-          "children": [
-            ".link__text"
-          ]
-        },
-        {
-          "selector": ".link__text",
-          "tag": "span",
-          "styles": {},
-          "parent": ".link"
-        }
-      ]
-    },
-    "muted-vp-dark-md": {
-      "_meta": {
-        "theme": "vp",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".link": {},
-          ".link__text": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".link",
-          "tag": "a",
-          "styles": {},
-          "children": [
-            ".link__text"
-          ]
-        },
-        {
-          "selector": ".link__text",
-          "tag": "span",
-          "styles": {},
-          "parent": ".link"
-        }
-      ]
-    },
-    "muted-vp-dark-lg": {
-      "_meta": {
-        "theme": "vp",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".link": {},
-          ".link__text": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".link",
-          "tag": "a",
-          "styles": {},
-          "children": [
-            ".link__text"
-          ]
-        },
-        {
-          "selector": ".link__text",
-          "tag": "span",
-          "styles": {},
-          "parent": ".link"
-        }
-      ]
-    },
-    "muted-ppm-light-xs": {
+    "ppm-light": {
       "_meta": {
         "theme": "ppm",
         "mode": "light",
@@ -588,7 +192,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -608,109 +215,7 @@
         }
       ]
     },
-    "muted-ppm-light-sm": {
-      "_meta": {
-        "theme": "ppm",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".link": {},
-          ".link__text": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".link",
-          "tag": "a",
-          "styles": {},
-          "children": [
-            ".link__text"
-          ]
-        },
-        {
-          "selector": ".link__text",
-          "tag": "span",
-          "styles": {},
-          "parent": ".link"
-        }
-      ]
-    },
-    "muted-ppm-light-md": {
-      "_meta": {
-        "theme": "ppm",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".link": {},
-          ".link__text": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".link",
-          "tag": "a",
-          "styles": {},
-          "children": [
-            ".link__text"
-          ]
-        },
-        {
-          "selector": ".link__text",
-          "tag": "span",
-          "styles": {},
-          "parent": ".link"
-        }
-      ]
-    },
-    "muted-ppm-light-lg": {
-      "_meta": {
-        "theme": "ppm",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".link": {},
-          ".link__text": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".link",
-          "tag": "a",
-          "styles": {},
-          "children": [
-            ".link__text"
-          ]
-        },
-        {
-          "selector": ".link__text",
-          "tag": "span",
-          "styles": {},
-          "parent": ".link"
-        }
-      ]
-    },
-    "muted-ppm-dark-xs": {
+    "ppm-dark": {
       "_meta": {
         "theme": "ppm",
         "mode": "dark",
@@ -724,7 +229,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -744,109 +252,7 @@
         }
       ]
     },
-    "muted-ppm-dark-sm": {
-      "_meta": {
-        "theme": "ppm",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".link": {},
-          ".link__text": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".link",
-          "tag": "a",
-          "styles": {},
-          "children": [
-            ".link__text"
-          ]
-        },
-        {
-          "selector": ".link__text",
-          "tag": "span",
-          "styles": {},
-          "parent": ".link"
-        }
-      ]
-    },
-    "muted-ppm-dark-md": {
-      "_meta": {
-        "theme": "ppm",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".link": {},
-          ".link__text": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".link",
-          "tag": "a",
-          "styles": {},
-          "children": [
-            ".link__text"
-          ]
-        },
-        {
-          "selector": ".link__text",
-          "tag": "span",
-          "styles": {},
-          "parent": ".link"
-        }
-      ]
-    },
-    "muted-ppm-dark-lg": {
-      "_meta": {
-        "theme": "ppm",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".link": {},
-          ".link__text": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".link",
-          "tag": "a",
-          "styles": {},
-          "children": [
-            ".link__text"
-          ]
-        },
-        {
-          "selector": ".link__text",
-          "tag": "span",
-          "styles": {},
-          "parent": ".link"
-        }
-      ]
-    },
-    "muted-maconomy-light-xs": {
+    "maconomy-light": {
       "_meta": {
         "theme": "maconomy",
         "mode": "light",
@@ -860,7 +266,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -880,109 +289,7 @@
         }
       ]
     },
-    "muted-maconomy-light-sm": {
-      "_meta": {
-        "theme": "maconomy",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".link": {},
-          ".link__text": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".link",
-          "tag": "a",
-          "styles": {},
-          "children": [
-            ".link__text"
-          ]
-        },
-        {
-          "selector": ".link__text",
-          "tag": "span",
-          "styles": {},
-          "parent": ".link"
-        }
-      ]
-    },
-    "muted-maconomy-light-md": {
-      "_meta": {
-        "theme": "maconomy",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".link": {},
-          ".link__text": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".link",
-          "tag": "a",
-          "styles": {},
-          "children": [
-            ".link__text"
-          ]
-        },
-        {
-          "selector": ".link__text",
-          "tag": "span",
-          "styles": {},
-          "parent": ".link"
-        }
-      ]
-    },
-    "muted-maconomy-light-lg": {
-      "_meta": {
-        "theme": "maconomy",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".link": {},
-          ".link__text": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".link",
-          "tag": "a",
-          "styles": {},
-          "children": [
-            ".link__text"
-          ]
-        },
-        {
-          "selector": ".link__text",
-          "tag": "span",
-          "styles": {},
-          "parent": ".link"
-        }
-      ]
-    },
-    "muted-maconomy-dark-xs": {
+    "maconomy-dark": {
       "_meta": {
         "theme": "maconomy",
         "mode": "dark",
@@ -996,109 +303,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".link",
-          "tag": "a",
-          "styles": {},
-          "children": [
-            ".link__text"
-          ]
-        },
-        {
-          "selector": ".link__text",
-          "tag": "span",
-          "styles": {},
-          "parent": ".link"
-        }
-      ]
-    },
-    "muted-maconomy-dark-sm": {
-      "_meta": {
-        "theme": "maconomy",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".link": {},
-          ".link__text": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".link",
-          "tag": "a",
-          "styles": {},
-          "children": [
-            ".link__text"
-          ]
-        },
-        {
-          "selector": ".link__text",
-          "tag": "span",
-          "styles": {},
-          "parent": ".link"
-        }
-      ]
-    },
-    "muted-maconomy-dark-md": {
-      "_meta": {
-        "theme": "maconomy",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".link": {},
-          ".link__text": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".link",
-          "tag": "a",
-          "styles": {},
-          "children": [
-            ".link__text"
-          ]
-        },
-        {
-          "selector": ".link__text",
-          "tag": "span",
-          "styles": {},
-          "parent": ".link"
-        }
-      ]
-    },
-    "muted-maconomy-dark-lg": {
-      "_meta": {
-        "theme": "maconomy",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".link": {},
-          ".link__text": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -1149,5 +357,32 @@
       "description": "Link with external icon",
       "snippet": "<Link href=\"https://...\" external>External</Link>"
     }
-  ]
+  ],
+  "specKeyOrder": [
+    "theme",
+    "mode"
+  ],
+  "dimensionDefaults": {
+    "theme": "cp",
+    "mode": "light"
+  },
+  "contentOrder": [
+    ".ml-1"
+  ],
+  "structure": {
+    "root": ".link",
+    "children": [
+      {
+        "class": ".ml-1"
+      }
+    ]
+  },
+  "fonts": {
+    "Figtree": "https://fonts.googleapis.com/css2?family=Figtree:wght@300..900&display=swap",
+    "Lexend": "https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700;800;900&display=swap",
+    "JetBrains Mono": "https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap"
+  },
+  "defaultContent": {
+    "_rule": "No default content defined; do not invent labels, icons, or copy. Use only what is in the spec or leave slots empty."
+  }
 }

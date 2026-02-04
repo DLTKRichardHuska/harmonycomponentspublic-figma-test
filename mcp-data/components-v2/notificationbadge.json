@@ -42,2454 +42,6 @@
     "size": "'md'"
   },
   "specs": {
-    "dot-cp-light-sm": {
-      "_meta": {
-        "theme": "cp",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".notification-badge": {},
-          ".notification-badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".notification-badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".notification-badge__content"
-          ]
-        },
-        {
-          "selector": ".notification-badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".notification-badge"
-        }
-      ]
-    },
-    "dot-cp-light-md": {
-      "_meta": {
-        "theme": "cp",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".notification-badge": {},
-          ".notification-badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".notification-badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".notification-badge__content"
-          ]
-        },
-        {
-          "selector": ".notification-badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".notification-badge"
-        }
-      ]
-    },
-    "dot-cp-light-lg": {
-      "_meta": {
-        "theme": "cp",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".notification-badge": {},
-          ".notification-badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".notification-badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".notification-badge__content"
-          ]
-        },
-        {
-          "selector": ".notification-badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".notification-badge"
-        }
-      ]
-    },
-    "dot-cp-dark-sm": {
-      "_meta": {
-        "theme": "cp",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".notification-badge": {},
-          ".notification-badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".notification-badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".notification-badge__content"
-          ]
-        },
-        {
-          "selector": ".notification-badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".notification-badge"
-        }
-      ]
-    },
-    "dot-cp-dark-md": {
-      "_meta": {
-        "theme": "cp",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".notification-badge": {},
-          ".notification-badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".notification-badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".notification-badge__content"
-          ]
-        },
-        {
-          "selector": ".notification-badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".notification-badge"
-        }
-      ]
-    },
-    "dot-cp-dark-lg": {
-      "_meta": {
-        "theme": "cp",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".notification-badge": {},
-          ".notification-badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".notification-badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".notification-badge__content"
-          ]
-        },
-        {
-          "selector": ".notification-badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".notification-badge"
-        }
-      ]
-    },
-    "dot-vp-light-sm": {
-      "_meta": {
-        "theme": "vp",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".notification-badge": {},
-          ".notification-badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".notification-badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".notification-badge__content"
-          ]
-        },
-        {
-          "selector": ".notification-badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".notification-badge"
-        }
-      ]
-    },
-    "dot-vp-light-md": {
-      "_meta": {
-        "theme": "vp",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".notification-badge": {},
-          ".notification-badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".notification-badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".notification-badge__content"
-          ]
-        },
-        {
-          "selector": ".notification-badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".notification-badge"
-        }
-      ]
-    },
-    "dot-vp-light-lg": {
-      "_meta": {
-        "theme": "vp",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".notification-badge": {},
-          ".notification-badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".notification-badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".notification-badge__content"
-          ]
-        },
-        {
-          "selector": ".notification-badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".notification-badge"
-        }
-      ]
-    },
-    "dot-vp-dark-sm": {
-      "_meta": {
-        "theme": "vp",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".notification-badge": {},
-          ".notification-badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".notification-badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".notification-badge__content"
-          ]
-        },
-        {
-          "selector": ".notification-badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".notification-badge"
-        }
-      ]
-    },
-    "dot-vp-dark-md": {
-      "_meta": {
-        "theme": "vp",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".notification-badge": {},
-          ".notification-badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".notification-badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".notification-badge__content"
-          ]
-        },
-        {
-          "selector": ".notification-badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".notification-badge"
-        }
-      ]
-    },
-    "dot-vp-dark-lg": {
-      "_meta": {
-        "theme": "vp",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".notification-badge": {},
-          ".notification-badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".notification-badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".notification-badge__content"
-          ]
-        },
-        {
-          "selector": ".notification-badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".notification-badge"
-        }
-      ]
-    },
-    "dot-ppm-light-sm": {
-      "_meta": {
-        "theme": "ppm",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".notification-badge": {},
-          ".notification-badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".notification-badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".notification-badge__content"
-          ]
-        },
-        {
-          "selector": ".notification-badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".notification-badge"
-        }
-      ]
-    },
-    "dot-ppm-light-md": {
-      "_meta": {
-        "theme": "ppm",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".notification-badge": {},
-          ".notification-badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".notification-badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".notification-badge__content"
-          ]
-        },
-        {
-          "selector": ".notification-badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".notification-badge"
-        }
-      ]
-    },
-    "dot-ppm-light-lg": {
-      "_meta": {
-        "theme": "ppm",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".notification-badge": {},
-          ".notification-badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".notification-badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".notification-badge__content"
-          ]
-        },
-        {
-          "selector": ".notification-badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".notification-badge"
-        }
-      ]
-    },
-    "dot-ppm-dark-sm": {
-      "_meta": {
-        "theme": "ppm",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".notification-badge": {},
-          ".notification-badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".notification-badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".notification-badge__content"
-          ]
-        },
-        {
-          "selector": ".notification-badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".notification-badge"
-        }
-      ]
-    },
-    "dot-ppm-dark-md": {
-      "_meta": {
-        "theme": "ppm",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".notification-badge": {},
-          ".notification-badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".notification-badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".notification-badge__content"
-          ]
-        },
-        {
-          "selector": ".notification-badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".notification-badge"
-        }
-      ]
-    },
-    "dot-ppm-dark-lg": {
-      "_meta": {
-        "theme": "ppm",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".notification-badge": {},
-          ".notification-badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".notification-badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".notification-badge__content"
-          ]
-        },
-        {
-          "selector": ".notification-badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".notification-badge"
-        }
-      ]
-    },
-    "dot-maconomy-light-sm": {
-      "_meta": {
-        "theme": "maconomy",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".notification-badge": {},
-          ".notification-badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".notification-badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".notification-badge__content"
-          ]
-        },
-        {
-          "selector": ".notification-badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".notification-badge"
-        }
-      ]
-    },
-    "dot-maconomy-light-md": {
-      "_meta": {
-        "theme": "maconomy",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".notification-badge": {},
-          ".notification-badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".notification-badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".notification-badge__content"
-          ]
-        },
-        {
-          "selector": ".notification-badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".notification-badge"
-        }
-      ]
-    },
-    "dot-maconomy-light-lg": {
-      "_meta": {
-        "theme": "maconomy",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".notification-badge": {},
-          ".notification-badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".notification-badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".notification-badge__content"
-          ]
-        },
-        {
-          "selector": ".notification-badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".notification-badge"
-        }
-      ]
-    },
-    "dot-maconomy-dark-sm": {
-      "_meta": {
-        "theme": "maconomy",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".notification-badge": {},
-          ".notification-badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".notification-badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".notification-badge__content"
-          ]
-        },
-        {
-          "selector": ".notification-badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".notification-badge"
-        }
-      ]
-    },
-    "dot-maconomy-dark-md": {
-      "_meta": {
-        "theme": "maconomy",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".notification-badge": {},
-          ".notification-badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".notification-badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".notification-badge__content"
-          ]
-        },
-        {
-          "selector": ".notification-badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".notification-badge"
-        }
-      ]
-    },
-    "dot-maconomy-dark-lg": {
-      "_meta": {
-        "theme": "maconomy",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".notification-badge": {},
-          ".notification-badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".notification-badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".notification-badge__content"
-          ]
-        },
-        {
-          "selector": ".notification-badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".notification-badge"
-        }
-      ]
-    },
-    "number-cp-light-sm": {
-      "_meta": {
-        "theme": "cp",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".notification-badge": {},
-          ".notification-badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".notification-badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".notification-badge__content"
-          ]
-        },
-        {
-          "selector": ".notification-badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".notification-badge"
-        }
-      ]
-    },
-    "number-cp-light-md": {
-      "_meta": {
-        "theme": "cp",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".notification-badge": {},
-          ".notification-badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".notification-badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".notification-badge__content"
-          ]
-        },
-        {
-          "selector": ".notification-badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".notification-badge"
-        }
-      ]
-    },
-    "number-cp-light-lg": {
-      "_meta": {
-        "theme": "cp",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".notification-badge": {},
-          ".notification-badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".notification-badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".notification-badge__content"
-          ]
-        },
-        {
-          "selector": ".notification-badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".notification-badge"
-        }
-      ]
-    },
-    "number-cp-dark-sm": {
-      "_meta": {
-        "theme": "cp",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".notification-badge": {},
-          ".notification-badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".notification-badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".notification-badge__content"
-          ]
-        },
-        {
-          "selector": ".notification-badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".notification-badge"
-        }
-      ]
-    },
-    "number-cp-dark-md": {
-      "_meta": {
-        "theme": "cp",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".notification-badge": {},
-          ".notification-badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".notification-badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".notification-badge__content"
-          ]
-        },
-        {
-          "selector": ".notification-badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".notification-badge"
-        }
-      ]
-    },
-    "number-cp-dark-lg": {
-      "_meta": {
-        "theme": "cp",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".notification-badge": {},
-          ".notification-badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".notification-badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".notification-badge__content"
-          ]
-        },
-        {
-          "selector": ".notification-badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".notification-badge"
-        }
-      ]
-    },
-    "number-vp-light-sm": {
-      "_meta": {
-        "theme": "vp",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".notification-badge": {},
-          ".notification-badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".notification-badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".notification-badge__content"
-          ]
-        },
-        {
-          "selector": ".notification-badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".notification-badge"
-        }
-      ]
-    },
-    "number-vp-light-md": {
-      "_meta": {
-        "theme": "vp",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".notification-badge": {},
-          ".notification-badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".notification-badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".notification-badge__content"
-          ]
-        },
-        {
-          "selector": ".notification-badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".notification-badge"
-        }
-      ]
-    },
-    "number-vp-light-lg": {
-      "_meta": {
-        "theme": "vp",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".notification-badge": {},
-          ".notification-badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".notification-badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".notification-badge__content"
-          ]
-        },
-        {
-          "selector": ".notification-badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".notification-badge"
-        }
-      ]
-    },
-    "number-vp-dark-sm": {
-      "_meta": {
-        "theme": "vp",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".notification-badge": {},
-          ".notification-badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".notification-badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".notification-badge__content"
-          ]
-        },
-        {
-          "selector": ".notification-badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".notification-badge"
-        }
-      ]
-    },
-    "number-vp-dark-md": {
-      "_meta": {
-        "theme": "vp",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".notification-badge": {},
-          ".notification-badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".notification-badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".notification-badge__content"
-          ]
-        },
-        {
-          "selector": ".notification-badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".notification-badge"
-        }
-      ]
-    },
-    "number-vp-dark-lg": {
-      "_meta": {
-        "theme": "vp",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".notification-badge": {},
-          ".notification-badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".notification-badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".notification-badge__content"
-          ]
-        },
-        {
-          "selector": ".notification-badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".notification-badge"
-        }
-      ]
-    },
-    "number-ppm-light-sm": {
-      "_meta": {
-        "theme": "ppm",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".notification-badge": {},
-          ".notification-badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".notification-badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".notification-badge__content"
-          ]
-        },
-        {
-          "selector": ".notification-badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".notification-badge"
-        }
-      ]
-    },
-    "number-ppm-light-md": {
-      "_meta": {
-        "theme": "ppm",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".notification-badge": {},
-          ".notification-badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".notification-badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".notification-badge__content"
-          ]
-        },
-        {
-          "selector": ".notification-badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".notification-badge"
-        }
-      ]
-    },
-    "number-ppm-light-lg": {
-      "_meta": {
-        "theme": "ppm",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".notification-badge": {},
-          ".notification-badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".notification-badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".notification-badge__content"
-          ]
-        },
-        {
-          "selector": ".notification-badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".notification-badge"
-        }
-      ]
-    },
-    "number-ppm-dark-sm": {
-      "_meta": {
-        "theme": "ppm",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".notification-badge": {},
-          ".notification-badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".notification-badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".notification-badge__content"
-          ]
-        },
-        {
-          "selector": ".notification-badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".notification-badge"
-        }
-      ]
-    },
-    "number-ppm-dark-md": {
-      "_meta": {
-        "theme": "ppm",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".notification-badge": {},
-          ".notification-badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".notification-badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".notification-badge__content"
-          ]
-        },
-        {
-          "selector": ".notification-badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".notification-badge"
-        }
-      ]
-    },
-    "number-ppm-dark-lg": {
-      "_meta": {
-        "theme": "ppm",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".notification-badge": {},
-          ".notification-badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".notification-badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".notification-badge__content"
-          ]
-        },
-        {
-          "selector": ".notification-badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".notification-badge"
-        }
-      ]
-    },
-    "number-maconomy-light-sm": {
-      "_meta": {
-        "theme": "maconomy",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".notification-badge": {},
-          ".notification-badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".notification-badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".notification-badge__content"
-          ]
-        },
-        {
-          "selector": ".notification-badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".notification-badge"
-        }
-      ]
-    },
-    "number-maconomy-light-md": {
-      "_meta": {
-        "theme": "maconomy",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".notification-badge": {},
-          ".notification-badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".notification-badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".notification-badge__content"
-          ]
-        },
-        {
-          "selector": ".notification-badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".notification-badge"
-        }
-      ]
-    },
-    "number-maconomy-light-lg": {
-      "_meta": {
-        "theme": "maconomy",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".notification-badge": {},
-          ".notification-badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".notification-badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".notification-badge__content"
-          ]
-        },
-        {
-          "selector": ".notification-badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".notification-badge"
-        }
-      ]
-    },
-    "number-maconomy-dark-sm": {
-      "_meta": {
-        "theme": "maconomy",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".notification-badge": {},
-          ".notification-badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".notification-badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".notification-badge__content"
-          ]
-        },
-        {
-          "selector": ".notification-badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".notification-badge"
-        }
-      ]
-    },
-    "number-maconomy-dark-md": {
-      "_meta": {
-        "theme": "maconomy",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".notification-badge": {},
-          ".notification-badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".notification-badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".notification-badge__content"
-          ]
-        },
-        {
-          "selector": ".notification-badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".notification-badge"
-        }
-      ]
-    },
-    "number-maconomy-dark-lg": {
-      "_meta": {
-        "theme": "maconomy",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".notification-badge": {},
-          ".notification-badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".notification-badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".notification-badge__content"
-          ]
-        },
-        {
-          "selector": ".notification-badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".notification-badge"
-        }
-      ]
-    },
-    "overflow-cp-light-sm": {
-      "_meta": {
-        "theme": "cp",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".notification-badge": {},
-          ".notification-badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".notification-badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".notification-badge__content"
-          ]
-        },
-        {
-          "selector": ".notification-badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".notification-badge"
-        }
-      ]
-    },
-    "overflow-cp-light-md": {
-      "_meta": {
-        "theme": "cp",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".notification-badge": {},
-          ".notification-badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".notification-badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".notification-badge__content"
-          ]
-        },
-        {
-          "selector": ".notification-badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".notification-badge"
-        }
-      ]
-    },
-    "overflow-cp-light-lg": {
-      "_meta": {
-        "theme": "cp",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".notification-badge": {},
-          ".notification-badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".notification-badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".notification-badge__content"
-          ]
-        },
-        {
-          "selector": ".notification-badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".notification-badge"
-        }
-      ]
-    },
-    "overflow-cp-dark-sm": {
-      "_meta": {
-        "theme": "cp",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".notification-badge": {},
-          ".notification-badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".notification-badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".notification-badge__content"
-          ]
-        },
-        {
-          "selector": ".notification-badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".notification-badge"
-        }
-      ]
-    },
-    "overflow-cp-dark-md": {
-      "_meta": {
-        "theme": "cp",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".notification-badge": {},
-          ".notification-badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".notification-badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".notification-badge__content"
-          ]
-        },
-        {
-          "selector": ".notification-badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".notification-badge"
-        }
-      ]
-    },
-    "overflow-cp-dark-lg": {
-      "_meta": {
-        "theme": "cp",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".notification-badge": {},
-          ".notification-badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".notification-badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".notification-badge__content"
-          ]
-        },
-        {
-          "selector": ".notification-badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".notification-badge"
-        }
-      ]
-    },
-    "overflow-vp-light-sm": {
-      "_meta": {
-        "theme": "vp",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".notification-badge": {},
-          ".notification-badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".notification-badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".notification-badge__content"
-          ]
-        },
-        {
-          "selector": ".notification-badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".notification-badge"
-        }
-      ]
-    },
-    "overflow-vp-light-md": {
-      "_meta": {
-        "theme": "vp",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".notification-badge": {},
-          ".notification-badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".notification-badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".notification-badge__content"
-          ]
-        },
-        {
-          "selector": ".notification-badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".notification-badge"
-        }
-      ]
-    },
-    "overflow-vp-light-lg": {
-      "_meta": {
-        "theme": "vp",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".notification-badge": {},
-          ".notification-badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".notification-badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".notification-badge__content"
-          ]
-        },
-        {
-          "selector": ".notification-badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".notification-badge"
-        }
-      ]
-    },
-    "overflow-vp-dark-sm": {
-      "_meta": {
-        "theme": "vp",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".notification-badge": {},
-          ".notification-badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".notification-badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".notification-badge__content"
-          ]
-        },
-        {
-          "selector": ".notification-badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".notification-badge"
-        }
-      ]
-    },
-    "overflow-vp-dark-md": {
-      "_meta": {
-        "theme": "vp",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".notification-badge": {},
-          ".notification-badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".notification-badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".notification-badge__content"
-          ]
-        },
-        {
-          "selector": ".notification-badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".notification-badge"
-        }
-      ]
-    },
-    "overflow-vp-dark-lg": {
-      "_meta": {
-        "theme": "vp",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".notification-badge": {},
-          ".notification-badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".notification-badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".notification-badge__content"
-          ]
-        },
-        {
-          "selector": ".notification-badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".notification-badge"
-        }
-      ]
-    },
-    "overflow-ppm-light-sm": {
-      "_meta": {
-        "theme": "ppm",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".notification-badge": {},
-          ".notification-badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".notification-badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".notification-badge__content"
-          ]
-        },
-        {
-          "selector": ".notification-badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".notification-badge"
-        }
-      ]
-    },
-    "overflow-ppm-light-md": {
-      "_meta": {
-        "theme": "ppm",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".notification-badge": {},
-          ".notification-badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".notification-badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".notification-badge__content"
-          ]
-        },
-        {
-          "selector": ".notification-badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".notification-badge"
-        }
-      ]
-    },
-    "overflow-ppm-light-lg": {
-      "_meta": {
-        "theme": "ppm",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".notification-badge": {},
-          ".notification-badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".notification-badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".notification-badge__content"
-          ]
-        },
-        {
-          "selector": ".notification-badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".notification-badge"
-        }
-      ]
-    },
-    "overflow-ppm-dark-sm": {
-      "_meta": {
-        "theme": "ppm",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".notification-badge": {},
-          ".notification-badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".notification-badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".notification-badge__content"
-          ]
-        },
-        {
-          "selector": ".notification-badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".notification-badge"
-        }
-      ]
-    },
-    "overflow-ppm-dark-md": {
-      "_meta": {
-        "theme": "ppm",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".notification-badge": {},
-          ".notification-badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".notification-badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".notification-badge__content"
-          ]
-        },
-        {
-          "selector": ".notification-badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".notification-badge"
-        }
-      ]
-    },
-    "overflow-ppm-dark-lg": {
-      "_meta": {
-        "theme": "ppm",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".notification-badge": {},
-          ".notification-badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".notification-badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".notification-badge__content"
-          ]
-        },
-        {
-          "selector": ".notification-badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".notification-badge"
-        }
-      ]
-    },
-    "overflow-maconomy-light-sm": {
-      "_meta": {
-        "theme": "maconomy",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".notification-badge": {},
-          ".notification-badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".notification-badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".notification-badge__content"
-          ]
-        },
-        {
-          "selector": ".notification-badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".notification-badge"
-        }
-      ]
-    },
-    "overflow-maconomy-light-md": {
-      "_meta": {
-        "theme": "maconomy",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".notification-badge": {},
-          ".notification-badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".notification-badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".notification-badge__content"
-          ]
-        },
-        {
-          "selector": ".notification-badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".notification-badge"
-        }
-      ]
-    },
-    "overflow-maconomy-light-lg": {
-      "_meta": {
-        "theme": "maconomy",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".notification-badge": {},
-          ".notification-badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".notification-badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".notification-badge__content"
-          ]
-        },
-        {
-          "selector": ".notification-badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".notification-badge"
-        }
-      ]
-    },
-    "overflow-maconomy-dark-sm": {
-      "_meta": {
-        "theme": "maconomy",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".notification-badge": {},
-          ".notification-badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".notification-badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".notification-badge__content"
-          ]
-        },
-        {
-          "selector": ".notification-badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".notification-badge"
-        }
-      ]
-    },
-    "overflow-maconomy-dark-md": {
-      "_meta": {
-        "theme": "maconomy",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".notification-badge": {},
-          ".notification-badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".notification-badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".notification-badge__content"
-          ]
-        },
-        {
-          "selector": ".notification-badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".notification-badge"
-        }
-      ]
-    },
-    "overflow-maconomy-dark-lg": {
-      "_meta": {
-        "theme": "maconomy",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".notification-badge": {},
-          ".notification-badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".notification-badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".notification-badge__content"
-          ]
-        },
-        {
-          "selector": ".notification-badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".notification-badge"
-        }
-      ]
-    },
     "error-cp-light-sm": {
       "_meta": {
         "theme": "cp",
@@ -2504,7 +56,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -2538,7 +93,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -2572,7 +130,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -2606,7 +167,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -2640,7 +204,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -2674,7 +241,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -2708,7 +278,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -2742,7 +315,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -2776,7 +352,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -2810,7 +389,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -2844,7 +426,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -2878,7 +463,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -2912,7 +500,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -2946,7 +537,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -2980,7 +574,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -3014,7 +611,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -3048,7 +648,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -3082,7 +685,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -3116,7 +722,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -3150,7 +759,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -3184,7 +796,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -3218,7 +833,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -3252,7 +870,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -3286,7 +907,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -3320,7 +944,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -3354,7 +981,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -3388,7 +1018,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -3422,7 +1055,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -3456,7 +1092,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -3490,7 +1129,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -3524,7 +1166,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -3558,7 +1203,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -3592,7 +1240,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -3626,7 +1277,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -3660,7 +1314,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -3694,7 +1351,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -3728,7 +1388,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -3762,7 +1425,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -3796,7 +1462,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -3830,7 +1499,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -3864,7 +1536,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -3898,7 +1573,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -3932,7 +1610,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -3966,7 +1647,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -4000,7 +1684,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -4034,7 +1721,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -4068,7 +1758,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -4102,7 +1795,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -4143,5 +1839,25 @@
       "description": "Badge with count",
       "snippet": "<NotificationBadge count={3} />"
     }
-  ]
+  ],
+  "specKeyOrder": [
+    "theme",
+    "mode"
+  ],
+  "dimensionDefaults": {
+    "theme": "cp",
+    "mode": "light"
+  },
+  "structure": {
+    "root": ".notification-badge",
+    "children": []
+  },
+  "fonts": {
+    "Figtree": "https://fonts.googleapis.com/css2?family=Figtree:wght@300..900&display=swap",
+    "Lexend": "https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700;800;900&display=swap",
+    "JetBrains Mono": "https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap"
+  },
+  "defaultContent": {
+    "_rule": "No default content defined; do not invent labels, icons, or copy. Use only what is in the spec or leave slots empty."
+  }
 }

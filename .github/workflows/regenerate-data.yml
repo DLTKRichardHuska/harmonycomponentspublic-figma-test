@@ -8,12 +8,9 @@ on:
       - 'src/styles/**'
       - 'src/tokens/**'
       - 'src/layouts/**'
-      - 'scripts/generate-mcp-data.js'
-      - 'scripts/extract-design-tokens.js'
+      - 'scripts/generate-specs.js'
       - 'scripts/generate-layout-data.js'
-      - 'scripts/generate-manifest.js'
-      - 'scripts/css-parser.js'
-      - 'scripts/visual-spec-extractor.js'
+      - 'scripts/lib/**'
 
 jobs:
   regenerate-data:
@@ -37,14 +34,14 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Clear MCP data cache
-        run: rm -rf .cache/components-regeneration-cache.json
+      - name: Generate components-v2 specs
+        run: npm run generate:specs
 
-      - name: Generate MCP data with visual specifications
-        run: npm run generate:mcp-data
+      - name: Generate layout data
+        run: npm run generate:layouts
 
-      - name: Verify generation produced valid output
-        run: node scripts/verify-mcp-generation.cjs
+      - name: Validate component specs
+        run: node scripts/validate-all-specs.js
 
       - name: Run changelog automation
         run: npm run changelog

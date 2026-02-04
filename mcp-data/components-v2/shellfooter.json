@@ -46,7 +46,7 @@
     "variant": "'default'"
   },
   "specs": {
-    "default-cp-light-xs": {
+    "default-cp-light": {
       "_meta": {
         "theme": "cp",
         "mode": "light",
@@ -60,7 +60,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -80,109 +83,7 @@
         }
       ]
     },
-    "default-cp-light-sm": {
-      "_meta": {
-        "theme": "cp",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".shell-footer": {},
-          ".shell-footer__tabstrip": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".shell-footer",
-          "tag": "div",
-          "styles": {},
-          "children": [
-            ".shell-footer__tabstrip"
-          ]
-        },
-        {
-          "selector": ".shell-footer__tabstrip",
-          "tag": "div",
-          "styles": {},
-          "parent": ".shell-footer"
-        }
-      ]
-    },
-    "default-cp-light-md": {
-      "_meta": {
-        "theme": "cp",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".shell-footer": {},
-          ".shell-footer__tabstrip": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".shell-footer",
-          "tag": "div",
-          "styles": {},
-          "children": [
-            ".shell-footer__tabstrip"
-          ]
-        },
-        {
-          "selector": ".shell-footer__tabstrip",
-          "tag": "div",
-          "styles": {},
-          "parent": ".shell-footer"
-        }
-      ]
-    },
-    "default-cp-light-lg": {
-      "_meta": {
-        "theme": "cp",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".shell-footer": {},
-          ".shell-footer__tabstrip": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".shell-footer",
-          "tag": "div",
-          "styles": {},
-          "children": [
-            ".shell-footer__tabstrip"
-          ]
-        },
-        {
-          "selector": ".shell-footer__tabstrip",
-          "tag": "div",
-          "styles": {},
-          "parent": ".shell-footer"
-        }
-      ]
-    },
-    "default-cp-dark-xs": {
+    "default-cp-dark": {
       "_meta": {
         "theme": "cp",
         "mode": "dark",
@@ -196,7 +97,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -216,109 +120,7 @@
         }
       ]
     },
-    "default-cp-dark-sm": {
-      "_meta": {
-        "theme": "cp",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".shell-footer": {},
-          ".shell-footer__tabstrip": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".shell-footer",
-          "tag": "div",
-          "styles": {},
-          "children": [
-            ".shell-footer__tabstrip"
-          ]
-        },
-        {
-          "selector": ".shell-footer__tabstrip",
-          "tag": "div",
-          "styles": {},
-          "parent": ".shell-footer"
-        }
-      ]
-    },
-    "default-cp-dark-md": {
-      "_meta": {
-        "theme": "cp",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".shell-footer": {},
-          ".shell-footer__tabstrip": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".shell-footer",
-          "tag": "div",
-          "styles": {},
-          "children": [
-            ".shell-footer__tabstrip"
-          ]
-        },
-        {
-          "selector": ".shell-footer__tabstrip",
-          "tag": "div",
-          "styles": {},
-          "parent": ".shell-footer"
-        }
-      ]
-    },
-    "default-cp-dark-lg": {
-      "_meta": {
-        "theme": "cp",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".shell-footer": {},
-          ".shell-footer__tabstrip": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".shell-footer",
-          "tag": "div",
-          "styles": {},
-          "children": [
-            ".shell-footer__tabstrip"
-          ]
-        },
-        {
-          "selector": ".shell-footer__tabstrip",
-          "tag": "div",
-          "styles": {},
-          "parent": ".shell-footer"
-        }
-      ]
-    },
-    "default-vp-light-xs": {
+    "default-vp-light": {
       "_meta": {
         "theme": "vp",
         "mode": "light",
@@ -332,7 +134,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -352,109 +157,7 @@
         }
       ]
     },
-    "default-vp-light-sm": {
-      "_meta": {
-        "theme": "vp",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".shell-footer": {},
-          ".shell-footer__tabstrip": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".shell-footer",
-          "tag": "div",
-          "styles": {},
-          "children": [
-            ".shell-footer__tabstrip"
-          ]
-        },
-        {
-          "selector": ".shell-footer__tabstrip",
-          "tag": "div",
-          "styles": {},
-          "parent": ".shell-footer"
-        }
-      ]
-    },
-    "default-vp-light-md": {
-      "_meta": {
-        "theme": "vp",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".shell-footer": {},
-          ".shell-footer__tabstrip": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".shell-footer",
-          "tag": "div",
-          "styles": {},
-          "children": [
-            ".shell-footer__tabstrip"
-          ]
-        },
-        {
-          "selector": ".shell-footer__tabstrip",
-          "tag": "div",
-          "styles": {},
-          "parent": ".shell-footer"
-        }
-      ]
-    },
-    "default-vp-light-lg": {
-      "_meta": {
-        "theme": "vp",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".shell-footer": {},
-          ".shell-footer__tabstrip": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".shell-footer",
-          "tag": "div",
-          "styles": {},
-          "children": [
-            ".shell-footer__tabstrip"
-          ]
-        },
-        {
-          "selector": ".shell-footer__tabstrip",
-          "tag": "div",
-          "styles": {},
-          "parent": ".shell-footer"
-        }
-      ]
-    },
-    "default-vp-dark-xs": {
+    "default-vp-dark": {
       "_meta": {
         "theme": "vp",
         "mode": "dark",
@@ -468,7 +171,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -488,109 +194,7 @@
         }
       ]
     },
-    "default-vp-dark-sm": {
-      "_meta": {
-        "theme": "vp",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".shell-footer": {},
-          ".shell-footer__tabstrip": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".shell-footer",
-          "tag": "div",
-          "styles": {},
-          "children": [
-            ".shell-footer__tabstrip"
-          ]
-        },
-        {
-          "selector": ".shell-footer__tabstrip",
-          "tag": "div",
-          "styles": {},
-          "parent": ".shell-footer"
-        }
-      ]
-    },
-    "default-vp-dark-md": {
-      "_meta": {
-        "theme": "vp",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".shell-footer": {},
-          ".shell-footer__tabstrip": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".shell-footer",
-          "tag": "div",
-          "styles": {},
-          "children": [
-            ".shell-footer__tabstrip"
-          ]
-        },
-        {
-          "selector": ".shell-footer__tabstrip",
-          "tag": "div",
-          "styles": {},
-          "parent": ".shell-footer"
-        }
-      ]
-    },
-    "default-vp-dark-lg": {
-      "_meta": {
-        "theme": "vp",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".shell-footer": {},
-          ".shell-footer__tabstrip": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".shell-footer",
-          "tag": "div",
-          "styles": {},
-          "children": [
-            ".shell-footer__tabstrip"
-          ]
-        },
-        {
-          "selector": ".shell-footer__tabstrip",
-          "tag": "div",
-          "styles": {},
-          "parent": ".shell-footer"
-        }
-      ]
-    },
-    "default-ppm-light-xs": {
+    "default-ppm-light": {
       "_meta": {
         "theme": "ppm",
         "mode": "light",
@@ -604,7 +208,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -624,109 +231,7 @@
         }
       ]
     },
-    "default-ppm-light-sm": {
-      "_meta": {
-        "theme": "ppm",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".shell-footer": {},
-          ".shell-footer__tabstrip": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".shell-footer",
-          "tag": "div",
-          "styles": {},
-          "children": [
-            ".shell-footer__tabstrip"
-          ]
-        },
-        {
-          "selector": ".shell-footer__tabstrip",
-          "tag": "div",
-          "styles": {},
-          "parent": ".shell-footer"
-        }
-      ]
-    },
-    "default-ppm-light-md": {
-      "_meta": {
-        "theme": "ppm",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".shell-footer": {},
-          ".shell-footer__tabstrip": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".shell-footer",
-          "tag": "div",
-          "styles": {},
-          "children": [
-            ".shell-footer__tabstrip"
-          ]
-        },
-        {
-          "selector": ".shell-footer__tabstrip",
-          "tag": "div",
-          "styles": {},
-          "parent": ".shell-footer"
-        }
-      ]
-    },
-    "default-ppm-light-lg": {
-      "_meta": {
-        "theme": "ppm",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".shell-footer": {},
-          ".shell-footer__tabstrip": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".shell-footer",
-          "tag": "div",
-          "styles": {},
-          "children": [
-            ".shell-footer__tabstrip"
-          ]
-        },
-        {
-          "selector": ".shell-footer__tabstrip",
-          "tag": "div",
-          "styles": {},
-          "parent": ".shell-footer"
-        }
-      ]
-    },
-    "default-ppm-dark-xs": {
+    "default-ppm-dark": {
       "_meta": {
         "theme": "ppm",
         "mode": "dark",
@@ -740,7 +245,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -760,109 +268,7 @@
         }
       ]
     },
-    "default-ppm-dark-sm": {
-      "_meta": {
-        "theme": "ppm",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".shell-footer": {},
-          ".shell-footer__tabstrip": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".shell-footer",
-          "tag": "div",
-          "styles": {},
-          "children": [
-            ".shell-footer__tabstrip"
-          ]
-        },
-        {
-          "selector": ".shell-footer__tabstrip",
-          "tag": "div",
-          "styles": {},
-          "parent": ".shell-footer"
-        }
-      ]
-    },
-    "default-ppm-dark-md": {
-      "_meta": {
-        "theme": "ppm",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".shell-footer": {},
-          ".shell-footer__tabstrip": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".shell-footer",
-          "tag": "div",
-          "styles": {},
-          "children": [
-            ".shell-footer__tabstrip"
-          ]
-        },
-        {
-          "selector": ".shell-footer__tabstrip",
-          "tag": "div",
-          "styles": {},
-          "parent": ".shell-footer"
-        }
-      ]
-    },
-    "default-ppm-dark-lg": {
-      "_meta": {
-        "theme": "ppm",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".shell-footer": {},
-          ".shell-footer__tabstrip": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".shell-footer",
-          "tag": "div",
-          "styles": {},
-          "children": [
-            ".shell-footer__tabstrip"
-          ]
-        },
-        {
-          "selector": ".shell-footer__tabstrip",
-          "tag": "div",
-          "styles": {},
-          "parent": ".shell-footer"
-        }
-      ]
-    },
-    "default-maconomy-light-xs": {
+    "default-maconomy-light": {
       "_meta": {
         "theme": "maconomy",
         "mode": "light",
@@ -876,7 +282,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -896,109 +305,7 @@
         }
       ]
     },
-    "default-maconomy-light-sm": {
-      "_meta": {
-        "theme": "maconomy",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".shell-footer": {},
-          ".shell-footer__tabstrip": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".shell-footer",
-          "tag": "div",
-          "styles": {},
-          "children": [
-            ".shell-footer__tabstrip"
-          ]
-        },
-        {
-          "selector": ".shell-footer__tabstrip",
-          "tag": "div",
-          "styles": {},
-          "parent": ".shell-footer"
-        }
-      ]
-    },
-    "default-maconomy-light-md": {
-      "_meta": {
-        "theme": "maconomy",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".shell-footer": {},
-          ".shell-footer__tabstrip": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".shell-footer",
-          "tag": "div",
-          "styles": {},
-          "children": [
-            ".shell-footer__tabstrip"
-          ]
-        },
-        {
-          "selector": ".shell-footer__tabstrip",
-          "tag": "div",
-          "styles": {},
-          "parent": ".shell-footer"
-        }
-      ]
-    },
-    "default-maconomy-light-lg": {
-      "_meta": {
-        "theme": "maconomy",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".shell-footer": {},
-          ".shell-footer__tabstrip": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".shell-footer",
-          "tag": "div",
-          "styles": {},
-          "children": [
-            ".shell-footer__tabstrip"
-          ]
-        },
-        {
-          "selector": ".shell-footer__tabstrip",
-          "tag": "div",
-          "styles": {},
-          "parent": ".shell-footer"
-        }
-      ]
-    },
-    "default-maconomy-dark-xs": {
+    "default-maconomy-dark": {
       "_meta": {
         "theme": "maconomy",
         "mode": "dark",
@@ -1012,7 +319,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -1032,109 +342,7 @@
         }
       ]
     },
-    "default-maconomy-dark-sm": {
-      "_meta": {
-        "theme": "maconomy",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".shell-footer": {},
-          ".shell-footer__tabstrip": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".shell-footer",
-          "tag": "div",
-          "styles": {},
-          "children": [
-            ".shell-footer__tabstrip"
-          ]
-        },
-        {
-          "selector": ".shell-footer__tabstrip",
-          "tag": "div",
-          "styles": {},
-          "parent": ".shell-footer"
-        }
-      ]
-    },
-    "default-maconomy-dark-md": {
-      "_meta": {
-        "theme": "maconomy",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".shell-footer": {},
-          ".shell-footer__tabstrip": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".shell-footer",
-          "tag": "div",
-          "styles": {},
-          "children": [
-            ".shell-footer__tabstrip"
-          ]
-        },
-        {
-          "selector": ".shell-footer__tabstrip",
-          "tag": "div",
-          "styles": {},
-          "parent": ".shell-footer"
-        }
-      ]
-    },
-    "default-maconomy-dark-lg": {
-      "_meta": {
-        "theme": "maconomy",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".shell-footer": {},
-          ".shell-footer__tabstrip": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".shell-footer",
-          "tag": "div",
-          "styles": {},
-          "children": [
-            ".shell-footer__tabstrip"
-          ]
-        },
-        {
-          "selector": ".shell-footer__tabstrip",
-          "tag": "div",
-          "styles": {},
-          "parent": ".shell-footer"
-        }
-      ]
-    },
-    "compact-cp-light-xs": {
+    "compact-cp-light": {
       "_meta": {
         "theme": "cp",
         "mode": "light",
@@ -1148,7 +356,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -1168,109 +379,7 @@
         }
       ]
     },
-    "compact-cp-light-sm": {
-      "_meta": {
-        "theme": "cp",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".shell-footer": {},
-          ".shell-footer__tabstrip": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".shell-footer",
-          "tag": "div",
-          "styles": {},
-          "children": [
-            ".shell-footer__tabstrip"
-          ]
-        },
-        {
-          "selector": ".shell-footer__tabstrip",
-          "tag": "div",
-          "styles": {},
-          "parent": ".shell-footer"
-        }
-      ]
-    },
-    "compact-cp-light-md": {
-      "_meta": {
-        "theme": "cp",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".shell-footer": {},
-          ".shell-footer__tabstrip": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".shell-footer",
-          "tag": "div",
-          "styles": {},
-          "children": [
-            ".shell-footer__tabstrip"
-          ]
-        },
-        {
-          "selector": ".shell-footer__tabstrip",
-          "tag": "div",
-          "styles": {},
-          "parent": ".shell-footer"
-        }
-      ]
-    },
-    "compact-cp-light-lg": {
-      "_meta": {
-        "theme": "cp",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".shell-footer": {},
-          ".shell-footer__tabstrip": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".shell-footer",
-          "tag": "div",
-          "styles": {},
-          "children": [
-            ".shell-footer__tabstrip"
-          ]
-        },
-        {
-          "selector": ".shell-footer__tabstrip",
-          "tag": "div",
-          "styles": {},
-          "parent": ".shell-footer"
-        }
-      ]
-    },
-    "compact-cp-dark-xs": {
+    "compact-cp-dark": {
       "_meta": {
         "theme": "cp",
         "mode": "dark",
@@ -1284,7 +393,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -1304,109 +416,7 @@
         }
       ]
     },
-    "compact-cp-dark-sm": {
-      "_meta": {
-        "theme": "cp",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".shell-footer": {},
-          ".shell-footer__tabstrip": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".shell-footer",
-          "tag": "div",
-          "styles": {},
-          "children": [
-            ".shell-footer__tabstrip"
-          ]
-        },
-        {
-          "selector": ".shell-footer__tabstrip",
-          "tag": "div",
-          "styles": {},
-          "parent": ".shell-footer"
-        }
-      ]
-    },
-    "compact-cp-dark-md": {
-      "_meta": {
-        "theme": "cp",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".shell-footer": {},
-          ".shell-footer__tabstrip": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".shell-footer",
-          "tag": "div",
-          "styles": {},
-          "children": [
-            ".shell-footer__tabstrip"
-          ]
-        },
-        {
-          "selector": ".shell-footer__tabstrip",
-          "tag": "div",
-          "styles": {},
-          "parent": ".shell-footer"
-        }
-      ]
-    },
-    "compact-cp-dark-lg": {
-      "_meta": {
-        "theme": "cp",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".shell-footer": {},
-          ".shell-footer__tabstrip": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".shell-footer",
-          "tag": "div",
-          "styles": {},
-          "children": [
-            ".shell-footer__tabstrip"
-          ]
-        },
-        {
-          "selector": ".shell-footer__tabstrip",
-          "tag": "div",
-          "styles": {},
-          "parent": ".shell-footer"
-        }
-      ]
-    },
-    "compact-vp-light-xs": {
+    "compact-vp-light": {
       "_meta": {
         "theme": "vp",
         "mode": "light",
@@ -1420,7 +430,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -1440,109 +453,7 @@
         }
       ]
     },
-    "compact-vp-light-sm": {
-      "_meta": {
-        "theme": "vp",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".shell-footer": {},
-          ".shell-footer__tabstrip": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".shell-footer",
-          "tag": "div",
-          "styles": {},
-          "children": [
-            ".shell-footer__tabstrip"
-          ]
-        },
-        {
-          "selector": ".shell-footer__tabstrip",
-          "tag": "div",
-          "styles": {},
-          "parent": ".shell-footer"
-        }
-      ]
-    },
-    "compact-vp-light-md": {
-      "_meta": {
-        "theme": "vp",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".shell-footer": {},
-          ".shell-footer__tabstrip": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".shell-footer",
-          "tag": "div",
-          "styles": {},
-          "children": [
-            ".shell-footer__tabstrip"
-          ]
-        },
-        {
-          "selector": ".shell-footer__tabstrip",
-          "tag": "div",
-          "styles": {},
-          "parent": ".shell-footer"
-        }
-      ]
-    },
-    "compact-vp-light-lg": {
-      "_meta": {
-        "theme": "vp",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".shell-footer": {},
-          ".shell-footer__tabstrip": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".shell-footer",
-          "tag": "div",
-          "styles": {},
-          "children": [
-            ".shell-footer__tabstrip"
-          ]
-        },
-        {
-          "selector": ".shell-footer__tabstrip",
-          "tag": "div",
-          "styles": {},
-          "parent": ".shell-footer"
-        }
-      ]
-    },
-    "compact-vp-dark-xs": {
+    "compact-vp-dark": {
       "_meta": {
         "theme": "vp",
         "mode": "dark",
@@ -1556,7 +467,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -1576,109 +490,7 @@
         }
       ]
     },
-    "compact-vp-dark-sm": {
-      "_meta": {
-        "theme": "vp",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".shell-footer": {},
-          ".shell-footer__tabstrip": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".shell-footer",
-          "tag": "div",
-          "styles": {},
-          "children": [
-            ".shell-footer__tabstrip"
-          ]
-        },
-        {
-          "selector": ".shell-footer__tabstrip",
-          "tag": "div",
-          "styles": {},
-          "parent": ".shell-footer"
-        }
-      ]
-    },
-    "compact-vp-dark-md": {
-      "_meta": {
-        "theme": "vp",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".shell-footer": {},
-          ".shell-footer__tabstrip": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".shell-footer",
-          "tag": "div",
-          "styles": {},
-          "children": [
-            ".shell-footer__tabstrip"
-          ]
-        },
-        {
-          "selector": ".shell-footer__tabstrip",
-          "tag": "div",
-          "styles": {},
-          "parent": ".shell-footer"
-        }
-      ]
-    },
-    "compact-vp-dark-lg": {
-      "_meta": {
-        "theme": "vp",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".shell-footer": {},
-          ".shell-footer__tabstrip": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".shell-footer",
-          "tag": "div",
-          "styles": {},
-          "children": [
-            ".shell-footer__tabstrip"
-          ]
-        },
-        {
-          "selector": ".shell-footer__tabstrip",
-          "tag": "div",
-          "styles": {},
-          "parent": ".shell-footer"
-        }
-      ]
-    },
-    "compact-ppm-light-xs": {
+    "compact-ppm-light": {
       "_meta": {
         "theme": "ppm",
         "mode": "light",
@@ -1692,7 +504,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -1712,109 +527,7 @@
         }
       ]
     },
-    "compact-ppm-light-sm": {
-      "_meta": {
-        "theme": "ppm",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".shell-footer": {},
-          ".shell-footer__tabstrip": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".shell-footer",
-          "tag": "div",
-          "styles": {},
-          "children": [
-            ".shell-footer__tabstrip"
-          ]
-        },
-        {
-          "selector": ".shell-footer__tabstrip",
-          "tag": "div",
-          "styles": {},
-          "parent": ".shell-footer"
-        }
-      ]
-    },
-    "compact-ppm-light-md": {
-      "_meta": {
-        "theme": "ppm",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".shell-footer": {},
-          ".shell-footer__tabstrip": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".shell-footer",
-          "tag": "div",
-          "styles": {},
-          "children": [
-            ".shell-footer__tabstrip"
-          ]
-        },
-        {
-          "selector": ".shell-footer__tabstrip",
-          "tag": "div",
-          "styles": {},
-          "parent": ".shell-footer"
-        }
-      ]
-    },
-    "compact-ppm-light-lg": {
-      "_meta": {
-        "theme": "ppm",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".shell-footer": {},
-          ".shell-footer__tabstrip": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".shell-footer",
-          "tag": "div",
-          "styles": {},
-          "children": [
-            ".shell-footer__tabstrip"
-          ]
-        },
-        {
-          "selector": ".shell-footer__tabstrip",
-          "tag": "div",
-          "styles": {},
-          "parent": ".shell-footer"
-        }
-      ]
-    },
-    "compact-ppm-dark-xs": {
+    "compact-ppm-dark": {
       "_meta": {
         "theme": "ppm",
         "mode": "dark",
@@ -1828,7 +541,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -1848,109 +564,7 @@
         }
       ]
     },
-    "compact-ppm-dark-sm": {
-      "_meta": {
-        "theme": "ppm",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".shell-footer": {},
-          ".shell-footer__tabstrip": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".shell-footer",
-          "tag": "div",
-          "styles": {},
-          "children": [
-            ".shell-footer__tabstrip"
-          ]
-        },
-        {
-          "selector": ".shell-footer__tabstrip",
-          "tag": "div",
-          "styles": {},
-          "parent": ".shell-footer"
-        }
-      ]
-    },
-    "compact-ppm-dark-md": {
-      "_meta": {
-        "theme": "ppm",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".shell-footer": {},
-          ".shell-footer__tabstrip": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".shell-footer",
-          "tag": "div",
-          "styles": {},
-          "children": [
-            ".shell-footer__tabstrip"
-          ]
-        },
-        {
-          "selector": ".shell-footer__tabstrip",
-          "tag": "div",
-          "styles": {},
-          "parent": ".shell-footer"
-        }
-      ]
-    },
-    "compact-ppm-dark-lg": {
-      "_meta": {
-        "theme": "ppm",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".shell-footer": {},
-          ".shell-footer__tabstrip": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".shell-footer",
-          "tag": "div",
-          "styles": {},
-          "children": [
-            ".shell-footer__tabstrip"
-          ]
-        },
-        {
-          "selector": ".shell-footer__tabstrip",
-          "tag": "div",
-          "styles": {},
-          "parent": ".shell-footer"
-        }
-      ]
-    },
-    "compact-maconomy-light-xs": {
+    "compact-maconomy-light": {
       "_meta": {
         "theme": "maconomy",
         "mode": "light",
@@ -1964,7 +578,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -1984,109 +601,7 @@
         }
       ]
     },
-    "compact-maconomy-light-sm": {
-      "_meta": {
-        "theme": "maconomy",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".shell-footer": {},
-          ".shell-footer__tabstrip": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".shell-footer",
-          "tag": "div",
-          "styles": {},
-          "children": [
-            ".shell-footer__tabstrip"
-          ]
-        },
-        {
-          "selector": ".shell-footer__tabstrip",
-          "tag": "div",
-          "styles": {},
-          "parent": ".shell-footer"
-        }
-      ]
-    },
-    "compact-maconomy-light-md": {
-      "_meta": {
-        "theme": "maconomy",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".shell-footer": {},
-          ".shell-footer__tabstrip": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".shell-footer",
-          "tag": "div",
-          "styles": {},
-          "children": [
-            ".shell-footer__tabstrip"
-          ]
-        },
-        {
-          "selector": ".shell-footer__tabstrip",
-          "tag": "div",
-          "styles": {},
-          "parent": ".shell-footer"
-        }
-      ]
-    },
-    "compact-maconomy-light-lg": {
-      "_meta": {
-        "theme": "maconomy",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".shell-footer": {},
-          ".shell-footer__tabstrip": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".shell-footer",
-          "tag": "div",
-          "styles": {},
-          "children": [
-            ".shell-footer__tabstrip"
-          ]
-        },
-        {
-          "selector": ".shell-footer__tabstrip",
-          "tag": "div",
-          "styles": {},
-          "parent": ".shell-footer"
-        }
-      ]
-    },
-    "compact-maconomy-dark-xs": {
+    "compact-maconomy-dark": {
       "_meta": {
         "theme": "maconomy",
         "mode": "dark",
@@ -2100,109 +615,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".shell-footer",
-          "tag": "div",
-          "styles": {},
-          "children": [
-            ".shell-footer__tabstrip"
-          ]
-        },
-        {
-          "selector": ".shell-footer__tabstrip",
-          "tag": "div",
-          "styles": {},
-          "parent": ".shell-footer"
-        }
-      ]
-    },
-    "compact-maconomy-dark-sm": {
-      "_meta": {
-        "theme": "maconomy",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".shell-footer": {},
-          ".shell-footer__tabstrip": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".shell-footer",
-          "tag": "div",
-          "styles": {},
-          "children": [
-            ".shell-footer__tabstrip"
-          ]
-        },
-        {
-          "selector": ".shell-footer__tabstrip",
-          "tag": "div",
-          "styles": {},
-          "parent": ".shell-footer"
-        }
-      ]
-    },
-    "compact-maconomy-dark-md": {
-      "_meta": {
-        "theme": "maconomy",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".shell-footer": {},
-          ".shell-footer__tabstrip": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".shell-footer",
-          "tag": "div",
-          "styles": {},
-          "children": [
-            ".shell-footer__tabstrip"
-          ]
-        },
-        {
-          "selector": ".shell-footer__tabstrip",
-          "tag": "div",
-          "styles": {},
-          "parent": ".shell-footer"
-        }
-      ]
-    },
-    "compact-maconomy-dark-lg": {
-      "_meta": {
-        "theme": "maconomy",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".shell-footer": {},
-          ".shell-footer__tabstrip": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -2281,5 +697,68 @@
       "description": "Shell footer slot",
       "snippet": "<ShellFooter>Links and copyright</ShellFooter>"
     }
-  ]
+  ],
+  "specKeyOrder": [
+    "variant",
+    "theme",
+    "mode"
+  ],
+  "dimensionDefaults": {
+    "variant": "default",
+    "theme": "cp",
+    "mode": "light"
+  },
+  "contentOrder": [
+    ".shell-footer__tabstrip"
+  ],
+  "structure": {
+    "root": ".shell-footer",
+    "children": [
+      {
+        "class": ".shell-footer__tabstrip"
+      }
+    ]
+  },
+  "fonts": {
+    "Figtree": "https://fonts.googleapis.com/css2?family=Figtree:wght@300..900&display=swap",
+    "Lexend": "https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700;800;900&display=swap",
+    "JetBrains Mono": "https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap"
+  },
+  "defaultContent": {
+    "tabs": [
+      {
+        "id": "home",
+        "label": "Home",
+        "active": true
+      },
+      {
+        "id": "projects",
+        "label": "Projects",
+        "active": false
+      }
+    ],
+    "showMore": false,
+    "moreCount": 0,
+    "overflowTabs": [],
+    "showAddTab": true,
+    "variant": "default",
+    "contentOrder": [
+      ".tabstrip__tabs",
+      ".tabstrip__add",
+      ".tabstrip__more-wrapper"
+    ],
+    "_contentOrderDescription": "Inside TabStrip container: visible tabs first, then Add Tab button (when showAddTab), then More dropdown (when showMore and overflowTabs.length > 0). Do not reorder.",
+    "_propsDescription": "showMore: show More dropdown; moreCount: number for More (N) label; overflowTabs: tabs shown in More dropdown when showMore is true; showAddTab: show Add Tab button; variant: default | compact (height). When showMore and overflowTabs have items, overflowMode is manual; otherwise none.",
+    "_behavior": "Footer does not scroll; overflow is driven by container/browser width."
+  },
+  "layoutRules": {
+    ".tabstrip__container": {
+      "contentOrder": [
+        ".tabstrip__tabs",
+        ".tabstrip__add",
+        ".tabstrip__more-wrapper"
+      ],
+      "description": "Visible tabs first, then Add Tab button (when showAddTab), then More dropdown (when showMore and overflowTabs.length > 0). Do not reorder."
+    }
+  }
 }

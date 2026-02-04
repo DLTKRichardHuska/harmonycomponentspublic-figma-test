@@ -6,6 +6,8 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { selectorFromAstNode } from '../astro-parser.js';
+import { COMPONENT_DIMENSIONS, DIMENSION_KEY_ORDER, getDimensionValuesForComponent } from './dimension-config.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, '..', '..');
@@ -21,7 +23,7 @@ const COMPONENT_CSS_PREFIX = {
   ProgressBar: 'progress',
   RadioButton: 'radio',
   Stepper: 'step',
-  TabStrip: 'tab-panel',
+  TabStrip: 'tabstrip',
   ShellHeader: 'header',
 };
 
@@ -88,8 +90,10 @@ const HARDCODED_STRUCTURE = {
   },
   TabStrip: {
     elements: [
-      { selector: '.tab-panel', tag: 'div', styles: {}, children: ['.tab-panel__content'] },
-      { selector: '.tab-panel__content', tag: 'div', styles: {}, parent: '.tab-panel' },
+      { selector: '.tabstrip', tag: 'div', styles: {}, children: ['.tabstrip__nav', '.tabstrip__container'] },
+      { selector: '.tabstrip__nav', tag: 'nav', styles: {}, parent: '.tabstrip' },
+      { selector: '.tabstrip__container', tag: 'div', styles: {}, parent: '.tabstrip', children: ['.tabstrip__tabs'] },
+      { selector: '.tabstrip__tabs', tag: 'div', styles: {}, parent: '.tabstrip__container' },
     ],
     modifiers: [],
   },
@@ -245,7 +249,6 @@ function normalizedSelectorsForRule(fullSelector, prefix) {
   const out = new Set();
   const parts = fullSelector.split(',').map((s) => s.trim());
   const escaped = prefix.replace(/-/g, '[-]');
-  const prefixRe = new RegExp(`\\.${escaped}(?:__[\\w-]+|--[\\w-]+)?(?!\\S)`);
   const anyPrefixRe = new RegExp(`\\.${escaped}(?:[-_]?[\\w-]*)*`, 'g');
   for (const part of parts) {
     const firstClassMatch = part.match(anyPrefixRe);
@@ -257,19 +260,203 @@ function normalizedSelectorsForRule(fullSelector, prefix) {
   return [...out];
 }
 
+/** Pseudo-classes we treat as states. */
+const STATE_PSEUDOS = ['hover', 'focus', 'active', 'disabled', 'focus-visible', 'focus-within'];
+
 /**
- * Discover component structure from components.css: selectors (root, __children, --modifiers) and their styles.
- * @param {string} componentName - e.g. 'Button', 'Alert', 'Dialog'
- * @param {string} cssPath - Path to components.css (relative to project root or absolute)
- * @returns {{ elements: { selector: string, tag: string, styles: Record<string, string>, children?: string[], parent?: string }[], modifiers: string[] }}
+ * Normalize state name to camelCase for use in state keys (e.g. focus-visible -> focusVisible).
+ * @param {string} state - e.g. 'hover', 'focus-visible'
+ * @returns {string}
  */
-export function discoverComponentStructure(componentName, cssPath = 'src/styles/components.css') {
-  if (HARDCODED_STRUCTURE[componentName]) {
-    const fromCss = discoverComponentStructureFromCss(componentName, cssPath);
-    if (fromCss.elements.length <= 1) return HARDCODED_STRUCTURE[componentName];
+function stateToKeySegment(state) {
+  if (!state.includes('-')) return state.charAt(0).toUpperCase() + state.slice(1);
+  return state
+    .split('-')
+    .map((seg, i) => (i === 0 ? seg.charAt(0).toUpperCase() + seg.slice(1) : seg.charAt(0).toUpperCase() + seg.slice(1)))
+    .join('');
+}
+
+/**
+ * Parse a compound selector of the form "ancestor:pseudo descendant" (exactly two segments).
+ * Used to capture descendant states: styles applied to a descendant when an ancestor has a pseudo state.
+ * @param {string} part - e.g. ".right-sidebar:hover .right-sidebar__label"
+ * @param {string} prefix - e.g. "right-sidebar"
+ * @returns {{ ancestor: string, state: string, descendant: string } | null}
+ */
+function parseDescendantState(part, prefix) {
+  const segments = part.trim().split(/\s+/).filter(Boolean);
+  if (segments.length !== 2) return null;
+  let ancestorSegment = null;
+  let state = null;
+  for (const seg of segments) {
+    for (const p of STATE_PSEUDOS) {
+      const pseudo = ':' + p;
+      if (seg.includes(pseudo)) {
+        if (ancestorSegment != null) return null;
+        ancestorSegment = seg;
+        state = p;
+        break;
+      }
+    }
+  }
+  if (ancestorSegment == null || state == null) return null;
+  const descendantSegment = segments.find((s) => s !== ancestorSegment);
+  if (!descendantSegment) return null;
+  const ancestor = ancestorSegment.replace(/:[a-z-]+(?:\([^)]*\))?/gi, '').trim();
+  return { ancestor, state, descendant: descendantSegment };
+}
+
+/**
+ * Split selector into base (no pseudo) and state name.
+ * For compound selectors (e.g. ".alert--info .alert__close:hover"), returns the element that has the pseudo.
+ * @param {string} selector - e.g. ".alert__close:hover" or ".alert--info .alert__close:hover"
+ * @param {string} prefix - e.g. "alert"
+ * @returns {{ base: string, state: string } | null}
+ */
+function parseSelectorState(selector, prefix) {
+  const trimmed = selector.trim();
+  for (const state of STATE_PSEUDOS) {
+    const pseudo = ':' + state;
+    const idx = trimmed.indexOf(pseudo);
+    if (idx === -1) continue;
+    const beforePseudo = trimmed.slice(0, idx).trim();
+    const parts = beforePseudo.split(/\s+/).filter(Boolean);
+    const escaped = prefix.replace(/-/g, '[-]');
+    const classRe = new RegExp(`\\.${escaped}(?:__[\\w-]+|--[\\w-]+)?`);
+    const lastPart = parts[parts.length - 1] || beforePseudo;
+    const base = lastPart.match(classRe) ? lastPart : beforePseudo;
+    return { base, state };
+  }
+  return null;
+}
+
+/**
+ * From a compound selector (e.g. ".alert--info .alert__icon"), extract modifier class and target element selector.
+ * @param {string} ruleSelector - single part (no comma)
+ * @param {string} prefix - e.g. "alert"
+ * @returns {{ modifier: string, element: string } | null}
+ */
+function parseCompoundModifierElement(ruleSelector, prefix) {
+  const parts = ruleSelector.trim().split(/\s+/).filter(Boolean);
+  if (parts.length < 2) return null;
+  let modifier = null;
+  let element = null;
+  const escaped = prefix.replace(/-/g, '[-]');
+  const classRe = new RegExp(`\\.${escaped}(?:__[\\w-]+|--[\\w-]+)?`);
+  for (const part of parts) {
+    const clean = part.replace(/:[\w-]+(?:\([^)]*\))?/g, '').trim();
+    if (!classRe.test(clean)) continue;
+    if (clean.includes('--')) modifier = clean;
+    else if (clean === '.' + prefix || clean.startsWith('.' + prefix + '__')) element = clean;
+  }
+  if (modifier && element) return { modifier, element };
+  if (modifier && parts.some((p) => p.startsWith('.' + prefix + '__')))
+    element = parts.find((p) => p.startsWith('.' + prefix + '__')).replace(/:[\w-]+(?:\([^)]*\))?/g, '').trim();
+  if (modifier && !element) element = '.' + prefix;
+  return modifier && element ? { modifier, element } : null;
+}
+
+/**
+ * Build structure object and selector→parent map from AST structure (extractDetailedStructure output).
+ * @param {Object} astStructure - { root: { element, class, children }, children }
+ * @param {string} componentSlug - e.g. 'alert', 'dialog'
+ * @returns {{ structure: { root: string, children: Array }, selectorToParent: Record<string, string> }}
+ */
+export function buildStructureFromAst(astStructure, componentSlug) {
+  const selectorToParent = {};
+  if (!astStructure?.root) {
+    return { structure: { root: '', children: [] }, selectorToParent };
   }
 
-  return discoverComponentStructureFromCss(componentName, cssPath);
+  function nodeToStructureNode(node, parentSelector) {
+    const sel = selectorFromAstNode(node);
+    if (!sel) return null;
+    if (parentSelector) selectorToParent[sel] = parentSelector;
+    const out = { class: sel };
+    const kids = node.children || [];
+    if (kids.length) {
+      out.children = kids
+        .map((c) => nodeToStructureNode(c, sel))
+        .filter(Boolean);
+    }
+    return out;
+  }
+
+  let rootSel = selectorFromAstNode(astStructure.root);
+  const fallbackRoot = '.' + componentSlug.replace(/-/g, '-');
+  const useFallbackRoot = !rootSel || rootSel === '.classes';
+  if (useFallbackRoot) rootSel = fallbackRoot;
+  if (!rootSel) {
+    return { structure: { root: '', children: [] }, selectorToParent };
+  }
+
+  const rootChildren = (astStructure.root.children || [])
+    .map((c) => nodeToStructureNode(c, rootSel))
+    .filter(Boolean);
+
+  const structure = {
+    root: rootSel,
+    children: rootChildren,
+  };
+
+  return { structure, selectorToParent };
+}
+
+/**
+ * Discover component structure from components.css: selectors (root, __children, --modifiers) and their styles.
+ * When options.astStructure is provided (from extractDetailedStructure), element parents and a structure tree are derived from the AST.
+ * @param {string} componentName - e.g. 'Button', 'Alert', 'Dialog'
+ * @param {string} cssPath - Path to components.css (relative to project root or absolute)
+ * @param {{ astStructure?: Object }} options - Optional. astStructure from parseComponent(...).structure
+ * @returns {{ elements: Array, modifiers: string[], structure?: Object, ... }}
+ */
+const EMPTY_DISCOVERY_EXTRA = {
+  modifierRootStyles: {},
+  modifierElementStyles: {},
+  stateStyles: {},
+  descendantStateStyles: {},
+};
+
+export function discoverComponentStructure(componentName, cssPath = 'src/styles/components.css', options = {}) {
+  if (HARDCODED_STRUCTURE[componentName]) {
+    const fromCss = discoverComponentStructureFromCss(componentName, cssPath);
+    if (fromCss.elements.length <= 1) {
+      const result = {
+        ...HARDCODED_STRUCTURE[componentName],
+        modifierRootStyles: fromCss.modifierRootStyles || {},
+        modifierElementStyles: fromCss.modifierElementStyles || {},
+        stateStyles: fromCss.stateStyles || {},
+        descendantStateStyles: fromCss.descendantStateStyles || {},
+      };
+      if (options.astStructure) {
+        const slug = componentNameToSlug(componentName);
+        const { structure, selectorToParent } = buildStructureFromAst(options.astStructure, slug);
+        if (structure.root) {
+          result.structure = structure;
+          result.elements = (result.elements || []).map((el) => ({
+            ...el,
+            parent: selectorToParent[el.selector] ?? el.parent,
+          }));
+        }
+      }
+      return result;
+    }
+  }
+
+  const fromCss = discoverComponentStructureFromCss(componentName, cssPath);
+  if (!options.astStructure) return fromCss;
+
+  const slug = componentNameToSlug(componentName);
+  const { structure, selectorToParent } = buildStructureFromAst(options.astStructure, slug);
+  const result = {
+    ...fromCss,
+    elements: fromCss.elements.map((el) => ({
+      ...el,
+      parent: selectorToParent[el.selector] ?? el.parent,
+    })),
+  };
+  if (structure.root) result.structure = structure;
+  return result;
 }
 
 function discoverComponentStructureFromCss(componentName, cssPath) {
@@ -323,37 +510,108 @@ function discoverComponentStructureFromCss(componentName, cssPath) {
 
   const bySelector = new Map();
   const modifiers = new Set();
+  /** Modifier root: modifier selector -> styles applied to root element (e.g. .alert--info -> styles for .alert). */
+  const modifierRootStyles = {};
+  /** Modifier + element: modifier -> element selector -> styles (e.g. .alert--info -> .alert__icon -> styles). */
+  const modifierElementStyles = {};
+  /** State: element selector -> state name -> styles (e.g. .alert__close -> hover -> styles). */
+  const stateStyles = {};
+  /** Descendant state: descendant selector -> stateKey (e.g. rootHover) -> styles. When root has pseudo, descendant gets these styles. */
+  const descendantStateStyles = {};
+
+  const rootKey = '.' + prefix;
 
   for (const { selector: ruleSelector, block } of rules) {
-    const normalizedList = normalizedSelectorsForRule(ruleSelector, prefix);
-    const isBaseRule =
-      !ruleSelector.includes(':') &&
-      !ruleSelector.includes('.is-') &&
-      ruleSelector.split(',').every((part) => !part.trim().includes(' ')) &&
-      normalizedList.some((n) => {
-        const base = n.trim();
-        return (
-          base === '.' + prefix ||
-          base.startsWith('.' + prefix + '__') ||
-          (base.startsWith('.' + prefix + '-') && base !== '.' + prefix && !base.includes('--'))
-        );
-      });
-    for (const norm of normalizedList) {
-      const base = norm.trim();
-      if (!selectorBelongsToComponent(base)) continue;
-      if (base.includes('--')) {
-        modifiers.add(base);
+    const decl = parseDeclarations(block);
+    const parts = ruleSelector.split(',').map((s) => s.trim());
+
+    for (const part of parts) {
+      const hasSpace = part.includes(' ');
+      const hasPseudo = STATE_PSEUDOS.some((p) => part.includes(':' + p));
+
+      if (hasPseudo && hasSpace) {
+        const descendantParsed = parseDescendantState(part, prefix);
+        if (
+          descendantParsed &&
+          selectorBelongsToComponent(descendantParsed.ancestor) &&
+          selectorBelongsToComponent(descendantParsed.descendant) &&
+          descendantParsed.ancestor === rootKey
+        ) {
+          const stateKey = 'root' + stateToKeySegment(descendantParsed.state);
+          if (!descendantStateStyles[descendantParsed.descendant]) descendantStateStyles[descendantParsed.descendant] = {};
+          if (!descendantStateStyles[descendantParsed.descendant][stateKey]) descendantStateStyles[descendantParsed.descendant][stateKey] = {};
+          Object.assign(descendantStateStyles[descendantParsed.descendant][stateKey], decl);
+          continue;
+        }
+      }
+
+      if (hasPseudo) {
+        const parsed = parseSelectorState(part, prefix);
+        if (parsed) {
+          const { base, state } = parsed;
+          if (selectorBelongsToComponent(base)) {
+            if (!stateStyles[base]) stateStyles[base] = {};
+            if (!stateStyles[base][state]) stateStyles[base][state] = {};
+            Object.assign(stateStyles[base][state], decl);
+          }
+          continue;
+        }
+      }
+
+      if (hasSpace) {
+        const compound = parseCompoundModifierElement(part, prefix);
+        if (compound && selectorBelongsToComponent(compound.modifier)) {
+          const { modifier, element } = compound;
+          modifiers.add(modifier);
+          if (selectorBelongsToComponent(element)) {
+            if (!modifierElementStyles[modifier]) modifierElementStyles[modifier] = {};
+            if (!modifierElementStyles[modifier][element]) modifierElementStyles[modifier][element] = {};
+            Object.assign(modifierElementStyles[modifier][element], decl);
+          }
+        }
         continue;
       }
-      const key = base.startsWith('.' + prefix + '__')
-        ? base
-        : base.startsWith('.' + prefix + '-') && !base.startsWith('.' + prefix + '--')
+
+      const normalizedList = normalizedSelectorsForRule(part, prefix);
+      const isBaseRule =
+        !part.includes(':') &&
+        !part.includes('.is-') &&
+        !part.includes(' ') &&
+        normalizedList.some((n) => {
+          const base = n.trim();
+          return (
+            base === rootKey ||
+            base.startsWith('.' + prefix + '__') ||
+            (base.startsWith('.' + prefix + '-') && base !== rootKey && !base.includes('--'))
+          );
+        });
+
+      for (const norm of normalizedList) {
+        const base = norm.trim();
+        if (!selectorBelongsToComponent(base)) continue;
+        if (base.includes('--')) {
+          const prefixWithDot = '.' + prefix + '__';
+          const isElementModifier =
+            base.startsWith(prefixWithDot) && base.indexOf('--') !== -1;
+          if (isElementModifier) {
+            const element = base.slice(0, base.indexOf('--'));
+            modifiers.add(base);
+            if (!modifierElementStyles[base]) modifierElementStyles[base] = {};
+            if (!modifierElementStyles[base][element]) modifierElementStyles[base][element] = {};
+            Object.assign(modifierElementStyles[base][element], decl);
+          } else {
+            modifiers.add(base);
+            modifierRootStyles[base] = { ...(modifierRootStyles[base] || {}), ...decl };
+          }
+          continue;
+        }
+        const key = base.startsWith('.' + prefix + '__')
           ? base
-          : '.' + prefix;
-      if (!bySelector.has(key)) bySelector.set(key, {});
-      if (isBaseRule) {
-        const decl = parseDeclarations(block);
-        Object.assign(bySelector.get(key), decl);
+          : base.startsWith('.' + prefix + '-') && !base.startsWith('.' + prefix + '--')
+            ? base
+            : rootKey;
+        if (!bySelector.has(key)) bySelector.set(key, {});
+        if (isBaseRule) Object.assign(bySelector.get(key), decl);
       }
     }
   }
@@ -378,7 +636,6 @@ function discoverComponentStructureFromCss(componentName, cssPath) {
           ? 'label'
           : 'div';
 
-  const rootKey = '.' + prefix;
   const innermostRoot =
     rootSelectors.length > 1 ? rootSelectors[rootSelectors.length - 1] : rootKey;
 
@@ -413,23 +670,63 @@ function discoverComponentStructureFromCss(componentName, cssPath) {
   return {
     elements,
     modifiers: [...modifiers].sort(),
+    modifierRootStyles,
+    modifierElementStyles,
+    stateStyles,
+    descendantStateStyles,
   };
 }
 
 /**
- * Build full spec key matrix for a component: theme-mode-size or variant-theme-mode-size.
- * @param {string} componentName - e.g. 'Avatar'
- * @returns {string[]} Spec keys (e.g. ['cp-light-sm', 'cp-light-md', ...])
+ * Cartesian product of arrays: [ [a1,b1], [a2,b2] ] -> [ [a1,a2], [a1,b2], [b1,a2], [b1,b2] ].
+ * @param {any[][]} arrays
+ * @returns {any[][]}
  */
-export function buildSpecMatrix(componentName) {
+function cartesian(arrays) {
+  if (arrays.length === 0) return [[]];
+  const [first, ...rest] = arrays;
+  const restProduct = cartesian(rest);
+  const out = [];
+  for (const v of first) {
+    for (const row of restProduct) {
+      out.push([v, ...row]);
+    }
+  }
+  return out;
+}
+
+/**
+ * Build full spec key matrix for a component: one key per combination of dimensions (variant, style, theme, mode, size, buttonType, headerVariant, ...).
+ * When dimensionValues is provided (from getDimensionValuesForComponent(componentName, parsed.props)), uses dimension config and full product.
+ * When dimensionValues is null, falls back to legacy discoverComponentProps (sizes, variants) + theme/mode.
+ * @param {string} componentName - e.g. 'Avatar', 'Alert', 'Button'
+ * @param {Record<string, string[]>} [dimensionValues] - e.g. { variant: ['primary','secondary'], size: ['sm','md'] }; theme and mode are always added.
+ * @returns {string[]} Spec keys (e.g. ['info-cp-light-default', 'primary-cp-light-md-theme', ...])
+ */
+export function buildSpecMatrix(componentName, dimensionValues = null) {
   const componentPath = getComponentPath(componentName);
   if (!fs.existsSync(componentPath)) {
     return [];
   }
 
+  const useDimensionConfig =
+    dimensionValues &&
+    COMPONENT_DIMENSIONS[componentName] &&
+    Object.keys(dimensionValues).length > 0;
+
+  if (useDimensionConfig) {
+    const orderedDimNames = DIMENSION_KEY_ORDER.filter(
+      (d) => d === 'theme' || d === 'mode' || dimensionValues[d]
+    );
+    const valueArrays = orderedDimNames.map((dim) =>
+      dim === 'theme' ? THEMES : dim === 'mode' ? MODES : dimensionValues[dim]
+    );
+    const product = cartesian(valueArrays);
+    return product.map((row) => row.join('-'));
+  }
+
   const { sizes, variants } = discoverComponentProps(componentPath);
   const keys = [];
-
   const themeModePairs = THEMES.flatMap((theme) => MODES.map((mode) => ({ theme, mode })));
   const variantsAreThemes = variants.length > 0 && variants.every((v) => THEMES.includes(v));
 

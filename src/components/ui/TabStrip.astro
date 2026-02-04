@@ -74,7 +74,7 @@ if (tabs.length > 0 && !componentIconPosition) {
 ---
 
 <div 
-  class={`tabstrip ${className}`}
+  class={`tabstrip ${variant === 'compact' ? 'tabstrip--compact' : ''} ${className}`.trim()}
   data-tabstrip
   data-variant={variant}
   data-overflow-mode={overflowMode}
@@ -438,12 +438,14 @@ if (tabs.length > 0 && !componentIconPosition) {
     white-space: nowrap;
   }
 
-  /* Compact variant */
+  /* Compact variant - styles applied via .tabstrip--compact for exact spec discovery */
+  .tabstrip--compact .tab,
   .tabstrip[data-variant="compact"] .tab {
     padding: var(--space-2) var(--space-3);
     font-size: var(--text-13);
   }
 
+  .tabstrip--compact :global(.tabstrip__dropdown-item),
   .tabstrip[data-variant="compact"] :global(.tabstrip__dropdown-item) {
     padding: var(--space-1-5) var(--space-3);
     font-size: var(--text-xs);

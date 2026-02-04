@@ -26,7 +26,7 @@
     "variant": "'default'"
   },
   "specs": {
-    "default-cp-light-sm": {
+    "default-cp-light": {
       "_meta": {
         "theme": "cp",
         "mode": "light",
@@ -40,7 +40,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -60,75 +63,7 @@
         }
       ]
     },
-    "default-cp-light-md": {
-      "_meta": {
-        "theme": "cp",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "default-cp-light-lg": {
-      "_meta": {
-        "theme": "cp",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "default-cp-dark-sm": {
+    "default-cp-dark": {
       "_meta": {
         "theme": "cp",
         "mode": "dark",
@@ -142,7 +77,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -162,75 +100,7 @@
         }
       ]
     },
-    "default-cp-dark-md": {
-      "_meta": {
-        "theme": "cp",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "default-cp-dark-lg": {
-      "_meta": {
-        "theme": "cp",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "default-vp-light-sm": {
+    "default-vp-light": {
       "_meta": {
         "theme": "vp",
         "mode": "light",
@@ -244,7 +114,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -264,75 +137,7 @@
         }
       ]
     },
-    "default-vp-light-md": {
-      "_meta": {
-        "theme": "vp",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "default-vp-light-lg": {
-      "_meta": {
-        "theme": "vp",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "default-vp-dark-sm": {
+    "default-vp-dark": {
       "_meta": {
         "theme": "vp",
         "mode": "dark",
@@ -346,7 +151,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -366,75 +174,7 @@
         }
       ]
     },
-    "default-vp-dark-md": {
-      "_meta": {
-        "theme": "vp",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "default-vp-dark-lg": {
-      "_meta": {
-        "theme": "vp",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "default-ppm-light-sm": {
+    "default-ppm-light": {
       "_meta": {
         "theme": "ppm",
         "mode": "light",
@@ -448,7 +188,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -468,75 +211,7 @@
         }
       ]
     },
-    "default-ppm-light-md": {
-      "_meta": {
-        "theme": "ppm",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "default-ppm-light-lg": {
-      "_meta": {
-        "theme": "ppm",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "default-ppm-dark-sm": {
+    "default-ppm-dark": {
       "_meta": {
         "theme": "ppm",
         "mode": "dark",
@@ -550,7 +225,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -570,75 +248,7 @@
         }
       ]
     },
-    "default-ppm-dark-md": {
-      "_meta": {
-        "theme": "ppm",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "default-ppm-dark-lg": {
-      "_meta": {
-        "theme": "ppm",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "default-maconomy-light-sm": {
+    "default-maconomy-light": {
       "_meta": {
         "theme": "maconomy",
         "mode": "light",
@@ -652,7 +262,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -672,75 +285,7 @@
         }
       ]
     },
-    "default-maconomy-light-md": {
-      "_meta": {
-        "theme": "maconomy",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "default-maconomy-light-lg": {
-      "_meta": {
-        "theme": "maconomy",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "default-maconomy-dark-sm": {
+    "default-maconomy-dark": {
       "_meta": {
         "theme": "maconomy",
         "mode": "dark",
@@ -754,7 +299,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -774,75 +322,7 @@
         }
       ]
     },
-    "default-maconomy-dark-md": {
-      "_meta": {
-        "theme": "maconomy",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "default-maconomy-dark-lg": {
-      "_meta": {
-        "theme": "maconomy",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "primary-cp-light-sm": {
+    "primary-cp-light": {
       "_meta": {
         "theme": "cp",
         "mode": "light",
@@ -856,7 +336,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -876,75 +359,7 @@
         }
       ]
     },
-    "primary-cp-light-md": {
-      "_meta": {
-        "theme": "cp",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "primary-cp-light-lg": {
-      "_meta": {
-        "theme": "cp",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "primary-cp-dark-sm": {
+    "primary-cp-dark": {
       "_meta": {
         "theme": "cp",
         "mode": "dark",
@@ -958,7 +373,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -978,75 +396,7 @@
         }
       ]
     },
-    "primary-cp-dark-md": {
-      "_meta": {
-        "theme": "cp",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "primary-cp-dark-lg": {
-      "_meta": {
-        "theme": "cp",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "primary-vp-light-sm": {
+    "primary-vp-light": {
       "_meta": {
         "theme": "vp",
         "mode": "light",
@@ -1060,7 +410,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -1080,75 +433,7 @@
         }
       ]
     },
-    "primary-vp-light-md": {
-      "_meta": {
-        "theme": "vp",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "primary-vp-light-lg": {
-      "_meta": {
-        "theme": "vp",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "primary-vp-dark-sm": {
+    "primary-vp-dark": {
       "_meta": {
         "theme": "vp",
         "mode": "dark",
@@ -1162,7 +447,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -1182,75 +470,7 @@
         }
       ]
     },
-    "primary-vp-dark-md": {
-      "_meta": {
-        "theme": "vp",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "primary-vp-dark-lg": {
-      "_meta": {
-        "theme": "vp",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "primary-ppm-light-sm": {
+    "primary-ppm-light": {
       "_meta": {
         "theme": "ppm",
         "mode": "light",
@@ -1264,7 +484,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -1284,75 +507,7 @@
         }
       ]
     },
-    "primary-ppm-light-md": {
-      "_meta": {
-        "theme": "ppm",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "primary-ppm-light-lg": {
-      "_meta": {
-        "theme": "ppm",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "primary-ppm-dark-sm": {
+    "primary-ppm-dark": {
       "_meta": {
         "theme": "ppm",
         "mode": "dark",
@@ -1366,7 +521,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -1386,75 +544,7 @@
         }
       ]
     },
-    "primary-ppm-dark-md": {
-      "_meta": {
-        "theme": "ppm",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "primary-ppm-dark-lg": {
-      "_meta": {
-        "theme": "ppm",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "primary-maconomy-light-sm": {
+    "primary-maconomy-light": {
       "_meta": {
         "theme": "maconomy",
         "mode": "light",
@@ -1468,7 +558,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -1488,75 +581,7 @@
         }
       ]
     },
-    "primary-maconomy-light-md": {
-      "_meta": {
-        "theme": "maconomy",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "primary-maconomy-light-lg": {
-      "_meta": {
-        "theme": "maconomy",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "primary-maconomy-dark-sm": {
+    "primary-maconomy-dark": {
       "_meta": {
         "theme": "maconomy",
         "mode": "dark",
@@ -1570,7 +595,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -1590,75 +618,7 @@
         }
       ]
     },
-    "primary-maconomy-dark-md": {
-      "_meta": {
-        "theme": "maconomy",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "primary-maconomy-dark-lg": {
-      "_meta": {
-        "theme": "maconomy",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "error-cp-light-sm": {
+    "success-cp-light": {
       "_meta": {
         "theme": "cp",
         "mode": "light",
@@ -1672,7 +632,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -1692,75 +655,7 @@
         }
       ]
     },
-    "error-cp-light-md": {
-      "_meta": {
-        "theme": "cp",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "error-cp-light-lg": {
-      "_meta": {
-        "theme": "cp",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "error-cp-dark-sm": {
+    "success-cp-dark": {
       "_meta": {
         "theme": "cp",
         "mode": "dark",
@@ -1774,7 +669,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -1794,75 +692,7 @@
         }
       ]
     },
-    "error-cp-dark-md": {
-      "_meta": {
-        "theme": "cp",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "error-cp-dark-lg": {
-      "_meta": {
-        "theme": "cp",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "error-vp-light-sm": {
+    "success-vp-light": {
       "_meta": {
         "theme": "vp",
         "mode": "light",
@@ -1876,7 +706,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -1896,75 +729,7 @@
         }
       ]
     },
-    "error-vp-light-md": {
-      "_meta": {
-        "theme": "vp",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "error-vp-light-lg": {
-      "_meta": {
-        "theme": "vp",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "error-vp-dark-sm": {
+    "success-vp-dark": {
       "_meta": {
         "theme": "vp",
         "mode": "dark",
@@ -1978,7 +743,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -1998,75 +766,7 @@
         }
       ]
     },
-    "error-vp-dark-md": {
-      "_meta": {
-        "theme": "vp",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "error-vp-dark-lg": {
-      "_meta": {
-        "theme": "vp",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "error-ppm-light-sm": {
+    "success-ppm-light": {
       "_meta": {
         "theme": "ppm",
         "mode": "light",
@@ -2080,7 +780,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -2100,75 +803,7 @@
         }
       ]
     },
-    "error-ppm-light-md": {
-      "_meta": {
-        "theme": "ppm",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "error-ppm-light-lg": {
-      "_meta": {
-        "theme": "ppm",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "error-ppm-dark-sm": {
+    "success-ppm-dark": {
       "_meta": {
         "theme": "ppm",
         "mode": "dark",
@@ -2182,7 +817,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -2202,75 +840,7 @@
         }
       ]
     },
-    "error-ppm-dark-md": {
-      "_meta": {
-        "theme": "ppm",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "error-ppm-dark-lg": {
-      "_meta": {
-        "theme": "ppm",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "error-maconomy-light-sm": {
+    "success-maconomy-light": {
       "_meta": {
         "theme": "maconomy",
         "mode": "light",
@@ -2284,7 +854,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -2304,75 +877,7 @@
         }
       ]
     },
-    "error-maconomy-light-md": {
-      "_meta": {
-        "theme": "maconomy",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "error-maconomy-light-lg": {
-      "_meta": {
-        "theme": "maconomy",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "error-maconomy-dark-sm": {
+    "success-maconomy-dark": {
       "_meta": {
         "theme": "maconomy",
         "mode": "dark",
@@ -2386,7 +891,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -2406,75 +914,7 @@
         }
       ]
     },
-    "error-maconomy-dark-md": {
-      "_meta": {
-        "theme": "maconomy",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "error-maconomy-dark-lg": {
-      "_meta": {
-        "theme": "maconomy",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "warning-cp-light-sm": {
+    "warning-cp-light": {
       "_meta": {
         "theme": "cp",
         "mode": "light",
@@ -2488,7 +928,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -2508,75 +951,7 @@
         }
       ]
     },
-    "warning-cp-light-md": {
-      "_meta": {
-        "theme": "cp",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "warning-cp-light-lg": {
-      "_meta": {
-        "theme": "cp",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "warning-cp-dark-sm": {
+    "warning-cp-dark": {
       "_meta": {
         "theme": "cp",
         "mode": "dark",
@@ -2590,7 +965,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -2610,75 +988,7 @@
         }
       ]
     },
-    "warning-cp-dark-md": {
-      "_meta": {
-        "theme": "cp",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "warning-cp-dark-lg": {
-      "_meta": {
-        "theme": "cp",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "warning-vp-light-sm": {
+    "warning-vp-light": {
       "_meta": {
         "theme": "vp",
         "mode": "light",
@@ -2692,7 +1002,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -2712,75 +1025,7 @@
         }
       ]
     },
-    "warning-vp-light-md": {
-      "_meta": {
-        "theme": "vp",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "warning-vp-light-lg": {
-      "_meta": {
-        "theme": "vp",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "warning-vp-dark-sm": {
+    "warning-vp-dark": {
       "_meta": {
         "theme": "vp",
         "mode": "dark",
@@ -2794,7 +1039,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -2814,75 +1062,7 @@
         }
       ]
     },
-    "warning-vp-dark-md": {
-      "_meta": {
-        "theme": "vp",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "warning-vp-dark-lg": {
-      "_meta": {
-        "theme": "vp",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "warning-ppm-light-sm": {
+    "warning-ppm-light": {
       "_meta": {
         "theme": "ppm",
         "mode": "light",
@@ -2896,7 +1076,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -2916,75 +1099,7 @@
         }
       ]
     },
-    "warning-ppm-light-md": {
-      "_meta": {
-        "theme": "ppm",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "warning-ppm-light-lg": {
-      "_meta": {
-        "theme": "ppm",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "warning-ppm-dark-sm": {
+    "warning-ppm-dark": {
       "_meta": {
         "theme": "ppm",
         "mode": "dark",
@@ -2998,7 +1113,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -3018,75 +1136,7 @@
         }
       ]
     },
-    "warning-ppm-dark-md": {
-      "_meta": {
-        "theme": "ppm",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "warning-ppm-dark-lg": {
-      "_meta": {
-        "theme": "ppm",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "warning-maconomy-light-sm": {
+    "warning-maconomy-light": {
       "_meta": {
         "theme": "maconomy",
         "mode": "light",
@@ -3100,7 +1150,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -3120,75 +1173,7 @@
         }
       ]
     },
-    "warning-maconomy-light-md": {
-      "_meta": {
-        "theme": "maconomy",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "warning-maconomy-light-lg": {
-      "_meta": {
-        "theme": "maconomy",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "warning-maconomy-dark-sm": {
+    "warning-maconomy-dark": {
       "_meta": {
         "theme": "maconomy",
         "mode": "dark",
@@ -3202,7 +1187,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -3222,75 +1210,7 @@
         }
       ]
     },
-    "warning-maconomy-dark-md": {
-      "_meta": {
-        "theme": "maconomy",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "warning-maconomy-dark-lg": {
-      "_meta": {
-        "theme": "maconomy",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "success-cp-light-sm": {
+    "error-cp-light": {
       "_meta": {
         "theme": "cp",
         "mode": "light",
@@ -3304,7 +1224,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -3324,75 +1247,7 @@
         }
       ]
     },
-    "success-cp-light-md": {
-      "_meta": {
-        "theme": "cp",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "success-cp-light-lg": {
-      "_meta": {
-        "theme": "cp",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "success-cp-dark-sm": {
+    "error-cp-dark": {
       "_meta": {
         "theme": "cp",
         "mode": "dark",
@@ -3406,7 +1261,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -3426,75 +1284,7 @@
         }
       ]
     },
-    "success-cp-dark-md": {
-      "_meta": {
-        "theme": "cp",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "success-cp-dark-lg": {
-      "_meta": {
-        "theme": "cp",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "success-vp-light-sm": {
+    "error-vp-light": {
       "_meta": {
         "theme": "vp",
         "mode": "light",
@@ -3508,7 +1298,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -3528,75 +1321,7 @@
         }
       ]
     },
-    "success-vp-light-md": {
-      "_meta": {
-        "theme": "vp",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "success-vp-light-lg": {
-      "_meta": {
-        "theme": "vp",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "success-vp-dark-sm": {
+    "error-vp-dark": {
       "_meta": {
         "theme": "vp",
         "mode": "dark",
@@ -3610,7 +1335,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -3630,75 +1358,7 @@
         }
       ]
     },
-    "success-vp-dark-md": {
-      "_meta": {
-        "theme": "vp",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "success-vp-dark-lg": {
-      "_meta": {
-        "theme": "vp",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "success-ppm-light-sm": {
+    "error-ppm-light": {
       "_meta": {
         "theme": "ppm",
         "mode": "light",
@@ -3712,7 +1372,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -3732,75 +1395,7 @@
         }
       ]
     },
-    "success-ppm-light-md": {
-      "_meta": {
-        "theme": "ppm",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "success-ppm-light-lg": {
-      "_meta": {
-        "theme": "ppm",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "success-ppm-dark-sm": {
+    "error-ppm-dark": {
       "_meta": {
         "theme": "ppm",
         "mode": "dark",
@@ -3814,7 +1409,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -3834,75 +1432,7 @@
         }
       ]
     },
-    "success-ppm-dark-md": {
-      "_meta": {
-        "theme": "ppm",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "success-ppm-dark-lg": {
-      "_meta": {
-        "theme": "ppm",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "success-maconomy-light-sm": {
+    "error-maconomy-light": {
       "_meta": {
         "theme": "maconomy",
         "mode": "light",
@@ -3916,7 +1446,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -3936,75 +1469,7 @@
         }
       ]
     },
-    "success-maconomy-light-md": {
-      "_meta": {
-        "theme": "maconomy",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "success-maconomy-light-lg": {
-      "_meta": {
-        "theme": "maconomy",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "success-maconomy-dark-sm": {
+    "error-maconomy-dark": {
       "_meta": {
         "theme": "maconomy",
         "mode": "dark",
@@ -4018,7 +1483,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -4038,75 +1506,7 @@
         }
       ]
     },
-    "success-maconomy-dark-md": {
-      "_meta": {
-        "theme": "maconomy",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "success-maconomy-dark-lg": {
-      "_meta": {
-        "theme": "maconomy",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "info-cp-light-sm": {
+    "info-cp-light": {
       "_meta": {
         "theme": "cp",
         "mode": "light",
@@ -4120,7 +1520,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -4140,75 +1543,7 @@
         }
       ]
     },
-    "info-cp-light-md": {
-      "_meta": {
-        "theme": "cp",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "info-cp-light-lg": {
-      "_meta": {
-        "theme": "cp",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "info-cp-dark-sm": {
+    "info-cp-dark": {
       "_meta": {
         "theme": "cp",
         "mode": "dark",
@@ -4222,7 +1557,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -4242,75 +1580,7 @@
         }
       ]
     },
-    "info-cp-dark-md": {
-      "_meta": {
-        "theme": "cp",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "info-cp-dark-lg": {
-      "_meta": {
-        "theme": "cp",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "info-vp-light-sm": {
+    "info-vp-light": {
       "_meta": {
         "theme": "vp",
         "mode": "light",
@@ -4324,7 +1594,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -4344,75 +1617,7 @@
         }
       ]
     },
-    "info-vp-light-md": {
-      "_meta": {
-        "theme": "vp",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "info-vp-light-lg": {
-      "_meta": {
-        "theme": "vp",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "info-vp-dark-sm": {
+    "info-vp-dark": {
       "_meta": {
         "theme": "vp",
         "mode": "dark",
@@ -4426,7 +1631,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -4446,75 +1654,7 @@
         }
       ]
     },
-    "info-vp-dark-md": {
-      "_meta": {
-        "theme": "vp",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "info-vp-dark-lg": {
-      "_meta": {
-        "theme": "vp",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "info-ppm-light-sm": {
+    "info-ppm-light": {
       "_meta": {
         "theme": "ppm",
         "mode": "light",
@@ -4528,7 +1668,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -4548,75 +1691,7 @@
         }
       ]
     },
-    "info-ppm-light-md": {
-      "_meta": {
-        "theme": "ppm",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "info-ppm-light-lg": {
-      "_meta": {
-        "theme": "ppm",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "info-ppm-dark-sm": {
+    "info-ppm-dark": {
       "_meta": {
         "theme": "ppm",
         "mode": "dark",
@@ -4630,7 +1705,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -4650,75 +1728,7 @@
         }
       ]
     },
-    "info-ppm-dark-md": {
-      "_meta": {
-        "theme": "ppm",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "info-ppm-dark-lg": {
-      "_meta": {
-        "theme": "ppm",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "info-maconomy-light-sm": {
+    "info-maconomy-light": {
       "_meta": {
         "theme": "maconomy",
         "mode": "light",
@@ -4732,7 +1742,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -4752,75 +1765,7 @@
         }
       ]
     },
-    "info-maconomy-light-md": {
-      "_meta": {
-        "theme": "maconomy",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "info-maconomy-light-lg": {
-      "_meta": {
-        "theme": "maconomy",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "info-maconomy-dark-sm": {
+    "info-maconomy-dark": {
       "_meta": {
         "theme": "maconomy",
         "mode": "dark",
@@ -4834,7 +1779,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -4854,75 +1802,7 @@
         }
       ]
     },
-    "info-maconomy-dark-md": {
-      "_meta": {
-        "theme": "maconomy",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "info-maconomy-dark-lg": {
-      "_meta": {
-        "theme": "maconomy",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "orange-cp-light-sm": {
+    "orange-cp-light": {
       "_meta": {
         "theme": "cp",
         "mode": "light",
@@ -4936,7 +1816,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -4956,75 +1839,7 @@
         }
       ]
     },
-    "orange-cp-light-md": {
-      "_meta": {
-        "theme": "cp",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "orange-cp-light-lg": {
-      "_meta": {
-        "theme": "cp",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "orange-cp-dark-sm": {
+    "orange-cp-dark": {
       "_meta": {
         "theme": "cp",
         "mode": "dark",
@@ -5038,7 +1853,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -5058,75 +1876,7 @@
         }
       ]
     },
-    "orange-cp-dark-md": {
-      "_meta": {
-        "theme": "cp",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "orange-cp-dark-lg": {
-      "_meta": {
-        "theme": "cp",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "orange-vp-light-sm": {
+    "orange-vp-light": {
       "_meta": {
         "theme": "vp",
         "mode": "light",
@@ -5140,7 +1890,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -5160,75 +1913,7 @@
         }
       ]
     },
-    "orange-vp-light-md": {
-      "_meta": {
-        "theme": "vp",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "orange-vp-light-lg": {
-      "_meta": {
-        "theme": "vp",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "orange-vp-dark-sm": {
+    "orange-vp-dark": {
       "_meta": {
         "theme": "vp",
         "mode": "dark",
@@ -5242,7 +1927,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -5262,75 +1950,7 @@
         }
       ]
     },
-    "orange-vp-dark-md": {
-      "_meta": {
-        "theme": "vp",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "orange-vp-dark-lg": {
-      "_meta": {
-        "theme": "vp",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "orange-ppm-light-sm": {
+    "orange-ppm-light": {
       "_meta": {
         "theme": "ppm",
         "mode": "light",
@@ -5344,7 +1964,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -5364,75 +1987,7 @@
         }
       ]
     },
-    "orange-ppm-light-md": {
-      "_meta": {
-        "theme": "ppm",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "orange-ppm-light-lg": {
-      "_meta": {
-        "theme": "ppm",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "orange-ppm-dark-sm": {
+    "orange-ppm-dark": {
       "_meta": {
         "theme": "ppm",
         "mode": "dark",
@@ -5446,7 +2001,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -5466,75 +2024,7 @@
         }
       ]
     },
-    "orange-ppm-dark-md": {
-      "_meta": {
-        "theme": "ppm",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "orange-ppm-dark-lg": {
-      "_meta": {
-        "theme": "ppm",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "orange-maconomy-light-sm": {
+    "orange-maconomy-light": {
       "_meta": {
         "theme": "maconomy",
         "mode": "light",
@@ -5548,7 +2038,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -5568,75 +2061,7 @@
         }
       ]
     },
-    "orange-maconomy-light-md": {
-      "_meta": {
-        "theme": "maconomy",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "orange-maconomy-light-lg": {
-      "_meta": {
-        "theme": "maconomy",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "orange-maconomy-dark-sm": {
+    "orange-maconomy-dark": {
       "_meta": {
         "theme": "maconomy",
         "mode": "dark",
@@ -5650,7 +2075,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -5670,75 +2098,7 @@
         }
       ]
     },
-    "orange-maconomy-dark-md": {
-      "_meta": {
-        "theme": "maconomy",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "orange-maconomy-dark-lg": {
-      "_meta": {
-        "theme": "maconomy",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "pink-cp-light-sm": {
+    "pink-cp-light": {
       "_meta": {
         "theme": "cp",
         "mode": "light",
@@ -5752,7 +2112,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -5772,75 +2135,7 @@
         }
       ]
     },
-    "pink-cp-light-md": {
-      "_meta": {
-        "theme": "cp",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "pink-cp-light-lg": {
-      "_meta": {
-        "theme": "cp",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "pink-cp-dark-sm": {
+    "pink-cp-dark": {
       "_meta": {
         "theme": "cp",
         "mode": "dark",
@@ -5854,7 +2149,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -5874,75 +2172,7 @@
         }
       ]
     },
-    "pink-cp-dark-md": {
-      "_meta": {
-        "theme": "cp",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "pink-cp-dark-lg": {
-      "_meta": {
-        "theme": "cp",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "pink-vp-light-sm": {
+    "pink-vp-light": {
       "_meta": {
         "theme": "vp",
         "mode": "light",
@@ -5956,7 +2186,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -5976,75 +2209,7 @@
         }
       ]
     },
-    "pink-vp-light-md": {
-      "_meta": {
-        "theme": "vp",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "pink-vp-light-lg": {
-      "_meta": {
-        "theme": "vp",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "pink-vp-dark-sm": {
+    "pink-vp-dark": {
       "_meta": {
         "theme": "vp",
         "mode": "dark",
@@ -6058,7 +2223,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -6078,75 +2246,7 @@
         }
       ]
     },
-    "pink-vp-dark-md": {
-      "_meta": {
-        "theme": "vp",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "pink-vp-dark-lg": {
-      "_meta": {
-        "theme": "vp",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "pink-ppm-light-sm": {
+    "pink-ppm-light": {
       "_meta": {
         "theme": "ppm",
         "mode": "light",
@@ -6160,7 +2260,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -6180,75 +2283,7 @@
         }
       ]
     },
-    "pink-ppm-light-md": {
-      "_meta": {
-        "theme": "ppm",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "pink-ppm-light-lg": {
-      "_meta": {
-        "theme": "ppm",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "pink-ppm-dark-sm": {
+    "pink-ppm-dark": {
       "_meta": {
         "theme": "ppm",
         "mode": "dark",
@@ -6262,7 +2297,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -6282,75 +2320,7 @@
         }
       ]
     },
-    "pink-ppm-dark-md": {
-      "_meta": {
-        "theme": "ppm",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "pink-ppm-dark-lg": {
-      "_meta": {
-        "theme": "ppm",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "pink-maconomy-light-sm": {
+    "pink-maconomy-light": {
       "_meta": {
         "theme": "maconomy",
         "mode": "light",
@@ -6364,7 +2334,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -6384,75 +2357,7 @@
         }
       ]
     },
-    "pink-maconomy-light-md": {
-      "_meta": {
-        "theme": "maconomy",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "pink-maconomy-light-lg": {
-      "_meta": {
-        "theme": "maconomy",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "pink-maconomy-dark-sm": {
+    "pink-maconomy-dark": {
       "_meta": {
         "theme": "maconomy",
         "mode": "dark",
@@ -6466,7 +2371,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -6486,75 +2394,7 @@
         }
       ]
     },
-    "pink-maconomy-dark-md": {
-      "_meta": {
-        "theme": "maconomy",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "pink-maconomy-dark-lg": {
-      "_meta": {
-        "theme": "maconomy",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "disabled-cp-light-sm": {
+    "disabled-cp-light": {
       "_meta": {
         "theme": "cp",
         "mode": "light",
@@ -6568,7 +2408,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -6588,75 +2431,7 @@
         }
       ]
     },
-    "disabled-cp-light-md": {
-      "_meta": {
-        "theme": "cp",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "disabled-cp-light-lg": {
-      "_meta": {
-        "theme": "cp",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "disabled-cp-dark-sm": {
+    "disabled-cp-dark": {
       "_meta": {
         "theme": "cp",
         "mode": "dark",
@@ -6670,7 +2445,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -6690,75 +2468,7 @@
         }
       ]
     },
-    "disabled-cp-dark-md": {
-      "_meta": {
-        "theme": "cp",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "disabled-cp-dark-lg": {
-      "_meta": {
-        "theme": "cp",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "disabled-vp-light-sm": {
+    "disabled-vp-light": {
       "_meta": {
         "theme": "vp",
         "mode": "light",
@@ -6772,7 +2482,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -6792,75 +2505,7 @@
         }
       ]
     },
-    "disabled-vp-light-md": {
-      "_meta": {
-        "theme": "vp",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "disabled-vp-light-lg": {
-      "_meta": {
-        "theme": "vp",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "disabled-vp-dark-sm": {
+    "disabled-vp-dark": {
       "_meta": {
         "theme": "vp",
         "mode": "dark",
@@ -6874,7 +2519,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -6894,75 +2542,7 @@
         }
       ]
     },
-    "disabled-vp-dark-md": {
-      "_meta": {
-        "theme": "vp",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "disabled-vp-dark-lg": {
-      "_meta": {
-        "theme": "vp",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "disabled-ppm-light-sm": {
+    "disabled-ppm-light": {
       "_meta": {
         "theme": "ppm",
         "mode": "light",
@@ -6976,7 +2556,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -6996,75 +2579,7 @@
         }
       ]
     },
-    "disabled-ppm-light-md": {
-      "_meta": {
-        "theme": "ppm",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "disabled-ppm-light-lg": {
-      "_meta": {
-        "theme": "ppm",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "disabled-ppm-dark-sm": {
+    "disabled-ppm-dark": {
       "_meta": {
         "theme": "ppm",
         "mode": "dark",
@@ -7078,7 +2593,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -7098,75 +2616,7 @@
         }
       ]
     },
-    "disabled-ppm-dark-md": {
-      "_meta": {
-        "theme": "ppm",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "disabled-ppm-dark-lg": {
-      "_meta": {
-        "theme": "ppm",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "disabled-maconomy-light-sm": {
+    "disabled-maconomy-light": {
       "_meta": {
         "theme": "maconomy",
         "mode": "light",
@@ -7180,7 +2630,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -7200,75 +2653,7 @@
         }
       ]
     },
-    "disabled-maconomy-light-md": {
-      "_meta": {
-        "theme": "maconomy",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "disabled-maconomy-light-lg": {
-      "_meta": {
-        "theme": "maconomy",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "disabled-maconomy-dark-sm": {
+    "disabled-maconomy-dark": {
       "_meta": {
         "theme": "maconomy",
         "mode": "dark",
@@ -7282,75 +2667,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "disabled-maconomy-dark-md": {
-      "_meta": {
-        "theme": "maconomy",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".badge",
-          "tag": "span",
-          "styles": {},
-          "children": [
-            ".badge__content"
-          ]
-        },
-        {
-          "selector": ".badge__content",
-          "tag": "span",
-          "styles": {},
-          "parent": ".badge"
-        }
-      ]
-    },
-    "disabled-maconomy-dark-lg": {
-      "_meta": {
-        "theme": "maconomy",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".badge": {},
-          ".badge__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -7406,5 +2726,27 @@
       "description": "Standalone status badge",
       "snippet": "<Badge variant=\"success\">Active</Badge>"
     }
-  ]
+  ],
+  "specKeyOrder": [
+    "variant",
+    "theme",
+    "mode"
+  ],
+  "dimensionDefaults": {
+    "variant": "default",
+    "theme": "cp",
+    "mode": "light"
+  },
+  "structure": {
+    "root": ".badge",
+    "children": []
+  },
+  "fonts": {
+    "Figtree": "https://fonts.googleapis.com/css2?family=Figtree:wght@300..900&display=swap",
+    "Lexend": "https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700;800;900&display=swap",
+    "JetBrains Mono": "https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap"
+  },
+  "defaultContent": {
+    "_rule": "No default content defined; do not invent labels, icons, or copy. Use only what is in the spec or leave slots empty."
+  }
 }

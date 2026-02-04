@@ -22,7 +22,7 @@ Replace `<repo-url>` with your actual repository URL.
 
 When you use sparse checkout with the command above, you'll get:
 
-- **`src/components/`** - All UI components (49 components)
+- **`src/components/`** - All UI components (48 components)
   - `src/components/ui/` - All component files
   - `src/components/ui/index.ts` - Component exports
 

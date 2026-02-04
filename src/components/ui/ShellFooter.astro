@@ -54,7 +54,7 @@ const overflowTabsWithPinIcon = overflowTabs.map(tab => ({
 }));
 ---
 
-<div class={`shell-footer ${className}`.trim()} data-variant={variant}>
+<div class={`shell-footer ${variant === 'compact' ? 'shell-footer--compact' : ''} ${className}`.trim()} data-variant={variant}>
   <TabStrip
     tabs={tabsWithPinIcon}
     showAddTab={showAddTab}
@@ -167,7 +167,8 @@ const overflowTabsWithPinIcon = overflowTabs.map(tab => ({
     color: var(--text-primary);
   }
 
-  /* Compact variant */
+  /* Compact variant - styles applied via .shell-footer--compact for exact spec discovery */
+  .shell-footer--compact,
   .shell-footer[data-variant="compact"] {
     height: var(--shell-footer-height-compact);
   }

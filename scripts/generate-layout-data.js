@@ -368,6 +368,86 @@ function buildSlots() {
 }
 
 /**
+ * Canonical DOM order for .shell-layout__container children (matches ShellLayout.astro).
+ * Build exactly this order; do not reorder.
+ */
+function buildContentOrder() {
+  return {
+    contentOrder: [
+      '.shell-layout__header',
+      '.shell-layout__floating-nav-wrap',
+      '.shell-layout__left-sidebar',
+      '.shell-layout__right-sidebar',
+      '.shell-layout__right-panel',
+      '.shell-layout__left-panel',
+      '.shell-layout__main',
+      '.shell-layout__footer',
+    ],
+    'contentOrder.shell-layout__main': [
+      'ShellPageHeader (optional when pageHeaderTitle provided)',
+      'default slot (main content)',
+    ],
+  };
+}
+
+/**
+ * Default content and props for shell layout so the builder does not invent.
+ * Per-theme visibility and child defaults reference component specs.
+ */
+function buildDefaultContent(themeComposition) {
+  const defaultProps = {
+    productName: 'Harmony',
+    logoSrc: '/logos/CPVPLogo.svg',
+    companyName: 'Company name',
+    showCompanyPicker: true,
+    showRightSidebar: true,
+    leftSidebarVariant: 'cp',
+    rightSidebarVariant: 'cp',
+    tabs: [],
+    showAddTab: true,
+    footerVariant: 'default',
+    showFooter: undefined,
+    showFloatingNav: undefined,
+    floatingNavVariant: 'full',
+    showExecute: true,
+    saveDisabled: false,
+  };
+  const perTheme = {};
+  for (const [theme, comp] of Object.entries(themeComposition)) {
+    perTheme[theme] = {
+      hasFooter: comp.hasFooter,
+      hasFloatingNav: comp.hasFloatingNav,
+      productName: comp.productName,
+      gridRows: comp.gridRows,
+      mainPadding: comp.mainPadding,
+    };
+  }
+  return {
+    defaultProps,
+    perTheme,
+    _rule: 'Use defaultProps when not overridden. For LeftSidebar/RightSidebar/ShellHeader/ShellFooter content, use each component\'s defaultContent from its component spec. Do not invent sections, tabs, labels, or company names.',
+  };
+}
+
+/**
+ * Build contract for exact layout build (same idea as component _buildContract).
+ */
+function buildBuildContract() {
+  return {
+    _buildContract: {
+      forbiddenModifications: [
+        'Do not use Tailwind arbitrary values',
+        'Do not change hex colors to named colors',
+        'Do not simplify box-shadow values',
+        'Do not add CSS properties that are not in the layout spec or positioning/gridStructure',
+        'Do not reorder children: follow contentOrder exactly (header, floating-nav-wrap, left-sidebar, right-sidebar, panels, main, footer)',
+        'Build exactly what is in the spec: structure, styles, and defaultContent from the layout and child component specs only; no inference, no additions, no "fixes"',
+      ],
+    },
+  };
+}
+
+/**
  * Resolve spacing tokens to actual values
  */
 function resolveSpacingTokens(spacingTokens, variableMap) {
@@ -527,6 +607,11 @@ function generateLayoutData() {
   const themeComposition = buildThemeComposition();
   console.log('✅ Built theme composition for 4 themes\n');
 
+  console.log('📦 Building contentOrder, defaultContent, and _buildContract...');
+  const contentOrderData = buildContentOrder();
+  const defaultContent = buildDefaultContent(themeComposition);
+  const buildContract = buildBuildContract();
+
   // Build layout data structure
   const layoutData = {
     name: 'ShellLayout',
@@ -544,6 +629,10 @@ function generateLayoutData() {
     positioning: buildPositioning(),
     responsive: buildResponsive(),
     slots: buildSlots(),
+
+    ...contentOrderData,
+    defaultContent,
+    ...buildContract,
 
     // Visual specifications with resolved values
     visualSpecifications: buildLayoutVisualSpecs(themeComposition, variableMap),

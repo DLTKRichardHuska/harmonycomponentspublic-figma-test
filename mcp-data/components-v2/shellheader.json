@@ -114,13 +114,17 @@
           },
           ".header__title-suffix": {
             "color": "#6B7280",
-            "font-weight": "400"
+            "font-weight": "400",
+            "font-family": "'Figtree', sans-serif"
           }
         },
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -181,7 +185,12 @@
             "gap": "8px",
             "text-decoration": "none"
           },
-          "parent": ".header"
+          "parent": ".header__brand",
+          "states": {
+            "hover": {
+              "text-decoration": "none"
+            }
+          }
         },
         {
           "selector": ".header__center",
@@ -216,7 +225,7 @@
             "height": "20px",
             "border-radius": "9999px"
           },
-          "parent": ".header"
+          "parent": ".header__brand-link"
         },
         {
           "selector": ".header__title",
@@ -228,7 +237,7 @@
             "color": "#373F4E",
             "letter-spacing": "-0.025em"
           },
-          "parent": ".header"
+          "parent": ".header__brand-link"
         },
         {
           "selector": ".header__title-product",
@@ -243,7 +252,1506 @@
           "tag": "span",
           "styles": {
             "color": "#6B7280",
-            "font-weight": "400"
+            "font-weight": "400",
+            "font-family": "'Figtree', sans-serif"
+          },
+          "parent": ".header"
+        }
+      ]
+    },
+    "cp-dark": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".header": {
+            "width": "100%",
+            "height": "56px",
+            "background-color": "#333D47",
+            "border-bottom": "none",
+            "display": "flex",
+            "align-items": "center",
+            "justify-content": "space-between",
+            "padding": "0 16px",
+            "position": "relative",
+            "z-index": "50",
+            "flex-shrink": "0"
+          },
+          ".header__actions": {
+            "display": "flex",
+            "align-items": "center",
+            "gap": "12px"
+          },
+          ".header__brand": {
+            "display": "flex",
+            "align-items": "center",
+            "gap": "16px"
+          },
+          ".header__brand-link": {
+            "display": "flex",
+            "align-items": "center",
+            "gap": "8px",
+            "text-decoration": "none"
+          },
+          ".header__center": {
+            "display": "none",
+            "position": "absolute",
+            "left": "50%",
+            "top": "50%",
+            "transform": "translate(-50%, -50%)"
+          },
+          ".header__gradient": {
+            "position": "absolute",
+            "bottom": "0",
+            "left": "0",
+            "width": "100%",
+            "height": "6px",
+            "pointer-events": "none"
+          },
+          ".header__logo": {
+            "width": "20px",
+            "height": "20px",
+            "border-radius": "9999px"
+          },
+          ".header__title": {
+            "font-family": "'Lexend', sans-serif",
+            "font-weight": "700",
+            "font-size": "0.875rem",
+            "color": "#E9ECEF",
+            "letter-spacing": "-0.025em"
+          },
+          ".header__title-product": {
+            "color": "#59ACFF"
+          },
+          ".header__title-suffix": {
+            "color": "#BBBBC6",
+            "font-weight": "400",
+            "font-family": "'Figtree', sans-serif"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".header",
+          "tag": "div",
+          "styles": {
+            "width": "100%",
+            "height": "56px",
+            "background-color": "#333D47",
+            "border-bottom": "none",
+            "display": "flex",
+            "align-items": "center",
+            "justify-content": "space-between",
+            "padding": "0 16px",
+            "position": "relative",
+            "z-index": "50",
+            "flex-shrink": "0"
+          },
+          "children": [
+            ".header__actions",
+            ".header__brand",
+            ".header__brand-link",
+            ".header__center",
+            ".header__gradient",
+            ".header__logo",
+            ".header__title",
+            ".header__title-product",
+            ".header__title-suffix"
+          ]
+        },
+        {
+          "selector": ".header__actions",
+          "tag": "span",
+          "styles": {
+            "display": "flex",
+            "align-items": "center",
+            "gap": "12px"
+          },
+          "parent": ".header"
+        },
+        {
+          "selector": ".header__brand",
+          "tag": "span",
+          "styles": {
+            "display": "flex",
+            "align-items": "center",
+            "gap": "16px"
+          },
+          "parent": ".header"
+        },
+        {
+          "selector": ".header__brand-link",
+          "tag": "span",
+          "styles": {
+            "display": "flex",
+            "align-items": "center",
+            "gap": "8px",
+            "text-decoration": "none"
+          },
+          "parent": ".header__brand",
+          "states": {
+            "hover": {
+              "text-decoration": "none"
+            }
+          }
+        },
+        {
+          "selector": ".header__center",
+          "tag": "span",
+          "styles": {
+            "display": "none",
+            "position": "absolute",
+            "left": "50%",
+            "top": "50%",
+            "transform": "translate(-50%, -50%)"
+          },
+          "parent": ".header"
+        },
+        {
+          "selector": ".header__gradient",
+          "tag": "span",
+          "styles": {
+            "position": "absolute",
+            "bottom": "0",
+            "left": "0",
+            "width": "100%",
+            "height": "6px",
+            "pointer-events": "none"
+          },
+          "parent": ".header"
+        },
+        {
+          "selector": ".header__logo",
+          "tag": "span",
+          "styles": {
+            "width": "20px",
+            "height": "20px",
+            "border-radius": "9999px"
+          },
+          "parent": ".header__brand-link"
+        },
+        {
+          "selector": ".header__title",
+          "tag": "span",
+          "styles": {
+            "font-family": "'Lexend', sans-serif",
+            "font-weight": "700",
+            "font-size": "0.875rem",
+            "color": "#E9ECEF",
+            "letter-spacing": "-0.025em"
+          },
+          "parent": ".header__brand-link"
+        },
+        {
+          "selector": ".header__title-product",
+          "tag": "span",
+          "styles": {
+            "color": "#59ACFF"
+          },
+          "parent": ".header"
+        },
+        {
+          "selector": ".header__title-suffix",
+          "tag": "span",
+          "styles": {
+            "color": "#BBBBC6",
+            "font-weight": "400",
+            "font-family": "'Figtree', sans-serif"
+          },
+          "parent": ".header"
+        }
+      ]
+    },
+    "vp-light": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".header": {
+            "width": "100%",
+            "height": "56px",
+            "background-color": "#FCFDFF",
+            "border-bottom": "none",
+            "display": "flex",
+            "align-items": "center",
+            "justify-content": "space-between",
+            "padding": "0 16px",
+            "position": "relative",
+            "z-index": "50",
+            "flex-shrink": "0"
+          },
+          ".header__actions": {
+            "display": "flex",
+            "align-items": "center",
+            "gap": "12px"
+          },
+          ".header__brand": {
+            "display": "flex",
+            "align-items": "center",
+            "gap": "16px"
+          },
+          ".header__brand-link": {
+            "display": "flex",
+            "align-items": "center",
+            "gap": "8px",
+            "text-decoration": "none"
+          },
+          ".header__center": {
+            "display": "none",
+            "position": "absolute",
+            "left": "50%",
+            "top": "50%",
+            "transform": "translate(-50%, -50%)"
+          },
+          ".header__gradient": {
+            "position": "absolute",
+            "bottom": "0",
+            "left": "0",
+            "width": "100%",
+            "height": "6px",
+            "pointer-events": "none"
+          },
+          ".header__logo": {
+            "width": "20px",
+            "height": "20px",
+            "border-radius": "9999px"
+          },
+          ".header__title": {
+            "font-family": "'Lexend', sans-serif",
+            "font-weight": "700",
+            "font-size": "0.875rem",
+            "color": "#373F4E",
+            "letter-spacing": "-0.025em"
+          },
+          ".header__title-product": {
+            "color": "#4C92D9"
+          },
+          ".header__title-suffix": {
+            "color": "#6B7280",
+            "font-weight": "400",
+            "font-family": "'Figtree', sans-serif"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".header",
+          "tag": "div",
+          "styles": {
+            "width": "100%",
+            "height": "56px",
+            "background-color": "#FCFDFF",
+            "border-bottom": "none",
+            "display": "flex",
+            "align-items": "center",
+            "justify-content": "space-between",
+            "padding": "0 16px",
+            "position": "relative",
+            "z-index": "50",
+            "flex-shrink": "0"
+          },
+          "children": [
+            ".header__actions",
+            ".header__brand",
+            ".header__brand-link",
+            ".header__center",
+            ".header__gradient",
+            ".header__logo",
+            ".header__title",
+            ".header__title-product",
+            ".header__title-suffix"
+          ]
+        },
+        {
+          "selector": ".header__actions",
+          "tag": "span",
+          "styles": {
+            "display": "flex",
+            "align-items": "center",
+            "gap": "12px"
+          },
+          "parent": ".header"
+        },
+        {
+          "selector": ".header__brand",
+          "tag": "span",
+          "styles": {
+            "display": "flex",
+            "align-items": "center",
+            "gap": "16px"
+          },
+          "parent": ".header"
+        },
+        {
+          "selector": ".header__brand-link",
+          "tag": "span",
+          "styles": {
+            "display": "flex",
+            "align-items": "center",
+            "gap": "8px",
+            "text-decoration": "none"
+          },
+          "parent": ".header__brand",
+          "states": {
+            "hover": {
+              "text-decoration": "none"
+            }
+          }
+        },
+        {
+          "selector": ".header__center",
+          "tag": "span",
+          "styles": {
+            "display": "none",
+            "position": "absolute",
+            "left": "50%",
+            "top": "50%",
+            "transform": "translate(-50%, -50%)"
+          },
+          "parent": ".header"
+        },
+        {
+          "selector": ".header__gradient",
+          "tag": "span",
+          "styles": {
+            "position": "absolute",
+            "bottom": "0",
+            "left": "0",
+            "width": "100%",
+            "height": "6px",
+            "pointer-events": "none"
+          },
+          "parent": ".header"
+        },
+        {
+          "selector": ".header__logo",
+          "tag": "span",
+          "styles": {
+            "width": "20px",
+            "height": "20px",
+            "border-radius": "9999px"
+          },
+          "parent": ".header__brand-link"
+        },
+        {
+          "selector": ".header__title",
+          "tag": "span",
+          "styles": {
+            "font-family": "'Lexend', sans-serif",
+            "font-weight": "700",
+            "font-size": "0.875rem",
+            "color": "#373F4E",
+            "letter-spacing": "-0.025em"
+          },
+          "parent": ".header__brand-link"
+        },
+        {
+          "selector": ".header__title-product",
+          "tag": "span",
+          "styles": {
+            "color": "#4C92D9"
+          },
+          "parent": ".header"
+        },
+        {
+          "selector": ".header__title-suffix",
+          "tag": "span",
+          "styles": {
+            "color": "#6B7280",
+            "font-weight": "400",
+            "font-family": "'Figtree', sans-serif"
+          },
+          "parent": ".header"
+        }
+      ]
+    },
+    "vp-dark": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".header": {
+            "width": "100%",
+            "height": "56px",
+            "background-color": "#1A1C1F",
+            "border-bottom": "none",
+            "display": "flex",
+            "align-items": "center",
+            "justify-content": "space-between",
+            "padding": "0 16px",
+            "position": "relative",
+            "z-index": "50",
+            "flex-shrink": "0"
+          },
+          ".header__actions": {
+            "display": "flex",
+            "align-items": "center",
+            "gap": "12px"
+          },
+          ".header__brand": {
+            "display": "flex",
+            "align-items": "center",
+            "gap": "16px"
+          },
+          ".header__brand-link": {
+            "display": "flex",
+            "align-items": "center",
+            "gap": "8px",
+            "text-decoration": "none"
+          },
+          ".header__center": {
+            "display": "none",
+            "position": "absolute",
+            "left": "50%",
+            "top": "50%",
+            "transform": "translate(-50%, -50%)"
+          },
+          ".header__gradient": {
+            "position": "absolute",
+            "bottom": "0",
+            "left": "0",
+            "width": "100%",
+            "height": "6px",
+            "pointer-events": "none"
+          },
+          ".header__logo": {
+            "width": "20px",
+            "height": "20px",
+            "border-radius": "9999px"
+          },
+          ".header__title": {
+            "font-family": "'Lexend', sans-serif",
+            "font-weight": "700",
+            "font-size": "0.875rem",
+            "color": "#FAFAFA",
+            "letter-spacing": "-0.025em"
+          },
+          ".header__title-product": {
+            "color": "#59ACFF"
+          },
+          ".header__title-suffix": {
+            "color": "#B5B5BC",
+            "font-weight": "400",
+            "font-family": "'Figtree', sans-serif"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".header",
+          "tag": "div",
+          "styles": {
+            "width": "100%",
+            "height": "56px",
+            "background-color": "#1A1C1F",
+            "border-bottom": "none",
+            "display": "flex",
+            "align-items": "center",
+            "justify-content": "space-between",
+            "padding": "0 16px",
+            "position": "relative",
+            "z-index": "50",
+            "flex-shrink": "0"
+          },
+          "children": [
+            ".header__actions",
+            ".header__brand",
+            ".header__brand-link",
+            ".header__center",
+            ".header__gradient",
+            ".header__logo",
+            ".header__title",
+            ".header__title-product",
+            ".header__title-suffix"
+          ]
+        },
+        {
+          "selector": ".header__actions",
+          "tag": "span",
+          "styles": {
+            "display": "flex",
+            "align-items": "center",
+            "gap": "12px"
+          },
+          "parent": ".header"
+        },
+        {
+          "selector": ".header__brand",
+          "tag": "span",
+          "styles": {
+            "display": "flex",
+            "align-items": "center",
+            "gap": "16px"
+          },
+          "parent": ".header"
+        },
+        {
+          "selector": ".header__brand-link",
+          "tag": "span",
+          "styles": {
+            "display": "flex",
+            "align-items": "center",
+            "gap": "8px",
+            "text-decoration": "none"
+          },
+          "parent": ".header__brand",
+          "states": {
+            "hover": {
+              "text-decoration": "none"
+            }
+          }
+        },
+        {
+          "selector": ".header__center",
+          "tag": "span",
+          "styles": {
+            "display": "none",
+            "position": "absolute",
+            "left": "50%",
+            "top": "50%",
+            "transform": "translate(-50%, -50%)"
+          },
+          "parent": ".header"
+        },
+        {
+          "selector": ".header__gradient",
+          "tag": "span",
+          "styles": {
+            "position": "absolute",
+            "bottom": "0",
+            "left": "0",
+            "width": "100%",
+            "height": "6px",
+            "pointer-events": "none"
+          },
+          "parent": ".header"
+        },
+        {
+          "selector": ".header__logo",
+          "tag": "span",
+          "styles": {
+            "width": "20px",
+            "height": "20px",
+            "border-radius": "9999px"
+          },
+          "parent": ".header__brand-link"
+        },
+        {
+          "selector": ".header__title",
+          "tag": "span",
+          "styles": {
+            "font-family": "'Lexend', sans-serif",
+            "font-weight": "700",
+            "font-size": "0.875rem",
+            "color": "#FAFAFA",
+            "letter-spacing": "-0.025em"
+          },
+          "parent": ".header__brand-link"
+        },
+        {
+          "selector": ".header__title-product",
+          "tag": "span",
+          "styles": {
+            "color": "#59ACFF"
+          },
+          "parent": ".header"
+        },
+        {
+          "selector": ".header__title-suffix",
+          "tag": "span",
+          "styles": {
+            "color": "#B5B5BC",
+            "font-weight": "400",
+            "font-family": "'Figtree', sans-serif"
+          },
+          "parent": ".header"
+        }
+      ]
+    },
+    "ppm-light": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".header": {
+            "width": "100%",
+            "height": "56px",
+            "background-color": "#FCFDFF",
+            "border-bottom": "none",
+            "display": "flex",
+            "align-items": "center",
+            "justify-content": "space-between",
+            "padding": "0 16px",
+            "position": "relative",
+            "z-index": "50",
+            "flex-shrink": "0"
+          },
+          ".header__actions": {
+            "display": "flex",
+            "align-items": "center",
+            "gap": "12px"
+          },
+          ".header__brand": {
+            "display": "flex",
+            "align-items": "center",
+            "gap": "16px"
+          },
+          ".header__brand-link": {
+            "display": "flex",
+            "align-items": "center",
+            "gap": "8px",
+            "text-decoration": "none"
+          },
+          ".header__center": {
+            "display": "none",
+            "position": "absolute",
+            "left": "50%",
+            "top": "50%",
+            "transform": "translate(-50%, -50%)"
+          },
+          ".header__gradient": {
+            "position": "absolute",
+            "bottom": "0",
+            "left": "0",
+            "width": "100%",
+            "height": "6px",
+            "pointer-events": "none"
+          },
+          ".header__logo": {
+            "width": "20px",
+            "height": "20px",
+            "border-radius": "9999px"
+          },
+          ".header__title": {
+            "font-family": "'Lexend', sans-serif",
+            "font-weight": "700",
+            "font-size": "0.875rem",
+            "color": "#373F4E",
+            "letter-spacing": "-0.025em"
+          },
+          ".header__title-product": {
+            "color": "#4C92D9"
+          },
+          ".header__title-suffix": {
+            "color": "#6B7280",
+            "font-weight": "400",
+            "font-family": "'Figtree', sans-serif"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".header",
+          "tag": "div",
+          "styles": {
+            "width": "100%",
+            "height": "56px",
+            "background-color": "#FCFDFF",
+            "border-bottom": "none",
+            "display": "flex",
+            "align-items": "center",
+            "justify-content": "space-between",
+            "padding": "0 16px",
+            "position": "relative",
+            "z-index": "50",
+            "flex-shrink": "0"
+          },
+          "children": [
+            ".header__actions",
+            ".header__brand",
+            ".header__brand-link",
+            ".header__center",
+            ".header__gradient",
+            ".header__logo",
+            ".header__title",
+            ".header__title-product",
+            ".header__title-suffix"
+          ]
+        },
+        {
+          "selector": ".header__actions",
+          "tag": "span",
+          "styles": {
+            "display": "flex",
+            "align-items": "center",
+            "gap": "12px"
+          },
+          "parent": ".header"
+        },
+        {
+          "selector": ".header__brand",
+          "tag": "span",
+          "styles": {
+            "display": "flex",
+            "align-items": "center",
+            "gap": "16px"
+          },
+          "parent": ".header"
+        },
+        {
+          "selector": ".header__brand-link",
+          "tag": "span",
+          "styles": {
+            "display": "flex",
+            "align-items": "center",
+            "gap": "8px",
+            "text-decoration": "none"
+          },
+          "parent": ".header__brand",
+          "states": {
+            "hover": {
+              "text-decoration": "none"
+            }
+          }
+        },
+        {
+          "selector": ".header__center",
+          "tag": "span",
+          "styles": {
+            "display": "none",
+            "position": "absolute",
+            "left": "50%",
+            "top": "50%",
+            "transform": "translate(-50%, -50%)"
+          },
+          "parent": ".header"
+        },
+        {
+          "selector": ".header__gradient",
+          "tag": "span",
+          "styles": {
+            "position": "absolute",
+            "bottom": "0",
+            "left": "0",
+            "width": "100%",
+            "height": "6px",
+            "pointer-events": "none"
+          },
+          "parent": ".header"
+        },
+        {
+          "selector": ".header__logo",
+          "tag": "span",
+          "styles": {
+            "width": "20px",
+            "height": "20px",
+            "border-radius": "9999px"
+          },
+          "parent": ".header__brand-link"
+        },
+        {
+          "selector": ".header__title",
+          "tag": "span",
+          "styles": {
+            "font-family": "'Lexend', sans-serif",
+            "font-weight": "700",
+            "font-size": "0.875rem",
+            "color": "#373F4E",
+            "letter-spacing": "-0.025em"
+          },
+          "parent": ".header__brand-link"
+        },
+        {
+          "selector": ".header__title-product",
+          "tag": "span",
+          "styles": {
+            "color": "#4C92D9"
+          },
+          "parent": ".header"
+        },
+        {
+          "selector": ".header__title-suffix",
+          "tag": "span",
+          "styles": {
+            "color": "#6B7280",
+            "font-weight": "400",
+            "font-family": "'Figtree', sans-serif"
+          },
+          "parent": ".header"
+        }
+      ]
+    },
+    "ppm-dark": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".header": {
+            "width": "100%",
+            "height": "56px",
+            "background-color": "#1A1C1F",
+            "border-bottom": "none",
+            "display": "flex",
+            "align-items": "center",
+            "justify-content": "space-between",
+            "padding": "0 16px",
+            "position": "relative",
+            "z-index": "50",
+            "flex-shrink": "0"
+          },
+          ".header__actions": {
+            "display": "flex",
+            "align-items": "center",
+            "gap": "12px"
+          },
+          ".header__brand": {
+            "display": "flex",
+            "align-items": "center",
+            "gap": "16px"
+          },
+          ".header__brand-link": {
+            "display": "flex",
+            "align-items": "center",
+            "gap": "8px",
+            "text-decoration": "none"
+          },
+          ".header__center": {
+            "display": "none",
+            "position": "absolute",
+            "left": "50%",
+            "top": "50%",
+            "transform": "translate(-50%, -50%)"
+          },
+          ".header__gradient": {
+            "position": "absolute",
+            "bottom": "0",
+            "left": "0",
+            "width": "100%",
+            "height": "6px",
+            "pointer-events": "none"
+          },
+          ".header__logo": {
+            "width": "20px",
+            "height": "20px",
+            "border-radius": "9999px"
+          },
+          ".header__title": {
+            "font-family": "'Lexend', sans-serif",
+            "font-weight": "700",
+            "font-size": "0.875rem",
+            "color": "#FAFAFA",
+            "letter-spacing": "-0.025em"
+          },
+          ".header__title-product": {
+            "color": "#59ACFF"
+          },
+          ".header__title-suffix": {
+            "color": "#B5B5BC",
+            "font-weight": "400",
+            "font-family": "'Figtree', sans-serif"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".header",
+          "tag": "div",
+          "styles": {
+            "width": "100%",
+            "height": "56px",
+            "background-color": "#1A1C1F",
+            "border-bottom": "none",
+            "display": "flex",
+            "align-items": "center",
+            "justify-content": "space-between",
+            "padding": "0 16px",
+            "position": "relative",
+            "z-index": "50",
+            "flex-shrink": "0"
+          },
+          "children": [
+            ".header__actions",
+            ".header__brand",
+            ".header__brand-link",
+            ".header__center",
+            ".header__gradient",
+            ".header__logo",
+            ".header__title",
+            ".header__title-product",
+            ".header__title-suffix"
+          ]
+        },
+        {
+          "selector": ".header__actions",
+          "tag": "span",
+          "styles": {
+            "display": "flex",
+            "align-items": "center",
+            "gap": "12px"
+          },
+          "parent": ".header"
+        },
+        {
+          "selector": ".header__brand",
+          "tag": "span",
+          "styles": {
+            "display": "flex",
+            "align-items": "center",
+            "gap": "16px"
+          },
+          "parent": ".header"
+        },
+        {
+          "selector": ".header__brand-link",
+          "tag": "span",
+          "styles": {
+            "display": "flex",
+            "align-items": "center",
+            "gap": "8px",
+            "text-decoration": "none"
+          },
+          "parent": ".header__brand",
+          "states": {
+            "hover": {
+              "text-decoration": "none"
+            }
+          }
+        },
+        {
+          "selector": ".header__center",
+          "tag": "span",
+          "styles": {
+            "display": "none",
+            "position": "absolute",
+            "left": "50%",
+            "top": "50%",
+            "transform": "translate(-50%, -50%)"
+          },
+          "parent": ".header"
+        },
+        {
+          "selector": ".header__gradient",
+          "tag": "span",
+          "styles": {
+            "position": "absolute",
+            "bottom": "0",
+            "left": "0",
+            "width": "100%",
+            "height": "6px",
+            "pointer-events": "none"
+          },
+          "parent": ".header"
+        },
+        {
+          "selector": ".header__logo",
+          "tag": "span",
+          "styles": {
+            "width": "20px",
+            "height": "20px",
+            "border-radius": "9999px"
+          },
+          "parent": ".header__brand-link"
+        },
+        {
+          "selector": ".header__title",
+          "tag": "span",
+          "styles": {
+            "font-family": "'Lexend', sans-serif",
+            "font-weight": "700",
+            "font-size": "0.875rem",
+            "color": "#FAFAFA",
+            "letter-spacing": "-0.025em"
+          },
+          "parent": ".header__brand-link"
+        },
+        {
+          "selector": ".header__title-product",
+          "tag": "span",
+          "styles": {
+            "color": "#59ACFF"
+          },
+          "parent": ".header"
+        },
+        {
+          "selector": ".header__title-suffix",
+          "tag": "span",
+          "styles": {
+            "color": "#B5B5BC",
+            "font-weight": "400",
+            "font-family": "'Figtree', sans-serif"
+          },
+          "parent": ".header"
+        }
+      ]
+    },
+    "maconomy-light": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".header": {
+            "width": "100%",
+            "height": "56px",
+            "background-color": "#FCFDFF",
+            "border-bottom": "none",
+            "display": "flex",
+            "align-items": "center",
+            "justify-content": "space-between",
+            "padding": "0 16px",
+            "position": "relative",
+            "z-index": "50",
+            "flex-shrink": "0"
+          },
+          ".header__actions": {
+            "display": "flex",
+            "align-items": "center",
+            "gap": "12px"
+          },
+          ".header__brand": {
+            "display": "flex",
+            "align-items": "center",
+            "gap": "16px"
+          },
+          ".header__brand-link": {
+            "display": "flex",
+            "align-items": "center",
+            "gap": "8px",
+            "text-decoration": "none"
+          },
+          ".header__center": {
+            "display": "none",
+            "position": "absolute",
+            "left": "50%",
+            "top": "50%",
+            "transform": "translate(-50%, -50%)"
+          },
+          ".header__gradient": {
+            "position": "absolute",
+            "bottom": "0",
+            "left": "0",
+            "width": "100%",
+            "height": "6px",
+            "pointer-events": "none"
+          },
+          ".header__logo": {
+            "width": "20px",
+            "height": "20px",
+            "border-radius": "9999px"
+          },
+          ".header__title": {
+            "font-family": "'Lexend', sans-serif",
+            "font-weight": "700",
+            "font-size": "0.875rem",
+            "color": "#373F4E",
+            "letter-spacing": "-0.025em"
+          },
+          ".header__title-product": {
+            "color": "#4C92D9"
+          },
+          ".header__title-suffix": {
+            "color": "#6B7280",
+            "font-weight": "400",
+            "font-family": "'Figtree', sans-serif"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".header",
+          "tag": "div",
+          "styles": {
+            "width": "100%",
+            "height": "56px",
+            "background-color": "#FCFDFF",
+            "border-bottom": "none",
+            "display": "flex",
+            "align-items": "center",
+            "justify-content": "space-between",
+            "padding": "0 16px",
+            "position": "relative",
+            "z-index": "50",
+            "flex-shrink": "0"
+          },
+          "children": [
+            ".header__actions",
+            ".header__brand",
+            ".header__brand-link",
+            ".header__center",
+            ".header__gradient",
+            ".header__logo",
+            ".header__title",
+            ".header__title-product",
+            ".header__title-suffix"
+          ]
+        },
+        {
+          "selector": ".header__actions",
+          "tag": "span",
+          "styles": {
+            "display": "flex",
+            "align-items": "center",
+            "gap": "12px"
+          },
+          "parent": ".header"
+        },
+        {
+          "selector": ".header__brand",
+          "tag": "span",
+          "styles": {
+            "display": "flex",
+            "align-items": "center",
+            "gap": "16px"
+          },
+          "parent": ".header"
+        },
+        {
+          "selector": ".header__brand-link",
+          "tag": "span",
+          "styles": {
+            "display": "flex",
+            "align-items": "center",
+            "gap": "8px",
+            "text-decoration": "none"
+          },
+          "parent": ".header__brand",
+          "states": {
+            "hover": {
+              "text-decoration": "none"
+            }
+          }
+        },
+        {
+          "selector": ".header__center",
+          "tag": "span",
+          "styles": {
+            "display": "none",
+            "position": "absolute",
+            "left": "50%",
+            "top": "50%",
+            "transform": "translate(-50%, -50%)"
+          },
+          "parent": ".header"
+        },
+        {
+          "selector": ".header__gradient",
+          "tag": "span",
+          "styles": {
+            "position": "absolute",
+            "bottom": "0",
+            "left": "0",
+            "width": "100%",
+            "height": "6px",
+            "pointer-events": "none"
+          },
+          "parent": ".header"
+        },
+        {
+          "selector": ".header__logo",
+          "tag": "span",
+          "styles": {
+            "width": "20px",
+            "height": "20px",
+            "border-radius": "9999px"
+          },
+          "parent": ".header__brand-link"
+        },
+        {
+          "selector": ".header__title",
+          "tag": "span",
+          "styles": {
+            "font-family": "'Lexend', sans-serif",
+            "font-weight": "700",
+            "font-size": "0.875rem",
+            "color": "#373F4E",
+            "letter-spacing": "-0.025em"
+          },
+          "parent": ".header__brand-link"
+        },
+        {
+          "selector": ".header__title-product",
+          "tag": "span",
+          "styles": {
+            "color": "#4C92D9"
+          },
+          "parent": ".header"
+        },
+        {
+          "selector": ".header__title-suffix",
+          "tag": "span",
+          "styles": {
+            "color": "#6B7280",
+            "font-weight": "400",
+            "font-family": "'Figtree', sans-serif"
+          },
+          "parent": ".header"
+        }
+      ]
+    },
+    "maconomy-dark": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".header": {
+            "width": "100%",
+            "height": "56px",
+            "background-color": "#1A1C1F",
+            "border-bottom": "none",
+            "display": "flex",
+            "align-items": "center",
+            "justify-content": "space-between",
+            "padding": "0 16px",
+            "position": "relative",
+            "z-index": "50",
+            "flex-shrink": "0"
+          },
+          ".header__actions": {
+            "display": "flex",
+            "align-items": "center",
+            "gap": "12px"
+          },
+          ".header__brand": {
+            "display": "flex",
+            "align-items": "center",
+            "gap": "16px"
+          },
+          ".header__brand-link": {
+            "display": "flex",
+            "align-items": "center",
+            "gap": "8px",
+            "text-decoration": "none"
+          },
+          ".header__center": {
+            "display": "none",
+            "position": "absolute",
+            "left": "50%",
+            "top": "50%",
+            "transform": "translate(-50%, -50%)"
+          },
+          ".header__gradient": {
+            "position": "absolute",
+            "bottom": "0",
+            "left": "0",
+            "width": "100%",
+            "height": "6px",
+            "pointer-events": "none"
+          },
+          ".header__logo": {
+            "width": "20px",
+            "height": "20px",
+            "border-radius": "9999px"
+          },
+          ".header__title": {
+            "font-family": "'Lexend', sans-serif",
+            "font-weight": "700",
+            "font-size": "0.875rem",
+            "color": "#FAFAFA",
+            "letter-spacing": "-0.025em"
+          },
+          ".header__title-product": {
+            "color": "#59ACFF"
+          },
+          ".header__title-suffix": {
+            "color": "#B5B5BC",
+            "font-weight": "400",
+            "font-family": "'Figtree', sans-serif"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".header",
+          "tag": "div",
+          "styles": {
+            "width": "100%",
+            "height": "56px",
+            "background-color": "#1A1C1F",
+            "border-bottom": "none",
+            "display": "flex",
+            "align-items": "center",
+            "justify-content": "space-between",
+            "padding": "0 16px",
+            "position": "relative",
+            "z-index": "50",
+            "flex-shrink": "0"
+          },
+          "children": [
+            ".header__actions",
+            ".header__brand",
+            ".header__brand-link",
+            ".header__center",
+            ".header__gradient",
+            ".header__logo",
+            ".header__title",
+            ".header__title-product",
+            ".header__title-suffix"
+          ]
+        },
+        {
+          "selector": ".header__actions",
+          "tag": "span",
+          "styles": {
+            "display": "flex",
+            "align-items": "center",
+            "gap": "12px"
+          },
+          "parent": ".header"
+        },
+        {
+          "selector": ".header__brand",
+          "tag": "span",
+          "styles": {
+            "display": "flex",
+            "align-items": "center",
+            "gap": "16px"
+          },
+          "parent": ".header"
+        },
+        {
+          "selector": ".header__brand-link",
+          "tag": "span",
+          "styles": {
+            "display": "flex",
+            "align-items": "center",
+            "gap": "8px",
+            "text-decoration": "none"
+          },
+          "parent": ".header__brand",
+          "states": {
+            "hover": {
+              "text-decoration": "none"
+            }
+          }
+        },
+        {
+          "selector": ".header__center",
+          "tag": "span",
+          "styles": {
+            "display": "none",
+            "position": "absolute",
+            "left": "50%",
+            "top": "50%",
+            "transform": "translate(-50%, -50%)"
+          },
+          "parent": ".header"
+        },
+        {
+          "selector": ".header__gradient",
+          "tag": "span",
+          "styles": {
+            "position": "absolute",
+            "bottom": "0",
+            "left": "0",
+            "width": "100%",
+            "height": "6px",
+            "pointer-events": "none"
+          },
+          "parent": ".header"
+        },
+        {
+          "selector": ".header__logo",
+          "tag": "span",
+          "styles": {
+            "width": "20px",
+            "height": "20px",
+            "border-radius": "9999px"
+          },
+          "parent": ".header__brand-link"
+        },
+        {
+          "selector": ".header__title",
+          "tag": "span",
+          "styles": {
+            "font-family": "'Lexend', sans-serif",
+            "font-weight": "700",
+            "font-size": "0.875rem",
+            "color": "#FAFAFA",
+            "letter-spacing": "-0.025em"
+          },
+          "parent": ".header__brand-link"
+        },
+        {
+          "selector": ".header__title-product",
+          "tag": "span",
+          "styles": {
+            "color": "#59ACFF"
+          },
+          "parent": ".header"
+        },
+        {
+          "selector": ".header__title-suffix",
+          "tag": "span",
+          "styles": {
+            "color": "#B5B5BC",
+            "font-weight": "400",
+            "font-family": "'Figtree', sans-serif"
           },
           "parent": ".header"
         }
@@ -323,5 +1831,89 @@
       "description": "Shell header slot",
       "snippet": "<ShellHeader>Logo and nav</ShellHeader>"
     }
-  ]
+  ],
+  "specKeyOrder": [
+    "theme",
+    "mode"
+  ],
+  "dimensionDefaults": {
+    "theme": "cp",
+    "mode": "light"
+  },
+  "contentOrder": [
+    ".header__brand",
+    ".header__actions",
+    ".header__gradient"
+  ],
+  "contentOrder.header__actions": [
+    ".company-picker",
+    ".divider",
+    ".avatar"
+  ],
+  "structure": {
+    "root": ".header",
+    "children": [
+      {
+        "class": ".header__brand",
+        "children": [
+          {
+            "class": ".header__brand-link",
+            "children": [
+              {
+                "class": ".header__logo"
+              },
+              {
+                "class": ".header__title"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "class": ".header__actions",
+        "children": []
+      },
+      {
+        "class": ".header__gradient"
+      }
+    ]
+  },
+  "fonts": {
+    "Figtree": "https://fonts.googleapis.com/css2?family=Figtree:wght@300..900&display=swap",
+    "Lexend": "https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700;800;900&display=swap",
+    "JetBrains Mono": "https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap"
+  },
+  "defaultContent": {
+    "productName": "Harmony",
+    "logoSrc": "/logos/CPVPLogo.svg",
+    "companyName": "Company name",
+    "showCompanyPicker": true,
+    "companies": [
+      {
+        "id": "acme-corp",
+        "name": "Acme Corporation"
+      },
+      {
+        "id": "ocean-industries",
+        "name": "Ocean Industries"
+      },
+      {
+        "id": "violet-systems",
+        "name": "Violet Systems"
+      },
+      {
+        "id": "azure-dynamics",
+        "name": "Azure Dynamics"
+      },
+      {
+        "id": "sunset-corporation",
+        "name": "Sunset Corporation"
+      }
+    ]
+  },
+  "layoutRules": {
+    ".header__actions": {
+      "description": "When actions slot is not used: company picker, then divider (if showCompanyPicker), then Avatar. Do not reorder."
+    }
+  }
 }

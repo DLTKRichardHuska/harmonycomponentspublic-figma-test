@@ -2800,6 +2800,24 @@
   display: block;
 }
 
+/* TabStrip root and compact modifier - for spec discovery */
+.tabstrip {
+  /* base from TabStrip.astro */
+}
+.tabstrip--compact .tab {
+  padding: var(--space-2) var(--space-3);
+  font-size: var(--text-13);
+}
+.tabstrip--compact .tabstrip__dropdown-item {
+  padding: var(--space-1-5) var(--space-3);
+  font-size: var(--text-xs);
+}
+
+/* Shell footer compact modifier - for spec discovery (base styles in ShellFooter.astro) */
+.shell-footer--compact {
+  height: var(--shell-footer-height-compact);
+}
+
 /* ===========================================
    LINK
    =========================================== */

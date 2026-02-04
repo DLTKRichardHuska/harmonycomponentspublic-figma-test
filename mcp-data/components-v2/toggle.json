@@ -46,7 +46,7 @@
     "size": "'md'"
   },
   "specs": {
-    "cp-light-md": {
+    "cp-light-sm": {
       "_meta": {
         "theme": "cp",
         "mode": "light",
@@ -68,22 +68,24 @@
           },
           ".toggle__label": {
             "font-size": "0.875rem",
-            "color": "#373F4E"
+            "color": "#373F4E",
+            "font-family": "'Figtree', sans-serif"
           },
           ".toggle__thumb": {
             "position": "absolute",
             "top": "2px",
             "left": "2px",
-            "width": "20px",
-            "height": "20px",
+            "width": "16px",
+            "height": "16px",
             "background-color": "white",
             "border-radius": "9999px",
             "box-shadow": "0 1px 2px 0 rgb(15 23 42 / 0.05)",
-            "transition": "transform 150ms ease"
+            "transition": "transform 150ms ease",
+            "transform": "translateX(16px)"
           },
           ".toggle__track": {
-            "width": "44px",
-            "height": "24px",
+            "width": "36px",
+            "height": "20px",
             "background-color": "#BFC6D4",
             "border-radius": "9999px",
             "position": "relative",
@@ -94,7 +96,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -123,14 +128,159 @@
             "width": "0",
             "height": "0"
           },
-          "parent": ".toggle"
+          "parent": ".toggle",
+          "states": {
+            "focus": {
+              "box-shadow": "0 0 0 3px rgba(76, 146, 217, 0.1), 0 0 0 4px #F7F8FA"
+            },
+            "disabled": {
+              "opacity": "0.5",
+              "cursor": "not-allowed"
+            }
+          }
         },
         {
           "selector": ".toggle__label",
           "tag": "span",
           "styles": {
             "font-size": "0.875rem",
-            "color": "#373F4E"
+            "color": "#373F4E",
+            "font-family": "'Figtree', sans-serif"
+          },
+          "parent": ".toggle"
+        },
+        {
+          "selector": ".toggle__thumb",
+          "tag": "span",
+          "styles": {
+            "position": "absolute",
+            "top": "2px",
+            "left": "2px",
+            "width": "16px",
+            "height": "16px",
+            "background-color": "white",
+            "border-radius": "9999px",
+            "box-shadow": "0 1px 2px 0 rgb(15 23 42 / 0.05)",
+            "transition": "transform 150ms ease",
+            "transform": "translateX(16px)"
+          },
+          "parent": ".toggle__track"
+        },
+        {
+          "selector": ".toggle__track",
+          "tag": "span",
+          "styles": {
+            "width": "36px",
+            "height": "20px",
+            "background-color": "#BFC6D4",
+            "border-radius": "9999px",
+            "position": "relative",
+            "transition": "background-color 150ms ease",
+            "flex-shrink": "0"
+          },
+          "parent": ".toggle"
+        }
+      ]
+    },
+    "cp-light-md": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".toggle": {
+            "display": "inline-flex",
+            "align-items": "center",
+            "gap": "8px",
+            "cursor": "pointer"
+          },
+          ".toggle__input": {
+            "position": "absolute",
+            "opacity": "0",
+            "width": "0",
+            "height": "0"
+          },
+          ".toggle__label": {
+            "font-size": "0.875rem",
+            "color": "#373F4E",
+            "font-family": "'Figtree', sans-serif"
+          },
+          ".toggle__thumb": {
+            "position": "absolute",
+            "top": "2px",
+            "left": "2px",
+            "width": "20px",
+            "height": "20px",
+            "background-color": "white",
+            "border-radius": "9999px",
+            "box-shadow": "0 1px 2px 0 rgb(15 23 42 / 0.05)",
+            "transition": "transform 150ms ease"
+          },
+          ".toggle__track": {
+            "width": "44px",
+            "height": "24px",
+            "background-color": "#BFC6D4",
+            "border-radius": "9999px",
+            "position": "relative",
+            "transition": "background-color 150ms ease",
+            "flex-shrink": "0"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".toggle",
+          "tag": "div",
+          "styles": {
+            "display": "inline-flex",
+            "align-items": "center",
+            "gap": "8px",
+            "cursor": "pointer"
+          },
+          "children": [
+            ".toggle__input",
+            ".toggle__label",
+            ".toggle__thumb",
+            ".toggle__track"
+          ]
+        },
+        {
+          "selector": ".toggle__input",
+          "tag": "span",
+          "styles": {
+            "position": "absolute",
+            "opacity": "0",
+            "width": "0",
+            "height": "0"
+          },
+          "parent": ".toggle",
+          "states": {
+            "focus": {
+              "box-shadow": "0 0 0 3px rgba(76, 146, 217, 0.1), 0 0 0 4px #F7F8FA"
+            },
+            "disabled": {
+              "opacity": "0.5",
+              "cursor": "not-allowed"
+            }
+          }
+        },
+        {
+          "selector": ".toggle__label",
+          "tag": "span",
+          "styles": {
+            "font-size": "0.875rem",
+            "color": "#373F4E",
+            "font-family": "'Figtree', sans-serif"
           },
           "parent": ".toggle"
         },
@@ -148,7 +298,7 @@
             "box-shadow": "0 1px 2px 0 rgb(15 23 42 / 0.05)",
             "transition": "transform 150ms ease"
           },
-          "parent": ".toggle"
+          "parent": ".toggle__track"
         },
         {
           "selector": ".toggle__track",
@@ -157,6 +307,1896 @@
             "width": "44px",
             "height": "24px",
             "background-color": "#BFC6D4",
+            "border-radius": "9999px",
+            "position": "relative",
+            "transition": "background-color 150ms ease",
+            "flex-shrink": "0"
+          },
+          "parent": ".toggle"
+        }
+      ]
+    },
+    "cp-dark-sm": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".toggle": {
+            "display": "inline-flex",
+            "align-items": "center",
+            "gap": "8px",
+            "cursor": "pointer"
+          },
+          ".toggle__input": {
+            "position": "absolute",
+            "opacity": "0",
+            "width": "0",
+            "height": "0"
+          },
+          ".toggle__label": {
+            "font-size": "0.875rem",
+            "color": "#E9ECEF",
+            "font-family": "'Figtree', sans-serif"
+          },
+          ".toggle__thumb": {
+            "position": "absolute",
+            "top": "2px",
+            "left": "2px",
+            "width": "16px",
+            "height": "16px",
+            "background-color": "white",
+            "border-radius": "9999px",
+            "box-shadow": "0 1px 2px 0 rgb(15 23 42 / 0.05)",
+            "transition": "transform 150ms ease",
+            "transform": "translateX(16px)"
+          },
+          ".toggle__track": {
+            "width": "36px",
+            "height": "20px",
+            "background-color": "#5F6871",
+            "border-radius": "9999px",
+            "position": "relative",
+            "transition": "background-color 150ms ease",
+            "flex-shrink": "0"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".toggle",
+          "tag": "div",
+          "styles": {
+            "display": "inline-flex",
+            "align-items": "center",
+            "gap": "8px",
+            "cursor": "pointer"
+          },
+          "children": [
+            ".toggle__input",
+            ".toggle__label",
+            ".toggle__thumb",
+            ".toggle__track"
+          ]
+        },
+        {
+          "selector": ".toggle__input",
+          "tag": "span",
+          "styles": {
+            "position": "absolute",
+            "opacity": "0",
+            "width": "0",
+            "height": "0"
+          },
+          "parent": ".toggle",
+          "states": {
+            "focus": {
+              "box-shadow": "0 0 0 3px rgba(89, 172, 255, 0.1), 0 0 0 4px #37424D"
+            },
+            "disabled": {
+              "opacity": "0.5",
+              "cursor": "not-allowed"
+            }
+          }
+        },
+        {
+          "selector": ".toggle__label",
+          "tag": "span",
+          "styles": {
+            "font-size": "0.875rem",
+            "color": "#E9ECEF",
+            "font-family": "'Figtree', sans-serif"
+          },
+          "parent": ".toggle"
+        },
+        {
+          "selector": ".toggle__thumb",
+          "tag": "span",
+          "styles": {
+            "position": "absolute",
+            "top": "2px",
+            "left": "2px",
+            "width": "16px",
+            "height": "16px",
+            "background-color": "white",
+            "border-radius": "9999px",
+            "box-shadow": "0 1px 2px 0 rgb(15 23 42 / 0.05)",
+            "transition": "transform 150ms ease",
+            "transform": "translateX(16px)"
+          },
+          "parent": ".toggle__track"
+        },
+        {
+          "selector": ".toggle__track",
+          "tag": "span",
+          "styles": {
+            "width": "36px",
+            "height": "20px",
+            "background-color": "#5F6871",
+            "border-radius": "9999px",
+            "position": "relative",
+            "transition": "background-color 150ms ease",
+            "flex-shrink": "0"
+          },
+          "parent": ".toggle"
+        }
+      ]
+    },
+    "cp-dark-md": {
+      "_meta": {
+        "theme": "cp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".toggle": {
+            "display": "inline-flex",
+            "align-items": "center",
+            "gap": "8px",
+            "cursor": "pointer"
+          },
+          ".toggle__input": {
+            "position": "absolute",
+            "opacity": "0",
+            "width": "0",
+            "height": "0"
+          },
+          ".toggle__label": {
+            "font-size": "0.875rem",
+            "color": "#E9ECEF",
+            "font-family": "'Figtree', sans-serif"
+          },
+          ".toggle__thumb": {
+            "position": "absolute",
+            "top": "2px",
+            "left": "2px",
+            "width": "20px",
+            "height": "20px",
+            "background-color": "white",
+            "border-radius": "9999px",
+            "box-shadow": "0 1px 2px 0 rgb(15 23 42 / 0.05)",
+            "transition": "transform 150ms ease"
+          },
+          ".toggle__track": {
+            "width": "44px",
+            "height": "24px",
+            "background-color": "#5F6871",
+            "border-radius": "9999px",
+            "position": "relative",
+            "transition": "background-color 150ms ease",
+            "flex-shrink": "0"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".toggle",
+          "tag": "div",
+          "styles": {
+            "display": "inline-flex",
+            "align-items": "center",
+            "gap": "8px",
+            "cursor": "pointer"
+          },
+          "children": [
+            ".toggle__input",
+            ".toggle__label",
+            ".toggle__thumb",
+            ".toggle__track"
+          ]
+        },
+        {
+          "selector": ".toggle__input",
+          "tag": "span",
+          "styles": {
+            "position": "absolute",
+            "opacity": "0",
+            "width": "0",
+            "height": "0"
+          },
+          "parent": ".toggle",
+          "states": {
+            "focus": {
+              "box-shadow": "0 0 0 3px rgba(89, 172, 255, 0.1), 0 0 0 4px #37424D"
+            },
+            "disabled": {
+              "opacity": "0.5",
+              "cursor": "not-allowed"
+            }
+          }
+        },
+        {
+          "selector": ".toggle__label",
+          "tag": "span",
+          "styles": {
+            "font-size": "0.875rem",
+            "color": "#E9ECEF",
+            "font-family": "'Figtree', sans-serif"
+          },
+          "parent": ".toggle"
+        },
+        {
+          "selector": ".toggle__thumb",
+          "tag": "span",
+          "styles": {
+            "position": "absolute",
+            "top": "2px",
+            "left": "2px",
+            "width": "20px",
+            "height": "20px",
+            "background-color": "white",
+            "border-radius": "9999px",
+            "box-shadow": "0 1px 2px 0 rgb(15 23 42 / 0.05)",
+            "transition": "transform 150ms ease"
+          },
+          "parent": ".toggle__track"
+        },
+        {
+          "selector": ".toggle__track",
+          "tag": "span",
+          "styles": {
+            "width": "44px",
+            "height": "24px",
+            "background-color": "#5F6871",
+            "border-radius": "9999px",
+            "position": "relative",
+            "transition": "background-color 150ms ease",
+            "flex-shrink": "0"
+          },
+          "parent": ".toggle"
+        }
+      ]
+    },
+    "vp-light-sm": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".toggle": {
+            "display": "inline-flex",
+            "align-items": "center",
+            "gap": "8px",
+            "cursor": "pointer"
+          },
+          ".toggle__input": {
+            "position": "absolute",
+            "opacity": "0",
+            "width": "0",
+            "height": "0"
+          },
+          ".toggle__label": {
+            "font-size": "0.875rem",
+            "color": "#373F4E",
+            "font-family": "'Figtree', sans-serif"
+          },
+          ".toggle__thumb": {
+            "position": "absolute",
+            "top": "2px",
+            "left": "2px",
+            "width": "16px",
+            "height": "16px",
+            "background-color": "white",
+            "border-radius": "9999px",
+            "box-shadow": "0 1px 2px 0 rgb(15 23 42 / 0.05)",
+            "transition": "transform 150ms ease",
+            "transform": "translateX(16px)"
+          },
+          ".toggle__track": {
+            "width": "36px",
+            "height": "20px",
+            "background-color": "#BFC6D4",
+            "border-radius": "9999px",
+            "position": "relative",
+            "transition": "background-color 150ms ease",
+            "flex-shrink": "0"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".toggle",
+          "tag": "div",
+          "styles": {
+            "display": "inline-flex",
+            "align-items": "center",
+            "gap": "8px",
+            "cursor": "pointer"
+          },
+          "children": [
+            ".toggle__input",
+            ".toggle__label",
+            ".toggle__thumb",
+            ".toggle__track"
+          ]
+        },
+        {
+          "selector": ".toggle__input",
+          "tag": "span",
+          "styles": {
+            "position": "absolute",
+            "opacity": "0",
+            "width": "0",
+            "height": "0"
+          },
+          "parent": ".toggle",
+          "states": {
+            "focus": {
+              "box-shadow": "0 0 0 3px rgba(76, 146, 217, 0.1), 0 0 0 4px #F7F8FA"
+            },
+            "disabled": {
+              "opacity": "0.5",
+              "cursor": "not-allowed"
+            }
+          }
+        },
+        {
+          "selector": ".toggle__label",
+          "tag": "span",
+          "styles": {
+            "font-size": "0.875rem",
+            "color": "#373F4E",
+            "font-family": "'Figtree', sans-serif"
+          },
+          "parent": ".toggle"
+        },
+        {
+          "selector": ".toggle__thumb",
+          "tag": "span",
+          "styles": {
+            "position": "absolute",
+            "top": "2px",
+            "left": "2px",
+            "width": "16px",
+            "height": "16px",
+            "background-color": "white",
+            "border-radius": "9999px",
+            "box-shadow": "0 1px 2px 0 rgb(15 23 42 / 0.05)",
+            "transition": "transform 150ms ease",
+            "transform": "translateX(16px)"
+          },
+          "parent": ".toggle__track"
+        },
+        {
+          "selector": ".toggle__track",
+          "tag": "span",
+          "styles": {
+            "width": "36px",
+            "height": "20px",
+            "background-color": "#BFC6D4",
+            "border-radius": "9999px",
+            "position": "relative",
+            "transition": "background-color 150ms ease",
+            "flex-shrink": "0"
+          },
+          "parent": ".toggle"
+        }
+      ]
+    },
+    "vp-light-md": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".toggle": {
+            "display": "inline-flex",
+            "align-items": "center",
+            "gap": "8px",
+            "cursor": "pointer"
+          },
+          ".toggle__input": {
+            "position": "absolute",
+            "opacity": "0",
+            "width": "0",
+            "height": "0"
+          },
+          ".toggle__label": {
+            "font-size": "0.875rem",
+            "color": "#373F4E",
+            "font-family": "'Figtree', sans-serif"
+          },
+          ".toggle__thumb": {
+            "position": "absolute",
+            "top": "2px",
+            "left": "2px",
+            "width": "20px",
+            "height": "20px",
+            "background-color": "white",
+            "border-radius": "9999px",
+            "box-shadow": "0 1px 2px 0 rgb(15 23 42 / 0.05)",
+            "transition": "transform 150ms ease"
+          },
+          ".toggle__track": {
+            "width": "44px",
+            "height": "24px",
+            "background-color": "#BFC6D4",
+            "border-radius": "9999px",
+            "position": "relative",
+            "transition": "background-color 150ms ease",
+            "flex-shrink": "0"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".toggle",
+          "tag": "div",
+          "styles": {
+            "display": "inline-flex",
+            "align-items": "center",
+            "gap": "8px",
+            "cursor": "pointer"
+          },
+          "children": [
+            ".toggle__input",
+            ".toggle__label",
+            ".toggle__thumb",
+            ".toggle__track"
+          ]
+        },
+        {
+          "selector": ".toggle__input",
+          "tag": "span",
+          "styles": {
+            "position": "absolute",
+            "opacity": "0",
+            "width": "0",
+            "height": "0"
+          },
+          "parent": ".toggle",
+          "states": {
+            "focus": {
+              "box-shadow": "0 0 0 3px rgba(76, 146, 217, 0.1), 0 0 0 4px #F7F8FA"
+            },
+            "disabled": {
+              "opacity": "0.5",
+              "cursor": "not-allowed"
+            }
+          }
+        },
+        {
+          "selector": ".toggle__label",
+          "tag": "span",
+          "styles": {
+            "font-size": "0.875rem",
+            "color": "#373F4E",
+            "font-family": "'Figtree', sans-serif"
+          },
+          "parent": ".toggle"
+        },
+        {
+          "selector": ".toggle__thumb",
+          "tag": "span",
+          "styles": {
+            "position": "absolute",
+            "top": "2px",
+            "left": "2px",
+            "width": "20px",
+            "height": "20px",
+            "background-color": "white",
+            "border-radius": "9999px",
+            "box-shadow": "0 1px 2px 0 rgb(15 23 42 / 0.05)",
+            "transition": "transform 150ms ease"
+          },
+          "parent": ".toggle__track"
+        },
+        {
+          "selector": ".toggle__track",
+          "tag": "span",
+          "styles": {
+            "width": "44px",
+            "height": "24px",
+            "background-color": "#BFC6D4",
+            "border-radius": "9999px",
+            "position": "relative",
+            "transition": "background-color 150ms ease",
+            "flex-shrink": "0"
+          },
+          "parent": ".toggle"
+        }
+      ]
+    },
+    "vp-dark-sm": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".toggle": {
+            "display": "inline-flex",
+            "align-items": "center",
+            "gap": "8px",
+            "cursor": "pointer"
+          },
+          ".toggle__input": {
+            "position": "absolute",
+            "opacity": "0",
+            "width": "0",
+            "height": "0"
+          },
+          ".toggle__label": {
+            "font-size": "0.875rem",
+            "color": "#FAFAFA",
+            "font-family": "'Figtree', sans-serif"
+          },
+          ".toggle__thumb": {
+            "position": "absolute",
+            "top": "2px",
+            "left": "2px",
+            "width": "16px",
+            "height": "16px",
+            "background-color": "white",
+            "border-radius": "9999px",
+            "box-shadow": "0 1px 2px 0 rgb(15 23 42 / 0.05)",
+            "transition": "transform 150ms ease",
+            "transform": "translateX(16px)"
+          },
+          ".toggle__track": {
+            "width": "36px",
+            "height": "20px",
+            "background-color": "#2A2D32",
+            "border-radius": "9999px",
+            "position": "relative",
+            "transition": "background-color 150ms ease",
+            "flex-shrink": "0"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".toggle",
+          "tag": "div",
+          "styles": {
+            "display": "inline-flex",
+            "align-items": "center",
+            "gap": "8px",
+            "cursor": "pointer"
+          },
+          "children": [
+            ".toggle__input",
+            ".toggle__label",
+            ".toggle__thumb",
+            ".toggle__track"
+          ]
+        },
+        {
+          "selector": ".toggle__input",
+          "tag": "span",
+          "styles": {
+            "position": "absolute",
+            "opacity": "0",
+            "width": "0",
+            "height": "0"
+          },
+          "parent": ".toggle",
+          "states": {
+            "focus": {
+              "box-shadow": "0 0 0 3px rgba(89, 172, 255, 0.1), 0 0 0 4px #1F2124"
+            },
+            "disabled": {
+              "opacity": "0.5",
+              "cursor": "not-allowed"
+            }
+          }
+        },
+        {
+          "selector": ".toggle__label",
+          "tag": "span",
+          "styles": {
+            "font-size": "0.875rem",
+            "color": "#FAFAFA",
+            "font-family": "'Figtree', sans-serif"
+          },
+          "parent": ".toggle"
+        },
+        {
+          "selector": ".toggle__thumb",
+          "tag": "span",
+          "styles": {
+            "position": "absolute",
+            "top": "2px",
+            "left": "2px",
+            "width": "16px",
+            "height": "16px",
+            "background-color": "white",
+            "border-radius": "9999px",
+            "box-shadow": "0 1px 2px 0 rgb(15 23 42 / 0.05)",
+            "transition": "transform 150ms ease",
+            "transform": "translateX(16px)"
+          },
+          "parent": ".toggle__track"
+        },
+        {
+          "selector": ".toggle__track",
+          "tag": "span",
+          "styles": {
+            "width": "36px",
+            "height": "20px",
+            "background-color": "#2A2D32",
+            "border-radius": "9999px",
+            "position": "relative",
+            "transition": "background-color 150ms ease",
+            "flex-shrink": "0"
+          },
+          "parent": ".toggle"
+        }
+      ]
+    },
+    "vp-dark-md": {
+      "_meta": {
+        "theme": "vp",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".toggle": {
+            "display": "inline-flex",
+            "align-items": "center",
+            "gap": "8px",
+            "cursor": "pointer"
+          },
+          ".toggle__input": {
+            "position": "absolute",
+            "opacity": "0",
+            "width": "0",
+            "height": "0"
+          },
+          ".toggle__label": {
+            "font-size": "0.875rem",
+            "color": "#FAFAFA",
+            "font-family": "'Figtree', sans-serif"
+          },
+          ".toggle__thumb": {
+            "position": "absolute",
+            "top": "2px",
+            "left": "2px",
+            "width": "20px",
+            "height": "20px",
+            "background-color": "white",
+            "border-radius": "9999px",
+            "box-shadow": "0 1px 2px 0 rgb(15 23 42 / 0.05)",
+            "transition": "transform 150ms ease"
+          },
+          ".toggle__track": {
+            "width": "44px",
+            "height": "24px",
+            "background-color": "#2A2D32",
+            "border-radius": "9999px",
+            "position": "relative",
+            "transition": "background-color 150ms ease",
+            "flex-shrink": "0"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".toggle",
+          "tag": "div",
+          "styles": {
+            "display": "inline-flex",
+            "align-items": "center",
+            "gap": "8px",
+            "cursor": "pointer"
+          },
+          "children": [
+            ".toggle__input",
+            ".toggle__label",
+            ".toggle__thumb",
+            ".toggle__track"
+          ]
+        },
+        {
+          "selector": ".toggle__input",
+          "tag": "span",
+          "styles": {
+            "position": "absolute",
+            "opacity": "0",
+            "width": "0",
+            "height": "0"
+          },
+          "parent": ".toggle",
+          "states": {
+            "focus": {
+              "box-shadow": "0 0 0 3px rgba(89, 172, 255, 0.1), 0 0 0 4px #1F2124"
+            },
+            "disabled": {
+              "opacity": "0.5",
+              "cursor": "not-allowed"
+            }
+          }
+        },
+        {
+          "selector": ".toggle__label",
+          "tag": "span",
+          "styles": {
+            "font-size": "0.875rem",
+            "color": "#FAFAFA",
+            "font-family": "'Figtree', sans-serif"
+          },
+          "parent": ".toggle"
+        },
+        {
+          "selector": ".toggle__thumb",
+          "tag": "span",
+          "styles": {
+            "position": "absolute",
+            "top": "2px",
+            "left": "2px",
+            "width": "20px",
+            "height": "20px",
+            "background-color": "white",
+            "border-radius": "9999px",
+            "box-shadow": "0 1px 2px 0 rgb(15 23 42 / 0.05)",
+            "transition": "transform 150ms ease"
+          },
+          "parent": ".toggle__track"
+        },
+        {
+          "selector": ".toggle__track",
+          "tag": "span",
+          "styles": {
+            "width": "44px",
+            "height": "24px",
+            "background-color": "#2A2D32",
+            "border-radius": "9999px",
+            "position": "relative",
+            "transition": "background-color 150ms ease",
+            "flex-shrink": "0"
+          },
+          "parent": ".toggle"
+        }
+      ]
+    },
+    "ppm-light-sm": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".toggle": {
+            "display": "inline-flex",
+            "align-items": "center",
+            "gap": "8px",
+            "cursor": "pointer"
+          },
+          ".toggle__input": {
+            "position": "absolute",
+            "opacity": "0",
+            "width": "0",
+            "height": "0"
+          },
+          ".toggle__label": {
+            "font-size": "0.875rem",
+            "color": "#373F4E",
+            "font-family": "'Figtree', sans-serif"
+          },
+          ".toggle__thumb": {
+            "position": "absolute",
+            "top": "2px",
+            "left": "2px",
+            "width": "16px",
+            "height": "16px",
+            "background-color": "white",
+            "border-radius": "9999px",
+            "box-shadow": "0 1px 2px 0 rgb(15 23 42 / 0.05)",
+            "transition": "transform 150ms ease",
+            "transform": "translateX(16px)"
+          },
+          ".toggle__track": {
+            "width": "36px",
+            "height": "20px",
+            "background-color": "#BFC6D4",
+            "border-radius": "9999px",
+            "position": "relative",
+            "transition": "background-color 150ms ease",
+            "flex-shrink": "0"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".toggle",
+          "tag": "div",
+          "styles": {
+            "display": "inline-flex",
+            "align-items": "center",
+            "gap": "8px",
+            "cursor": "pointer"
+          },
+          "children": [
+            ".toggle__input",
+            ".toggle__label",
+            ".toggle__thumb",
+            ".toggle__track"
+          ]
+        },
+        {
+          "selector": ".toggle__input",
+          "tag": "span",
+          "styles": {
+            "position": "absolute",
+            "opacity": "0",
+            "width": "0",
+            "height": "0"
+          },
+          "parent": ".toggle",
+          "states": {
+            "focus": {
+              "box-shadow": "0 0 0 3px rgba(76, 146, 217, 0.1), 0 0 0 4px #F7F8FA"
+            },
+            "disabled": {
+              "opacity": "0.5",
+              "cursor": "not-allowed"
+            }
+          }
+        },
+        {
+          "selector": ".toggle__label",
+          "tag": "span",
+          "styles": {
+            "font-size": "0.875rem",
+            "color": "#373F4E",
+            "font-family": "'Figtree', sans-serif"
+          },
+          "parent": ".toggle"
+        },
+        {
+          "selector": ".toggle__thumb",
+          "tag": "span",
+          "styles": {
+            "position": "absolute",
+            "top": "2px",
+            "left": "2px",
+            "width": "16px",
+            "height": "16px",
+            "background-color": "white",
+            "border-radius": "9999px",
+            "box-shadow": "0 1px 2px 0 rgb(15 23 42 / 0.05)",
+            "transition": "transform 150ms ease",
+            "transform": "translateX(16px)"
+          },
+          "parent": ".toggle__track"
+        },
+        {
+          "selector": ".toggle__track",
+          "tag": "span",
+          "styles": {
+            "width": "36px",
+            "height": "20px",
+            "background-color": "#BFC6D4",
+            "border-radius": "9999px",
+            "position": "relative",
+            "transition": "background-color 150ms ease",
+            "flex-shrink": "0"
+          },
+          "parent": ".toggle"
+        }
+      ]
+    },
+    "ppm-light-md": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".toggle": {
+            "display": "inline-flex",
+            "align-items": "center",
+            "gap": "8px",
+            "cursor": "pointer"
+          },
+          ".toggle__input": {
+            "position": "absolute",
+            "opacity": "0",
+            "width": "0",
+            "height": "0"
+          },
+          ".toggle__label": {
+            "font-size": "0.875rem",
+            "color": "#373F4E",
+            "font-family": "'Figtree', sans-serif"
+          },
+          ".toggle__thumb": {
+            "position": "absolute",
+            "top": "2px",
+            "left": "2px",
+            "width": "20px",
+            "height": "20px",
+            "background-color": "white",
+            "border-radius": "9999px",
+            "box-shadow": "0 1px 2px 0 rgb(15 23 42 / 0.05)",
+            "transition": "transform 150ms ease"
+          },
+          ".toggle__track": {
+            "width": "44px",
+            "height": "24px",
+            "background-color": "#BFC6D4",
+            "border-radius": "9999px",
+            "position": "relative",
+            "transition": "background-color 150ms ease",
+            "flex-shrink": "0"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".toggle",
+          "tag": "div",
+          "styles": {
+            "display": "inline-flex",
+            "align-items": "center",
+            "gap": "8px",
+            "cursor": "pointer"
+          },
+          "children": [
+            ".toggle__input",
+            ".toggle__label",
+            ".toggle__thumb",
+            ".toggle__track"
+          ]
+        },
+        {
+          "selector": ".toggle__input",
+          "tag": "span",
+          "styles": {
+            "position": "absolute",
+            "opacity": "0",
+            "width": "0",
+            "height": "0"
+          },
+          "parent": ".toggle",
+          "states": {
+            "focus": {
+              "box-shadow": "0 0 0 3px rgba(76, 146, 217, 0.1), 0 0 0 4px #F7F8FA"
+            },
+            "disabled": {
+              "opacity": "0.5",
+              "cursor": "not-allowed"
+            }
+          }
+        },
+        {
+          "selector": ".toggle__label",
+          "tag": "span",
+          "styles": {
+            "font-size": "0.875rem",
+            "color": "#373F4E",
+            "font-family": "'Figtree', sans-serif"
+          },
+          "parent": ".toggle"
+        },
+        {
+          "selector": ".toggle__thumb",
+          "tag": "span",
+          "styles": {
+            "position": "absolute",
+            "top": "2px",
+            "left": "2px",
+            "width": "20px",
+            "height": "20px",
+            "background-color": "white",
+            "border-radius": "9999px",
+            "box-shadow": "0 1px 2px 0 rgb(15 23 42 / 0.05)",
+            "transition": "transform 150ms ease"
+          },
+          "parent": ".toggle__track"
+        },
+        {
+          "selector": ".toggle__track",
+          "tag": "span",
+          "styles": {
+            "width": "44px",
+            "height": "24px",
+            "background-color": "#BFC6D4",
+            "border-radius": "9999px",
+            "position": "relative",
+            "transition": "background-color 150ms ease",
+            "flex-shrink": "0"
+          },
+          "parent": ".toggle"
+        }
+      ]
+    },
+    "ppm-dark-sm": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".toggle": {
+            "display": "inline-flex",
+            "align-items": "center",
+            "gap": "8px",
+            "cursor": "pointer"
+          },
+          ".toggle__input": {
+            "position": "absolute",
+            "opacity": "0",
+            "width": "0",
+            "height": "0"
+          },
+          ".toggle__label": {
+            "font-size": "0.875rem",
+            "color": "#FAFAFA",
+            "font-family": "'Figtree', sans-serif"
+          },
+          ".toggle__thumb": {
+            "position": "absolute",
+            "top": "2px",
+            "left": "2px",
+            "width": "16px",
+            "height": "16px",
+            "background-color": "white",
+            "border-radius": "9999px",
+            "box-shadow": "0 1px 2px 0 rgb(15 23 42 / 0.05)",
+            "transition": "transform 150ms ease",
+            "transform": "translateX(16px)"
+          },
+          ".toggle__track": {
+            "width": "36px",
+            "height": "20px",
+            "background-color": "#2A2D32",
+            "border-radius": "9999px",
+            "position": "relative",
+            "transition": "background-color 150ms ease",
+            "flex-shrink": "0"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".toggle",
+          "tag": "div",
+          "styles": {
+            "display": "inline-flex",
+            "align-items": "center",
+            "gap": "8px",
+            "cursor": "pointer"
+          },
+          "children": [
+            ".toggle__input",
+            ".toggle__label",
+            ".toggle__thumb",
+            ".toggle__track"
+          ]
+        },
+        {
+          "selector": ".toggle__input",
+          "tag": "span",
+          "styles": {
+            "position": "absolute",
+            "opacity": "0",
+            "width": "0",
+            "height": "0"
+          },
+          "parent": ".toggle",
+          "states": {
+            "focus": {
+              "box-shadow": "0 0 0 3px rgba(89, 172, 255, 0.1), 0 0 0 4px #1F2124"
+            },
+            "disabled": {
+              "opacity": "0.5",
+              "cursor": "not-allowed"
+            }
+          }
+        },
+        {
+          "selector": ".toggle__label",
+          "tag": "span",
+          "styles": {
+            "font-size": "0.875rem",
+            "color": "#FAFAFA",
+            "font-family": "'Figtree', sans-serif"
+          },
+          "parent": ".toggle"
+        },
+        {
+          "selector": ".toggle__thumb",
+          "tag": "span",
+          "styles": {
+            "position": "absolute",
+            "top": "2px",
+            "left": "2px",
+            "width": "16px",
+            "height": "16px",
+            "background-color": "white",
+            "border-radius": "9999px",
+            "box-shadow": "0 1px 2px 0 rgb(15 23 42 / 0.05)",
+            "transition": "transform 150ms ease",
+            "transform": "translateX(16px)"
+          },
+          "parent": ".toggle__track"
+        },
+        {
+          "selector": ".toggle__track",
+          "tag": "span",
+          "styles": {
+            "width": "36px",
+            "height": "20px",
+            "background-color": "#2A2D32",
+            "border-radius": "9999px",
+            "position": "relative",
+            "transition": "background-color 150ms ease",
+            "flex-shrink": "0"
+          },
+          "parent": ".toggle"
+        }
+      ]
+    },
+    "ppm-dark-md": {
+      "_meta": {
+        "theme": "ppm",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".toggle": {
+            "display": "inline-flex",
+            "align-items": "center",
+            "gap": "8px",
+            "cursor": "pointer"
+          },
+          ".toggle__input": {
+            "position": "absolute",
+            "opacity": "0",
+            "width": "0",
+            "height": "0"
+          },
+          ".toggle__label": {
+            "font-size": "0.875rem",
+            "color": "#FAFAFA",
+            "font-family": "'Figtree', sans-serif"
+          },
+          ".toggle__thumb": {
+            "position": "absolute",
+            "top": "2px",
+            "left": "2px",
+            "width": "20px",
+            "height": "20px",
+            "background-color": "white",
+            "border-radius": "9999px",
+            "box-shadow": "0 1px 2px 0 rgb(15 23 42 / 0.05)",
+            "transition": "transform 150ms ease"
+          },
+          ".toggle__track": {
+            "width": "44px",
+            "height": "24px",
+            "background-color": "#2A2D32",
+            "border-radius": "9999px",
+            "position": "relative",
+            "transition": "background-color 150ms ease",
+            "flex-shrink": "0"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".toggle",
+          "tag": "div",
+          "styles": {
+            "display": "inline-flex",
+            "align-items": "center",
+            "gap": "8px",
+            "cursor": "pointer"
+          },
+          "children": [
+            ".toggle__input",
+            ".toggle__label",
+            ".toggle__thumb",
+            ".toggle__track"
+          ]
+        },
+        {
+          "selector": ".toggle__input",
+          "tag": "span",
+          "styles": {
+            "position": "absolute",
+            "opacity": "0",
+            "width": "0",
+            "height": "0"
+          },
+          "parent": ".toggle",
+          "states": {
+            "focus": {
+              "box-shadow": "0 0 0 3px rgba(89, 172, 255, 0.1), 0 0 0 4px #1F2124"
+            },
+            "disabled": {
+              "opacity": "0.5",
+              "cursor": "not-allowed"
+            }
+          }
+        },
+        {
+          "selector": ".toggle__label",
+          "tag": "span",
+          "styles": {
+            "font-size": "0.875rem",
+            "color": "#FAFAFA",
+            "font-family": "'Figtree', sans-serif"
+          },
+          "parent": ".toggle"
+        },
+        {
+          "selector": ".toggle__thumb",
+          "tag": "span",
+          "styles": {
+            "position": "absolute",
+            "top": "2px",
+            "left": "2px",
+            "width": "20px",
+            "height": "20px",
+            "background-color": "white",
+            "border-radius": "9999px",
+            "box-shadow": "0 1px 2px 0 rgb(15 23 42 / 0.05)",
+            "transition": "transform 150ms ease"
+          },
+          "parent": ".toggle__track"
+        },
+        {
+          "selector": ".toggle__track",
+          "tag": "span",
+          "styles": {
+            "width": "44px",
+            "height": "24px",
+            "background-color": "#2A2D32",
+            "border-radius": "9999px",
+            "position": "relative",
+            "transition": "background-color 150ms ease",
+            "flex-shrink": "0"
+          },
+          "parent": ".toggle"
+        }
+      ]
+    },
+    "maconomy-light-sm": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".toggle": {
+            "display": "inline-flex",
+            "align-items": "center",
+            "gap": "8px",
+            "cursor": "pointer"
+          },
+          ".toggle__input": {
+            "position": "absolute",
+            "opacity": "0",
+            "width": "0",
+            "height": "0"
+          },
+          ".toggle__label": {
+            "font-size": "0.875rem",
+            "color": "#373F4E",
+            "font-family": "'Figtree', sans-serif"
+          },
+          ".toggle__thumb": {
+            "position": "absolute",
+            "top": "2px",
+            "left": "2px",
+            "width": "16px",
+            "height": "16px",
+            "background-color": "white",
+            "border-radius": "9999px",
+            "box-shadow": "0 1px 2px 0 rgb(15 23 42 / 0.05)",
+            "transition": "transform 150ms ease",
+            "transform": "translateX(16px)"
+          },
+          ".toggle__track": {
+            "width": "36px",
+            "height": "20px",
+            "background-color": "#BFC6D4",
+            "border-radius": "9999px",
+            "position": "relative",
+            "transition": "background-color 150ms ease",
+            "flex-shrink": "0"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".toggle",
+          "tag": "div",
+          "styles": {
+            "display": "inline-flex",
+            "align-items": "center",
+            "gap": "8px",
+            "cursor": "pointer"
+          },
+          "children": [
+            ".toggle__input",
+            ".toggle__label",
+            ".toggle__thumb",
+            ".toggle__track"
+          ]
+        },
+        {
+          "selector": ".toggle__input",
+          "tag": "span",
+          "styles": {
+            "position": "absolute",
+            "opacity": "0",
+            "width": "0",
+            "height": "0"
+          },
+          "parent": ".toggle",
+          "states": {
+            "focus": {
+              "box-shadow": "0 0 0 3px rgba(76, 146, 217, 0.1), 0 0 0 4px #F7F8FA"
+            },
+            "disabled": {
+              "opacity": "0.5",
+              "cursor": "not-allowed"
+            }
+          }
+        },
+        {
+          "selector": ".toggle__label",
+          "tag": "span",
+          "styles": {
+            "font-size": "0.875rem",
+            "color": "#373F4E",
+            "font-family": "'Figtree', sans-serif"
+          },
+          "parent": ".toggle"
+        },
+        {
+          "selector": ".toggle__thumb",
+          "tag": "span",
+          "styles": {
+            "position": "absolute",
+            "top": "2px",
+            "left": "2px",
+            "width": "16px",
+            "height": "16px",
+            "background-color": "white",
+            "border-radius": "9999px",
+            "box-shadow": "0 1px 2px 0 rgb(15 23 42 / 0.05)",
+            "transition": "transform 150ms ease",
+            "transform": "translateX(16px)"
+          },
+          "parent": ".toggle__track"
+        },
+        {
+          "selector": ".toggle__track",
+          "tag": "span",
+          "styles": {
+            "width": "36px",
+            "height": "20px",
+            "background-color": "#BFC6D4",
+            "border-radius": "9999px",
+            "position": "relative",
+            "transition": "background-color 150ms ease",
+            "flex-shrink": "0"
+          },
+          "parent": ".toggle"
+        }
+      ]
+    },
+    "maconomy-light-md": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "light",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".toggle": {
+            "display": "inline-flex",
+            "align-items": "center",
+            "gap": "8px",
+            "cursor": "pointer"
+          },
+          ".toggle__input": {
+            "position": "absolute",
+            "opacity": "0",
+            "width": "0",
+            "height": "0"
+          },
+          ".toggle__label": {
+            "font-size": "0.875rem",
+            "color": "#373F4E",
+            "font-family": "'Figtree', sans-serif"
+          },
+          ".toggle__thumb": {
+            "position": "absolute",
+            "top": "2px",
+            "left": "2px",
+            "width": "20px",
+            "height": "20px",
+            "background-color": "white",
+            "border-radius": "9999px",
+            "box-shadow": "0 1px 2px 0 rgb(15 23 42 / 0.05)",
+            "transition": "transform 150ms ease"
+          },
+          ".toggle__track": {
+            "width": "44px",
+            "height": "24px",
+            "background-color": "#BFC6D4",
+            "border-radius": "9999px",
+            "position": "relative",
+            "transition": "background-color 150ms ease",
+            "flex-shrink": "0"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".toggle",
+          "tag": "div",
+          "styles": {
+            "display": "inline-flex",
+            "align-items": "center",
+            "gap": "8px",
+            "cursor": "pointer"
+          },
+          "children": [
+            ".toggle__input",
+            ".toggle__label",
+            ".toggle__thumb",
+            ".toggle__track"
+          ]
+        },
+        {
+          "selector": ".toggle__input",
+          "tag": "span",
+          "styles": {
+            "position": "absolute",
+            "opacity": "0",
+            "width": "0",
+            "height": "0"
+          },
+          "parent": ".toggle",
+          "states": {
+            "focus": {
+              "box-shadow": "0 0 0 3px rgba(76, 146, 217, 0.1), 0 0 0 4px #F7F8FA"
+            },
+            "disabled": {
+              "opacity": "0.5",
+              "cursor": "not-allowed"
+            }
+          }
+        },
+        {
+          "selector": ".toggle__label",
+          "tag": "span",
+          "styles": {
+            "font-size": "0.875rem",
+            "color": "#373F4E",
+            "font-family": "'Figtree', sans-serif"
+          },
+          "parent": ".toggle"
+        },
+        {
+          "selector": ".toggle__thumb",
+          "tag": "span",
+          "styles": {
+            "position": "absolute",
+            "top": "2px",
+            "left": "2px",
+            "width": "20px",
+            "height": "20px",
+            "background-color": "white",
+            "border-radius": "9999px",
+            "box-shadow": "0 1px 2px 0 rgb(15 23 42 / 0.05)",
+            "transition": "transform 150ms ease"
+          },
+          "parent": ".toggle__track"
+        },
+        {
+          "selector": ".toggle__track",
+          "tag": "span",
+          "styles": {
+            "width": "44px",
+            "height": "24px",
+            "background-color": "#BFC6D4",
+            "border-radius": "9999px",
+            "position": "relative",
+            "transition": "background-color 150ms ease",
+            "flex-shrink": "0"
+          },
+          "parent": ".toggle"
+        }
+      ]
+    },
+    "maconomy-dark-sm": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".toggle": {
+            "display": "inline-flex",
+            "align-items": "center",
+            "gap": "8px",
+            "cursor": "pointer"
+          },
+          ".toggle__input": {
+            "position": "absolute",
+            "opacity": "0",
+            "width": "0",
+            "height": "0"
+          },
+          ".toggle__label": {
+            "font-size": "0.875rem",
+            "color": "#FAFAFA",
+            "font-family": "'Figtree', sans-serif"
+          },
+          ".toggle__thumb": {
+            "position": "absolute",
+            "top": "2px",
+            "left": "2px",
+            "width": "16px",
+            "height": "16px",
+            "background-color": "white",
+            "border-radius": "9999px",
+            "box-shadow": "0 1px 2px 0 rgb(15 23 42 / 0.05)",
+            "transition": "transform 150ms ease",
+            "transform": "translateX(16px)"
+          },
+          ".toggle__track": {
+            "width": "36px",
+            "height": "20px",
+            "background-color": "#2A2D32",
+            "border-radius": "9999px",
+            "position": "relative",
+            "transition": "background-color 150ms ease",
+            "flex-shrink": "0"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".toggle",
+          "tag": "div",
+          "styles": {
+            "display": "inline-flex",
+            "align-items": "center",
+            "gap": "8px",
+            "cursor": "pointer"
+          },
+          "children": [
+            ".toggle__input",
+            ".toggle__label",
+            ".toggle__thumb",
+            ".toggle__track"
+          ]
+        },
+        {
+          "selector": ".toggle__input",
+          "tag": "span",
+          "styles": {
+            "position": "absolute",
+            "opacity": "0",
+            "width": "0",
+            "height": "0"
+          },
+          "parent": ".toggle",
+          "states": {
+            "focus": {
+              "box-shadow": "0 0 0 3px rgba(89, 172, 255, 0.1), 0 0 0 4px #1F2124"
+            },
+            "disabled": {
+              "opacity": "0.5",
+              "cursor": "not-allowed"
+            }
+          }
+        },
+        {
+          "selector": ".toggle__label",
+          "tag": "span",
+          "styles": {
+            "font-size": "0.875rem",
+            "color": "#FAFAFA",
+            "font-family": "'Figtree', sans-serif"
+          },
+          "parent": ".toggle"
+        },
+        {
+          "selector": ".toggle__thumb",
+          "tag": "span",
+          "styles": {
+            "position": "absolute",
+            "top": "2px",
+            "left": "2px",
+            "width": "16px",
+            "height": "16px",
+            "background-color": "white",
+            "border-radius": "9999px",
+            "box-shadow": "0 1px 2px 0 rgb(15 23 42 / 0.05)",
+            "transition": "transform 150ms ease",
+            "transform": "translateX(16px)"
+          },
+          "parent": ".toggle__track"
+        },
+        {
+          "selector": ".toggle__track",
+          "tag": "span",
+          "styles": {
+            "width": "36px",
+            "height": "20px",
+            "background-color": "#2A2D32",
+            "border-radius": "9999px",
+            "position": "relative",
+            "transition": "background-color 150ms ease",
+            "flex-shrink": "0"
+          },
+          "parent": ".toggle"
+        }
+      ]
+    },
+    "maconomy-dark-md": {
+      "_meta": {
+        "theme": "maconomy",
+        "mode": "dark",
+        "locked": true
+      },
+      "_buildContract": {
+        "criticalSelectors": {
+          ".toggle": {
+            "display": "inline-flex",
+            "align-items": "center",
+            "gap": "8px",
+            "cursor": "pointer"
+          },
+          ".toggle__input": {
+            "position": "absolute",
+            "opacity": "0",
+            "width": "0",
+            "height": "0"
+          },
+          ".toggle__label": {
+            "font-size": "0.875rem",
+            "color": "#FAFAFA",
+            "font-family": "'Figtree', sans-serif"
+          },
+          ".toggle__thumb": {
+            "position": "absolute",
+            "top": "2px",
+            "left": "2px",
+            "width": "20px",
+            "height": "20px",
+            "background-color": "white",
+            "border-radius": "9999px",
+            "box-shadow": "0 1px 2px 0 rgb(15 23 42 / 0.05)",
+            "transition": "transform 150ms ease"
+          },
+          ".toggle__track": {
+            "width": "44px",
+            "height": "24px",
+            "background-color": "#2A2D32",
+            "border-radius": "9999px",
+            "position": "relative",
+            "transition": "background-color 150ms ease",
+            "flex-shrink": "0"
+          }
+        },
+        "forbiddenModifications": [
+          "Do not use Tailwind arbitrary values",
+          "Do not change hex colors to named colors",
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
+        ]
+      },
+      "elements": [
+        {
+          "selector": ".toggle",
+          "tag": "div",
+          "styles": {
+            "display": "inline-flex",
+            "align-items": "center",
+            "gap": "8px",
+            "cursor": "pointer"
+          },
+          "children": [
+            ".toggle__input",
+            ".toggle__label",
+            ".toggle__thumb",
+            ".toggle__track"
+          ]
+        },
+        {
+          "selector": ".toggle__input",
+          "tag": "span",
+          "styles": {
+            "position": "absolute",
+            "opacity": "0",
+            "width": "0",
+            "height": "0"
+          },
+          "parent": ".toggle",
+          "states": {
+            "focus": {
+              "box-shadow": "0 0 0 3px rgba(89, 172, 255, 0.1), 0 0 0 4px #1F2124"
+            },
+            "disabled": {
+              "opacity": "0.5",
+              "cursor": "not-allowed"
+            }
+          }
+        },
+        {
+          "selector": ".toggle__label",
+          "tag": "span",
+          "styles": {
+            "font-size": "0.875rem",
+            "color": "#FAFAFA",
+            "font-family": "'Figtree', sans-serif"
+          },
+          "parent": ".toggle"
+        },
+        {
+          "selector": ".toggle__thumb",
+          "tag": "span",
+          "styles": {
+            "position": "absolute",
+            "top": "2px",
+            "left": "2px",
+            "width": "20px",
+            "height": "20px",
+            "background-color": "white",
+            "border-radius": "9999px",
+            "box-shadow": "0 1px 2px 0 rgb(15 23 42 / 0.05)",
+            "transition": "transform 150ms ease"
+          },
+          "parent": ".toggle__track"
+        },
+        {
+          "selector": ".toggle__track",
+          "tag": "span",
+          "styles": {
+            "width": "44px",
+            "height": "24px",
+            "background-color": "#2A2D32",
             "border-radius": "9999px",
             "position": "relative",
             "transition": "background-color 150ms ease",
@@ -192,5 +2232,50 @@
       "description": "On/off toggle",
       "snippet": "<Toggle label=\"Enable\" name=\"enabled\" />"
     }
-  ]
+  ],
+  "specKeyOrder": [
+    "theme",
+    "mode",
+    "size"
+  ],
+  "dimensionDefaults": {
+    "theme": "cp",
+    "mode": "light",
+    "size": "md"
+  },
+  "contentOrder": [
+    ".toggle__input",
+    ".toggle__track",
+    ".toggle__label"
+  ],
+  "contentOrder.toggle__track": [
+    ".toggle__thumb"
+  ],
+  "structure": {
+    "root": ".toggle",
+    "children": [
+      {
+        "class": ".toggle__input"
+      },
+      {
+        "class": ".toggle__track",
+        "children": [
+          {
+            "class": ".toggle__thumb"
+          }
+        ]
+      },
+      {
+        "class": ".toggle__label"
+      }
+    ]
+  },
+  "fonts": {
+    "Figtree": "https://fonts.googleapis.com/css2?family=Figtree:wght@300..900&display=swap",
+    "Lexend": "https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700;800;900&display=swap",
+    "JetBrains Mono": "https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap"
+  },
+  "defaultContent": {
+    "_rule": "No default content defined; do not invent labels, icons, or copy. Use only what is in the spec or leave slots empty."
+  }
 }

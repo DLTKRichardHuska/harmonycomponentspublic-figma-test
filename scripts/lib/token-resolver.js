@@ -34,6 +34,8 @@ export const CSS_VAR_TO_COLORS_PATH = {
   'elevated-bg': 'palette.cardBackground',
   'color-error': 'semantic.error',
   'color-warning': 'semantic.warning',
+  'color-info': 'semantic.info',
+  'color-success': 'semantic.success',
 };
 
 /**
@@ -92,21 +94,12 @@ export function loadColors(relPath = 'src/tokens/colors.json') {
 }
 
 /**
- * Parse :root { ... } from tokens.css and extract --name: value; into a Map.
- * Strips comments from values; does not resolve var() references.
- * @param {string} relPath - Path relative to project root (default: src/styles/tokens.css)
- * @returns {{ map: Map<string, string>, getToken: (name: string) => string|undefined }}
+ * Extract variable declarations from a CSS block string.
+ * @param {string} block - Content inside { }
+ * @returns {Map<string, string>}
  */
-export function loadTokensCSS(relPath = 'src/styles/tokens.css') {
-  const filePath = path.join(ROOT, relPath);
-  const css = fs.readFileSync(filePath, 'utf-8');
-
+function parseVarBlock(block) {
   const map = new Map();
-
-  const rootMatch = css.match(/:root\s*\{([\s\S]*?)\n\}/m);
-  if (!rootMatch) return { map, getToken: (name) => map.get(name) ?? undefined };
-
-  const block = rootMatch[1];
   const varRegex = /--([\w-]+)\s*:\s*([^;]+);/g;
   let m;
   while ((m = varRegex.exec(block)) !== null) {
@@ -116,9 +109,51 @@ export function loadTokensCSS(relPath = 'src/styles/tokens.css') {
     if (commentStart >= 0) value = value.slice(0, commentStart).trim();
     map.set(name, value);
   }
+  return map;
+}
+
+/**
+ * Parse :root and html.theme-X / html.theme-X.dark blocks from tokens.css.
+ * Exposes getToken (from :root) and getThemeToken(theme, mode, name) for theme/mode-specific vars.
+ * @param {string} relPath - Path relative to project root (default: src/styles/tokens.css)
+ * @returns {{ map: Map<string, string>, themeModeMap: Map<string, Map<string, string>>, getToken: (name: string) => string|undefined, getThemeToken: (theme: string, mode: string, name: string) => string|undefined }}
+ */
+export function loadTokensCSS(relPath = 'src/styles/tokens.css') {
+  const filePath = path.join(ROOT, relPath);
+  const css = fs.readFileSync(filePath, 'utf-8');
+
+  const map = new Map();
+  /** Key: 'theme-mode' e.g. 'cp-light', 'cp-dark'. Value: Map of var name -> value. */
+  const themeModeMap = new Map();
+
+  const rootMatch = css.match(/:root\s*\{([\s\S]*?)\n\}/m);
+  if (rootMatch) {
+    const rootBlock = parseVarBlock(rootMatch[1]);
+    for (const [k, v] of rootBlock) map.set(k, v);
+  }
+
+  const themeBlockRe = /html\.theme-([a-z]+)(\.dark)?\s*\{/g;
+  let match;
+  while ((match = themeBlockRe.exec(css)) !== null) {
+    const theme = match[1];
+    const mode = match[2] === '.dark' ? 'dark' : 'light';
+    const key = `${theme}-${mode}`;
+    const start = match.index + match[0].length;
+    let depth = 1;
+    let pos = start;
+    while (pos < css.length && depth > 0) {
+      const ch = css[pos];
+      if (ch === '{') depth++;
+      else if (ch === '}') depth--;
+      pos++;
+    }
+    const block = css.slice(start, pos - 1);
+    const blockMap = parseVarBlock(block);
+    themeModeMap.set(key, blockMap);
+  }
 
   /**
-   * Get a token value by name (without the -- prefix).
+   * Get a token value by name from :root (without the -- prefix).
    * @param {string} name - e.g. 'avatar-size-sm', 'radius-08'
    * @returns {string|undefined}
    */
@@ -126,7 +161,22 @@ export function loadTokensCSS(relPath = 'src/styles/tokens.css') {
     return map.get(name) ?? undefined;
   }
 
-  return { map, getToken };
+  /**
+   * Get a token value for (theme, mode). Falls back to :root if not in theme/mode block.
+   * @param {string} theme - e.g. 'cp', 'vp'
+   * @param {string} mode - 'light' or 'dark'
+   * @param {string} name - e.g. 'color-info', 'color-info-light'
+   * @returns {string|undefined}
+   */
+  function getThemeToken(theme, mode, name) {
+    const key = `${theme}-${mode}`;
+    const blockMap = themeModeMap.get(key);
+    const value = blockMap?.get(name);
+    if (value != null) return value;
+    return map.get(name) ?? undefined;
+  }
+
+  return { map, themeModeMap, getToken, getThemeToken };
 }
 
 // --- Run test when executed directly ---

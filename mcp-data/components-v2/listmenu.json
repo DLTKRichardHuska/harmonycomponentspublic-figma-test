@@ -31,7 +31,7 @@
     "variant": "'default'"
   },
   "specs": {
-    "no-borders-cp-light-xs": {
+    "default-cp-light": {
       "_meta": {
         "theme": "cp",
         "mode": "light",
@@ -60,7 +60,8 @@
             "color": "#373F4E",
             "cursor": "pointer",
             "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #BFC6D4"
+            "border-bottom": "1px solid #BFC6D4",
+            "font-family": "'Figtree', sans-serif"
           },
           ".list-menu__item-icon": {
             "color": "#6B7280"
@@ -69,7 +70,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -111,104 +115,17 @@
             "color": "#373F4E",
             "cursor": "pointer",
             "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #BFC6D4"
+            "border-bottom": "1px solid #BFC6D4",
+            "font-family": "'Figtree', sans-serif"
           },
-          "parent": ".list-menu"
-        },
-        {
-          "selector": ".list-menu__item-icon",
-          "tag": "span",
-          "styles": {
-            "color": "#6B7280"
-          },
-          "parent": ".list-menu"
-        }
-      ]
-    },
-    "no-borders-cp-light-sm": {
-      "_meta": {
-        "theme": "cp",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".list-menu": {
-            "background-color": "#F7F8FA",
-            "border": "1px solid #BFC6D4",
-            "border-radius": "0.5rem",
-            "overflow": "hidden"
-          },
-          ".list-menu__custom-icon": {
-            "width": "20px",
-            "height": "20px",
-            "object-fit": "contain"
-          },
-          ".list-menu__item": {
-            "display": "flex",
-            "align-items": "center",
-            "width": "100%",
-            "gap": "12px",
-            "padding": "12px 16px",
-            "font-size": "0.875rem",
-            "color": "#373F4E",
-            "cursor": "pointer",
-            "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #BFC6D4"
-          },
-          ".list-menu__item-icon": {
-            "color": "#6B7280"
+          "parent": ".list-menu",
+          "states": {
+            "hover": {
+              "background-color": "#E5E7EB",
+              "color": "#4C92D9"
+            }
           }
         },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".list-menu",
-          "tag": "div",
-          "styles": {
-            "background-color": "#F7F8FA",
-            "border": "1px solid #BFC6D4",
-            "border-radius": "0.5rem",
-            "overflow": "hidden"
-          },
-          "children": [
-            ".list-menu__custom-icon",
-            ".list-menu__item",
-            ".list-menu__item-icon"
-          ]
-        },
-        {
-          "selector": ".list-menu__custom-icon",
-          "tag": "span",
-          "styles": {
-            "width": "20px",
-            "height": "20px",
-            "object-fit": "contain"
-          },
-          "parent": ".list-menu"
-        },
-        {
-          "selector": ".list-menu__item",
-          "tag": "span",
-          "styles": {
-            "display": "flex",
-            "align-items": "center",
-            "width": "100%",
-            "gap": "12px",
-            "padding": "12px 16px",
-            "font-size": "0.875rem",
-            "color": "#373F4E",
-            "cursor": "pointer",
-            "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #BFC6D4"
-          },
-          "parent": ".list-menu"
-        },
         {
           "selector": ".list-menu__item-icon",
           "tag": "span",
@@ -219,195 +136,7 @@
         }
       ]
     },
-    "no-borders-cp-light-md": {
-      "_meta": {
-        "theme": "cp",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".list-menu": {
-            "background-color": "#F7F8FA",
-            "border": "1px solid #BFC6D4",
-            "border-radius": "0.5rem",
-            "overflow": "hidden"
-          },
-          ".list-menu__custom-icon": {
-            "width": "20px",
-            "height": "20px",
-            "object-fit": "contain"
-          },
-          ".list-menu__item": {
-            "display": "flex",
-            "align-items": "center",
-            "width": "100%",
-            "gap": "12px",
-            "padding": "12px 16px",
-            "font-size": "0.875rem",
-            "color": "#373F4E",
-            "cursor": "pointer",
-            "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #BFC6D4"
-          },
-          ".list-menu__item-icon": {
-            "color": "#6B7280"
-          }
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".list-menu",
-          "tag": "div",
-          "styles": {
-            "background-color": "#F7F8FA",
-            "border": "1px solid #BFC6D4",
-            "border-radius": "0.5rem",
-            "overflow": "hidden"
-          },
-          "children": [
-            ".list-menu__custom-icon",
-            ".list-menu__item",
-            ".list-menu__item-icon"
-          ]
-        },
-        {
-          "selector": ".list-menu__custom-icon",
-          "tag": "span",
-          "styles": {
-            "width": "20px",
-            "height": "20px",
-            "object-fit": "contain"
-          },
-          "parent": ".list-menu"
-        },
-        {
-          "selector": ".list-menu__item",
-          "tag": "span",
-          "styles": {
-            "display": "flex",
-            "align-items": "center",
-            "width": "100%",
-            "gap": "12px",
-            "padding": "12px 16px",
-            "font-size": "0.875rem",
-            "color": "#373F4E",
-            "cursor": "pointer",
-            "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #BFC6D4"
-          },
-          "parent": ".list-menu"
-        },
-        {
-          "selector": ".list-menu__item-icon",
-          "tag": "span",
-          "styles": {
-            "color": "#6B7280"
-          },
-          "parent": ".list-menu"
-        }
-      ]
-    },
-    "no-borders-cp-light-lg": {
-      "_meta": {
-        "theme": "cp",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".list-menu": {
-            "background-color": "#F7F8FA",
-            "border": "1px solid #BFC6D4",
-            "border-radius": "0.5rem",
-            "overflow": "hidden"
-          },
-          ".list-menu__custom-icon": {
-            "width": "20px",
-            "height": "20px",
-            "object-fit": "contain"
-          },
-          ".list-menu__item": {
-            "display": "flex",
-            "align-items": "center",
-            "width": "100%",
-            "gap": "12px",
-            "padding": "12px 16px",
-            "font-size": "0.875rem",
-            "color": "#373F4E",
-            "cursor": "pointer",
-            "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #BFC6D4"
-          },
-          ".list-menu__item-icon": {
-            "color": "#6B7280"
-          }
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".list-menu",
-          "tag": "div",
-          "styles": {
-            "background-color": "#F7F8FA",
-            "border": "1px solid #BFC6D4",
-            "border-radius": "0.5rem",
-            "overflow": "hidden"
-          },
-          "children": [
-            ".list-menu__custom-icon",
-            ".list-menu__item",
-            ".list-menu__item-icon"
-          ]
-        },
-        {
-          "selector": ".list-menu__custom-icon",
-          "tag": "span",
-          "styles": {
-            "width": "20px",
-            "height": "20px",
-            "object-fit": "contain"
-          },
-          "parent": ".list-menu"
-        },
-        {
-          "selector": ".list-menu__item",
-          "tag": "span",
-          "styles": {
-            "display": "flex",
-            "align-items": "center",
-            "width": "100%",
-            "gap": "12px",
-            "padding": "12px 16px",
-            "font-size": "0.875rem",
-            "color": "#373F4E",
-            "cursor": "pointer",
-            "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #BFC6D4"
-          },
-          "parent": ".list-menu"
-        },
-        {
-          "selector": ".list-menu__item-icon",
-          "tag": "span",
-          "styles": {
-            "color": "#6B7280"
-          },
-          "parent": ".list-menu"
-        }
-      ]
-    },
-    "no-borders-cp-dark-xs": {
+    "default-cp-dark": {
       "_meta": {
         "theme": "cp",
         "mode": "dark",
@@ -436,7 +165,8 @@
             "color": "#E9ECEF",
             "cursor": "pointer",
             "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #5F6871"
+            "border-bottom": "1px solid #5F6871",
+            "font-family": "'Figtree', sans-serif"
           },
           ".list-menu__item-icon": {
             "color": "#BBBBC6"
@@ -445,7 +175,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -487,9 +220,16 @@
             "color": "#E9ECEF",
             "cursor": "pointer",
             "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #5F6871"
+            "border-bottom": "1px solid #5F6871",
+            "font-family": "'Figtree', sans-serif"
           },
-          "parent": ".list-menu"
+          "parent": ".list-menu",
+          "states": {
+            "hover": {
+              "background-color": "#3D4A5C",
+              "color": "#59ACFF"
+            }
+          }
         },
         {
           "selector": ".list-menu__item-icon",
@@ -501,289 +241,7 @@
         }
       ]
     },
-    "no-borders-cp-dark-sm": {
-      "_meta": {
-        "theme": "cp",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".list-menu": {
-            "background-color": "#37424D",
-            "border": "1px solid #5F6871",
-            "border-radius": "0.5rem",
-            "overflow": "hidden"
-          },
-          ".list-menu__custom-icon": {
-            "width": "20px",
-            "height": "20px",
-            "object-fit": "contain"
-          },
-          ".list-menu__item": {
-            "display": "flex",
-            "align-items": "center",
-            "width": "100%",
-            "gap": "12px",
-            "padding": "12px 16px",
-            "font-size": "0.875rem",
-            "color": "#E9ECEF",
-            "cursor": "pointer",
-            "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #5F6871"
-          },
-          ".list-menu__item-icon": {
-            "color": "#BBBBC6"
-          }
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".list-menu",
-          "tag": "div",
-          "styles": {
-            "background-color": "#37424D",
-            "border": "1px solid #5F6871",
-            "border-radius": "0.5rem",
-            "overflow": "hidden"
-          },
-          "children": [
-            ".list-menu__custom-icon",
-            ".list-menu__item",
-            ".list-menu__item-icon"
-          ]
-        },
-        {
-          "selector": ".list-menu__custom-icon",
-          "tag": "span",
-          "styles": {
-            "width": "20px",
-            "height": "20px",
-            "object-fit": "contain"
-          },
-          "parent": ".list-menu"
-        },
-        {
-          "selector": ".list-menu__item",
-          "tag": "span",
-          "styles": {
-            "display": "flex",
-            "align-items": "center",
-            "width": "100%",
-            "gap": "12px",
-            "padding": "12px 16px",
-            "font-size": "0.875rem",
-            "color": "#E9ECEF",
-            "cursor": "pointer",
-            "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #5F6871"
-          },
-          "parent": ".list-menu"
-        },
-        {
-          "selector": ".list-menu__item-icon",
-          "tag": "span",
-          "styles": {
-            "color": "#BBBBC6"
-          },
-          "parent": ".list-menu"
-        }
-      ]
-    },
-    "no-borders-cp-dark-md": {
-      "_meta": {
-        "theme": "cp",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".list-menu": {
-            "background-color": "#37424D",
-            "border": "1px solid #5F6871",
-            "border-radius": "0.5rem",
-            "overflow": "hidden"
-          },
-          ".list-menu__custom-icon": {
-            "width": "20px",
-            "height": "20px",
-            "object-fit": "contain"
-          },
-          ".list-menu__item": {
-            "display": "flex",
-            "align-items": "center",
-            "width": "100%",
-            "gap": "12px",
-            "padding": "12px 16px",
-            "font-size": "0.875rem",
-            "color": "#E9ECEF",
-            "cursor": "pointer",
-            "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #5F6871"
-          },
-          ".list-menu__item-icon": {
-            "color": "#BBBBC6"
-          }
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".list-menu",
-          "tag": "div",
-          "styles": {
-            "background-color": "#37424D",
-            "border": "1px solid #5F6871",
-            "border-radius": "0.5rem",
-            "overflow": "hidden"
-          },
-          "children": [
-            ".list-menu__custom-icon",
-            ".list-menu__item",
-            ".list-menu__item-icon"
-          ]
-        },
-        {
-          "selector": ".list-menu__custom-icon",
-          "tag": "span",
-          "styles": {
-            "width": "20px",
-            "height": "20px",
-            "object-fit": "contain"
-          },
-          "parent": ".list-menu"
-        },
-        {
-          "selector": ".list-menu__item",
-          "tag": "span",
-          "styles": {
-            "display": "flex",
-            "align-items": "center",
-            "width": "100%",
-            "gap": "12px",
-            "padding": "12px 16px",
-            "font-size": "0.875rem",
-            "color": "#E9ECEF",
-            "cursor": "pointer",
-            "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #5F6871"
-          },
-          "parent": ".list-menu"
-        },
-        {
-          "selector": ".list-menu__item-icon",
-          "tag": "span",
-          "styles": {
-            "color": "#BBBBC6"
-          },
-          "parent": ".list-menu"
-        }
-      ]
-    },
-    "no-borders-cp-dark-lg": {
-      "_meta": {
-        "theme": "cp",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".list-menu": {
-            "background-color": "#37424D",
-            "border": "1px solid #5F6871",
-            "border-radius": "0.5rem",
-            "overflow": "hidden"
-          },
-          ".list-menu__custom-icon": {
-            "width": "20px",
-            "height": "20px",
-            "object-fit": "contain"
-          },
-          ".list-menu__item": {
-            "display": "flex",
-            "align-items": "center",
-            "width": "100%",
-            "gap": "12px",
-            "padding": "12px 16px",
-            "font-size": "0.875rem",
-            "color": "#E9ECEF",
-            "cursor": "pointer",
-            "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #5F6871"
-          },
-          ".list-menu__item-icon": {
-            "color": "#BBBBC6"
-          }
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".list-menu",
-          "tag": "div",
-          "styles": {
-            "background-color": "#37424D",
-            "border": "1px solid #5F6871",
-            "border-radius": "0.5rem",
-            "overflow": "hidden"
-          },
-          "children": [
-            ".list-menu__custom-icon",
-            ".list-menu__item",
-            ".list-menu__item-icon"
-          ]
-        },
-        {
-          "selector": ".list-menu__custom-icon",
-          "tag": "span",
-          "styles": {
-            "width": "20px",
-            "height": "20px",
-            "object-fit": "contain"
-          },
-          "parent": ".list-menu"
-        },
-        {
-          "selector": ".list-menu__item",
-          "tag": "span",
-          "styles": {
-            "display": "flex",
-            "align-items": "center",
-            "width": "100%",
-            "gap": "12px",
-            "padding": "12px 16px",
-            "font-size": "0.875rem",
-            "color": "#E9ECEF",
-            "cursor": "pointer",
-            "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #5F6871"
-          },
-          "parent": ".list-menu"
-        },
-        {
-          "selector": ".list-menu__item-icon",
-          "tag": "span",
-          "styles": {
-            "color": "#BBBBC6"
-          },
-          "parent": ".list-menu"
-        }
-      ]
-    },
-    "no-borders-vp-light-xs": {
+    "default-vp-light": {
       "_meta": {
         "theme": "vp",
         "mode": "light",
@@ -812,7 +270,8 @@
             "color": "#373F4E",
             "cursor": "pointer",
             "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #BFC6D4"
+            "border-bottom": "1px solid #BFC6D4",
+            "font-family": "'Figtree', sans-serif"
           },
           ".list-menu__item-icon": {
             "color": "#6B7280"
@@ -821,7 +280,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -863,104 +325,17 @@
             "color": "#373F4E",
             "cursor": "pointer",
             "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #BFC6D4"
+            "border-bottom": "1px solid #BFC6D4",
+            "font-family": "'Figtree', sans-serif"
           },
-          "parent": ".list-menu"
-        },
-        {
-          "selector": ".list-menu__item-icon",
-          "tag": "span",
-          "styles": {
-            "color": "#6B7280"
-          },
-          "parent": ".list-menu"
-        }
-      ]
-    },
-    "no-borders-vp-light-sm": {
-      "_meta": {
-        "theme": "vp",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".list-menu": {
-            "background-color": "#F7F8FA",
-            "border": "1px solid #BFC6D4",
-            "border-radius": "0.5rem",
-            "overflow": "hidden"
-          },
-          ".list-menu__custom-icon": {
-            "width": "20px",
-            "height": "20px",
-            "object-fit": "contain"
-          },
-          ".list-menu__item": {
-            "display": "flex",
-            "align-items": "center",
-            "width": "100%",
-            "gap": "12px",
-            "padding": "12px 16px",
-            "font-size": "0.875rem",
-            "color": "#373F4E",
-            "cursor": "pointer",
-            "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #BFC6D4"
-          },
-          ".list-menu__item-icon": {
-            "color": "#6B7280"
+          "parent": ".list-menu",
+          "states": {
+            "hover": {
+              "background-color": "#E5E7EB",
+              "color": "#4C92D9"
+            }
           }
         },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".list-menu",
-          "tag": "div",
-          "styles": {
-            "background-color": "#F7F8FA",
-            "border": "1px solid #BFC6D4",
-            "border-radius": "0.5rem",
-            "overflow": "hidden"
-          },
-          "children": [
-            ".list-menu__custom-icon",
-            ".list-menu__item",
-            ".list-menu__item-icon"
-          ]
-        },
-        {
-          "selector": ".list-menu__custom-icon",
-          "tag": "span",
-          "styles": {
-            "width": "20px",
-            "height": "20px",
-            "object-fit": "contain"
-          },
-          "parent": ".list-menu"
-        },
-        {
-          "selector": ".list-menu__item",
-          "tag": "span",
-          "styles": {
-            "display": "flex",
-            "align-items": "center",
-            "width": "100%",
-            "gap": "12px",
-            "padding": "12px 16px",
-            "font-size": "0.875rem",
-            "color": "#373F4E",
-            "cursor": "pointer",
-            "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #BFC6D4"
-          },
-          "parent": ".list-menu"
-        },
         {
           "selector": ".list-menu__item-icon",
           "tag": "span",
@@ -971,195 +346,7 @@
         }
       ]
     },
-    "no-borders-vp-light-md": {
-      "_meta": {
-        "theme": "vp",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".list-menu": {
-            "background-color": "#F7F8FA",
-            "border": "1px solid #BFC6D4",
-            "border-radius": "0.5rem",
-            "overflow": "hidden"
-          },
-          ".list-menu__custom-icon": {
-            "width": "20px",
-            "height": "20px",
-            "object-fit": "contain"
-          },
-          ".list-menu__item": {
-            "display": "flex",
-            "align-items": "center",
-            "width": "100%",
-            "gap": "12px",
-            "padding": "12px 16px",
-            "font-size": "0.875rem",
-            "color": "#373F4E",
-            "cursor": "pointer",
-            "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #BFC6D4"
-          },
-          ".list-menu__item-icon": {
-            "color": "#6B7280"
-          }
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".list-menu",
-          "tag": "div",
-          "styles": {
-            "background-color": "#F7F8FA",
-            "border": "1px solid #BFC6D4",
-            "border-radius": "0.5rem",
-            "overflow": "hidden"
-          },
-          "children": [
-            ".list-menu__custom-icon",
-            ".list-menu__item",
-            ".list-menu__item-icon"
-          ]
-        },
-        {
-          "selector": ".list-menu__custom-icon",
-          "tag": "span",
-          "styles": {
-            "width": "20px",
-            "height": "20px",
-            "object-fit": "contain"
-          },
-          "parent": ".list-menu"
-        },
-        {
-          "selector": ".list-menu__item",
-          "tag": "span",
-          "styles": {
-            "display": "flex",
-            "align-items": "center",
-            "width": "100%",
-            "gap": "12px",
-            "padding": "12px 16px",
-            "font-size": "0.875rem",
-            "color": "#373F4E",
-            "cursor": "pointer",
-            "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #BFC6D4"
-          },
-          "parent": ".list-menu"
-        },
-        {
-          "selector": ".list-menu__item-icon",
-          "tag": "span",
-          "styles": {
-            "color": "#6B7280"
-          },
-          "parent": ".list-menu"
-        }
-      ]
-    },
-    "no-borders-vp-light-lg": {
-      "_meta": {
-        "theme": "vp",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".list-menu": {
-            "background-color": "#F7F8FA",
-            "border": "1px solid #BFC6D4",
-            "border-radius": "0.5rem",
-            "overflow": "hidden"
-          },
-          ".list-menu__custom-icon": {
-            "width": "20px",
-            "height": "20px",
-            "object-fit": "contain"
-          },
-          ".list-menu__item": {
-            "display": "flex",
-            "align-items": "center",
-            "width": "100%",
-            "gap": "12px",
-            "padding": "12px 16px",
-            "font-size": "0.875rem",
-            "color": "#373F4E",
-            "cursor": "pointer",
-            "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #BFC6D4"
-          },
-          ".list-menu__item-icon": {
-            "color": "#6B7280"
-          }
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".list-menu",
-          "tag": "div",
-          "styles": {
-            "background-color": "#F7F8FA",
-            "border": "1px solid #BFC6D4",
-            "border-radius": "0.5rem",
-            "overflow": "hidden"
-          },
-          "children": [
-            ".list-menu__custom-icon",
-            ".list-menu__item",
-            ".list-menu__item-icon"
-          ]
-        },
-        {
-          "selector": ".list-menu__custom-icon",
-          "tag": "span",
-          "styles": {
-            "width": "20px",
-            "height": "20px",
-            "object-fit": "contain"
-          },
-          "parent": ".list-menu"
-        },
-        {
-          "selector": ".list-menu__item",
-          "tag": "span",
-          "styles": {
-            "display": "flex",
-            "align-items": "center",
-            "width": "100%",
-            "gap": "12px",
-            "padding": "12px 16px",
-            "font-size": "0.875rem",
-            "color": "#373F4E",
-            "cursor": "pointer",
-            "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #BFC6D4"
-          },
-          "parent": ".list-menu"
-        },
-        {
-          "selector": ".list-menu__item-icon",
-          "tag": "span",
-          "styles": {
-            "color": "#6B7280"
-          },
-          "parent": ".list-menu"
-        }
-      ]
-    },
-    "no-borders-vp-dark-xs": {
+    "default-vp-dark": {
       "_meta": {
         "theme": "vp",
         "mode": "dark",
@@ -1188,7 +375,8 @@
             "color": "#FAFAFA",
             "cursor": "pointer",
             "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #2A2D32"
+            "border-bottom": "1px solid #2A2D32",
+            "font-family": "'Figtree', sans-serif"
           },
           ".list-menu__item-icon": {
             "color": "#B5B5BC"
@@ -1197,7 +385,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -1239,104 +430,17 @@
             "color": "#FAFAFA",
             "cursor": "pointer",
             "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #2A2D32"
+            "border-bottom": "1px solid #2A2D32",
+            "font-family": "'Figtree', sans-serif"
           },
-          "parent": ".list-menu"
-        },
-        {
-          "selector": ".list-menu__item-icon",
-          "tag": "span",
-          "styles": {
-            "color": "#B5B5BC"
-          },
-          "parent": ".list-menu"
-        }
-      ]
-    },
-    "no-borders-vp-dark-sm": {
-      "_meta": {
-        "theme": "vp",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".list-menu": {
-            "background-color": "#1F2124",
-            "border": "1px solid #2A2D32",
-            "border-radius": "0.5rem",
-            "overflow": "hidden"
-          },
-          ".list-menu__custom-icon": {
-            "width": "20px",
-            "height": "20px",
-            "object-fit": "contain"
-          },
-          ".list-menu__item": {
-            "display": "flex",
-            "align-items": "center",
-            "width": "100%",
-            "gap": "12px",
-            "padding": "12px 16px",
-            "font-size": "0.875rem",
-            "color": "#FAFAFA",
-            "cursor": "pointer",
-            "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #2A2D32"
-          },
-          ".list-menu__item-icon": {
-            "color": "#B5B5BC"
+          "parent": ".list-menu",
+          "states": {
+            "hover": {
+              "background-color": "#2A2D32",
+              "color": "#59ACFF"
+            }
           }
         },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".list-menu",
-          "tag": "div",
-          "styles": {
-            "background-color": "#1F2124",
-            "border": "1px solid #2A2D32",
-            "border-radius": "0.5rem",
-            "overflow": "hidden"
-          },
-          "children": [
-            ".list-menu__custom-icon",
-            ".list-menu__item",
-            ".list-menu__item-icon"
-          ]
-        },
-        {
-          "selector": ".list-menu__custom-icon",
-          "tag": "span",
-          "styles": {
-            "width": "20px",
-            "height": "20px",
-            "object-fit": "contain"
-          },
-          "parent": ".list-menu"
-        },
-        {
-          "selector": ".list-menu__item",
-          "tag": "span",
-          "styles": {
-            "display": "flex",
-            "align-items": "center",
-            "width": "100%",
-            "gap": "12px",
-            "padding": "12px 16px",
-            "font-size": "0.875rem",
-            "color": "#FAFAFA",
-            "cursor": "pointer",
-            "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #2A2D32"
-          },
-          "parent": ".list-menu"
-        },
         {
           "selector": ".list-menu__item-icon",
           "tag": "span",
@@ -1347,195 +451,7 @@
         }
       ]
     },
-    "no-borders-vp-dark-md": {
-      "_meta": {
-        "theme": "vp",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".list-menu": {
-            "background-color": "#1F2124",
-            "border": "1px solid #2A2D32",
-            "border-radius": "0.5rem",
-            "overflow": "hidden"
-          },
-          ".list-menu__custom-icon": {
-            "width": "20px",
-            "height": "20px",
-            "object-fit": "contain"
-          },
-          ".list-menu__item": {
-            "display": "flex",
-            "align-items": "center",
-            "width": "100%",
-            "gap": "12px",
-            "padding": "12px 16px",
-            "font-size": "0.875rem",
-            "color": "#FAFAFA",
-            "cursor": "pointer",
-            "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #2A2D32"
-          },
-          ".list-menu__item-icon": {
-            "color": "#B5B5BC"
-          }
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".list-menu",
-          "tag": "div",
-          "styles": {
-            "background-color": "#1F2124",
-            "border": "1px solid #2A2D32",
-            "border-radius": "0.5rem",
-            "overflow": "hidden"
-          },
-          "children": [
-            ".list-menu__custom-icon",
-            ".list-menu__item",
-            ".list-menu__item-icon"
-          ]
-        },
-        {
-          "selector": ".list-menu__custom-icon",
-          "tag": "span",
-          "styles": {
-            "width": "20px",
-            "height": "20px",
-            "object-fit": "contain"
-          },
-          "parent": ".list-menu"
-        },
-        {
-          "selector": ".list-menu__item",
-          "tag": "span",
-          "styles": {
-            "display": "flex",
-            "align-items": "center",
-            "width": "100%",
-            "gap": "12px",
-            "padding": "12px 16px",
-            "font-size": "0.875rem",
-            "color": "#FAFAFA",
-            "cursor": "pointer",
-            "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #2A2D32"
-          },
-          "parent": ".list-menu"
-        },
-        {
-          "selector": ".list-menu__item-icon",
-          "tag": "span",
-          "styles": {
-            "color": "#B5B5BC"
-          },
-          "parent": ".list-menu"
-        }
-      ]
-    },
-    "no-borders-vp-dark-lg": {
-      "_meta": {
-        "theme": "vp",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".list-menu": {
-            "background-color": "#1F2124",
-            "border": "1px solid #2A2D32",
-            "border-radius": "0.5rem",
-            "overflow": "hidden"
-          },
-          ".list-menu__custom-icon": {
-            "width": "20px",
-            "height": "20px",
-            "object-fit": "contain"
-          },
-          ".list-menu__item": {
-            "display": "flex",
-            "align-items": "center",
-            "width": "100%",
-            "gap": "12px",
-            "padding": "12px 16px",
-            "font-size": "0.875rem",
-            "color": "#FAFAFA",
-            "cursor": "pointer",
-            "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #2A2D32"
-          },
-          ".list-menu__item-icon": {
-            "color": "#B5B5BC"
-          }
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".list-menu",
-          "tag": "div",
-          "styles": {
-            "background-color": "#1F2124",
-            "border": "1px solid #2A2D32",
-            "border-radius": "0.5rem",
-            "overflow": "hidden"
-          },
-          "children": [
-            ".list-menu__custom-icon",
-            ".list-menu__item",
-            ".list-menu__item-icon"
-          ]
-        },
-        {
-          "selector": ".list-menu__custom-icon",
-          "tag": "span",
-          "styles": {
-            "width": "20px",
-            "height": "20px",
-            "object-fit": "contain"
-          },
-          "parent": ".list-menu"
-        },
-        {
-          "selector": ".list-menu__item",
-          "tag": "span",
-          "styles": {
-            "display": "flex",
-            "align-items": "center",
-            "width": "100%",
-            "gap": "12px",
-            "padding": "12px 16px",
-            "font-size": "0.875rem",
-            "color": "#FAFAFA",
-            "cursor": "pointer",
-            "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #2A2D32"
-          },
-          "parent": ".list-menu"
-        },
-        {
-          "selector": ".list-menu__item-icon",
-          "tag": "span",
-          "styles": {
-            "color": "#B5B5BC"
-          },
-          "parent": ".list-menu"
-        }
-      ]
-    },
-    "no-borders-ppm-light-xs": {
+    "default-ppm-light": {
       "_meta": {
         "theme": "ppm",
         "mode": "light",
@@ -1564,7 +480,8 @@
             "color": "#373F4E",
             "cursor": "pointer",
             "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #BFC6D4"
+            "border-bottom": "1px solid #BFC6D4",
+            "font-family": "'Figtree', sans-serif"
           },
           ".list-menu__item-icon": {
             "color": "#6B7280"
@@ -1573,7 +490,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -1615,104 +535,17 @@
             "color": "#373F4E",
             "cursor": "pointer",
             "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #BFC6D4"
+            "border-bottom": "1px solid #BFC6D4",
+            "font-family": "'Figtree', sans-serif"
           },
-          "parent": ".list-menu"
-        },
-        {
-          "selector": ".list-menu__item-icon",
-          "tag": "span",
-          "styles": {
-            "color": "#6B7280"
-          },
-          "parent": ".list-menu"
-        }
-      ]
-    },
-    "no-borders-ppm-light-sm": {
-      "_meta": {
-        "theme": "ppm",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".list-menu": {
-            "background-color": "#F7F8FA",
-            "border": "1px solid #BFC6D4",
-            "border-radius": "0.5rem",
-            "overflow": "hidden"
-          },
-          ".list-menu__custom-icon": {
-            "width": "20px",
-            "height": "20px",
-            "object-fit": "contain"
-          },
-          ".list-menu__item": {
-            "display": "flex",
-            "align-items": "center",
-            "width": "100%",
-            "gap": "12px",
-            "padding": "12px 16px",
-            "font-size": "0.875rem",
-            "color": "#373F4E",
-            "cursor": "pointer",
-            "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #BFC6D4"
-          },
-          ".list-menu__item-icon": {
-            "color": "#6B7280"
+          "parent": ".list-menu",
+          "states": {
+            "hover": {
+              "background-color": "#E5E7EB",
+              "color": "#4C92D9"
+            }
           }
         },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".list-menu",
-          "tag": "div",
-          "styles": {
-            "background-color": "#F7F8FA",
-            "border": "1px solid #BFC6D4",
-            "border-radius": "0.5rem",
-            "overflow": "hidden"
-          },
-          "children": [
-            ".list-menu__custom-icon",
-            ".list-menu__item",
-            ".list-menu__item-icon"
-          ]
-        },
-        {
-          "selector": ".list-menu__custom-icon",
-          "tag": "span",
-          "styles": {
-            "width": "20px",
-            "height": "20px",
-            "object-fit": "contain"
-          },
-          "parent": ".list-menu"
-        },
-        {
-          "selector": ".list-menu__item",
-          "tag": "span",
-          "styles": {
-            "display": "flex",
-            "align-items": "center",
-            "width": "100%",
-            "gap": "12px",
-            "padding": "12px 16px",
-            "font-size": "0.875rem",
-            "color": "#373F4E",
-            "cursor": "pointer",
-            "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #BFC6D4"
-          },
-          "parent": ".list-menu"
-        },
         {
           "selector": ".list-menu__item-icon",
           "tag": "span",
@@ -1723,195 +556,7 @@
         }
       ]
     },
-    "no-borders-ppm-light-md": {
-      "_meta": {
-        "theme": "ppm",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".list-menu": {
-            "background-color": "#F7F8FA",
-            "border": "1px solid #BFC6D4",
-            "border-radius": "0.5rem",
-            "overflow": "hidden"
-          },
-          ".list-menu__custom-icon": {
-            "width": "20px",
-            "height": "20px",
-            "object-fit": "contain"
-          },
-          ".list-menu__item": {
-            "display": "flex",
-            "align-items": "center",
-            "width": "100%",
-            "gap": "12px",
-            "padding": "12px 16px",
-            "font-size": "0.875rem",
-            "color": "#373F4E",
-            "cursor": "pointer",
-            "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #BFC6D4"
-          },
-          ".list-menu__item-icon": {
-            "color": "#6B7280"
-          }
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".list-menu",
-          "tag": "div",
-          "styles": {
-            "background-color": "#F7F8FA",
-            "border": "1px solid #BFC6D4",
-            "border-radius": "0.5rem",
-            "overflow": "hidden"
-          },
-          "children": [
-            ".list-menu__custom-icon",
-            ".list-menu__item",
-            ".list-menu__item-icon"
-          ]
-        },
-        {
-          "selector": ".list-menu__custom-icon",
-          "tag": "span",
-          "styles": {
-            "width": "20px",
-            "height": "20px",
-            "object-fit": "contain"
-          },
-          "parent": ".list-menu"
-        },
-        {
-          "selector": ".list-menu__item",
-          "tag": "span",
-          "styles": {
-            "display": "flex",
-            "align-items": "center",
-            "width": "100%",
-            "gap": "12px",
-            "padding": "12px 16px",
-            "font-size": "0.875rem",
-            "color": "#373F4E",
-            "cursor": "pointer",
-            "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #BFC6D4"
-          },
-          "parent": ".list-menu"
-        },
-        {
-          "selector": ".list-menu__item-icon",
-          "tag": "span",
-          "styles": {
-            "color": "#6B7280"
-          },
-          "parent": ".list-menu"
-        }
-      ]
-    },
-    "no-borders-ppm-light-lg": {
-      "_meta": {
-        "theme": "ppm",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".list-menu": {
-            "background-color": "#F7F8FA",
-            "border": "1px solid #BFC6D4",
-            "border-radius": "0.5rem",
-            "overflow": "hidden"
-          },
-          ".list-menu__custom-icon": {
-            "width": "20px",
-            "height": "20px",
-            "object-fit": "contain"
-          },
-          ".list-menu__item": {
-            "display": "flex",
-            "align-items": "center",
-            "width": "100%",
-            "gap": "12px",
-            "padding": "12px 16px",
-            "font-size": "0.875rem",
-            "color": "#373F4E",
-            "cursor": "pointer",
-            "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #BFC6D4"
-          },
-          ".list-menu__item-icon": {
-            "color": "#6B7280"
-          }
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".list-menu",
-          "tag": "div",
-          "styles": {
-            "background-color": "#F7F8FA",
-            "border": "1px solid #BFC6D4",
-            "border-radius": "0.5rem",
-            "overflow": "hidden"
-          },
-          "children": [
-            ".list-menu__custom-icon",
-            ".list-menu__item",
-            ".list-menu__item-icon"
-          ]
-        },
-        {
-          "selector": ".list-menu__custom-icon",
-          "tag": "span",
-          "styles": {
-            "width": "20px",
-            "height": "20px",
-            "object-fit": "contain"
-          },
-          "parent": ".list-menu"
-        },
-        {
-          "selector": ".list-menu__item",
-          "tag": "span",
-          "styles": {
-            "display": "flex",
-            "align-items": "center",
-            "width": "100%",
-            "gap": "12px",
-            "padding": "12px 16px",
-            "font-size": "0.875rem",
-            "color": "#373F4E",
-            "cursor": "pointer",
-            "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #BFC6D4"
-          },
-          "parent": ".list-menu"
-        },
-        {
-          "selector": ".list-menu__item-icon",
-          "tag": "span",
-          "styles": {
-            "color": "#6B7280"
-          },
-          "parent": ".list-menu"
-        }
-      ]
-    },
-    "no-borders-ppm-dark-xs": {
+    "default-ppm-dark": {
       "_meta": {
         "theme": "ppm",
         "mode": "dark",
@@ -1940,7 +585,8 @@
             "color": "#FAFAFA",
             "cursor": "pointer",
             "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #2A2D32"
+            "border-bottom": "1px solid #2A2D32",
+            "font-family": "'Figtree', sans-serif"
           },
           ".list-menu__item-icon": {
             "color": "#B5B5BC"
@@ -1949,7 +595,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -1991,104 +640,17 @@
             "color": "#FAFAFA",
             "cursor": "pointer",
             "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #2A2D32"
+            "border-bottom": "1px solid #2A2D32",
+            "font-family": "'Figtree', sans-serif"
           },
-          "parent": ".list-menu"
-        },
-        {
-          "selector": ".list-menu__item-icon",
-          "tag": "span",
-          "styles": {
-            "color": "#B5B5BC"
-          },
-          "parent": ".list-menu"
-        }
-      ]
-    },
-    "no-borders-ppm-dark-sm": {
-      "_meta": {
-        "theme": "ppm",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".list-menu": {
-            "background-color": "#1F2124",
-            "border": "1px solid #2A2D32",
-            "border-radius": "0.5rem",
-            "overflow": "hidden"
-          },
-          ".list-menu__custom-icon": {
-            "width": "20px",
-            "height": "20px",
-            "object-fit": "contain"
-          },
-          ".list-menu__item": {
-            "display": "flex",
-            "align-items": "center",
-            "width": "100%",
-            "gap": "12px",
-            "padding": "12px 16px",
-            "font-size": "0.875rem",
-            "color": "#FAFAFA",
-            "cursor": "pointer",
-            "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #2A2D32"
-          },
-          ".list-menu__item-icon": {
-            "color": "#B5B5BC"
+          "parent": ".list-menu",
+          "states": {
+            "hover": {
+              "background-color": "#2A2D32",
+              "color": "#59ACFF"
+            }
           }
         },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".list-menu",
-          "tag": "div",
-          "styles": {
-            "background-color": "#1F2124",
-            "border": "1px solid #2A2D32",
-            "border-radius": "0.5rem",
-            "overflow": "hidden"
-          },
-          "children": [
-            ".list-menu__custom-icon",
-            ".list-menu__item",
-            ".list-menu__item-icon"
-          ]
-        },
-        {
-          "selector": ".list-menu__custom-icon",
-          "tag": "span",
-          "styles": {
-            "width": "20px",
-            "height": "20px",
-            "object-fit": "contain"
-          },
-          "parent": ".list-menu"
-        },
-        {
-          "selector": ".list-menu__item",
-          "tag": "span",
-          "styles": {
-            "display": "flex",
-            "align-items": "center",
-            "width": "100%",
-            "gap": "12px",
-            "padding": "12px 16px",
-            "font-size": "0.875rem",
-            "color": "#FAFAFA",
-            "cursor": "pointer",
-            "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #2A2D32"
-          },
-          "parent": ".list-menu"
-        },
         {
           "selector": ".list-menu__item-icon",
           "tag": "span",
@@ -2099,195 +661,7 @@
         }
       ]
     },
-    "no-borders-ppm-dark-md": {
-      "_meta": {
-        "theme": "ppm",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".list-menu": {
-            "background-color": "#1F2124",
-            "border": "1px solid #2A2D32",
-            "border-radius": "0.5rem",
-            "overflow": "hidden"
-          },
-          ".list-menu__custom-icon": {
-            "width": "20px",
-            "height": "20px",
-            "object-fit": "contain"
-          },
-          ".list-menu__item": {
-            "display": "flex",
-            "align-items": "center",
-            "width": "100%",
-            "gap": "12px",
-            "padding": "12px 16px",
-            "font-size": "0.875rem",
-            "color": "#FAFAFA",
-            "cursor": "pointer",
-            "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #2A2D32"
-          },
-          ".list-menu__item-icon": {
-            "color": "#B5B5BC"
-          }
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".list-menu",
-          "tag": "div",
-          "styles": {
-            "background-color": "#1F2124",
-            "border": "1px solid #2A2D32",
-            "border-radius": "0.5rem",
-            "overflow": "hidden"
-          },
-          "children": [
-            ".list-menu__custom-icon",
-            ".list-menu__item",
-            ".list-menu__item-icon"
-          ]
-        },
-        {
-          "selector": ".list-menu__custom-icon",
-          "tag": "span",
-          "styles": {
-            "width": "20px",
-            "height": "20px",
-            "object-fit": "contain"
-          },
-          "parent": ".list-menu"
-        },
-        {
-          "selector": ".list-menu__item",
-          "tag": "span",
-          "styles": {
-            "display": "flex",
-            "align-items": "center",
-            "width": "100%",
-            "gap": "12px",
-            "padding": "12px 16px",
-            "font-size": "0.875rem",
-            "color": "#FAFAFA",
-            "cursor": "pointer",
-            "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #2A2D32"
-          },
-          "parent": ".list-menu"
-        },
-        {
-          "selector": ".list-menu__item-icon",
-          "tag": "span",
-          "styles": {
-            "color": "#B5B5BC"
-          },
-          "parent": ".list-menu"
-        }
-      ]
-    },
-    "no-borders-ppm-dark-lg": {
-      "_meta": {
-        "theme": "ppm",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".list-menu": {
-            "background-color": "#1F2124",
-            "border": "1px solid #2A2D32",
-            "border-radius": "0.5rem",
-            "overflow": "hidden"
-          },
-          ".list-menu__custom-icon": {
-            "width": "20px",
-            "height": "20px",
-            "object-fit": "contain"
-          },
-          ".list-menu__item": {
-            "display": "flex",
-            "align-items": "center",
-            "width": "100%",
-            "gap": "12px",
-            "padding": "12px 16px",
-            "font-size": "0.875rem",
-            "color": "#FAFAFA",
-            "cursor": "pointer",
-            "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #2A2D32"
-          },
-          ".list-menu__item-icon": {
-            "color": "#B5B5BC"
-          }
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".list-menu",
-          "tag": "div",
-          "styles": {
-            "background-color": "#1F2124",
-            "border": "1px solid #2A2D32",
-            "border-radius": "0.5rem",
-            "overflow": "hidden"
-          },
-          "children": [
-            ".list-menu__custom-icon",
-            ".list-menu__item",
-            ".list-menu__item-icon"
-          ]
-        },
-        {
-          "selector": ".list-menu__custom-icon",
-          "tag": "span",
-          "styles": {
-            "width": "20px",
-            "height": "20px",
-            "object-fit": "contain"
-          },
-          "parent": ".list-menu"
-        },
-        {
-          "selector": ".list-menu__item",
-          "tag": "span",
-          "styles": {
-            "display": "flex",
-            "align-items": "center",
-            "width": "100%",
-            "gap": "12px",
-            "padding": "12px 16px",
-            "font-size": "0.875rem",
-            "color": "#FAFAFA",
-            "cursor": "pointer",
-            "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #2A2D32"
-          },
-          "parent": ".list-menu"
-        },
-        {
-          "selector": ".list-menu__item-icon",
-          "tag": "span",
-          "styles": {
-            "color": "#B5B5BC"
-          },
-          "parent": ".list-menu"
-        }
-      ]
-    },
-    "no-borders-maconomy-light-xs": {
+    "default-maconomy-light": {
       "_meta": {
         "theme": "maconomy",
         "mode": "light",
@@ -2316,7 +690,8 @@
             "color": "#373F4E",
             "cursor": "pointer",
             "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #BFC6D4"
+            "border-bottom": "1px solid #BFC6D4",
+            "font-family": "'Figtree', sans-serif"
           },
           ".list-menu__item-icon": {
             "color": "#6B7280"
@@ -2325,7 +700,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -2367,104 +745,17 @@
             "color": "#373F4E",
             "cursor": "pointer",
             "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #BFC6D4"
+            "border-bottom": "1px solid #BFC6D4",
+            "font-family": "'Figtree', sans-serif"
           },
-          "parent": ".list-menu"
-        },
-        {
-          "selector": ".list-menu__item-icon",
-          "tag": "span",
-          "styles": {
-            "color": "#6B7280"
-          },
-          "parent": ".list-menu"
-        }
-      ]
-    },
-    "no-borders-maconomy-light-sm": {
-      "_meta": {
-        "theme": "maconomy",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".list-menu": {
-            "background-color": "#F7F8FA",
-            "border": "1px solid #BFC6D4",
-            "border-radius": "0.5rem",
-            "overflow": "hidden"
-          },
-          ".list-menu__custom-icon": {
-            "width": "20px",
-            "height": "20px",
-            "object-fit": "contain"
-          },
-          ".list-menu__item": {
-            "display": "flex",
-            "align-items": "center",
-            "width": "100%",
-            "gap": "12px",
-            "padding": "12px 16px",
-            "font-size": "0.875rem",
-            "color": "#373F4E",
-            "cursor": "pointer",
-            "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #BFC6D4"
-          },
-          ".list-menu__item-icon": {
-            "color": "#6B7280"
+          "parent": ".list-menu",
+          "states": {
+            "hover": {
+              "background-color": "#E5E7EB",
+              "color": "#4C92D9"
+            }
           }
         },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".list-menu",
-          "tag": "div",
-          "styles": {
-            "background-color": "#F7F8FA",
-            "border": "1px solid #BFC6D4",
-            "border-radius": "0.5rem",
-            "overflow": "hidden"
-          },
-          "children": [
-            ".list-menu__custom-icon",
-            ".list-menu__item",
-            ".list-menu__item-icon"
-          ]
-        },
-        {
-          "selector": ".list-menu__custom-icon",
-          "tag": "span",
-          "styles": {
-            "width": "20px",
-            "height": "20px",
-            "object-fit": "contain"
-          },
-          "parent": ".list-menu"
-        },
-        {
-          "selector": ".list-menu__item",
-          "tag": "span",
-          "styles": {
-            "display": "flex",
-            "align-items": "center",
-            "width": "100%",
-            "gap": "12px",
-            "padding": "12px 16px",
-            "font-size": "0.875rem",
-            "color": "#373F4E",
-            "cursor": "pointer",
-            "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #BFC6D4"
-          },
-          "parent": ".list-menu"
-        },
         {
           "selector": ".list-menu__item-icon",
           "tag": "span",
@@ -2475,195 +766,7 @@
         }
       ]
     },
-    "no-borders-maconomy-light-md": {
-      "_meta": {
-        "theme": "maconomy",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".list-menu": {
-            "background-color": "#F7F8FA",
-            "border": "1px solid #BFC6D4",
-            "border-radius": "0.5rem",
-            "overflow": "hidden"
-          },
-          ".list-menu__custom-icon": {
-            "width": "20px",
-            "height": "20px",
-            "object-fit": "contain"
-          },
-          ".list-menu__item": {
-            "display": "flex",
-            "align-items": "center",
-            "width": "100%",
-            "gap": "12px",
-            "padding": "12px 16px",
-            "font-size": "0.875rem",
-            "color": "#373F4E",
-            "cursor": "pointer",
-            "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #BFC6D4"
-          },
-          ".list-menu__item-icon": {
-            "color": "#6B7280"
-          }
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".list-menu",
-          "tag": "div",
-          "styles": {
-            "background-color": "#F7F8FA",
-            "border": "1px solid #BFC6D4",
-            "border-radius": "0.5rem",
-            "overflow": "hidden"
-          },
-          "children": [
-            ".list-menu__custom-icon",
-            ".list-menu__item",
-            ".list-menu__item-icon"
-          ]
-        },
-        {
-          "selector": ".list-menu__custom-icon",
-          "tag": "span",
-          "styles": {
-            "width": "20px",
-            "height": "20px",
-            "object-fit": "contain"
-          },
-          "parent": ".list-menu"
-        },
-        {
-          "selector": ".list-menu__item",
-          "tag": "span",
-          "styles": {
-            "display": "flex",
-            "align-items": "center",
-            "width": "100%",
-            "gap": "12px",
-            "padding": "12px 16px",
-            "font-size": "0.875rem",
-            "color": "#373F4E",
-            "cursor": "pointer",
-            "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #BFC6D4"
-          },
-          "parent": ".list-menu"
-        },
-        {
-          "selector": ".list-menu__item-icon",
-          "tag": "span",
-          "styles": {
-            "color": "#6B7280"
-          },
-          "parent": ".list-menu"
-        }
-      ]
-    },
-    "no-borders-maconomy-light-lg": {
-      "_meta": {
-        "theme": "maconomy",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".list-menu": {
-            "background-color": "#F7F8FA",
-            "border": "1px solid #BFC6D4",
-            "border-radius": "0.5rem",
-            "overflow": "hidden"
-          },
-          ".list-menu__custom-icon": {
-            "width": "20px",
-            "height": "20px",
-            "object-fit": "contain"
-          },
-          ".list-menu__item": {
-            "display": "flex",
-            "align-items": "center",
-            "width": "100%",
-            "gap": "12px",
-            "padding": "12px 16px",
-            "font-size": "0.875rem",
-            "color": "#373F4E",
-            "cursor": "pointer",
-            "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #BFC6D4"
-          },
-          ".list-menu__item-icon": {
-            "color": "#6B7280"
-          }
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".list-menu",
-          "tag": "div",
-          "styles": {
-            "background-color": "#F7F8FA",
-            "border": "1px solid #BFC6D4",
-            "border-radius": "0.5rem",
-            "overflow": "hidden"
-          },
-          "children": [
-            ".list-menu__custom-icon",
-            ".list-menu__item",
-            ".list-menu__item-icon"
-          ]
-        },
-        {
-          "selector": ".list-menu__custom-icon",
-          "tag": "span",
-          "styles": {
-            "width": "20px",
-            "height": "20px",
-            "object-fit": "contain"
-          },
-          "parent": ".list-menu"
-        },
-        {
-          "selector": ".list-menu__item",
-          "tag": "span",
-          "styles": {
-            "display": "flex",
-            "align-items": "center",
-            "width": "100%",
-            "gap": "12px",
-            "padding": "12px 16px",
-            "font-size": "0.875rem",
-            "color": "#373F4E",
-            "cursor": "pointer",
-            "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #BFC6D4"
-          },
-          "parent": ".list-menu"
-        },
-        {
-          "selector": ".list-menu__item-icon",
-          "tag": "span",
-          "styles": {
-            "color": "#6B7280"
-          },
-          "parent": ".list-menu"
-        }
-      ]
-    },
-    "no-borders-maconomy-dark-xs": {
+    "default-maconomy-dark": {
       "_meta": {
         "theme": "maconomy",
         "mode": "dark",
@@ -2692,7 +795,8 @@
             "color": "#FAFAFA",
             "cursor": "pointer",
             "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #2A2D32"
+            "border-bottom": "1px solid #2A2D32",
+            "font-family": "'Figtree', sans-serif"
           },
           ".list-menu__item-icon": {
             "color": "#B5B5BC"
@@ -2701,7 +805,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -2743,104 +850,17 @@
             "color": "#FAFAFA",
             "cursor": "pointer",
             "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #2A2D32"
+            "border-bottom": "1px solid #2A2D32",
+            "font-family": "'Figtree', sans-serif"
           },
-          "parent": ".list-menu"
-        },
-        {
-          "selector": ".list-menu__item-icon",
-          "tag": "span",
-          "styles": {
-            "color": "#B5B5BC"
-          },
-          "parent": ".list-menu"
-        }
-      ]
-    },
-    "no-borders-maconomy-dark-sm": {
-      "_meta": {
-        "theme": "maconomy",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".list-menu": {
-            "background-color": "#1F2124",
-            "border": "1px solid #2A2D32",
-            "border-radius": "0.5rem",
-            "overflow": "hidden"
-          },
-          ".list-menu__custom-icon": {
-            "width": "20px",
-            "height": "20px",
-            "object-fit": "contain"
-          },
-          ".list-menu__item": {
-            "display": "flex",
-            "align-items": "center",
-            "width": "100%",
-            "gap": "12px",
-            "padding": "12px 16px",
-            "font-size": "0.875rem",
-            "color": "#FAFAFA",
-            "cursor": "pointer",
-            "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #2A2D32"
-          },
-          ".list-menu__item-icon": {
-            "color": "#B5B5BC"
+          "parent": ".list-menu",
+          "states": {
+            "hover": {
+              "background-color": "#2A2D32",
+              "color": "#59ACFF"
+            }
           }
         },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".list-menu",
-          "tag": "div",
-          "styles": {
-            "background-color": "#1F2124",
-            "border": "1px solid #2A2D32",
-            "border-radius": "0.5rem",
-            "overflow": "hidden"
-          },
-          "children": [
-            ".list-menu__custom-icon",
-            ".list-menu__item",
-            ".list-menu__item-icon"
-          ]
-        },
-        {
-          "selector": ".list-menu__custom-icon",
-          "tag": "span",
-          "styles": {
-            "width": "20px",
-            "height": "20px",
-            "object-fit": "contain"
-          },
-          "parent": ".list-menu"
-        },
-        {
-          "selector": ".list-menu__item",
-          "tag": "span",
-          "styles": {
-            "display": "flex",
-            "align-items": "center",
-            "width": "100%",
-            "gap": "12px",
-            "padding": "12px 16px",
-            "font-size": "0.875rem",
-            "color": "#FAFAFA",
-            "cursor": "pointer",
-            "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #2A2D32"
-          },
-          "parent": ".list-menu"
-        },
         {
           "selector": ".list-menu__item-icon",
           "tag": "span",
@@ -2851,195 +871,7 @@
         }
       ]
     },
-    "no-borders-maconomy-dark-md": {
-      "_meta": {
-        "theme": "maconomy",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".list-menu": {
-            "background-color": "#1F2124",
-            "border": "1px solid #2A2D32",
-            "border-radius": "0.5rem",
-            "overflow": "hidden"
-          },
-          ".list-menu__custom-icon": {
-            "width": "20px",
-            "height": "20px",
-            "object-fit": "contain"
-          },
-          ".list-menu__item": {
-            "display": "flex",
-            "align-items": "center",
-            "width": "100%",
-            "gap": "12px",
-            "padding": "12px 16px",
-            "font-size": "0.875rem",
-            "color": "#FAFAFA",
-            "cursor": "pointer",
-            "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #2A2D32"
-          },
-          ".list-menu__item-icon": {
-            "color": "#B5B5BC"
-          }
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".list-menu",
-          "tag": "div",
-          "styles": {
-            "background-color": "#1F2124",
-            "border": "1px solid #2A2D32",
-            "border-radius": "0.5rem",
-            "overflow": "hidden"
-          },
-          "children": [
-            ".list-menu__custom-icon",
-            ".list-menu__item",
-            ".list-menu__item-icon"
-          ]
-        },
-        {
-          "selector": ".list-menu__custom-icon",
-          "tag": "span",
-          "styles": {
-            "width": "20px",
-            "height": "20px",
-            "object-fit": "contain"
-          },
-          "parent": ".list-menu"
-        },
-        {
-          "selector": ".list-menu__item",
-          "tag": "span",
-          "styles": {
-            "display": "flex",
-            "align-items": "center",
-            "width": "100%",
-            "gap": "12px",
-            "padding": "12px 16px",
-            "font-size": "0.875rem",
-            "color": "#FAFAFA",
-            "cursor": "pointer",
-            "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #2A2D32"
-          },
-          "parent": ".list-menu"
-        },
-        {
-          "selector": ".list-menu__item-icon",
-          "tag": "span",
-          "styles": {
-            "color": "#B5B5BC"
-          },
-          "parent": ".list-menu"
-        }
-      ]
-    },
-    "no-borders-maconomy-dark-lg": {
-      "_meta": {
-        "theme": "maconomy",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".list-menu": {
-            "background-color": "#1F2124",
-            "border": "1px solid #2A2D32",
-            "border-radius": "0.5rem",
-            "overflow": "hidden"
-          },
-          ".list-menu__custom-icon": {
-            "width": "20px",
-            "height": "20px",
-            "object-fit": "contain"
-          },
-          ".list-menu__item": {
-            "display": "flex",
-            "align-items": "center",
-            "width": "100%",
-            "gap": "12px",
-            "padding": "12px 16px",
-            "font-size": "0.875rem",
-            "color": "#FAFAFA",
-            "cursor": "pointer",
-            "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #2A2D32"
-          },
-          ".list-menu__item-icon": {
-            "color": "#B5B5BC"
-          }
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".list-menu",
-          "tag": "div",
-          "styles": {
-            "background-color": "#1F2124",
-            "border": "1px solid #2A2D32",
-            "border-radius": "0.5rem",
-            "overflow": "hidden"
-          },
-          "children": [
-            ".list-menu__custom-icon",
-            ".list-menu__item",
-            ".list-menu__item-icon"
-          ]
-        },
-        {
-          "selector": ".list-menu__custom-icon",
-          "tag": "span",
-          "styles": {
-            "width": "20px",
-            "height": "20px",
-            "object-fit": "contain"
-          },
-          "parent": ".list-menu"
-        },
-        {
-          "selector": ".list-menu__item",
-          "tag": "span",
-          "styles": {
-            "display": "flex",
-            "align-items": "center",
-            "width": "100%",
-            "gap": "12px",
-            "padding": "12px 16px",
-            "font-size": "0.875rem",
-            "color": "#FAFAFA",
-            "cursor": "pointer",
-            "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #2A2D32"
-          },
-          "parent": ".list-menu"
-        },
-        {
-          "selector": ".list-menu__item-icon",
-          "tag": "span",
-          "styles": {
-            "color": "#B5B5BC"
-          },
-          "parent": ".list-menu"
-        }
-      ]
-    },
-    "default-cp-light-xs": {
+    "no-borders-cp-light": {
       "_meta": {
         "theme": "cp",
         "mode": "light",
@@ -3068,7 +900,8 @@
             "color": "#373F4E",
             "cursor": "pointer",
             "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #BFC6D4"
+            "border-bottom": "1px solid #BFC6D4",
+            "font-family": "'Figtree', sans-serif"
           },
           ".list-menu__item-icon": {
             "color": "#6B7280"
@@ -3077,7 +910,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -3119,104 +955,17 @@
             "color": "#373F4E",
             "cursor": "pointer",
             "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #BFC6D4"
+            "border-bottom": "1px solid #BFC6D4",
+            "font-family": "'Figtree', sans-serif"
           },
-          "parent": ".list-menu"
-        },
-        {
-          "selector": ".list-menu__item-icon",
-          "tag": "span",
-          "styles": {
-            "color": "#6B7280"
-          },
-          "parent": ".list-menu"
-        }
-      ]
-    },
-    "default-cp-light-sm": {
-      "_meta": {
-        "theme": "cp",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".list-menu": {
-            "background-color": "#F7F8FA",
-            "border": "1px solid #BFC6D4",
-            "border-radius": "0.5rem",
-            "overflow": "hidden"
-          },
-          ".list-menu__custom-icon": {
-            "width": "20px",
-            "height": "20px",
-            "object-fit": "contain"
-          },
-          ".list-menu__item": {
-            "display": "flex",
-            "align-items": "center",
-            "width": "100%",
-            "gap": "12px",
-            "padding": "12px 16px",
-            "font-size": "0.875rem",
-            "color": "#373F4E",
-            "cursor": "pointer",
-            "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #BFC6D4"
-          },
-          ".list-menu__item-icon": {
-            "color": "#6B7280"
+          "parent": ".list-menu",
+          "states": {
+            "hover": {
+              "background-color": "#E5E7EB",
+              "color": "#4C92D9"
+            }
           }
         },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".list-menu",
-          "tag": "div",
-          "styles": {
-            "background-color": "#F7F8FA",
-            "border": "1px solid #BFC6D4",
-            "border-radius": "0.5rem",
-            "overflow": "hidden"
-          },
-          "children": [
-            ".list-menu__custom-icon",
-            ".list-menu__item",
-            ".list-menu__item-icon"
-          ]
-        },
-        {
-          "selector": ".list-menu__custom-icon",
-          "tag": "span",
-          "styles": {
-            "width": "20px",
-            "height": "20px",
-            "object-fit": "contain"
-          },
-          "parent": ".list-menu"
-        },
-        {
-          "selector": ".list-menu__item",
-          "tag": "span",
-          "styles": {
-            "display": "flex",
-            "align-items": "center",
-            "width": "100%",
-            "gap": "12px",
-            "padding": "12px 16px",
-            "font-size": "0.875rem",
-            "color": "#373F4E",
-            "cursor": "pointer",
-            "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #BFC6D4"
-          },
-          "parent": ".list-menu"
-        },
         {
           "selector": ".list-menu__item-icon",
           "tag": "span",
@@ -3227,195 +976,7 @@
         }
       ]
     },
-    "default-cp-light-md": {
-      "_meta": {
-        "theme": "cp",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".list-menu": {
-            "background-color": "#F7F8FA",
-            "border": "1px solid #BFC6D4",
-            "border-radius": "0.5rem",
-            "overflow": "hidden"
-          },
-          ".list-menu__custom-icon": {
-            "width": "20px",
-            "height": "20px",
-            "object-fit": "contain"
-          },
-          ".list-menu__item": {
-            "display": "flex",
-            "align-items": "center",
-            "width": "100%",
-            "gap": "12px",
-            "padding": "12px 16px",
-            "font-size": "0.875rem",
-            "color": "#373F4E",
-            "cursor": "pointer",
-            "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #BFC6D4"
-          },
-          ".list-menu__item-icon": {
-            "color": "#6B7280"
-          }
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".list-menu",
-          "tag": "div",
-          "styles": {
-            "background-color": "#F7F8FA",
-            "border": "1px solid #BFC6D4",
-            "border-radius": "0.5rem",
-            "overflow": "hidden"
-          },
-          "children": [
-            ".list-menu__custom-icon",
-            ".list-menu__item",
-            ".list-menu__item-icon"
-          ]
-        },
-        {
-          "selector": ".list-menu__custom-icon",
-          "tag": "span",
-          "styles": {
-            "width": "20px",
-            "height": "20px",
-            "object-fit": "contain"
-          },
-          "parent": ".list-menu"
-        },
-        {
-          "selector": ".list-menu__item",
-          "tag": "span",
-          "styles": {
-            "display": "flex",
-            "align-items": "center",
-            "width": "100%",
-            "gap": "12px",
-            "padding": "12px 16px",
-            "font-size": "0.875rem",
-            "color": "#373F4E",
-            "cursor": "pointer",
-            "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #BFC6D4"
-          },
-          "parent": ".list-menu"
-        },
-        {
-          "selector": ".list-menu__item-icon",
-          "tag": "span",
-          "styles": {
-            "color": "#6B7280"
-          },
-          "parent": ".list-menu"
-        }
-      ]
-    },
-    "default-cp-light-lg": {
-      "_meta": {
-        "theme": "cp",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".list-menu": {
-            "background-color": "#F7F8FA",
-            "border": "1px solid #BFC6D4",
-            "border-radius": "0.5rem",
-            "overflow": "hidden"
-          },
-          ".list-menu__custom-icon": {
-            "width": "20px",
-            "height": "20px",
-            "object-fit": "contain"
-          },
-          ".list-menu__item": {
-            "display": "flex",
-            "align-items": "center",
-            "width": "100%",
-            "gap": "12px",
-            "padding": "12px 16px",
-            "font-size": "0.875rem",
-            "color": "#373F4E",
-            "cursor": "pointer",
-            "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #BFC6D4"
-          },
-          ".list-menu__item-icon": {
-            "color": "#6B7280"
-          }
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".list-menu",
-          "tag": "div",
-          "styles": {
-            "background-color": "#F7F8FA",
-            "border": "1px solid #BFC6D4",
-            "border-radius": "0.5rem",
-            "overflow": "hidden"
-          },
-          "children": [
-            ".list-menu__custom-icon",
-            ".list-menu__item",
-            ".list-menu__item-icon"
-          ]
-        },
-        {
-          "selector": ".list-menu__custom-icon",
-          "tag": "span",
-          "styles": {
-            "width": "20px",
-            "height": "20px",
-            "object-fit": "contain"
-          },
-          "parent": ".list-menu"
-        },
-        {
-          "selector": ".list-menu__item",
-          "tag": "span",
-          "styles": {
-            "display": "flex",
-            "align-items": "center",
-            "width": "100%",
-            "gap": "12px",
-            "padding": "12px 16px",
-            "font-size": "0.875rem",
-            "color": "#373F4E",
-            "cursor": "pointer",
-            "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #BFC6D4"
-          },
-          "parent": ".list-menu"
-        },
-        {
-          "selector": ".list-menu__item-icon",
-          "tag": "span",
-          "styles": {
-            "color": "#6B7280"
-          },
-          "parent": ".list-menu"
-        }
-      ]
-    },
-    "default-cp-dark-xs": {
+    "no-borders-cp-dark": {
       "_meta": {
         "theme": "cp",
         "mode": "dark",
@@ -3444,7 +1005,8 @@
             "color": "#E9ECEF",
             "cursor": "pointer",
             "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #5F6871"
+            "border-bottom": "1px solid #5F6871",
+            "font-family": "'Figtree', sans-serif"
           },
           ".list-menu__item-icon": {
             "color": "#BBBBC6"
@@ -3453,7 +1015,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -3495,9 +1060,16 @@
             "color": "#E9ECEF",
             "cursor": "pointer",
             "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #5F6871"
+            "border-bottom": "1px solid #5F6871",
+            "font-family": "'Figtree', sans-serif"
           },
-          "parent": ".list-menu"
+          "parent": ".list-menu",
+          "states": {
+            "hover": {
+              "background-color": "#3D4A5C",
+              "color": "#59ACFF"
+            }
+          }
         },
         {
           "selector": ".list-menu__item-icon",
@@ -3509,289 +1081,7 @@
         }
       ]
     },
-    "default-cp-dark-sm": {
-      "_meta": {
-        "theme": "cp",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".list-menu": {
-            "background-color": "#37424D",
-            "border": "1px solid #5F6871",
-            "border-radius": "0.5rem",
-            "overflow": "hidden"
-          },
-          ".list-menu__custom-icon": {
-            "width": "20px",
-            "height": "20px",
-            "object-fit": "contain"
-          },
-          ".list-menu__item": {
-            "display": "flex",
-            "align-items": "center",
-            "width": "100%",
-            "gap": "12px",
-            "padding": "12px 16px",
-            "font-size": "0.875rem",
-            "color": "#E9ECEF",
-            "cursor": "pointer",
-            "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #5F6871"
-          },
-          ".list-menu__item-icon": {
-            "color": "#BBBBC6"
-          }
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".list-menu",
-          "tag": "div",
-          "styles": {
-            "background-color": "#37424D",
-            "border": "1px solid #5F6871",
-            "border-radius": "0.5rem",
-            "overflow": "hidden"
-          },
-          "children": [
-            ".list-menu__custom-icon",
-            ".list-menu__item",
-            ".list-menu__item-icon"
-          ]
-        },
-        {
-          "selector": ".list-menu__custom-icon",
-          "tag": "span",
-          "styles": {
-            "width": "20px",
-            "height": "20px",
-            "object-fit": "contain"
-          },
-          "parent": ".list-menu"
-        },
-        {
-          "selector": ".list-menu__item",
-          "tag": "span",
-          "styles": {
-            "display": "flex",
-            "align-items": "center",
-            "width": "100%",
-            "gap": "12px",
-            "padding": "12px 16px",
-            "font-size": "0.875rem",
-            "color": "#E9ECEF",
-            "cursor": "pointer",
-            "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #5F6871"
-          },
-          "parent": ".list-menu"
-        },
-        {
-          "selector": ".list-menu__item-icon",
-          "tag": "span",
-          "styles": {
-            "color": "#BBBBC6"
-          },
-          "parent": ".list-menu"
-        }
-      ]
-    },
-    "default-cp-dark-md": {
-      "_meta": {
-        "theme": "cp",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".list-menu": {
-            "background-color": "#37424D",
-            "border": "1px solid #5F6871",
-            "border-radius": "0.5rem",
-            "overflow": "hidden"
-          },
-          ".list-menu__custom-icon": {
-            "width": "20px",
-            "height": "20px",
-            "object-fit": "contain"
-          },
-          ".list-menu__item": {
-            "display": "flex",
-            "align-items": "center",
-            "width": "100%",
-            "gap": "12px",
-            "padding": "12px 16px",
-            "font-size": "0.875rem",
-            "color": "#E9ECEF",
-            "cursor": "pointer",
-            "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #5F6871"
-          },
-          ".list-menu__item-icon": {
-            "color": "#BBBBC6"
-          }
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".list-menu",
-          "tag": "div",
-          "styles": {
-            "background-color": "#37424D",
-            "border": "1px solid #5F6871",
-            "border-radius": "0.5rem",
-            "overflow": "hidden"
-          },
-          "children": [
-            ".list-menu__custom-icon",
-            ".list-menu__item",
-            ".list-menu__item-icon"
-          ]
-        },
-        {
-          "selector": ".list-menu__custom-icon",
-          "tag": "span",
-          "styles": {
-            "width": "20px",
-            "height": "20px",
-            "object-fit": "contain"
-          },
-          "parent": ".list-menu"
-        },
-        {
-          "selector": ".list-menu__item",
-          "tag": "span",
-          "styles": {
-            "display": "flex",
-            "align-items": "center",
-            "width": "100%",
-            "gap": "12px",
-            "padding": "12px 16px",
-            "font-size": "0.875rem",
-            "color": "#E9ECEF",
-            "cursor": "pointer",
-            "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #5F6871"
-          },
-          "parent": ".list-menu"
-        },
-        {
-          "selector": ".list-menu__item-icon",
-          "tag": "span",
-          "styles": {
-            "color": "#BBBBC6"
-          },
-          "parent": ".list-menu"
-        }
-      ]
-    },
-    "default-cp-dark-lg": {
-      "_meta": {
-        "theme": "cp",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".list-menu": {
-            "background-color": "#37424D",
-            "border": "1px solid #5F6871",
-            "border-radius": "0.5rem",
-            "overflow": "hidden"
-          },
-          ".list-menu__custom-icon": {
-            "width": "20px",
-            "height": "20px",
-            "object-fit": "contain"
-          },
-          ".list-menu__item": {
-            "display": "flex",
-            "align-items": "center",
-            "width": "100%",
-            "gap": "12px",
-            "padding": "12px 16px",
-            "font-size": "0.875rem",
-            "color": "#E9ECEF",
-            "cursor": "pointer",
-            "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #5F6871"
-          },
-          ".list-menu__item-icon": {
-            "color": "#BBBBC6"
-          }
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".list-menu",
-          "tag": "div",
-          "styles": {
-            "background-color": "#37424D",
-            "border": "1px solid #5F6871",
-            "border-radius": "0.5rem",
-            "overflow": "hidden"
-          },
-          "children": [
-            ".list-menu__custom-icon",
-            ".list-menu__item",
-            ".list-menu__item-icon"
-          ]
-        },
-        {
-          "selector": ".list-menu__custom-icon",
-          "tag": "span",
-          "styles": {
-            "width": "20px",
-            "height": "20px",
-            "object-fit": "contain"
-          },
-          "parent": ".list-menu"
-        },
-        {
-          "selector": ".list-menu__item",
-          "tag": "span",
-          "styles": {
-            "display": "flex",
-            "align-items": "center",
-            "width": "100%",
-            "gap": "12px",
-            "padding": "12px 16px",
-            "font-size": "0.875rem",
-            "color": "#E9ECEF",
-            "cursor": "pointer",
-            "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #5F6871"
-          },
-          "parent": ".list-menu"
-        },
-        {
-          "selector": ".list-menu__item-icon",
-          "tag": "span",
-          "styles": {
-            "color": "#BBBBC6"
-          },
-          "parent": ".list-menu"
-        }
-      ]
-    },
-    "default-vp-light-xs": {
+    "no-borders-vp-light": {
       "_meta": {
         "theme": "vp",
         "mode": "light",
@@ -3820,7 +1110,8 @@
             "color": "#373F4E",
             "cursor": "pointer",
             "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #BFC6D4"
+            "border-bottom": "1px solid #BFC6D4",
+            "font-family": "'Figtree', sans-serif"
           },
           ".list-menu__item-icon": {
             "color": "#6B7280"
@@ -3829,7 +1120,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -3871,104 +1165,17 @@
             "color": "#373F4E",
             "cursor": "pointer",
             "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #BFC6D4"
+            "border-bottom": "1px solid #BFC6D4",
+            "font-family": "'Figtree', sans-serif"
           },
-          "parent": ".list-menu"
-        },
-        {
-          "selector": ".list-menu__item-icon",
-          "tag": "span",
-          "styles": {
-            "color": "#6B7280"
-          },
-          "parent": ".list-menu"
-        }
-      ]
-    },
-    "default-vp-light-sm": {
-      "_meta": {
-        "theme": "vp",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".list-menu": {
-            "background-color": "#F7F8FA",
-            "border": "1px solid #BFC6D4",
-            "border-radius": "0.5rem",
-            "overflow": "hidden"
-          },
-          ".list-menu__custom-icon": {
-            "width": "20px",
-            "height": "20px",
-            "object-fit": "contain"
-          },
-          ".list-menu__item": {
-            "display": "flex",
-            "align-items": "center",
-            "width": "100%",
-            "gap": "12px",
-            "padding": "12px 16px",
-            "font-size": "0.875rem",
-            "color": "#373F4E",
-            "cursor": "pointer",
-            "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #BFC6D4"
-          },
-          ".list-menu__item-icon": {
-            "color": "#6B7280"
+          "parent": ".list-menu",
+          "states": {
+            "hover": {
+              "background-color": "#E5E7EB",
+              "color": "#4C92D9"
+            }
           }
         },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".list-menu",
-          "tag": "div",
-          "styles": {
-            "background-color": "#F7F8FA",
-            "border": "1px solid #BFC6D4",
-            "border-radius": "0.5rem",
-            "overflow": "hidden"
-          },
-          "children": [
-            ".list-menu__custom-icon",
-            ".list-menu__item",
-            ".list-menu__item-icon"
-          ]
-        },
-        {
-          "selector": ".list-menu__custom-icon",
-          "tag": "span",
-          "styles": {
-            "width": "20px",
-            "height": "20px",
-            "object-fit": "contain"
-          },
-          "parent": ".list-menu"
-        },
-        {
-          "selector": ".list-menu__item",
-          "tag": "span",
-          "styles": {
-            "display": "flex",
-            "align-items": "center",
-            "width": "100%",
-            "gap": "12px",
-            "padding": "12px 16px",
-            "font-size": "0.875rem",
-            "color": "#373F4E",
-            "cursor": "pointer",
-            "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #BFC6D4"
-          },
-          "parent": ".list-menu"
-        },
         {
           "selector": ".list-menu__item-icon",
           "tag": "span",
@@ -3979,195 +1186,7 @@
         }
       ]
     },
-    "default-vp-light-md": {
-      "_meta": {
-        "theme": "vp",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".list-menu": {
-            "background-color": "#F7F8FA",
-            "border": "1px solid #BFC6D4",
-            "border-radius": "0.5rem",
-            "overflow": "hidden"
-          },
-          ".list-menu__custom-icon": {
-            "width": "20px",
-            "height": "20px",
-            "object-fit": "contain"
-          },
-          ".list-menu__item": {
-            "display": "flex",
-            "align-items": "center",
-            "width": "100%",
-            "gap": "12px",
-            "padding": "12px 16px",
-            "font-size": "0.875rem",
-            "color": "#373F4E",
-            "cursor": "pointer",
-            "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #BFC6D4"
-          },
-          ".list-menu__item-icon": {
-            "color": "#6B7280"
-          }
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".list-menu",
-          "tag": "div",
-          "styles": {
-            "background-color": "#F7F8FA",
-            "border": "1px solid #BFC6D4",
-            "border-radius": "0.5rem",
-            "overflow": "hidden"
-          },
-          "children": [
-            ".list-menu__custom-icon",
-            ".list-menu__item",
-            ".list-menu__item-icon"
-          ]
-        },
-        {
-          "selector": ".list-menu__custom-icon",
-          "tag": "span",
-          "styles": {
-            "width": "20px",
-            "height": "20px",
-            "object-fit": "contain"
-          },
-          "parent": ".list-menu"
-        },
-        {
-          "selector": ".list-menu__item",
-          "tag": "span",
-          "styles": {
-            "display": "flex",
-            "align-items": "center",
-            "width": "100%",
-            "gap": "12px",
-            "padding": "12px 16px",
-            "font-size": "0.875rem",
-            "color": "#373F4E",
-            "cursor": "pointer",
-            "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #BFC6D4"
-          },
-          "parent": ".list-menu"
-        },
-        {
-          "selector": ".list-menu__item-icon",
-          "tag": "span",
-          "styles": {
-            "color": "#6B7280"
-          },
-          "parent": ".list-menu"
-        }
-      ]
-    },
-    "default-vp-light-lg": {
-      "_meta": {
-        "theme": "vp",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".list-menu": {
-            "background-color": "#F7F8FA",
-            "border": "1px solid #BFC6D4",
-            "border-radius": "0.5rem",
-            "overflow": "hidden"
-          },
-          ".list-menu__custom-icon": {
-            "width": "20px",
-            "height": "20px",
-            "object-fit": "contain"
-          },
-          ".list-menu__item": {
-            "display": "flex",
-            "align-items": "center",
-            "width": "100%",
-            "gap": "12px",
-            "padding": "12px 16px",
-            "font-size": "0.875rem",
-            "color": "#373F4E",
-            "cursor": "pointer",
-            "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #BFC6D4"
-          },
-          ".list-menu__item-icon": {
-            "color": "#6B7280"
-          }
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".list-menu",
-          "tag": "div",
-          "styles": {
-            "background-color": "#F7F8FA",
-            "border": "1px solid #BFC6D4",
-            "border-radius": "0.5rem",
-            "overflow": "hidden"
-          },
-          "children": [
-            ".list-menu__custom-icon",
-            ".list-menu__item",
-            ".list-menu__item-icon"
-          ]
-        },
-        {
-          "selector": ".list-menu__custom-icon",
-          "tag": "span",
-          "styles": {
-            "width": "20px",
-            "height": "20px",
-            "object-fit": "contain"
-          },
-          "parent": ".list-menu"
-        },
-        {
-          "selector": ".list-menu__item",
-          "tag": "span",
-          "styles": {
-            "display": "flex",
-            "align-items": "center",
-            "width": "100%",
-            "gap": "12px",
-            "padding": "12px 16px",
-            "font-size": "0.875rem",
-            "color": "#373F4E",
-            "cursor": "pointer",
-            "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #BFC6D4"
-          },
-          "parent": ".list-menu"
-        },
-        {
-          "selector": ".list-menu__item-icon",
-          "tag": "span",
-          "styles": {
-            "color": "#6B7280"
-          },
-          "parent": ".list-menu"
-        }
-      ]
-    },
-    "default-vp-dark-xs": {
+    "no-borders-vp-dark": {
       "_meta": {
         "theme": "vp",
         "mode": "dark",
@@ -4196,7 +1215,8 @@
             "color": "#FAFAFA",
             "cursor": "pointer",
             "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #2A2D32"
+            "border-bottom": "1px solid #2A2D32",
+            "font-family": "'Figtree', sans-serif"
           },
           ".list-menu__item-icon": {
             "color": "#B5B5BC"
@@ -4205,7 +1225,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -4247,104 +1270,17 @@
             "color": "#FAFAFA",
             "cursor": "pointer",
             "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #2A2D32"
+            "border-bottom": "1px solid #2A2D32",
+            "font-family": "'Figtree', sans-serif"
           },
-          "parent": ".list-menu"
-        },
-        {
-          "selector": ".list-menu__item-icon",
-          "tag": "span",
-          "styles": {
-            "color": "#B5B5BC"
-          },
-          "parent": ".list-menu"
-        }
-      ]
-    },
-    "default-vp-dark-sm": {
-      "_meta": {
-        "theme": "vp",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".list-menu": {
-            "background-color": "#1F2124",
-            "border": "1px solid #2A2D32",
-            "border-radius": "0.5rem",
-            "overflow": "hidden"
-          },
-          ".list-menu__custom-icon": {
-            "width": "20px",
-            "height": "20px",
-            "object-fit": "contain"
-          },
-          ".list-menu__item": {
-            "display": "flex",
-            "align-items": "center",
-            "width": "100%",
-            "gap": "12px",
-            "padding": "12px 16px",
-            "font-size": "0.875rem",
-            "color": "#FAFAFA",
-            "cursor": "pointer",
-            "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #2A2D32"
-          },
-          ".list-menu__item-icon": {
-            "color": "#B5B5BC"
+          "parent": ".list-menu",
+          "states": {
+            "hover": {
+              "background-color": "#2A2D32",
+              "color": "#59ACFF"
+            }
           }
         },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".list-menu",
-          "tag": "div",
-          "styles": {
-            "background-color": "#1F2124",
-            "border": "1px solid #2A2D32",
-            "border-radius": "0.5rem",
-            "overflow": "hidden"
-          },
-          "children": [
-            ".list-menu__custom-icon",
-            ".list-menu__item",
-            ".list-menu__item-icon"
-          ]
-        },
-        {
-          "selector": ".list-menu__custom-icon",
-          "tag": "span",
-          "styles": {
-            "width": "20px",
-            "height": "20px",
-            "object-fit": "contain"
-          },
-          "parent": ".list-menu"
-        },
-        {
-          "selector": ".list-menu__item",
-          "tag": "span",
-          "styles": {
-            "display": "flex",
-            "align-items": "center",
-            "width": "100%",
-            "gap": "12px",
-            "padding": "12px 16px",
-            "font-size": "0.875rem",
-            "color": "#FAFAFA",
-            "cursor": "pointer",
-            "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #2A2D32"
-          },
-          "parent": ".list-menu"
-        },
         {
           "selector": ".list-menu__item-icon",
           "tag": "span",
@@ -4355,195 +1291,7 @@
         }
       ]
     },
-    "default-vp-dark-md": {
-      "_meta": {
-        "theme": "vp",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".list-menu": {
-            "background-color": "#1F2124",
-            "border": "1px solid #2A2D32",
-            "border-radius": "0.5rem",
-            "overflow": "hidden"
-          },
-          ".list-menu__custom-icon": {
-            "width": "20px",
-            "height": "20px",
-            "object-fit": "contain"
-          },
-          ".list-menu__item": {
-            "display": "flex",
-            "align-items": "center",
-            "width": "100%",
-            "gap": "12px",
-            "padding": "12px 16px",
-            "font-size": "0.875rem",
-            "color": "#FAFAFA",
-            "cursor": "pointer",
-            "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #2A2D32"
-          },
-          ".list-menu__item-icon": {
-            "color": "#B5B5BC"
-          }
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".list-menu",
-          "tag": "div",
-          "styles": {
-            "background-color": "#1F2124",
-            "border": "1px solid #2A2D32",
-            "border-radius": "0.5rem",
-            "overflow": "hidden"
-          },
-          "children": [
-            ".list-menu__custom-icon",
-            ".list-menu__item",
-            ".list-menu__item-icon"
-          ]
-        },
-        {
-          "selector": ".list-menu__custom-icon",
-          "tag": "span",
-          "styles": {
-            "width": "20px",
-            "height": "20px",
-            "object-fit": "contain"
-          },
-          "parent": ".list-menu"
-        },
-        {
-          "selector": ".list-menu__item",
-          "tag": "span",
-          "styles": {
-            "display": "flex",
-            "align-items": "center",
-            "width": "100%",
-            "gap": "12px",
-            "padding": "12px 16px",
-            "font-size": "0.875rem",
-            "color": "#FAFAFA",
-            "cursor": "pointer",
-            "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #2A2D32"
-          },
-          "parent": ".list-menu"
-        },
-        {
-          "selector": ".list-menu__item-icon",
-          "tag": "span",
-          "styles": {
-            "color": "#B5B5BC"
-          },
-          "parent": ".list-menu"
-        }
-      ]
-    },
-    "default-vp-dark-lg": {
-      "_meta": {
-        "theme": "vp",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".list-menu": {
-            "background-color": "#1F2124",
-            "border": "1px solid #2A2D32",
-            "border-radius": "0.5rem",
-            "overflow": "hidden"
-          },
-          ".list-menu__custom-icon": {
-            "width": "20px",
-            "height": "20px",
-            "object-fit": "contain"
-          },
-          ".list-menu__item": {
-            "display": "flex",
-            "align-items": "center",
-            "width": "100%",
-            "gap": "12px",
-            "padding": "12px 16px",
-            "font-size": "0.875rem",
-            "color": "#FAFAFA",
-            "cursor": "pointer",
-            "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #2A2D32"
-          },
-          ".list-menu__item-icon": {
-            "color": "#B5B5BC"
-          }
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".list-menu",
-          "tag": "div",
-          "styles": {
-            "background-color": "#1F2124",
-            "border": "1px solid #2A2D32",
-            "border-radius": "0.5rem",
-            "overflow": "hidden"
-          },
-          "children": [
-            ".list-menu__custom-icon",
-            ".list-menu__item",
-            ".list-menu__item-icon"
-          ]
-        },
-        {
-          "selector": ".list-menu__custom-icon",
-          "tag": "span",
-          "styles": {
-            "width": "20px",
-            "height": "20px",
-            "object-fit": "contain"
-          },
-          "parent": ".list-menu"
-        },
-        {
-          "selector": ".list-menu__item",
-          "tag": "span",
-          "styles": {
-            "display": "flex",
-            "align-items": "center",
-            "width": "100%",
-            "gap": "12px",
-            "padding": "12px 16px",
-            "font-size": "0.875rem",
-            "color": "#FAFAFA",
-            "cursor": "pointer",
-            "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #2A2D32"
-          },
-          "parent": ".list-menu"
-        },
-        {
-          "selector": ".list-menu__item-icon",
-          "tag": "span",
-          "styles": {
-            "color": "#B5B5BC"
-          },
-          "parent": ".list-menu"
-        }
-      ]
-    },
-    "default-ppm-light-xs": {
+    "no-borders-ppm-light": {
       "_meta": {
         "theme": "ppm",
         "mode": "light",
@@ -4572,7 +1320,8 @@
             "color": "#373F4E",
             "cursor": "pointer",
             "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #BFC6D4"
+            "border-bottom": "1px solid #BFC6D4",
+            "font-family": "'Figtree', sans-serif"
           },
           ".list-menu__item-icon": {
             "color": "#6B7280"
@@ -4581,7 +1330,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -4623,104 +1375,17 @@
             "color": "#373F4E",
             "cursor": "pointer",
             "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #BFC6D4"
+            "border-bottom": "1px solid #BFC6D4",
+            "font-family": "'Figtree', sans-serif"
           },
-          "parent": ".list-menu"
-        },
-        {
-          "selector": ".list-menu__item-icon",
-          "tag": "span",
-          "styles": {
-            "color": "#6B7280"
-          },
-          "parent": ".list-menu"
-        }
-      ]
-    },
-    "default-ppm-light-sm": {
-      "_meta": {
-        "theme": "ppm",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".list-menu": {
-            "background-color": "#F7F8FA",
-            "border": "1px solid #BFC6D4",
-            "border-radius": "0.5rem",
-            "overflow": "hidden"
-          },
-          ".list-menu__custom-icon": {
-            "width": "20px",
-            "height": "20px",
-            "object-fit": "contain"
-          },
-          ".list-menu__item": {
-            "display": "flex",
-            "align-items": "center",
-            "width": "100%",
-            "gap": "12px",
-            "padding": "12px 16px",
-            "font-size": "0.875rem",
-            "color": "#373F4E",
-            "cursor": "pointer",
-            "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #BFC6D4"
-          },
-          ".list-menu__item-icon": {
-            "color": "#6B7280"
+          "parent": ".list-menu",
+          "states": {
+            "hover": {
+              "background-color": "#E5E7EB",
+              "color": "#4C92D9"
+            }
           }
         },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".list-menu",
-          "tag": "div",
-          "styles": {
-            "background-color": "#F7F8FA",
-            "border": "1px solid #BFC6D4",
-            "border-radius": "0.5rem",
-            "overflow": "hidden"
-          },
-          "children": [
-            ".list-menu__custom-icon",
-            ".list-menu__item",
-            ".list-menu__item-icon"
-          ]
-        },
-        {
-          "selector": ".list-menu__custom-icon",
-          "tag": "span",
-          "styles": {
-            "width": "20px",
-            "height": "20px",
-            "object-fit": "contain"
-          },
-          "parent": ".list-menu"
-        },
-        {
-          "selector": ".list-menu__item",
-          "tag": "span",
-          "styles": {
-            "display": "flex",
-            "align-items": "center",
-            "width": "100%",
-            "gap": "12px",
-            "padding": "12px 16px",
-            "font-size": "0.875rem",
-            "color": "#373F4E",
-            "cursor": "pointer",
-            "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #BFC6D4"
-          },
-          "parent": ".list-menu"
-        },
         {
           "selector": ".list-menu__item-icon",
           "tag": "span",
@@ -4731,195 +1396,7 @@
         }
       ]
     },
-    "default-ppm-light-md": {
-      "_meta": {
-        "theme": "ppm",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".list-menu": {
-            "background-color": "#F7F8FA",
-            "border": "1px solid #BFC6D4",
-            "border-radius": "0.5rem",
-            "overflow": "hidden"
-          },
-          ".list-menu__custom-icon": {
-            "width": "20px",
-            "height": "20px",
-            "object-fit": "contain"
-          },
-          ".list-menu__item": {
-            "display": "flex",
-            "align-items": "center",
-            "width": "100%",
-            "gap": "12px",
-            "padding": "12px 16px",
-            "font-size": "0.875rem",
-            "color": "#373F4E",
-            "cursor": "pointer",
-            "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #BFC6D4"
-          },
-          ".list-menu__item-icon": {
-            "color": "#6B7280"
-          }
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".list-menu",
-          "tag": "div",
-          "styles": {
-            "background-color": "#F7F8FA",
-            "border": "1px solid #BFC6D4",
-            "border-radius": "0.5rem",
-            "overflow": "hidden"
-          },
-          "children": [
-            ".list-menu__custom-icon",
-            ".list-menu__item",
-            ".list-menu__item-icon"
-          ]
-        },
-        {
-          "selector": ".list-menu__custom-icon",
-          "tag": "span",
-          "styles": {
-            "width": "20px",
-            "height": "20px",
-            "object-fit": "contain"
-          },
-          "parent": ".list-menu"
-        },
-        {
-          "selector": ".list-menu__item",
-          "tag": "span",
-          "styles": {
-            "display": "flex",
-            "align-items": "center",
-            "width": "100%",
-            "gap": "12px",
-            "padding": "12px 16px",
-            "font-size": "0.875rem",
-            "color": "#373F4E",
-            "cursor": "pointer",
-            "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #BFC6D4"
-          },
-          "parent": ".list-menu"
-        },
-        {
-          "selector": ".list-menu__item-icon",
-          "tag": "span",
-          "styles": {
-            "color": "#6B7280"
-          },
-          "parent": ".list-menu"
-        }
-      ]
-    },
-    "default-ppm-light-lg": {
-      "_meta": {
-        "theme": "ppm",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".list-menu": {
-            "background-color": "#F7F8FA",
-            "border": "1px solid #BFC6D4",
-            "border-radius": "0.5rem",
-            "overflow": "hidden"
-          },
-          ".list-menu__custom-icon": {
-            "width": "20px",
-            "height": "20px",
-            "object-fit": "contain"
-          },
-          ".list-menu__item": {
-            "display": "flex",
-            "align-items": "center",
-            "width": "100%",
-            "gap": "12px",
-            "padding": "12px 16px",
-            "font-size": "0.875rem",
-            "color": "#373F4E",
-            "cursor": "pointer",
-            "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #BFC6D4"
-          },
-          ".list-menu__item-icon": {
-            "color": "#6B7280"
-          }
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".list-menu",
-          "tag": "div",
-          "styles": {
-            "background-color": "#F7F8FA",
-            "border": "1px solid #BFC6D4",
-            "border-radius": "0.5rem",
-            "overflow": "hidden"
-          },
-          "children": [
-            ".list-menu__custom-icon",
-            ".list-menu__item",
-            ".list-menu__item-icon"
-          ]
-        },
-        {
-          "selector": ".list-menu__custom-icon",
-          "tag": "span",
-          "styles": {
-            "width": "20px",
-            "height": "20px",
-            "object-fit": "contain"
-          },
-          "parent": ".list-menu"
-        },
-        {
-          "selector": ".list-menu__item",
-          "tag": "span",
-          "styles": {
-            "display": "flex",
-            "align-items": "center",
-            "width": "100%",
-            "gap": "12px",
-            "padding": "12px 16px",
-            "font-size": "0.875rem",
-            "color": "#373F4E",
-            "cursor": "pointer",
-            "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #BFC6D4"
-          },
-          "parent": ".list-menu"
-        },
-        {
-          "selector": ".list-menu__item-icon",
-          "tag": "span",
-          "styles": {
-            "color": "#6B7280"
-          },
-          "parent": ".list-menu"
-        }
-      ]
-    },
-    "default-ppm-dark-xs": {
+    "no-borders-ppm-dark": {
       "_meta": {
         "theme": "ppm",
         "mode": "dark",
@@ -4948,7 +1425,8 @@
             "color": "#FAFAFA",
             "cursor": "pointer",
             "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #2A2D32"
+            "border-bottom": "1px solid #2A2D32",
+            "font-family": "'Figtree', sans-serif"
           },
           ".list-menu__item-icon": {
             "color": "#B5B5BC"
@@ -4957,7 +1435,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -4999,104 +1480,17 @@
             "color": "#FAFAFA",
             "cursor": "pointer",
             "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #2A2D32"
+            "border-bottom": "1px solid #2A2D32",
+            "font-family": "'Figtree', sans-serif"
           },
-          "parent": ".list-menu"
-        },
-        {
-          "selector": ".list-menu__item-icon",
-          "tag": "span",
-          "styles": {
-            "color": "#B5B5BC"
-          },
-          "parent": ".list-menu"
-        }
-      ]
-    },
-    "default-ppm-dark-sm": {
-      "_meta": {
-        "theme": "ppm",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".list-menu": {
-            "background-color": "#1F2124",
-            "border": "1px solid #2A2D32",
-            "border-radius": "0.5rem",
-            "overflow": "hidden"
-          },
-          ".list-menu__custom-icon": {
-            "width": "20px",
-            "height": "20px",
-            "object-fit": "contain"
-          },
-          ".list-menu__item": {
-            "display": "flex",
-            "align-items": "center",
-            "width": "100%",
-            "gap": "12px",
-            "padding": "12px 16px",
-            "font-size": "0.875rem",
-            "color": "#FAFAFA",
-            "cursor": "pointer",
-            "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #2A2D32"
-          },
-          ".list-menu__item-icon": {
-            "color": "#B5B5BC"
+          "parent": ".list-menu",
+          "states": {
+            "hover": {
+              "background-color": "#2A2D32",
+              "color": "#59ACFF"
+            }
           }
         },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".list-menu",
-          "tag": "div",
-          "styles": {
-            "background-color": "#1F2124",
-            "border": "1px solid #2A2D32",
-            "border-radius": "0.5rem",
-            "overflow": "hidden"
-          },
-          "children": [
-            ".list-menu__custom-icon",
-            ".list-menu__item",
-            ".list-menu__item-icon"
-          ]
-        },
-        {
-          "selector": ".list-menu__custom-icon",
-          "tag": "span",
-          "styles": {
-            "width": "20px",
-            "height": "20px",
-            "object-fit": "contain"
-          },
-          "parent": ".list-menu"
-        },
-        {
-          "selector": ".list-menu__item",
-          "tag": "span",
-          "styles": {
-            "display": "flex",
-            "align-items": "center",
-            "width": "100%",
-            "gap": "12px",
-            "padding": "12px 16px",
-            "font-size": "0.875rem",
-            "color": "#FAFAFA",
-            "cursor": "pointer",
-            "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #2A2D32"
-          },
-          "parent": ".list-menu"
-        },
         {
           "selector": ".list-menu__item-icon",
           "tag": "span",
@@ -5107,195 +1501,7 @@
         }
       ]
     },
-    "default-ppm-dark-md": {
-      "_meta": {
-        "theme": "ppm",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".list-menu": {
-            "background-color": "#1F2124",
-            "border": "1px solid #2A2D32",
-            "border-radius": "0.5rem",
-            "overflow": "hidden"
-          },
-          ".list-menu__custom-icon": {
-            "width": "20px",
-            "height": "20px",
-            "object-fit": "contain"
-          },
-          ".list-menu__item": {
-            "display": "flex",
-            "align-items": "center",
-            "width": "100%",
-            "gap": "12px",
-            "padding": "12px 16px",
-            "font-size": "0.875rem",
-            "color": "#FAFAFA",
-            "cursor": "pointer",
-            "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #2A2D32"
-          },
-          ".list-menu__item-icon": {
-            "color": "#B5B5BC"
-          }
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".list-menu",
-          "tag": "div",
-          "styles": {
-            "background-color": "#1F2124",
-            "border": "1px solid #2A2D32",
-            "border-radius": "0.5rem",
-            "overflow": "hidden"
-          },
-          "children": [
-            ".list-menu__custom-icon",
-            ".list-menu__item",
-            ".list-menu__item-icon"
-          ]
-        },
-        {
-          "selector": ".list-menu__custom-icon",
-          "tag": "span",
-          "styles": {
-            "width": "20px",
-            "height": "20px",
-            "object-fit": "contain"
-          },
-          "parent": ".list-menu"
-        },
-        {
-          "selector": ".list-menu__item",
-          "tag": "span",
-          "styles": {
-            "display": "flex",
-            "align-items": "center",
-            "width": "100%",
-            "gap": "12px",
-            "padding": "12px 16px",
-            "font-size": "0.875rem",
-            "color": "#FAFAFA",
-            "cursor": "pointer",
-            "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #2A2D32"
-          },
-          "parent": ".list-menu"
-        },
-        {
-          "selector": ".list-menu__item-icon",
-          "tag": "span",
-          "styles": {
-            "color": "#B5B5BC"
-          },
-          "parent": ".list-menu"
-        }
-      ]
-    },
-    "default-ppm-dark-lg": {
-      "_meta": {
-        "theme": "ppm",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".list-menu": {
-            "background-color": "#1F2124",
-            "border": "1px solid #2A2D32",
-            "border-radius": "0.5rem",
-            "overflow": "hidden"
-          },
-          ".list-menu__custom-icon": {
-            "width": "20px",
-            "height": "20px",
-            "object-fit": "contain"
-          },
-          ".list-menu__item": {
-            "display": "flex",
-            "align-items": "center",
-            "width": "100%",
-            "gap": "12px",
-            "padding": "12px 16px",
-            "font-size": "0.875rem",
-            "color": "#FAFAFA",
-            "cursor": "pointer",
-            "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #2A2D32"
-          },
-          ".list-menu__item-icon": {
-            "color": "#B5B5BC"
-          }
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".list-menu",
-          "tag": "div",
-          "styles": {
-            "background-color": "#1F2124",
-            "border": "1px solid #2A2D32",
-            "border-radius": "0.5rem",
-            "overflow": "hidden"
-          },
-          "children": [
-            ".list-menu__custom-icon",
-            ".list-menu__item",
-            ".list-menu__item-icon"
-          ]
-        },
-        {
-          "selector": ".list-menu__custom-icon",
-          "tag": "span",
-          "styles": {
-            "width": "20px",
-            "height": "20px",
-            "object-fit": "contain"
-          },
-          "parent": ".list-menu"
-        },
-        {
-          "selector": ".list-menu__item",
-          "tag": "span",
-          "styles": {
-            "display": "flex",
-            "align-items": "center",
-            "width": "100%",
-            "gap": "12px",
-            "padding": "12px 16px",
-            "font-size": "0.875rem",
-            "color": "#FAFAFA",
-            "cursor": "pointer",
-            "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #2A2D32"
-          },
-          "parent": ".list-menu"
-        },
-        {
-          "selector": ".list-menu__item-icon",
-          "tag": "span",
-          "styles": {
-            "color": "#B5B5BC"
-          },
-          "parent": ".list-menu"
-        }
-      ]
-    },
-    "default-maconomy-light-xs": {
+    "no-borders-maconomy-light": {
       "_meta": {
         "theme": "maconomy",
         "mode": "light",
@@ -5324,7 +1530,8 @@
             "color": "#373F4E",
             "cursor": "pointer",
             "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #BFC6D4"
+            "border-bottom": "1px solid #BFC6D4",
+            "font-family": "'Figtree', sans-serif"
           },
           ".list-menu__item-icon": {
             "color": "#6B7280"
@@ -5333,7 +1540,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -5375,104 +1585,17 @@
             "color": "#373F4E",
             "cursor": "pointer",
             "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #BFC6D4"
+            "border-bottom": "1px solid #BFC6D4",
+            "font-family": "'Figtree', sans-serif"
           },
-          "parent": ".list-menu"
-        },
-        {
-          "selector": ".list-menu__item-icon",
-          "tag": "span",
-          "styles": {
-            "color": "#6B7280"
-          },
-          "parent": ".list-menu"
-        }
-      ]
-    },
-    "default-maconomy-light-sm": {
-      "_meta": {
-        "theme": "maconomy",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".list-menu": {
-            "background-color": "#F7F8FA",
-            "border": "1px solid #BFC6D4",
-            "border-radius": "0.5rem",
-            "overflow": "hidden"
-          },
-          ".list-menu__custom-icon": {
-            "width": "20px",
-            "height": "20px",
-            "object-fit": "contain"
-          },
-          ".list-menu__item": {
-            "display": "flex",
-            "align-items": "center",
-            "width": "100%",
-            "gap": "12px",
-            "padding": "12px 16px",
-            "font-size": "0.875rem",
-            "color": "#373F4E",
-            "cursor": "pointer",
-            "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #BFC6D4"
-          },
-          ".list-menu__item-icon": {
-            "color": "#6B7280"
+          "parent": ".list-menu",
+          "states": {
+            "hover": {
+              "background-color": "#E5E7EB",
+              "color": "#4C92D9"
+            }
           }
         },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".list-menu",
-          "tag": "div",
-          "styles": {
-            "background-color": "#F7F8FA",
-            "border": "1px solid #BFC6D4",
-            "border-radius": "0.5rem",
-            "overflow": "hidden"
-          },
-          "children": [
-            ".list-menu__custom-icon",
-            ".list-menu__item",
-            ".list-menu__item-icon"
-          ]
-        },
-        {
-          "selector": ".list-menu__custom-icon",
-          "tag": "span",
-          "styles": {
-            "width": "20px",
-            "height": "20px",
-            "object-fit": "contain"
-          },
-          "parent": ".list-menu"
-        },
-        {
-          "selector": ".list-menu__item",
-          "tag": "span",
-          "styles": {
-            "display": "flex",
-            "align-items": "center",
-            "width": "100%",
-            "gap": "12px",
-            "padding": "12px 16px",
-            "font-size": "0.875rem",
-            "color": "#373F4E",
-            "cursor": "pointer",
-            "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #BFC6D4"
-          },
-          "parent": ".list-menu"
-        },
         {
           "selector": ".list-menu__item-icon",
           "tag": "span",
@@ -5483,195 +1606,7 @@
         }
       ]
     },
-    "default-maconomy-light-md": {
-      "_meta": {
-        "theme": "maconomy",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".list-menu": {
-            "background-color": "#F7F8FA",
-            "border": "1px solid #BFC6D4",
-            "border-radius": "0.5rem",
-            "overflow": "hidden"
-          },
-          ".list-menu__custom-icon": {
-            "width": "20px",
-            "height": "20px",
-            "object-fit": "contain"
-          },
-          ".list-menu__item": {
-            "display": "flex",
-            "align-items": "center",
-            "width": "100%",
-            "gap": "12px",
-            "padding": "12px 16px",
-            "font-size": "0.875rem",
-            "color": "#373F4E",
-            "cursor": "pointer",
-            "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #BFC6D4"
-          },
-          ".list-menu__item-icon": {
-            "color": "#6B7280"
-          }
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".list-menu",
-          "tag": "div",
-          "styles": {
-            "background-color": "#F7F8FA",
-            "border": "1px solid #BFC6D4",
-            "border-radius": "0.5rem",
-            "overflow": "hidden"
-          },
-          "children": [
-            ".list-menu__custom-icon",
-            ".list-menu__item",
-            ".list-menu__item-icon"
-          ]
-        },
-        {
-          "selector": ".list-menu__custom-icon",
-          "tag": "span",
-          "styles": {
-            "width": "20px",
-            "height": "20px",
-            "object-fit": "contain"
-          },
-          "parent": ".list-menu"
-        },
-        {
-          "selector": ".list-menu__item",
-          "tag": "span",
-          "styles": {
-            "display": "flex",
-            "align-items": "center",
-            "width": "100%",
-            "gap": "12px",
-            "padding": "12px 16px",
-            "font-size": "0.875rem",
-            "color": "#373F4E",
-            "cursor": "pointer",
-            "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #BFC6D4"
-          },
-          "parent": ".list-menu"
-        },
-        {
-          "selector": ".list-menu__item-icon",
-          "tag": "span",
-          "styles": {
-            "color": "#6B7280"
-          },
-          "parent": ".list-menu"
-        }
-      ]
-    },
-    "default-maconomy-light-lg": {
-      "_meta": {
-        "theme": "maconomy",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".list-menu": {
-            "background-color": "#F7F8FA",
-            "border": "1px solid #BFC6D4",
-            "border-radius": "0.5rem",
-            "overflow": "hidden"
-          },
-          ".list-menu__custom-icon": {
-            "width": "20px",
-            "height": "20px",
-            "object-fit": "contain"
-          },
-          ".list-menu__item": {
-            "display": "flex",
-            "align-items": "center",
-            "width": "100%",
-            "gap": "12px",
-            "padding": "12px 16px",
-            "font-size": "0.875rem",
-            "color": "#373F4E",
-            "cursor": "pointer",
-            "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #BFC6D4"
-          },
-          ".list-menu__item-icon": {
-            "color": "#6B7280"
-          }
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".list-menu",
-          "tag": "div",
-          "styles": {
-            "background-color": "#F7F8FA",
-            "border": "1px solid #BFC6D4",
-            "border-radius": "0.5rem",
-            "overflow": "hidden"
-          },
-          "children": [
-            ".list-menu__custom-icon",
-            ".list-menu__item",
-            ".list-menu__item-icon"
-          ]
-        },
-        {
-          "selector": ".list-menu__custom-icon",
-          "tag": "span",
-          "styles": {
-            "width": "20px",
-            "height": "20px",
-            "object-fit": "contain"
-          },
-          "parent": ".list-menu"
-        },
-        {
-          "selector": ".list-menu__item",
-          "tag": "span",
-          "styles": {
-            "display": "flex",
-            "align-items": "center",
-            "width": "100%",
-            "gap": "12px",
-            "padding": "12px 16px",
-            "font-size": "0.875rem",
-            "color": "#373F4E",
-            "cursor": "pointer",
-            "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #BFC6D4"
-          },
-          "parent": ".list-menu"
-        },
-        {
-          "selector": ".list-menu__item-icon",
-          "tag": "span",
-          "styles": {
-            "color": "#6B7280"
-          },
-          "parent": ".list-menu"
-        }
-      ]
-    },
-    "default-maconomy-dark-xs": {
+    "no-borders-maconomy-dark": {
       "_meta": {
         "theme": "maconomy",
         "mode": "dark",
@@ -5700,7 +1635,8 @@
             "color": "#FAFAFA",
             "cursor": "pointer",
             "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #2A2D32"
+            "border-bottom": "1px solid #2A2D32",
+            "font-family": "'Figtree', sans-serif"
           },
           ".list-menu__item-icon": {
             "color": "#B5B5BC"
@@ -5709,7 +1645,10 @@
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
@@ -5751,291 +1690,16 @@
             "color": "#FAFAFA",
             "cursor": "pointer",
             "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #2A2D32"
+            "border-bottom": "1px solid #2A2D32",
+            "font-family": "'Figtree', sans-serif"
           },
-          "parent": ".list-menu"
-        },
-        {
-          "selector": ".list-menu__item-icon",
-          "tag": "span",
-          "styles": {
-            "color": "#B5B5BC"
-          },
-          "parent": ".list-menu"
-        }
-      ]
-    },
-    "default-maconomy-dark-sm": {
-      "_meta": {
-        "theme": "maconomy",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".list-menu": {
-            "background-color": "#1F2124",
-            "border": "1px solid #2A2D32",
-            "border-radius": "0.5rem",
-            "overflow": "hidden"
-          },
-          ".list-menu__custom-icon": {
-            "width": "20px",
-            "height": "20px",
-            "object-fit": "contain"
-          },
-          ".list-menu__item": {
-            "display": "flex",
-            "align-items": "center",
-            "width": "100%",
-            "gap": "12px",
-            "padding": "12px 16px",
-            "font-size": "0.875rem",
-            "color": "#FAFAFA",
-            "cursor": "pointer",
-            "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #2A2D32"
-          },
-          ".list-menu__item-icon": {
-            "color": "#B5B5BC"
+          "parent": ".list-menu",
+          "states": {
+            "hover": {
+              "background-color": "#2A2D32",
+              "color": "#59ACFF"
+            }
           }
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".list-menu",
-          "tag": "div",
-          "styles": {
-            "background-color": "#1F2124",
-            "border": "1px solid #2A2D32",
-            "border-radius": "0.5rem",
-            "overflow": "hidden"
-          },
-          "children": [
-            ".list-menu__custom-icon",
-            ".list-menu__item",
-            ".list-menu__item-icon"
-          ]
-        },
-        {
-          "selector": ".list-menu__custom-icon",
-          "tag": "span",
-          "styles": {
-            "width": "20px",
-            "height": "20px",
-            "object-fit": "contain"
-          },
-          "parent": ".list-menu"
-        },
-        {
-          "selector": ".list-menu__item",
-          "tag": "span",
-          "styles": {
-            "display": "flex",
-            "align-items": "center",
-            "width": "100%",
-            "gap": "12px",
-            "padding": "12px 16px",
-            "font-size": "0.875rem",
-            "color": "#FAFAFA",
-            "cursor": "pointer",
-            "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #2A2D32"
-          },
-          "parent": ".list-menu"
-        },
-        {
-          "selector": ".list-menu__item-icon",
-          "tag": "span",
-          "styles": {
-            "color": "#B5B5BC"
-          },
-          "parent": ".list-menu"
-        }
-      ]
-    },
-    "default-maconomy-dark-md": {
-      "_meta": {
-        "theme": "maconomy",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".list-menu": {
-            "background-color": "#1F2124",
-            "border": "1px solid #2A2D32",
-            "border-radius": "0.5rem",
-            "overflow": "hidden"
-          },
-          ".list-menu__custom-icon": {
-            "width": "20px",
-            "height": "20px",
-            "object-fit": "contain"
-          },
-          ".list-menu__item": {
-            "display": "flex",
-            "align-items": "center",
-            "width": "100%",
-            "gap": "12px",
-            "padding": "12px 16px",
-            "font-size": "0.875rem",
-            "color": "#FAFAFA",
-            "cursor": "pointer",
-            "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #2A2D32"
-          },
-          ".list-menu__item-icon": {
-            "color": "#B5B5BC"
-          }
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".list-menu",
-          "tag": "div",
-          "styles": {
-            "background-color": "#1F2124",
-            "border": "1px solid #2A2D32",
-            "border-radius": "0.5rem",
-            "overflow": "hidden"
-          },
-          "children": [
-            ".list-menu__custom-icon",
-            ".list-menu__item",
-            ".list-menu__item-icon"
-          ]
-        },
-        {
-          "selector": ".list-menu__custom-icon",
-          "tag": "span",
-          "styles": {
-            "width": "20px",
-            "height": "20px",
-            "object-fit": "contain"
-          },
-          "parent": ".list-menu"
-        },
-        {
-          "selector": ".list-menu__item",
-          "tag": "span",
-          "styles": {
-            "display": "flex",
-            "align-items": "center",
-            "width": "100%",
-            "gap": "12px",
-            "padding": "12px 16px",
-            "font-size": "0.875rem",
-            "color": "#FAFAFA",
-            "cursor": "pointer",
-            "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #2A2D32"
-          },
-          "parent": ".list-menu"
-        },
-        {
-          "selector": ".list-menu__item-icon",
-          "tag": "span",
-          "styles": {
-            "color": "#B5B5BC"
-          },
-          "parent": ".list-menu"
-        }
-      ]
-    },
-    "default-maconomy-dark-lg": {
-      "_meta": {
-        "theme": "maconomy",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".list-menu": {
-            "background-color": "#1F2124",
-            "border": "1px solid #2A2D32",
-            "border-radius": "0.5rem",
-            "overflow": "hidden"
-          },
-          ".list-menu__custom-icon": {
-            "width": "20px",
-            "height": "20px",
-            "object-fit": "contain"
-          },
-          ".list-menu__item": {
-            "display": "flex",
-            "align-items": "center",
-            "width": "100%",
-            "gap": "12px",
-            "padding": "12px 16px",
-            "font-size": "0.875rem",
-            "color": "#FAFAFA",
-            "cursor": "pointer",
-            "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #2A2D32"
-          },
-          ".list-menu__item-icon": {
-            "color": "#B5B5BC"
-          }
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".list-menu",
-          "tag": "div",
-          "styles": {
-            "background-color": "#1F2124",
-            "border": "1px solid #2A2D32",
-            "border-radius": "0.5rem",
-            "overflow": "hidden"
-          },
-          "children": [
-            ".list-menu__custom-icon",
-            ".list-menu__item",
-            ".list-menu__item-icon"
-          ]
-        },
-        {
-          "selector": ".list-menu__custom-icon",
-          "tag": "span",
-          "styles": {
-            "width": "20px",
-            "height": "20px",
-            "object-fit": "contain"
-          },
-          "parent": ".list-menu"
-        },
-        {
-          "selector": ".list-menu__item",
-          "tag": "span",
-          "styles": {
-            "display": "flex",
-            "align-items": "center",
-            "width": "100%",
-            "gap": "12px",
-            "padding": "12px 16px",
-            "font-size": "0.875rem",
-            "color": "#FAFAFA",
-            "cursor": "pointer",
-            "transition": "background-color 150ms ease",
-            "border-bottom": "1px solid #2A2D32"
-          },
-          "parent": ".list-menu"
         },
         {
           "selector": ".list-menu__item-icon",
@@ -6073,5 +1737,27 @@
       "description": "Vertical menu",
       "snippet": "<ListMenu items={[{ label: 'Item 1', icon: 'home' }]} />"
     }
-  ]
+  ],
+  "specKeyOrder": [
+    "variant",
+    "theme",
+    "mode"
+  ],
+  "dimensionDefaults": {
+    "variant": "default",
+    "theme": "cp",
+    "mode": "light"
+  },
+  "structure": {
+    "root": ".list-menu",
+    "children": []
+  },
+  "fonts": {
+    "Figtree": "https://fonts.googleapis.com/css2?family=Figtree:wght@300..900&display=swap",
+    "Lexend": "https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700;800;900&display=swap",
+    "JetBrains Mono": "https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap"
+  },
+  "defaultContent": {
+    "_rule": "No default content defined; do not invent labels, icons, or copy. Use only what is in the spec or leave slots empty."
+  }
 }

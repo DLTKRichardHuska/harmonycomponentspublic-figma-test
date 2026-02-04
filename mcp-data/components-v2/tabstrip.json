@@ -51,7 +51,7 @@
     "variant": "'default'"
   },
   "specs": {
-    "default-cp-light-xs": {
+    "default-cp-light": {
       "_meta": {
         "theme": "cp",
         "mode": "light",
@@ -59,135 +59,54 @@
       },
       "_buildContract": {
         "criticalSelectors": {
-          ".tab-panel": {},
-          ".tab-panel__content": {}
+          ".tabstrip": {},
+          ".tabstrip__nav": {},
+          ".tabstrip__container": {},
+          ".tabstrip__tabs": {}
         },
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
         {
-          "selector": ".tab-panel",
+          "selector": ".tabstrip",
           "tag": "div",
           "styles": {},
           "children": [
-            ".tab-panel__content"
+            ".tabstrip__nav",
+            ".tabstrip__container"
           ]
         },
         {
-          "selector": ".tab-panel__content",
-          "tag": "div",
+          "selector": ".tabstrip__nav",
+          "tag": "nav",
           "styles": {},
-          "parent": ".tab-panel"
-        }
-      ]
-    },
-    "default-cp-light-sm": {
-      "_meta": {
-        "theme": "cp",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".tab-panel": {},
-          ".tab-panel__content": {}
+          "parent": ".tabstrip"
         },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
         {
-          "selector": ".tab-panel",
+          "selector": ".tabstrip__container",
           "tag": "div",
           "styles": {},
           "children": [
-            ".tab-panel__content"
-          ]
+            ".tabstrip__tabs"
+          ],
+          "parent": ".tabstrip__nav"
         },
         {
-          "selector": ".tab-panel__content",
+          "selector": ".tabstrip__tabs",
           "tag": "div",
           "styles": {},
-          "parent": ".tab-panel"
+          "parent": ".tabstrip__container"
         }
       ]
     },
-    "default-cp-light-md": {
-      "_meta": {
-        "theme": "cp",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".tab-panel": {},
-          ".tab-panel__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".tab-panel",
-          "tag": "div",
-          "styles": {},
-          "children": [
-            ".tab-panel__content"
-          ]
-        },
-        {
-          "selector": ".tab-panel__content",
-          "tag": "div",
-          "styles": {},
-          "parent": ".tab-panel"
-        }
-      ]
-    },
-    "default-cp-light-lg": {
-      "_meta": {
-        "theme": "cp",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".tab-panel": {},
-          ".tab-panel__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".tab-panel",
-          "tag": "div",
-          "styles": {},
-          "children": [
-            ".tab-panel__content"
-          ]
-        },
-        {
-          "selector": ".tab-panel__content",
-          "tag": "div",
-          "styles": {},
-          "parent": ".tab-panel"
-        }
-      ]
-    },
-    "default-cp-dark-xs": {
+    "default-cp-dark": {
       "_meta": {
         "theme": "cp",
         "mode": "dark",
@@ -195,135 +114,54 @@
       },
       "_buildContract": {
         "criticalSelectors": {
-          ".tab-panel": {},
-          ".tab-panel__content": {}
+          ".tabstrip": {},
+          ".tabstrip__nav": {},
+          ".tabstrip__container": {},
+          ".tabstrip__tabs": {}
         },
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
         {
-          "selector": ".tab-panel",
+          "selector": ".tabstrip",
           "tag": "div",
           "styles": {},
           "children": [
-            ".tab-panel__content"
+            ".tabstrip__nav",
+            ".tabstrip__container"
           ]
         },
         {
-          "selector": ".tab-panel__content",
-          "tag": "div",
+          "selector": ".tabstrip__nav",
+          "tag": "nav",
           "styles": {},
-          "parent": ".tab-panel"
-        }
-      ]
-    },
-    "default-cp-dark-sm": {
-      "_meta": {
-        "theme": "cp",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".tab-panel": {},
-          ".tab-panel__content": {}
+          "parent": ".tabstrip"
         },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
         {
-          "selector": ".tab-panel",
+          "selector": ".tabstrip__container",
           "tag": "div",
           "styles": {},
           "children": [
-            ".tab-panel__content"
-          ]
+            ".tabstrip__tabs"
+          ],
+          "parent": ".tabstrip__nav"
         },
         {
-          "selector": ".tab-panel__content",
+          "selector": ".tabstrip__tabs",
           "tag": "div",
           "styles": {},
-          "parent": ".tab-panel"
+          "parent": ".tabstrip__container"
         }
       ]
     },
-    "default-cp-dark-md": {
-      "_meta": {
-        "theme": "cp",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".tab-panel": {},
-          ".tab-panel__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".tab-panel",
-          "tag": "div",
-          "styles": {},
-          "children": [
-            ".tab-panel__content"
-          ]
-        },
-        {
-          "selector": ".tab-panel__content",
-          "tag": "div",
-          "styles": {},
-          "parent": ".tab-panel"
-        }
-      ]
-    },
-    "default-cp-dark-lg": {
-      "_meta": {
-        "theme": "cp",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".tab-panel": {},
-          ".tab-panel__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".tab-panel",
-          "tag": "div",
-          "styles": {},
-          "children": [
-            ".tab-panel__content"
-          ]
-        },
-        {
-          "selector": ".tab-panel__content",
-          "tag": "div",
-          "styles": {},
-          "parent": ".tab-panel"
-        }
-      ]
-    },
-    "default-vp-light-xs": {
+    "default-vp-light": {
       "_meta": {
         "theme": "vp",
         "mode": "light",
@@ -331,135 +169,54 @@
       },
       "_buildContract": {
         "criticalSelectors": {
-          ".tab-panel": {},
-          ".tab-panel__content": {}
+          ".tabstrip": {},
+          ".tabstrip__nav": {},
+          ".tabstrip__container": {},
+          ".tabstrip__tabs": {}
         },
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
         {
-          "selector": ".tab-panel",
+          "selector": ".tabstrip",
           "tag": "div",
           "styles": {},
           "children": [
-            ".tab-panel__content"
+            ".tabstrip__nav",
+            ".tabstrip__container"
           ]
         },
         {
-          "selector": ".tab-panel__content",
-          "tag": "div",
+          "selector": ".tabstrip__nav",
+          "tag": "nav",
           "styles": {},
-          "parent": ".tab-panel"
-        }
-      ]
-    },
-    "default-vp-light-sm": {
-      "_meta": {
-        "theme": "vp",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".tab-panel": {},
-          ".tab-panel__content": {}
+          "parent": ".tabstrip"
         },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
         {
-          "selector": ".tab-panel",
+          "selector": ".tabstrip__container",
           "tag": "div",
           "styles": {},
           "children": [
-            ".tab-panel__content"
-          ]
+            ".tabstrip__tabs"
+          ],
+          "parent": ".tabstrip__nav"
         },
         {
-          "selector": ".tab-panel__content",
+          "selector": ".tabstrip__tabs",
           "tag": "div",
           "styles": {},
-          "parent": ".tab-panel"
+          "parent": ".tabstrip__container"
         }
       ]
     },
-    "default-vp-light-md": {
-      "_meta": {
-        "theme": "vp",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".tab-panel": {},
-          ".tab-panel__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".tab-panel",
-          "tag": "div",
-          "styles": {},
-          "children": [
-            ".tab-panel__content"
-          ]
-        },
-        {
-          "selector": ".tab-panel__content",
-          "tag": "div",
-          "styles": {},
-          "parent": ".tab-panel"
-        }
-      ]
-    },
-    "default-vp-light-lg": {
-      "_meta": {
-        "theme": "vp",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".tab-panel": {},
-          ".tab-panel__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".tab-panel",
-          "tag": "div",
-          "styles": {},
-          "children": [
-            ".tab-panel__content"
-          ]
-        },
-        {
-          "selector": ".tab-panel__content",
-          "tag": "div",
-          "styles": {},
-          "parent": ".tab-panel"
-        }
-      ]
-    },
-    "default-vp-dark-xs": {
+    "default-vp-dark": {
       "_meta": {
         "theme": "vp",
         "mode": "dark",
@@ -467,135 +224,54 @@
       },
       "_buildContract": {
         "criticalSelectors": {
-          ".tab-panel": {},
-          ".tab-panel__content": {}
+          ".tabstrip": {},
+          ".tabstrip__nav": {},
+          ".tabstrip__container": {},
+          ".tabstrip__tabs": {}
         },
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
         {
-          "selector": ".tab-panel",
+          "selector": ".tabstrip",
           "tag": "div",
           "styles": {},
           "children": [
-            ".tab-panel__content"
+            ".tabstrip__nav",
+            ".tabstrip__container"
           ]
         },
         {
-          "selector": ".tab-panel__content",
-          "tag": "div",
+          "selector": ".tabstrip__nav",
+          "tag": "nav",
           "styles": {},
-          "parent": ".tab-panel"
-        }
-      ]
-    },
-    "default-vp-dark-sm": {
-      "_meta": {
-        "theme": "vp",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".tab-panel": {},
-          ".tab-panel__content": {}
+          "parent": ".tabstrip"
         },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
         {
-          "selector": ".tab-panel",
+          "selector": ".tabstrip__container",
           "tag": "div",
           "styles": {},
           "children": [
-            ".tab-panel__content"
-          ]
+            ".tabstrip__tabs"
+          ],
+          "parent": ".tabstrip__nav"
         },
         {
-          "selector": ".tab-panel__content",
+          "selector": ".tabstrip__tabs",
           "tag": "div",
           "styles": {},
-          "parent": ".tab-panel"
+          "parent": ".tabstrip__container"
         }
       ]
     },
-    "default-vp-dark-md": {
-      "_meta": {
-        "theme": "vp",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".tab-panel": {},
-          ".tab-panel__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".tab-panel",
-          "tag": "div",
-          "styles": {},
-          "children": [
-            ".tab-panel__content"
-          ]
-        },
-        {
-          "selector": ".tab-panel__content",
-          "tag": "div",
-          "styles": {},
-          "parent": ".tab-panel"
-        }
-      ]
-    },
-    "default-vp-dark-lg": {
-      "_meta": {
-        "theme": "vp",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".tab-panel": {},
-          ".tab-panel__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".tab-panel",
-          "tag": "div",
-          "styles": {},
-          "children": [
-            ".tab-panel__content"
-          ]
-        },
-        {
-          "selector": ".tab-panel__content",
-          "tag": "div",
-          "styles": {},
-          "parent": ".tab-panel"
-        }
-      ]
-    },
-    "default-ppm-light-xs": {
+    "default-ppm-light": {
       "_meta": {
         "theme": "ppm",
         "mode": "light",
@@ -603,135 +279,54 @@
       },
       "_buildContract": {
         "criticalSelectors": {
-          ".tab-panel": {},
-          ".tab-panel__content": {}
+          ".tabstrip": {},
+          ".tabstrip__nav": {},
+          ".tabstrip__container": {},
+          ".tabstrip__tabs": {}
         },
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
         {
-          "selector": ".tab-panel",
+          "selector": ".tabstrip",
           "tag": "div",
           "styles": {},
           "children": [
-            ".tab-panel__content"
+            ".tabstrip__nav",
+            ".tabstrip__container"
           ]
         },
         {
-          "selector": ".tab-panel__content",
-          "tag": "div",
+          "selector": ".tabstrip__nav",
+          "tag": "nav",
           "styles": {},
-          "parent": ".tab-panel"
-        }
-      ]
-    },
-    "default-ppm-light-sm": {
-      "_meta": {
-        "theme": "ppm",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".tab-panel": {},
-          ".tab-panel__content": {}
+          "parent": ".tabstrip"
         },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
         {
-          "selector": ".tab-panel",
+          "selector": ".tabstrip__container",
           "tag": "div",
           "styles": {},
           "children": [
-            ".tab-panel__content"
-          ]
+            ".tabstrip__tabs"
+          ],
+          "parent": ".tabstrip__nav"
         },
         {
-          "selector": ".tab-panel__content",
+          "selector": ".tabstrip__tabs",
           "tag": "div",
           "styles": {},
-          "parent": ".tab-panel"
+          "parent": ".tabstrip__container"
         }
       ]
     },
-    "default-ppm-light-md": {
-      "_meta": {
-        "theme": "ppm",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".tab-panel": {},
-          ".tab-panel__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".tab-panel",
-          "tag": "div",
-          "styles": {},
-          "children": [
-            ".tab-panel__content"
-          ]
-        },
-        {
-          "selector": ".tab-panel__content",
-          "tag": "div",
-          "styles": {},
-          "parent": ".tab-panel"
-        }
-      ]
-    },
-    "default-ppm-light-lg": {
-      "_meta": {
-        "theme": "ppm",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".tab-panel": {},
-          ".tab-panel__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".tab-panel",
-          "tag": "div",
-          "styles": {},
-          "children": [
-            ".tab-panel__content"
-          ]
-        },
-        {
-          "selector": ".tab-panel__content",
-          "tag": "div",
-          "styles": {},
-          "parent": ".tab-panel"
-        }
-      ]
-    },
-    "default-ppm-dark-xs": {
+    "default-ppm-dark": {
       "_meta": {
         "theme": "ppm",
         "mode": "dark",
@@ -739,135 +334,54 @@
       },
       "_buildContract": {
         "criticalSelectors": {
-          ".tab-panel": {},
-          ".tab-panel__content": {}
+          ".tabstrip": {},
+          ".tabstrip__nav": {},
+          ".tabstrip__container": {},
+          ".tabstrip__tabs": {}
         },
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
         {
-          "selector": ".tab-panel",
+          "selector": ".tabstrip",
           "tag": "div",
           "styles": {},
           "children": [
-            ".tab-panel__content"
+            ".tabstrip__nav",
+            ".tabstrip__container"
           ]
         },
         {
-          "selector": ".tab-panel__content",
-          "tag": "div",
+          "selector": ".tabstrip__nav",
+          "tag": "nav",
           "styles": {},
-          "parent": ".tab-panel"
-        }
-      ]
-    },
-    "default-ppm-dark-sm": {
-      "_meta": {
-        "theme": "ppm",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".tab-panel": {},
-          ".tab-panel__content": {}
+          "parent": ".tabstrip"
         },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
         {
-          "selector": ".tab-panel",
+          "selector": ".tabstrip__container",
           "tag": "div",
           "styles": {},
           "children": [
-            ".tab-panel__content"
-          ]
+            ".tabstrip__tabs"
+          ],
+          "parent": ".tabstrip__nav"
         },
         {
-          "selector": ".tab-panel__content",
+          "selector": ".tabstrip__tabs",
           "tag": "div",
           "styles": {},
-          "parent": ".tab-panel"
+          "parent": ".tabstrip__container"
         }
       ]
     },
-    "default-ppm-dark-md": {
-      "_meta": {
-        "theme": "ppm",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".tab-panel": {},
-          ".tab-panel__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".tab-panel",
-          "tag": "div",
-          "styles": {},
-          "children": [
-            ".tab-panel__content"
-          ]
-        },
-        {
-          "selector": ".tab-panel__content",
-          "tag": "div",
-          "styles": {},
-          "parent": ".tab-panel"
-        }
-      ]
-    },
-    "default-ppm-dark-lg": {
-      "_meta": {
-        "theme": "ppm",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".tab-panel": {},
-          ".tab-panel__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".tab-panel",
-          "tag": "div",
-          "styles": {},
-          "children": [
-            ".tab-panel__content"
-          ]
-        },
-        {
-          "selector": ".tab-panel__content",
-          "tag": "div",
-          "styles": {},
-          "parent": ".tab-panel"
-        }
-      ]
-    },
-    "default-maconomy-light-xs": {
+    "default-maconomy-light": {
       "_meta": {
         "theme": "maconomy",
         "mode": "light",
@@ -875,135 +389,54 @@
       },
       "_buildContract": {
         "criticalSelectors": {
-          ".tab-panel": {},
-          ".tab-panel__content": {}
+          ".tabstrip": {},
+          ".tabstrip__nav": {},
+          ".tabstrip__container": {},
+          ".tabstrip__tabs": {}
         },
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
         {
-          "selector": ".tab-panel",
+          "selector": ".tabstrip",
           "tag": "div",
           "styles": {},
           "children": [
-            ".tab-panel__content"
+            ".tabstrip__nav",
+            ".tabstrip__container"
           ]
         },
         {
-          "selector": ".tab-panel__content",
-          "tag": "div",
+          "selector": ".tabstrip__nav",
+          "tag": "nav",
           "styles": {},
-          "parent": ".tab-panel"
-        }
-      ]
-    },
-    "default-maconomy-light-sm": {
-      "_meta": {
-        "theme": "maconomy",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".tab-panel": {},
-          ".tab-panel__content": {}
+          "parent": ".tabstrip"
         },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
         {
-          "selector": ".tab-panel",
+          "selector": ".tabstrip__container",
           "tag": "div",
           "styles": {},
           "children": [
-            ".tab-panel__content"
-          ]
+            ".tabstrip__tabs"
+          ],
+          "parent": ".tabstrip__nav"
         },
         {
-          "selector": ".tab-panel__content",
+          "selector": ".tabstrip__tabs",
           "tag": "div",
           "styles": {},
-          "parent": ".tab-panel"
+          "parent": ".tabstrip__container"
         }
       ]
     },
-    "default-maconomy-light-md": {
-      "_meta": {
-        "theme": "maconomy",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".tab-panel": {},
-          ".tab-panel__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".tab-panel",
-          "tag": "div",
-          "styles": {},
-          "children": [
-            ".tab-panel__content"
-          ]
-        },
-        {
-          "selector": ".tab-panel__content",
-          "tag": "div",
-          "styles": {},
-          "parent": ".tab-panel"
-        }
-      ]
-    },
-    "default-maconomy-light-lg": {
-      "_meta": {
-        "theme": "maconomy",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".tab-panel": {},
-          ".tab-panel__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".tab-panel",
-          "tag": "div",
-          "styles": {},
-          "children": [
-            ".tab-panel__content"
-          ]
-        },
-        {
-          "selector": ".tab-panel__content",
-          "tag": "div",
-          "styles": {},
-          "parent": ".tab-panel"
-        }
-      ]
-    },
-    "default-maconomy-dark-xs": {
+    "default-maconomy-dark": {
       "_meta": {
         "theme": "maconomy",
         "mode": "dark",
@@ -1011,135 +444,54 @@
       },
       "_buildContract": {
         "criticalSelectors": {
-          ".tab-panel": {},
-          ".tab-panel__content": {}
+          ".tabstrip": {},
+          ".tabstrip__nav": {},
+          ".tabstrip__container": {},
+          ".tabstrip__tabs": {}
         },
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
         {
-          "selector": ".tab-panel",
+          "selector": ".tabstrip",
           "tag": "div",
           "styles": {},
           "children": [
-            ".tab-panel__content"
+            ".tabstrip__nav",
+            ".tabstrip__container"
           ]
         },
         {
-          "selector": ".tab-panel__content",
-          "tag": "div",
+          "selector": ".tabstrip__nav",
+          "tag": "nav",
           "styles": {},
-          "parent": ".tab-panel"
-        }
-      ]
-    },
-    "default-maconomy-dark-sm": {
-      "_meta": {
-        "theme": "maconomy",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".tab-panel": {},
-          ".tab-panel__content": {}
+          "parent": ".tabstrip"
         },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
         {
-          "selector": ".tab-panel",
+          "selector": ".tabstrip__container",
           "tag": "div",
           "styles": {},
           "children": [
-            ".tab-panel__content"
-          ]
+            ".tabstrip__tabs"
+          ],
+          "parent": ".tabstrip__nav"
         },
         {
-          "selector": ".tab-panel__content",
+          "selector": ".tabstrip__tabs",
           "tag": "div",
           "styles": {},
-          "parent": ".tab-panel"
+          "parent": ".tabstrip__container"
         }
       ]
     },
-    "default-maconomy-dark-md": {
-      "_meta": {
-        "theme": "maconomy",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".tab-panel": {},
-          ".tab-panel__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".tab-panel",
-          "tag": "div",
-          "styles": {},
-          "children": [
-            ".tab-panel__content"
-          ]
-        },
-        {
-          "selector": ".tab-panel__content",
-          "tag": "div",
-          "styles": {},
-          "parent": ".tab-panel"
-        }
-      ]
-    },
-    "default-maconomy-dark-lg": {
-      "_meta": {
-        "theme": "maconomy",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".tab-panel": {},
-          ".tab-panel__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".tab-panel",
-          "tag": "div",
-          "styles": {},
-          "children": [
-            ".tab-panel__content"
-          ]
-        },
-        {
-          "selector": ".tab-panel__content",
-          "tag": "div",
-          "styles": {},
-          "parent": ".tab-panel"
-        }
-      ]
-    },
-    "compact-cp-light-xs": {
+    "compact-cp-light": {
       "_meta": {
         "theme": "cp",
         "mode": "light",
@@ -1147,135 +499,54 @@
       },
       "_buildContract": {
         "criticalSelectors": {
-          ".tab-panel": {},
-          ".tab-panel__content": {}
+          ".tabstrip": {},
+          ".tabstrip__nav": {},
+          ".tabstrip__container": {},
+          ".tabstrip__tabs": {}
         },
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
         {
-          "selector": ".tab-panel",
+          "selector": ".tabstrip",
           "tag": "div",
           "styles": {},
           "children": [
-            ".tab-panel__content"
+            ".tabstrip__nav",
+            ".tabstrip__container"
           ]
         },
         {
-          "selector": ".tab-panel__content",
-          "tag": "div",
+          "selector": ".tabstrip__nav",
+          "tag": "nav",
           "styles": {},
-          "parent": ".tab-panel"
-        }
-      ]
-    },
-    "compact-cp-light-sm": {
-      "_meta": {
-        "theme": "cp",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".tab-panel": {},
-          ".tab-panel__content": {}
+          "parent": ".tabstrip"
         },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
         {
-          "selector": ".tab-panel",
+          "selector": ".tabstrip__container",
           "tag": "div",
           "styles": {},
           "children": [
-            ".tab-panel__content"
-          ]
+            ".tabstrip__tabs"
+          ],
+          "parent": ".tabstrip__nav"
         },
         {
-          "selector": ".tab-panel__content",
+          "selector": ".tabstrip__tabs",
           "tag": "div",
           "styles": {},
-          "parent": ".tab-panel"
+          "parent": ".tabstrip__container"
         }
       ]
     },
-    "compact-cp-light-md": {
-      "_meta": {
-        "theme": "cp",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".tab-panel": {},
-          ".tab-panel__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".tab-panel",
-          "tag": "div",
-          "styles": {},
-          "children": [
-            ".tab-panel__content"
-          ]
-        },
-        {
-          "selector": ".tab-panel__content",
-          "tag": "div",
-          "styles": {},
-          "parent": ".tab-panel"
-        }
-      ]
-    },
-    "compact-cp-light-lg": {
-      "_meta": {
-        "theme": "cp",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".tab-panel": {},
-          ".tab-panel__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".tab-panel",
-          "tag": "div",
-          "styles": {},
-          "children": [
-            ".tab-panel__content"
-          ]
-        },
-        {
-          "selector": ".tab-panel__content",
-          "tag": "div",
-          "styles": {},
-          "parent": ".tab-panel"
-        }
-      ]
-    },
-    "compact-cp-dark-xs": {
+    "compact-cp-dark": {
       "_meta": {
         "theme": "cp",
         "mode": "dark",
@@ -1283,135 +554,54 @@
       },
       "_buildContract": {
         "criticalSelectors": {
-          ".tab-panel": {},
-          ".tab-panel__content": {}
+          ".tabstrip": {},
+          ".tabstrip__nav": {},
+          ".tabstrip__container": {},
+          ".tabstrip__tabs": {}
         },
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
         {
-          "selector": ".tab-panel",
+          "selector": ".tabstrip",
           "tag": "div",
           "styles": {},
           "children": [
-            ".tab-panel__content"
+            ".tabstrip__nav",
+            ".tabstrip__container"
           ]
         },
         {
-          "selector": ".tab-panel__content",
-          "tag": "div",
+          "selector": ".tabstrip__nav",
+          "tag": "nav",
           "styles": {},
-          "parent": ".tab-panel"
-        }
-      ]
-    },
-    "compact-cp-dark-sm": {
-      "_meta": {
-        "theme": "cp",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".tab-panel": {},
-          ".tab-panel__content": {}
+          "parent": ".tabstrip"
         },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
         {
-          "selector": ".tab-panel",
+          "selector": ".tabstrip__container",
           "tag": "div",
           "styles": {},
           "children": [
-            ".tab-panel__content"
-          ]
+            ".tabstrip__tabs"
+          ],
+          "parent": ".tabstrip__nav"
         },
         {
-          "selector": ".tab-panel__content",
+          "selector": ".tabstrip__tabs",
           "tag": "div",
           "styles": {},
-          "parent": ".tab-panel"
+          "parent": ".tabstrip__container"
         }
       ]
     },
-    "compact-cp-dark-md": {
-      "_meta": {
-        "theme": "cp",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".tab-panel": {},
-          ".tab-panel__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".tab-panel",
-          "tag": "div",
-          "styles": {},
-          "children": [
-            ".tab-panel__content"
-          ]
-        },
-        {
-          "selector": ".tab-panel__content",
-          "tag": "div",
-          "styles": {},
-          "parent": ".tab-panel"
-        }
-      ]
-    },
-    "compact-cp-dark-lg": {
-      "_meta": {
-        "theme": "cp",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".tab-panel": {},
-          ".tab-panel__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".tab-panel",
-          "tag": "div",
-          "styles": {},
-          "children": [
-            ".tab-panel__content"
-          ]
-        },
-        {
-          "selector": ".tab-panel__content",
-          "tag": "div",
-          "styles": {},
-          "parent": ".tab-panel"
-        }
-      ]
-    },
-    "compact-vp-light-xs": {
+    "compact-vp-light": {
       "_meta": {
         "theme": "vp",
         "mode": "light",
@@ -1419,135 +609,54 @@
       },
       "_buildContract": {
         "criticalSelectors": {
-          ".tab-panel": {},
-          ".tab-panel__content": {}
+          ".tabstrip": {},
+          ".tabstrip__nav": {},
+          ".tabstrip__container": {},
+          ".tabstrip__tabs": {}
         },
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
         {
-          "selector": ".tab-panel",
+          "selector": ".tabstrip",
           "tag": "div",
           "styles": {},
           "children": [
-            ".tab-panel__content"
+            ".tabstrip__nav",
+            ".tabstrip__container"
           ]
         },
         {
-          "selector": ".tab-panel__content",
-          "tag": "div",
+          "selector": ".tabstrip__nav",
+          "tag": "nav",
           "styles": {},
-          "parent": ".tab-panel"
-        }
-      ]
-    },
-    "compact-vp-light-sm": {
-      "_meta": {
-        "theme": "vp",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".tab-panel": {},
-          ".tab-panel__content": {}
+          "parent": ".tabstrip"
         },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
         {
-          "selector": ".tab-panel",
+          "selector": ".tabstrip__container",
           "tag": "div",
           "styles": {},
           "children": [
-            ".tab-panel__content"
-          ]
+            ".tabstrip__tabs"
+          ],
+          "parent": ".tabstrip__nav"
         },
         {
-          "selector": ".tab-panel__content",
+          "selector": ".tabstrip__tabs",
           "tag": "div",
           "styles": {},
-          "parent": ".tab-panel"
+          "parent": ".tabstrip__container"
         }
       ]
     },
-    "compact-vp-light-md": {
-      "_meta": {
-        "theme": "vp",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".tab-panel": {},
-          ".tab-panel__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".tab-panel",
-          "tag": "div",
-          "styles": {},
-          "children": [
-            ".tab-panel__content"
-          ]
-        },
-        {
-          "selector": ".tab-panel__content",
-          "tag": "div",
-          "styles": {},
-          "parent": ".tab-panel"
-        }
-      ]
-    },
-    "compact-vp-light-lg": {
-      "_meta": {
-        "theme": "vp",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".tab-panel": {},
-          ".tab-panel__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".tab-panel",
-          "tag": "div",
-          "styles": {},
-          "children": [
-            ".tab-panel__content"
-          ]
-        },
-        {
-          "selector": ".tab-panel__content",
-          "tag": "div",
-          "styles": {},
-          "parent": ".tab-panel"
-        }
-      ]
-    },
-    "compact-vp-dark-xs": {
+    "compact-vp-dark": {
       "_meta": {
         "theme": "vp",
         "mode": "dark",
@@ -1555,135 +664,54 @@
       },
       "_buildContract": {
         "criticalSelectors": {
-          ".tab-panel": {},
-          ".tab-panel__content": {}
+          ".tabstrip": {},
+          ".tabstrip__nav": {},
+          ".tabstrip__container": {},
+          ".tabstrip__tabs": {}
         },
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
         {
-          "selector": ".tab-panel",
+          "selector": ".tabstrip",
           "tag": "div",
           "styles": {},
           "children": [
-            ".tab-panel__content"
+            ".tabstrip__nav",
+            ".tabstrip__container"
           ]
         },
         {
-          "selector": ".tab-panel__content",
-          "tag": "div",
+          "selector": ".tabstrip__nav",
+          "tag": "nav",
           "styles": {},
-          "parent": ".tab-panel"
-        }
-      ]
-    },
-    "compact-vp-dark-sm": {
-      "_meta": {
-        "theme": "vp",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".tab-panel": {},
-          ".tab-panel__content": {}
+          "parent": ".tabstrip"
         },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
         {
-          "selector": ".tab-panel",
+          "selector": ".tabstrip__container",
           "tag": "div",
           "styles": {},
           "children": [
-            ".tab-panel__content"
-          ]
+            ".tabstrip__tabs"
+          ],
+          "parent": ".tabstrip__nav"
         },
         {
-          "selector": ".tab-panel__content",
+          "selector": ".tabstrip__tabs",
           "tag": "div",
           "styles": {},
-          "parent": ".tab-panel"
+          "parent": ".tabstrip__container"
         }
       ]
     },
-    "compact-vp-dark-md": {
-      "_meta": {
-        "theme": "vp",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".tab-panel": {},
-          ".tab-panel__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".tab-panel",
-          "tag": "div",
-          "styles": {},
-          "children": [
-            ".tab-panel__content"
-          ]
-        },
-        {
-          "selector": ".tab-panel__content",
-          "tag": "div",
-          "styles": {},
-          "parent": ".tab-panel"
-        }
-      ]
-    },
-    "compact-vp-dark-lg": {
-      "_meta": {
-        "theme": "vp",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".tab-panel": {},
-          ".tab-panel__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".tab-panel",
-          "tag": "div",
-          "styles": {},
-          "children": [
-            ".tab-panel__content"
-          ]
-        },
-        {
-          "selector": ".tab-panel__content",
-          "tag": "div",
-          "styles": {},
-          "parent": ".tab-panel"
-        }
-      ]
-    },
-    "compact-ppm-light-xs": {
+    "compact-ppm-light": {
       "_meta": {
         "theme": "ppm",
         "mode": "light",
@@ -1691,135 +719,54 @@
       },
       "_buildContract": {
         "criticalSelectors": {
-          ".tab-panel": {},
-          ".tab-panel__content": {}
+          ".tabstrip": {},
+          ".tabstrip__nav": {},
+          ".tabstrip__container": {},
+          ".tabstrip__tabs": {}
         },
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
         {
-          "selector": ".tab-panel",
+          "selector": ".tabstrip",
           "tag": "div",
           "styles": {},
           "children": [
-            ".tab-panel__content"
+            ".tabstrip__nav",
+            ".tabstrip__container"
           ]
         },
         {
-          "selector": ".tab-panel__content",
-          "tag": "div",
+          "selector": ".tabstrip__nav",
+          "tag": "nav",
           "styles": {},
-          "parent": ".tab-panel"
-        }
-      ]
-    },
-    "compact-ppm-light-sm": {
-      "_meta": {
-        "theme": "ppm",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".tab-panel": {},
-          ".tab-panel__content": {}
+          "parent": ".tabstrip"
         },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
         {
-          "selector": ".tab-panel",
+          "selector": ".tabstrip__container",
           "tag": "div",
           "styles": {},
           "children": [
-            ".tab-panel__content"
-          ]
+            ".tabstrip__tabs"
+          ],
+          "parent": ".tabstrip__nav"
         },
         {
-          "selector": ".tab-panel__content",
+          "selector": ".tabstrip__tabs",
           "tag": "div",
           "styles": {},
-          "parent": ".tab-panel"
+          "parent": ".tabstrip__container"
         }
       ]
     },
-    "compact-ppm-light-md": {
-      "_meta": {
-        "theme": "ppm",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".tab-panel": {},
-          ".tab-panel__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".tab-panel",
-          "tag": "div",
-          "styles": {},
-          "children": [
-            ".tab-panel__content"
-          ]
-        },
-        {
-          "selector": ".tab-panel__content",
-          "tag": "div",
-          "styles": {},
-          "parent": ".tab-panel"
-        }
-      ]
-    },
-    "compact-ppm-light-lg": {
-      "_meta": {
-        "theme": "ppm",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".tab-panel": {},
-          ".tab-panel__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".tab-panel",
-          "tag": "div",
-          "styles": {},
-          "children": [
-            ".tab-panel__content"
-          ]
-        },
-        {
-          "selector": ".tab-panel__content",
-          "tag": "div",
-          "styles": {},
-          "parent": ".tab-panel"
-        }
-      ]
-    },
-    "compact-ppm-dark-xs": {
+    "compact-ppm-dark": {
       "_meta": {
         "theme": "ppm",
         "mode": "dark",
@@ -1827,135 +774,54 @@
       },
       "_buildContract": {
         "criticalSelectors": {
-          ".tab-panel": {},
-          ".tab-panel__content": {}
+          ".tabstrip": {},
+          ".tabstrip__nav": {},
+          ".tabstrip__container": {},
+          ".tabstrip__tabs": {}
         },
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
         {
-          "selector": ".tab-panel",
+          "selector": ".tabstrip",
           "tag": "div",
           "styles": {},
           "children": [
-            ".tab-panel__content"
+            ".tabstrip__nav",
+            ".tabstrip__container"
           ]
         },
         {
-          "selector": ".tab-panel__content",
-          "tag": "div",
+          "selector": ".tabstrip__nav",
+          "tag": "nav",
           "styles": {},
-          "parent": ".tab-panel"
-        }
-      ]
-    },
-    "compact-ppm-dark-sm": {
-      "_meta": {
-        "theme": "ppm",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".tab-panel": {},
-          ".tab-panel__content": {}
+          "parent": ".tabstrip"
         },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
         {
-          "selector": ".tab-panel",
+          "selector": ".tabstrip__container",
           "tag": "div",
           "styles": {},
           "children": [
-            ".tab-panel__content"
-          ]
+            ".tabstrip__tabs"
+          ],
+          "parent": ".tabstrip__nav"
         },
         {
-          "selector": ".tab-panel__content",
+          "selector": ".tabstrip__tabs",
           "tag": "div",
           "styles": {},
-          "parent": ".tab-panel"
+          "parent": ".tabstrip__container"
         }
       ]
     },
-    "compact-ppm-dark-md": {
-      "_meta": {
-        "theme": "ppm",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".tab-panel": {},
-          ".tab-panel__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".tab-panel",
-          "tag": "div",
-          "styles": {},
-          "children": [
-            ".tab-panel__content"
-          ]
-        },
-        {
-          "selector": ".tab-panel__content",
-          "tag": "div",
-          "styles": {},
-          "parent": ".tab-panel"
-        }
-      ]
-    },
-    "compact-ppm-dark-lg": {
-      "_meta": {
-        "theme": "ppm",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".tab-panel": {},
-          ".tab-panel__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".tab-panel",
-          "tag": "div",
-          "styles": {},
-          "children": [
-            ".tab-panel__content"
-          ]
-        },
-        {
-          "selector": ".tab-panel__content",
-          "tag": "div",
-          "styles": {},
-          "parent": ".tab-panel"
-        }
-      ]
-    },
-    "compact-maconomy-light-xs": {
+    "compact-maconomy-light": {
       "_meta": {
         "theme": "maconomy",
         "mode": "light",
@@ -1963,135 +829,54 @@
       },
       "_buildContract": {
         "criticalSelectors": {
-          ".tab-panel": {},
-          ".tab-panel__content": {}
+          ".tabstrip": {},
+          ".tabstrip__nav": {},
+          ".tabstrip__container": {},
+          ".tabstrip__tabs": {}
         },
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
         {
-          "selector": ".tab-panel",
+          "selector": ".tabstrip",
           "tag": "div",
           "styles": {},
           "children": [
-            ".tab-panel__content"
+            ".tabstrip__nav",
+            ".tabstrip__container"
           ]
         },
         {
-          "selector": ".tab-panel__content",
-          "tag": "div",
+          "selector": ".tabstrip__nav",
+          "tag": "nav",
           "styles": {},
-          "parent": ".tab-panel"
-        }
-      ]
-    },
-    "compact-maconomy-light-sm": {
-      "_meta": {
-        "theme": "maconomy",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".tab-panel": {},
-          ".tab-panel__content": {}
+          "parent": ".tabstrip"
         },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
         {
-          "selector": ".tab-panel",
+          "selector": ".tabstrip__container",
           "tag": "div",
           "styles": {},
           "children": [
-            ".tab-panel__content"
-          ]
+            ".tabstrip__tabs"
+          ],
+          "parent": ".tabstrip__nav"
         },
         {
-          "selector": ".tab-panel__content",
+          "selector": ".tabstrip__tabs",
           "tag": "div",
           "styles": {},
-          "parent": ".tab-panel"
+          "parent": ".tabstrip__container"
         }
       ]
     },
-    "compact-maconomy-light-md": {
-      "_meta": {
-        "theme": "maconomy",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".tab-panel": {},
-          ".tab-panel__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".tab-panel",
-          "tag": "div",
-          "styles": {},
-          "children": [
-            ".tab-panel__content"
-          ]
-        },
-        {
-          "selector": ".tab-panel__content",
-          "tag": "div",
-          "styles": {},
-          "parent": ".tab-panel"
-        }
-      ]
-    },
-    "compact-maconomy-light-lg": {
-      "_meta": {
-        "theme": "maconomy",
-        "mode": "light",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".tab-panel": {},
-          ".tab-panel__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".tab-panel",
-          "tag": "div",
-          "styles": {},
-          "children": [
-            ".tab-panel__content"
-          ]
-        },
-        {
-          "selector": ".tab-panel__content",
-          "tag": "div",
-          "styles": {},
-          "parent": ".tab-panel"
-        }
-      ]
-    },
-    "compact-maconomy-dark-xs": {
+    "compact-maconomy-dark": {
       "_meta": {
         "theme": "maconomy",
         "mode": "dark",
@@ -2099,131 +884,50 @@
       },
       "_buildContract": {
         "criticalSelectors": {
-          ".tab-panel": {},
-          ".tab-panel__content": {}
+          ".tabstrip": {},
+          ".tabstrip__nav": {},
+          ".tabstrip__container": {},
+          ".tabstrip__tabs": {}
         },
         "forbiddenModifications": [
           "Do not use Tailwind arbitrary values",
           "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
+          "Do not simplify box-shadow values",
+          "Do not add CSS properties that are not in criticalSelectors or in elements[].styles (or element states)",
+          "Do not reorder children: follow contentOrder and elements[].children order exactly",
+          "Build exactly what is in the spec: structure, styles, and defaultContent from the JSON only; no inference, no additions, no \"fixes\""
         ]
       },
       "elements": [
         {
-          "selector": ".tab-panel",
+          "selector": ".tabstrip",
           "tag": "div",
           "styles": {},
           "children": [
-            ".tab-panel__content"
+            ".tabstrip__nav",
+            ".tabstrip__container"
           ]
         },
         {
-          "selector": ".tab-panel__content",
-          "tag": "div",
+          "selector": ".tabstrip__nav",
+          "tag": "nav",
           "styles": {},
-          "parent": ".tab-panel"
-        }
-      ]
-    },
-    "compact-maconomy-dark-sm": {
-      "_meta": {
-        "theme": "maconomy",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".tab-panel": {},
-          ".tab-panel__content": {}
+          "parent": ".tabstrip"
         },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
         {
-          "selector": ".tab-panel",
+          "selector": ".tabstrip__container",
           "tag": "div",
           "styles": {},
           "children": [
-            ".tab-panel__content"
-          ]
+            ".tabstrip__tabs"
+          ],
+          "parent": ".tabstrip__nav"
         },
         {
-          "selector": ".tab-panel__content",
+          "selector": ".tabstrip__tabs",
           "tag": "div",
           "styles": {},
-          "parent": ".tab-panel"
-        }
-      ]
-    },
-    "compact-maconomy-dark-md": {
-      "_meta": {
-        "theme": "maconomy",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".tab-panel": {},
-          ".tab-panel__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".tab-panel",
-          "tag": "div",
-          "styles": {},
-          "children": [
-            ".tab-panel__content"
-          ]
-        },
-        {
-          "selector": ".tab-panel__content",
-          "tag": "div",
-          "styles": {},
-          "parent": ".tab-panel"
-        }
-      ]
-    },
-    "compact-maconomy-dark-lg": {
-      "_meta": {
-        "theme": "maconomy",
-        "mode": "dark",
-        "locked": true
-      },
-      "_buildContract": {
-        "criticalSelectors": {
-          ".tab-panel": {},
-          ".tab-panel__content": {}
-        },
-        "forbiddenModifications": [
-          "Do not use Tailwind arbitrary values",
-          "Do not change hex colors to named colors",
-          "Do not simplify box-shadow values"
-        ]
-      },
-      "elements": [
-        {
-          "selector": ".tab-panel",
-          "tag": "div",
-          "styles": {},
-          "children": [
-            ".tab-panel__content"
-          ]
-        },
-        {
-          "selector": ".tab-panel__content",
-          "tag": "div",
-          "styles": {},
-          "parent": ".tab-panel"
+          "parent": ".tabstrip__container"
         }
       ]
     }
@@ -2258,5 +962,124 @@
       "description": "Tab navigation",
       "snippet": "<TabStrip tabs={[{ id: '1', label: 'Tab 1' }]} activeTab=\"1\" />"
     }
-  ]
+  ],
+  "specKeyOrder": [
+    "variant",
+    "theme",
+    "mode"
+  ],
+  "dimensionDefaults": {
+    "variant": "default",
+    "theme": "cp",
+    "mode": "light"
+  },
+  "contentOrder": [
+    ".tabstrip__nav"
+  ],
+  "contentOrder.tabstrip__nav": [
+    ".tabstrip__container"
+  ],
+  "contentOrder.tabstrip__container": [
+    ".tabstrip__tabs",
+    ".tab",
+    ".tabstrip__more-wrapper"
+  ],
+  "contentOrder.tabstrip__more-wrapper": [
+    ".tab",
+    ".tabstrip__dropdown"
+  ],
+  "contentOrder.tabstrip__dropdown": [
+    ".tabstrip__dropdown-section"
+  ],
+  "contentOrder.tabstrip__dropdown-section": [
+    ".tabstrip__dropdown-item"
+  ],
+  "contentOrder.tabstrip__dropdown-item": [
+    ".tabstrip__dropdown-item-label",
+    ".tabstrip__dropdown-item-actions"
+  ],
+  "contentOrder.tabstrip__dropdown-item-label": [
+    ".tabstrip__dropdown-item-icon"
+  ],
+  "contentOrder.tabstrip__dropdown-item-actions": [
+    ".tabstrip__dropdown-action-btn",
+    ".tabstrip__dropdown-action-btn"
+  ],
+  "structure": {
+    "root": ".tabstrip",
+    "children": [
+      {
+        "class": ".tabstrip__nav",
+        "children": [
+          {
+            "class": ".tabstrip__container",
+            "children": [
+              {
+                "class": ".tabstrip__tabs"
+              },
+              {
+                "class": ".tab",
+                "children": []
+              },
+              {
+                "class": ".tabstrip__more-wrapper",
+                "children": [
+                  {
+                    "class": ".tab",
+                    "children": []
+                  },
+                  {
+                    "class": ".tabstrip__dropdown",
+                    "children": [
+                      {
+                        "class": ".tabstrip__dropdown-section",
+                        "children": [
+                          {
+                            "class": ".tabstrip__dropdown-item",
+                            "children": [
+                              {
+                                "class": ".tabstrip__dropdown-item-label",
+                                "children": [
+                                  {
+                                    "class": ".tabstrip__dropdown-item-icon"
+                                  }
+                                ]
+                              },
+                              {
+                                "class": ".tabstrip__dropdown-item-actions",
+                                "children": [
+                                  {
+                                    "class": ".tabstrip__dropdown-action-btn",
+                                    "children": []
+                                  },
+                                  {
+                                    "class": ".tabstrip__dropdown-action-btn",
+                                    "children": []
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "fonts": {
+    "Figtree": "https://fonts.googleapis.com/css2?family=Figtree:wght@300..900&display=swap",
+    "Lexend": "https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700;800;900&display=swap",
+    "JetBrains Mono": "https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap"
+  },
+  "defaultContent": {
+    "_rule": "No default content defined; do not invent labels, icons, or copy. Use only what is in the spec or leave slots empty.",
+    "_behavior": "Overflow is driven by container/browser width. When overflowMode is 'auto', tabs that do not fit move to the More dropdown. When overflowMode is 'none', horizontal scrolling may occur. Do not rely on prose only for viewport/width behavior.",
+    "_responsive": "Tab strip layout and overflow (tabs vs More dropdown) depend on available width; no fixed breakpoints—behavior is container-driven."
+  }
 }

@@ -78,21 +78,15 @@ When Harmony data is successfully loaded, these 5 tools become available:
 
 ## Exact builds and canonical spec
 
-For **exact builds** (component, template, recipe, or apply tokens to a framework), use the canonical build spec and design system overview so the AI applies values verbatim with no deviations.
-
-### Design system overview (read first)
-
-- **Location:** `mcp-data/DESIGN_SYSTEM_OVERVIEW.md` and `mcp-data/design-system-overview.json`
-- **Contents:** Fonts (Figtree, Lexend, JetBrains Mono), icons (Heroicons, paths, sizes), fallback icons (behavior and CSS vars), themes (cp, vp, ppm, maconomy), modes (light, dark), spacing scale, typography scale, radius/elevation.
-- **Use:** Expose this as an MCP resource or return it when the AI builds; the AI should apply these global rules before applying per-component specs.
+For **exact builds** (component, template, recipe, or apply tokens to a framework), use the canonical build spec so the AI applies values verbatim with no deviations. Global rules (fonts, icons, themes, modes, spacing, typography) are defined in [docs/SPEC_CONTRACT.md](docs/SPEC_CONTRACT.md) and in component JSON under `specs` and root-level fields.
 
 ### Canonical spec and guidance (per component)
 
-- **Location:** Each component JSON in `mcp-data/components/*.json` uses the **canonical format** (see [docs/SPEC_CONTRACT.md](docs/SPEC_CONTRACT.md)):
-  - **specs** – Keyed by `[variant]-[theme]-[mode]-[size]` (e.g. `primary-cp-light-md`, `cp-light`, `base-cp-light`). Each value is one complete spec object: props, layout (with gap), spacing, dimensions, typography, borders, states (default, hover, active, focus, disabled, item/icon/label where applicable), icons; and when applicable **template** (exact default content, e.g. sections/items/icons) and **structure** (DOM + BEM classes). All values are resolved (no null, no transparent, no `var()`).
+- **Location:** Each component JSON in `mcp-data/components-v2/*.json` uses the **canonical format** (see [docs/SPEC_CONTRACT.md](docs/SPEC_CONTRACT.md)):
+  - **specs** – One complete spec per dimension combination. When component JSON includes **specKeyOrder** and **dimensionDefaults**, keys are built by joining dimension values in that order (e.g. Alert `info-default-cp-light`, `info-enhanced-cp-light`; Button `primary-cp-light-md-theme`). When absent, keys follow `[variant]-[theme]-[mode]-[size]` (e.g. `primary-cp-light-md`, `cp-light`). Each value is one complete spec object: props, layout (with gap), spacing, dimensions, typography, borders, states (default, hover, active, focus, disabled, item/icon/label where applicable), icons; and when applicable **template** (exact default content, e.g. sections/items/icons) and **structure** (DOM + BEM classes). All values are resolved (no null, no transparent, no `var()`).
   - **guidance** – `patterns` (behavior: icon-only, loading, href) and `guidelines` (when to use, composition, anti-patterns).
-- **get_specs / get_build_spec (intended behavior):** Read **only** `specs` and `guidance` from the component JSON. Return **one** spec for the requested (componentName, variant, theme, mode, size) from `specs[key]`, plus **guidance**, in one response, e.g. `{ buildSpec: { ... }, defaultsUsed?: { variant, theme, mode, size }, guidance: { patterns: { ... }, guidelines: { ... } } }`. Use component `defaults` when variant/theme/mode/size are omitted.
-- **build_component (intended behavior):** Apply the spec from get_specs **to the letter**: same structure (DOM + classes), same template (sections/items/icons when present), same layout/spacing/gaps, same states. Use **guidance** for behavior and composition only; no deviations from the spec.
+- **get_specs / get_build_spec (intended behavior):** Read **only** `specs` and `guidance` from the component JSON. Accept full dimension params: componentName (required); variant, theme, mode, size, buttonType, **style**, **headerVariant**, **width** (all optional). When **specKeyOrder** is present, resolve dimensions from params then `dimensionDefaults` (or `defaults`), build the key in that order, and return `specs[key]`. When absent, use legacy key from variant, theme, mode, size. Return **one** spec plus **guidance**, e.g. `{ buildSpec: { ... }, defaultsUsed?: { variant, theme, mode, size, style?, ... }, guidance: { patterns: { ... }, guidelines: { ... } } }`.
+- **build_component (intended behavior):** Apply the spec from get_specs **to the letter**: same structure (DOM + classes), same template (sections/items/icons when present), same layout/spacing/gaps, same states. Accept the same optional dimensions (style, headerVariant, width, etc.). Use **guidance** for behavior and composition only; no deviations from the spec.
 
 ### Spec contract
 
@@ -105,178 +99,57 @@ The canonical format uses **specs** (not legacy `buildSpecs`) with hardcoded, re
 
 ## Regenerating MCP Data
 
-**Automated:** When you push to `main` (e.g. after changing components, styles, or tokens), CI runs one workflow that regenerates both MCP and changelog data and pushes a single commit. You do not need to run any scripts or commit `mcp-data/` or `changelog-data/` yourself—doing that can cause branch divergence.
+**Automated:** When you push to `main` (e.g. after changing components, styles, tokens, or layouts), CI runs:
 
-**After you push:** In Cursor (or your Git app), use **Pull** or **Sync** once so your computer has CI’s latest commit. That keeps you in sync and avoids “diverged” messages.
+1. **components-v2** — `npm run generate:specs` (from Astro components + tokens)
+2. **layouts** — `npm run generate:layouts` (from ShellLayout.astro)
+3. **changelog** — `npm run changelog`
 
-## Guidelines Structure
+You do not need to run these scripts or commit `mcp-data/` or `changelog-data/` yourself—doing that can cause branch divergence.
 
-The `mcp-data/guidelines/` directory contains structured rules and best practices for the Harmony Design System. These guidelines help AI and developers understand Harmony's conventions and create consistent components.
+**After you push:** Pull or sync once so your computer has CI's latest commit.
 
-### Available Guidelines
+**Local regeneration:**
 
-#### 1. **category-rules.json** ✨ NEW
-Category-specific patterns and rules for different component types:
-
-- **Forms**: Field composition patterns, validation strategies, form layouts
-- **Display**: Content hierarchy, status indicators, interactive display components
-- **Layout**: Spacing responsibility, composition patterns, when to create layout components
-- **Navigation**: Navigation hierarchy, shell composition
-- **Feedback**: Feedback types (alerts, dialogs, loading indicators)
-- **Atomic Design Mapping**: How Harmony components map to atomic levels (atoms, molecules, organisms, templates)
-- **Category Classification**: Criteria for assigning components to categories
-
-**Key Features:**
-- Form field composition pattern (Label + Input + Helper + Error)
-- Layout spacing ownership rules (layouts control gaps, components have no margins)
-- Forms vs Layouts decision matrix (CheckboxGroup = form, ButtonGroup = layout)
-- Atomic design hierarchy for all 49 components
-- Slots vs props guidance (content = slots, configuration = props)
-
-#### 2. **component-rules.json**
-General component creation rules:
-
-- **Atomic Design Hierarchy** ✨ NEW: Component complexity levels and dependency rules
-- **Variants**: Maximum variants (6-9), semantic naming, consistency
-- **Icons**: Icon component usage, positioning, default icons
-- **Sizing**: Standard size scale (xs, sm, md, lg)
-- **Props**: Required props (class, disabled, error, required)
-- **Composition** ✨ EXPANDED: Slots vs props, slot naming, compound components, wrapper patterns
-- **States**: Loading, boolean modifiers, ARIA attributes
-- **Accessibility**: Semantic HTML, ARIA labels, keyboard support, focus indicators
-- **Styling**: BEM naming, class composition, CSS variables
-
-#### 3. **token-rules.json**
-Design token usage rules:
-
-- **Spacing**: 4px grid system, no arbitrary values, spacing patterns
-- **Border Radius**: Numbered convention (radius-04, radius-08, etc.)
-- **Colors**: Semantic tokens, categories (theme, surface, text, border)
-- **Typography**: Font families (Lexend, Figtree, JetBrains Mono), text styles
-- **Elevations**: Shadow hierarchy, component defaults
-
-#### 4. **theme-rules.json**
-Theme-specific composition rules:
-
-- **CP Theme**: FloatingNav + no footer + 88px top padding
-- **VP/PPM/Maconomy Themes**: Footer + no FloatingNav + 20px top padding
-- **Grid Structure**: 2-row (CP) vs 3-row (VP/PPM/Maconomy)
-- **Responsive Behavior**: Breakpoints, sidebar visibility
-- **Common Patterns**: Shared spacing tokens, positioning
-
-#### 5. **decisions.json**
-Design decision log with rationale:
-
-- **New Decisions** ✨:
-  - Why functional categories (form, display, navigation) over Atomic Design terminology
-  - Forms vs Layouts categorization criteria
-  - Slots vs props philosophy
-- **Existing Decisions**:
-  - 4px spacing base (vs 8px)
-  - Maximum 6 button variants
-  - Icon component abstraction
-  - Numbered radius convention
-  - Semantic color tokens
-  - CP FloatingNav pattern
-  - Vanilla CSS architecture
-  - MCP data structure
-
-### How AI Uses Guidelines
-
-When generating components, AI should:
-
-1. **Check Category Classification** (`category-rules.json`)
-   - Determine if component is form, display, layout, navigation, or feedback
-   - Follow category-specific patterns
-
-2. **Apply Component Rules** (`component-rules.json`)
-   - Respect atomic design hierarchy (atoms → molecules → organisms)
-   - Use correct prop patterns (class, disabled, error)
-   - Choose slots for content, props for configuration
-
-3. **Use Token Rules** (`token-rules.json`)
-   - Apply 4px spacing grid (var(--space-4), var(--space-6))
-   - Use semantic colors (var(--theme-primary), var(--text-title))
-   - Follow typography hierarchy
-
-4. **Respect Theme Rules** (`theme-rules.json`)
-   - Include FloatingNav for CP theme
-   - Include Footer for VP/PPM/Maconomy themes
-   - Apply correct top padding per theme
-
-5. **Reference Decisions** (`decisions.json`)
-   - Understand the "why" behind rules
-   - Follow established patterns with documented rationale
-
-### Example: Creating a Form Component
-
-Using the guidelines to create a new form input component:
-
-1. **Category Classification** (category-rules.json):
-   - Component accepts user input → `form` category
-   - Follow form field composition pattern
-
-2. **Atomic Level** (component-rules.json):
-   - Composes Label + Icon + input → `molecule` level
-   - Can depend on Icon (atom) and Label (atom)
-
-3. **Props** (component-rules.json):
-   - Required: `class` (for styling), `disabled`, `error`, `errorMessage`
-   - Optional: `label`, `icon`, `required`, `placeholder`
-
-4. **Composition** (category-rules.json):
-   - Structure: Label (optional) → Input wrapper (Icon + input + error message)
-   - Error message replaces helper text when present
-
-5. **Tokens** (token-rules.json):
-   - Padding: `var(--space-2)` vertical, `var(--space-4)` horizontal
-   - Border radius: `var(--radius-08)`
-   - Colors: `var(--input-background)`, `var(--text-title)`
-
-6. **Result**: Consistent with existing Input component pattern
-
-### Guidelines Discovery
-
-DSManager tools can expose these guidelines:
-
-```javascript
-// Hypothetical DSManager tools
-get_harmony_guidelines({ category: "form" })
-search_harmony_guidelines({ query: "form validation patterns" })
-get_category_classification({ componentName: "CheckboxGroup" })
+```bash
+npm run generate:specs    # Regenerate mcp-data/components-v2/
+npm run generate:layouts  # Regenerate mcp-data/layouts/
 ```
+
+## What the MCP Reads
+
+The Harmony MCP reads only these paths under `mcp-data/`:
+
+| Path | Purpose |
+|------|---------|
+| **components-v2/*.json** | Component specs (get_specs, build_component). One file per component. |
+| **layouts/** | Layout composition (e.g. shelllayout.json). Used for componentType: "layout". |
+| **recipes/** | Recipe index and category files. Used for harmony://recipes and recipe helpers. |
+| **icon-mappings/** | Theme-specific icon mappings (e.g. cp-default.json). Used during build. |
+
+The **default-content/** folder is input to `generate-specs.js` (template content for sidebars, etc.); it is not read by the MCP at runtime.
 
 ## Data Structure
 
 ```
 mcp-data/
-├── design-tokens.json          # All design tokens (31.5 KB)
-├── manifest.json               # Component & layout index, stats
-├── components.json             # Legacy: all components in one file
-├── components/                 # Individual component files
+├── components-v2/        # Component specs (MCP reads these)
 │   ├── button.json
 │   ├── card.json
-│   ├── dialog.json
-│   └── ... (49 total)
-├── layouts/                    # Layout composition data
-│   └── shelllayout.json        # ShellLayout theme-specific data
-├── guidelines/                 # Design system rules & best practices
-│   ├── component-rules.json    # Component creation rules (variants, props, composition)
-│   ├── token-rules.json        # Design token usage rules (spacing, colors, typography)
-│   ├── theme-rules.json        # Theme-specific composition rules
-│   ├── category-rules.json     # Category-specific patterns (forms, layouts, etc.) ✨ NEW
-│   └── decisions.json          # Design decision log with rationale
-└── icon-mappings/              # Theme-specific icon name → path (e.g. cp-default.json)
+│   ├── rightsidebar.json
+│   └── ... (47 total)
+├── default-content/      # Input to generate-specs; not read by MCP at runtime
+├── layouts/              # Layout composition (MCP reads)
+│   └── shelllayout.json
+├── recipes/              # Recipe index and category files (MCP reads)
+│   ├── index.json
+│   └── ... (by category)
+└── icon-mappings/        # Theme-specific icon mappings (MCP reads, e.g. cp-default.json)
 ```
 
-### Icon Handling in MCP Data
+### Icon handling in component JSON
 
-Component JSON (e.g. sidebar `defaultSections` items) can include:
-
-- **iconPath** – Repo-relative path to the SVG file (e.g. `node_modules/heroicons/24/outline/bell.svg`, `public/RS_DelaDefault.svg`). For reference only when `iconSvg` is missing.
-- **iconSvg** – Inner SVG content (everything between `<svg>` tags) embedded at generation time so MCP data is self-contained.
-
-**MCP consumers should prefer `iconSvg` over `iconPath` when present.** Use `iconSvg` to output or render icon SVG without resolving files at runtime. Use `iconPath` only when `iconSvg` is absent (e.g. for display or debugging). `npm run generate:mcp-data` runs after `npm install` and embeds `iconSvg` for heroicons, tabler, and custom icons when the files exist.
+Component JSON can include **iconPath** (repo-relative path) or **iconSvg** (embedded SVG). MCP consumers should prefer **iconSvg** when present. Icon content is embedded when running `npm run generate:specs`.
 
 ### cssClassStyles and design tokens
 
@@ -367,8 +240,9 @@ This ensures generated code matches Harmony's theme-specific layouts exactly.
 Regenerate and commit:
 ```bash
 cd harmonycomponents
-npm run generate:mcp-data
-git add mcp-data/
+npm run generate:specs
+npm run generate:layouts
+git add mcp-data/ changelog-data/
 git commit -m "chore: update MCP data"
 git push
 ```
@@ -413,12 +287,10 @@ git push
 │ Git Cloned Repo     │         │ mcp-data/                   │
 │ /tmp/dsmanager-cache│         │ (in Git, auto-discovered)   │
 │                     │         │                             │
-│ harmonycomponents/  │         │ • design-tokens.json        │
-│ ├── src/            │         │ • manifest.json             │
-│ ├── components/     │         │ • components/*.json         │
-│ ├── layouts/        │         │   (49 files)                │
-│ └── ...             │         │ • layouts/*.json            │
-│                     │         │   (ShellLayout)             │
+│ harmonycomponents/  │         │ • components-v2/*.json      │
+│ ├── src/            │         │ • layouts/*.json            │
+│ ├── layouts/        │         │ • recipes/, icon-mappings/  │
+│ └── ...             │         │                             │
 └─────────────────────┘         └─────────────────────────────┘
 ```
 
@@ -435,7 +307,7 @@ Components can have different levels of variant data completeness:
 3. **Default-Only Variants**: All variants only have default state - Example: LeftSidebar, Card, Dialog
 4. **Empty Variants**: Empty variants object `{}` - Example: Spinner, Toggle
 
-See [VARIANT_DATA_PATTERNS.md](docs/VARIANT_DATA_PATTERNS.md) for detailed documentation of these patterns.
+See [SPEC_CONTRACT.md](docs/SPEC_CONTRACT.md) for the canonical spec format and states contract.
 
 ### How to Check if Variants Exist
 
@@ -538,17 +410,7 @@ if (cssClassStyles) {
 - All variants: All states (default, hover, active, focus, disabled)
 - **Display**: All states for all variants
 
-### Validation
-
-Run the validation script to see variant data completeness for all components:
-
-```bash
-node scripts/validate-variant-data.js
-```
-
-This generates `variant-data-report.json` with detailed analysis.
-
-For more information, see [VARIANT_DATA_PATTERNS.md](docs/VARIANT_DATA_PATTERNS.md).
+For more information, see [SPEC_CONTRACT.md](docs/SPEC_CONTRACT.md).
 
 ## Summary
 
