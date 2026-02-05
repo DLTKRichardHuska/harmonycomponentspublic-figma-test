@@ -43,6 +43,7 @@ interface Props {
 
 const { variant = 'cp', sections, class: className = '' } = Astro.props;
 
+// Icon names in default sections below resolve per theme-scoped icon manifest (src/data/icon-manifest.json): hero | tabler | custom; custom includes path and optional svg.
 // Default CP configuration (3 sections)
 const cpSections: Section[] = [
   {

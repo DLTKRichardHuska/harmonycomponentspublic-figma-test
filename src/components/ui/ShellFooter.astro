@@ -39,6 +39,7 @@ const {
 // Determine overflow mode based on showMore prop
 const overflowMode = showMore && overflowTabs.length > 0 ? 'manual' : 'none';
 
+// Icon names (e.g. pin for active tabs) resolve per theme-scoped icon manifest (src/data/icon-manifest.json).
 // Add pin icon to active tabs (preserve existing icons for non-active tabs)
 const tabsWithPinIcon = tabs.map(tab => ({
   ...tab,

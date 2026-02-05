@@ -6,6 +6,7 @@ import RightSidebar from '../components/ui/RightSidebar.astro';
 import FloatingNav from '../components/ui/FloatingNav.astro';
 import ShellPageHeader from '../components/ui/ShellPageHeader.astro';
 import ShellPanel from '../components/ui/ShellPanel.astro';
+import Card from '../components/ui/Card.astro';
 
 interface Tab {
   id: string;
@@ -124,7 +125,7 @@ const {
   showRightSidebar = true,
   rightSidebarSections,
   showFooter,
-  pageHeaderTitle,
+  pageHeaderTitle = 'Page title',
   pageHeaderSubtitle,
   pageHeaderPrimaryButton,
   pageHeaderOutlineButton1,
@@ -135,8 +136,8 @@ const {
   class: className = ''
 } = Astro.props;
 
-// Determine if page header should be shown
-const showPageHeader = pageHeaderTitle !== undefined;
+// Determine if page header should be shown (default: true with default title; pass empty string to hide)
+const showPageHeader = pageHeaderTitle != null && pageHeaderTitle !== '';
 
 // Compute effective values - props override theme detection
 // Check if key props are explicitly provided
@@ -264,7 +265,7 @@ const effectiveHasFooter = showFooter === false ? false : hasFooter;
     <main class="shell-layout__main">
       {showPageHeader && (
         <ShellPageHeader
-          title={pageHeaderTitle!}
+          title={pageHeaderTitle}
           subtitle={pageHeaderSubtitle}
           primaryButton={pageHeaderPrimaryButton}
           outlineButton1={pageHeaderOutlineButton1}
@@ -272,7 +273,14 @@ const effectiveHasFooter = showFooter === false ? false : hasFooter;
           outlineButton3={pageHeaderOutlineButton3}
         />
       )}
-      <slot />
+      <slot>
+        <Card primary elevated>
+          <div class="card__body">
+            <h2 class="text-xl font-semibold mb-2">Page Content Area</h2>
+            <p class="text-secondary">This is where your application content lives. The shell provides the structure, and you provide the content.</p>
+          </div>
+        </Card>
+      </slot>
     </main>
 
     {showFooter !== false && (useThemeDetection ? (

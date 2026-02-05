@@ -37,12 +37,14 @@ const {
 
 const hasActionsSlot = Astro.slots.has('actions');
 
+// Icon names used in default header (e.g. company picker chevron) resolve per theme-scoped icon manifest (src/data/icon-manifest.json).
+// Default company colors align with theme-config.ts (cp companies) so the gradient bar is never empty when companyColor is not passed.
 const defaultCompanies: CompanyOption[] = [
-  { id: 'acme-corp', name: 'Acme Corporation' },
-  { id: 'ocean-industries', name: 'Ocean Industries' },
-  { id: 'violet-systems', name: 'Violet Systems' },
-  { id: 'azure-dynamics', name: 'Azure Dynamics' },
-  { id: 'sunset-corporation', name: 'Sunset Corporation' },
+  { id: 'acme-corp', name: 'Acme Corporation', color: '#FF507B' },
+  { id: 'ocean-industries', name: 'Ocean Industries', color: '#285F8C' },
+  { id: 'violet-systems', name: 'Violet Systems', color: '#DC50FF' },
+  { id: 'azure-dynamics', name: 'Azure Dynamics', color: '#5077FF' },
+  { id: 'sunset-corporation', name: 'Sunset Corporation', color: '#FFAF50' },
 ];
 
 const optionClassMap: Record<string, string> = {
@@ -54,6 +56,7 @@ const optionClassMap: Record<string, string> = {
 };
 
 const companyOptions = companies ?? defaultCompanies;
+const effectiveCompanyColor = companyColor ?? companyOptions[0]?.color;
 ---
 
 <header class={`header ${className}`}>
@@ -79,7 +82,7 @@ const companyOptions = companies ?? defaultCompanies;
                 <span 
                   class="company-picker__indicator"
                   data-company-indicator
-                  style={companyColor ? `background-color: ${companyColor}` : undefined}
+                  style={effectiveCompanyColor ? `background-color: ${effectiveCompanyColor}` : undefined}
                 ></span>
                 <span class="company-picker__name" data-company-name>{companyName}</span>
                 <Icon name="chevron-down" size="sm" class="company-picker__chevron" />
@@ -115,7 +118,7 @@ const companyOptions = companies ?? defaultCompanies;
   <div 
     class="header__gradient"
     data-header-gradient
-    style={companyColor ? `background: linear-gradient(to right, ${companyColor}05, ${companyColor} 50%, ${companyColor}05)` : undefined}
+    style={effectiveCompanyColor ? `background: linear-gradient(to right, ${effectiveCompanyColor}05, ${effectiveCompanyColor} 50%, ${effectiveCompanyColor}05)` : undefined}
   ></div>
 </header>
 

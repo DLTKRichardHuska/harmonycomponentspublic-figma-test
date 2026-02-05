@@ -45,7 +45,9 @@ const footerClasses = [
       </button>
     </div>
     <div class="dialog__body">
-      <slot />
+      <slot>
+        <p class="dialog__body-default">Dialog content. Override by passing default slot content.</p>
+      </slot>
     </div>
     <div class={footerClasses}>
       <slot name="footer" />

@@ -1,5 +1,10 @@
 ---
 /// <reference types="node" />
+/**
+ * Default icon resolution (source + path; for custom, optional svg) is defined in the theme-scoped
+ * icon manifest: src/data/icon-manifest.json. Converters must use that manifest for the target
+ * theme (cp, vp, ppm, maconomy); do not assume Heroicons for every icon.
+ */
 import fs from 'fs';
 import path from 'path';
 
