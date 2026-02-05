@@ -79,7 +79,9 @@
           },
           ".number-input-form-wrapper": {
             "display": "flex",
-            "flex-direction": "column"
+            "flex-direction": "row",
+            "align-items": "center",
+            "gap": "4px"
           },
           ".number-input": {
             "display": "inline-flex",
@@ -90,21 +92,23 @@
             "transition": "all 150ms ease"
           },
           ".number-input__btn": {
-            "width": "40px",
+            "width": "20px",
             "display": "flex",
             "align-items": "center",
             "justify-content": "center",
             "background-color": "#F7F8FA",
             "color": "#525969",
             "cursor": "pointer",
-            "transition": "all 150ms ease"
+            "transition": "all 150ms ease",
+            "font-size": "0.75rem",
+            "font-family": "'Figtree', sans-serif"
           },
           ".number-input__input": {
-            "width": "60px",
-            "height": "40px",
+            "width": "40px",
+            "height": "20px",
             "text-align": "center",
             "font-family": "'Figtree', sans-serif",
-            "font-size": "1rem",
+            "font-size": "0.75rem",
             "color": "#373F4E",
             "background-color": "#FFFFFF",
             "border": "none",
@@ -139,7 +143,9 @@
           "tag": "div",
           "styles": {
             "display": "flex",
-            "flex-direction": "column"
+            "flex-direction": "row",
+            "align-items": "center",
+            "gap": "4px"
           },
           "children": [
             ".number-input"
@@ -166,14 +172,16 @@
           "selector": ".number-input__btn",
           "tag": "span",
           "styles": {
-            "width": "40px",
+            "width": "20px",
             "display": "flex",
             "align-items": "center",
             "justify-content": "center",
             "background-color": "#F7F8FA",
             "color": "#525969",
             "cursor": "pointer",
-            "transition": "all 150ms ease"
+            "transition": "all 150ms ease",
+            "font-size": "0.75rem",
+            "font-family": "'Figtree', sans-serif"
           },
           "parent": ".classes",
           "states": {
@@ -191,11 +199,11 @@
           "selector": ".number-input__input",
           "tag": "span",
           "styles": {
-            "width": "60px",
-            "height": "40px",
+            "width": "40px",
+            "height": "20px",
             "text-align": "center",
             "font-family": "'Figtree', sans-serif",
-            "font-size": "1rem",
+            "font-size": "0.75rem",
             "color": "#373F4E",
             "background-color": "#FFFFFF",
             "border": "none",
@@ -230,7 +238,9 @@
           },
           ".number-input-form-wrapper": {
             "display": "flex",
-            "flex-direction": "column"
+            "flex-direction": "row",
+            "align-items": "center",
+            "gap": "4px"
           },
           ".number-input": {
             "display": "inline-flex",
@@ -241,21 +251,23 @@
             "transition": "all 150ms ease"
           },
           ".number-input__btn": {
-            "width": "40px",
+            "width": "20px",
             "display": "flex",
             "align-items": "center",
             "justify-content": "center",
             "background-color": "#37424D",
             "color": "#B6B6C4",
             "cursor": "pointer",
-            "transition": "all 150ms ease"
+            "transition": "all 150ms ease",
+            "font-size": "0.75rem",
+            "font-family": "'Figtree', sans-serif"
           },
           ".number-input__input": {
-            "width": "60px",
-            "height": "40px",
+            "width": "40px",
+            "height": "20px",
             "text-align": "center",
             "font-family": "'Figtree', sans-serif",
-            "font-size": "1rem",
+            "font-size": "0.75rem",
             "color": "#E9ECEF",
             "background-color": "#1F252E",
             "border": "none",
@@ -290,7 +302,9 @@
           "tag": "div",
           "styles": {
             "display": "flex",
-            "flex-direction": "column"
+            "flex-direction": "row",
+            "align-items": "center",
+            "gap": "4px"
           },
           "children": [
             ".number-input"
@@ -317,14 +331,16 @@
           "selector": ".number-input__btn",
           "tag": "span",
           "styles": {
-            "width": "40px",
+            "width": "20px",
             "display": "flex",
             "align-items": "center",
             "justify-content": "center",
             "background-color": "#37424D",
             "color": "#B6B6C4",
             "cursor": "pointer",
-            "transition": "all 150ms ease"
+            "transition": "all 150ms ease",
+            "font-size": "0.75rem",
+            "font-family": "'Figtree', sans-serif"
           },
           "parent": ".classes",
           "states": {
@@ -342,11 +358,11 @@
           "selector": ".number-input__input",
           "tag": "span",
           "styles": {
-            "width": "60px",
-            "height": "40px",
+            "width": "40px",
+            "height": "20px",
             "text-align": "center",
             "font-family": "'Figtree', sans-serif",
-            "font-size": "1rem",
+            "font-size": "0.75rem",
             "color": "#E9ECEF",
             "background-color": "#1F252E",
             "border": "none",
@@ -381,7 +397,9 @@
           },
           ".number-input-form-wrapper": {
             "display": "flex",
-            "flex-direction": "column"
+            "flex-direction": "row",
+            "align-items": "center",
+            "gap": "4px"
           },
           ".number-input": {
             "display": "inline-flex",
@@ -392,21 +410,23 @@
             "transition": "all 150ms ease"
           },
           ".number-input__btn": {
-            "width": "40px",
+            "width": "20px",
             "display": "flex",
             "align-items": "center",
             "justify-content": "center",
             "background-color": "#F7F8FA",
             "color": "#525969",
             "cursor": "pointer",
-            "transition": "all 150ms ease"
+            "transition": "all 150ms ease",
+            "font-size": "0.75rem",
+            "font-family": "'Figtree', sans-serif"
           },
           ".number-input__input": {
-            "width": "60px",
-            "height": "40px",
+            "width": "40px",
+            "height": "20px",
             "text-align": "center",
             "font-family": "'Figtree', sans-serif",
-            "font-size": "1rem",
+            "font-size": "0.75rem",
             "color": "#373F4E",
             "background-color": "#FFFFFF",
             "border": "none",
@@ -441,7 +461,9 @@
           "tag": "div",
           "styles": {
             "display": "flex",
-            "flex-direction": "column"
+            "flex-direction": "row",
+            "align-items": "center",
+            "gap": "4px"
           },
           "children": [
             ".number-input"
@@ -468,14 +490,16 @@
           "selector": ".number-input__btn",
           "tag": "span",
           "styles": {
-            "width": "40px",
+            "width": "20px",
             "display": "flex",
             "align-items": "center",
             "justify-content": "center",
             "background-color": "#F7F8FA",
             "color": "#525969",
             "cursor": "pointer",
-            "transition": "all 150ms ease"
+            "transition": "all 150ms ease",
+            "font-size": "0.75rem",
+            "font-family": "'Figtree', sans-serif"
           },
           "parent": ".classes",
           "states": {
@@ -493,11 +517,11 @@
           "selector": ".number-input__input",
           "tag": "span",
           "styles": {
-            "width": "60px",
-            "height": "40px",
+            "width": "40px",
+            "height": "20px",
             "text-align": "center",
             "font-family": "'Figtree', sans-serif",
-            "font-size": "1rem",
+            "font-size": "0.75rem",
             "color": "#373F4E",
             "background-color": "#FFFFFF",
             "border": "none",
@@ -532,7 +556,9 @@
           },
           ".number-input-form-wrapper": {
             "display": "flex",
-            "flex-direction": "column"
+            "flex-direction": "row",
+            "align-items": "center",
+            "gap": "4px"
           },
           ".number-input": {
             "display": "inline-flex",
@@ -543,21 +569,23 @@
             "transition": "all 150ms ease"
           },
           ".number-input__btn": {
-            "width": "40px",
+            "width": "20px",
             "display": "flex",
             "align-items": "center",
             "justify-content": "center",
             "background-color": "#1F2124",
             "color": "#B5B5BC",
             "cursor": "pointer",
-            "transition": "all 150ms ease"
+            "transition": "all 150ms ease",
+            "font-size": "0.75rem",
+            "font-family": "'Figtree', sans-serif"
           },
           ".number-input__input": {
-            "width": "60px",
-            "height": "40px",
+            "width": "40px",
+            "height": "20px",
             "text-align": "center",
             "font-family": "'Figtree', sans-serif",
-            "font-size": "1rem",
+            "font-size": "0.75rem",
             "color": "#FAFAFA",
             "background-color": "#1F2124",
             "border": "none",
@@ -592,7 +620,9 @@
           "tag": "div",
           "styles": {
             "display": "flex",
-            "flex-direction": "column"
+            "flex-direction": "row",
+            "align-items": "center",
+            "gap": "4px"
           },
           "children": [
             ".number-input"
@@ -619,14 +649,16 @@
           "selector": ".number-input__btn",
           "tag": "span",
           "styles": {
-            "width": "40px",
+            "width": "20px",
             "display": "flex",
             "align-items": "center",
             "justify-content": "center",
             "background-color": "#1F2124",
             "color": "#B5B5BC",
             "cursor": "pointer",
-            "transition": "all 150ms ease"
+            "transition": "all 150ms ease",
+            "font-size": "0.75rem",
+            "font-family": "'Figtree', sans-serif"
           },
           "parent": ".classes",
           "states": {
@@ -644,11 +676,11 @@
           "selector": ".number-input__input",
           "tag": "span",
           "styles": {
-            "width": "60px",
-            "height": "40px",
+            "width": "40px",
+            "height": "20px",
             "text-align": "center",
             "font-family": "'Figtree', sans-serif",
-            "font-size": "1rem",
+            "font-size": "0.75rem",
             "color": "#FAFAFA",
             "background-color": "#1F2124",
             "border": "none",
@@ -683,7 +715,9 @@
           },
           ".number-input-form-wrapper": {
             "display": "flex",
-            "flex-direction": "column"
+            "flex-direction": "row",
+            "align-items": "center",
+            "gap": "4px"
           },
           ".number-input": {
             "display": "inline-flex",
@@ -694,21 +728,23 @@
             "transition": "all 150ms ease"
           },
           ".number-input__btn": {
-            "width": "40px",
+            "width": "20px",
             "display": "flex",
             "align-items": "center",
             "justify-content": "center",
             "background-color": "#F7F8FA",
             "color": "#525969",
             "cursor": "pointer",
-            "transition": "all 150ms ease"
+            "transition": "all 150ms ease",
+            "font-size": "0.75rem",
+            "font-family": "'Figtree', sans-serif"
           },
           ".number-input__input": {
-            "width": "60px",
-            "height": "40px",
+            "width": "40px",
+            "height": "20px",
             "text-align": "center",
             "font-family": "'Figtree', sans-serif",
-            "font-size": "1rem",
+            "font-size": "0.75rem",
             "color": "#373F4E",
             "background-color": "#FFFFFF",
             "border": "none",
@@ -743,7 +779,9 @@
           "tag": "div",
           "styles": {
             "display": "flex",
-            "flex-direction": "column"
+            "flex-direction": "row",
+            "align-items": "center",
+            "gap": "4px"
           },
           "children": [
             ".number-input"
@@ -770,14 +808,16 @@
           "selector": ".number-input__btn",
           "tag": "span",
           "styles": {
-            "width": "40px",
+            "width": "20px",
             "display": "flex",
             "align-items": "center",
             "justify-content": "center",
             "background-color": "#F7F8FA",
             "color": "#525969",
             "cursor": "pointer",
-            "transition": "all 150ms ease"
+            "transition": "all 150ms ease",
+            "font-size": "0.75rem",
+            "font-family": "'Figtree', sans-serif"
           },
           "parent": ".classes",
           "states": {
@@ -795,11 +835,11 @@
           "selector": ".number-input__input",
           "tag": "span",
           "styles": {
-            "width": "60px",
-            "height": "40px",
+            "width": "40px",
+            "height": "20px",
             "text-align": "center",
             "font-family": "'Figtree', sans-serif",
-            "font-size": "1rem",
+            "font-size": "0.75rem",
             "color": "#373F4E",
             "background-color": "#FFFFFF",
             "border": "none",
@@ -834,7 +874,9 @@
           },
           ".number-input-form-wrapper": {
             "display": "flex",
-            "flex-direction": "column"
+            "flex-direction": "row",
+            "align-items": "center",
+            "gap": "4px"
           },
           ".number-input": {
             "display": "inline-flex",
@@ -845,21 +887,23 @@
             "transition": "all 150ms ease"
           },
           ".number-input__btn": {
-            "width": "40px",
+            "width": "20px",
             "display": "flex",
             "align-items": "center",
             "justify-content": "center",
             "background-color": "#1F2124",
             "color": "#B5B5BC",
             "cursor": "pointer",
-            "transition": "all 150ms ease"
+            "transition": "all 150ms ease",
+            "font-size": "0.75rem",
+            "font-family": "'Figtree', sans-serif"
           },
           ".number-input__input": {
-            "width": "60px",
-            "height": "40px",
+            "width": "40px",
+            "height": "20px",
             "text-align": "center",
             "font-family": "'Figtree', sans-serif",
-            "font-size": "1rem",
+            "font-size": "0.75rem",
             "color": "#FAFAFA",
             "background-color": "#1F2124",
             "border": "none",
@@ -894,7 +938,9 @@
           "tag": "div",
           "styles": {
             "display": "flex",
-            "flex-direction": "column"
+            "flex-direction": "row",
+            "align-items": "center",
+            "gap": "4px"
           },
           "children": [
             ".number-input"
@@ -921,14 +967,16 @@
           "selector": ".number-input__btn",
           "tag": "span",
           "styles": {
-            "width": "40px",
+            "width": "20px",
             "display": "flex",
             "align-items": "center",
             "justify-content": "center",
             "background-color": "#1F2124",
             "color": "#B5B5BC",
             "cursor": "pointer",
-            "transition": "all 150ms ease"
+            "transition": "all 150ms ease",
+            "font-size": "0.75rem",
+            "font-family": "'Figtree', sans-serif"
           },
           "parent": ".classes",
           "states": {
@@ -946,11 +994,11 @@
           "selector": ".number-input__input",
           "tag": "span",
           "styles": {
-            "width": "60px",
-            "height": "40px",
+            "width": "40px",
+            "height": "20px",
             "text-align": "center",
             "font-family": "'Figtree', sans-serif",
-            "font-size": "1rem",
+            "font-size": "0.75rem",
             "color": "#FAFAFA",
             "background-color": "#1F2124",
             "border": "none",
@@ -985,7 +1033,9 @@
           },
           ".number-input-form-wrapper": {
             "display": "flex",
-            "flex-direction": "column"
+            "flex-direction": "row",
+            "align-items": "center",
+            "gap": "4px"
           },
           ".number-input": {
             "display": "inline-flex",
@@ -996,21 +1046,23 @@
             "transition": "all 150ms ease"
           },
           ".number-input__btn": {
-            "width": "40px",
+            "width": "20px",
             "display": "flex",
             "align-items": "center",
             "justify-content": "center",
             "background-color": "#F7F8FA",
             "color": "#525969",
             "cursor": "pointer",
-            "transition": "all 150ms ease"
+            "transition": "all 150ms ease",
+            "font-size": "0.75rem",
+            "font-family": "'Figtree', sans-serif"
           },
           ".number-input__input": {
-            "width": "60px",
-            "height": "40px",
+            "width": "40px",
+            "height": "20px",
             "text-align": "center",
             "font-family": "'Figtree', sans-serif",
-            "font-size": "1rem",
+            "font-size": "0.75rem",
             "color": "#373F4E",
             "background-color": "#FFFFFF",
             "border": "none",
@@ -1045,7 +1097,9 @@
           "tag": "div",
           "styles": {
             "display": "flex",
-            "flex-direction": "column"
+            "flex-direction": "row",
+            "align-items": "center",
+            "gap": "4px"
           },
           "children": [
             ".number-input"
@@ -1072,14 +1126,16 @@
           "selector": ".number-input__btn",
           "tag": "span",
           "styles": {
-            "width": "40px",
+            "width": "20px",
             "display": "flex",
             "align-items": "center",
             "justify-content": "center",
             "background-color": "#F7F8FA",
             "color": "#525969",
             "cursor": "pointer",
-            "transition": "all 150ms ease"
+            "transition": "all 150ms ease",
+            "font-size": "0.75rem",
+            "font-family": "'Figtree', sans-serif"
           },
           "parent": ".classes",
           "states": {
@@ -1097,11 +1153,11 @@
           "selector": ".number-input__input",
           "tag": "span",
           "styles": {
-            "width": "60px",
-            "height": "40px",
+            "width": "40px",
+            "height": "20px",
             "text-align": "center",
             "font-family": "'Figtree', sans-serif",
-            "font-size": "1rem",
+            "font-size": "0.75rem",
             "color": "#373F4E",
             "background-color": "#FFFFFF",
             "border": "none",
@@ -1136,7 +1192,9 @@
           },
           ".number-input-form-wrapper": {
             "display": "flex",
-            "flex-direction": "column"
+            "flex-direction": "row",
+            "align-items": "center",
+            "gap": "4px"
           },
           ".number-input": {
             "display": "inline-flex",
@@ -1147,21 +1205,23 @@
             "transition": "all 150ms ease"
           },
           ".number-input__btn": {
-            "width": "40px",
+            "width": "20px",
             "display": "flex",
             "align-items": "center",
             "justify-content": "center",
             "background-color": "#1F2124",
             "color": "#B5B5BC",
             "cursor": "pointer",
-            "transition": "all 150ms ease"
+            "transition": "all 150ms ease",
+            "font-size": "0.75rem",
+            "font-family": "'Figtree', sans-serif"
           },
           ".number-input__input": {
-            "width": "60px",
-            "height": "40px",
+            "width": "40px",
+            "height": "20px",
             "text-align": "center",
             "font-family": "'Figtree', sans-serif",
-            "font-size": "1rem",
+            "font-size": "0.75rem",
             "color": "#FAFAFA",
             "background-color": "#1F2124",
             "border": "none",
@@ -1196,7 +1256,9 @@
           "tag": "div",
           "styles": {
             "display": "flex",
-            "flex-direction": "column"
+            "flex-direction": "row",
+            "align-items": "center",
+            "gap": "4px"
           },
           "children": [
             ".number-input"
@@ -1223,14 +1285,16 @@
           "selector": ".number-input__btn",
           "tag": "span",
           "styles": {
-            "width": "40px",
+            "width": "20px",
             "display": "flex",
             "align-items": "center",
             "justify-content": "center",
             "background-color": "#1F2124",
             "color": "#B5B5BC",
             "cursor": "pointer",
-            "transition": "all 150ms ease"
+            "transition": "all 150ms ease",
+            "font-size": "0.75rem",
+            "font-family": "'Figtree', sans-serif"
           },
           "parent": ".classes",
           "states": {
@@ -1248,11 +1312,11 @@
           "selector": ".number-input__input",
           "tag": "span",
           "styles": {
-            "width": "60px",
-            "height": "40px",
+            "width": "40px",
+            "height": "20px",
             "text-align": "center",
             "font-family": "'Figtree', sans-serif",
-            "font-size": "1rem",
+            "font-size": "0.75rem",
             "color": "#FAFAFA",
             "background-color": "#1F2124",
             "border": "none",

@@ -39,7 +39,7 @@ This document defines the **canonical JSON format** for Harmony component specs,
 
 - **Colors (per theme/mode):** `src/tokens/colors.json` (e.g. `themes.cp.palette.light.cardBackground` → `"#F7F8FA"`, `border` → `"#BFC6D4"`). Dark from `palette.dark`. Same for vp, ppm, maconomy.
 - **Spacing / radius / typography:** `src/tokens/spacing.json`, `src/tokens/typography.json`; resolve to px or rem.
-- **Component visuals:** `src/styles/components.css` — map each component’s CSS rules (e.g. `.card`, `.card__header`) to spec fields; fill with resolved values from tokens.
+- **Component visuals:** `src/styles/components.css` — map each component’s CSS rules (e.g. `.card`, `.card__header`) to spec fields; fill with resolved values from tokens. Base styles are merged from both **standalone** rules (e.g. `.alert__icon { ... }`) and **descendant-only** rules (e.g. `.alert .alert__icon { ... }`) so layout, spacing, padding, and radius are complete when CSS defines them.
 - **Canonical JSON:** Authored manually (copy resolved values from tokens + components.css into `specs["..."]`) or produced by one auditable script that reads tokens + CSS and emits canonical JSON. No css-parser, visual-spec-extractor, or generate-build-specs in their current role for this data. The JSON file is the source of truth for exact builds.
 
 - **Where state data lives:** In the canonical format, state data lives in `specs["<key>"].states`. get_specs returns that single spec; no merging of multiple blobs.

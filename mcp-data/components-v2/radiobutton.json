@@ -153,15 +153,16 @@
             "align-items": "center",
             "justify-content": "center",
             "transition": "all 150ms ease",
-            "flex-shrink": "0"
+            "flex-shrink": "0",
+            "border-color": "#4C92D9"
           },
           ".radio__dot": {
             "width": "8px",
             "height": "8px",
             "border-radius": "9999px",
             "background-color": "#4C92D9",
-            "opacity": "0",
-            "transform": "scale(0)",
+            "opacity": "1",
+            "transform": "scale(1)",
             "transition": "all 150ms ease"
           },
           ".radio__input": {
@@ -352,7 +353,24 @@
             ".radio__dot",
             ".radio__input",
             ".radio__label"
-          ]
+          ],
+          "states": {
+            "hover": {
+              "background-color": "#E5E7EB",
+              "color": "#373F4E",
+              "border": "1px solid #BFC6D4"
+            },
+            "focus": {
+              "background-color": "#F7F8FA",
+              "color": "#373F4E",
+              "border": "1px solid #BFC6D4"
+            },
+            "disabled": {
+              "background-color": "#F7F8FA",
+              "color": "#373F4E",
+              "border": "1px solid #BFC6D4"
+            }
+          }
         },
         {
           "selector": ".radio__circle",
@@ -367,7 +385,8 @@
             "align-items": "center",
             "justify-content": "center",
             "transition": "all 150ms ease",
-            "flex-shrink": "0"
+            "flex-shrink": "0",
+            "border-color": "#4C92D9"
           },
           "parent": ".classes"
         },
@@ -379,8 +398,8 @@
             "height": "8px",
             "border-radius": "9999px",
             "background-color": "#4C92D9",
-            "opacity": "0",
-            "transform": "scale(0)",
+            "opacity": "1",
+            "transform": "scale(1)",
             "transition": "all 150ms ease"
           },
           "parent": ".radio__circle"
@@ -510,15 +529,16 @@
             "align-items": "center",
             "justify-content": "center",
             "transition": "all 150ms ease",
-            "flex-shrink": "0"
+            "flex-shrink": "0",
+            "border-color": "#59ACFF"
           },
           ".radio__dot": {
             "width": "8px",
             "height": "8px",
             "border-radius": "9999px",
             "background-color": "#59ACFF",
-            "opacity": "0",
-            "transform": "scale(0)",
+            "opacity": "1",
+            "transform": "scale(1)",
             "transition": "all 150ms ease"
           },
           ".radio__input": {
@@ -709,7 +729,24 @@
             ".radio__dot",
             ".radio__input",
             ".radio__label"
-          ]
+          ],
+          "states": {
+            "hover": {
+              "background-color": "#3D4A5C",
+              "color": "#E9ECEF",
+              "border": "1px solid #5F6871"
+            },
+            "focus": {
+              "background-color": "#37424D",
+              "color": "#E9ECEF",
+              "border": "1px solid #5F6871"
+            },
+            "disabled": {
+              "background-color": "#37424D",
+              "color": "#E9ECEF",
+              "border": "1px solid #5F6871"
+            }
+          }
         },
         {
           "selector": ".radio__circle",
@@ -724,7 +761,8 @@
             "align-items": "center",
             "justify-content": "center",
             "transition": "all 150ms ease",
-            "flex-shrink": "0"
+            "flex-shrink": "0",
+            "border-color": "#59ACFF"
           },
           "parent": ".classes"
         },
@@ -736,8 +774,8 @@
             "height": "8px",
             "border-radius": "9999px",
             "background-color": "#59ACFF",
-            "opacity": "0",
-            "transform": "scale(0)",
+            "opacity": "1",
+            "transform": "scale(1)",
             "transition": "all 150ms ease"
           },
           "parent": ".radio__circle"
@@ -867,15 +905,16 @@
             "align-items": "center",
             "justify-content": "center",
             "transition": "all 150ms ease",
-            "flex-shrink": "0"
+            "flex-shrink": "0",
+            "border-color": "#4C92D9"
           },
           ".radio__dot": {
             "width": "8px",
             "height": "8px",
             "border-radius": "9999px",
             "background-color": "#4C92D9",
-            "opacity": "0",
-            "transform": "scale(0)",
+            "opacity": "1",
+            "transform": "scale(1)",
             "transition": "all 150ms ease"
           },
           ".radio__input": {
@@ -1066,7 +1105,24 @@
             ".radio__dot",
             ".radio__input",
             ".radio__label"
-          ]
+          ],
+          "states": {
+            "hover": {
+              "background-color": "#E5E7EB",
+              "color": "#373F4E",
+              "border": "1px solid #BFC6D4"
+            },
+            "focus": {
+              "background-color": "#F7F8FA",
+              "color": "#373F4E",
+              "border": "1px solid #BFC6D4"
+            },
+            "disabled": {
+              "background-color": "#F7F8FA",
+              "color": "#373F4E",
+              "border": "1px solid #BFC6D4"
+            }
+          }
         },
         {
           "selector": ".radio__circle",
@@ -1081,7 +1137,8 @@
             "align-items": "center",
             "justify-content": "center",
             "transition": "all 150ms ease",
-            "flex-shrink": "0"
+            "flex-shrink": "0",
+            "border-color": "#4C92D9"
           },
           "parent": ".classes"
         },
@@ -1093,8 +1150,8 @@
             "height": "8px",
             "border-radius": "9999px",
             "background-color": "#4C92D9",
-            "opacity": "0",
-            "transform": "scale(0)",
+            "opacity": "1",
+            "transform": "scale(1)",
             "transition": "all 150ms ease"
           },
           "parent": ".radio__circle"
@@ -1224,15 +1281,16 @@
             "align-items": "center",
             "justify-content": "center",
             "transition": "all 150ms ease",
-            "flex-shrink": "0"
+            "flex-shrink": "0",
+            "border-color": "#59ACFF"
           },
           ".radio__dot": {
             "width": "8px",
             "height": "8px",
             "border-radius": "9999px",
             "background-color": "#59ACFF",
-            "opacity": "0",
-            "transform": "scale(0)",
+            "opacity": "1",
+            "transform": "scale(1)",
             "transition": "all 150ms ease"
           },
           ".radio__input": {
@@ -1423,7 +1481,24 @@
             ".radio__dot",
             ".radio__input",
             ".radio__label"
-          ]
+          ],
+          "states": {
+            "hover": {
+              "background-color": "#2A2D32",
+              "color": "#FAFAFA",
+              "border": "1px solid #2A2D32"
+            },
+            "focus": {
+              "background-color": "#1F2124",
+              "color": "#FAFAFA",
+              "border": "1px solid #2A2D32"
+            },
+            "disabled": {
+              "background-color": "#1F2124",
+              "color": "#FAFAFA",
+              "border": "1px solid #2A2D32"
+            }
+          }
         },
         {
           "selector": ".radio__circle",
@@ -1438,7 +1513,8 @@
             "align-items": "center",
             "justify-content": "center",
             "transition": "all 150ms ease",
-            "flex-shrink": "0"
+            "flex-shrink": "0",
+            "border-color": "#59ACFF"
           },
           "parent": ".classes"
         },
@@ -1450,8 +1526,8 @@
             "height": "8px",
             "border-radius": "9999px",
             "background-color": "#59ACFF",
-            "opacity": "0",
-            "transform": "scale(0)",
+            "opacity": "1",
+            "transform": "scale(1)",
             "transition": "all 150ms ease"
           },
           "parent": ".radio__circle"
@@ -1581,15 +1657,16 @@
             "align-items": "center",
             "justify-content": "center",
             "transition": "all 150ms ease",
-            "flex-shrink": "0"
+            "flex-shrink": "0",
+            "border-color": "#4C92D9"
           },
           ".radio__dot": {
             "width": "8px",
             "height": "8px",
             "border-radius": "9999px",
             "background-color": "#4C92D9",
-            "opacity": "0",
-            "transform": "scale(0)",
+            "opacity": "1",
+            "transform": "scale(1)",
             "transition": "all 150ms ease"
           },
           ".radio__input": {
@@ -1780,7 +1857,24 @@
             ".radio__dot",
             ".radio__input",
             ".radio__label"
-          ]
+          ],
+          "states": {
+            "hover": {
+              "background-color": "#E5E7EB",
+              "color": "#373F4E",
+              "border": "1px solid #BFC6D4"
+            },
+            "focus": {
+              "background-color": "#F7F8FA",
+              "color": "#373F4E",
+              "border": "1px solid #BFC6D4"
+            },
+            "disabled": {
+              "background-color": "#F7F8FA",
+              "color": "#373F4E",
+              "border": "1px solid #BFC6D4"
+            }
+          }
         },
         {
           "selector": ".radio__circle",
@@ -1795,7 +1889,8 @@
             "align-items": "center",
             "justify-content": "center",
             "transition": "all 150ms ease",
-            "flex-shrink": "0"
+            "flex-shrink": "0",
+            "border-color": "#4C92D9"
           },
           "parent": ".classes"
         },
@@ -1807,8 +1902,8 @@
             "height": "8px",
             "border-radius": "9999px",
             "background-color": "#4C92D9",
-            "opacity": "0",
-            "transform": "scale(0)",
+            "opacity": "1",
+            "transform": "scale(1)",
             "transition": "all 150ms ease"
           },
           "parent": ".radio__circle"
@@ -1938,15 +2033,16 @@
             "align-items": "center",
             "justify-content": "center",
             "transition": "all 150ms ease",
-            "flex-shrink": "0"
+            "flex-shrink": "0",
+            "border-color": "#59ACFF"
           },
           ".radio__dot": {
             "width": "8px",
             "height": "8px",
             "border-radius": "9999px",
             "background-color": "#59ACFF",
-            "opacity": "0",
-            "transform": "scale(0)",
+            "opacity": "1",
+            "transform": "scale(1)",
             "transition": "all 150ms ease"
           },
           ".radio__input": {
@@ -2137,7 +2233,24 @@
             ".radio__dot",
             ".radio__input",
             ".radio__label"
-          ]
+          ],
+          "states": {
+            "hover": {
+              "background-color": "#2A2D32",
+              "color": "#FAFAFA",
+              "border": "1px solid #2A2D32"
+            },
+            "focus": {
+              "background-color": "#1F2124",
+              "color": "#FAFAFA",
+              "border": "1px solid #2A2D32"
+            },
+            "disabled": {
+              "background-color": "#1F2124",
+              "color": "#FAFAFA",
+              "border": "1px solid #2A2D32"
+            }
+          }
         },
         {
           "selector": ".radio__circle",
@@ -2152,7 +2265,8 @@
             "align-items": "center",
             "justify-content": "center",
             "transition": "all 150ms ease",
-            "flex-shrink": "0"
+            "flex-shrink": "0",
+            "border-color": "#59ACFF"
           },
           "parent": ".classes"
         },
@@ -2164,8 +2278,8 @@
             "height": "8px",
             "border-radius": "9999px",
             "background-color": "#59ACFF",
-            "opacity": "0",
-            "transform": "scale(0)",
+            "opacity": "1",
+            "transform": "scale(1)",
             "transition": "all 150ms ease"
           },
           "parent": ".radio__circle"
@@ -2295,15 +2409,16 @@
             "align-items": "center",
             "justify-content": "center",
             "transition": "all 150ms ease",
-            "flex-shrink": "0"
+            "flex-shrink": "0",
+            "border-color": "#4C92D9"
           },
           ".radio__dot": {
             "width": "8px",
             "height": "8px",
             "border-radius": "9999px",
             "background-color": "#4C92D9",
-            "opacity": "0",
-            "transform": "scale(0)",
+            "opacity": "1",
+            "transform": "scale(1)",
             "transition": "all 150ms ease"
           },
           ".radio__input": {
@@ -2494,7 +2609,24 @@
             ".radio__dot",
             ".radio__input",
             ".radio__label"
-          ]
+          ],
+          "states": {
+            "hover": {
+              "background-color": "#E5E7EB",
+              "color": "#373F4E",
+              "border": "1px solid #BFC6D4"
+            },
+            "focus": {
+              "background-color": "#F7F8FA",
+              "color": "#373F4E",
+              "border": "1px solid #BFC6D4"
+            },
+            "disabled": {
+              "background-color": "#F7F8FA",
+              "color": "#373F4E",
+              "border": "1px solid #BFC6D4"
+            }
+          }
         },
         {
           "selector": ".radio__circle",
@@ -2509,7 +2641,8 @@
             "align-items": "center",
             "justify-content": "center",
             "transition": "all 150ms ease",
-            "flex-shrink": "0"
+            "flex-shrink": "0",
+            "border-color": "#4C92D9"
           },
           "parent": ".classes"
         },
@@ -2521,8 +2654,8 @@
             "height": "8px",
             "border-radius": "9999px",
             "background-color": "#4C92D9",
-            "opacity": "0",
-            "transform": "scale(0)",
+            "opacity": "1",
+            "transform": "scale(1)",
             "transition": "all 150ms ease"
           },
           "parent": ".radio__circle"
@@ -2652,15 +2785,16 @@
             "align-items": "center",
             "justify-content": "center",
             "transition": "all 150ms ease",
-            "flex-shrink": "0"
+            "flex-shrink": "0",
+            "border-color": "#59ACFF"
           },
           ".radio__dot": {
             "width": "8px",
             "height": "8px",
             "border-radius": "9999px",
             "background-color": "#59ACFF",
-            "opacity": "0",
-            "transform": "scale(0)",
+            "opacity": "1",
+            "transform": "scale(1)",
             "transition": "all 150ms ease"
           },
           ".radio__input": {
@@ -2851,7 +2985,24 @@
             ".radio__dot",
             ".radio__input",
             ".radio__label"
-          ]
+          ],
+          "states": {
+            "hover": {
+              "background-color": "#2A2D32",
+              "color": "#FAFAFA",
+              "border": "1px solid #2A2D32"
+            },
+            "focus": {
+              "background-color": "#1F2124",
+              "color": "#FAFAFA",
+              "border": "1px solid #2A2D32"
+            },
+            "disabled": {
+              "background-color": "#1F2124",
+              "color": "#FAFAFA",
+              "border": "1px solid #2A2D32"
+            }
+          }
         },
         {
           "selector": ".radio__circle",
@@ -2866,7 +3017,8 @@
             "align-items": "center",
             "justify-content": "center",
             "transition": "all 150ms ease",
-            "flex-shrink": "0"
+            "flex-shrink": "0",
+            "border-color": "#59ACFF"
           },
           "parent": ".classes"
         },
@@ -2878,8 +3030,8 @@
             "height": "8px",
             "border-radius": "9999px",
             "background-color": "#59ACFF",
-            "opacity": "0",
-            "transform": "scale(0)",
+            "opacity": "1",
+            "transform": "scale(1)",
             "transition": "all 150ms ease"
           },
           "parent": ".radio__circle"

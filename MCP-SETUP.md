@@ -95,7 +95,7 @@ For **exact builds** (component, template, recipe, or apply tokens to a framewor
 
 ### Canonical spec data (no script regeneration)
 
-The canonical format uses **specs** (not legacy `buildSpecs`) with hardcoded, resolved values. Component JSON files (e.g. `card.json`, `rightsidebar.json`) are the source of truth. They are authored manually from tokens + component CSS (see [docs/SPEC_CONTRACT.md](docs/SPEC_CONTRACT.md) § 1.3 Provenance), or by one auditable script. **Do not** run `generate-build-specs` or other spec-extraction scripts for this data; get_specs reads `specs` and `guidance` directly from the component JSON.
+The canonical format uses **specs** (not legacy `buildSpecs`) with hardcoded, resolved values. Component JSON files (e.g. `card.json`, `rightsidebar.json`) are the source of truth. They are authored manually from tokens + component CSS (see [docs/SPEC_CONTRACT.md](docs/SPEC_CONTRACT.md) § 1.3 Provenance), or by one auditable script. Base styles in specs are merged from both standalone and descendant-only CSS rules so layout, spacing, padding, and radius are complete when CSS defines them. **Do not** run `generate-build-specs` or other spec-extraction scripts for this data; get_specs reads `specs` and `guidance` directly from the component JSON.
 
 ## Regenerating MCP Data
 

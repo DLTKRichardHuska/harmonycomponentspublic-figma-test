@@ -148,18 +148,19 @@
             "height": "18px",
             "border": "2px solid #BFC6D4",
             "border-radius": "0.25rem",
-            "background-color": "#FFFFFF",
+            "background-color": "#4C92D9",
             "display": "flex",
             "align-items": "center",
             "justify-content": "center",
             "transition": "all 150ms ease",
-            "flex-shrink": "0"
+            "flex-shrink": "0",
+            "border-color": "#4C92D9"
           },
           ".checkbox__icon": {
             "color": "white",
             "font-size": "0.75rem",
-            "opacity": "0",
-            "transform": "scale(0)",
+            "opacity": "1",
+            "transform": "scale(1)",
             "transition": "all 150ms ease",
             "font-family": "'Figtree', sans-serif"
           },
@@ -351,7 +352,24 @@
             ".checkbox__icon",
             ".checkbox__input",
             ".checkbox__label"
-          ]
+          ],
+          "states": {
+            "hover": {
+              "background-color": "#E5E7EB",
+              "color": "#373F4E",
+              "border": "1px solid #BFC6D4"
+            },
+            "focus": {
+              "background-color": "#F7F8FA",
+              "color": "#373F4E",
+              "border": "1px solid #BFC6D4"
+            },
+            "disabled": {
+              "background-color": "#F7F8FA",
+              "color": "#373F4E",
+              "border": "1px solid #BFC6D4"
+            }
+          }
         },
         {
           "selector": ".checkbox__box",
@@ -361,12 +379,13 @@
             "height": "18px",
             "border": "2px solid #BFC6D4",
             "border-radius": "0.25rem",
-            "background-color": "#FFFFFF",
+            "background-color": "#4C92D9",
             "display": "flex",
             "align-items": "center",
             "justify-content": "center",
             "transition": "all 150ms ease",
-            "flex-shrink": "0"
+            "flex-shrink": "0",
+            "border-color": "#4C92D9"
           },
           "parent": ".classes"
         },
@@ -376,8 +395,8 @@
           "styles": {
             "color": "white",
             "font-size": "0.75rem",
-            "opacity": "0",
-            "transform": "scale(0)",
+            "opacity": "1",
+            "transform": "scale(1)",
             "transition": "all 150ms ease",
             "font-family": "'Figtree', sans-serif"
           },
@@ -503,18 +522,19 @@
             "height": "18px",
             "border": "2px solid #5F6871",
             "border-radius": "0.25rem",
-            "background-color": "#1F252E",
+            "background-color": "#59ACFF",
             "display": "flex",
             "align-items": "center",
             "justify-content": "center",
             "transition": "all 150ms ease",
-            "flex-shrink": "0"
+            "flex-shrink": "0",
+            "border-color": "#59ACFF"
           },
           ".checkbox__icon": {
             "color": "white",
             "font-size": "0.75rem",
-            "opacity": "0",
-            "transform": "scale(0)",
+            "opacity": "1",
+            "transform": "scale(1)",
             "transition": "all 150ms ease",
             "font-family": "'Figtree', sans-serif"
           },
@@ -706,7 +726,24 @@
             ".checkbox__icon",
             ".checkbox__input",
             ".checkbox__label"
-          ]
+          ],
+          "states": {
+            "hover": {
+              "background-color": "#3D4A5C",
+              "color": "#E9ECEF",
+              "border": "1px solid #5F6871"
+            },
+            "focus": {
+              "background-color": "#37424D",
+              "color": "#E9ECEF",
+              "border": "1px solid #5F6871"
+            },
+            "disabled": {
+              "background-color": "#37424D",
+              "color": "#E9ECEF",
+              "border": "1px solid #5F6871"
+            }
+          }
         },
         {
           "selector": ".checkbox__box",
@@ -716,12 +753,13 @@
             "height": "18px",
             "border": "2px solid #5F6871",
             "border-radius": "0.25rem",
-            "background-color": "#1F252E",
+            "background-color": "#59ACFF",
             "display": "flex",
             "align-items": "center",
             "justify-content": "center",
             "transition": "all 150ms ease",
-            "flex-shrink": "0"
+            "flex-shrink": "0",
+            "border-color": "#59ACFF"
           },
           "parent": ".classes"
         },
@@ -731,8 +769,8 @@
           "styles": {
             "color": "white",
             "font-size": "0.75rem",
-            "opacity": "0",
-            "transform": "scale(0)",
+            "opacity": "1",
+            "transform": "scale(1)",
             "transition": "all 150ms ease",
             "font-family": "'Figtree', sans-serif"
           },
@@ -858,18 +896,19 @@
             "height": "18px",
             "border": "2px solid #BFC6D4",
             "border-radius": "0.25rem",
-            "background-color": "#FFFFFF",
+            "background-color": "#4C92D9",
             "display": "flex",
             "align-items": "center",
             "justify-content": "center",
             "transition": "all 150ms ease",
-            "flex-shrink": "0"
+            "flex-shrink": "0",
+            "border-color": "#4C92D9"
           },
           ".checkbox__icon": {
             "color": "white",
             "font-size": "0.75rem",
-            "opacity": "0",
-            "transform": "scale(0)",
+            "opacity": "1",
+            "transform": "scale(1)",
             "transition": "all 150ms ease",
             "font-family": "'Figtree', sans-serif"
           },
@@ -1061,7 +1100,24 @@
             ".checkbox__icon",
             ".checkbox__input",
             ".checkbox__label"
-          ]
+          ],
+          "states": {
+            "hover": {
+              "background-color": "#E5E7EB",
+              "color": "#373F4E",
+              "border": "1px solid #BFC6D4"
+            },
+            "focus": {
+              "background-color": "#F7F8FA",
+              "color": "#373F4E",
+              "border": "1px solid #BFC6D4"
+            },
+            "disabled": {
+              "background-color": "#F7F8FA",
+              "color": "#373F4E",
+              "border": "1px solid #BFC6D4"
+            }
+          }
         },
         {
           "selector": ".checkbox__box",
@@ -1071,12 +1127,13 @@
             "height": "18px",
             "border": "2px solid #BFC6D4",
             "border-radius": "0.25rem",
-            "background-color": "#FFFFFF",
+            "background-color": "#4C92D9",
             "display": "flex",
             "align-items": "center",
             "justify-content": "center",
             "transition": "all 150ms ease",
-            "flex-shrink": "0"
+            "flex-shrink": "0",
+            "border-color": "#4C92D9"
           },
           "parent": ".classes"
         },
@@ -1086,8 +1143,8 @@
           "styles": {
             "color": "white",
             "font-size": "0.75rem",
-            "opacity": "0",
-            "transform": "scale(0)",
+            "opacity": "1",
+            "transform": "scale(1)",
             "transition": "all 150ms ease",
             "font-family": "'Figtree', sans-serif"
           },
@@ -1213,18 +1270,19 @@
             "height": "18px",
             "border": "2px solid #2A2D32",
             "border-radius": "0.25rem",
-            "background-color": "#1F2124",
+            "background-color": "#59ACFF",
             "display": "flex",
             "align-items": "center",
             "justify-content": "center",
             "transition": "all 150ms ease",
-            "flex-shrink": "0"
+            "flex-shrink": "0",
+            "border-color": "#59ACFF"
           },
           ".checkbox__icon": {
             "color": "white",
             "font-size": "0.75rem",
-            "opacity": "0",
-            "transform": "scale(0)",
+            "opacity": "1",
+            "transform": "scale(1)",
             "transition": "all 150ms ease",
             "font-family": "'Figtree', sans-serif"
           },
@@ -1416,7 +1474,24 @@
             ".checkbox__icon",
             ".checkbox__input",
             ".checkbox__label"
-          ]
+          ],
+          "states": {
+            "hover": {
+              "background-color": "#2A2D32",
+              "color": "#FAFAFA",
+              "border": "1px solid #2A2D32"
+            },
+            "focus": {
+              "background-color": "#1F2124",
+              "color": "#FAFAFA",
+              "border": "1px solid #2A2D32"
+            },
+            "disabled": {
+              "background-color": "#1F2124",
+              "color": "#FAFAFA",
+              "border": "1px solid #2A2D32"
+            }
+          }
         },
         {
           "selector": ".checkbox__box",
@@ -1426,12 +1501,13 @@
             "height": "18px",
             "border": "2px solid #2A2D32",
             "border-radius": "0.25rem",
-            "background-color": "#1F2124",
+            "background-color": "#59ACFF",
             "display": "flex",
             "align-items": "center",
             "justify-content": "center",
             "transition": "all 150ms ease",
-            "flex-shrink": "0"
+            "flex-shrink": "0",
+            "border-color": "#59ACFF"
           },
           "parent": ".classes"
         },
@@ -1441,8 +1517,8 @@
           "styles": {
             "color": "white",
             "font-size": "0.75rem",
-            "opacity": "0",
-            "transform": "scale(0)",
+            "opacity": "1",
+            "transform": "scale(1)",
             "transition": "all 150ms ease",
             "font-family": "'Figtree', sans-serif"
           },
@@ -1568,18 +1644,19 @@
             "height": "18px",
             "border": "2px solid #BFC6D4",
             "border-radius": "0.25rem",
-            "background-color": "#FFFFFF",
+            "background-color": "#4C92D9",
             "display": "flex",
             "align-items": "center",
             "justify-content": "center",
             "transition": "all 150ms ease",
-            "flex-shrink": "0"
+            "flex-shrink": "0",
+            "border-color": "#4C92D9"
           },
           ".checkbox__icon": {
             "color": "white",
             "font-size": "0.75rem",
-            "opacity": "0",
-            "transform": "scale(0)",
+            "opacity": "1",
+            "transform": "scale(1)",
             "transition": "all 150ms ease",
             "font-family": "'Figtree', sans-serif"
           },
@@ -1771,7 +1848,24 @@
             ".checkbox__icon",
             ".checkbox__input",
             ".checkbox__label"
-          ]
+          ],
+          "states": {
+            "hover": {
+              "background-color": "#E5E7EB",
+              "color": "#373F4E",
+              "border": "1px solid #BFC6D4"
+            },
+            "focus": {
+              "background-color": "#F7F8FA",
+              "color": "#373F4E",
+              "border": "1px solid #BFC6D4"
+            },
+            "disabled": {
+              "background-color": "#F7F8FA",
+              "color": "#373F4E",
+              "border": "1px solid #BFC6D4"
+            }
+          }
         },
         {
           "selector": ".checkbox__box",
@@ -1781,12 +1875,13 @@
             "height": "18px",
             "border": "2px solid #BFC6D4",
             "border-radius": "0.25rem",
-            "background-color": "#FFFFFF",
+            "background-color": "#4C92D9",
             "display": "flex",
             "align-items": "center",
             "justify-content": "center",
             "transition": "all 150ms ease",
-            "flex-shrink": "0"
+            "flex-shrink": "0",
+            "border-color": "#4C92D9"
           },
           "parent": ".classes"
         },
@@ -1796,8 +1891,8 @@
           "styles": {
             "color": "white",
             "font-size": "0.75rem",
-            "opacity": "0",
-            "transform": "scale(0)",
+            "opacity": "1",
+            "transform": "scale(1)",
             "transition": "all 150ms ease",
             "font-family": "'Figtree', sans-serif"
           },
@@ -1923,18 +2018,19 @@
             "height": "18px",
             "border": "2px solid #2A2D32",
             "border-radius": "0.25rem",
-            "background-color": "#1F2124",
+            "background-color": "#59ACFF",
             "display": "flex",
             "align-items": "center",
             "justify-content": "center",
             "transition": "all 150ms ease",
-            "flex-shrink": "0"
+            "flex-shrink": "0",
+            "border-color": "#59ACFF"
           },
           ".checkbox__icon": {
             "color": "white",
             "font-size": "0.75rem",
-            "opacity": "0",
-            "transform": "scale(0)",
+            "opacity": "1",
+            "transform": "scale(1)",
             "transition": "all 150ms ease",
             "font-family": "'Figtree', sans-serif"
           },
@@ -2126,7 +2222,24 @@
             ".checkbox__icon",
             ".checkbox__input",
             ".checkbox__label"
-          ]
+          ],
+          "states": {
+            "hover": {
+              "background-color": "#2A2D32",
+              "color": "#FAFAFA",
+              "border": "1px solid #2A2D32"
+            },
+            "focus": {
+              "background-color": "#1F2124",
+              "color": "#FAFAFA",
+              "border": "1px solid #2A2D32"
+            },
+            "disabled": {
+              "background-color": "#1F2124",
+              "color": "#FAFAFA",
+              "border": "1px solid #2A2D32"
+            }
+          }
         },
         {
           "selector": ".checkbox__box",
@@ -2136,12 +2249,13 @@
             "height": "18px",
             "border": "2px solid #2A2D32",
             "border-radius": "0.25rem",
-            "background-color": "#1F2124",
+            "background-color": "#59ACFF",
             "display": "flex",
             "align-items": "center",
             "justify-content": "center",
             "transition": "all 150ms ease",
-            "flex-shrink": "0"
+            "flex-shrink": "0",
+            "border-color": "#59ACFF"
           },
           "parent": ".classes"
         },
@@ -2151,8 +2265,8 @@
           "styles": {
             "color": "white",
             "font-size": "0.75rem",
-            "opacity": "0",
-            "transform": "scale(0)",
+            "opacity": "1",
+            "transform": "scale(1)",
             "transition": "all 150ms ease",
             "font-family": "'Figtree', sans-serif"
           },
@@ -2278,18 +2392,19 @@
             "height": "18px",
             "border": "2px solid #BFC6D4",
             "border-radius": "0.25rem",
-            "background-color": "#FFFFFF",
+            "background-color": "#4C92D9",
             "display": "flex",
             "align-items": "center",
             "justify-content": "center",
             "transition": "all 150ms ease",
-            "flex-shrink": "0"
+            "flex-shrink": "0",
+            "border-color": "#4C92D9"
           },
           ".checkbox__icon": {
             "color": "white",
             "font-size": "0.75rem",
-            "opacity": "0",
-            "transform": "scale(0)",
+            "opacity": "1",
+            "transform": "scale(1)",
             "transition": "all 150ms ease",
             "font-family": "'Figtree', sans-serif"
           },
@@ -2481,7 +2596,24 @@
             ".checkbox__icon",
             ".checkbox__input",
             ".checkbox__label"
-          ]
+          ],
+          "states": {
+            "hover": {
+              "background-color": "#E5E7EB",
+              "color": "#373F4E",
+              "border": "1px solid #BFC6D4"
+            },
+            "focus": {
+              "background-color": "#F7F8FA",
+              "color": "#373F4E",
+              "border": "1px solid #BFC6D4"
+            },
+            "disabled": {
+              "background-color": "#F7F8FA",
+              "color": "#373F4E",
+              "border": "1px solid #BFC6D4"
+            }
+          }
         },
         {
           "selector": ".checkbox__box",
@@ -2491,12 +2623,13 @@
             "height": "18px",
             "border": "2px solid #BFC6D4",
             "border-radius": "0.25rem",
-            "background-color": "#FFFFFF",
+            "background-color": "#4C92D9",
             "display": "flex",
             "align-items": "center",
             "justify-content": "center",
             "transition": "all 150ms ease",
-            "flex-shrink": "0"
+            "flex-shrink": "0",
+            "border-color": "#4C92D9"
           },
           "parent": ".classes"
         },
@@ -2506,8 +2639,8 @@
           "styles": {
             "color": "white",
             "font-size": "0.75rem",
-            "opacity": "0",
-            "transform": "scale(0)",
+            "opacity": "1",
+            "transform": "scale(1)",
             "transition": "all 150ms ease",
             "font-family": "'Figtree', sans-serif"
           },
@@ -2633,18 +2766,19 @@
             "height": "18px",
             "border": "2px solid #2A2D32",
             "border-radius": "0.25rem",
-            "background-color": "#1F2124",
+            "background-color": "#59ACFF",
             "display": "flex",
             "align-items": "center",
             "justify-content": "center",
             "transition": "all 150ms ease",
-            "flex-shrink": "0"
+            "flex-shrink": "0",
+            "border-color": "#59ACFF"
           },
           ".checkbox__icon": {
             "color": "white",
             "font-size": "0.75rem",
-            "opacity": "0",
-            "transform": "scale(0)",
+            "opacity": "1",
+            "transform": "scale(1)",
             "transition": "all 150ms ease",
             "font-family": "'Figtree', sans-serif"
           },
@@ -2836,7 +2970,24 @@
             ".checkbox__icon",
             ".checkbox__input",
             ".checkbox__label"
-          ]
+          ],
+          "states": {
+            "hover": {
+              "background-color": "#2A2D32",
+              "color": "#FAFAFA",
+              "border": "1px solid #2A2D32"
+            },
+            "focus": {
+              "background-color": "#1F2124",
+              "color": "#FAFAFA",
+              "border": "1px solid #2A2D32"
+            },
+            "disabled": {
+              "background-color": "#1F2124",
+              "color": "#FAFAFA",
+              "border": "1px solid #2A2D32"
+            }
+          }
         },
         {
           "selector": ".checkbox__box",
@@ -2846,12 +2997,13 @@
             "height": "18px",
             "border": "2px solid #2A2D32",
             "border-radius": "0.25rem",
-            "background-color": "#1F2124",
+            "background-color": "#59ACFF",
             "display": "flex",
             "align-items": "center",
             "justify-content": "center",
             "transition": "all 150ms ease",
-            "flex-shrink": "0"
+            "flex-shrink": "0",
+            "border-color": "#59ACFF"
           },
           "parent": ".classes"
         },
@@ -2861,8 +3013,8 @@
           "styles": {
             "color": "white",
             "font-size": "0.75rem",
-            "opacity": "0",
-            "transform": "scale(0)",
+            "opacity": "1",
+            "transform": "scale(1)",
             "transition": "all 150ms ease",
             "font-family": "'Figtree', sans-serif"
           },

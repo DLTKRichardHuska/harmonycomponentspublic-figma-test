@@ -34,7 +34,7 @@
       "_buildContract": {
         "criticalSelectors": {
           ".right-sidebar": {
-            "position": "fixed",
+            "position": "absolute",
             "right": "0",
             "top": "50%",
             "transform": "translateY(-50%)",
@@ -44,7 +44,8 @@
             "gap": "12px",
             "width": "52px",
             "transition": "width 0.2s ease",
-            "overflow": "visible"
+            "overflow": "visible",
+            "height": "auto"
           },
           ".right-sidebar__dela-logo": {
             "width": "36px",
@@ -57,7 +58,8 @@
             "height": "24px",
             "display": "flex",
             "align-items": "center",
-            "justify-content": "center"
+            "justify-content": "center",
+            "color": "#FFFFFF"
           },
           ".right-sidebar__item": {
             "display": "flex",
@@ -89,11 +91,11 @@
             "text-align": "right"
           },
           ".right-sidebar__section": {
-            "background-color": "#FCFDFF",
-            "border": "1px solid #BFC6D4",
+            "background-color": "transparent",
+            "border": "none",
             "border-right": "none",
-            "border-radius": "12px 0 0 12px",
-            "box-shadow": "0 20px 25px -5px rgb(15 23 42 / 0.1), 0 8px 10px -6px rgb(15 23 42 / 0.1)",
+            "border-radius": "0",
+            "box-shadow": "none",
             "padding": "12px 8px",
             "display": "flex",
             "flex-direction": "column",
@@ -116,7 +118,7 @@
           "selector": ".right-sidebar",
           "tag": "div",
           "styles": {
-            "position": "fixed",
+            "position": "absolute",
             "right": "0",
             "top": "50%",
             "transform": "translateY(-50%)",
@@ -126,7 +128,8 @@
             "gap": "12px",
             "width": "52px",
             "transition": "width 0.2s ease",
-            "overflow": "visible"
+            "overflow": "visible",
+            "height": "auto"
           },
           "children": [
             ".right-sidebar__dela-logo",
@@ -161,7 +164,8 @@
             "height": "24px",
             "display": "flex",
             "align-items": "center",
-            "justify-content": "center"
+            "justify-content": "center",
+            "color": "#FFFFFF"
           },
           "parent": ".right-sidebar__item-tooltip"
         },
@@ -227,11 +231,11 @@
           "selector": ".right-sidebar__section",
           "tag": "span",
           "styles": {
-            "background-color": "#FCFDFF",
-            "border": "1px solid #BFC6D4",
+            "background-color": "transparent",
+            "border": "none",
             "border-right": "none",
-            "border-radius": "12px 0 0 12px",
-            "box-shadow": "0 20px 25px -5px rgb(15 23 42 / 0.1), 0 8px 10px -6px rgb(15 23 42 / 0.1)",
+            "border-radius": "0",
+            "box-shadow": "none",
             "padding": "12px 8px",
             "display": "flex",
             "flex-direction": "column",
@@ -252,7 +256,7 @@
       "_buildContract": {
         "criticalSelectors": {
           ".right-sidebar": {
-            "position": "fixed",
+            "position": "absolute",
             "right": "0",
             "top": "50%",
             "transform": "translateY(-50%)",
@@ -262,7 +266,8 @@
             "gap": "12px",
             "width": "52px",
             "transition": "width 0.2s ease",
-            "overflow": "visible"
+            "overflow": "visible",
+            "height": "auto"
           },
           ".right-sidebar__dela-logo": {
             "width": "36px",
@@ -275,7 +280,8 @@
             "height": "24px",
             "display": "flex",
             "align-items": "center",
-            "justify-content": "center"
+            "justify-content": "center",
+            "color": "#1F252E"
           },
           ".right-sidebar__item": {
             "display": "flex",
@@ -307,11 +313,11 @@
             "text-align": "right"
           },
           ".right-sidebar__section": {
-            "background-color": "#333D47",
-            "border": "1px solid #5F6871",
+            "background-color": "transparent",
+            "border": "none",
             "border-right": "none",
-            "border-radius": "12px 0 0 12px",
-            "box-shadow": "0 20px 25px -5px rgb(15 23 42 / 0.1), 0 8px 10px -6px rgb(15 23 42 / 0.1)",
+            "border-radius": "0",
+            "box-shadow": "none",
             "padding": "12px 8px",
             "display": "flex",
             "flex-direction": "column",
@@ -334,7 +340,7 @@
           "selector": ".right-sidebar",
           "tag": "div",
           "styles": {
-            "position": "fixed",
+            "position": "absolute",
             "right": "0",
             "top": "50%",
             "transform": "translateY(-50%)",
@@ -344,7 +350,8 @@
             "gap": "12px",
             "width": "52px",
             "transition": "width 0.2s ease",
-            "overflow": "visible"
+            "overflow": "visible",
+            "height": "auto"
           },
           "children": [
             ".right-sidebar__dela-logo",
@@ -379,7 +386,8 @@
             "height": "24px",
             "display": "flex",
             "align-items": "center",
-            "justify-content": "center"
+            "justify-content": "center",
+            "color": "#1F252E"
           },
           "parent": ".right-sidebar__item-tooltip"
         },
@@ -445,11 +453,11 @@
           "selector": ".right-sidebar__section",
           "tag": "span",
           "styles": {
-            "background-color": "#333D47",
-            "border": "1px solid #5F6871",
+            "background-color": "transparent",
+            "border": "none",
             "border-right": "none",
-            "border-radius": "12px 0 0 12px",
-            "box-shadow": "0 20px 25px -5px rgb(15 23 42 / 0.1), 0 8px 10px -6px rgb(15 23 42 / 0.1)",
+            "border-radius": "0",
+            "box-shadow": "none",
             "padding": "12px 8px",
             "display": "flex",
             "flex-direction": "column",
@@ -470,7 +478,7 @@
       "_buildContract": {
         "criticalSelectors": {
           ".right-sidebar": {
-            "position": "fixed",
+            "position": "absolute",
             "right": "0",
             "top": "50%",
             "transform": "translateY(-50%)",
@@ -480,7 +488,8 @@
             "gap": "12px",
             "width": "52px",
             "transition": "width 0.2s ease",
-            "overflow": "visible"
+            "overflow": "visible",
+            "height": "auto"
           },
           ".right-sidebar__dela-logo": {
             "width": "36px",
@@ -493,7 +502,8 @@
             "height": "24px",
             "display": "flex",
             "align-items": "center",
-            "justify-content": "center"
+            "justify-content": "center",
+            "color": "#FFFFFF"
           },
           ".right-sidebar__item": {
             "display": "flex",
@@ -525,11 +535,11 @@
             "text-align": "right"
           },
           ".right-sidebar__section": {
-            "background-color": "#FCFDFF",
-            "border": "1px solid #BFC6D4",
+            "background-color": "transparent",
+            "border": "none",
             "border-right": "none",
-            "border-radius": "12px 0 0 12px",
-            "box-shadow": "0 20px 25px -5px rgb(15 23 42 / 0.1), 0 8px 10px -6px rgb(15 23 42 / 0.1)",
+            "border-radius": "0",
+            "box-shadow": "none",
             "padding": "12px 8px",
             "display": "flex",
             "flex-direction": "column",
@@ -552,7 +562,7 @@
           "selector": ".right-sidebar",
           "tag": "div",
           "styles": {
-            "position": "fixed",
+            "position": "absolute",
             "right": "0",
             "top": "50%",
             "transform": "translateY(-50%)",
@@ -562,7 +572,8 @@
             "gap": "12px",
             "width": "52px",
             "transition": "width 0.2s ease",
-            "overflow": "visible"
+            "overflow": "visible",
+            "height": "auto"
           },
           "children": [
             ".right-sidebar__dela-logo",
@@ -597,7 +608,8 @@
             "height": "24px",
             "display": "flex",
             "align-items": "center",
-            "justify-content": "center"
+            "justify-content": "center",
+            "color": "#FFFFFF"
           },
           "parent": ".right-sidebar__item-tooltip"
         },
@@ -663,11 +675,11 @@
           "selector": ".right-sidebar__section",
           "tag": "span",
           "styles": {
-            "background-color": "#FCFDFF",
-            "border": "1px solid #BFC6D4",
+            "background-color": "transparent",
+            "border": "none",
             "border-right": "none",
-            "border-radius": "12px 0 0 12px",
-            "box-shadow": "0 20px 25px -5px rgb(15 23 42 / 0.1), 0 8px 10px -6px rgb(15 23 42 / 0.1)",
+            "border-radius": "0",
+            "box-shadow": "none",
             "padding": "12px 8px",
             "display": "flex",
             "flex-direction": "column",
@@ -688,7 +700,7 @@
       "_buildContract": {
         "criticalSelectors": {
           ".right-sidebar": {
-            "position": "fixed",
+            "position": "absolute",
             "right": "0",
             "top": "50%",
             "transform": "translateY(-50%)",
@@ -698,7 +710,8 @@
             "gap": "12px",
             "width": "52px",
             "transition": "width 0.2s ease",
-            "overflow": "visible"
+            "overflow": "visible",
+            "height": "auto"
           },
           ".right-sidebar__dela-logo": {
             "width": "36px",
@@ -711,7 +724,8 @@
             "height": "24px",
             "display": "flex",
             "align-items": "center",
-            "justify-content": "center"
+            "justify-content": "center",
+            "color": "#15171A"
           },
           ".right-sidebar__item": {
             "display": "flex",
@@ -743,11 +757,11 @@
             "text-align": "right"
           },
           ".right-sidebar__section": {
-            "background-color": "#1A1C1F",
-            "border": "1px solid #2A2D32",
+            "background-color": "transparent",
+            "border": "none",
             "border-right": "none",
-            "border-radius": "12px 0 0 12px",
-            "box-shadow": "0 20px 25px -5px rgb(15 23 42 / 0.1), 0 8px 10px -6px rgb(15 23 42 / 0.1)",
+            "border-radius": "0",
+            "box-shadow": "none",
             "padding": "12px 8px",
             "display": "flex",
             "flex-direction": "column",
@@ -770,7 +784,7 @@
           "selector": ".right-sidebar",
           "tag": "div",
           "styles": {
-            "position": "fixed",
+            "position": "absolute",
             "right": "0",
             "top": "50%",
             "transform": "translateY(-50%)",
@@ -780,7 +794,8 @@
             "gap": "12px",
             "width": "52px",
             "transition": "width 0.2s ease",
-            "overflow": "visible"
+            "overflow": "visible",
+            "height": "auto"
           },
           "children": [
             ".right-sidebar__dela-logo",
@@ -815,7 +830,8 @@
             "height": "24px",
             "display": "flex",
             "align-items": "center",
-            "justify-content": "center"
+            "justify-content": "center",
+            "color": "#15171A"
           },
           "parent": ".right-sidebar__item-tooltip"
         },
@@ -881,11 +897,11 @@
           "selector": ".right-sidebar__section",
           "tag": "span",
           "styles": {
-            "background-color": "#1A1C1F",
-            "border": "1px solid #2A2D32",
+            "background-color": "transparent",
+            "border": "none",
             "border-right": "none",
-            "border-radius": "12px 0 0 12px",
-            "box-shadow": "0 20px 25px -5px rgb(15 23 42 / 0.1), 0 8px 10px -6px rgb(15 23 42 / 0.1)",
+            "border-radius": "0",
+            "box-shadow": "none",
             "padding": "12px 8px",
             "display": "flex",
             "flex-direction": "column",
@@ -906,7 +922,7 @@
       "_buildContract": {
         "criticalSelectors": {
           ".right-sidebar": {
-            "position": "fixed",
+            "position": "absolute",
             "right": "0",
             "top": "50%",
             "transform": "translateY(-50%)",
@@ -916,7 +932,8 @@
             "gap": "12px",
             "width": "52px",
             "transition": "width 0.2s ease",
-            "overflow": "visible"
+            "overflow": "visible",
+            "height": "auto"
           },
           ".right-sidebar__dela-logo": {
             "width": "36px",
@@ -929,7 +946,8 @@
             "height": "24px",
             "display": "flex",
             "align-items": "center",
-            "justify-content": "center"
+            "justify-content": "center",
+            "color": "#FFFFFF"
           },
           ".right-sidebar__item": {
             "display": "flex",
@@ -961,11 +979,11 @@
             "text-align": "right"
           },
           ".right-sidebar__section": {
-            "background-color": "#FCFDFF",
-            "border": "1px solid #BFC6D4",
+            "background-color": "transparent",
+            "border": "none",
             "border-right": "none",
-            "border-radius": "12px 0 0 12px",
-            "box-shadow": "0 20px 25px -5px rgb(15 23 42 / 0.1), 0 8px 10px -6px rgb(15 23 42 / 0.1)",
+            "border-radius": "0",
+            "box-shadow": "none",
             "padding": "12px 8px",
             "display": "flex",
             "flex-direction": "column",
@@ -988,7 +1006,7 @@
           "selector": ".right-sidebar",
           "tag": "div",
           "styles": {
-            "position": "fixed",
+            "position": "absolute",
             "right": "0",
             "top": "50%",
             "transform": "translateY(-50%)",
@@ -998,7 +1016,8 @@
             "gap": "12px",
             "width": "52px",
             "transition": "width 0.2s ease",
-            "overflow": "visible"
+            "overflow": "visible",
+            "height": "auto"
           },
           "children": [
             ".right-sidebar__dela-logo",
@@ -1033,7 +1052,8 @@
             "height": "24px",
             "display": "flex",
             "align-items": "center",
-            "justify-content": "center"
+            "justify-content": "center",
+            "color": "#FFFFFF"
           },
           "parent": ".right-sidebar__item-tooltip"
         },
@@ -1099,11 +1119,11 @@
           "selector": ".right-sidebar__section",
           "tag": "span",
           "styles": {
-            "background-color": "#FCFDFF",
-            "border": "1px solid #BFC6D4",
+            "background-color": "transparent",
+            "border": "none",
             "border-right": "none",
-            "border-radius": "12px 0 0 12px",
-            "box-shadow": "0 20px 25px -5px rgb(15 23 42 / 0.1), 0 8px 10px -6px rgb(15 23 42 / 0.1)",
+            "border-radius": "0",
+            "box-shadow": "none",
             "padding": "12px 8px",
             "display": "flex",
             "flex-direction": "column",
@@ -1124,7 +1144,7 @@
       "_buildContract": {
         "criticalSelectors": {
           ".right-sidebar": {
-            "position": "fixed",
+            "position": "absolute",
             "right": "0",
             "top": "50%",
             "transform": "translateY(-50%)",
@@ -1134,7 +1154,8 @@
             "gap": "12px",
             "width": "52px",
             "transition": "width 0.2s ease",
-            "overflow": "visible"
+            "overflow": "visible",
+            "height": "auto"
           },
           ".right-sidebar__dela-logo": {
             "width": "36px",
@@ -1147,7 +1168,8 @@
             "height": "24px",
             "display": "flex",
             "align-items": "center",
-            "justify-content": "center"
+            "justify-content": "center",
+            "color": "#15171A"
           },
           ".right-sidebar__item": {
             "display": "flex",
@@ -1179,11 +1201,11 @@
             "text-align": "right"
           },
           ".right-sidebar__section": {
-            "background-color": "#1A1C1F",
-            "border": "1px solid #2A2D32",
+            "background-color": "transparent",
+            "border": "none",
             "border-right": "none",
-            "border-radius": "12px 0 0 12px",
-            "box-shadow": "0 20px 25px -5px rgb(15 23 42 / 0.1), 0 8px 10px -6px rgb(15 23 42 / 0.1)",
+            "border-radius": "0",
+            "box-shadow": "none",
             "padding": "12px 8px",
             "display": "flex",
             "flex-direction": "column",
@@ -1206,7 +1228,7 @@
           "selector": ".right-sidebar",
           "tag": "div",
           "styles": {
-            "position": "fixed",
+            "position": "absolute",
             "right": "0",
             "top": "50%",
             "transform": "translateY(-50%)",
@@ -1216,7 +1238,8 @@
             "gap": "12px",
             "width": "52px",
             "transition": "width 0.2s ease",
-            "overflow": "visible"
+            "overflow": "visible",
+            "height": "auto"
           },
           "children": [
             ".right-sidebar__dela-logo",
@@ -1251,7 +1274,8 @@
             "height": "24px",
             "display": "flex",
             "align-items": "center",
-            "justify-content": "center"
+            "justify-content": "center",
+            "color": "#15171A"
           },
           "parent": ".right-sidebar__item-tooltip"
         },
@@ -1317,11 +1341,11 @@
           "selector": ".right-sidebar__section",
           "tag": "span",
           "styles": {
-            "background-color": "#1A1C1F",
-            "border": "1px solid #2A2D32",
+            "background-color": "transparent",
+            "border": "none",
             "border-right": "none",
-            "border-radius": "12px 0 0 12px",
-            "box-shadow": "0 20px 25px -5px rgb(15 23 42 / 0.1), 0 8px 10px -6px rgb(15 23 42 / 0.1)",
+            "border-radius": "0",
+            "box-shadow": "none",
             "padding": "12px 8px",
             "display": "flex",
             "flex-direction": "column",
@@ -1342,7 +1366,7 @@
       "_buildContract": {
         "criticalSelectors": {
           ".right-sidebar": {
-            "position": "fixed",
+            "position": "absolute",
             "right": "0",
             "top": "50%",
             "transform": "translateY(-50%)",
@@ -1352,7 +1376,8 @@
             "gap": "12px",
             "width": "52px",
             "transition": "width 0.2s ease",
-            "overflow": "visible"
+            "overflow": "visible",
+            "height": "auto"
           },
           ".right-sidebar__dela-logo": {
             "width": "36px",
@@ -1365,7 +1390,8 @@
             "height": "24px",
             "display": "flex",
             "align-items": "center",
-            "justify-content": "center"
+            "justify-content": "center",
+            "color": "#FFFFFF"
           },
           ".right-sidebar__item": {
             "display": "flex",
@@ -1397,11 +1423,11 @@
             "text-align": "right"
           },
           ".right-sidebar__section": {
-            "background-color": "#FCFDFF",
-            "border": "1px solid #BFC6D4",
+            "background-color": "transparent",
+            "border": "none",
             "border-right": "none",
-            "border-radius": "12px 0 0 12px",
-            "box-shadow": "0 20px 25px -5px rgb(15 23 42 / 0.1), 0 8px 10px -6px rgb(15 23 42 / 0.1)",
+            "border-radius": "0",
+            "box-shadow": "none",
             "padding": "12px 8px",
             "display": "flex",
             "flex-direction": "column",
@@ -1424,7 +1450,7 @@
           "selector": ".right-sidebar",
           "tag": "div",
           "styles": {
-            "position": "fixed",
+            "position": "absolute",
             "right": "0",
             "top": "50%",
             "transform": "translateY(-50%)",
@@ -1434,7 +1460,8 @@
             "gap": "12px",
             "width": "52px",
             "transition": "width 0.2s ease",
-            "overflow": "visible"
+            "overflow": "visible",
+            "height": "auto"
           },
           "children": [
             ".right-sidebar__dela-logo",
@@ -1469,7 +1496,8 @@
             "height": "24px",
             "display": "flex",
             "align-items": "center",
-            "justify-content": "center"
+            "justify-content": "center",
+            "color": "#FFFFFF"
           },
           "parent": ".right-sidebar__item-tooltip"
         },
@@ -1535,11 +1563,11 @@
           "selector": ".right-sidebar__section",
           "tag": "span",
           "styles": {
-            "background-color": "#FCFDFF",
-            "border": "1px solid #BFC6D4",
+            "background-color": "transparent",
+            "border": "none",
             "border-right": "none",
-            "border-radius": "12px 0 0 12px",
-            "box-shadow": "0 20px 25px -5px rgb(15 23 42 / 0.1), 0 8px 10px -6px rgb(15 23 42 / 0.1)",
+            "border-radius": "0",
+            "box-shadow": "none",
             "padding": "12px 8px",
             "display": "flex",
             "flex-direction": "column",
@@ -1560,7 +1588,7 @@
       "_buildContract": {
         "criticalSelectors": {
           ".right-sidebar": {
-            "position": "fixed",
+            "position": "absolute",
             "right": "0",
             "top": "50%",
             "transform": "translateY(-50%)",
@@ -1570,7 +1598,8 @@
             "gap": "12px",
             "width": "52px",
             "transition": "width 0.2s ease",
-            "overflow": "visible"
+            "overflow": "visible",
+            "height": "auto"
           },
           ".right-sidebar__dela-logo": {
             "width": "36px",
@@ -1583,7 +1612,8 @@
             "height": "24px",
             "display": "flex",
             "align-items": "center",
-            "justify-content": "center"
+            "justify-content": "center",
+            "color": "#15171A"
           },
           ".right-sidebar__item": {
             "display": "flex",
@@ -1615,11 +1645,11 @@
             "text-align": "right"
           },
           ".right-sidebar__section": {
-            "background-color": "#1A1C1F",
-            "border": "1px solid #2A2D32",
+            "background-color": "transparent",
+            "border": "none",
             "border-right": "none",
-            "border-radius": "12px 0 0 12px",
-            "box-shadow": "0 20px 25px -5px rgb(15 23 42 / 0.1), 0 8px 10px -6px rgb(15 23 42 / 0.1)",
+            "border-radius": "0",
+            "box-shadow": "none",
             "padding": "12px 8px",
             "display": "flex",
             "flex-direction": "column",
@@ -1642,7 +1672,7 @@
           "selector": ".right-sidebar",
           "tag": "div",
           "styles": {
-            "position": "fixed",
+            "position": "absolute",
             "right": "0",
             "top": "50%",
             "transform": "translateY(-50%)",
@@ -1652,7 +1682,8 @@
             "gap": "12px",
             "width": "52px",
             "transition": "width 0.2s ease",
-            "overflow": "visible"
+            "overflow": "visible",
+            "height": "auto"
           },
           "children": [
             ".right-sidebar__dela-logo",
@@ -1687,7 +1718,8 @@
             "height": "24px",
             "display": "flex",
             "align-items": "center",
-            "justify-content": "center"
+            "justify-content": "center",
+            "color": "#15171A"
           },
           "parent": ".right-sidebar__item-tooltip"
         },
@@ -1753,11 +1785,11 @@
           "selector": ".right-sidebar__section",
           "tag": "span",
           "styles": {
-            "background-color": "#1A1C1F",
-            "border": "1px solid #2A2D32",
+            "background-color": "transparent",
+            "border": "none",
             "border-right": "none",
-            "border-radius": "12px 0 0 12px",
-            "box-shadow": "0 20px 25px -5px rgb(15 23 42 / 0.1), 0 8px 10px -6px rgb(15 23 42 / 0.1)",
+            "border-radius": "0",
+            "box-shadow": "none",
             "padding": "12px 8px",
             "display": "flex",
             "flex-direction": "column",
@@ -1778,7 +1810,7 @@
       "_buildContract": {
         "criticalSelectors": {
           ".right-sidebar": {
-            "position": "fixed",
+            "position": "absolute",
             "right": "0",
             "top": "50%",
             "transform": "translateY(-50%)",
@@ -1788,7 +1820,8 @@
             "gap": "12px",
             "width": "52px",
             "transition": "width 0.2s ease",
-            "overflow": "visible"
+            "overflow": "visible",
+            "height": "auto"
           },
           ".right-sidebar__dela-logo": {
             "width": "36px",
@@ -1801,7 +1834,8 @@
             "height": "24px",
             "display": "flex",
             "align-items": "center",
-            "justify-content": "center"
+            "justify-content": "center",
+            "color": "#FFFFFF"
           },
           ".right-sidebar__item": {
             "display": "flex",
@@ -1833,11 +1867,11 @@
             "text-align": "right"
           },
           ".right-sidebar__section": {
-            "background-color": "#FCFDFF",
-            "border": "1px solid #BFC6D4",
+            "background-color": "transparent",
+            "border": "none",
             "border-right": "none",
-            "border-radius": "12px 0 0 12px",
-            "box-shadow": "0 20px 25px -5px rgb(15 23 42 / 0.1), 0 8px 10px -6px rgb(15 23 42 / 0.1)",
+            "border-radius": "0",
+            "box-shadow": "none",
             "padding": "12px 8px",
             "display": "flex",
             "flex-direction": "column",
@@ -1860,7 +1894,7 @@
           "selector": ".right-sidebar",
           "tag": "div",
           "styles": {
-            "position": "fixed",
+            "position": "absolute",
             "right": "0",
             "top": "50%",
             "transform": "translateY(-50%)",
@@ -1870,7 +1904,8 @@
             "gap": "12px",
             "width": "52px",
             "transition": "width 0.2s ease",
-            "overflow": "visible"
+            "overflow": "visible",
+            "height": "auto"
           },
           "children": [
             ".right-sidebar__dela-logo",
@@ -1905,7 +1940,8 @@
             "height": "24px",
             "display": "flex",
             "align-items": "center",
-            "justify-content": "center"
+            "justify-content": "center",
+            "color": "#FFFFFF"
           },
           "parent": ".right-sidebar__item-tooltip"
         },
@@ -1971,11 +2007,11 @@
           "selector": ".right-sidebar__section",
           "tag": "span",
           "styles": {
-            "background-color": "#FCFDFF",
-            "border": "1px solid #BFC6D4",
+            "background-color": "transparent",
+            "border": "none",
             "border-right": "none",
-            "border-radius": "12px 0 0 12px",
-            "box-shadow": "0 20px 25px -5px rgb(15 23 42 / 0.1), 0 8px 10px -6px rgb(15 23 42 / 0.1)",
+            "border-radius": "0",
+            "box-shadow": "none",
             "padding": "12px 8px",
             "display": "flex",
             "flex-direction": "column",
@@ -1996,7 +2032,7 @@
       "_buildContract": {
         "criticalSelectors": {
           ".right-sidebar": {
-            "position": "fixed",
+            "position": "absolute",
             "right": "0",
             "top": "50%",
             "transform": "translateY(-50%)",
@@ -2006,7 +2042,8 @@
             "gap": "12px",
             "width": "52px",
             "transition": "width 0.2s ease",
-            "overflow": "visible"
+            "overflow": "visible",
+            "height": "auto"
           },
           ".right-sidebar__dela-logo": {
             "width": "36px",
@@ -2019,7 +2056,8 @@
             "height": "24px",
             "display": "flex",
             "align-items": "center",
-            "justify-content": "center"
+            "justify-content": "center",
+            "color": "#1F252E"
           },
           ".right-sidebar__item": {
             "display": "flex",
@@ -2051,11 +2089,11 @@
             "text-align": "right"
           },
           ".right-sidebar__section": {
-            "background-color": "#333D47",
-            "border": "1px solid #5F6871",
+            "background-color": "transparent",
+            "border": "none",
             "border-right": "none",
-            "border-radius": "12px 0 0 12px",
-            "box-shadow": "0 20px 25px -5px rgb(15 23 42 / 0.1), 0 8px 10px -6px rgb(15 23 42 / 0.1)",
+            "border-radius": "0",
+            "box-shadow": "none",
             "padding": "12px 8px",
             "display": "flex",
             "flex-direction": "column",
@@ -2078,7 +2116,7 @@
           "selector": ".right-sidebar",
           "tag": "div",
           "styles": {
-            "position": "fixed",
+            "position": "absolute",
             "right": "0",
             "top": "50%",
             "transform": "translateY(-50%)",
@@ -2088,7 +2126,8 @@
             "gap": "12px",
             "width": "52px",
             "transition": "width 0.2s ease",
-            "overflow": "visible"
+            "overflow": "visible",
+            "height": "auto"
           },
           "children": [
             ".right-sidebar__dela-logo",
@@ -2123,7 +2162,8 @@
             "height": "24px",
             "display": "flex",
             "align-items": "center",
-            "justify-content": "center"
+            "justify-content": "center",
+            "color": "#1F252E"
           },
           "parent": ".right-sidebar__item-tooltip"
         },
@@ -2189,11 +2229,11 @@
           "selector": ".right-sidebar__section",
           "tag": "span",
           "styles": {
-            "background-color": "#333D47",
-            "border": "1px solid #5F6871",
+            "background-color": "transparent",
+            "border": "none",
             "border-right": "none",
-            "border-radius": "12px 0 0 12px",
-            "box-shadow": "0 20px 25px -5px rgb(15 23 42 / 0.1), 0 8px 10px -6px rgb(15 23 42 / 0.1)",
+            "border-radius": "0",
+            "box-shadow": "none",
             "padding": "12px 8px",
             "display": "flex",
             "flex-direction": "column",
@@ -2214,7 +2254,7 @@
       "_buildContract": {
         "criticalSelectors": {
           ".right-sidebar": {
-            "position": "fixed",
+            "position": "absolute",
             "right": "0",
             "top": "50%",
             "transform": "translateY(-50%)",
@@ -2224,7 +2264,8 @@
             "gap": "12px",
             "width": "52px",
             "transition": "width 0.2s ease",
-            "overflow": "visible"
+            "overflow": "visible",
+            "height": "auto"
           },
           ".right-sidebar__dela-logo": {
             "width": "36px",
@@ -2237,7 +2278,8 @@
             "height": "24px",
             "display": "flex",
             "align-items": "center",
-            "justify-content": "center"
+            "justify-content": "center",
+            "color": "#FFFFFF"
           },
           ".right-sidebar__item": {
             "display": "flex",
@@ -2269,11 +2311,11 @@
             "text-align": "right"
           },
           ".right-sidebar__section": {
-            "background-color": "#FCFDFF",
-            "border": "1px solid #BFC6D4",
+            "background-color": "transparent",
+            "border": "none",
             "border-right": "none",
-            "border-radius": "12px 0 0 12px",
-            "box-shadow": "0 20px 25px -5px rgb(15 23 42 / 0.1), 0 8px 10px -6px rgb(15 23 42 / 0.1)",
+            "border-radius": "0",
+            "box-shadow": "none",
             "padding": "12px 8px",
             "display": "flex",
             "flex-direction": "column",
@@ -2296,7 +2338,7 @@
           "selector": ".right-sidebar",
           "tag": "div",
           "styles": {
-            "position": "fixed",
+            "position": "absolute",
             "right": "0",
             "top": "50%",
             "transform": "translateY(-50%)",
@@ -2306,7 +2348,8 @@
             "gap": "12px",
             "width": "52px",
             "transition": "width 0.2s ease",
-            "overflow": "visible"
+            "overflow": "visible",
+            "height": "auto"
           },
           "children": [
             ".right-sidebar__dela-logo",
@@ -2341,7 +2384,8 @@
             "height": "24px",
             "display": "flex",
             "align-items": "center",
-            "justify-content": "center"
+            "justify-content": "center",
+            "color": "#FFFFFF"
           },
           "parent": ".right-sidebar__item-tooltip"
         },
@@ -2407,11 +2451,11 @@
           "selector": ".right-sidebar__section",
           "tag": "span",
           "styles": {
-            "background-color": "#FCFDFF",
-            "border": "1px solid #BFC6D4",
+            "background-color": "transparent",
+            "border": "none",
             "border-right": "none",
-            "border-radius": "12px 0 0 12px",
-            "box-shadow": "0 20px 25px -5px rgb(15 23 42 / 0.1), 0 8px 10px -6px rgb(15 23 42 / 0.1)",
+            "border-radius": "0",
+            "box-shadow": "none",
             "padding": "12px 8px",
             "display": "flex",
             "flex-direction": "column",
@@ -2432,7 +2476,7 @@
       "_buildContract": {
         "criticalSelectors": {
           ".right-sidebar": {
-            "position": "fixed",
+            "position": "absolute",
             "right": "0",
             "top": "50%",
             "transform": "translateY(-50%)",
@@ -2442,7 +2486,8 @@
             "gap": "12px",
             "width": "52px",
             "transition": "width 0.2s ease",
-            "overflow": "visible"
+            "overflow": "visible",
+            "height": "auto"
           },
           ".right-sidebar__dela-logo": {
             "width": "36px",
@@ -2455,7 +2500,8 @@
             "height": "24px",
             "display": "flex",
             "align-items": "center",
-            "justify-content": "center"
+            "justify-content": "center",
+            "color": "#15171A"
           },
           ".right-sidebar__item": {
             "display": "flex",
@@ -2487,11 +2533,11 @@
             "text-align": "right"
           },
           ".right-sidebar__section": {
-            "background-color": "#1A1C1F",
-            "border": "1px solid #2A2D32",
+            "background-color": "transparent",
+            "border": "none",
             "border-right": "none",
-            "border-radius": "12px 0 0 12px",
-            "box-shadow": "0 20px 25px -5px rgb(15 23 42 / 0.1), 0 8px 10px -6px rgb(15 23 42 / 0.1)",
+            "border-radius": "0",
+            "box-shadow": "none",
             "padding": "12px 8px",
             "display": "flex",
             "flex-direction": "column",
@@ -2514,7 +2560,7 @@
           "selector": ".right-sidebar",
           "tag": "div",
           "styles": {
-            "position": "fixed",
+            "position": "absolute",
             "right": "0",
             "top": "50%",
             "transform": "translateY(-50%)",
@@ -2524,7 +2570,8 @@
             "gap": "12px",
             "width": "52px",
             "transition": "width 0.2s ease",
-            "overflow": "visible"
+            "overflow": "visible",
+            "height": "auto"
           },
           "children": [
             ".right-sidebar__dela-logo",
@@ -2559,7 +2606,8 @@
             "height": "24px",
             "display": "flex",
             "align-items": "center",
-            "justify-content": "center"
+            "justify-content": "center",
+            "color": "#15171A"
           },
           "parent": ".right-sidebar__item-tooltip"
         },
@@ -2625,11 +2673,11 @@
           "selector": ".right-sidebar__section",
           "tag": "span",
           "styles": {
-            "background-color": "#1A1C1F",
-            "border": "1px solid #2A2D32",
+            "background-color": "transparent",
+            "border": "none",
             "border-right": "none",
-            "border-radius": "12px 0 0 12px",
-            "box-shadow": "0 20px 25px -5px rgb(15 23 42 / 0.1), 0 8px 10px -6px rgb(15 23 42 / 0.1)",
+            "border-radius": "0",
+            "box-shadow": "none",
             "padding": "12px 8px",
             "display": "flex",
             "flex-direction": "column",
@@ -2650,7 +2698,7 @@
       "_buildContract": {
         "criticalSelectors": {
           ".right-sidebar": {
-            "position": "fixed",
+            "position": "absolute",
             "right": "0",
             "top": "50%",
             "transform": "translateY(-50%)",
@@ -2660,7 +2708,8 @@
             "gap": "12px",
             "width": "52px",
             "transition": "width 0.2s ease",
-            "overflow": "visible"
+            "overflow": "visible",
+            "height": "auto"
           },
           ".right-sidebar__dela-logo": {
             "width": "36px",
@@ -2673,7 +2722,8 @@
             "height": "24px",
             "display": "flex",
             "align-items": "center",
-            "justify-content": "center"
+            "justify-content": "center",
+            "color": "#FFFFFF"
           },
           ".right-sidebar__item": {
             "display": "flex",
@@ -2705,11 +2755,11 @@
             "text-align": "right"
           },
           ".right-sidebar__section": {
-            "background-color": "#FCFDFF",
-            "border": "1px solid #BFC6D4",
+            "background-color": "transparent",
+            "border": "none",
             "border-right": "none",
-            "border-radius": "12px 0 0 12px",
-            "box-shadow": "0 20px 25px -5px rgb(15 23 42 / 0.1), 0 8px 10px -6px rgb(15 23 42 / 0.1)",
+            "border-radius": "0",
+            "box-shadow": "none",
             "padding": "12px 8px",
             "display": "flex",
             "flex-direction": "column",
@@ -2732,7 +2782,7 @@
           "selector": ".right-sidebar",
           "tag": "div",
           "styles": {
-            "position": "fixed",
+            "position": "absolute",
             "right": "0",
             "top": "50%",
             "transform": "translateY(-50%)",
@@ -2742,7 +2792,8 @@
             "gap": "12px",
             "width": "52px",
             "transition": "width 0.2s ease",
-            "overflow": "visible"
+            "overflow": "visible",
+            "height": "auto"
           },
           "children": [
             ".right-sidebar__dela-logo",
@@ -2777,7 +2828,8 @@
             "height": "24px",
             "display": "flex",
             "align-items": "center",
-            "justify-content": "center"
+            "justify-content": "center",
+            "color": "#FFFFFF"
           },
           "parent": ".right-sidebar__item-tooltip"
         },
@@ -2843,11 +2895,11 @@
           "selector": ".right-sidebar__section",
           "tag": "span",
           "styles": {
-            "background-color": "#FCFDFF",
-            "border": "1px solid #BFC6D4",
+            "background-color": "transparent",
+            "border": "none",
             "border-right": "none",
-            "border-radius": "12px 0 0 12px",
-            "box-shadow": "0 20px 25px -5px rgb(15 23 42 / 0.1), 0 8px 10px -6px rgb(15 23 42 / 0.1)",
+            "border-radius": "0",
+            "box-shadow": "none",
             "padding": "12px 8px",
             "display": "flex",
             "flex-direction": "column",
@@ -2868,7 +2920,7 @@
       "_buildContract": {
         "criticalSelectors": {
           ".right-sidebar": {
-            "position": "fixed",
+            "position": "absolute",
             "right": "0",
             "top": "50%",
             "transform": "translateY(-50%)",
@@ -2878,7 +2930,8 @@
             "gap": "12px",
             "width": "52px",
             "transition": "width 0.2s ease",
-            "overflow": "visible"
+            "overflow": "visible",
+            "height": "auto"
           },
           ".right-sidebar__dela-logo": {
             "width": "36px",
@@ -2891,7 +2944,8 @@
             "height": "24px",
             "display": "flex",
             "align-items": "center",
-            "justify-content": "center"
+            "justify-content": "center",
+            "color": "#15171A"
           },
           ".right-sidebar__item": {
             "display": "flex",
@@ -2923,11 +2977,11 @@
             "text-align": "right"
           },
           ".right-sidebar__section": {
-            "background-color": "#1A1C1F",
-            "border": "1px solid #2A2D32",
+            "background-color": "transparent",
+            "border": "none",
             "border-right": "none",
-            "border-radius": "12px 0 0 12px",
-            "box-shadow": "0 20px 25px -5px rgb(15 23 42 / 0.1), 0 8px 10px -6px rgb(15 23 42 / 0.1)",
+            "border-radius": "0",
+            "box-shadow": "none",
             "padding": "12px 8px",
             "display": "flex",
             "flex-direction": "column",
@@ -2950,7 +3004,7 @@
           "selector": ".right-sidebar",
           "tag": "div",
           "styles": {
-            "position": "fixed",
+            "position": "absolute",
             "right": "0",
             "top": "50%",
             "transform": "translateY(-50%)",
@@ -2960,7 +3014,8 @@
             "gap": "12px",
             "width": "52px",
             "transition": "width 0.2s ease",
-            "overflow": "visible"
+            "overflow": "visible",
+            "height": "auto"
           },
           "children": [
             ".right-sidebar__dela-logo",
@@ -2995,7 +3050,8 @@
             "height": "24px",
             "display": "flex",
             "align-items": "center",
-            "justify-content": "center"
+            "justify-content": "center",
+            "color": "#15171A"
           },
           "parent": ".right-sidebar__item-tooltip"
         },
@@ -3061,11 +3117,11 @@
           "selector": ".right-sidebar__section",
           "tag": "span",
           "styles": {
-            "background-color": "#1A1C1F",
-            "border": "1px solid #2A2D32",
+            "background-color": "transparent",
+            "border": "none",
             "border-right": "none",
-            "border-radius": "12px 0 0 12px",
-            "box-shadow": "0 20px 25px -5px rgb(15 23 42 / 0.1), 0 8px 10px -6px rgb(15 23 42 / 0.1)",
+            "border-radius": "0",
+            "box-shadow": "none",
             "padding": "12px 8px",
             "display": "flex",
             "flex-direction": "column",
@@ -3086,7 +3142,7 @@
       "_buildContract": {
         "criticalSelectors": {
           ".right-sidebar": {
-            "position": "fixed",
+            "position": "absolute",
             "right": "0",
             "top": "50%",
             "transform": "translateY(-50%)",
@@ -3096,7 +3152,8 @@
             "gap": "12px",
             "width": "52px",
             "transition": "width 0.2s ease",
-            "overflow": "visible"
+            "overflow": "visible",
+            "height": "auto"
           },
           ".right-sidebar__dela-logo": {
             "width": "36px",
@@ -3109,7 +3166,8 @@
             "height": "24px",
             "display": "flex",
             "align-items": "center",
-            "justify-content": "center"
+            "justify-content": "center",
+            "color": "#FFFFFF"
           },
           ".right-sidebar__item": {
             "display": "flex",
@@ -3141,11 +3199,11 @@
             "text-align": "right"
           },
           ".right-sidebar__section": {
-            "background-color": "#FCFDFF",
-            "border": "1px solid #BFC6D4",
+            "background-color": "transparent",
+            "border": "none",
             "border-right": "none",
-            "border-radius": "12px 0 0 12px",
-            "box-shadow": "0 20px 25px -5px rgb(15 23 42 / 0.1), 0 8px 10px -6px rgb(15 23 42 / 0.1)",
+            "border-radius": "0",
+            "box-shadow": "none",
             "padding": "12px 8px",
             "display": "flex",
             "flex-direction": "column",
@@ -3168,7 +3226,7 @@
           "selector": ".right-sidebar",
           "tag": "div",
           "styles": {
-            "position": "fixed",
+            "position": "absolute",
             "right": "0",
             "top": "50%",
             "transform": "translateY(-50%)",
@@ -3178,7 +3236,8 @@
             "gap": "12px",
             "width": "52px",
             "transition": "width 0.2s ease",
-            "overflow": "visible"
+            "overflow": "visible",
+            "height": "auto"
           },
           "children": [
             ".right-sidebar__dela-logo",
@@ -3213,7 +3272,8 @@
             "height": "24px",
             "display": "flex",
             "align-items": "center",
-            "justify-content": "center"
+            "justify-content": "center",
+            "color": "#FFFFFF"
           },
           "parent": ".right-sidebar__item-tooltip"
         },
@@ -3279,11 +3339,11 @@
           "selector": ".right-sidebar__section",
           "tag": "span",
           "styles": {
-            "background-color": "#FCFDFF",
-            "border": "1px solid #BFC6D4",
+            "background-color": "transparent",
+            "border": "none",
             "border-right": "none",
-            "border-radius": "12px 0 0 12px",
-            "box-shadow": "0 20px 25px -5px rgb(15 23 42 / 0.1), 0 8px 10px -6px rgb(15 23 42 / 0.1)",
+            "border-radius": "0",
+            "box-shadow": "none",
             "padding": "12px 8px",
             "display": "flex",
             "flex-direction": "column",
@@ -3304,7 +3364,7 @@
       "_buildContract": {
         "criticalSelectors": {
           ".right-sidebar": {
-            "position": "fixed",
+            "position": "absolute",
             "right": "0",
             "top": "50%",
             "transform": "translateY(-50%)",
@@ -3314,7 +3374,8 @@
             "gap": "12px",
             "width": "52px",
             "transition": "width 0.2s ease",
-            "overflow": "visible"
+            "overflow": "visible",
+            "height": "auto"
           },
           ".right-sidebar__dela-logo": {
             "width": "36px",
@@ -3327,7 +3388,8 @@
             "height": "24px",
             "display": "flex",
             "align-items": "center",
-            "justify-content": "center"
+            "justify-content": "center",
+            "color": "#15171A"
           },
           ".right-sidebar__item": {
             "display": "flex",
@@ -3359,11 +3421,11 @@
             "text-align": "right"
           },
           ".right-sidebar__section": {
-            "background-color": "#1A1C1F",
-            "border": "1px solid #2A2D32",
+            "background-color": "transparent",
+            "border": "none",
             "border-right": "none",
-            "border-radius": "12px 0 0 12px",
-            "box-shadow": "0 20px 25px -5px rgb(15 23 42 / 0.1), 0 8px 10px -6px rgb(15 23 42 / 0.1)",
+            "border-radius": "0",
+            "box-shadow": "none",
             "padding": "12px 8px",
             "display": "flex",
             "flex-direction": "column",
@@ -3386,7 +3448,7 @@
           "selector": ".right-sidebar",
           "tag": "div",
           "styles": {
-            "position": "fixed",
+            "position": "absolute",
             "right": "0",
             "top": "50%",
             "transform": "translateY(-50%)",
@@ -3396,7 +3458,8 @@
             "gap": "12px",
             "width": "52px",
             "transition": "width 0.2s ease",
-            "overflow": "visible"
+            "overflow": "visible",
+            "height": "auto"
           },
           "children": [
             ".right-sidebar__dela-logo",
@@ -3431,7 +3494,8 @@
             "height": "24px",
             "display": "flex",
             "align-items": "center",
-            "justify-content": "center"
+            "justify-content": "center",
+            "color": "#15171A"
           },
           "parent": ".right-sidebar__item-tooltip"
         },
@@ -3497,11 +3561,11 @@
           "selector": ".right-sidebar__section",
           "tag": "span",
           "styles": {
-            "background-color": "#1A1C1F",
-            "border": "1px solid #2A2D32",
+            "background-color": "transparent",
+            "border": "none",
             "border-right": "none",
-            "border-radius": "12px 0 0 12px",
-            "box-shadow": "0 20px 25px -5px rgb(15 23 42 / 0.1), 0 8px 10px -6px rgb(15 23 42 / 0.1)",
+            "border-radius": "0",
+            "box-shadow": "none",
             "padding": "12px 8px",
             "display": "flex",
             "flex-direction": "column",
@@ -3522,7 +3586,7 @@
       "_buildContract": {
         "criticalSelectors": {
           ".right-sidebar": {
-            "position": "fixed",
+            "position": "absolute",
             "right": "0",
             "top": "50%",
             "transform": "translateY(-50%)",
@@ -3532,7 +3596,8 @@
             "gap": "12px",
             "width": "52px",
             "transition": "width 0.2s ease",
-            "overflow": "visible"
+            "overflow": "visible",
+            "height": "auto"
           },
           ".right-sidebar__dela-logo": {
             "width": "36px",
@@ -3545,7 +3610,8 @@
             "height": "24px",
             "display": "flex",
             "align-items": "center",
-            "justify-content": "center"
+            "justify-content": "center",
+            "color": "#FFFFFF"
           },
           ".right-sidebar__item": {
             "display": "flex",
@@ -3577,11 +3643,11 @@
             "text-align": "right"
           },
           ".right-sidebar__section": {
-            "background-color": "#FCFDFF",
-            "border": "1px solid #BFC6D4",
+            "background-color": "transparent",
+            "border": "none",
             "border-right": "none",
-            "border-radius": "12px 0 0 12px",
-            "box-shadow": "0 20px 25px -5px rgb(15 23 42 / 0.1), 0 8px 10px -6px rgb(15 23 42 / 0.1)",
+            "border-radius": "0",
+            "box-shadow": "none",
             "padding": "12px 8px",
             "display": "flex",
             "flex-direction": "column",
@@ -3604,7 +3670,7 @@
           "selector": ".right-sidebar",
           "tag": "div",
           "styles": {
-            "position": "fixed",
+            "position": "absolute",
             "right": "0",
             "top": "50%",
             "transform": "translateY(-50%)",
@@ -3614,7 +3680,8 @@
             "gap": "12px",
             "width": "52px",
             "transition": "width 0.2s ease",
-            "overflow": "visible"
+            "overflow": "visible",
+            "height": "auto"
           },
           "children": [
             ".right-sidebar__dela-logo",
@@ -3649,7 +3716,8 @@
             "height": "24px",
             "display": "flex",
             "align-items": "center",
-            "justify-content": "center"
+            "justify-content": "center",
+            "color": "#FFFFFF"
           },
           "parent": ".right-sidebar__item-tooltip"
         },
@@ -3715,11 +3783,11 @@
           "selector": ".right-sidebar__section",
           "tag": "span",
           "styles": {
-            "background-color": "#FCFDFF",
-            "border": "1px solid #BFC6D4",
+            "background-color": "transparent",
+            "border": "none",
             "border-right": "none",
-            "border-radius": "12px 0 0 12px",
-            "box-shadow": "0 20px 25px -5px rgb(15 23 42 / 0.1), 0 8px 10px -6px rgb(15 23 42 / 0.1)",
+            "border-radius": "0",
+            "box-shadow": "none",
             "padding": "12px 8px",
             "display": "flex",
             "flex-direction": "column",
@@ -3740,7 +3808,7 @@
       "_buildContract": {
         "criticalSelectors": {
           ".right-sidebar": {
-            "position": "fixed",
+            "position": "absolute",
             "right": "0",
             "top": "50%",
             "transform": "translateY(-50%)",
@@ -3750,7 +3818,8 @@
             "gap": "12px",
             "width": "52px",
             "transition": "width 0.2s ease",
-            "overflow": "visible"
+            "overflow": "visible",
+            "height": "auto"
           },
           ".right-sidebar__dela-logo": {
             "width": "36px",
@@ -3763,7 +3832,8 @@
             "height": "24px",
             "display": "flex",
             "align-items": "center",
-            "justify-content": "center"
+            "justify-content": "center",
+            "color": "#1F252E"
           },
           ".right-sidebar__item": {
             "display": "flex",
@@ -3795,11 +3865,11 @@
             "text-align": "right"
           },
           ".right-sidebar__section": {
-            "background-color": "#333D47",
-            "border": "1px solid #5F6871",
+            "background-color": "transparent",
+            "border": "none",
             "border-right": "none",
-            "border-radius": "12px 0 0 12px",
-            "box-shadow": "0 20px 25px -5px rgb(15 23 42 / 0.1), 0 8px 10px -6px rgb(15 23 42 / 0.1)",
+            "border-radius": "0",
+            "box-shadow": "none",
             "padding": "12px 8px",
             "display": "flex",
             "flex-direction": "column",
@@ -3822,7 +3892,7 @@
           "selector": ".right-sidebar",
           "tag": "div",
           "styles": {
-            "position": "fixed",
+            "position": "absolute",
             "right": "0",
             "top": "50%",
             "transform": "translateY(-50%)",
@@ -3832,7 +3902,8 @@
             "gap": "12px",
             "width": "52px",
             "transition": "width 0.2s ease",
-            "overflow": "visible"
+            "overflow": "visible",
+            "height": "auto"
           },
           "children": [
             ".right-sidebar__dela-logo",
@@ -3867,7 +3938,8 @@
             "height": "24px",
             "display": "flex",
             "align-items": "center",
-            "justify-content": "center"
+            "justify-content": "center",
+            "color": "#1F252E"
           },
           "parent": ".right-sidebar__item-tooltip"
         },
@@ -3933,11 +4005,11 @@
           "selector": ".right-sidebar__section",
           "tag": "span",
           "styles": {
-            "background-color": "#333D47",
-            "border": "1px solid #5F6871",
+            "background-color": "transparent",
+            "border": "none",
             "border-right": "none",
-            "border-radius": "12px 0 0 12px",
-            "box-shadow": "0 20px 25px -5px rgb(15 23 42 / 0.1), 0 8px 10px -6px rgb(15 23 42 / 0.1)",
+            "border-radius": "0",
+            "box-shadow": "none",
             "padding": "12px 8px",
             "display": "flex",
             "flex-direction": "column",
@@ -3958,7 +4030,7 @@
       "_buildContract": {
         "criticalSelectors": {
           ".right-sidebar": {
-            "position": "fixed",
+            "position": "absolute",
             "right": "0",
             "top": "50%",
             "transform": "translateY(-50%)",
@@ -3968,7 +4040,8 @@
             "gap": "12px",
             "width": "52px",
             "transition": "width 0.2s ease",
-            "overflow": "visible"
+            "overflow": "visible",
+            "height": "auto"
           },
           ".right-sidebar__dela-logo": {
             "width": "36px",
@@ -3981,7 +4054,8 @@
             "height": "24px",
             "display": "flex",
             "align-items": "center",
-            "justify-content": "center"
+            "justify-content": "center",
+            "color": "#FFFFFF"
           },
           ".right-sidebar__item": {
             "display": "flex",
@@ -4013,11 +4087,11 @@
             "text-align": "right"
           },
           ".right-sidebar__section": {
-            "background-color": "#FCFDFF",
-            "border": "1px solid #BFC6D4",
+            "background-color": "transparent",
+            "border": "none",
             "border-right": "none",
-            "border-radius": "12px 0 0 12px",
-            "box-shadow": "0 20px 25px -5px rgb(15 23 42 / 0.1), 0 8px 10px -6px rgb(15 23 42 / 0.1)",
+            "border-radius": "0",
+            "box-shadow": "none",
             "padding": "12px 8px",
             "display": "flex",
             "flex-direction": "column",
@@ -4040,7 +4114,7 @@
           "selector": ".right-sidebar",
           "tag": "div",
           "styles": {
-            "position": "fixed",
+            "position": "absolute",
             "right": "0",
             "top": "50%",
             "transform": "translateY(-50%)",
@@ -4050,7 +4124,8 @@
             "gap": "12px",
             "width": "52px",
             "transition": "width 0.2s ease",
-            "overflow": "visible"
+            "overflow": "visible",
+            "height": "auto"
           },
           "children": [
             ".right-sidebar__dela-logo",
@@ -4085,7 +4160,8 @@
             "height": "24px",
             "display": "flex",
             "align-items": "center",
-            "justify-content": "center"
+            "justify-content": "center",
+            "color": "#FFFFFF"
           },
           "parent": ".right-sidebar__item-tooltip"
         },
@@ -4151,11 +4227,11 @@
           "selector": ".right-sidebar__section",
           "tag": "span",
           "styles": {
-            "background-color": "#FCFDFF",
-            "border": "1px solid #BFC6D4",
+            "background-color": "transparent",
+            "border": "none",
             "border-right": "none",
-            "border-radius": "12px 0 0 12px",
-            "box-shadow": "0 20px 25px -5px rgb(15 23 42 / 0.1), 0 8px 10px -6px rgb(15 23 42 / 0.1)",
+            "border-radius": "0",
+            "box-shadow": "none",
             "padding": "12px 8px",
             "display": "flex",
             "flex-direction": "column",
@@ -4176,7 +4252,7 @@
       "_buildContract": {
         "criticalSelectors": {
           ".right-sidebar": {
-            "position": "fixed",
+            "position": "absolute",
             "right": "0",
             "top": "50%",
             "transform": "translateY(-50%)",
@@ -4186,7 +4262,8 @@
             "gap": "12px",
             "width": "52px",
             "transition": "width 0.2s ease",
-            "overflow": "visible"
+            "overflow": "visible",
+            "height": "auto"
           },
           ".right-sidebar__dela-logo": {
             "width": "36px",
@@ -4199,7 +4276,8 @@
             "height": "24px",
             "display": "flex",
             "align-items": "center",
-            "justify-content": "center"
+            "justify-content": "center",
+            "color": "#15171A"
           },
           ".right-sidebar__item": {
             "display": "flex",
@@ -4231,11 +4309,11 @@
             "text-align": "right"
           },
           ".right-sidebar__section": {
-            "background-color": "#1A1C1F",
-            "border": "1px solid #2A2D32",
+            "background-color": "transparent",
+            "border": "none",
             "border-right": "none",
-            "border-radius": "12px 0 0 12px",
-            "box-shadow": "0 20px 25px -5px rgb(15 23 42 / 0.1), 0 8px 10px -6px rgb(15 23 42 / 0.1)",
+            "border-radius": "0",
+            "box-shadow": "none",
             "padding": "12px 8px",
             "display": "flex",
             "flex-direction": "column",
@@ -4258,7 +4336,7 @@
           "selector": ".right-sidebar",
           "tag": "div",
           "styles": {
-            "position": "fixed",
+            "position": "absolute",
             "right": "0",
             "top": "50%",
             "transform": "translateY(-50%)",
@@ -4268,7 +4346,8 @@
             "gap": "12px",
             "width": "52px",
             "transition": "width 0.2s ease",
-            "overflow": "visible"
+            "overflow": "visible",
+            "height": "auto"
           },
           "children": [
             ".right-sidebar__dela-logo",
@@ -4303,7 +4382,8 @@
             "height": "24px",
             "display": "flex",
             "align-items": "center",
-            "justify-content": "center"
+            "justify-content": "center",
+            "color": "#15171A"
           },
           "parent": ".right-sidebar__item-tooltip"
         },
@@ -4369,11 +4449,11 @@
           "selector": ".right-sidebar__section",
           "tag": "span",
           "styles": {
-            "background-color": "#1A1C1F",
-            "border": "1px solid #2A2D32",
+            "background-color": "transparent",
+            "border": "none",
             "border-right": "none",
-            "border-radius": "12px 0 0 12px",
-            "box-shadow": "0 20px 25px -5px rgb(15 23 42 / 0.1), 0 8px 10px -6px rgb(15 23 42 / 0.1)",
+            "border-radius": "0",
+            "box-shadow": "none",
             "padding": "12px 8px",
             "display": "flex",
             "flex-direction": "column",
@@ -4394,7 +4474,7 @@
       "_buildContract": {
         "criticalSelectors": {
           ".right-sidebar": {
-            "position": "fixed",
+            "position": "absolute",
             "right": "0",
             "top": "50%",
             "transform": "translateY(-50%)",
@@ -4404,7 +4484,8 @@
             "gap": "12px",
             "width": "52px",
             "transition": "width 0.2s ease",
-            "overflow": "visible"
+            "overflow": "visible",
+            "height": "auto"
           },
           ".right-sidebar__dela-logo": {
             "width": "36px",
@@ -4417,7 +4498,8 @@
             "height": "24px",
             "display": "flex",
             "align-items": "center",
-            "justify-content": "center"
+            "justify-content": "center",
+            "color": "#FFFFFF"
           },
           ".right-sidebar__item": {
             "display": "flex",
@@ -4449,11 +4531,11 @@
             "text-align": "right"
           },
           ".right-sidebar__section": {
-            "background-color": "#FCFDFF",
-            "border": "1px solid #BFC6D4",
+            "background-color": "transparent",
+            "border": "none",
             "border-right": "none",
-            "border-radius": "12px 0 0 12px",
-            "box-shadow": "0 20px 25px -5px rgb(15 23 42 / 0.1), 0 8px 10px -6px rgb(15 23 42 / 0.1)",
+            "border-radius": "0",
+            "box-shadow": "none",
             "padding": "12px 8px",
             "display": "flex",
             "flex-direction": "column",
@@ -4476,7 +4558,7 @@
           "selector": ".right-sidebar",
           "tag": "div",
           "styles": {
-            "position": "fixed",
+            "position": "absolute",
             "right": "0",
             "top": "50%",
             "transform": "translateY(-50%)",
@@ -4486,7 +4568,8 @@
             "gap": "12px",
             "width": "52px",
             "transition": "width 0.2s ease",
-            "overflow": "visible"
+            "overflow": "visible",
+            "height": "auto"
           },
           "children": [
             ".right-sidebar__dela-logo",
@@ -4521,7 +4604,8 @@
             "height": "24px",
             "display": "flex",
             "align-items": "center",
-            "justify-content": "center"
+            "justify-content": "center",
+            "color": "#FFFFFF"
           },
           "parent": ".right-sidebar__item-tooltip"
         },
@@ -4587,11 +4671,11 @@
           "selector": ".right-sidebar__section",
           "tag": "span",
           "styles": {
-            "background-color": "#FCFDFF",
-            "border": "1px solid #BFC6D4",
+            "background-color": "transparent",
+            "border": "none",
             "border-right": "none",
-            "border-radius": "12px 0 0 12px",
-            "box-shadow": "0 20px 25px -5px rgb(15 23 42 / 0.1), 0 8px 10px -6px rgb(15 23 42 / 0.1)",
+            "border-radius": "0",
+            "box-shadow": "none",
             "padding": "12px 8px",
             "display": "flex",
             "flex-direction": "column",
@@ -4612,7 +4696,7 @@
       "_buildContract": {
         "criticalSelectors": {
           ".right-sidebar": {
-            "position": "fixed",
+            "position": "absolute",
             "right": "0",
             "top": "50%",
             "transform": "translateY(-50%)",
@@ -4622,7 +4706,8 @@
             "gap": "12px",
             "width": "52px",
             "transition": "width 0.2s ease",
-            "overflow": "visible"
+            "overflow": "visible",
+            "height": "auto"
           },
           ".right-sidebar__dela-logo": {
             "width": "36px",
@@ -4635,7 +4720,8 @@
             "height": "24px",
             "display": "flex",
             "align-items": "center",
-            "justify-content": "center"
+            "justify-content": "center",
+            "color": "#15171A"
           },
           ".right-sidebar__item": {
             "display": "flex",
@@ -4667,11 +4753,11 @@
             "text-align": "right"
           },
           ".right-sidebar__section": {
-            "background-color": "#1A1C1F",
-            "border": "1px solid #2A2D32",
+            "background-color": "transparent",
+            "border": "none",
             "border-right": "none",
-            "border-radius": "12px 0 0 12px",
-            "box-shadow": "0 20px 25px -5px rgb(15 23 42 / 0.1), 0 8px 10px -6px rgb(15 23 42 / 0.1)",
+            "border-radius": "0",
+            "box-shadow": "none",
             "padding": "12px 8px",
             "display": "flex",
             "flex-direction": "column",
@@ -4694,7 +4780,7 @@
           "selector": ".right-sidebar",
           "tag": "div",
           "styles": {
-            "position": "fixed",
+            "position": "absolute",
             "right": "0",
             "top": "50%",
             "transform": "translateY(-50%)",
@@ -4704,7 +4790,8 @@
             "gap": "12px",
             "width": "52px",
             "transition": "width 0.2s ease",
-            "overflow": "visible"
+            "overflow": "visible",
+            "height": "auto"
           },
           "children": [
             ".right-sidebar__dela-logo",
@@ -4739,7 +4826,8 @@
             "height": "24px",
             "display": "flex",
             "align-items": "center",
-            "justify-content": "center"
+            "justify-content": "center",
+            "color": "#15171A"
           },
           "parent": ".right-sidebar__item-tooltip"
         },
@@ -4805,11 +4893,11 @@
           "selector": ".right-sidebar__section",
           "tag": "span",
           "styles": {
-            "background-color": "#1A1C1F",
-            "border": "1px solid #2A2D32",
+            "background-color": "transparent",
+            "border": "none",
             "border-right": "none",
-            "border-radius": "12px 0 0 12px",
-            "box-shadow": "0 20px 25px -5px rgb(15 23 42 / 0.1), 0 8px 10px -6px rgb(15 23 42 / 0.1)",
+            "border-radius": "0",
+            "box-shadow": "none",
             "padding": "12px 8px",
             "display": "flex",
             "flex-direction": "column",
@@ -4830,7 +4918,7 @@
       "_buildContract": {
         "criticalSelectors": {
           ".right-sidebar": {
-            "position": "fixed",
+            "position": "absolute",
             "right": "0",
             "top": "50%",
             "transform": "translateY(-50%)",
@@ -4840,7 +4928,8 @@
             "gap": "12px",
             "width": "52px",
             "transition": "width 0.2s ease",
-            "overflow": "visible"
+            "overflow": "visible",
+            "height": "auto"
           },
           ".right-sidebar__dela-logo": {
             "width": "36px",
@@ -4853,7 +4942,8 @@
             "height": "24px",
             "display": "flex",
             "align-items": "center",
-            "justify-content": "center"
+            "justify-content": "center",
+            "color": "#FFFFFF"
           },
           ".right-sidebar__item": {
             "display": "flex",
@@ -4885,11 +4975,11 @@
             "text-align": "right"
           },
           ".right-sidebar__section": {
-            "background-color": "#FCFDFF",
-            "border": "1px solid #BFC6D4",
+            "background-color": "transparent",
+            "border": "none",
             "border-right": "none",
-            "border-radius": "12px 0 0 12px",
-            "box-shadow": "0 20px 25px -5px rgb(15 23 42 / 0.1), 0 8px 10px -6px rgb(15 23 42 / 0.1)",
+            "border-radius": "0",
+            "box-shadow": "none",
             "padding": "12px 8px",
             "display": "flex",
             "flex-direction": "column",
@@ -4912,7 +5002,7 @@
           "selector": ".right-sidebar",
           "tag": "div",
           "styles": {
-            "position": "fixed",
+            "position": "absolute",
             "right": "0",
             "top": "50%",
             "transform": "translateY(-50%)",
@@ -4922,7 +5012,8 @@
             "gap": "12px",
             "width": "52px",
             "transition": "width 0.2s ease",
-            "overflow": "visible"
+            "overflow": "visible",
+            "height": "auto"
           },
           "children": [
             ".right-sidebar__dela-logo",
@@ -4957,7 +5048,8 @@
             "height": "24px",
             "display": "flex",
             "align-items": "center",
-            "justify-content": "center"
+            "justify-content": "center",
+            "color": "#FFFFFF"
           },
           "parent": ".right-sidebar__item-tooltip"
         },
@@ -5023,11 +5115,11 @@
           "selector": ".right-sidebar__section",
           "tag": "span",
           "styles": {
-            "background-color": "#FCFDFF",
-            "border": "1px solid #BFC6D4",
+            "background-color": "transparent",
+            "border": "none",
             "border-right": "none",
-            "border-radius": "12px 0 0 12px",
-            "box-shadow": "0 20px 25px -5px rgb(15 23 42 / 0.1), 0 8px 10px -6px rgb(15 23 42 / 0.1)",
+            "border-radius": "0",
+            "box-shadow": "none",
             "padding": "12px 8px",
             "display": "flex",
             "flex-direction": "column",
@@ -5048,7 +5140,7 @@
       "_buildContract": {
         "criticalSelectors": {
           ".right-sidebar": {
-            "position": "fixed",
+            "position": "absolute",
             "right": "0",
             "top": "50%",
             "transform": "translateY(-50%)",
@@ -5058,7 +5150,8 @@
             "gap": "12px",
             "width": "52px",
             "transition": "width 0.2s ease",
-            "overflow": "visible"
+            "overflow": "visible",
+            "height": "auto"
           },
           ".right-sidebar__dela-logo": {
             "width": "36px",
@@ -5071,7 +5164,8 @@
             "height": "24px",
             "display": "flex",
             "align-items": "center",
-            "justify-content": "center"
+            "justify-content": "center",
+            "color": "#15171A"
           },
           ".right-sidebar__item": {
             "display": "flex",
@@ -5103,11 +5197,11 @@
             "text-align": "right"
           },
           ".right-sidebar__section": {
-            "background-color": "#1A1C1F",
-            "border": "1px solid #2A2D32",
+            "background-color": "transparent",
+            "border": "none",
             "border-right": "none",
-            "border-radius": "12px 0 0 12px",
-            "box-shadow": "0 20px 25px -5px rgb(15 23 42 / 0.1), 0 8px 10px -6px rgb(15 23 42 / 0.1)",
+            "border-radius": "0",
+            "box-shadow": "none",
             "padding": "12px 8px",
             "display": "flex",
             "flex-direction": "column",
@@ -5130,7 +5224,7 @@
           "selector": ".right-sidebar",
           "tag": "div",
           "styles": {
-            "position": "fixed",
+            "position": "absolute",
             "right": "0",
             "top": "50%",
             "transform": "translateY(-50%)",
@@ -5140,7 +5234,8 @@
             "gap": "12px",
             "width": "52px",
             "transition": "width 0.2s ease",
-            "overflow": "visible"
+            "overflow": "visible",
+            "height": "auto"
           },
           "children": [
             ".right-sidebar__dela-logo",
@@ -5175,7 +5270,8 @@
             "height": "24px",
             "display": "flex",
             "align-items": "center",
-            "justify-content": "center"
+            "justify-content": "center",
+            "color": "#15171A"
           },
           "parent": ".right-sidebar__item-tooltip"
         },
@@ -5241,11 +5337,11 @@
           "selector": ".right-sidebar__section",
           "tag": "span",
           "styles": {
-            "background-color": "#1A1C1F",
-            "border": "1px solid #2A2D32",
+            "background-color": "transparent",
+            "border": "none",
             "border-right": "none",
-            "border-radius": "12px 0 0 12px",
-            "box-shadow": "0 20px 25px -5px rgb(15 23 42 / 0.1), 0 8px 10px -6px rgb(15 23 42 / 0.1)",
+            "border-radius": "0",
+            "box-shadow": "none",
             "padding": "12px 8px",
             "display": "flex",
             "flex-direction": "column",
@@ -5266,7 +5362,7 @@
       "_buildContract": {
         "criticalSelectors": {
           ".right-sidebar": {
-            "position": "fixed",
+            "position": "absolute",
             "right": "0",
             "top": "50%",
             "transform": "translateY(-50%)",
@@ -5276,7 +5372,8 @@
             "gap": "12px",
             "width": "52px",
             "transition": "width 0.2s ease",
-            "overflow": "visible"
+            "overflow": "visible",
+            "height": "auto"
           },
           ".right-sidebar__dela-logo": {
             "width": "36px",
@@ -5289,7 +5386,8 @@
             "height": "24px",
             "display": "flex",
             "align-items": "center",
-            "justify-content": "center"
+            "justify-content": "center",
+            "color": "#FFFFFF"
           },
           ".right-sidebar__item": {
             "display": "flex",
@@ -5321,11 +5419,11 @@
             "text-align": "right"
           },
           ".right-sidebar__section": {
-            "background-color": "#FCFDFF",
-            "border": "1px solid #BFC6D4",
+            "background-color": "transparent",
+            "border": "none",
             "border-right": "none",
-            "border-radius": "12px 0 0 12px",
-            "box-shadow": "0 20px 25px -5px rgb(15 23 42 / 0.1), 0 8px 10px -6px rgb(15 23 42 / 0.1)",
+            "border-radius": "0",
+            "box-shadow": "none",
             "padding": "12px 8px",
             "display": "flex",
             "flex-direction": "column",
@@ -5348,7 +5446,7 @@
           "selector": ".right-sidebar",
           "tag": "div",
           "styles": {
-            "position": "fixed",
+            "position": "absolute",
             "right": "0",
             "top": "50%",
             "transform": "translateY(-50%)",
@@ -5358,7 +5456,8 @@
             "gap": "12px",
             "width": "52px",
             "transition": "width 0.2s ease",
-            "overflow": "visible"
+            "overflow": "visible",
+            "height": "auto"
           },
           "children": [
             ".right-sidebar__dela-logo",
@@ -5393,7 +5492,8 @@
             "height": "24px",
             "display": "flex",
             "align-items": "center",
-            "justify-content": "center"
+            "justify-content": "center",
+            "color": "#FFFFFF"
           },
           "parent": ".right-sidebar__item-tooltip"
         },
@@ -5459,11 +5559,11 @@
           "selector": ".right-sidebar__section",
           "tag": "span",
           "styles": {
-            "background-color": "#FCFDFF",
-            "border": "1px solid #BFC6D4",
+            "background-color": "transparent",
+            "border": "none",
             "border-right": "none",
-            "border-radius": "12px 0 0 12px",
-            "box-shadow": "0 20px 25px -5px rgb(15 23 42 / 0.1), 0 8px 10px -6px rgb(15 23 42 / 0.1)",
+            "border-radius": "0",
+            "box-shadow": "none",
             "padding": "12px 8px",
             "display": "flex",
             "flex-direction": "column",
@@ -5484,7 +5584,7 @@
       "_buildContract": {
         "criticalSelectors": {
           ".right-sidebar": {
-            "position": "fixed",
+            "position": "absolute",
             "right": "0",
             "top": "50%",
             "transform": "translateY(-50%)",
@@ -5494,7 +5594,8 @@
             "gap": "12px",
             "width": "52px",
             "transition": "width 0.2s ease",
-            "overflow": "visible"
+            "overflow": "visible",
+            "height": "auto"
           },
           ".right-sidebar__dela-logo": {
             "width": "36px",
@@ -5507,7 +5608,8 @@
             "height": "24px",
             "display": "flex",
             "align-items": "center",
-            "justify-content": "center"
+            "justify-content": "center",
+            "color": "#1F252E"
           },
           ".right-sidebar__item": {
             "display": "flex",
@@ -5539,11 +5641,11 @@
             "text-align": "right"
           },
           ".right-sidebar__section": {
-            "background-color": "#333D47",
-            "border": "1px solid #5F6871",
+            "background-color": "transparent",
+            "border": "none",
             "border-right": "none",
-            "border-radius": "12px 0 0 12px",
-            "box-shadow": "0 20px 25px -5px rgb(15 23 42 / 0.1), 0 8px 10px -6px rgb(15 23 42 / 0.1)",
+            "border-radius": "0",
+            "box-shadow": "none",
             "padding": "12px 8px",
             "display": "flex",
             "flex-direction": "column",
@@ -5566,7 +5668,7 @@
           "selector": ".right-sidebar",
           "tag": "div",
           "styles": {
-            "position": "fixed",
+            "position": "absolute",
             "right": "0",
             "top": "50%",
             "transform": "translateY(-50%)",
@@ -5576,7 +5678,8 @@
             "gap": "12px",
             "width": "52px",
             "transition": "width 0.2s ease",
-            "overflow": "visible"
+            "overflow": "visible",
+            "height": "auto"
           },
           "children": [
             ".right-sidebar__dela-logo",
@@ -5611,7 +5714,8 @@
             "height": "24px",
             "display": "flex",
             "align-items": "center",
-            "justify-content": "center"
+            "justify-content": "center",
+            "color": "#1F252E"
           },
           "parent": ".right-sidebar__item-tooltip"
         },
@@ -5677,11 +5781,11 @@
           "selector": ".right-sidebar__section",
           "tag": "span",
           "styles": {
-            "background-color": "#333D47",
-            "border": "1px solid #5F6871",
+            "background-color": "transparent",
+            "border": "none",
             "border-right": "none",
-            "border-radius": "12px 0 0 12px",
-            "box-shadow": "0 20px 25px -5px rgb(15 23 42 / 0.1), 0 8px 10px -6px rgb(15 23 42 / 0.1)",
+            "border-radius": "0",
+            "box-shadow": "none",
             "padding": "12px 8px",
             "display": "flex",
             "flex-direction": "column",
@@ -5702,7 +5806,7 @@
       "_buildContract": {
         "criticalSelectors": {
           ".right-sidebar": {
-            "position": "fixed",
+            "position": "absolute",
             "right": "0",
             "top": "50%",
             "transform": "translateY(-50%)",
@@ -5712,7 +5816,8 @@
             "gap": "12px",
             "width": "52px",
             "transition": "width 0.2s ease",
-            "overflow": "visible"
+            "overflow": "visible",
+            "height": "auto"
           },
           ".right-sidebar__dela-logo": {
             "width": "36px",
@@ -5725,7 +5830,8 @@
             "height": "24px",
             "display": "flex",
             "align-items": "center",
-            "justify-content": "center"
+            "justify-content": "center",
+            "color": "#FFFFFF"
           },
           ".right-sidebar__item": {
             "display": "flex",
@@ -5757,11 +5863,11 @@
             "text-align": "right"
           },
           ".right-sidebar__section": {
-            "background-color": "#FCFDFF",
-            "border": "1px solid #BFC6D4",
+            "background-color": "transparent",
+            "border": "none",
             "border-right": "none",
-            "border-radius": "12px 0 0 12px",
-            "box-shadow": "0 20px 25px -5px rgb(15 23 42 / 0.1), 0 8px 10px -6px rgb(15 23 42 / 0.1)",
+            "border-radius": "0",
+            "box-shadow": "none",
             "padding": "12px 8px",
             "display": "flex",
             "flex-direction": "column",
@@ -5784,7 +5890,7 @@
           "selector": ".right-sidebar",
           "tag": "div",
           "styles": {
-            "position": "fixed",
+            "position": "absolute",
             "right": "0",
             "top": "50%",
             "transform": "translateY(-50%)",
@@ -5794,7 +5900,8 @@
             "gap": "12px",
             "width": "52px",
             "transition": "width 0.2s ease",
-            "overflow": "visible"
+            "overflow": "visible",
+            "height": "auto"
           },
           "children": [
             ".right-sidebar__dela-logo",
@@ -5829,7 +5936,8 @@
             "height": "24px",
             "display": "flex",
             "align-items": "center",
-            "justify-content": "center"
+            "justify-content": "center",
+            "color": "#FFFFFF"
           },
           "parent": ".right-sidebar__item-tooltip"
         },
@@ -5895,11 +6003,11 @@
           "selector": ".right-sidebar__section",
           "tag": "span",
           "styles": {
-            "background-color": "#FCFDFF",
-            "border": "1px solid #BFC6D4",
+            "background-color": "transparent",
+            "border": "none",
             "border-right": "none",
-            "border-radius": "12px 0 0 12px",
-            "box-shadow": "0 20px 25px -5px rgb(15 23 42 / 0.1), 0 8px 10px -6px rgb(15 23 42 / 0.1)",
+            "border-radius": "0",
+            "box-shadow": "none",
             "padding": "12px 8px",
             "display": "flex",
             "flex-direction": "column",
@@ -5920,7 +6028,7 @@
       "_buildContract": {
         "criticalSelectors": {
           ".right-sidebar": {
-            "position": "fixed",
+            "position": "absolute",
             "right": "0",
             "top": "50%",
             "transform": "translateY(-50%)",
@@ -5930,7 +6038,8 @@
             "gap": "12px",
             "width": "52px",
             "transition": "width 0.2s ease",
-            "overflow": "visible"
+            "overflow": "visible",
+            "height": "auto"
           },
           ".right-sidebar__dela-logo": {
             "width": "36px",
@@ -5943,7 +6052,8 @@
             "height": "24px",
             "display": "flex",
             "align-items": "center",
-            "justify-content": "center"
+            "justify-content": "center",
+            "color": "#15171A"
           },
           ".right-sidebar__item": {
             "display": "flex",
@@ -5975,11 +6085,11 @@
             "text-align": "right"
           },
           ".right-sidebar__section": {
-            "background-color": "#1A1C1F",
-            "border": "1px solid #2A2D32",
+            "background-color": "transparent",
+            "border": "none",
             "border-right": "none",
-            "border-radius": "12px 0 0 12px",
-            "box-shadow": "0 20px 25px -5px rgb(15 23 42 / 0.1), 0 8px 10px -6px rgb(15 23 42 / 0.1)",
+            "border-radius": "0",
+            "box-shadow": "none",
             "padding": "12px 8px",
             "display": "flex",
             "flex-direction": "column",
@@ -6002,7 +6112,7 @@
           "selector": ".right-sidebar",
           "tag": "div",
           "styles": {
-            "position": "fixed",
+            "position": "absolute",
             "right": "0",
             "top": "50%",
             "transform": "translateY(-50%)",
@@ -6012,7 +6122,8 @@
             "gap": "12px",
             "width": "52px",
             "transition": "width 0.2s ease",
-            "overflow": "visible"
+            "overflow": "visible",
+            "height": "auto"
           },
           "children": [
             ".right-sidebar__dela-logo",
@@ -6047,7 +6158,8 @@
             "height": "24px",
             "display": "flex",
             "align-items": "center",
-            "justify-content": "center"
+            "justify-content": "center",
+            "color": "#15171A"
           },
           "parent": ".right-sidebar__item-tooltip"
         },
@@ -6113,11 +6225,11 @@
           "selector": ".right-sidebar__section",
           "tag": "span",
           "styles": {
-            "background-color": "#1A1C1F",
-            "border": "1px solid #2A2D32",
+            "background-color": "transparent",
+            "border": "none",
             "border-right": "none",
-            "border-radius": "12px 0 0 12px",
-            "box-shadow": "0 20px 25px -5px rgb(15 23 42 / 0.1), 0 8px 10px -6px rgb(15 23 42 / 0.1)",
+            "border-radius": "0",
+            "box-shadow": "none",
             "padding": "12px 8px",
             "display": "flex",
             "flex-direction": "column",
@@ -6138,7 +6250,7 @@
       "_buildContract": {
         "criticalSelectors": {
           ".right-sidebar": {
-            "position": "fixed",
+            "position": "absolute",
             "right": "0",
             "top": "50%",
             "transform": "translateY(-50%)",
@@ -6148,7 +6260,8 @@
             "gap": "12px",
             "width": "52px",
             "transition": "width 0.2s ease",
-            "overflow": "visible"
+            "overflow": "visible",
+            "height": "auto"
           },
           ".right-sidebar__dela-logo": {
             "width": "36px",
@@ -6161,7 +6274,8 @@
             "height": "24px",
             "display": "flex",
             "align-items": "center",
-            "justify-content": "center"
+            "justify-content": "center",
+            "color": "#FFFFFF"
           },
           ".right-sidebar__item": {
             "display": "flex",
@@ -6193,11 +6307,11 @@
             "text-align": "right"
           },
           ".right-sidebar__section": {
-            "background-color": "#FCFDFF",
-            "border": "1px solid #BFC6D4",
+            "background-color": "transparent",
+            "border": "none",
             "border-right": "none",
-            "border-radius": "12px 0 0 12px",
-            "box-shadow": "0 20px 25px -5px rgb(15 23 42 / 0.1), 0 8px 10px -6px rgb(15 23 42 / 0.1)",
+            "border-radius": "0",
+            "box-shadow": "none",
             "padding": "12px 8px",
             "display": "flex",
             "flex-direction": "column",
@@ -6220,7 +6334,7 @@
           "selector": ".right-sidebar",
           "tag": "div",
           "styles": {
-            "position": "fixed",
+            "position": "absolute",
             "right": "0",
             "top": "50%",
             "transform": "translateY(-50%)",
@@ -6230,7 +6344,8 @@
             "gap": "12px",
             "width": "52px",
             "transition": "width 0.2s ease",
-            "overflow": "visible"
+            "overflow": "visible",
+            "height": "auto"
           },
           "children": [
             ".right-sidebar__dela-logo",
@@ -6265,7 +6380,8 @@
             "height": "24px",
             "display": "flex",
             "align-items": "center",
-            "justify-content": "center"
+            "justify-content": "center",
+            "color": "#FFFFFF"
           },
           "parent": ".right-sidebar__item-tooltip"
         },
@@ -6331,11 +6447,11 @@
           "selector": ".right-sidebar__section",
           "tag": "span",
           "styles": {
-            "background-color": "#FCFDFF",
-            "border": "1px solid #BFC6D4",
+            "background-color": "transparent",
+            "border": "none",
             "border-right": "none",
-            "border-radius": "12px 0 0 12px",
-            "box-shadow": "0 20px 25px -5px rgb(15 23 42 / 0.1), 0 8px 10px -6px rgb(15 23 42 / 0.1)",
+            "border-radius": "0",
+            "box-shadow": "none",
             "padding": "12px 8px",
             "display": "flex",
             "flex-direction": "column",
@@ -6356,7 +6472,7 @@
       "_buildContract": {
         "criticalSelectors": {
           ".right-sidebar": {
-            "position": "fixed",
+            "position": "absolute",
             "right": "0",
             "top": "50%",
             "transform": "translateY(-50%)",
@@ -6366,7 +6482,8 @@
             "gap": "12px",
             "width": "52px",
             "transition": "width 0.2s ease",
-            "overflow": "visible"
+            "overflow": "visible",
+            "height": "auto"
           },
           ".right-sidebar__dela-logo": {
             "width": "36px",
@@ -6379,7 +6496,8 @@
             "height": "24px",
             "display": "flex",
             "align-items": "center",
-            "justify-content": "center"
+            "justify-content": "center",
+            "color": "#15171A"
           },
           ".right-sidebar__item": {
             "display": "flex",
@@ -6411,11 +6529,11 @@
             "text-align": "right"
           },
           ".right-sidebar__section": {
-            "background-color": "#1A1C1F",
-            "border": "1px solid #2A2D32",
+            "background-color": "transparent",
+            "border": "none",
             "border-right": "none",
-            "border-radius": "12px 0 0 12px",
-            "box-shadow": "0 20px 25px -5px rgb(15 23 42 / 0.1), 0 8px 10px -6px rgb(15 23 42 / 0.1)",
+            "border-radius": "0",
+            "box-shadow": "none",
             "padding": "12px 8px",
             "display": "flex",
             "flex-direction": "column",
@@ -6438,7 +6556,7 @@
           "selector": ".right-sidebar",
           "tag": "div",
           "styles": {
-            "position": "fixed",
+            "position": "absolute",
             "right": "0",
             "top": "50%",
             "transform": "translateY(-50%)",
@@ -6448,7 +6566,8 @@
             "gap": "12px",
             "width": "52px",
             "transition": "width 0.2s ease",
-            "overflow": "visible"
+            "overflow": "visible",
+            "height": "auto"
           },
           "children": [
             ".right-sidebar__dela-logo",
@@ -6483,7 +6602,8 @@
             "height": "24px",
             "display": "flex",
             "align-items": "center",
-            "justify-content": "center"
+            "justify-content": "center",
+            "color": "#15171A"
           },
           "parent": ".right-sidebar__item-tooltip"
         },
@@ -6549,11 +6669,11 @@
           "selector": ".right-sidebar__section",
           "tag": "span",
           "styles": {
-            "background-color": "#1A1C1F",
-            "border": "1px solid #2A2D32",
+            "background-color": "transparent",
+            "border": "none",
             "border-right": "none",
-            "border-radius": "12px 0 0 12px",
-            "box-shadow": "0 20px 25px -5px rgb(15 23 42 / 0.1), 0 8px 10px -6px rgb(15 23 42 / 0.1)",
+            "border-radius": "0",
+            "box-shadow": "none",
             "padding": "12px 8px",
             "display": "flex",
             "flex-direction": "column",
@@ -6574,7 +6694,7 @@
       "_buildContract": {
         "criticalSelectors": {
           ".right-sidebar": {
-            "position": "fixed",
+            "position": "absolute",
             "right": "0",
             "top": "50%",
             "transform": "translateY(-50%)",
@@ -6584,7 +6704,8 @@
             "gap": "12px",
             "width": "52px",
             "transition": "width 0.2s ease",
-            "overflow": "visible"
+            "overflow": "visible",
+            "height": "auto"
           },
           ".right-sidebar__dela-logo": {
             "width": "36px",
@@ -6597,7 +6718,8 @@
             "height": "24px",
             "display": "flex",
             "align-items": "center",
-            "justify-content": "center"
+            "justify-content": "center",
+            "color": "#FFFFFF"
           },
           ".right-sidebar__item": {
             "display": "flex",
@@ -6629,11 +6751,11 @@
             "text-align": "right"
           },
           ".right-sidebar__section": {
-            "background-color": "#FCFDFF",
-            "border": "1px solid #BFC6D4",
+            "background-color": "transparent",
+            "border": "none",
             "border-right": "none",
-            "border-radius": "12px 0 0 12px",
-            "box-shadow": "0 20px 25px -5px rgb(15 23 42 / 0.1), 0 8px 10px -6px rgb(15 23 42 / 0.1)",
+            "border-radius": "0",
+            "box-shadow": "none",
             "padding": "12px 8px",
             "display": "flex",
             "flex-direction": "column",
@@ -6656,7 +6778,7 @@
           "selector": ".right-sidebar",
           "tag": "div",
           "styles": {
-            "position": "fixed",
+            "position": "absolute",
             "right": "0",
             "top": "50%",
             "transform": "translateY(-50%)",
@@ -6666,7 +6788,8 @@
             "gap": "12px",
             "width": "52px",
             "transition": "width 0.2s ease",
-            "overflow": "visible"
+            "overflow": "visible",
+            "height": "auto"
           },
           "children": [
             ".right-sidebar__dela-logo",
@@ -6701,7 +6824,8 @@
             "height": "24px",
             "display": "flex",
             "align-items": "center",
-            "justify-content": "center"
+            "justify-content": "center",
+            "color": "#FFFFFF"
           },
           "parent": ".right-sidebar__item-tooltip"
         },
@@ -6767,11 +6891,11 @@
           "selector": ".right-sidebar__section",
           "tag": "span",
           "styles": {
-            "background-color": "#FCFDFF",
-            "border": "1px solid #BFC6D4",
+            "background-color": "transparent",
+            "border": "none",
             "border-right": "none",
-            "border-radius": "12px 0 0 12px",
-            "box-shadow": "0 20px 25px -5px rgb(15 23 42 / 0.1), 0 8px 10px -6px rgb(15 23 42 / 0.1)",
+            "border-radius": "0",
+            "box-shadow": "none",
             "padding": "12px 8px",
             "display": "flex",
             "flex-direction": "column",
@@ -6792,7 +6916,7 @@
       "_buildContract": {
         "criticalSelectors": {
           ".right-sidebar": {
-            "position": "fixed",
+            "position": "absolute",
             "right": "0",
             "top": "50%",
             "transform": "translateY(-50%)",
@@ -6802,7 +6926,8 @@
             "gap": "12px",
             "width": "52px",
             "transition": "width 0.2s ease",
-            "overflow": "visible"
+            "overflow": "visible",
+            "height": "auto"
           },
           ".right-sidebar__dela-logo": {
             "width": "36px",
@@ -6815,7 +6940,8 @@
             "height": "24px",
             "display": "flex",
             "align-items": "center",
-            "justify-content": "center"
+            "justify-content": "center",
+            "color": "#15171A"
           },
           ".right-sidebar__item": {
             "display": "flex",
@@ -6847,11 +6973,11 @@
             "text-align": "right"
           },
           ".right-sidebar__section": {
-            "background-color": "#1A1C1F",
-            "border": "1px solid #2A2D32",
+            "background-color": "transparent",
+            "border": "none",
             "border-right": "none",
-            "border-radius": "12px 0 0 12px",
-            "box-shadow": "0 20px 25px -5px rgb(15 23 42 / 0.1), 0 8px 10px -6px rgb(15 23 42 / 0.1)",
+            "border-radius": "0",
+            "box-shadow": "none",
             "padding": "12px 8px",
             "display": "flex",
             "flex-direction": "column",
@@ -6874,7 +7000,7 @@
           "selector": ".right-sidebar",
           "tag": "div",
           "styles": {
-            "position": "fixed",
+            "position": "absolute",
             "right": "0",
             "top": "50%",
             "transform": "translateY(-50%)",
@@ -6884,7 +7010,8 @@
             "gap": "12px",
             "width": "52px",
             "transition": "width 0.2s ease",
-            "overflow": "visible"
+            "overflow": "visible",
+            "height": "auto"
           },
           "children": [
             ".right-sidebar__dela-logo",
@@ -6919,7 +7046,8 @@
             "height": "24px",
             "display": "flex",
             "align-items": "center",
-            "justify-content": "center"
+            "justify-content": "center",
+            "color": "#15171A"
           },
           "parent": ".right-sidebar__item-tooltip"
         },
@@ -6985,11 +7113,11 @@
           "selector": ".right-sidebar__section",
           "tag": "span",
           "styles": {
-            "background-color": "#1A1C1F",
-            "border": "1px solid #2A2D32",
+            "background-color": "transparent",
+            "border": "none",
             "border-right": "none",
-            "border-radius": "12px 0 0 12px",
-            "box-shadow": "0 20px 25px -5px rgb(15 23 42 / 0.1), 0 8px 10px -6px rgb(15 23 42 / 0.1)",
+            "border-radius": "0",
+            "box-shadow": "none",
             "padding": "12px 8px",
             "display": "flex",
             "flex-direction": "column",

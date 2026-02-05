@@ -74,7 +74,9 @@
           },
           ".dropdown-wrapper": {
             "display": "flex",
-            "flex-direction": "column"
+            "flex-direction": "row",
+            "align-items": "center",
+            "gap": "4px"
           },
           ".dropdown": {
             "position": "relative",
@@ -82,7 +84,8 @@
           },
           ".dropdown__chevron": {
             "color": "#6B7280",
-            "transition": "transform 150ms ease"
+            "transition": "transform 150ms ease",
+            "transform": "rotate(180deg)"
           },
           ".dropdown__item": {
             "display": "flex",
@@ -98,7 +101,7 @@
             "font-family": "'Figtree', sans-serif"
           },
           ".dropdown__menu": {
-            "display": "none",
+            "display": "block",
             "position": "absolute",
             "top": "100%",
             "left": "0",
@@ -119,10 +122,10 @@
             "justify-content": "space-between",
             "gap": "8px",
             "min-width": "180px",
-            "height": "40px",
-            "padding": "0 16px 0 16px",
+            "height": "20px",
+            "padding": "0 8px 0 8px",
             "font-family": "'Figtree', sans-serif",
-            "font-size": "1rem",
+            "font-size": "0.75rem",
             "color": "#373F4E",
             "background-color": "#FFFFFF",
             "border": "1px solid #BFC6D4",
@@ -165,7 +168,9 @@
           "tag": "div",
           "styles": {
             "display": "flex",
-            "flex-direction": "column"
+            "flex-direction": "row",
+            "align-items": "center",
+            "gap": "4px"
           },
           "children": [
             ".dropdown"
@@ -192,7 +197,8 @@
           "tag": "span",
           "styles": {
             "color": "#6B7280",
-            "transition": "transform 150ms ease"
+            "transition": "transform 150ms ease",
+            "transform": "rotate(180deg)"
           },
           "parent": ".dropdown"
         },
@@ -227,7 +233,7 @@
           "selector": ".dropdown__menu",
           "tag": "span",
           "styles": {
-            "display": "none",
+            "display": "block",
             "position": "absolute",
             "top": "100%",
             "left": "0",
@@ -253,10 +259,10 @@
             "justify-content": "space-between",
             "gap": "8px",
             "min-width": "180px",
-            "height": "40px",
-            "padding": "0 16px 0 16px",
+            "height": "20px",
+            "padding": "0 8px 0 8px",
             "font-family": "'Figtree', sans-serif",
-            "font-size": "1rem",
+            "font-size": "0.75rem",
             "color": "#373F4E",
             "background-color": "#FFFFFF",
             "border": "1px solid #BFC6D4",
@@ -309,7 +315,9 @@
           },
           ".dropdown-wrapper": {
             "display": "flex",
-            "flex-direction": "column"
+            "flex-direction": "row",
+            "align-items": "center",
+            "gap": "4px"
           },
           ".dropdown": {
             "position": "relative",
@@ -317,7 +325,8 @@
           },
           ".dropdown__chevron": {
             "color": "#BBBBC6",
-            "transition": "transform 150ms ease"
+            "transition": "transform 150ms ease",
+            "transform": "rotate(180deg)"
           },
           ".dropdown__item": {
             "display": "flex",
@@ -333,7 +342,7 @@
             "font-family": "'Figtree', sans-serif"
           },
           ".dropdown__menu": {
-            "display": "none",
+            "display": "block",
             "position": "absolute",
             "top": "100%",
             "left": "0",
@@ -354,10 +363,10 @@
             "justify-content": "space-between",
             "gap": "8px",
             "min-width": "180px",
-            "height": "40px",
-            "padding": "0 16px 0 16px",
+            "height": "20px",
+            "padding": "0 8px 0 8px",
             "font-family": "'Figtree', sans-serif",
-            "font-size": "1rem",
+            "font-size": "0.75rem",
             "color": "#E9ECEF",
             "background-color": "#1F252E",
             "border": "1px solid #5F6871",
@@ -400,7 +409,9 @@
           "tag": "div",
           "styles": {
             "display": "flex",
-            "flex-direction": "column"
+            "flex-direction": "row",
+            "align-items": "center",
+            "gap": "4px"
           },
           "children": [
             ".dropdown"
@@ -427,7 +438,8 @@
           "tag": "span",
           "styles": {
             "color": "#BBBBC6",
-            "transition": "transform 150ms ease"
+            "transition": "transform 150ms ease",
+            "transform": "rotate(180deg)"
           },
           "parent": ".dropdown"
         },
@@ -462,7 +474,7 @@
           "selector": ".dropdown__menu",
           "tag": "span",
           "styles": {
-            "display": "none",
+            "display": "block",
             "position": "absolute",
             "top": "100%",
             "left": "0",
@@ -488,10 +500,10 @@
             "justify-content": "space-between",
             "gap": "8px",
             "min-width": "180px",
-            "height": "40px",
-            "padding": "0 16px 0 16px",
+            "height": "20px",
+            "padding": "0 8px 0 8px",
             "font-family": "'Figtree', sans-serif",
-            "font-size": "1rem",
+            "font-size": "0.75rem",
             "color": "#E9ECEF",
             "background-color": "#1F252E",
             "border": "1px solid #5F6871",
@@ -544,7 +556,9 @@
           },
           ".dropdown-wrapper": {
             "display": "flex",
-            "flex-direction": "column"
+            "flex-direction": "row",
+            "align-items": "center",
+            "gap": "4px"
           },
           ".dropdown": {
             "position": "relative",
@@ -552,7 +566,8 @@
           },
           ".dropdown__chevron": {
             "color": "#6B7280",
-            "transition": "transform 150ms ease"
+            "transition": "transform 150ms ease",
+            "transform": "rotate(180deg)"
           },
           ".dropdown__item": {
             "display": "flex",
@@ -568,7 +583,7 @@
             "font-family": "'Figtree', sans-serif"
           },
           ".dropdown__menu": {
-            "display": "none",
+            "display": "block",
             "position": "absolute",
             "top": "100%",
             "left": "0",
@@ -589,10 +604,10 @@
             "justify-content": "space-between",
             "gap": "8px",
             "min-width": "180px",
-            "height": "40px",
-            "padding": "0 16px 0 16px",
+            "height": "20px",
+            "padding": "0 8px 0 8px",
             "font-family": "'Figtree', sans-serif",
-            "font-size": "1rem",
+            "font-size": "0.75rem",
             "color": "#373F4E",
             "background-color": "#FFFFFF",
             "border": "1px solid #BFC6D4",
@@ -635,7 +650,9 @@
           "tag": "div",
           "styles": {
             "display": "flex",
-            "flex-direction": "column"
+            "flex-direction": "row",
+            "align-items": "center",
+            "gap": "4px"
           },
           "children": [
             ".dropdown"
@@ -662,7 +679,8 @@
           "tag": "span",
           "styles": {
             "color": "#6B7280",
-            "transition": "transform 150ms ease"
+            "transition": "transform 150ms ease",
+            "transform": "rotate(180deg)"
           },
           "parent": ".dropdown"
         },
@@ -697,7 +715,7 @@
           "selector": ".dropdown__menu",
           "tag": "span",
           "styles": {
-            "display": "none",
+            "display": "block",
             "position": "absolute",
             "top": "100%",
             "left": "0",
@@ -723,10 +741,10 @@
             "justify-content": "space-between",
             "gap": "8px",
             "min-width": "180px",
-            "height": "40px",
-            "padding": "0 16px 0 16px",
+            "height": "20px",
+            "padding": "0 8px 0 8px",
             "font-family": "'Figtree', sans-serif",
-            "font-size": "1rem",
+            "font-size": "0.75rem",
             "color": "#373F4E",
             "background-color": "#FFFFFF",
             "border": "1px solid #BFC6D4",
@@ -779,7 +797,9 @@
           },
           ".dropdown-wrapper": {
             "display": "flex",
-            "flex-direction": "column"
+            "flex-direction": "row",
+            "align-items": "center",
+            "gap": "4px"
           },
           ".dropdown": {
             "position": "relative",
@@ -787,7 +807,8 @@
           },
           ".dropdown__chevron": {
             "color": "#B5B5BC",
-            "transition": "transform 150ms ease"
+            "transition": "transform 150ms ease",
+            "transform": "rotate(180deg)"
           },
           ".dropdown__item": {
             "display": "flex",
@@ -803,7 +824,7 @@
             "font-family": "'Figtree', sans-serif"
           },
           ".dropdown__menu": {
-            "display": "none",
+            "display": "block",
             "position": "absolute",
             "top": "100%",
             "left": "0",
@@ -824,10 +845,10 @@
             "justify-content": "space-between",
             "gap": "8px",
             "min-width": "180px",
-            "height": "40px",
-            "padding": "0 16px 0 16px",
+            "height": "20px",
+            "padding": "0 8px 0 8px",
             "font-family": "'Figtree', sans-serif",
-            "font-size": "1rem",
+            "font-size": "0.75rem",
             "color": "#FAFAFA",
             "background-color": "#1F2124",
             "border": "1px solid #2A2D32",
@@ -870,7 +891,9 @@
           "tag": "div",
           "styles": {
             "display": "flex",
-            "flex-direction": "column"
+            "flex-direction": "row",
+            "align-items": "center",
+            "gap": "4px"
           },
           "children": [
             ".dropdown"
@@ -897,7 +920,8 @@
           "tag": "span",
           "styles": {
             "color": "#B5B5BC",
-            "transition": "transform 150ms ease"
+            "transition": "transform 150ms ease",
+            "transform": "rotate(180deg)"
           },
           "parent": ".dropdown"
         },
@@ -932,7 +956,7 @@
           "selector": ".dropdown__menu",
           "tag": "span",
           "styles": {
-            "display": "none",
+            "display": "block",
             "position": "absolute",
             "top": "100%",
             "left": "0",
@@ -958,10 +982,10 @@
             "justify-content": "space-between",
             "gap": "8px",
             "min-width": "180px",
-            "height": "40px",
-            "padding": "0 16px 0 16px",
+            "height": "20px",
+            "padding": "0 8px 0 8px",
             "font-family": "'Figtree', sans-serif",
-            "font-size": "1rem",
+            "font-size": "0.75rem",
             "color": "#FAFAFA",
             "background-color": "#1F2124",
             "border": "1px solid #2A2D32",
@@ -1014,7 +1038,9 @@
           },
           ".dropdown-wrapper": {
             "display": "flex",
-            "flex-direction": "column"
+            "flex-direction": "row",
+            "align-items": "center",
+            "gap": "4px"
           },
           ".dropdown": {
             "position": "relative",
@@ -1022,7 +1048,8 @@
           },
           ".dropdown__chevron": {
             "color": "#6B7280",
-            "transition": "transform 150ms ease"
+            "transition": "transform 150ms ease",
+            "transform": "rotate(180deg)"
           },
           ".dropdown__item": {
             "display": "flex",
@@ -1038,7 +1065,7 @@
             "font-family": "'Figtree', sans-serif"
           },
           ".dropdown__menu": {
-            "display": "none",
+            "display": "block",
             "position": "absolute",
             "top": "100%",
             "left": "0",
@@ -1059,10 +1086,10 @@
             "justify-content": "space-between",
             "gap": "8px",
             "min-width": "180px",
-            "height": "40px",
-            "padding": "0 16px 0 16px",
+            "height": "20px",
+            "padding": "0 8px 0 8px",
             "font-family": "'Figtree', sans-serif",
-            "font-size": "1rem",
+            "font-size": "0.75rem",
             "color": "#373F4E",
             "background-color": "#FFFFFF",
             "border": "1px solid #BFC6D4",
@@ -1105,7 +1132,9 @@
           "tag": "div",
           "styles": {
             "display": "flex",
-            "flex-direction": "column"
+            "flex-direction": "row",
+            "align-items": "center",
+            "gap": "4px"
           },
           "children": [
             ".dropdown"
@@ -1132,7 +1161,8 @@
           "tag": "span",
           "styles": {
             "color": "#6B7280",
-            "transition": "transform 150ms ease"
+            "transition": "transform 150ms ease",
+            "transform": "rotate(180deg)"
           },
           "parent": ".dropdown"
         },
@@ -1167,7 +1197,7 @@
           "selector": ".dropdown__menu",
           "tag": "span",
           "styles": {
-            "display": "none",
+            "display": "block",
             "position": "absolute",
             "top": "100%",
             "left": "0",
@@ -1193,10 +1223,10 @@
             "justify-content": "space-between",
             "gap": "8px",
             "min-width": "180px",
-            "height": "40px",
-            "padding": "0 16px 0 16px",
+            "height": "20px",
+            "padding": "0 8px 0 8px",
             "font-family": "'Figtree', sans-serif",
-            "font-size": "1rem",
+            "font-size": "0.75rem",
             "color": "#373F4E",
             "background-color": "#FFFFFF",
             "border": "1px solid #BFC6D4",
@@ -1249,7 +1279,9 @@
           },
           ".dropdown-wrapper": {
             "display": "flex",
-            "flex-direction": "column"
+            "flex-direction": "row",
+            "align-items": "center",
+            "gap": "4px"
           },
           ".dropdown": {
             "position": "relative",
@@ -1257,7 +1289,8 @@
           },
           ".dropdown__chevron": {
             "color": "#B5B5BC",
-            "transition": "transform 150ms ease"
+            "transition": "transform 150ms ease",
+            "transform": "rotate(180deg)"
           },
           ".dropdown__item": {
             "display": "flex",
@@ -1273,7 +1306,7 @@
             "font-family": "'Figtree', sans-serif"
           },
           ".dropdown__menu": {
-            "display": "none",
+            "display": "block",
             "position": "absolute",
             "top": "100%",
             "left": "0",
@@ -1294,10 +1327,10 @@
             "justify-content": "space-between",
             "gap": "8px",
             "min-width": "180px",
-            "height": "40px",
-            "padding": "0 16px 0 16px",
+            "height": "20px",
+            "padding": "0 8px 0 8px",
             "font-family": "'Figtree', sans-serif",
-            "font-size": "1rem",
+            "font-size": "0.75rem",
             "color": "#FAFAFA",
             "background-color": "#1F2124",
             "border": "1px solid #2A2D32",
@@ -1340,7 +1373,9 @@
           "tag": "div",
           "styles": {
             "display": "flex",
-            "flex-direction": "column"
+            "flex-direction": "row",
+            "align-items": "center",
+            "gap": "4px"
           },
           "children": [
             ".dropdown"
@@ -1367,7 +1402,8 @@
           "tag": "span",
           "styles": {
             "color": "#B5B5BC",
-            "transition": "transform 150ms ease"
+            "transition": "transform 150ms ease",
+            "transform": "rotate(180deg)"
           },
           "parent": ".dropdown"
         },
@@ -1402,7 +1438,7 @@
           "selector": ".dropdown__menu",
           "tag": "span",
           "styles": {
-            "display": "none",
+            "display": "block",
             "position": "absolute",
             "top": "100%",
             "left": "0",
@@ -1428,10 +1464,10 @@
             "justify-content": "space-between",
             "gap": "8px",
             "min-width": "180px",
-            "height": "40px",
-            "padding": "0 16px 0 16px",
+            "height": "20px",
+            "padding": "0 8px 0 8px",
             "font-family": "'Figtree', sans-serif",
-            "font-size": "1rem",
+            "font-size": "0.75rem",
             "color": "#FAFAFA",
             "background-color": "#1F2124",
             "border": "1px solid #2A2D32",
@@ -1484,7 +1520,9 @@
           },
           ".dropdown-wrapper": {
             "display": "flex",
-            "flex-direction": "column"
+            "flex-direction": "row",
+            "align-items": "center",
+            "gap": "4px"
           },
           ".dropdown": {
             "position": "relative",
@@ -1492,7 +1530,8 @@
           },
           ".dropdown__chevron": {
             "color": "#6B7280",
-            "transition": "transform 150ms ease"
+            "transition": "transform 150ms ease",
+            "transform": "rotate(180deg)"
           },
           ".dropdown__item": {
             "display": "flex",
@@ -1508,7 +1547,7 @@
             "font-family": "'Figtree', sans-serif"
           },
           ".dropdown__menu": {
-            "display": "none",
+            "display": "block",
             "position": "absolute",
             "top": "100%",
             "left": "0",
@@ -1529,10 +1568,10 @@
             "justify-content": "space-between",
             "gap": "8px",
             "min-width": "180px",
-            "height": "40px",
-            "padding": "0 16px 0 16px",
+            "height": "20px",
+            "padding": "0 8px 0 8px",
             "font-family": "'Figtree', sans-serif",
-            "font-size": "1rem",
+            "font-size": "0.75rem",
             "color": "#373F4E",
             "background-color": "#FFFFFF",
             "border": "1px solid #BFC6D4",
@@ -1575,7 +1614,9 @@
           "tag": "div",
           "styles": {
             "display": "flex",
-            "flex-direction": "column"
+            "flex-direction": "row",
+            "align-items": "center",
+            "gap": "4px"
           },
           "children": [
             ".dropdown"
@@ -1602,7 +1643,8 @@
           "tag": "span",
           "styles": {
             "color": "#6B7280",
-            "transition": "transform 150ms ease"
+            "transition": "transform 150ms ease",
+            "transform": "rotate(180deg)"
           },
           "parent": ".dropdown"
         },
@@ -1637,7 +1679,7 @@
           "selector": ".dropdown__menu",
           "tag": "span",
           "styles": {
-            "display": "none",
+            "display": "block",
             "position": "absolute",
             "top": "100%",
             "left": "0",
@@ -1663,10 +1705,10 @@
             "justify-content": "space-between",
             "gap": "8px",
             "min-width": "180px",
-            "height": "40px",
-            "padding": "0 16px 0 16px",
+            "height": "20px",
+            "padding": "0 8px 0 8px",
             "font-family": "'Figtree', sans-serif",
-            "font-size": "1rem",
+            "font-size": "0.75rem",
             "color": "#373F4E",
             "background-color": "#FFFFFF",
             "border": "1px solid #BFC6D4",
@@ -1719,7 +1761,9 @@
           },
           ".dropdown-wrapper": {
             "display": "flex",
-            "flex-direction": "column"
+            "flex-direction": "row",
+            "align-items": "center",
+            "gap": "4px"
           },
           ".dropdown": {
             "position": "relative",
@@ -1727,7 +1771,8 @@
           },
           ".dropdown__chevron": {
             "color": "#B5B5BC",
-            "transition": "transform 150ms ease"
+            "transition": "transform 150ms ease",
+            "transform": "rotate(180deg)"
           },
           ".dropdown__item": {
             "display": "flex",
@@ -1743,7 +1788,7 @@
             "font-family": "'Figtree', sans-serif"
           },
           ".dropdown__menu": {
-            "display": "none",
+            "display": "block",
             "position": "absolute",
             "top": "100%",
             "left": "0",
@@ -1764,10 +1809,10 @@
             "justify-content": "space-between",
             "gap": "8px",
             "min-width": "180px",
-            "height": "40px",
-            "padding": "0 16px 0 16px",
+            "height": "20px",
+            "padding": "0 8px 0 8px",
             "font-family": "'Figtree', sans-serif",
-            "font-size": "1rem",
+            "font-size": "0.75rem",
             "color": "#FAFAFA",
             "background-color": "#1F2124",
             "border": "1px solid #2A2D32",
@@ -1810,7 +1855,9 @@
           "tag": "div",
           "styles": {
             "display": "flex",
-            "flex-direction": "column"
+            "flex-direction": "row",
+            "align-items": "center",
+            "gap": "4px"
           },
           "children": [
             ".dropdown"
@@ -1837,7 +1884,8 @@
           "tag": "span",
           "styles": {
             "color": "#B5B5BC",
-            "transition": "transform 150ms ease"
+            "transition": "transform 150ms ease",
+            "transform": "rotate(180deg)"
           },
           "parent": ".dropdown"
         },
@@ -1872,7 +1920,7 @@
           "selector": ".dropdown__menu",
           "tag": "span",
           "styles": {
-            "display": "none",
+            "display": "block",
             "position": "absolute",
             "top": "100%",
             "left": "0",
@@ -1898,10 +1946,10 @@
             "justify-content": "space-between",
             "gap": "8px",
             "min-width": "180px",
-            "height": "40px",
-            "padding": "0 16px 0 16px",
+            "height": "20px",
+            "padding": "0 8px 0 8px",
             "font-family": "'Figtree', sans-serif",
-            "font-size": "1rem",
+            "font-size": "0.75rem",
             "color": "#FAFAFA",
             "background-color": "#1F2124",
             "border": "1px solid #2A2D32",

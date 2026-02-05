@@ -955,6 +955,27 @@ function getModifierSelectorsForDimension(componentName, descriptor, value, root
  */
 const KEBAB_KEY = /^[a-z][a-z0-9-]*$/;
 
+/**
+ * Expected state keys per component/selector for interactive elements.
+ * When CSS does not define a state, the generator fills it from token-based stubs so the spec always lists that state.
+ * Use 'root' to mean the component root selector (resolved at runtime).
+ */
+const EXPECTED_STATES = {
+  Button: { root: ['hover', 'focus', 'active', 'disabled'] },
+  Link: { root: ['hover', 'focus', 'active'] },
+  Input: { '.input': ['focus', 'disabled'] },
+  Checkbox: { root: ['hover', 'focus', 'disabled'] },
+  Toggle: { root: ['hover', 'focus', 'disabled'] },
+  RadioButton: { root: ['hover', 'focus', 'disabled'] },
+  ListMenu: { '.list-menu__item': ['hover'] },
+  LeftSidebar: { '.left-sidebar__item': ['hover'] },
+  RightSidebar: { '.right-sidebar__item': ['hover'] },
+  Alert: { '.alert__close': ['hover', 'focus'] },
+  Dialog: { '.dialog__close': ['hover', 'focus'] },
+  Dropdown: { '.dropdown__trigger': ['hover', 'focus'] },
+  Accordion: { '.accordion__trigger': ['hover', 'focus'] },
+};
+
 function toKebabStyles(styles) {
   if (!styles || typeof styles !== 'object') return styles;
   const out = {};
@@ -976,11 +997,25 @@ export function generateSpec(componentName, dimensions, existingSpec = null, dis
   const getThemeToken = tokens.getThemeToken?.bind(tokens);
   const ctx = { getColor, getToken, getThemeToken, theme, mode, size, componentName };
 
+  const cardBg = getColor(theme, mode, 'palette.cardBackground');
+  const titleText = getColor(theme, mode, 'palette.titleText');
+  const borderColor = getColor(theme, mode, 'palette.border');
+  const hoverBg = getColor(theme, mode, 'palette.hover');
+  const resolvedStatesStub = {
+    default: { 'background-color': cardBg, color: titleText, border: borderColor != null ? `1px solid ${borderColor}` : undefined },
+    hover: { 'background-color': hoverBg ?? cardBg, color: titleText, border: borderColor != null ? `1px solid ${borderColor}` : undefined },
+    active: { 'background-color': hoverBg ?? cardBg, color: titleText, border: borderColor != null ? `1px solid ${borderColor}` : undefined },
+    focus: { 'background-color': cardBg, color: titleText, border: borderColor != null ? `1px solid ${borderColor}` : undefined },
+    disabled: { 'background-color': cardBg, color: titleText, border: borderColor != null ? `1px solid ${borderColor}` : undefined },
+    item: { 'background-color': getColor(theme, mode, 'primary'), color: '#FFFFFF', border: 'none' },
+  };
+
   const discovery = discovered ?? discoverComponentStructure(componentName);
   const modifierRootStyles = discovery.modifierRootStyles || {};
   const modifierElementStyles = discovery.modifierElementStyles || {};
   const stateStyles = discovery.stateStyles || {};
   const descendantStateStyles = discovery.descendantStateStyles || {};
+  const descendantBaseStyles = discovery.descendantBaseStyles || {};
   const rootKey = '.' + getComponentCssPrefix(componentName);
 
   const allRootModifiers = [];
@@ -1009,6 +1044,9 @@ export function generateSpec(componentName, dimensions, existingSpec = null, dis
     const elements = elementList.map((el) => {
       const baseEl = bySelector.get(el.selector);
       let merged = { ...(baseEl?.styles || el.styles || {}) };
+      if (Object.keys(merged).length === 0 && descendantBaseStyles[el.selector]) {
+        Object.assign(merged, descendantBaseStyles[el.selector]);
+      }
       for (const modifierSelector of allRootModifiers) {
         if (el.selector === rootKey && modifierRootStyles[modifierSelector]) {
           Object.assign(merged, modifierRootStyles[modifierSelector]);
@@ -1041,12 +1079,22 @@ export function generateSpec(componentName, dimensions, existingSpec = null, dis
       if (descendantStateStyles[el.selector]) {
         elStates = { ...elStates, ...descendantStateStyles[el.selector] };
       }
+      const expectedKeys = EXPECTED_STATES[componentName]?.[el.selector === rootKey ? 'root' : el.selector];
       if (elStates && Object.keys(elStates).length > 0) {
         out.states = {};
         for (const [stateName, stateDecl] of Object.entries(elStates)) {
           out.states[stateName] = resolveStyles(stateDecl, ctx);
         }
       }
+      if (expectedKeys?.length) {
+        if (!out.states) out.states = {};
+        for (const stateKey of expectedKeys) {
+          if (!(stateKey in out.states) && resolvedStatesStub[stateKey]) {
+            out.states[stateKey] = resolveStyles(resolvedStatesStub[stateKey], ctx);
+          }
+        }
+      }
+      if (out.states && Object.keys(out.states).length === 0) delete out.states;
       criticalSelectors[el.selector] = { ...toKebabStyles(resolvedStyles) };
       return out;
     });

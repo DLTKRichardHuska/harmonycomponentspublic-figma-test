@@ -500,6 +500,23 @@ function parseSelectorState(selector, prefix) {
 }
 
 /**
+ * Parse compound selector that is parent + descendant with no modifier and no pseudo (e.g. ".alert .alert__icon").
+ * Used to attribute base styles to descendants that are only targeted via a descendant selector.
+ * @param {string} ruleSelector - single part (no comma)
+ * @param {string} prefix - e.g. "alert"
+ * @param {(sel: string) => boolean} selectorBelongsToComponent
+ * @returns {string | null} Descendant selector or null
+ */
+function parseDescendantBase(ruleSelector, prefix, selectorBelongsToComponent) {
+  const parts = ruleSelector.trim().split(/\s+/).filter(Boolean);
+  if (parts.length < 2) return null;
+  const segments = parts.map((p) => p.replace(/:[\w-]+(?:\([^)]*\))?/gi, '').trim());
+  if (segments.some((s) => s.includes('--'))) return null;
+  const descendant = segments[segments.length - 1];
+  return selectorBelongsToComponent(descendant) ? descendant : null;
+}
+
+/**
  * From a compound selector (e.g. ".alert--info .alert__icon"), extract modifier class and target element selector.
  * @param {string} ruleSelector - single part (no comma)
  * @param {string} prefix - e.g. "alert"
@@ -590,13 +607,20 @@ export function discoverComponentStructure(componentName, cssPath = 'src/styles/
   if (HARDCODED_STRUCTURE[componentName]) {
     const fromCss = discoverComponentStructureFromCss(componentName, cssPath);
     if (fromCss.elements.length <= 1) {
+      const hardcoded = HARDCODED_STRUCTURE[componentName];
+      const descendantBaseStyles = fromCss.descendantBaseStyles || {};
       const result = {
-        ...HARDCODED_STRUCTURE[componentName],
+        ...hardcoded,
         modifierRootStyles: fromCss.modifierRootStyles || {},
         modifierElementStyles: fromCss.modifierElementStyles || {},
         stateStyles: fromCss.stateStyles || {},
         descendantStateStyles: fromCss.descendantStateStyles || {},
+        descendantBaseStyles,
       };
+      result.elements = (hardcoded.elements || []).map((el) => {
+        const descBase = descendantBaseStyles[el.selector] || {};
+        return { ...el, styles: { ...(el.styles || {}), ...descBase } };
+      });
       if (options.astStructure) {
         const slug = componentNameToSlug(componentName);
         const { structure, selectorToParent } = buildStructureFromAst(options.astStructure, slug);
@@ -687,7 +711,8 @@ function discoverComponentStructureFromCss(componentName, cssPath) {
   const stateStyles = {};
   /** Descendant state: descendant selector -> stateKey (e.g. rootHover) -> styles. When root has pseudo, descendant gets these styles. */
   const descendantStateStyles = {};
-
+  /** Descendant base: descendant selector -> styles from rules like .parent .element (no modifier, no pseudo). */
+  const descendantBaseStyles = {};
   const rootKey = '.' + prefix;
 
   for (const { selector: ruleSelector, block } of rules) {
@@ -737,6 +762,13 @@ function discoverComponentStructureFromCss(componentName, cssPath) {
             if (!modifierElementStyles[modifier][element]) modifierElementStyles[modifier][element] = {};
             Object.assign(modifierElementStyles[modifier][element], decl);
           }
+          continue;
+        }
+        const descendant = parseDescendantBase(part, prefix, selectorBelongsToComponent);
+        if (descendant) {
+          if (!descendantBaseStyles[descendant]) descendantBaseStyles[descendant] = {};
+          Object.assign(descendantBaseStyles[descendant], decl);
+          continue;
         }
         continue;
       }
@@ -814,26 +846,37 @@ function discoverComponentStructureFromCss(componentName, cssPath) {
     const children = isInnermost
       ? [...elementSelectors]
       : [rootSelectors[rootSelectors.indexOf(rootSel) + 1]].filter(Boolean);
+    const baseStyles = bySelector.get(rootSel) || {};
+    const descBase = descendantBaseStyles[rootSel] || {};
     const el = {
       selector: rootSel,
       tag: rootSel === rootKey ? defaultRootTag : 'div',
-      styles: bySelector.get(rootSel) || {},
+      styles: { ...baseStyles, ...descBase },
     };
     if (children.length) el.children = children;
     if (rootSel !== rootKey) el.parent = rootSelectors[rootSelectors.indexOf(rootSel) - 1] || null;
     elements.push(el);
   }
   for (const sel of elementSelectors) {
+    const baseStyles = bySelector.get(sel) || {};
+    const descBase = descendantBaseStyles[sel] || {};
     elements.push({
       selector: sel,
       tag: 'span',
-      styles: bySelector.get(sel) || {},
+      styles: { ...baseStyles, ...descBase },
       parent: innermostRoot,
     });
   }
 
   if (elements.length <= 1 && HARDCODED_STRUCTURE[componentName]) {
-    return HARDCODED_STRUCTURE[componentName];
+    return {
+      ...HARDCODED_STRUCTURE[componentName],
+      modifierRootStyles,
+      modifierElementStyles,
+      stateStyles,
+      descendantStateStyles,
+      descendantBaseStyles,
+    };
   }
 
   return {
@@ -843,6 +886,7 @@ function discoverComponentStructureFromCss(componentName, cssPath) {
     modifierElementStyles,
     stateStyles,
     descendantStateStyles,
+    descendantBaseStyles,
   };
 }
 

@@ -39,7 +39,7 @@
             "overflow": "hidden"
           },
           ".accordion__content": {
-            "display": "none",
+            "display": "block",
             "padding": "0 16px 16px",
             "font-size": "0.875rem",
             "color": "#525969",
@@ -47,7 +47,8 @@
           },
           ".accordion__icon": {
             "color": "#6B7280",
-            "transition": "transform 150ms ease"
+            "transition": "transform 150ms ease",
+            "transform": "rotate(180deg)"
           },
           ".accordion__item": {
             "border-bottom": "1px solid #BFC6D4"
@@ -97,7 +98,7 @@
           "selector": ".accordion__content",
           "tag": "span",
           "styles": {
-            "display": "none",
+            "display": "block",
             "padding": "0 16px 16px",
             "font-size": "0.875rem",
             "color": "#525969",
@@ -110,7 +111,8 @@
           "tag": "span",
           "styles": {
             "color": "#6B7280",
-            "transition": "transform 150ms ease"
+            "transition": "transform 150ms ease",
+            "transform": "rotate(180deg)"
           },
           "parent": ".accordion__trigger"
         },
@@ -144,6 +146,11 @@
           "states": {
             "hover": {
               "background-color": "#E5E7EB"
+            },
+            "focus": {
+              "background-color": "#F7F8FA",
+              "color": "#373F4E",
+              "border": "1px solid #BFC6D4"
             }
           }
         }
@@ -163,7 +170,7 @@
             "overflow": "hidden"
           },
           ".accordion__content": {
-            "display": "none",
+            "display": "block",
             "padding": "0 16px 16px",
             "font-size": "0.875rem",
             "color": "#B6B6C4",
@@ -171,7 +178,8 @@
           },
           ".accordion__icon": {
             "color": "#BBBBC6",
-            "transition": "transform 150ms ease"
+            "transition": "transform 150ms ease",
+            "transform": "rotate(180deg)"
           },
           ".accordion__item": {
             "border-bottom": "1px solid #5F6871"
@@ -221,7 +229,7 @@
           "selector": ".accordion__content",
           "tag": "span",
           "styles": {
-            "display": "none",
+            "display": "block",
             "padding": "0 16px 16px",
             "font-size": "0.875rem",
             "color": "#B6B6C4",
@@ -234,7 +242,8 @@
           "tag": "span",
           "styles": {
             "color": "#BBBBC6",
-            "transition": "transform 150ms ease"
+            "transition": "transform 150ms ease",
+            "transform": "rotate(180deg)"
           },
           "parent": ".accordion__trigger"
         },
@@ -268,6 +277,11 @@
           "states": {
             "hover": {
               "background-color": "#3D4A5C"
+            },
+            "focus": {
+              "background-color": "#37424D",
+              "color": "#E9ECEF",
+              "border": "1px solid #5F6871"
             }
           }
         }
@@ -287,7 +301,7 @@
             "overflow": "hidden"
           },
           ".accordion__content": {
-            "display": "none",
+            "display": "block",
             "padding": "0 16px 16px",
             "font-size": "0.875rem",
             "color": "#525969",
@@ -295,7 +309,8 @@
           },
           ".accordion__icon": {
             "color": "#6B7280",
-            "transition": "transform 150ms ease"
+            "transition": "transform 150ms ease",
+            "transform": "rotate(180deg)"
           },
           ".accordion__item": {
             "border-bottom": "1px solid #BFC6D4"
@@ -345,7 +360,7 @@
           "selector": ".accordion__content",
           "tag": "span",
           "styles": {
-            "display": "none",
+            "display": "block",
             "padding": "0 16px 16px",
             "font-size": "0.875rem",
             "color": "#525969",
@@ -358,7 +373,8 @@
           "tag": "span",
           "styles": {
             "color": "#6B7280",
-            "transition": "transform 150ms ease"
+            "transition": "transform 150ms ease",
+            "transform": "rotate(180deg)"
           },
           "parent": ".accordion__trigger"
         },
@@ -392,6 +408,11 @@
           "states": {
             "hover": {
               "background-color": "#E5E7EB"
+            },
+            "focus": {
+              "background-color": "#F7F8FA",
+              "color": "#373F4E",
+              "border": "1px solid #BFC6D4"
             }
           }
         }
@@ -411,7 +432,7 @@
             "overflow": "hidden"
           },
           ".accordion__content": {
-            "display": "none",
+            "display": "block",
             "padding": "0 16px 16px",
             "font-size": "0.875rem",
             "color": "#B5B5BC",
@@ -419,7 +440,8 @@
           },
           ".accordion__icon": {
             "color": "#B5B5BC",
-            "transition": "transform 150ms ease"
+            "transition": "transform 150ms ease",
+            "transform": "rotate(180deg)"
           },
           ".accordion__item": {
             "border-bottom": "1px solid #2A2D32"
@@ -469,7 +491,7 @@
           "selector": ".accordion__content",
           "tag": "span",
           "styles": {
-            "display": "none",
+            "display": "block",
             "padding": "0 16px 16px",
             "font-size": "0.875rem",
             "color": "#B5B5BC",
@@ -482,7 +504,8 @@
           "tag": "span",
           "styles": {
             "color": "#B5B5BC",
-            "transition": "transform 150ms ease"
+            "transition": "transform 150ms ease",
+            "transform": "rotate(180deg)"
           },
           "parent": ".accordion__trigger"
         },
@@ -516,6 +539,11 @@
           "states": {
             "hover": {
               "background-color": "#2A2D32"
+            },
+            "focus": {
+              "background-color": "#1F2124",
+              "color": "#FAFAFA",
+              "border": "1px solid #2A2D32"
             }
           }
         }
@@ -535,7 +563,7 @@
             "overflow": "hidden"
           },
           ".accordion__content": {
-            "display": "none",
+            "display": "block",
             "padding": "0 16px 16px",
             "font-size": "0.875rem",
             "color": "#525969",
@@ -543,7 +571,8 @@
           },
           ".accordion__icon": {
             "color": "#6B7280",
-            "transition": "transform 150ms ease"
+            "transition": "transform 150ms ease",
+            "transform": "rotate(180deg)"
           },
           ".accordion__item": {
             "border-bottom": "1px solid #BFC6D4"
@@ -593,7 +622,7 @@
           "selector": ".accordion__content",
           "tag": "span",
           "styles": {
-            "display": "none",
+            "display": "block",
             "padding": "0 16px 16px",
             "font-size": "0.875rem",
             "color": "#525969",
@@ -606,7 +635,8 @@
           "tag": "span",
           "styles": {
             "color": "#6B7280",
-            "transition": "transform 150ms ease"
+            "transition": "transform 150ms ease",
+            "transform": "rotate(180deg)"
           },
           "parent": ".accordion__trigger"
         },
@@ -640,6 +670,11 @@
           "states": {
             "hover": {
               "background-color": "#E5E7EB"
+            },
+            "focus": {
+              "background-color": "#F7F8FA",
+              "color": "#373F4E",
+              "border": "1px solid #BFC6D4"
             }
           }
         }
@@ -659,7 +694,7 @@
             "overflow": "hidden"
           },
           ".accordion__content": {
-            "display": "none",
+            "display": "block",
             "padding": "0 16px 16px",
             "font-size": "0.875rem",
             "color": "#B5B5BC",
@@ -667,7 +702,8 @@
           },
           ".accordion__icon": {
             "color": "#B5B5BC",
-            "transition": "transform 150ms ease"
+            "transition": "transform 150ms ease",
+            "transform": "rotate(180deg)"
           },
           ".accordion__item": {
             "border-bottom": "1px solid #2A2D32"
@@ -717,7 +753,7 @@
           "selector": ".accordion__content",
           "tag": "span",
           "styles": {
-            "display": "none",
+            "display": "block",
             "padding": "0 16px 16px",
             "font-size": "0.875rem",
             "color": "#B5B5BC",
@@ -730,7 +766,8 @@
           "tag": "span",
           "styles": {
             "color": "#B5B5BC",
-            "transition": "transform 150ms ease"
+            "transition": "transform 150ms ease",
+            "transform": "rotate(180deg)"
           },
           "parent": ".accordion__trigger"
         },
@@ -764,6 +801,11 @@
           "states": {
             "hover": {
               "background-color": "#2A2D32"
+            },
+            "focus": {
+              "background-color": "#1F2124",
+              "color": "#FAFAFA",
+              "border": "1px solid #2A2D32"
             }
           }
         }
@@ -783,7 +825,7 @@
             "overflow": "hidden"
           },
           ".accordion__content": {
-            "display": "none",
+            "display": "block",
             "padding": "0 16px 16px",
             "font-size": "0.875rem",
             "color": "#525969",
@@ -791,7 +833,8 @@
           },
           ".accordion__icon": {
             "color": "#6B7280",
-            "transition": "transform 150ms ease"
+            "transition": "transform 150ms ease",
+            "transform": "rotate(180deg)"
           },
           ".accordion__item": {
             "border-bottom": "1px solid #BFC6D4"
@@ -841,7 +884,7 @@
           "selector": ".accordion__content",
           "tag": "span",
           "styles": {
-            "display": "none",
+            "display": "block",
             "padding": "0 16px 16px",
             "font-size": "0.875rem",
             "color": "#525969",
@@ -854,7 +897,8 @@
           "tag": "span",
           "styles": {
             "color": "#6B7280",
-            "transition": "transform 150ms ease"
+            "transition": "transform 150ms ease",
+            "transform": "rotate(180deg)"
           },
           "parent": ".accordion__trigger"
         },
@@ -888,6 +932,11 @@
           "states": {
             "hover": {
               "background-color": "#E5E7EB"
+            },
+            "focus": {
+              "background-color": "#F7F8FA",
+              "color": "#373F4E",
+              "border": "1px solid #BFC6D4"
             }
           }
         }
@@ -907,7 +956,7 @@
             "overflow": "hidden"
           },
           ".accordion__content": {
-            "display": "none",
+            "display": "block",
             "padding": "0 16px 16px",
             "font-size": "0.875rem",
             "color": "#B5B5BC",
@@ -915,7 +964,8 @@
           },
           ".accordion__icon": {
             "color": "#B5B5BC",
-            "transition": "transform 150ms ease"
+            "transition": "transform 150ms ease",
+            "transform": "rotate(180deg)"
           },
           ".accordion__item": {
             "border-bottom": "1px solid #2A2D32"
@@ -965,7 +1015,7 @@
           "selector": ".accordion__content",
           "tag": "span",
           "styles": {
-            "display": "none",
+            "display": "block",
             "padding": "0 16px 16px",
             "font-size": "0.875rem",
             "color": "#B5B5BC",
@@ -978,7 +1028,8 @@
           "tag": "span",
           "styles": {
             "color": "#B5B5BC",
-            "transition": "transform 150ms ease"
+            "transition": "transform 150ms ease",
+            "transform": "rotate(180deg)"
           },
           "parent": ".accordion__trigger"
         },
@@ -1012,6 +1063,11 @@
           "states": {
             "hover": {
               "background-color": "#2A2D32"
+            },
+            "focus": {
+              "background-color": "#1F2124",
+              "color": "#FAFAFA",
+              "border": "1px solid #2A2D32"
             }
           }
         }
