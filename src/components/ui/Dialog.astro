@@ -8,6 +8,7 @@
  * @usagePattern sticky-layout The dialog uses flexbox column layout with header and footer as flex-shrink: 0 (sticky), and body as flex: 1 with overflow-y: auto. Only the body scrolls when content exceeds available height.
  */
 import Icon from './Icon.astro';
+import Button from './Button.astro';
 
 export interface Props {
   id: string;
@@ -51,7 +52,10 @@ const footerClasses = [
     </div>
     <div class={footerClasses}>
       <slot name="footer">
-        <button type="button" class="dialog__footer-default-btn">OK</button>
+        <div>
+          <Button type="button" onclick={`closeDialog('${id}')`}>Confirm</Button>
+          <Button variant="ghost" type="button" onclick={`closeDialog('${id}')`}>Cancel</Button>
+        </div>
       </slot>
     </div>
   </div>

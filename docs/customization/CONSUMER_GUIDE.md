@@ -402,7 +402,6 @@ Components (especially shell) are **prepopulated** so that out of the box you se
 - **Shell:** ShellHeader shows a default gradient bar (first company color when `companyColor` is not passed). ShellLayout shows a default page header (title "Page title") and default main content (a placeholder Card) when no slot content is passed. Shell layout structure is **theme-dependent**: CP theme includes floating nav and no footer by default; PPM (and VP, Maconomy) include a footer and different left/right sidebar sections.
 - **Icons:** Default content uses icons that resolve per theme. Icon resolution (source and path) is defined in the theme-scoped **icon manifest** (`src/data/icon-manifest.json` in the package). Each theme (cp, vp, ppm, maconomy) has its own set of icon names and sources (hero, tabler, or custom with path). Do not assume all icons are Heroicons.
 - **Canonical prepopulated shell:** The preview page `preview/shell-layout` (in the Harmony repo docs site) is the canonical example of the full prepopulated shell with all defaults visible. Default content and icon set depend on **theme**; **mode** (light/dark) does not change default structure or icon resolution.
-- **Harmony-converter skill:** For instructions that the harmony-converter skill must follow (default state, contextual UI, theme-scoped icon manifest, icon sizes), see [HARMONY_CONVERTER_SKILL.md](../HARMONY_CONVERTER_SKILL.md).
 
 ### Tier 0: Brand Colors
 

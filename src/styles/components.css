@@ -2653,7 +2653,8 @@
 
 .dialog__body {
   flex: 1 1 0;
-  min-height: 0;
+  min-height: 100px;
+  max-height: 600px;
   padding: var(--space-6);
   overflow-y: auto;
   color: var(--text-secondary);
