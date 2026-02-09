@@ -32,11 +32,72 @@
 | Method | How | Updates | When to use |
 |--------|-----|---------|-------------|
 | **npm from Git** (recommended) | `npm install github:DLTKfrancesmunoz/harmonycomponents` | `npm update @deltek/harmony-components` and `npm run harmony:check-updates` | Most app projects; package lives in `node_modules` |
-| **Sparse checkout** | Clone repo with `git sparse-checkout` (components, styles, tokens, public only) | `git pull` in that clone | When you need a clone on disk (e.g. embedding the folder or working on the design system itself) |
+| **Sparse checkout** | Clone repo with `git sparse-checkout` (components, styles, tokens, public, preview + layouts) | `git pull` in that clone | When you need a clone on disk (e.g. embedding the folder or working on the design system itself) |
 
 **Recommended path:** Install as a package from Git. Your app lists `@deltek/harmony-components` as a dependency; Harmony lives in `node_modules`. You get updates via npm and can use the helper scripts (`harmony:copy`, `harmony:check-updates`, `harmony:diff`).
 
-**Sparse checkout:** If you clone the Harmony repo and only check out certain folders (no docs site), you have a git checkout. Updates are `git pull`, not npm. See [COMPONENTS_ONLY.md](../../COMPONENTS_ONLY.md) in the Harmony repo for commands.
+**Sparse checkout:** If you clone the Harmony repo and only check out certain folders (no docs site), you have a git checkout. Updates are `git pull`, not npm. You must specify exactly which paths to include; otherwise Git may check out the full repo and you will see root-level files (e.g. MCP docs, changelogs) that are unrelated to components or previews. Use the steps below so only components, styles, tokens, public, and preview files are present.
+
+### Sparse checkout: components, styles, tokens, public, and preview
+
+Use this when you want a clone on disk that includes the preview pages (e.g. to run the dev server and view component previews) without the full documentation site or root-level docs (MCP, changelog, etc.).
+
+**Option A – Fresh clone (recommended)**
+
+```bash
+git clone --filter=blob:none --sparse <repo-url> harmony-components
+cd harmony-components
+git sparse-checkout init --cone
+git sparse-checkout set \
+  src/components \
+  src/styles \
+  src/tokens \
+  src/pages/preview \
+  src/layouts \
+  public \
+  README.md \
+  package.json \
+  package-lock.json \
+  astro.config.mjs
+```
+
+Replace `<repo-url>` with your repository URL (e.g. `https://github.com/DLTKfrancesmunoz/harmonycomponents.git`).
+
+**Option B – You already cloned the full repo**
+
+If you previously did a full clone and see root-level files (MCP .md files, changelog, docs, etc.), set the sparse paths and refresh the working tree so only those paths remain:
+
+```bash
+git sparse-checkout init --cone
+git sparse-checkout set \
+  src/components \
+  src/styles \
+  src/tokens \
+  src/pages/preview \
+  src/layouts \
+  public \
+  README.md \
+  package.json \
+  package-lock.json \
+  astro.config.mjs
+git read-tree -mu HEAD
+```
+
+`git read-tree -mu HEAD` updates the working tree to match the sparse set and removes files that are no longer in it (e.g. root-level MCP and other docs).
+
+**What you get**
+
+- `src/components/` – UI components  
+- `src/styles/` – CSS and tokens  
+- `src/tokens/` – Design token JSON  
+- `src/pages/preview/` – Preview pages for each component/shell  
+- `src/layouts/` – ShellLayout and any layouts used by previews  
+- `public/` – Assets and icons  
+- `README.md`, `package.json`, `package-lock.json`, `astro.config.mjs` – So you can run `npm install` and `npm run dev` to view previews  
+
+Root-level files such as `MCP-SETUP.md`, `CHANGELOG.md`, `docs/`, and `mcp-data/` are **not** included.
+
+**Components only (no preview pages):** Use the same sparse-checkout steps above but set only these paths: `src/components`, `src/styles`, `src/tokens`, `public`, `README.md`, `package.json`, `package-lock.json`. Omit `src/pages/preview`, `src/layouts`, and `astro.config.mjs`.
 
 ---
 
@@ -614,4 +675,4 @@ Projects like Startpoint show this system in practice: Tier 0 overrides in `src/
 
 ---
 
-**Related:** [COMPONENTS_ONLY.md](../../COMPONENTS_ONLY.md) in the Harmony repo for the sparse-checkout option.
+Sparse-checkout steps (with or without preview) are in the **Two Ways to Get Harmony** section above.
