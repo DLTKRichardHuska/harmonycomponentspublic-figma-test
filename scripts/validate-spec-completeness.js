@@ -45,6 +45,29 @@ function containsNull(obj) {
   return false;
 }
 
+/** Collect paths where the string "transparent" appears in spec payload (specs disallow it; use resolved values e.g. rgba(0,0,0,0)). */
+function findTransparentInSpecPayload(data) {
+  const paths = [];
+  const specs = data.specs || {};
+  for (const [specKey, spec] of Object.entries(specs)) {
+    function walk(obj, prefix) {
+      if (obj === null || typeof obj !== 'object') return;
+      for (const [k, v] of Object.entries(obj)) {
+        if (v === 'transparent') paths.push(`${prefix}.${k}`);
+        else if (typeof v === 'object') walk(v, `${prefix}.${k}`);
+      }
+    }
+    if (spec._buildContract) walk(spec._buildContract, `specs.${specKey}._buildContract`);
+    if (Array.isArray(spec.elements)) {
+      spec.elements.forEach((el, i) => {
+        if (el?.styles) walk(el.styles, `specs.${specKey}.elements[${i}].styles`);
+        if (el?.states) walk(el.states, `specs.${specKey}.elements[${i}].states`);
+      });
+    }
+  }
+  return paths;
+}
+
 /** Check that no null appears in spec payload (_buildContract or elements[].styles). */
 function checkNoNullInSpecPayload(data) {
   const bad = [];
@@ -106,6 +129,12 @@ function main() {
     const nullViolations = checkNoNullInSpecPayload(data);
     if (nullViolations.length) {
       console.error(`${displayName}: null not allowed in spec payload: ${nullViolations.join(', ')}`);
+      failed++;
+    }
+
+    const transparentPaths = findTransparentInSpecPayload(data);
+    if (transparentPaths.length) {
+      console.error(`${displayName}: "transparent" not allowed in spec payload (use resolved value e.g. rgba(0,0,0,0)): ${transparentPaths.join(', ')}`);
       failed++;
     }
 

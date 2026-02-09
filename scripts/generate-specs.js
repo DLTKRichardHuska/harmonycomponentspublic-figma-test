@@ -433,6 +433,25 @@ const LAYOUT_RULES = {
   },
 };
 
+/** SPEC_CONTRACT: no "transparent" in specs. Mutate spec in place; replace with rgba(0,0,0,0). */
+function normalizeSpecNoTransparent(spec) {
+  if (!spec || typeof spec !== 'object') return;
+  const replace = (obj) => {
+    if (obj === null || typeof obj !== 'object') return;
+    for (const k of Object.keys(obj)) {
+      if (obj[k] === 'transparent') obj[k] = 'rgba(0,0,0,0)';
+      else if (typeof obj[k] === 'object') replace(obj[k]);
+    }
+  };
+  if (spec._buildContract) replace(spec._buildContract);
+  if (Array.isArray(spec.elements)) {
+    for (const el of spec.elements) {
+      if (el?.styles) replace(el.styles);
+      if (el?.states) replace(el.states);
+    }
+  }
+}
+
 const FORBIDDEN_MODIFICATIONS = [
   'Do not use Tailwind arbitrary values',
   'Do not change hex colors to named colors',
@@ -523,6 +542,10 @@ function resolveStyles(styles, ctx) {
       continue;
     }
     out[k] = resolveValue(v);
+  }
+  // SPEC_CONTRACT: no "transparent" in specs; use resolved value (rgba(0,0,0,0) for see-through).
+  for (const k of Object.keys(out)) {
+    if (out[k] === 'transparent') out[k] = 'rgba(0,0,0,0)';
   }
   return out;
 }
@@ -1119,7 +1142,7 @@ export function generateSpec(componentName, dimensions, existingSpec = null, dis
       elements.push({ selector: sel, tag: 'div', styles: {} });
       criticalSelectors[sel] = criticalSelectors[sel] || {};
     }
-    return {
+    const spec = {
       _meta: { theme, mode, locked: true },
       _buildContract: {
         criticalSelectors,
@@ -1127,6 +1150,8 @@ export function generateSpec(componentName, dimensions, existingSpec = null, dis
       },
       elements,
     };
+    normalizeSpecNoTransparent(spec);
+    return spec;
   }
 
   const { variables } = discoverComponentVariables(componentName);
@@ -1162,7 +1187,7 @@ export function generateSpec(componentName, dimensions, existingSpec = null, dis
     styles['max-width'] = sizeToken;
   }
 
-  return {
+  const spec = {
     _meta: { theme, mode, locked: true },
     _buildContract: {
       criticalSelectors: {
@@ -1178,6 +1203,8 @@ export function generateSpec(componentName, dimensions, existingSpec = null, dis
       },
     ],
   };
+  normalizeSpecNoTransparent(spec);
+  return spec;
 }
 
 const MODES = ['light', 'dark'];

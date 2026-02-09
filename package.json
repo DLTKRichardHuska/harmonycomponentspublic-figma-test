@@ -65,7 +65,8 @@
     "docs:check": "npm run generate:inventory && node scripts/compare-docs-with-components.js",
     "harmony:copy": "node scripts/copy-harmony-component.cjs",
     "harmony:check-updates": "node scripts/check-harmony-updates.cjs",
-    "harmony:diff": "node scripts/diff-harmony-component.cjs"
+    "harmony:diff": "node scripts/diff-harmony-component.cjs",
+    "inline:icon-manifest": "node scripts/inline-icon-manifest.js"
   },
   "devDependencies": {
     "astro": "^5.16.7",

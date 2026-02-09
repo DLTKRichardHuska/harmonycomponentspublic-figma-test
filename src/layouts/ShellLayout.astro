@@ -405,6 +405,11 @@ const effectiveHasFooter = showFooter === false ? false : hasFooter;
     padding-left: calc(var(--shell-layout-padding-side-default) + var(--space-5));
   }
 
+  /* Reserve space for right sidebar so page header and content do not sit under it. Required whenever right sidebar is present; do not remove. */
+  .shell-layout__container[data-has-right-sidebar="true"] .shell-layout__main {
+    padding-right: calc(var(--shell-layout-padding-side-default) + var(--space-5));
+  }
+
   /* Footer - Grid row 3 */
   .shell-layout__footer {
     grid-row: 3;
@@ -451,6 +456,10 @@ const effectiveHasFooter = showFooter === false ? false : hasFooter;
 
     .shell-layout__container[data-has-floating-nav="false"] .shell-layout__main {
       padding: var(--space-5) var(--space-6) var(--space-6) calc(var(--shell-layout-padding-side-tablet) + var(--space-5));
+    }
+
+    .shell-layout__container[data-has-right-sidebar="true"] .shell-layout__main {
+      padding-right: calc(var(--shell-layout-padding-side-tablet) + var(--space-5));
     }
   }
 </style>

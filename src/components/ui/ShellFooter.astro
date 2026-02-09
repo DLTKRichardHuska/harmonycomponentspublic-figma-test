@@ -168,6 +168,23 @@ const overflowTabsWithPinIcon = overflowTabs.map(tab => ({
     color: var(--text-primary);
   }
 
+  /* Footer bar is always dark; active tab and label must stay white in dark mode. Do not use --text-inverse here (it flips to dark in theme dark). */
+  html.dark .shell-footer :global(.tabstrip) :global(.tabstrip__tabs) :global(.tab.is-active),
+  html.dark .shell-footer :global(.tabstrip) :global(.tabstrip__add.tab.is-active),
+  html.dark .shell-footer :global(.tabstrip) :global(.tabstrip__more.tab.is-active) {
+    color: #ffffff;
+  }
+  html.dark .shell-footer :global(.tabstrip) :global(.tabstrip__tabs) :global(.tab.is-active) :global(.tab__label),
+  html.dark .shell-footer :global(.tabstrip) :global(.tabstrip__add.tab.is-active) :global(.tab__label),
+  html.dark .shell-footer :global(.tabstrip) :global(.tabstrip__more.tab.is-active) :global(.tab__label) {
+    color: #ffffff;
+  }
+  html.dark .shell-footer :global(.tabstrip) :global(.tabstrip__tabs) :global(.tab.is-active:hover) :global(.tab__label),
+  html.dark .shell-footer :global(.tabstrip) :global(.tabstrip__add.tab.is-active:hover) :global(.tab__label),
+  html.dark .shell-footer :global(.tabstrip) :global(.tabstrip__more.tab.is-active:hover) :global(.tab__label) {
+    color: #ffffff;
+  }
+
   /* Compact variant - styles applied via .shell-footer--compact for exact spec discovery */
   .shell-footer--compact,
   .shell-footer[data-variant="compact"] {
