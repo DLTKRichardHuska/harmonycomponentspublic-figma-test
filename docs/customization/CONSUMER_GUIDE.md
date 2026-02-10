@@ -468,6 +468,12 @@ Components (especially shell) are **prepopulated** so that out of the box you se
 
 Preview files and the npm package: Preview pages (e.g. `src/pages/preview/*.astro`) exist in the full Harmony repo; the published npm package may not include them. When they are absent, shell conversion should use ShellLayout.astro, ShellFooter.astro, layout.css, components.css, and tokens.css, plus the documented Shell layout defaults and dark-mode sources—conversion is still valid without preview files.
 
+### Using Harmony in other frameworks (Angular, Vue, etc.)
+
+Shell components (LeftSidebar, RightSidebar) use CSS selectors that depend on **document-level** theme classes: `html.theme-cp`, `html.theme-vp`, `html.theme-ppm`, `html.theme-maconomy`, and `html.dark`. In frameworks that use **view encapsulation** (e.g. Angular’s Emulated encapsulation), putting those rules only in the component’s stylesheet can prevent them from applying, because the selector is rewritten and the dependency on `html` may not match. The fix is to have theme-dependent rules in a **global** stylesheet.
+
+Harmony’s `components.css` includes these rules (e.g. left sidebar variant visibility and dark-mode filters for sidebar icon images). When converting the shell to Angular or a similar framework, load `components.css` **globally** (e.g. in `styles.css` or `angular.json` styles), and do not rely only on the converted component CSS for `html.theme-*` or `html.dark` selectors. If you override or split styles, keep the dark-mode filter for right sidebar icon images (e.g. mic-slash) in a global stylesheet so those icons stay light in dark mode.
+
 ### Tier 0: Brand Colors
 
 ```css

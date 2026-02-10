@@ -5427,6 +5427,10 @@ html.dark .left-sidebar__icon .left-sidebar__custom-icon {
 html.dark .right-sidebar__icon img:not(.right-sidebar__dela-logo--active) {
   filter: brightness(0) invert(1);
 }
+/* Also target .right-sidebar__icon-img for conversion/framework markup (e.g. Angular) */
+html.dark .right-sidebar__icon-img:not(.right-sidebar__dela-logo--active) {
+  filter: brightness(0) invert(1);
+}
 
 /* Dark mode adjustments for all themes */
 /* Dark mode handled by --shadow-xl token */
@@ -5443,6 +5447,30 @@ html.dark .right-sidebar[data-panel-open="true"] .right-sidebar__item[data-activ
 }
 html.dark .right-sidebar[data-panel-open="true"] .right-sidebar__item[data-active="true"]:has(.right-sidebar__dela-logo) .right-sidebar__icon {
   color: var(--shell-sidebar-icon-color-on-primary, #ffffff);
+}
+
+/* ===========================================
+   SHELL THEME – GLOBAL (Left sidebar variant visibility)
+   Required in global CSS for frameworks with view encapsulation (e.g. Angular).
+   =========================================== */
+.left-sidebar__variant {
+  display: none;
+}
+html.theme-cp .left-sidebar__variant--cp,
+html.theme-cp.dark .left-sidebar__variant--cp {
+  display: contents;
+}
+html.theme-vp .left-sidebar__variant--vp,
+html.theme-vp.dark .left-sidebar__variant--vp {
+  display: contents;
+}
+html.theme-ppm .left-sidebar__variant--ppm,
+html.theme-ppm.dark .left-sidebar__variant--ppm {
+  display: contents;
+}
+html.theme-maconomy .left-sidebar__variant--maconomy,
+html.theme-maconomy.dark .left-sidebar__variant--maconomy {
+  display: contents;
 }
 
 /* Backward compatibility: CP-specific styles also apply to unified component */
