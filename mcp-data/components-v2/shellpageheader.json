@@ -2,7 +2,7 @@
   "name": "ShellPageHeader",
   "type": "component",
   "filePath": "src/components/ui/ShellPageHeader.astro",
-  "description": "Shell Page Header Component",
+  "description": "Shell Page Header Component. Shows one primary and one outline secondary button by default when no button props are passed; pass showDefaultButtons=false to hide or primaryButton/outlineButton1 to override.",
   "props": {
     "title": {
       "type": "string",
@@ -13,6 +13,11 @@
       "type": "string",
       "optional": true,
       "default": null
+    },
+    "showDefaultButtons": {
+      "type": "boolean",
+      "optional": true,
+      "default": true
     },
     "primaryButton": {
       "type": "ButtonConfig",

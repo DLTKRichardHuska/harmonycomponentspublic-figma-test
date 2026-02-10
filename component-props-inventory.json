@@ -2505,7 +2505,7 @@
   "ShellPageHeader": {
     "hasProps": true,
     "filePath": "src/components/ui/ShellPageHeader.astro",
-    "description": "Shell Page Header Component",
+    "description": "Shell Page Header Component. Shows one primary and one outline secondary button by default when no button props are passed; pass showDefaultButtons=false to hide or primaryButton/outlineButton1 to override.",
     "dependencies": [
       "Button"
     ],
@@ -2531,6 +2531,12 @@
         "type": "string;",
         "default": null,
         "description": null
+      },
+      "showDefaultButtons": {
+        "optional": true,
+        "type": "boolean;",
+        "default": true,
+        "description": "When true (default), show one primary and one outline button when no button props are passed. Set to false to show no buttons when none are provided."
       },
       "primaryButton": {
         "optional": true,
@@ -2566,7 +2572,7 @@
     "defaults": {
       "class": "''"
     },
-    "rawInterface": "title: string\n  subtitle?: string\n  primaryButton?: ButtonConfig\n  outlineButton1?: ButtonConfig\n  outlineButton2?: ButtonConfig\n  outlineButton3?: ButtonConfig\n  class?: string"
+    "rawInterface": "title: string\n  subtitle?: string\n  showDefaultButtons?: boolean\n  primaryButton?: ButtonConfig\n  outlineButton1?: ButtonConfig\n  outlineButton2?: ButtonConfig\n  outlineButton3?: ButtonConfig\n  class?: string"
   },
   "ShellPanel": {
     "hasProps": true,
