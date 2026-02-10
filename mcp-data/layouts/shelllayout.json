@@ -338,6 +338,21 @@
       "value": "rgba(255, 255, 255, 0.1)",
       "resolved": "rgba(255, 255, 255, 0.1)"
     },
+    "footerTabLabelColor": {
+      "token": "--shell-footer-tab-label-color",
+      "value": "#ffffff",
+      "resolved": "#ffffff"
+    },
+    "footerTabIconColorActive": {
+      "token": "--shell-footer-tab-icon-color-active",
+      "value": "var(--theme-primary)",
+      "resolved": "#4C92D9"
+    },
+    "sidebarIconColorOnPrimary": {
+      "token": "--shell-sidebar-icon-color-on-primary",
+      "value": "#ffffff",
+      "resolved": "#ffffff"
+    },
     "footerBg": {
       "token": "--shell-footer-bg",
       "value": "#212631",
@@ -674,7 +689,7 @@
     }
   },
   "_metadata": {
-    "lastGenerated": "2026-02-10T19:08:28.898Z",
+    "lastGenerated": "2026-02-10T19:21:59.140Z",
     "version": "1.0.0",
     "includesVisualSpecs": true
   }
