@@ -1,6 +1,56 @@
 {
   "entries": [
     {
+      "id": "2026-02-12-component-Card-61a04cbe",
+      "version": "recent",
+      "date": "2026-02-12T21:09:14.000Z",
+      "category": "changed",
+      "type": "component",
+      "target": "Card",
+      "title": "Card.withHeader",
+      "description": "Change withHeader default value in Card from false to true",
+      "breaking": false,
+      "commit": {
+        "hash": "b3814ac",
+        "message": "Merge branch 'main' of https://github.com/DLTKfrancesmunoz/harmonycomponents",
+        "author": "“builtbyfrances”",
+        "date": "2026-02-12T14:09:14-07:00"
+      },
+      "properties": [
+        {
+          "name": "withHeader",
+          "change": "prop_default_changed",
+          "before": "false",
+          "after": "true"
+        }
+      ]
+    },
+    {
+      "id": "2026-02-12-component-Card-5f80a084",
+      "version": "recent",
+      "date": "2026-02-12T21:09:14.000Z",
+      "category": "changed",
+      "type": "component",
+      "target": "Card",
+      "title": "Card.headerTitle",
+      "description": "Change headerTitle default value in Card from '' to 'Card title'",
+      "breaking": false,
+      "commit": {
+        "hash": "b3814ac",
+        "message": "Merge branch 'main' of https://github.com/DLTKfrancesmunoz/harmonycomponents",
+        "author": "“builtbyfrances”",
+        "date": "2026-02-12T14:09:14-07:00"
+      },
+      "properties": [
+        {
+          "name": "headerTitle",
+          "change": "prop_default_changed",
+          "before": "''",
+          "after": "'Card title'"
+        }
+      ]
+    },
+    {
       "id": "2026-02-10-component-ShellFooter-46345366",
       "version": "recent",
       "date": "2026-02-10T19:21:28.000Z",
