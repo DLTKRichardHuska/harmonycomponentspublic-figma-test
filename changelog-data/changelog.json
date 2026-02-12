@@ -1,6 +1,29 @@
 {
   "entries": [
     {
+      "id": "2026-02-12-component-Chip-44b7b447",
+      "version": "recent",
+      "date": "2026-02-12T21:28:53.000Z",
+      "category": "added",
+      "type": "component",
+      "target": "Chip",
+      "title": "Chip.label",
+      "description": "Add label prop to Chip component (string)",
+      "breaking": false,
+      "commit": {
+        "hash": "8cbea26",
+        "message": "Enhance Chip component with optional label prop",
+        "author": "“builtbyfrances”",
+        "date": "2026-02-12T14:28:53-07:00"
+      },
+      "properties": [
+        {
+          "name": "label",
+          "change": "prop_added"
+        }
+      ]
+    },
+    {
       "id": "2026-02-12-component-Card-61a04cbe",
       "version": "recent",
       "date": "2026-02-12T21:09:14.000Z",
