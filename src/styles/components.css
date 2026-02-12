@@ -6796,7 +6796,7 @@ div.shell-panel__header.shell-panel__header--theme,
   border-top-color: var(--kanban-done-border);
 }
 
-.kanban__column-card .card__body {
+.kanban__column-card > .card__body {
   padding: 0;
   display: flex;
   flex-direction: column;
