@@ -346,7 +346,7 @@ import type { Props as CardProps } from '@deltek/harmony-components/ui/Card.astr
 
 This package is maintained by the Deltek Design Systems team. For issues, feature requests, or contributions, please contact the design systems team or open an issue in the GitHub repository.
 
-**MCP data and documentation sync:** When you change components, styles, tokens, or layouts in this repo, commit and push. CI on push to `main` regenerates `mcp-data/components-v2/`, `mcp-data/layouts/`, and changelog data, then commits the updates. You don't need to run `npm run generate:specs` or `npm run generate:layouts` yourself.
+**Changelog sync:** When you change components, styles, tokens, or layouts in this repo, commit and push. CI on push to `main` regenerates changelog data and commits the updates.
 
 ## License
 

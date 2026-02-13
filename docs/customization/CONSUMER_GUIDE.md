@@ -36,11 +36,11 @@
 
 **Recommended path:** Install as a package from Git. Your app lists `@deltek/harmony-components` as a dependency; Harmony lives in `node_modules`. You get updates via npm and can use the helper scripts (`harmony:copy`, `harmony:check-updates`, `harmony:diff`).
 
-**Sparse checkout:** If you clone the Harmony repo and only check out certain folders (no docs site), you have a git checkout. Updates are `git pull`, not npm. You must specify exactly which paths to include; otherwise Git may check out the full repo and you will see root-level files (e.g. MCP docs, changelogs) that are unrelated to components or previews. Use the steps below so only components, styles, tokens, public, and preview files are present.
+**Sparse checkout:** If you clone the Harmony repo and only check out certain folders (no docs site), you have a git checkout. Updates are `git pull`, not npm. You must specify exactly which paths to include; otherwise Git may check out the full repo and you will see root-level files (e.g. changelogs) that are unrelated to components or previews. Use the steps below so only components, styles, tokens, public, and preview files are present.
 
 ### Sparse checkout: components, styles, tokens, public, and preview
 
-Use this when you want a clone on disk that includes the preview pages (e.g. to run the dev server and view component previews) without the full documentation site or root-level docs (MCP, changelog, etc.).
+Use this when you want a clone on disk that includes the preview pages (e.g. to run the dev server and view component previews) without the full documentation site or root-level docs (changelog, etc.).
 
 **Option A – Fresh clone (recommended)**
 
@@ -65,7 +65,7 @@ Replace `<repo-url>` with your repository URL (e.g. `https://github.com/DLTKfran
 
 **Option B – You already cloned the full repo**
 
-If you previously did a full clone and see root-level files (MCP .md files, changelog, docs, etc.), set the sparse paths and refresh the working tree so only those paths remain:
+If you previously did a full clone and see root-level files (changelog, docs, etc.), set the sparse paths and refresh the working tree so only those paths remain:
 
 ```bash
 git sparse-checkout init --cone
@@ -83,7 +83,7 @@ git sparse-checkout set \
 git read-tree -mu HEAD
 ```
 
-`git read-tree -mu HEAD` updates the working tree to match the sparse set and removes files that are no longer in it (e.g. root-level MCP and other docs).
+`git read-tree -mu HEAD` updates the working tree to match the sparse set and removes files that are no longer in it (e.g. root-level docs).
 
 **What you get**
 
@@ -95,7 +95,7 @@ git read-tree -mu HEAD
 - `public/` – Assets and icons  
 - `README.md`, `package.json`, `package-lock.json`, `astro.config.mjs` – So you can run `npm install` and `npm run dev` to view previews  
 
-Root-level files such as `MCP-SETUP.md`, `CHANGELOG.md`, `docs/`, and `mcp-data/` are **not** included.
+Root-level files such as `CHANGELOG.md`, `docs/`, and `archive/` (MCP-related assets were moved to `archive/mcp/` and are not part of the consumer bundle) are **not** included.
 
 **Components only (no preview pages):** Use the same sparse-checkout steps above but set only these paths: `src/components`, `src/styles`, `src/tokens`, `public`, `README.md`, `package.json`, `package-lock.json`. Omit `src/pages/preview`, `src/layouts`, and `astro.config.mjs`.
 
