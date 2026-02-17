@@ -6197,6 +6197,12 @@ div.shell-panel__header.shell-panel__header--theme,
   color: var(--dela-header-content-fg);
 }
 
+/* Dela D logo in panel header: make white so it's visible on the gradient (img is cloned from sidebar) */
+.shell-panel__header[data-gradient-header="true"] .shell-panel__header-icon img,
+.shell-panel__header[data-gradient-header="true"] .shell-panel__header-icon svg {
+  filter: brightness(0) invert(1);
+}
+
 .shell-panel__header[data-gradient-header="true"] .shell-panel__action {
   color: var(--dela-header-content-fg);
 }
