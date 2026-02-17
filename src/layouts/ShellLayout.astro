@@ -243,7 +243,9 @@ const effectiveHasFooter = showFooter === false ? false : hasFooter;
         showPopout={rightPanel.showPopout}
         id={rightPanel.id || 'right-panel'}
         class="shell-layout__right-panel"
-      />
+      >
+        <slot name="right-panel-content" />
+      </ShellPanel>
     )}
 
     {/* Left Panel - rendered when leftPanel prop is provided */}
@@ -259,7 +261,9 @@ const effectiveHasFooter = showFooter === false ? false : hasFooter;
         showPopout={leftPanel.showPopout}
         id={leftPanel.id || 'left-panel'}
         class="shell-layout__left-panel"
-      />
+      >
+        <slot name="left-panel-content" />
+      </ShellPanel>
     )}
 
     <main class="shell-layout__main">

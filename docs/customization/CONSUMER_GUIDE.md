@@ -320,7 +320,7 @@ import DocsLayout from '@deltek/harmony-components/layouts/DocsLayout.astro';
 ---
 ```
 
-ShellLayout slots: `main-content`, `left-sidebar`, `right-sidebar`, `header-actions`, `footer-tabs`.
+ShellLayout slots: `main-content`, `left-sidebar`, `right-sidebar`, `left-panel-content`, `right-panel-content`, `header-actions`, `footer-tabs`.
 
 ### Import Design Tokens
 

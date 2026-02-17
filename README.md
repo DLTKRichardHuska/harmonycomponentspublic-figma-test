@@ -158,6 +158,8 @@ interface ShellLayoutProps {
 - `main-content` - Primary page content
 - `left-sidebar` - Custom left sidebar content
 - `right-sidebar` - Custom right sidebar content
+- `left-panel-content` - Custom content for the left slide-out panel (when `leftPanel` prop is provided)
+- `right-panel-content` - Custom content for the right slide-out panel (when `rightPanel` prop is provided)
 - `header-actions` - Custom header actions
 - `footer-tabs` - Custom footer tabs
 
