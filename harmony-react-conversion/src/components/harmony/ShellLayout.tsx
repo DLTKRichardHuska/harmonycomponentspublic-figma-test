@@ -1,5 +1,6 @@
 import clsx from 'clsx'
 import { ShellHeader } from './ShellHeader'
+import type { CompanyOption } from './ShellHeader'
 import { ShellFooter } from './ShellFooter'
 import { LeftSidebar } from './LeftSidebar'
 import { RightSidebar } from './RightSidebar'
@@ -15,6 +16,7 @@ export interface ShellLayoutProps {
   companyName?: string
   showCompanyPicker?: boolean
   companyColor?: string
+  headerCompanies?: CompanyOption[]
   tabs?: ShellFooterTab[]
   showFooter?: boolean
   showRightSidebar?: boolean
@@ -24,6 +26,9 @@ export interface ShellLayoutProps {
   pageHeaderOutlineButton1?: ShellPageHeaderButtonConfig
   pageHeaderOutlineButton2?: ShellPageHeaderButtonConfig
   pageHeaderOutlineButton3?: ShellPageHeaderButtonConfig
+  footerShowMore?: boolean
+  footerMoreCount?: number
+  footerOverflowTabs?: ShellFooterTab[]
   className?: string
   children?: React.ReactNode
 }
@@ -40,6 +45,7 @@ export function ShellLayout({
   companyName,
   showCompanyPicker = true,
   companyColor,
+  headerCompanies,
   tabs = DEFAULT_TABS,
   showFooter = true,
   showRightSidebar = true,
@@ -49,6 +55,9 @@ export function ShellLayout({
   pageHeaderOutlineButton1,
   pageHeaderOutlineButton2,
   pageHeaderOutlineButton3,
+  footerShowMore,
+  footerMoreCount,
+  footerOverflowTabs,
   className = '',
   children,
 }: ShellLayoutProps) {
@@ -75,6 +84,7 @@ export function ShellLayout({
           companyName={companyName}
           showCompanyPicker={showCompanyPicker}
           companyColor={companyColor}
+          companies={headerCompanies}
           className="shell-layout__header"
         />
 
@@ -116,6 +126,9 @@ export function ShellLayout({
         {effectiveHasFooter && (
           <ShellFooter
             tabs={tabs}
+            showMore={footerShowMore}
+            moreCount={footerMoreCount}
+            overflowTabs={footerOverflowTabs}
             showAddTab={true}
             variant="default"
             className="shell-layout__footer"
