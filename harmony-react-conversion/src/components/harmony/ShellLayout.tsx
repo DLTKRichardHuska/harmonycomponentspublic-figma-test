@@ -2,12 +2,15 @@ import clsx from 'clsx'
 import { ShellHeader } from './ShellHeader'
 import type { CompanyOption } from './ShellHeader'
 import { ShellFooter } from './ShellFooter'
+import { FloatingNav } from './FloatingNav'
 import { LeftSidebar } from './LeftSidebar'
 import { RightSidebar } from './RightSidebar'
 import { ShellPageHeader } from './ShellPageHeader'
 import { Card } from './Card'
 import type { ShellFooterTab } from './ShellFooter'
 import type { ShellPageHeaderButtonConfig } from './ShellPageHeader'
+import type { LeftSidebarSection, LeftSidebarVariant } from './LeftSidebar'
+import type { RightSidebarSection, RightSidebarVariant } from './RightSidebar'
 import './ShellLayout.css'
 
 export interface ShellLayoutProps {
@@ -16,7 +19,13 @@ export interface ShellLayoutProps {
   companyName?: string
   showCompanyPicker?: boolean
   companyColor?: string
-  headerCompanies?: CompanyOption[]
+  // CP-specific props
+  showFloatingNav?: boolean
+  floatingNavVariant?: 'full' | 'compact'
+  showExecute?: boolean
+  saveDisabled?: boolean
+  leftSidebarVariant?: 'cp' | 'vp' | 'ppm' | 'maconomy'
+  // Standard props
   tabs?: ShellFooterTab[]
   showFooter?: boolean
   showRightSidebar?: boolean
@@ -26,9 +35,11 @@ export interface ShellLayoutProps {
   pageHeaderOutlineButton1?: ShellPageHeaderButtonConfig
   pageHeaderOutlineButton2?: ShellPageHeaderButtonConfig
   pageHeaderOutlineButton3?: ShellPageHeaderButtonConfig
-  footerShowMore?: boolean
-  footerMoreCount?: number
-  footerOverflowTabs?: ShellFooterTab[]
+  pageHeaderActions?: React.ReactNode
+  leftSidebarSections?: LeftSidebarSection[]
+  leftSidebarVariant?: LeftSidebarVariant
+  rightSidebarSections?: RightSidebarSection[]
+  rightSidebarVariant?: RightSidebarVariant
   className?: string
   children?: React.ReactNode
 }
@@ -45,7 +56,11 @@ export function ShellLayout({
   companyName,
   showCompanyPicker = true,
   companyColor,
-  headerCompanies,
+  showFloatingNav,
+  floatingNavVariant,
+  showExecute,
+  saveDisabled,
+  leftSidebarVariant,
   tabs = DEFAULT_TABS,
   showFooter = true,
   showRightSidebar = true,
@@ -55,15 +70,17 @@ export function ShellLayout({
   pageHeaderOutlineButton1,
   pageHeaderOutlineButton2,
   pageHeaderOutlineButton3,
-  footerShowMore,
-  footerMoreCount,
-  footerOverflowTabs,
+  pageHeaderActions,
+  leftSidebarSections,
+  leftSidebarVariant,
+  rightSidebarSections,
+  rightSidebarVariant,
   className = '',
   children,
 }: ShellLayoutProps) {
-  const isCPVariant = false
+  const isCPVariant = showFloatingNav === true
   const effectiveHasFooter = showFooter
-  const effectiveShowFloatingNav = false
+  const effectiveShowFloatingNav = showFloatingNav ?? false
 
   return (
     <div
@@ -88,11 +105,16 @@ export function ShellLayout({
           className="shell-layout__header"
         />
 
-        <LeftSidebar variant="ppm" className="shell-layout__left-sidebar" />
+        <LeftSidebar
+          variant={leftSidebarVariant ?? 'ppm'}
+          sections={leftSidebarSections}
+          className="shell-layout__left-sidebar"
+        />
 
         {showRightSidebar && (
           <RightSidebar
-            variant="ppm"
+            variant={rightSidebarVariant ?? 'ppm'}
+            sections={rightSidebarSections}
             className="shell-layout__right-sidebar"
           />
         )}
@@ -106,6 +128,7 @@ export function ShellLayout({
               outlineButton1={pageHeaderOutlineButton1}
               outlineButton2={pageHeaderOutlineButton2}
               outlineButton3={pageHeaderOutlineButton3}
+              actions={pageHeaderActions}
             />
           )}
           {children ?? (
