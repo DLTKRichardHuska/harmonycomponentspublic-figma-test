@@ -1,6 +1,7 @@
 import clsx from 'clsx'
 import { ShellHeader } from './ShellHeader'
 import { ShellFooter } from './ShellFooter'
+import { FloatingNav } from './FloatingNav'
 import { LeftSidebar } from './LeftSidebar'
 import { RightSidebar } from './RightSidebar'
 import { ShellPageHeader } from './ShellPageHeader'
@@ -17,6 +18,13 @@ export interface ShellLayoutProps {
   companyName?: string
   showCompanyPicker?: boolean
   companyColor?: string
+  // CP-specific props
+  showFloatingNav?: boolean
+  floatingNavVariant?: 'full' | 'compact'
+  showExecute?: boolean
+  saveDisabled?: boolean
+  leftSidebarVariant?: 'cp' | 'vp' | 'ppm' | 'maconomy'
+  // Standard props
   tabs?: ShellFooterTab[]
   showFooter?: boolean
   showRightSidebar?: boolean
@@ -47,6 +55,11 @@ export function ShellLayout({
   companyName,
   showCompanyPicker = true,
   companyColor,
+  showFloatingNav,
+  floatingNavVariant,
+  showExecute,
+  saveDisabled,
+  leftSidebarVariant,
   tabs = DEFAULT_TABS,
   showFooter = true,
   showRightSidebar = true,
@@ -64,9 +77,9 @@ export function ShellLayout({
   className = '',
   children,
 }: ShellLayoutProps) {
-  const isCPVariant = false
+  const isCPVariant = showFloatingNav === true
   const effectiveHasFooter = showFooter
-  const effectiveShowFloatingNav = false
+  const effectiveShowFloatingNav = showFloatingNav ?? false
 
   return (
     <div
