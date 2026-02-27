@@ -582,9 +582,9 @@
 
 .label {
   display: block;
-  font-family: var(--font-sans);
+  font-family: var(--font-display);
   font-size: var(--text-sm);
-  font-weight: var(--font-medium);
+  font-weight: var(--font-normal);
   color: var(--text-primary);
   margin-bottom: var(--space-1-5);
 }
@@ -4756,12 +4756,22 @@ html.dark .shell-footer .tabstrip .tabstrip__more.tab.is-active:hover .tab__icon
   padding: 0 var(--space-4) 0 var(--space-2);
   font-size: var(--text-xs);
   background-position: right var(--space-3) center;
+  border-radius: var(--radius-04);
 }
 
 .theme-cp .dropdown__trigger {
   height: var(--dropdown-height-cp);
   padding: 0 var(--space-2) 0 var(--space-2);
   font-size: var(--text-xs);
+  border-radius: var(--radius-04);
+}
+
+.theme-cp .dropdown__menu {
+  border-radius: var(--radius-04);
+}
+
+.theme-cp .number-input {
+  border-radius: var(--radius-04);
 }
 
 .theme-cp .number-input__input {

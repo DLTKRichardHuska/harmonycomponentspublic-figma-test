@@ -124,6 +124,14 @@
   white-space: nowrap;
 }
 
+html.theme-cp .dropdown__trigger {
+  border-radius: var(--radius-04);
+}
+
+html.theme-cp .dropdown__menu {
+  border-radius: var(--radius-04);
+}
+
 @media (max-width: var(--breakpoint-md)) {
   .dropdown {
     width: 100%;

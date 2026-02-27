@@ -79,6 +79,10 @@
   white-space: nowrap;
 }
 
+html.theme-cp .number-input {
+  border-radius: var(--radius-04);
+}
+
 @media (max-width: var(--breakpoint-md)) {
   .number-input {
     width: 100%;
