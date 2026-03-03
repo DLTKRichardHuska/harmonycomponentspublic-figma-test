@@ -1,6 +1,31 @@
 {
   "entries": [
     {
+      "id": "2026-02-27-component-Card-9cdc4815",
+      "version": "recent",
+      "date": "2026-02-27T20:41:08.000Z",
+      "category": "changed",
+      "type": "component",
+      "target": "Card",
+      "title": "Card.withHeader",
+      "description": "Change withHeader default value in Card from true to false",
+      "breaking": false,
+      "commit": {
+        "hash": "8db8379",
+        "message": "Merge pull request #23 from deltek-sst/Card-style-updates",
+        "author": "DLTKfrancesmunoz",
+        "date": "2026-02-27T13:41:08-07:00"
+      },
+      "properties": [
+        {
+          "name": "withHeader",
+          "change": "prop_default_changed",
+          "before": "true",
+          "after": "false"
+        }
+      ]
+    },
+    {
       "id": "2026-02-27-component-Dialog-1c1cdefb",
       "version": "recent",
       "date": "2026-02-27T17:08:15.000Z",
