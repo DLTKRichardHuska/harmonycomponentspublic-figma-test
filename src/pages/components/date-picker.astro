@@ -4,6 +4,8 @@ import Icon from '../../components/ui/Icon.astro';
 import PropsTable from '../../components/PropsTable.astro';
 import ExampleSection from '../../components/ExampleSection.astro';
 import DateInput from '../../components/ui/DateInput.astro';
+import DateRangePicker from '../../components/ui/DateRangePicker.astro';
+import DateRangePickerExpanded from '../../components/ui/DateRangePickerExpanded.astro';
 import Label from '../../components/ui/Label.astro';
 
 const datePickerProps = [
@@ -11,6 +13,25 @@ const datePickerProps = [
   { name: 'min', type: 'string', default: '—', description: 'Minimum selectable date' },
   { name: 'max', type: 'string', default: '—', description: 'Maximum selectable date' },
   { name: 'disabled', type: 'boolean', default: 'false', description: 'Disables the picker' },
+  { name: 'locale', type: 'string', default: "'en-US'", description: 'Locale for date formatting' },
+  { name: 'id', type: 'string', default: '—', description: 'Element id' },
+];
+
+const dateRangePickerProps = [
+  { name: 'startDate', type: 'string', default: '—', description: 'Initial start date (ISO format YYYY-MM-DD)' },
+  { name: 'endDate', type: 'string', default: '—', description: 'Initial end date (ISO format YYYY-MM-DD)' },
+  { name: 'min', type: 'string', default: '—', description: 'Minimum selectable date' },
+  { name: 'max', type: 'string', default: '—', description: 'Maximum selectable date' },
+  { name: 'disabled', type: 'boolean', default: 'false', description: 'Disables the picker' },
+  { name: 'locale', type: 'string', default: "'en-US'", description: 'Locale for date formatting' },
+  { name: 'id', type: 'string', default: '—', description: 'Element id' },
+];
+
+const dateRangePickerExpandedProps = [
+  { name: 'startDate', type: 'string', default: '—', description: 'Initial start date (ISO format YYYY-MM-DD)' },
+  { name: 'endDate', type: 'string', default: '—', description: 'Initial end date (ISO format YYYY-MM-DD)' },
+  { name: 'min', type: 'string', default: '—', description: 'Minimum selectable date' },
+  { name: 'max', type: 'string', default: '—', description: 'Maximum selectable date' },
   { name: 'locale', type: 'string', default: "'en-US'", description: 'Locale for date formatting' },
   { name: 'id', type: 'string', default: '—', description: 'Element id' },
 ];
@@ -46,6 +67,7 @@ const dateInputProps = [
 
     <nav class="article-nav">
       <a href="#examples" class="article-nav__link"><Icon name="eye" size="sm" /> Examples</a>
+      <a href="#date-range-picker" class="article-nav__link"><Icon name="calendar" size="sm" /> Date Range Picker</a>
       <a href="#props" class="article-nav__link"><Icon name="queue-list" size="sm" /> Props</a>
       <a href="#accessibility" class="article-nav__link"><Icon name="keyboard" size="sm" /> Accessibility</a>
     </nav>
@@ -132,10 +154,30 @@ const dateInputProps = [
       </ExampleSection>
     </section>
 
+    <section id="date-range-picker" class="space-y-8">
+      <h2 class="section__title">Date Range Picker</h2>
+
+      <ExampleSection title="Date Range Picker" description="Single-month calendar with start and end date selection. Click once to set the start date, click again to set the end date. Hover to preview the range.">
+        <div class="max-w-xs">
+          <DateRangePicker />
+        </div>
+      </ExampleSection>
+
+      <ExampleSection title="Date Range Picker — Expanded" description="Full range picker panel with preset shortcuts, dual side-by-side calendars, and a footer with Clear / Cancel / Apply actions.">
+        <div class="overflow-x-auto">
+          <DateRangePickerExpanded />
+        </div>
+      </ExampleSection>
+    </section>
+
     <section id="props">
       <h2 class="section__title">Props</h2>
       <h3 class="section__title section__title--sm mt-6">DatePicker</h3>
       <PropsTable props={datePickerProps} />
+      <h3 class="section__title section__title--sm mt-6">DateRangePicker</h3>
+      <PropsTable props={dateRangePickerProps} />
+      <h3 class="section__title section__title--sm mt-6">DateRangePickerExpanded</h3>
+      <PropsTable props={dateRangePickerExpandedProps} />
       <h3 class="section__title section__title--sm mt-6">DateInput</h3>
       <PropsTable props={dateInputProps} />
     </section>

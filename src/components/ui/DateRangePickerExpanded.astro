@@ -1,0 +1,528 @@
+---
+/**
+ * DateRangePickerExpanded Component
+ *
+ * Full date range panel: left presets sidebar, dual side-by-side month calendars,
+ * and a footer with Clear / Cancel / Apply actions and live date display fields.
+ */
+import Icon from './Icon.astro';
+
+export interface Props {
+  startDate?: string;  // ISO date string (YYYY-MM-DD)
+  endDate?: string;    // ISO date string
+  min?: string;
+  max?: string;
+  locale?: string;
+  id?: string;
+  class?: string;
+}
+
+const {
+  startDate,
+  endDate,
+  min,
+  max,
+  locale = 'en-US',
+  id,
+  class: className = '',
+} = Astro.props;
+
+const pickerId = id || `drp-expanded-${Math.random().toString(36).substr(2, 9)}`;
+
+// Left calendar starts at current month (or startDate's month)
+const refDate = startDate ? new Date(startDate + 'T00:00:00') : new Date();
+const leftMonth = refDate.getMonth();
+const leftYear = refDate.getFullYear();
+
+// Right calendar = next month
+const rightMonth = (leftMonth + 1) % 12;
+const rightYear = leftMonth === 11 ? leftYear + 1 : leftYear;
+
+const monthNames = [
+  'January', 'February', 'March', 'April', 'May', 'June',
+  'July', 'August', 'September', 'October', 'November', 'December'
+];
+
+const dayNames = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
+
+const classes = ['drp-expanded', className].filter(Boolean).join(' ');
+
+const presets = [
+  { label: 'Last 7 days', key: 'last7' },
+  { label: 'Last 30 days', key: 'last30' },
+  { label: 'This quarter', key: 'thisQuarter' },
+  { label: 'Last month', key: 'lastMonth' },
+  { label: 'This month', key: 'thisMonth' },
+  { label: 'Year to date', key: 'yearToDate' },
+];
+---
+
+<div
+  class={classes}
+  id={pickerId}
+  data-drp-expanded
+  data-left-month={leftMonth}
+  data-left-year={leftYear}
+  data-start-date={startDate || ''}
+  data-end-date={endDate || ''}
+  data-initial-start={startDate || ''}
+  data-initial-end={endDate || ''}
+  data-min-date={min || ''}
+  data-max-date={max || ''}
+  data-locale={locale}
+>
+  <div class="drp-expanded__top">
+    <!-- Presets sidebar -->
+    <div class="drp-expanded__presets">
+      {presets.map((preset) => (
+        <button
+          type="button"
+          class="drp-preset-btn"
+          data-preset={preset.key}
+        >
+          {preset.label}
+        </button>
+      ))}
+      <button
+        type="button"
+        class="drp-preset-btn drp-preset-btn--custom"
+        data-preset="custom"
+      >
+        Custom range
+      </button>
+    </div>
+
+    <!-- Calendars -->
+    <div class="drp-expanded__main">
+      <div class="drp-expanded__calendars">
+        <!-- Left calendar -->
+        <div class="drp-expanded__calendar" data-calendar="left">
+          <div class="date-picker__header">
+            <button type="button" class="date-picker__nav-btn" data-prev-month aria-label="Previous month">
+              <Icon name="chevron-left" size="sm" />
+            </button>
+            <div class="date-picker__month-year">
+              <span class="date-picker__month">{monthNames[leftMonth]}</span>
+              <span class="date-picker__year">{leftYear}</span>
+            </div>
+            <button type="button" class="date-picker__nav-btn" data-nav-spacer style="visibility:hidden" aria-hidden="true">
+              <Icon name="chevron-right" size="sm" />
+            </button>
+          </div>
+          <div class="date-picker__weekdays">
+            {dayNames.map((day, i) => (
+              <div class="date-picker__weekday" key={i}>{day}</div>
+            ))}
+          </div>
+          <div class="date-picker__grid" role="grid" data-calendar-grid
+            aria-label={`Calendar for ${monthNames[leftMonth]} ${leftYear}`}></div>
+        </div>
+
+        <div class="drp-expanded__divider"></div>
+
+        <!-- Right calendar -->
+        <div class="drp-expanded__calendar" data-calendar="right">
+          <div class="date-picker__header">
+            <button type="button" class="date-picker__nav-btn" data-nav-spacer style="visibility:hidden" aria-hidden="true">
+              <Icon name="chevron-left" size="sm" />
+            </button>
+            <div class="date-picker__month-year">
+              <span class="date-picker__month">{monthNames[rightMonth]}</span>
+              <span class="date-picker__year">{rightYear}</span>
+            </div>
+            <button type="button" class="date-picker__nav-btn" data-next-month aria-label="Next month">
+              <Icon name="chevron-right" size="sm" />
+            </button>
+          </div>
+          <div class="date-picker__weekdays">
+            {dayNames.map((day, i) => (
+              <div class="date-picker__weekday" key={i}>{day}</div>
+            ))}
+          </div>
+          <div class="date-picker__grid" role="grid" data-calendar-grid
+            aria-label={`Calendar for ${monthNames[rightMonth]} ${rightYear}`}></div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="drp-expanded__footer">
+        <div class="drp-footer-actions">
+          <button type="button" class="drp-clear" data-drp-clear>Clear</button>
+          <button type="button" class="btn btn--sm" data-drp-cancel>Cancel</button>
+          <button type="button" class="btn btn--sm btn--primary" data-drp-apply>Apply</button>
+        </div>
+        <div class="drp-footer-dates">
+          <span class="drp-date-display" data-date-display="start">—</span>
+          <span class="drp-footer-arrow">→</span>
+          <span class="drp-date-display" data-date-display="end">—</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function formatDate(date: Date): string {
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const day = String(date.getDate()).padStart(2, '0');
+    return `${year}-${month}-${day}`;
+  }
+
+  function formatDisplay(dateStr: string, locale: string): string {
+    if (!dateStr) return '—';
+    const date = new Date(dateStr + 'T00:00:00');
+    return date.toLocaleDateString(locale, { month: '2-digit', day: '2-digit', year: 'numeric' });
+  }
+
+  function parseDate(dateStr: string): Date | null {
+    if (!dateStr) return null;
+    const date = new Date(dateStr + 'T00:00:00');
+    return isNaN(date.getTime()) ? null : date;
+  }
+
+  function normalizeDate(date: Date): Date {
+    const d = new Date(date);
+    d.setHours(0, 0, 0, 0);
+    return d;
+  }
+
+  function getCalendarDays(month: number, year: number) {
+    const firstDay = new Date(year, month, 1);
+    const start = new Date(firstDay);
+    start.setDate(start.getDate() - start.getDay());
+    const days: Array<{ date: Date; isCurrentMonth: boolean }> = [];
+    const current = new Date(start);
+    for (let i = 0; i < 42; i++) {
+      days.push({ date: new Date(current), isCurrentMonth: current.getMonth() === month });
+      current.setDate(current.getDate() + 1);
+    }
+    return days;
+  }
+
+  function getMonthOffset(month: number, year: number, offset: number): { month: number; year: number } {
+    let m = month + offset;
+    let y = year;
+    while (m > 11) { m -= 12; y++; }
+    while (m < 0) { m += 12; y--; }
+    return { month: m, year: y };
+  }
+
+  const monthNames = [
+    'January', 'February', 'March', 'April', 'May', 'June',
+    'July', 'August', 'September', 'October', 'November', 'December'
+  ];
+
+  function renderCalendar(
+    calendarEl: HTMLElement,
+    month: number,
+    year: number,
+    startDateStr: string,
+    endDateStr: string,
+    minDateStr: string,
+    maxDateStr: string,
+  ) {
+    const grid = calendarEl.querySelector('[data-calendar-grid]');
+    if (!grid) return;
+
+    const monthEl = calendarEl.querySelector('.date-picker__month');
+    const yearEl = calendarEl.querySelector('.date-picker__year');
+    if (monthEl) monthEl.textContent = monthNames[month];
+    if (yearEl) yearEl.textContent = year.toString();
+    grid.setAttribute('aria-label', `Calendar for ${monthNames[month]} ${year}`);
+
+    const calendarDays = getCalendarDays(month, year);
+    const min = minDateStr ? parseDate(minDateStr) : null;
+    const max = maxDateStr ? parseDate(maxDateStr) : null;
+    const start = startDateStr ? parseDate(startDateStr) : null;
+    const end = endDateStr ? parseDate(endDateStr) : null;
+    const today = normalizeDate(new Date());
+    const normStart = start ? normalizeDate(start) : null;
+    const normEnd = end ? normalizeDate(end) : null;
+
+    grid.innerHTML = '';
+
+    calendarDays.forEach((day) => {
+      const dayDate = normalizeDate(day.date);
+      const dateStr = formatDate(dayDate);
+      const isDisabledDate = !!(
+        (min && dayDate < normalizeDate(min)) ||
+        (max && dayDate > normalizeDate(max))
+      );
+      const isToday = dayDate.getTime() === today.getTime();
+      const isRangeStart = !!(normStart && dayDate.getTime() === normStart.getTime());
+      const isRangeEnd = !!(normEnd && dayDate.getTime() === normEnd.getTime());
+      const isInRange = !!(normStart && normEnd && dayDate > normStart && dayDate < normEnd);
+
+      const dayClasses = [
+        'date-picker__day',
+        !day.isCurrentMonth && 'date-picker__day--other-month',
+        isToday && !isRangeStart && !isRangeEnd && 'date-picker__day--today',
+        isRangeStart && 'date-picker__day--range-start',
+        isRangeEnd && !isRangeStart && 'date-picker__day--range-end',
+        isInRange && 'date-picker__day--in-range',
+        isDisabledDate && 'date-picker__day--disabled',
+      ].filter(Boolean).join(' ');
+
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = dayClasses;
+      button.setAttribute('data-date', dateStr);
+      button.disabled = isDisabledDate;
+      button.setAttribute('role', 'gridcell');
+      button.setAttribute('tabindex', (isRangeStart || isRangeEnd) ? '0' : '-1');
+      button.textContent = dayDate.getDate().toString();
+
+      grid.appendChild(button);
+    });
+  }
+
+  function renderBothCalendars(picker: HTMLElement) {
+    const leftMonth = parseInt(picker.dataset.leftMonth || '0');
+    const leftYear = parseInt(picker.dataset.leftYear || new Date().getFullYear().toString());
+    const { month: rightMonth, year: rightYear } = getMonthOffset(leftMonth, leftYear, 1);
+    const startDate = picker.dataset.startDate || '';
+    const endDate = picker.dataset.endDate || '';
+    const minDate = picker.dataset.minDate || '';
+    const maxDate = picker.dataset.maxDate || '';
+
+    const leftCal = picker.querySelector('[data-calendar="left"]') as HTMLElement;
+    const rightCal = picker.querySelector('[data-calendar="right"]') as HTMLElement;
+
+    if (leftCal) renderCalendar(leftCal, leftMonth, leftYear, startDate, endDate, minDate, maxDate);
+    if (rightCal) renderCalendar(rightCal, rightMonth, rightYear, startDate, endDate, minDate, maxDate);
+  }
+
+  // Toggle CSS classes across both calendars for hover preview — never re-renders.
+  function applyHoverClassesBoth(picker: HTMLElement, hoverDateStr: string | null) {
+    const startStr = picker.dataset.startDate || '';
+    const endStr = picker.dataset.endDate || '';
+    if (!startStr || endStr) return;
+
+    const start = normalizeDate(parseDate(startStr)!);
+    const hover = hoverDateStr ? normalizeDate(parseDate(hoverDateStr)!) : null;
+
+    picker.querySelectorAll<HTMLButtonElement>('[data-date]').forEach((btn) => {
+      const d = normalizeDate(parseDate(btn.dataset.date!)!);
+      btn.classList.remove(
+        'date-picker__day--range-start',
+        'date-picker__day--range-end',
+        'date-picker__day--in-range',
+      );
+      if (d.getTime() === start.getTime()) {
+        btn.classList.add('date-picker__day--range-start');
+      } else if (hover && d.getTime() === hover.getTime()) {
+        btn.classList.add('date-picker__day--range-end');
+      } else if (hover) {
+        const lo = start < hover ? start : hover;
+        const hi = start < hover ? hover : start;
+        if (d > lo && d < hi) btn.classList.add('date-picker__day--in-range');
+      }
+    });
+  }
+
+  function updateDateDisplays(picker: HTMLElement) {
+    const locale = picker.dataset.locale || 'en-US';
+    const startStr = picker.dataset.startDate || '';
+    const endStr = picker.dataset.endDate || '';
+    const startDisplay = picker.querySelector('[data-date-display="start"]');
+    const endDisplay = picker.querySelector('[data-date-display="end"]');
+    if (startDisplay) {
+      startDisplay.textContent = startStr ? formatDisplay(startStr, locale) : '—';
+      startDisplay.classList.toggle('drp-date-display--filled', !!startStr);
+    }
+    if (endDisplay) {
+      endDisplay.textContent = endStr ? formatDisplay(endStr, locale) : '—';
+      endDisplay.classList.toggle('drp-date-display--filled', !!endStr);
+    }
+  }
+
+  function updateActivePreset(picker: HTMLElement, activeKey: string | null) {
+    picker.querySelectorAll('[data-preset]').forEach((btn) => {
+      const key = (btn as HTMLElement).dataset.preset;
+      btn.classList.toggle('drp-preset-btn--active', key === activeKey && key !== 'custom');
+    });
+  }
+
+  function computePresetDates(key: string): { start: string; end: string } {
+    const today = normalizeDate(new Date());
+    const todayStr = formatDate(today);
+
+    if (key === 'last7') {
+      const start = new Date(today);
+      start.setDate(start.getDate() - 7);
+      return { start: formatDate(start), end: todayStr };
+    }
+    if (key === 'last30') {
+      const start = new Date(today);
+      start.setDate(start.getDate() - 30);
+      return { start: formatDate(start), end: todayStr };
+    }
+    if (key === 'thisQuarter') {
+      const month = today.getMonth();
+      const quarterStartMonth = Math.floor(month / 3) * 3;
+      const start = new Date(today.getFullYear(), quarterStartMonth, 1);
+      const end = new Date(today.getFullYear(), quarterStartMonth + 3, 0);
+      return { start: formatDate(start), end: formatDate(end) };
+    }
+    if (key === 'lastMonth') {
+      const start = new Date(today.getFullYear(), today.getMonth() - 1, 1);
+      const end = new Date(today.getFullYear(), today.getMonth(), 0);
+      return { start: formatDate(start), end: formatDate(end) };
+    }
+    if (key === 'thisMonth') {
+      const start = new Date(today.getFullYear(), today.getMonth(), 1);
+      const end = new Date(today.getFullYear(), today.getMonth() + 1, 0);
+      return { start: formatDate(start), end: formatDate(end) };
+    }
+    if (key === 'yearToDate') {
+      const start = new Date(today.getFullYear(), 0, 1);
+      return { start: formatDate(start), end: todayStr };
+    }
+    return { start: '', end: '' };
+  }
+
+  function initExpanded(picker: HTMLElement) {
+    renderBothCalendars(picker);
+    updateDateDisplays(picker);
+
+    // Day click delegation on both calendars
+    picker.querySelectorAll('[data-calendar]').forEach((calEl) => {
+      calEl.addEventListener('click', (e) => {
+        const target = (e.target as HTMLElement).closest('[data-date]') as HTMLElement | null;
+        if (!target || target.disabled) return;
+        const dateStr = target.dataset.date!;
+        const startDate = picker.dataset.startDate || '';
+        const endDate = picker.dataset.endDate || '';
+
+        if (!startDate || (startDate && endDate)) {
+          picker.dataset.startDate = dateStr;
+          picker.dataset.endDate = '';
+        } else {
+          const start = parseDate(startDate)!;
+          const clicked = parseDate(dateStr)!;
+          if (clicked < start) {
+            picker.dataset.endDate = startDate;
+            picker.dataset.startDate = dateStr;
+          } else {
+            picker.dataset.endDate = dateStr;
+          }
+        }
+        renderBothCalendars(picker);
+        updateDateDisplays(picker);
+        updateActivePreset(picker, 'custom');
+      });
+
+      // Hover preview: toggle classes only — never re-renders the DOM
+      calEl.addEventListener('mouseover', (e) => {
+        const target = (e.target as HTMLElement).closest<HTMLElement>('[data-date]');
+        if (!target) return;
+        applyHoverClassesBoth(picker, target.dataset.date!);
+      });
+
+      calEl.addEventListener('mouseleave', () => {
+        applyHoverClassesBoth(picker, null);
+      });
+    });
+
+    // Navigation
+    const prevBtn = picker.querySelector('[data-prev-month]');
+    const nextBtn = picker.querySelector('[data-next-month]');
+
+    prevBtn?.addEventListener('click', () => {
+      const { month, year } = getMonthOffset(
+        parseInt(picker.dataset.leftMonth || '0'),
+        parseInt(picker.dataset.leftYear || new Date().getFullYear().toString()),
+        -1
+      );
+      picker.dataset.leftMonth = month.toString();
+      picker.dataset.leftYear = year.toString();
+      renderBothCalendars(picker);
+    });
+
+    nextBtn?.addEventListener('click', () => {
+      const { month, year } = getMonthOffset(
+        parseInt(picker.dataset.leftMonth || '0'),
+        parseInt(picker.dataset.leftYear || new Date().getFullYear().toString()),
+        1
+      );
+      picker.dataset.leftMonth = month.toString();
+      picker.dataset.leftYear = year.toString();
+      renderBothCalendars(picker);
+    });
+
+    // Presets
+    picker.querySelectorAll('[data-preset]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const key = (btn as HTMLElement).dataset.preset!;
+        if (key === 'custom') {
+          picker.dataset.startDate = '';
+          picker.dataset.endDate = '';
+          renderBothCalendars(picker);
+          updateDateDisplays(picker);
+          updateActivePreset(picker, null);
+          return;
+        }
+        const { start, end } = computePresetDates(key);
+        picker.dataset.startDate = start;
+        picker.dataset.endDate = end;
+
+        // Navigate left calendar to start date's month
+        if (start) {
+          const d = parseDate(start)!;
+          picker.dataset.leftMonth = d.getMonth().toString();
+          picker.dataset.leftYear = d.getFullYear().toString();
+        }
+
+        renderBothCalendars(picker);
+        updateDateDisplays(picker);
+        updateActivePreset(picker, key);
+      });
+    });
+
+    // Clear
+    picker.querySelector('[data-drp-clear]')?.addEventListener('click', () => {
+      picker.dataset.startDate = '';
+      picker.dataset.endDate = '';
+      renderBothCalendars(picker);
+      updateDateDisplays(picker);
+      updateActivePreset(picker, null);
+    });
+
+    // Cancel
+    picker.querySelector('[data-drp-cancel]')?.addEventListener('click', () => {
+      picker.dataset.startDate = picker.dataset.initialStart || '';
+      picker.dataset.endDate = picker.dataset.initialEnd || '';
+      renderBothCalendars(picker);
+      updateDateDisplays(picker);
+      updateActivePreset(picker, null);
+      picker.dispatchEvent(new CustomEvent('drp-cancel', { bubbles: true }));
+    });
+
+    // Apply
+    picker.querySelector('[data-drp-apply]')?.addEventListener('click', () => {
+      picker.dispatchEvent(new CustomEvent('date-range-select', {
+        detail: {
+          startDate: picker.dataset.startDate || '',
+          endDate: picker.dataset.endDate || '',
+        },
+        bubbles: true,
+      }));
+    });
+  }
+
+  function initAll() {
+    document.querySelectorAll('[data-drp-expanded]:not([data-initialized])').forEach((el) => {
+      el.setAttribute('data-initialized', 'true');
+      initExpanded(el as HTMLElement);
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initAll);
+  } else {
+    initAll();
+  }
+
+  document.addEventListener('astro:page-load', initAll);
+</script>

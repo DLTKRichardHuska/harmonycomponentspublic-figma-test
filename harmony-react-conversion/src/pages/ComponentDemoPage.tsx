@@ -69,7 +69,7 @@ export function ComponentDemoPage() {
           padding: '1.5rem',
           border: '1px solid var(--border-color)',
           borderRadius: '4px',
-          backgroundColor: 'var(--card-bg)',
+          backgroundColor: name === 'Card' ? 'var(--page-bg)' : 'var(--card-bg)',
         }}
       >
         {name === 'ShellPanel' ? (
