@@ -16,7 +16,8 @@ import { DateTimePicker } from './components/harmony/DateTimePicker'
 import { Dialog } from './components/harmony/Dialog'
 import { Dropdown } from './components/harmony/Dropdown'
 import { FloatingNav } from './components/harmony/FloatingNav'
-import { Icon } from './components/harmony/Icon'
+import iconManifest from '@harmony-data/icon-manifest.json'
+import { Icon, FALLBACK_ICON_NAMES } from './components/harmony/Icon'
 import { Input } from './components/harmony/Input'
 import { Kanban } from './components/harmony/Kanban'
 import { KanbanCard } from './components/harmony/KanbanCard'
@@ -471,6 +472,52 @@ function TableDemo() {
   )
 }
 
+/** Collects every icon name from the manifest (all themes) and fallbacks, then renders a grid. Missing icons show "?". */
+function IconsDemo() {
+  const manifest = iconManifest as Record<string, Record<string, unknown>>
+  const namesFromManifest = new Set<string>()
+  for (const theme of Object.keys(manifest)) {
+    const themeData = manifest[theme]
+    if (themeData && typeof themeData === 'object' && !Array.isArray(themeData)) {
+      for (const key of Object.keys(themeData)) namesFromManifest.add(key)
+    }
+  }
+  const allNames = [...new Set([...namesFromManifest, ...FALLBACK_ICON_NAMES])].sort((a, b) => a.localeCompare(b, 'en'))
+  return (
+    <div style={{ padding: '0.5rem 0' }}>
+      <p style={{ marginBottom: '1rem', fontSize: '0.875rem', color: 'var(--text-secondary)' }}>
+        All icons from the manifest (cp, vp, ppm, maconomy) and React fallbacks. Missing icons show &quot;?&quot; with a tooltip.
+      </p>
+      <div
+        style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fill, minmax(100px, 1fr))',
+          gap: '1rem',
+        }}
+      >
+        {allNames.map((name) => (
+          <div
+            key={name}
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              gap: '0.25rem',
+              padding: '0.5rem',
+              border: '1px solid var(--border-light)',
+              borderRadius: 'var(--radius-04)',
+              background: 'var(--surface-bg)',
+            }}
+          >
+            <Icon name={name} size="lg" />
+            <span style={{ fontSize: '0.7rem', wordBreak: 'break-word', textAlign: 'center' }}>{name}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
+
 /** Wraps a single Step in the stepper container so it matches how steps look inside Stepper (layout is driven by .stepper--horizontal .step). */
 function StepDemo() {
   return (
@@ -503,6 +550,7 @@ export const componentRegistry: ComponentRegistryEntry[] = [
   { name: 'Dropdown', Component: Dropdown as AnyComponent, demoProps: { options: [{ value: 'a', label: 'Option A' }, { value: 'b', label: 'Option B' }], placeholder: 'Select' } },
   { name: 'FloatingNav', Component: FloatingNav as AnyComponent },
   { name: 'Icon', Component: Icon as AnyComponent, demoProps: { name: 'check' } },
+  { name: 'Icons', Component: IconsDemo as AnyComponent },
   { name: 'Input', Component: Input as AnyComponent, demoProps: { id: 'demo-input', label: 'Label', placeholder: 'Placeholder' } },
   { name: 'Kanban', Component: Kanban as AnyComponent, demoProps: { columns: [{ id: 'col-1', title: 'To Do', cards: [{ id: 'card-1', title: 'Task 1' }] }, { id: 'col-2', title: 'Done', cards: [] }] } },
   { name: 'KanbanCard', Component: KanbanCard as AnyComponent, demoProps: { id: 'demo-card', title: 'Card title' } },
