@@ -12,6 +12,7 @@ import Chip from '../../components/ui/Chip.astro';
 const props = [
   { name: 'headerVariant', type: "'gray' | 'white' | 'none'", default: "'gray'", description: 'Header background variant: gray (light gray background), white (white background), or none (transparent)' },
   { name: 'striped', type: 'boolean', default: 'false', description: 'Enable alternating row background colors (zebra striping) for easier scanning' },
+  { name: 'reorderable', type: 'boolean', default: 'false', description: 'Enable row reordering via drag-and-drop. Displays a grip icon at the far left of each row.' },
   { name: 'class', type: 'string', default: '—', description: 'Additional CSS classes to apply to the table element' },
   { name: 'filter-bar (slot)', type: 'slot', default: '—', description: 'Content for the filter bar above the table (dropdowns, chips, clear button)' },
 ];
@@ -244,6 +245,60 @@ const props = [
               <tr class="table-row--total font-semibold">
                 <td colspan="2">Total</td>
                 <td class="text-right">$40,000.00</td>
+              </tr>
+            </Fragment>
+          </Table>
+        </div>
+      </ExampleSection>
+    </section>
+
+    <section class="space-y-6">
+      <h2 class="section__title">Table with Reorderable Rows</h2>
+      
+      <ExampleSection title="Table with Reorderable Rows" description="When reorderable is enabled, a grip icon (vertical dots) appears at the far left of each row. Users can drag the grip to reorder rows up or down. When using the header slot with reorderable, add an empty th with class table__grip-column and aria-label='Reorder' as the first column.">
+        <div class="overflow-x-auto">
+          <Table headerVariant="gray" reorderable>
+            <Fragment slot="header">
+              <tr>
+                <th class="table__grip-column" scope="col" aria-label="Reorder"></th>
+                <th class="text-left">Project ID</th>
+                <th class="text-left">Name</th>
+                <th class="text-left">Status</th>
+                <th class="text-right">Budget</th>
+              </tr>
+            </Fragment>
+            <Fragment slot="body">
+              <tr>
+                <td>PRJ-001</td>
+                <td>Website Redesign</td>
+                <td>
+                  <span class="badge badge--success">Active</span>
+                </td>
+                <td class="text-right">$25,000</td>
+              </tr>
+              <tr>
+                <td>PRJ-002</td>
+                <td>Mobile App Development</td>
+                <td>
+                  <span class="badge badge--warning">In Progress</span>
+                </td>
+                <td class="text-right">$150,000</td>
+              </tr>
+              <tr>
+                <td>PRJ-003</td>
+                <td>Database Migration</td>
+                <td>
+                  <span class="badge badge--default">Pending</span>
+                </td>
+                <td class="text-right">$45,000</td>
+              </tr>
+              <tr>
+                <td>PRJ-004</td>
+                <td>Security Audit</td>
+                <td>
+                  <span class="badge badge--info">Review</span>
+                </td>
+                <td class="text-right">$12,500</td>
               </tr>
             </Fragment>
           </Table>
@@ -589,6 +644,7 @@ const props = [
             <li>Align numerical data to the right for easy comparison</li>
             <li>Use zebra striping for tables with many rows</li>
             <li>Provide sorting and filtering for large data sets; use the filter bar variant with dropdowns, active filter chips, and a Clear button for narrowing by period, project, or category</li>
+            <li>Use reorderable tables when users need to customize row order; provide keyboard alternatives for accessibility where possible</li>
           </ul>
         </div>
       </div>

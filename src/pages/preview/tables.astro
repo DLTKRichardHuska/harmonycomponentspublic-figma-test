@@ -314,6 +314,58 @@ import Chip from '../../components/ui/Chip.astro';
       </div>
     </div>
 
+    <!-- Table with Reorderable Rows -->
+    <div>
+      <h2 style="margin-bottom: 16px; font-size: 18px; font-weight: 600;">Table with Reorderable Rows</h2>
+      <div class="overflow-x-auto">
+        <Table headerVariant="gray" reorderable>
+          <Fragment slot="header">
+            <tr>
+              <th class="table__grip-column" scope="col" aria-label="Reorder"></th>
+              <th class="text-left">Project ID</th>
+              <th class="text-left">Name</th>
+              <th class="text-left">Status</th>
+              <th class="text-right">Budget</th>
+            </tr>
+          </Fragment>
+          <Fragment slot="body">
+            <tr>
+              <td>PRJ-001</td>
+              <td>Website Redesign</td>
+              <td>
+                <Badge variant="success">Active</Badge>
+              </td>
+              <td class="text-right">$25,000</td>
+            </tr>
+            <tr>
+              <td>PRJ-002</td>
+              <td>Mobile App Development</td>
+              <td>
+                <Badge variant="warning">In Progress</Badge>
+              </td>
+              <td class="text-right">$150,000</td>
+            </tr>
+            <tr>
+              <td>PRJ-003</td>
+              <td>Database Migration</td>
+              <td>
+                <Badge variant="default">Pending</Badge>
+              </td>
+              <td class="text-right">$45,000</td>
+            </tr>
+            <tr>
+              <td>PRJ-004</td>
+              <td>Security Audit</td>
+              <td>
+                <Badge variant="info">Review</Badge>
+              </td>
+              <td class="text-right">$12,500</td>
+            </tr>
+          </Fragment>
+        </Table>
+      </div>
+    </div>
+
     <script>
       // Handle row selection highlighting for browsers without :has() support
       document.addEventListener('DOMContentLoaded', () => {
