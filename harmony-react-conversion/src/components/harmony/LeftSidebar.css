@@ -24,3 +24,8 @@ html.theme-ppm .left-sidebar__variant--ppm {
 html.theme-maconomy .left-sidebar__variant--maconomy {
   display: contents;
 }
+
+/* Dark mode: img-based custom icons (e.g. Report, Resource) appear white */
+html.dark .left-sidebar__icon .left-sidebar__custom-icon {
+  filter: brightness(0) invert(1);
+}

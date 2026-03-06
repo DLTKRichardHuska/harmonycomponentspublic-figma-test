@@ -43,7 +43,7 @@ jobs:
         run: |
           BASE_VERSION=$(node -p "require('./package.json').version")
           TIMESTAMP=$(date +%s)
-          VERSION="${BASE_VERSION}.${TIMESTAMP}"
+          VERSION="${BASE_VERSION}-${TIMESTAMP}"
           echo "version=$VERSION" >> $GITHUB_OUTPUT
           echo "base_version=$BASE_VERSION" >> $GITHUB_OUTPUT
           echo "tag=harmony-react-v$VERSION" >> $GITHUB_OUTPUT
