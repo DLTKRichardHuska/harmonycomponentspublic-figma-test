@@ -17,6 +17,7 @@ export interface SortColumn {
 export interface Props {
   headerVariant?: 'gray' | 'white' | 'none';
   striped?: boolean;
+  reorderable?: boolean;
   class?: string;
   sortColumns?: SortColumn[];
   sortColumn?: string | null;
@@ -26,6 +27,7 @@ export interface Props {
 const {
   headerVariant = 'gray',
   striped = false,
+  reorderable = false,
   class: className = '',
   sortColumns,
   sortColumn = null,
@@ -36,6 +38,7 @@ const classes = [
   'table',
   `table--header-${headerVariant}`,
   striped && 'table--striped',
+  reorderable && 'table--reorderable',
   className,
 ].filter(Boolean).join(' ');
 
@@ -60,7 +63,12 @@ function getSortLabel(key: string, label: string): string {
 }
 ---
 
-<div class="table-wrapper">
+<div class="table-wrapper" data-reorderable={reorderable || undefined}>
+  {reorderable && (
+    <template class="table__grip-template">
+      <button type="button" class="table__grip-handle" aria-label="Drag to reorder"></button>
+    </template>
+  )}
   <!-- Optional Filter Bar -->
   {hasFilterBar && (
     <div class="table__filter-bar">
@@ -96,6 +104,9 @@ function getSortLabel(key: string, label: string): string {
     <thead>
       {useSortHeader ? (
         <tr>
+          {reorderable && (
+            <th class="table__grip-column" scope="col" aria-label="Reorder"></th>
+          )}
           {sortColumns!.map((col) => (
             <th
               scope="col"
@@ -112,7 +123,12 @@ function getSortLabel(key: string, label: string): string {
       ) : hasHeaderSlot ? (
         <slot name="header" />
       ) : (
-        <tr><th scope="col">Column</th></tr>
+        <tr>
+          {reorderable && (
+            <th class="table__grip-column" scope="col" aria-label="Reorder"></th>
+          )}
+          <th scope="col">Column</th>
+        </tr>
       )}
     </thead>
     <tbody>
@@ -125,6 +141,100 @@ function getSortLabel(key: string, label: string): string {
   </table>
 </div>
 
+{reorderable && (
+  <script>
+    (function () {
+      function initReorderableTables() {
+        document.querySelectorAll('.table-wrapper[data-reorderable]').forEach(function (wrapper) {
+          if (wrapper.dataset.reorderableInit) return;
+          wrapper.dataset.reorderableInit = 'true';
+
+          const template = wrapper.querySelector('template.table__grip-template');
+          const table = wrapper.querySelector('table');
+          const tbody = table?.querySelector('tbody');
+          if (!tbody || !template) return;
+
+          const rows = Array.from(tbody.querySelectorAll('tr'));
+          let draggedRow = null;
+          let draggedIndex = -1;
+
+          rows.forEach(function (row, index) {
+            if (row.classList.contains('table-row--total')) {
+              const emptyTd = document.createElement('td');
+              emptyTd.className = 'table__grip-cell table__grip-cell--placeholder';
+              emptyTd.setAttribute('aria-hidden', 'true');
+              row.insertBefore(emptyTd, row.firstChild);
+              return;
+            }
+
+            const gripTd = document.createElement('td');
+            gripTd.className = 'table__grip-cell';
+            const gripBtn = template.content.cloneNode(true);
+            gripTd.appendChild(gripBtn);
+            row.insertBefore(gripTd, row.firstChild);
+
+            row.setAttribute('draggable', 'true');
+            row.dataset.rowIndex = String(index);
+
+            row.addEventListener('dragstart', function (e) {
+              draggedRow = row;
+              draggedIndex = index;
+              row.classList.add('table-row--dragging');
+              e.dataTransfer.effectAllowed = 'move';
+              e.dataTransfer.setData('text/plain', String(index));
+              e.dataTransfer.setDragImage(row, 0, 0);
+            });
+
+            row.addEventListener('dragend', function () {
+              row.classList.remove('table-row--dragging');
+              draggedRow = null;
+              draggedIndex = -1;
+            });
+
+            row.addEventListener('dragover', function (e) {
+              e.preventDefault();
+              e.dataTransfer.dropEffect = 'move';
+              if (draggedRow && draggedRow !== row && !row.classList.contains('table-row--total')) {
+                row.classList.add('table-row--drag-over');
+              }
+            });
+
+            row.addEventListener('dragleave', function () {
+              row.classList.remove('table-row--drag-over');
+            });
+
+            row.addEventListener('drop', function (e) {
+              e.preventDefault();
+              row.classList.remove('table-row--drag-over');
+              if (!draggedRow || draggedRow === row || row.classList.contains('table-row--total')) return;
+              const currentRows = Array.from(tbody.querySelectorAll('tr:not(.table-row--total)'));
+              const fromIndex = currentRows.indexOf(draggedRow);
+              const toIndex = currentRows.indexOf(row);
+              if (fromIndex === toIndex) return;
+              if (fromIndex < toIndex) {
+                tbody.insertBefore(draggedRow, row.nextSibling);
+              } else {
+                tbody.insertBefore(draggedRow, row);
+              }
+              const newRows = Array.from(tbody.querySelectorAll('tr'));
+              newRows.forEach(function (r, i) { r.dataset.rowIndex = String(i); });
+              wrapper.dispatchEvent(new CustomEvent('table-reorder', {
+                bubbles: true,
+                detail: { fromIndex, toIndex }
+              }));
+            });
+          });
+        });
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initReorderableTables);
+      } else {
+        initReorderableTables();
+      }
+    })();
+  </script>
+)}
 <script>
   // Handle row selection and select-all for interactive tables with checkboxes
   document.addEventListener('DOMContentLoaded', () => {

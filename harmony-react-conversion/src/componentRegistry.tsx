@@ -379,7 +379,31 @@ function TableDemo() {
         </div>
       </div>
 
-      {/* 3. Striped Table */}
+      {/* 3. Table with Reorderable Rows */}
+      <div style={sectionGap}>
+        <h2 style={sectionTitleStyle}>Table with Reorderable Rows</h2>
+        <div style={sectionDescStyle}>Drag the grip icon at the left of each row to reorder.</div>
+        <div style={overflowWrap}>
+          <Table
+            headerVariant="gray"
+            reorderable
+            header={
+              <thead>
+                <tr>
+                  <th className="table__grip-column" scope="col" aria-label="Reorder" />
+                  <th className="text-left" scope="col">Project ID</th>
+                  <th className="text-left" scope="col">Name</th>
+                  <th className="text-left" scope="col">Status</th>
+                  <th className="text-right" scope="col">Budget</th>
+                </tr>
+              </thead>
+            }
+            body={projectBodyGray}
+          />
+        </div>
+      </div>
+
+      {/* 4. Striped Table */}
       <div style={sectionGap}>
         <h2 style={sectionTitleStyle}>Striped Table</h2>
         <div style={sectionDescStyle}>Alternating row background colors. Total row uses blue highlight.</div>
@@ -409,7 +433,7 @@ function TableDemo() {
         </div>
       </div>
 
-      {/* 4. Sortable column headers */}
+      {/* 5. Sortable column headers */}
       <div style={sectionGap}>
         <h2 style={sectionTitleStyle}>Sortable column headers</h2>
         <div style={sectionDescStyle}>Column headers can be sortable with icons indicating sort order.</div>
@@ -437,7 +461,7 @@ function TableDemo() {
         </div>
       </div>
 
-      {/* 5. Title Bar and Action Bar */}
+      {/* 6. Title Bar and Action Bar */}
       <div style={sectionGap}>
         <h2 style={sectionTitleStyle}>Table with Title Bar and Action Bar</h2>
         <div style={{ ...sectionDescStyle, marginBottom: '1rem' }}>Table with Title Bar</div>
@@ -454,7 +478,7 @@ function TableDemo() {
         </div>
       </div>
 
-      {/* 6. Table with Filter Bar */}
+      {/* 7. Table with Filter Bar */}
       <div style={sectionGap}>
         <h2 style={sectionTitleStyle}>Table with Filter Bar</h2>
         <div style={sectionDescStyle}>Filter bar with dropdowns, filter chips, and Clear button. All periods and All Statuses are defaults; chips appear only when filters are applied.</div>
