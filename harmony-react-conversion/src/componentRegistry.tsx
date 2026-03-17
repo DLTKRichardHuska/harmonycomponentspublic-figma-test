@@ -139,6 +139,69 @@ function BadgeDemo() {
   )
 }
 
+/** Demo wrapper to show ButtonGroup with text-only, icon+text, and icon-only at all sizes */
+function ButtonGroupDemo() {
+  const row = (label: string, content: React.ReactNode) => (
+    <div key={label} style={{ marginBottom: '1rem' }}>
+      <div style={{ fontSize: '0.875rem', color: '#666', marginBottom: '0.25rem' }}>{label}</div>
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', alignItems: 'center' }}>{content}</div>
+    </div>
+  )
+  return (
+    <>
+      {row('Text only', (
+        <ButtonGroup variant="default" size="md">
+          <Button key="1" buttonType="theme" variant="primary">Option 1</Button>
+          <Button key="2" buttonType="theme" variant="outline">Option 2</Button>
+          <Button key="3" buttonType="theme" variant="outline">Option 3</Button>
+        </ButtonGroup>
+      ))}
+      {row('With icons and text', (
+        <ButtonGroup variant="default" size="md">
+          <Button key="1" buttonType="theme" variant="primary" icon="plus">Button 1</Button>
+          <Button key="2" buttonType="theme" variant="outline" icon="squares-2x2">Button 2</Button>
+          <Button key="3" buttonType="theme" variant="outline" icon="chart-bar">Button 3</Button>
+        </ButtonGroup>
+      ))}
+      {row('With icons and text – sizes', (
+        <>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-1)' }}>
+            <span style={{ fontSize: '0.75rem', color: '#666' }}>Small</span>
+            <ButtonGroup variant="default" size="sm">
+              <Button key="1" buttonType="theme" variant="primary" icon="plus">Button 1</Button>
+              <Button key="2" buttonType="theme" variant="outline" icon="squares-2x2">Button 2</Button>
+              <Button key="3" buttonType="theme" variant="outline" icon="chart-bar">Button 3</Button>
+            </ButtonGroup>
+          </div>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-1)' }}>
+            <span style={{ fontSize: '0.75rem', color: '#666' }}>Medium</span>
+            <ButtonGroup variant="default" size="md">
+              <Button key="1" buttonType="theme" variant="primary" icon="plus">Button 1</Button>
+              <Button key="2" buttonType="theme" variant="outline" icon="squares-2x2">Button 2</Button>
+              <Button key="3" buttonType="theme" variant="outline" icon="chart-bar">Button 3</Button>
+            </ButtonGroup>
+          </div>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-1)' }}>
+            <span style={{ fontSize: '0.75rem', color: '#666' }}>Large</span>
+            <ButtonGroup variant="default" size="lg">
+              <Button key="1" buttonType="theme" variant="primary" icon="plus">Button 1</Button>
+              <Button key="2" buttonType="theme" variant="outline" icon="squares-2x2">Button 2</Button>
+              <Button key="3" buttonType="theme" variant="outline" icon="chart-bar">Button 3</Button>
+            </ButtonGroup>
+          </div>
+        </>
+      ))}
+      {row('Icon-only', (
+        <ButtonGroup variant="default" size="md">
+          <Button key="1" buttonType="theme" variant="primary" icon="plus" className="btn--icon-md" ariaLabel="Add" />
+          <Button key="2" buttonType="theme" variant="outline" icon="squares-2x2" className="btn--icon-md" ariaLabel="Layers" />
+          <Button key="3" buttonType="theme" variant="outline" icon="chart-bar" className="btn--icon-md" ariaLabel="Chart" />
+        </ButtonGroup>
+      ))}
+    </>
+  )
+}
+
 /** Demo wrapper to show RadioButton states, size variants, and validation states */
 function RadioButtonDemo() {
   const row = (label: string, content: React.ReactNode) => (
@@ -837,7 +900,7 @@ export const componentRegistry: ComponentRegistryEntry[] = [
   { name: 'Avatar', Component: Avatar as AnyComponent },
   { name: 'Badge', Component: BadgeDemo as AnyComponent },
   { name: 'Button', Component: ButtonDemo as AnyComponent },
-  { name: 'ButtonGroup', Component: ButtonGroup as AnyComponent, demoProps: { children: [<Button key="1" buttonType="theme" variant="primary">Primary</Button>, <Button key="2" buttonType="theme" variant="secondary">Secondary</Button>, <Button key="3" buttonType="theme" variant="tertiary">Tertiary</Button>] } },
+  { name: 'ButtonGroup', Component: ButtonGroupDemo as AnyComponent },
   { name: 'Card', Component: CardDemo as AnyComponent },
   { name: 'Checkbox', Component: CheckboxDemo as AnyComponent },
   { name: 'CheckboxGroup', Component: CheckboxGroup as AnyComponent, demoProps: { legend: 'Options', children: <><Checkbox label="Option A" /><Checkbox label="Option B" /></> } },
