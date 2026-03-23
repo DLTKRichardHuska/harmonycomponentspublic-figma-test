@@ -115,6 +115,126 @@ function LinkDemo() {
   )
 }
 
+/** Demo wrapper to show Badge size variants and with icons */
+function BadgeDemo() {
+  const row = (label: string, content: React.ReactNode) => (
+    <div key={label} style={{ marginBottom: '1rem' }}>
+      <div style={{ fontSize: '0.875rem', color: '#666', marginBottom: '0.25rem' }}>{label}</div>
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', alignItems: 'center' }}>{content}</div>
+    </div>
+  )
+  return (
+    <>
+      {row('Sizes', <>
+        <Badge variant="default" size="small">Small</Badge>
+        <Badge variant="default" size="medium">Medium</Badge>
+        <Badge variant="default" size="large">Large</Badge>
+      </>)}
+      {row('With Icons', <>
+        <Badge variant="success" size="small" icon="check">Small</Badge>
+        <Badge variant="success" size="medium" icon="check">Medium</Badge>
+        <Badge variant="success" size="large" icon="check">Large</Badge>
+      </>)}
+    </>
+  )
+}
+
+/** Demo wrapper to show ButtonGroup with text-only, icon+text, and icon-only at all sizes */
+function ButtonGroupDemo() {
+  const row = (label: string, content: React.ReactNode) => (
+    <div key={label} style={{ marginBottom: '1rem' }}>
+      <div style={{ fontSize: '0.875rem', color: '#666', marginBottom: '0.25rem' }}>{label}</div>
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', alignItems: 'center' }}>{content}</div>
+    </div>
+  )
+  return (
+    <>
+      {row('Text only', (
+        <ButtonGroup variant="default" size="md">
+          <Button key="1" buttonType="theme" variant="primary">Option 1</Button>
+          <Button key="2" buttonType="theme" variant="outline">Option 2</Button>
+          <Button key="3" buttonType="theme" variant="outline">Option 3</Button>
+        </ButtonGroup>
+      ))}
+      {row('With icons and text', (
+        <ButtonGroup variant="default" size="md">
+          <Button key="1" buttonType="theme" variant="primary" icon="plus">Button 1</Button>
+          <Button key="2" buttonType="theme" variant="outline" icon="squares-2x2">Button 2</Button>
+          <Button key="3" buttonType="theme" variant="outline" icon="chart-bar">Button 3</Button>
+        </ButtonGroup>
+      ))}
+      {row('With icons and text – sizes', (
+        <>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-1)' }}>
+            <span style={{ fontSize: '0.75rem', color: '#666' }}>Small</span>
+            <ButtonGroup variant="default" size="sm">
+              <Button key="1" buttonType="theme" variant="primary" icon="plus">Button 1</Button>
+              <Button key="2" buttonType="theme" variant="outline" icon="squares-2x2">Button 2</Button>
+              <Button key="3" buttonType="theme" variant="outline" icon="chart-bar">Button 3</Button>
+            </ButtonGroup>
+          </div>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-1)' }}>
+            <span style={{ fontSize: '0.75rem', color: '#666' }}>Medium</span>
+            <ButtonGroup variant="default" size="md">
+              <Button key="1" buttonType="theme" variant="primary" icon="plus">Button 1</Button>
+              <Button key="2" buttonType="theme" variant="outline" icon="squares-2x2">Button 2</Button>
+              <Button key="3" buttonType="theme" variant="outline" icon="chart-bar">Button 3</Button>
+            </ButtonGroup>
+          </div>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-1)' }}>
+            <span style={{ fontSize: '0.75rem', color: '#666' }}>Large</span>
+            <ButtonGroup variant="default" size="lg">
+              <Button key="1" buttonType="theme" variant="primary" icon="plus">Button 1</Button>
+              <Button key="2" buttonType="theme" variant="outline" icon="squares-2x2">Button 2</Button>
+              <Button key="3" buttonType="theme" variant="outline" icon="chart-bar">Button 3</Button>
+            </ButtonGroup>
+          </div>
+        </>
+      ))}
+      {row('Icon-only', (
+        <ButtonGroup variant="default" size="md">
+          <Button key="1" buttonType="theme" variant="primary" icon="plus" className="btn--icon-md" ariaLabel="Add" />
+          <Button key="2" buttonType="theme" variant="outline" icon="squares-2x2" className="btn--icon-md" ariaLabel="Layers" />
+          <Button key="3" buttonType="theme" variant="outline" icon="chart-bar" className="btn--icon-md" ariaLabel="Chart" />
+        </ButtonGroup>
+      ))}
+    </>
+  )
+}
+
+/** Demo wrapper to show RadioButton states, size variants, and validation states */
+function RadioButtonDemo() {
+  const row = (label: string, content: React.ReactNode) => (
+    <div key={label} style={{ marginBottom: '1.5rem' }}>
+      <div style={{ fontSize: '0.875rem', color: '#666', marginBottom: '0.5rem' }}>{label}</div>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-3)' }}>{content}</div>
+    </div>
+  )
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-6)' }}>
+      {row('States', <>
+        <RadioButton name="demo-states" value="1" label="Unchecked" />
+        <RadioButton name="demo-states" value="2" label="Checked" defaultChecked />
+        <RadioButton name="demo-states-disabled" value="3" label="Disabled" disabled />
+        <RadioButton name="demo-states-disabled" value="4" label="Checked & Disabled" defaultChecked disabled />
+      </>)}
+      {row('Size variants', <>
+        <RadioButton name="demo-sizes" value="sm" label="Small" size="small" />
+        <RadioButton name="demo-sizes" value="md" label="Medium (default)" size="medium" defaultChecked />
+        <RadioButton name="demo-sizes" value="lg" label="Large" size="large" />
+      </>)}
+      {row('Warning states', <>
+        <RadioButton name="demo-warn-1" value="1" label="Unchecked with warning" warning warningMessage="This action may have unintended consequences" />
+        <RadioButton name="demo-warn-2" value="2" label="Checked with warning" defaultChecked warning warningMessage="Review this selection carefully" />
+      </>)}
+      {row('Error states', <>
+        <RadioButton name="demo-err-1" value="1" label="Unchecked with error" error errorMessage="This field is required" />
+        <RadioButton name="demo-err-2" value="2" label="Checked with error" defaultChecked error errorMessage="This selection is invalid" />
+      </>)}
+    </div>
+  )
+}
+
 /** Demo wrapper showing basic, with-header, with-icons, and single-icon Card variants */
 function CardDemo() {
   return (
@@ -149,23 +269,138 @@ function CardDemo() {
   )
 }
 
-/** Demo wrapper so Dialog open/close is controlled by state; close button and onClose actually close it */
+const dialogSectionTitleStyle: React.CSSProperties = { fontSize: '1rem', fontWeight: 600, marginBottom: '0.25rem' }
+const dialogSectionDescStyle: React.CSSProperties = { fontSize: '0.875rem', color: '#666', marginBottom: '0.5rem' }
+const dialogSectionGap: React.CSSProperties = { marginBottom: '1.5rem' }
+
+/** Multiple dialog examples showing all options: basic, tertiary button, primary header, right-aligned, confirmation, non-resizable, long content */
 function DialogDemo() {
-  const [open, setOpen] = useState(true)
+  const [openId, setOpenId] = useState<string | null>(null)
+  const close = () => setOpenId(null)
+
   return (
-    <>
-      <Button buttonType="theme" variant="primary" onClick={() => setOpen(true)}>
-        Open dialog
-      </Button>
-      <Dialog
-        id="demo-dialog"
-        title="Dialog"
-        open={open}
-        onClose={() => setOpen(false)}
-      >
-        Dialog body content.
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+      <div style={dialogSectionGap}>
+        <div style={dialogSectionTitleStyle}>Basic</div>
+        <div style={dialogSectionDescStyle}>Default dialog with Confirm and Cancel.</div>
+        <Button buttonType="theme" variant="primary" onClick={() => setOpenId('basic')}>Open basic dialog</Button>
+      </div>
+
+      <div style={dialogSectionGap}>
+        <div style={dialogSectionTitleStyle}>Three buttons (Yes, No, Cancel)</div>
+        <div style={dialogSectionDescStyle}>Optional tertiary (link-style) button for a less prominent action.</div>
+        <Button buttonType="theme" variant="primary" onClick={() => setOpenId('tertiary')}>Open save changes dialog</Button>
+      </div>
+
+      <div style={dialogSectionGap}>
+        <div style={dialogSectionTitleStyle}>Primary header</div>
+        <div style={dialogSectionDescStyle}>Header uses theme primary background with inverse text.</div>
+        <Button buttonType="theme" variant="primary" onClick={() => setOpenId('primary-header')}>Open primary header dialog</Button>
+      </div>
+
+      <div style={dialogSectionGap}>
+        <div style={dialogSectionTitleStyle}>Right-aligned buttons</div>
+        <div style={dialogSectionDescStyle}>Footer buttons aligned to the right.</div>
+        <Button buttonType="theme" variant="primary" onClick={() => setOpenId('right-align')}>Open right-aligned dialog</Button>
+      </div>
+
+      <div style={dialogSectionGap}>
+        <div style={dialogSectionTitleStyle}>Confirmation (custom footer)</div>
+        <div style={dialogSectionDescStyle}>Custom footer with destructive action and Cancel.</div>
+        <Button buttonType="theme" variant="destructive" onClick={() => setOpenId('confirm')}>Delete item</Button>
+      </div>
+
+      <div style={dialogSectionGap}>
+        <div style={dialogSectionTitleStyle}>Non-resizable</div>
+        <div style={dialogSectionDescStyle}>Resize grip hidden when resizable=false.</div>
+        <Button buttonType="theme" variant="primary" onClick={() => setOpenId('non-resizable')}>Open non-resizable dialog</Button>
+      </div>
+
+      <div style={dialogSectionGap}>
+        <div style={dialogSectionTitleStyle}>Long content (scrollable body)</div>
+        <div style={dialogSectionDescStyle}>Body overflows and scrolls; header and footer stay fixed.</div>
+        <Button buttonType="theme" variant="primary" onClick={() => setOpenId('scrollable')}>Open scrollable dialog</Button>
+      </div>
+
+      <Dialog id="demo-dialog-basic" title="Dialog" open={openId === 'basic'} onClose={close}>
+        Dialog body content. Confirm and Cancel use the default footer.
       </Dialog>
-    </>
+
+      <Dialog
+        id="demo-dialog-tertiary"
+        title="Save changes?"
+        open={openId === 'tertiary'}
+        onClose={close}
+        tertiaryLabel="Cancel"
+      >
+        <p style={{ margin: 0 }}>Do you want to save your changes before closing? Yes saves and closes, No closes without saving, Cancel keeps the dialog open.</p>
+      </Dialog>
+
+      <Dialog
+        id="demo-dialog-primary"
+        title="Primary header"
+        headerVariant="primary"
+        open={openId === 'primary-header'}
+        onClose={close}
+      >
+        <p style={{ margin: 0 }}>This dialog has a primary-colored header with inverse text.</p>
+      </Dialog>
+
+      <Dialog
+        id="demo-dialog-right"
+        title="Right-aligned buttons"
+        buttonAlignment="right"
+        open={openId === 'right-align'}
+        onClose={close}
+      >
+        <p style={{ margin: 0 }}>Footer buttons are aligned to the right.</p>
+      </Dialog>
+
+      <Dialog
+        id="demo-dialog-confirm"
+        title="Delete item?"
+        open={openId === 'confirm'}
+        onClose={close}
+        footer={
+          <div className="dialog__footer-actions">
+            <Button buttonType="theme" variant="destructive" onClick={close}>Delete</Button>
+            <Button buttonType="theme" variant="secondary" onClick={close}>Cancel</Button>
+          </div>
+        }
+      >
+        <p style={{ margin: 0 }}>Are you sure you want to delete this item? This action cannot be undone.</p>
+      </Dialog>
+
+      <Dialog
+        id="demo-dialog-nonresize"
+        title="Non-resizable"
+        resizable={false}
+        open={openId === 'non-resizable'}
+        onClose={close}
+      >
+        <p style={{ margin: 0 }}>This dialog has no resize grip in the corner.</p>
+      </Dialog>
+
+      <Dialog
+        id="demo-dialog-scrollable"
+        title="Scrollable Body"
+        className="dialog--scrollable-demo"
+        open={openId === 'scrollable'}
+        onClose={close}
+      >
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+          <p style={{ margin: 0 }}>When content is long, only the body scrolls. The header and footer stay fixed.</p>
+          <p style={{ margin: 0 }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <p style={{ margin: 0 }}>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
+          <p style={{ margin: 0 }}>Cras mattis consectetur purus sit amet fermentum. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+          <p style={{ margin: 0 }}>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Maecenas sed diam eget risus varius blandit sit amet non magna. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
+          <p style={{ margin: 0 }}>Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
+          <p style={{ margin: 0 }}>Etiam porta sem malesuada magna mollis euismod. Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
+          <p style={{ margin: 0 }}>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
+          <p style={{ margin: 0 }}>Scroll to see that the header and footer remain fixed at the top and bottom.</p>
+        </div>
+      </Dialog>
+    </div>
   )
 }
 
@@ -663,9 +898,9 @@ export const componentRegistry: ComponentRegistryEntry[] = [
   { name: 'Accordion', Component: Accordion as AnyComponent, demoProps: { items: [{ title: 'Section 1', content: 'Content for section 1' }, { title: 'Section 2', content: 'Content for section 2', defaultOpen: true }] } },
   { name: 'Alert', Component: Alert as AnyComponent, demoProps: { variant: 'info', children: 'This is an info alert.' } },
   { name: 'Avatar', Component: Avatar as AnyComponent },
-  { name: 'Badge', Component: Badge as AnyComponent, demoProps: { variant: 'default', children: 'Badge' } },
+  { name: 'Badge', Component: BadgeDemo as AnyComponent },
   { name: 'Button', Component: ButtonDemo as AnyComponent },
-  { name: 'ButtonGroup', Component: ButtonGroup as AnyComponent, demoProps: { children: [<Button key="1" buttonType="theme" variant="primary">Primary</Button>, <Button key="2" buttonType="theme" variant="secondary">Secondary</Button>, <Button key="3" buttonType="theme" variant="tertiary">Tertiary</Button>] } },
+  { name: 'ButtonGroup', Component: ButtonGroupDemo as AnyComponent },
   { name: 'Card', Component: CardDemo as AnyComponent },
   { name: 'Checkbox', Component: CheckboxDemo as AnyComponent },
   { name: 'CheckboxGroup', Component: CheckboxGroup as AnyComponent, demoProps: { legend: 'Options', children: <><Checkbox label="Option A" /><Checkbox label="Option B" /></> } },
@@ -690,7 +925,7 @@ export const componentRegistry: ComponentRegistryEntry[] = [
   { name: 'NumberInput', Component: NumberInput as AnyComponent, demoProps: { id: 'demo-num', label: 'Number' } },
   { name: 'PickerPopup', Component: PickerPopupDemo as AnyComponent },
   { name: 'ProgressBar', Component: ProgressBar as AnyComponent, demoProps: { value: 60, max: 100 } },
-  { name: 'RadioButton', Component: RadioButton as AnyComponent, demoProps: { name: 'demo', value: 'opt', label: 'Option' } },
+  { name: 'RadioButton', Component: RadioButtonDemo as AnyComponent },
   { name: 'RadioGroup', Component: RadioGroup as AnyComponent, demoProps: { name: 'demo', legend: 'Choose', children: <><RadioButton name="demo" value="a" label="Option A" defaultChecked /><RadioButton name="demo" value="b" label="Option B" /></> } },
   { name: 'RangeInput', Component: RangeInput as AnyComponent, demoProps: { id: 'demo-range', min: 0, max: 100, defaultValue: 50 } },
   { name: 'RightSidebar', Component: RightSidebar as AnyComponent },

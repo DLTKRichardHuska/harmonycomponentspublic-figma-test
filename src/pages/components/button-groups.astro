@@ -144,7 +144,42 @@ const props = [
         </div>
       </ExampleSection>
 
-      <ExampleSection title="Default Variant - With Icons" description="Button group with icon buttons in the default variant.">
+      <ExampleSection title="With icons and text" description="Buttons in the group can show both an icon and a label. Use the default variant and pass icon plus text to each Button.">
+        <ButtonGroup>
+          <Button variant="primary" icon="plus">Button 1</Button>
+          <Button variant="outline" icon="squares-2x2">Button 2</Button>
+          <Button variant="outline" icon="chart-bar">Button 3</Button>
+        </ButtonGroup>
+        <div class="space-y-4 mt-6">
+          <p class="text-sm text-secondary mb-2">With icons and text at every size:</p>
+          <div>
+            <p class="text-sm text-secondary mb-2">Small</p>
+            <ButtonGroup size="sm">
+              <Button variant="primary" icon="plus">Button 1</Button>
+              <Button variant="outline" icon="squares-2x2">Button 2</Button>
+              <Button variant="outline" icon="chart-bar">Button 3</Button>
+            </ButtonGroup>
+          </div>
+          <div>
+            <p class="text-sm text-secondary mb-2">Medium</p>
+            <ButtonGroup size="md">
+              <Button variant="primary" icon="plus">Button 1</Button>
+              <Button variant="outline" icon="squares-2x2">Button 2</Button>
+              <Button variant="outline" icon="chart-bar">Button 3</Button>
+            </ButtonGroup>
+          </div>
+          <div>
+            <p class="text-sm text-secondary mb-2">Large</p>
+            <ButtonGroup size="lg">
+              <Button variant="primary" icon="plus">Button 1</Button>
+              <Button variant="outline" icon="squares-2x2">Button 2</Button>
+              <Button variant="outline" icon="chart-bar">Button 3</Button>
+            </ButtonGroup>
+          </div>
+        </div>
+      </ExampleSection>
+
+      <ExampleSection title="Default Variant - With Icons" description="Button group with icon-only buttons in the default variant.">
         <ButtonGroup>
           <Button variant="primary" icon="bold" class="btn--icon-md" aria-label="Bold" />
           <Button variant="outline" icon="italic" class="btn--icon-md" aria-label="Italic" />
