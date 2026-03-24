@@ -1,15 +1,24 @@
 ---
 name: design-patterns
-description: Comprehensive design pattern management system for multi-product design teams. Use this skill when (1) creating a new pattern from an existing component, (2) documenting UI/UX patterns for consistency, (3) looking up existing patterns for a specific product (PPM, CP, etc.), (4) referencing patterns when building new components for harmony, (5) searching for reusable patterns across products. Triggers on keywords like "pattern", "component pattern", "document this component", "create pattern from", "what patterns exist for [product]", "wizard pattern", "navigation pattern", "floating nav", or any request to standardize or reference design system patterns.
+description: Comprehensive design pattern management system for multi-product design teams. Use this skill when (1) creating a new pattern from an existing component, (2) documenting UI/UX patterns for consistency, (3) looking up existing patterns for a specific product (PPM, CP, etc.), (4) referencing patterns when building new components, (5) searching for reusable patterns across products. Triggers on keywords like "pattern", "component pattern", "document this component", "create pattern from", "what patterns exist for [product]", "wizard pattern", "navigation pattern", "floating nav", or any request to standardize or reference design system patterns.
 ---
 
 # Design Patterns Skill
 
 A pattern management system enabling design teams to create, document, and reference UI/UX patterns across multiple products.
 
-## Integration with Harmony Design System
+## Integration with Harmony Design System (Integration Kit)
 
-**When the project uses the Harmony design system:** Implement pattern structure (anatomy, when to use, flow) from this skill and its registry, but use **Harmony components** for the actual UI. Use the **harmony** and **harmony-component** skills for component API, props, tokens, and ShellLayout. Do not invent components—use Harmony Dialog, Button, ShellLayout, etc. as specified in Harmony docs. This skill provides the *pattern*; Harmony skills provide the *components and styling*.
+Patterns in this registry are **design-level blueprints** — they define anatomy, structure, flow, and when-to-use guidelines. They are **not framework-specific**.
+
+**When building from a pattern:** Use **MUI or shadcn** components with the Harmony theme applied via [docs/MAPPING_PLAYBOOK.md](../../../docs/MAPPING_PLAYBOOK.md). Do not import from `reference-components/` — those are read-only spec showing expected structure and behavior.
+
+- Pattern says `Dialog` → use MUI `Dialog` or shadcn `Dialog`
+- Pattern says `Button` → use MUI `Button` or shadcn `Button`
+- Pattern says `Card` → use MUI `Card` or shadcn `Card`
+- Pattern says `Table` → use MUI `Table`/`DataGrid` or shadcn `Table`
+
+All styling uses Harmony tokens (`var(--space-*)`, `var(--radius-*)`, `var(--theme-primary)`, etc.) through the applied theme.
 
 ## Core Capabilities
 
@@ -22,26 +31,25 @@ A pattern management system enabling design teams to create, document, and refer
 
 **Creating a new pattern?** → Run `scripts/create_pattern.py` or follow "Pattern Creation Workflow"
 **Looking up existing patterns?** → See `reference/registry.md` or run `scripts/search_patterns.py`
-**Building a new component?** → Check registry first, then follow existing pattern structure. If the project uses Harmony, also use harmony-component and harmony for the actual components.
+**Building a new component?** → Check registry first, then follow existing pattern structure. Build with MUI/shadcn + Harmony theme.
 **Documenting manually?** → Use template from `reference/PATTERN_TEMPLATE.md`
 
 ## Pattern Creation Workflow
 
 ### Quick Create (recommended)
 
-Run from the project that contains the component. Pass the component name; the script searches for the file, detects category from path, and asks for product/theme only if you didn't pass it:
+Run from the project that contains the component:
 
 ```bash
-python scripts/create_pattern.py FloatingNav
-python scripts/create_pattern.py FloatingNav --product CP
-python scripts/create_pattern.py src/nav/FloatingNav.tsx --product CP
+python .cursor/skills/design-patterns/scripts/create_pattern.py FloatingNav
+python .cursor/skills/design-patterns/scripts/create_pattern.py FloatingNav --product CP
 ```
 
 The script will:
-1. Search the project for a file matching the name (`.tsx`, `.astro`, `.jsx`, `.vue`) or use the path you gave
-2. Detect category from folder path (e.g. `wizards/` → dialogs, `nav/` → navigation)
-3. Ask for product/theme once if not provided (e.g. PPM, CP, VP, cross-product)
-4. Analyze the component, generate the doc, and save to `reference/<name>.md` next to the script
+1. Search the project for a file matching the name
+2. Detect category from folder path
+3. Ask for product/theme if not provided
+4. Analyze the component, generate the doc, and save to `reference/<name>.md`
 
 Optional flags: `--product` (or `--theme`), `--category`, `--output`, `--author`, `--project-root`.
 
@@ -65,9 +73,9 @@ When creating a pattern without the script, gather this information:
 - Variants and when to use each
 
 **4. Implementation Details**
-- Component dependencies
+- Component dependencies (mapped to MUI/shadcn equivalents)
 - Props/configuration options
-- Integration points (where it connects to app)
+- Integration points
 
 **5. Usage Guidelines**
 - When to use this pattern
@@ -85,44 +93,41 @@ Patterns are organized by product, then category:
 ```
 patterns/
 ├── ppm/                     # Project Portfolio Management
-│   ├── _index.md            # PPM pattern catalog
+│   ├── _index.md
 │   ├── dialogs/
-│   │   ├── wizard-dialog.md
-│   │   └── confirmation-dialog.md
 │   ├── navigation/
 │   ├── forms/
 │   └── layouts/
 ├── cp/                      # CP Theme
 │   ├── _index.md
 │   ├── navigation/
-│   │   └── floating-nav.md
 │   └── layouts/
 ├── cross-product/           # Shared patterns
 │   ├── _index.md
 │   └── ...
-└── registry.md               # Master index of all patterns
+└── registry.md              # Master index of all patterns
 ```
 
 ## Searching Patterns
 
 ### By Product
 ```bash
-python scripts/search_patterns.py --product "PPM"
+python .cursor/skills/design-patterns/scripts/search_patterns.py --product "PPM"
 ```
 
 ### By Category
 ```bash
-python scripts/search_patterns.py --category "navigation"
+python .cursor/skills/design-patterns/scripts/search_patterns.py --category "navigation"
 ```
 
 ### By Keyword
 ```bash
-python scripts/search_patterns.py --query "accordion wizard"
+python .cursor/skills/design-patterns/scripts/search_patterns.py --query "accordion wizard"
 ```
 
 ### Full-Text Search
 ```bash
-python scripts/search_patterns.py --query "sidebar completion tracking" --full-text
+python .cursor/skills/design-patterns/scripts/search_patterns.py --query "sidebar completion tracking" --full-text
 ```
 
 ## Pattern Documentation Standards
@@ -135,7 +140,7 @@ Every pattern document must include:
 3. **Solution** - How the pattern solves it
 4. **Anatomy** - Visual breakdown of components
 5. **Usage Guidelines** - When to use, when not to use
-6. **Implementation** - Code references, integration points
+6. **Implementation** - Component mapping to MUI/shadcn, integration points
 
 ### Optional Sections
 - Variants
@@ -157,15 +162,15 @@ Patterns are designed to be AI-readable for consistency when building new compon
 1. Agent searches registry for relevant patterns
 2. Loads pattern documentation into context
 3. Follows pattern structure and guidelines
-4. If the project uses Harmony, use harmony-component and harmony for the actual UI components and tokens
-5. References example implementations
+4. Builds with **MUI or shadcn** components using Harmony theme tokens
+5. References `reference-components/` as read-only spec for expected behavior
 
 **Example prompt for AI:**
 ```
-I need to create a new wizard for PPM. 
+I need to create a new wizard for PPM.
 Check the design-patterns registry for wizard patterns.
 Follow the existing wizard-dialog pattern structure.
-If we use Harmony, use Harmony Dialog and Button.
+Build with MUI Dialog and Button using the Harmony theme.
 ```
 
 ## Cross-Product Pattern Adoption
@@ -190,8 +195,8 @@ When a product-specific pattern may be useful elsewhere:
 
 | Task | Command/Action |
 |------|----------------|
-| Create pattern | `python scripts/create_pattern.py <ComponentName>` (optional: `--product CP`) |
+| Create pattern | `python .cursor/skills/design-patterns/scripts/create_pattern.py <ComponentName>` (optional: `--product CP`) |
 | Create pattern (manual) | Copy `reference/PATTERN_TEMPLATE.md` |
-| Search patterns | `python scripts/search_patterns.py --query "..."` |
-| List all patterns | `python scripts/search_patterns.py --list` |
+| Search patterns | `python .cursor/skills/design-patterns/scripts/search_patterns.py --query "..."` |
+| List all patterns | `python .cursor/skills/design-patterns/scripts/search_patterns.py --list` |
 | View registry | Open `reference/registry.md` |

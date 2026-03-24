@@ -1,6 +1,6 @@
 ---
 name: harmony-ux-principles
-description: UX principles for design critique, cognitive load analysis, and usability guidance. Use when reviewing designs, auditing usability, or providing feedback on interaction patterns.
+description: UX principles for design critique, cognitive load analysis, and usability guidance. Use when reviewing designs, auditing usability, or providing feedback on interaction patterns. Framework-agnostic — works with MUI, shadcn, or any UI.
 ---
 
 # Harmony UX Principles
@@ -78,7 +78,7 @@ For Harmony-specific component rules and accessibility, use the harmony-usage-ru
 - User asks "What do I do first?"
 
 ### Fixes
-- Single primary button (use Harmony `variant="primary"`)
+- Single primary button (MUI: `variant="contained"`, shadcn: `variant="default"`, or Harmony token-styled primary)
 - Secondary actions visually subordinate
 - Empty states with clear call-to-action
 - Numbered steps or visual flow indicators

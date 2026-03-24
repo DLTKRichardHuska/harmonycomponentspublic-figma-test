@@ -17,7 +17,7 @@ Apply these when executing the harmony-usage-rules plan. **Plan ID:** `harmony_u
 
 // CONSISTENT PATTERNS (match class contains)
 const H2_SELECTOR = 'section__title';           // <h2 class="section__title"> or section__title mt-8
-const A11Y_SELECTOR = 'a11y-card__title';      // <h3> inside Accessibility section only (icons.astro reuses elsewhere)
+const A11Y_SELECTOR = 'a11y-card__title';      // <h3> inside Accessibility section only (Icons doc page reuses elsewhere)
 const GUIDELINE_SELECTOR = 'guideline-card__header';  // Do/Don't inside .guideline-card--do / --dont
 
 // Include these h2 sections (case-insensitive match on extracted text)
@@ -47,11 +47,11 @@ const SKIP_SECTIONS = [
 
 2. **Within Usage / Usage Guidelines:** Capture ALL content until next h2. Look for `guideline-card__header` for Do/Don't blocks. Capture any h3 as subsections; do not match h3 by exact class (classes vary: mb-2, mb-3, mb-4, text-lg, etc.).
 
-3. **Within Accessibility:** Look for `a11y-card__title` on h3. Capture until next h3 or end of section. **Only** extract when parent h2 is "Accessibility" (icons.astro reuses a11y-card__title elsewhere).
+3. **Within Accessibility:** Look for `a11y-card__title` on h3. Capture until next h3 or end of section. **Only** extract when parent h2 is "Accessibility" (Icons doc page reuses a11y-card__title elsewhere).
 
-4. **Edge cases:** Pages with no Usage or Accessibility (e.g. button-groups.astro, scrollbar.astro, specialty-inputs.astro) → skip gracefully. Custom h2 like "Layout" (dialogs) → include if in TARGET_SECTIONS. tables.astro multiple example h2s → skip if not in TARGET_SECTIONS. inputs.astro "Input Props" / "Textarea Props" → skip.
+4. **Edge cases:** Pages with no Usage or Accessibility (e.g. Button groups, Scrollbar, Specialty inputs doc pages) → skip gracefully. Custom h2 like "Layout" (dialogs) → include if in TARGET_SECTIONS. Tables doc page: multiple example h2s → skip if not in TARGET_SECTIONS. Inputs doc page: "Input Props" / "Textarea Props" → skip.
 
-5. **Component name:** Derive from filename: `buttons.astro` → "Buttons", `specialty-inputs.astro` → "Specialty Inputs". Use to group rules in output and note source per rule.
+5. **Component name:** Derive from the doc page slug or title (e.g. "Buttons", "Specialty Inputs"). Use to group rules in output and note source per rule.
 
 ### Output
 
@@ -84,7 +84,7 @@ Validated across multiple component pages, Feb 2025.
 |--------------|----------|----------|
 | Examples | Most pages | No |
 | Props | Most pages | No |
-| Input Props, Textarea Props | inputs.astro | No |
+| Input Props, Textarea Props | Inputs doc page | No |
 | Usage Guidelines | buttons, inputs, checkboxes, tables | Yes |
 | Usage | stepper, icons | Yes |
 | Accessibility | Most pages | Yes |
@@ -98,13 +98,13 @@ Classes vary by component (e.g. text-lg font-semibold text-primary mb-2/mb-3/mb-
 
 ### Pages with minimal content
 
-button-groups.astro, scrollbar.astro, specialty-inputs.astro → Examples and/or Props only; no rules output (expected).
+**Button groups**, **Scrollbar**, and **Specialty inputs** doc pages → Examples and/or Props only; no rules output (expected).
 
 ## Edge Cases
 
-- icons.astro reuses a11y-card__title for non-a11y content → only extract when parent h2 is "Accessibility".
-- tables.astro has multiple example h2s → skip if not in TARGET_SECTIONS.
-- inputs.astro "Input Props" / "Textarea Props" → skip (variant of Props).
+- **Icons doc page** reuses a11y-card__title for non-a11y content → only extract when parent h2 is "Accessibility".
+- **Tables doc page** has multiple example h2s → skip if not in TARGET_SECTIONS.
+- **Inputs doc page** — "Input Props" / "Textarea Props" → skip (variant of Props).
 ```
 
 ---

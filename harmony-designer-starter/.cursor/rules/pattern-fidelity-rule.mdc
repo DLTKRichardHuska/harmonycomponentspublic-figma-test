@@ -1,0 +1,21 @@
+---
+description: When building pattern pages from pattern markdown docs — every named item, component, label, and count in the Component Tree and Key Elements must appear in the built output exactly as specified. No simplification, no partial lists, no generic placeholders. Build with MUI or shadcn, not Harmony React components.
+globs: ["src/patterns/**/*"]
+alwaysApply: false
+---
+
+# Pattern page fidelity
+
+When building a pattern page from a pattern markdown reference doc:
+
+- **Build with MUI or shadcn.** Map pattern component names to host framework equivalents. Do not import from `reference-components/` — those are read-only spec for expected behavior.
+- **Shell is imported, not rebuilt.** Every pattern component uses the host app's shell layout and renders its own instance with the props and slots configured for that pattern.
+- **Named items are exact.** If the Component Tree or Key Elements lists specific items (e.g. "Board, Table, List, Calendar, Schedule, Gantt, Network graph"), every one of those items must appear in the built component with those exact labels.
+- **Counts are exact.** If the Component Tree shows 3 Dropdowns (Period, Project, Category), the output has 3 Dropdowns with those labels.
+- **Required means required.** Every element marked Required = Yes in the Key Elements table must exist in the built component.
+- **Components match the tree.** Every component listed in the Component Tree must have a corresponding host framework element in the output.
+- **Behaviors are wired.** If the pattern says "dismissible" chips, they have onRemove handlers. If it says "overflow handled by More (N) menu", there is conditional rendering for overflow.
+- **No stubs, no placeholders, no simplified demos.** Use realistic demo data matching the pattern's domain.
+- **Pre-flight is mandatory.** Before writing any code for a pattern, print the Component Tree contents, Required Key Elements, and named items.
+- **Verification is a hard gate.** After building a pattern page, produce a verification output block from both verifiers (layout-verifier and pattern-fidelity-verifier) before starting the next pattern.
+- **PASS requires proof.** A pattern can only be logged as PASS if the verification output block contains "PASS: zero deviations" from both verifiers.
