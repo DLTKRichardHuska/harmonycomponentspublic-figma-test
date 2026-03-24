@@ -1,15 +1,16 @@
 ---
-description: When composing page layouts: all spacing must use Harmony tokens (var(--space-N)), no arbitrary px/rem/em values. No Card nested inside Card. ShellPageHeader is always first child in content slot. Button bar is always last child. Use design system grid patterns for multi-card layouts. Verify all imported components are used.
-globs: ["src/pages/**/*", "src/views/**/*"]
+description: When composing page layouts with MUI or shadcn: all spacing must use Harmony tokens (var(--space-N)), no arbitrary px/rem/em values. No Card nested inside Card. Page header is always first child in content area. Button bar is always last child. Use design system grid patterns for multi-card layouts. Verify all imported components are used.
+globs: ["src/pages/**/*", "src/views/**/*", "src/patterns/**/*"]
 alwaysApply: false
 ---
 
 # Layout composition
 
-When composing page layouts:
+When composing page layouts with **MUI or shadcn** and the Harmony theme:
 
-- **Spacing:** Use Harmony tokens only — `var(--space-N)`. No arbitrary `px`, `rem`, or `em` values.
-- **Cards:** No Card nested inside Card.
-- **Content slot order:** ShellPageHeader is always the first child in the content slot. Button bar is always the last child.
+- **Spacing:** Use Harmony tokens only — `var(--space-N)` or theme-mapped equivalents. No arbitrary `px`, `rem`, or `em` values.
+- **Cards:** No Card nested inside Card (MUI `Card` or shadcn `Card`).
+- **Content area order:** Page header is always the first child in the content area. Button bar is always the last child.
 - **Multi-card layouts:** Use design system grid patterns.
 - **Imports:** Verify all imported components are used.
+- **Components:** Use MUI or shadcn components. Do not import from `reference-components/` — those are read-only spec.

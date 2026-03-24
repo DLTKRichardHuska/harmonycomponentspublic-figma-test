@@ -1,6 +1,14 @@
 # Harmony designer starter
 
-Self-contained **Harmony React** preview for designers: full shell (`ShellLayout`) and converted components under `src/components/harmony/`, vendored global CSS (`harmony-styles/`) and icon data (`harmony-data/`), plus curated **Cursor** skills and slash-command docs under `.cursor/`.
+Self-contained **Harmony React** preview for designers: full shell (`ShellLayout`) and components under `src/components/harmony/`, vendored global CSS (`harmony-styles/`), icon manifest (`harmony-data/`), a **downloaded SVG icon library** at **`icons/`** (Tabler outline + custom—no npm icon pack required to browse assets), plus curated **Cursor** skills, rules, and agents under `.cursor/`.
+
+## Documentation
+
+| Doc | Purpose |
+|-----|---------|
+| **[HARMONY_DESIGNER_HANDBOOK.md](HARMONY_DESIGNER_HANDBOOK.md)** | Full kit reference: install, skills, rules, agents, slash playbooks, project layout. |
+| **[AGENTS.md](AGENTS.md)** | Short Cursor agent context (scope, paths). |
+| **[.cursor/DESIGNER_GUIDE.md](.cursor/DESIGNER_GUIDE.md)** | Slash commands and skills quick reference. |
 
 ## Quick start
 
@@ -29,19 +37,19 @@ python3 .cursor/skills/design-patterns/scripts/create_pattern.py --help
 
 Search defaults to `.cursor/skills/design-patterns/reference`. For full frontmatter parsing: `pip install pyyaml`.
 
-## Cursor
-
-See [`.cursor/DESIGNER_GUIDE.md`](.cursor/DESIGNER_GUIDE.md) for slash commands and skill overview.
-
 ## Package this folder
 
-From the **harmonycomponents** repo root:
+From **this directory** (`harmony-designer-starter` as the kit root):
 
 ```bash
-./scripts/package-harmony-designer-kit.sh
+./scripts/package-designer-kit.sh
 ```
 
-Produces `dist-kit/harmony-designer-starter.zip` (excludes `node_modules` and `dist`).
+Produces `dist-kit/harmony-designer-starter.zip` (excludes `node_modules`, `dist`, `.git`, and `dist-kit`).
+
+## Kit version
+
+See `KIT_VERSION` and `CHANGELOG.md`.
 
 ## License
 

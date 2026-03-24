@@ -26,7 +26,7 @@ You can also pass a path instead of a name:
 python scripts/create_pattern.py src/components/nav/FloatingNav.tsx --product CP
 ```
 
-**What happens:** The script searches for `.tsx`, `.astro`, `.jsx`, `.vue` files matching the name, infers category from path (e.g. `nav/` → navigation, `wizards/` → dialogs), then asks once for product/theme (PPM, CP, VP, cross-product) if you didn't use `--product`. The pattern is saved to `reference/<name>.md` next to the script.
+**What happens:** The script searches for matching source files — **in this kit, `.tsx` first** (e.g. under `src/components/harmony/`); other repos may also use `.jsx`, `.vue`, etc. It infers category from path (e.g. `nav/` → navigation, `wizards/` → dialogs), then asks once for product/theme (PPM, CP, VP, cross-product) if you didn't use `--product`. The pattern is saved to `reference/<name>.md` next to the script.
 
 ### 2. Finding an Existing Pattern to Reference
 

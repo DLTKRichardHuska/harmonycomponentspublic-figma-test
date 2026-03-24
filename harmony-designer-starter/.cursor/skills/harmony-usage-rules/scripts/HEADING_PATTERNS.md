@@ -18,7 +18,7 @@ Validated across multiple component pages, Feb 2025.
 |--------------|----------|----------|
 | Examples | Most pages | No |
 | Props | Most pages | No |
-| Input Props, Textarea Props | inputs.astro | No |
+| Input Props, Textarea Props | Inputs doc page | No |
 | Usage Guidelines | buttons, inputs, checkboxes, tables | Yes |
 | Usage | stepper, icons | Yes |
 | Accessibility | Most pages | Yes |
@@ -32,10 +32,10 @@ Classes vary by component (e.g. text-lg font-semibold text-primary mb-2/mb-3/mb-
 
 ### Pages with minimal content
 
-button-groups.astro, scrollbar.astro, specialty-inputs.astro → Examples and/or Props only; no rules output (expected).
+**Button groups**, **Scrollbar**, and **Specialty inputs** doc pages → Examples and/or Props only; no rules output (expected).
 
 ## Edge Cases
 
-- icons.astro reuses a11y-card__title for non-a11y content → only extract when parent h2 is "Accessibility".
-- tables.astro has multiple example h2s → skip if not in TARGET_SECTIONS.
-- inputs.astro "Input Props" / "Textarea Props" → skip (variant of Props).
+- **Icons doc page** reuses `a11y-card__title` for non-a11y content → only extract when parent h2 is "Accessibility".
+- **Tables doc page** has multiple example h2s → skip if not in TARGET_SECTIONS.
+- **Inputs doc page** — "Input Props" / "Textarea Props" → skip (variant of Props).
