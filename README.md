@@ -1,10 +1,10 @@
 # @deltek/harmony-components
 
-> Enterprise design system for Astro applications with 40+ production-ready UI components, layouts, and comprehensive theming support.
+> Enterprise design system for Astro applications with 49 production-ready UI components, layouts, and comprehensive theming support.
 
 ## Features
 
-- 🎨 **40+ UI Components** - From basic inputs to complex shell layouts
+- 🎨 **49 UI Components** - From basic inputs to complex shell layouts
 - 🏗️ **Enterprise Shell Layout** - Complete application structure with header, sidebars, and footer
 - 🎭 **Multi-Theme Support** - CP, VP, PPM, and Maconomy themes with light/dark modes
 - 🎯 **Design Tokens** - Colors, typography, spacing, and elevation scales
@@ -22,10 +22,10 @@ Ensure you have Node.js and npm installed, and that your project uses Astro.
 
 ```bash
 # Install the design system from GitHub
-npm install git+https://github.com/DLTKfrancesmunoz/harmonycomponents.git
+npm install git+https://github.com/DLTKRichardHuska/harmonycomponentspublic-figma-test.git
 
 # Or install a specific version
-npm install git+https://github.com/DLTKfrancesmunoz/harmonycomponents.git#v1.0.0
+npm install git+https://github.com/DLTKRichardHuska/harmonycomponentspublic-figma-test.git#v0.9.0
 ```
 
 ### Peer Dependencies
@@ -108,29 +108,35 @@ import Button from '@deltek/harmony-components/ui/Button.astro';
 import Card from '@deltek/harmony-components/ui/Card.astro';
 ```
 
-**Available Components:**
+**Available Components** (see also `src/data/component-catalog.ts`):
 
 **Form Controls:**
 - Button, ButtonGroup
 - Input, Textarea, NumberInput, RangeInput
-- Checkbox, RadioButton, Toggle
+- Checkbox, CheckboxGroup, RadioButton, RadioGroup, Toggle
 - DateInput, Label
 
 **Display:**
-- Card, Badge, NotificationBadge, Chip
+- Avatar, Card, Badge, NotificationBadge, Chip
 - Alert, Tooltip, Spinner, ProgressBar
-- Table, Icon
+- Table, TableCostpointGrid, Icon
 
 **Navigation:**
 - TabStrip, Stepper, Step, FloatingNav, Link
 
-**Layout:**
+**Layout (shell):**
 - LeftSidebar, RightSidebar
-- ShellPageHeader, ShellPanel
+- ShellPageHeader, ShellPanel, ShellHeader, ShellFooter
 
 **Interactive:**
 - Dialog, Dropdown, Accordion
-- Kanban, KanbanCard
+- Kanban, KanbanCard, KanbanCardCostpoint
+
+**Pickers:**
+- DatePicker, DateTimePicker, MonthPicker, WeekPicker, TimePicker, PickerPopup
+
+**Other:**
+- ListMenu
 
 ### Layouts
 
@@ -325,7 +331,7 @@ To get the latest changes from the design system:
 npm update @deltek/harmony-components
 
 # Or install a specific version
-npm install git+https://github.com/DLTKfrancesmunoz/harmonycomponents.git#v1.0.1
+npm install git+https://github.com/DLTKRichardHuska/harmonycomponentspublic-figma-test.git#v0.9.0
 ```
 
 ## TypeScript Support
@@ -348,7 +354,27 @@ import type { Props as CardProps } from '@deltek/harmony-components/ui/Card.astr
 
 This package is maintained by the Deltek Design Systems team. For issues, feature requests, or contributions, please contact the design systems team or open an issue in the GitHub repository.
 
-**Changelog sync:** When you change components, styles, tokens, or layouts in this repo, commit and push. CI on push to `main` regenerates changelog data and commits the updates.
+**Changelog sync:** When you change components, styles, tokens, or layouts, commit and push your branch. GitHub Actions (`.github/workflows/changelog.yml`) detects the changes and commits updated `changelog-data/` back to the same branch. Official versions are published via [GitHub Releases](docs/RELEASE_AND_GITHUB_SETUP.md) from `main`.
+
+## Repository layout
+
+This repo is the **Harmony Design System (Astro)** — the canonical reference implementation for components, tokens, styles, documentation, and the design pattern library.
+
+| Path | Purpose |
+|------|---------|
+| `src/components/ui/` | Astro UI components (source of truth) |
+| `src/layouts/` | Shell and doc layouts |
+| `src/tokens/`, `src/styles/` | Design tokens and global CSS |
+| `src/pages/` | Component docs, shell docs, and preview pages |
+| `.cursor/` | Cursor skills, agents, and commands for maintaining the pattern library |
+| `converters/` | Converter library (playbooks, scripts); see [converters/README.md](./converters/README.md) |
+| `conversions/` | Conversion output projects; [harmony-design-system-react-mui](./conversions/harmony-design-system-react-mui/) (placeholder) |
+| `archive/designer-starter/` | Archived Cursor bundle for the removed React designer kit |
+| `archive/integration-kit/` | Archived Cursor bundle for MUI/shadcn integration workflows |
+
+Framework mirrors use **`converters/`** (tooling) and **`conversions/`** (output). See [CONVERTER_VS_CONVERSION.md](./.cursor/skills/harmony-conversion/reference/CONVERTER_VS_CONVERSION.md).
+
+Agent context for Cursor: [AGENTS.md](./AGENTS.md). Skills quick reference: [.cursor/HARMONY_GUIDE.md](./.cursor/HARMONY_GUIDE.md).
 
 ## License
 
@@ -356,7 +382,7 @@ UNLICENSED - Internal use only for Deltek projects.
 
 ## Changelog
 
-See [CHANGELOG.md](./CHANGELOG.md) for version history and release notes.
+See [CHANGELOG.md](./CHANGELOG.md) for version history and [docs/RELEASE_AND_GITHUB_SETUP.md](./docs/RELEASE_AND_GITHUB_SETUP.md) for how to publish releases.
 
 ---
 

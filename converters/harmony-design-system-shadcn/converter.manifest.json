@@ -1,0 +1,32 @@
+{
+  "id": "harmony-design-system-shadcn",
+  "name": "Harmony Design System — shadcn/ui + Tailwind + Radix",
+  "type": "component-library",
+  "status": "dev-in-progress",
+  "description": "Harmony Design System for AI consumers — React components on shadcn/ui patterns, Tailwind, and Radix. Always ships Harmony package components (greenfield library), not theme-over-existing-app.",
+  "framework": {
+    "runtime": "react",
+    "uiLibrary": "shadcn/ui + Tailwind + Radix"
+  },
+  "conversion": {
+    "outputId": "harmony-design-system-shadcn",
+    "outputPath": "conversions/harmony-design-system-shadcn",
+    "playbook": "playbook/SKILL.md",
+    "verification": {
+      "playbook": "playbook/VERIFICATION.md",
+      "agent": "playbook/VERIFIER.md"
+    }
+  },
+  "elementStrategies": {
+    "allowed": ["component", "skip"],
+    "descriptions": {
+      "component": "Ship a Harmony package component on Radix + Tailwind / shadcn patterns. How (compose vs from-scratch) is recorded in plan Approach & stack fit + userDecision — not a separate strategy.",
+      "skip": "Do not convert; placeholder or accepted gap"
+    }
+  },
+  "readiness": {
+    "level": "ready",
+    "lastReviewed": "2026-07-17",
+    "summary": "Playbooks complete for workspace layout, stack elegance HITL, Getting Started, ImportSnippet. Demo bootstrap shipped. Foundation execute awaits user Approach & stack fit sign-off; AI artifact set awaiting confirmation."
+  }
+}

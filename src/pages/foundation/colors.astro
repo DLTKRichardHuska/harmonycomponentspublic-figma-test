@@ -193,7 +193,7 @@ const getSemanticColors = (isDark: boolean) => {
           <div class="h-20 rounded-lg border bg-theme" style="border-color: var(--border-color);"></div>
           <div>
             <div class="text-sm font-medium text-primary">Theme Primary</div>
-            <div id="theme-primary-value" class="text-xs font-mono text-muted">#0073E6</div>
+            <div id="theme-primary-value" class="text-xs font-mono text-muted">#2A78C6</div>
           </div>
           <p class="text-xs text-secondary">Primary brand color, buttons, CTA</p>
         </div>
@@ -238,7 +238,7 @@ const getSemanticColors = (isDark: boolean) => {
   <script>
     // Helper: Convert RGB to Hex
     function rgbToHex(rgb) {
-      const values = rgb.match(/\d+/g);
+      const values = rgb.match(/[\d.]+/g);
       if (!values || values.length < 3) return rgb;
       const r = parseInt(values[0]).toString(16).padStart(2, '0');
       const g = parseInt(values[1]).toString(16).padStart(2, '0');
@@ -246,13 +246,23 @@ const getSemanticColors = (isDark: boolean) => {
       return `#${r}${g}${b}`.toUpperCase();
     }
 
-    // Helper: Get CSS variable value as hex
-    function getCSSVariableHex(varName) {
+    // Helper: Get a CSS variable's display value.
+    // Preserves alpha for translucent tokens (e.g. tableTotal) so the swatch
+    // renders the real tint instead of being flattened to an opaque hex.
+    function getCSSVariableColor(varName) {
       if (!varName) return null;
       const value = getComputedStyle(document.documentElement)
         .getPropertyValue(varName)
         .trim();
+      if (!value) return null;
       if (value.startsWith('#')) return value.toUpperCase();
+      if (value.startsWith('rgba')) {
+        const parts = value.match(/[\d.]+/g);
+        if (parts && parts.length >= 4 && parseFloat(parts[3]) < 1) {
+          return `rgba(${parts[0]}, ${parts[1]}, ${parts[2]}, ${parseFloat(parts[3])})`;
+        }
+        return rgbToHex(value);
+      }
       if (value.startsWith('rgb')) return rgbToHex(value);
       return value;
     }
@@ -282,14 +292,14 @@ const getSemanticColors = (isDark: boolean) => {
           const cssVar = swatch.getAttribute('data-css-var');
 
           if (cssVar) {
-            const hexValue = getCSSVariableHex(cssVar);
-            if (hexValue) {
-              swatch.style.backgroundColor = hexValue;
+            const colorValue = getCSSVariableColor(cssVar);
+            if (colorValue) {
+              swatch.style.backgroundColor = colorValue;
 
               // Find and update the corresponding value text
               const container = swatch.parentElement;
               const valueEl = container?.querySelector('.cp-dark-value');
-              if (valueEl) valueEl.textContent = hexValue;
+              if (valueEl) valueEl.textContent = colorValue;
             }
           }
         });
@@ -303,14 +313,14 @@ const getSemanticColors = (isDark: boolean) => {
           const cssVar = swatch.getAttribute('data-css-var');
 
           if (cssVar) {
-            const hexValue = getCSSVariableHex(cssVar);
-            if (hexValue) {
-              swatch.style.backgroundColor = hexValue;
+            const colorValue = getCSSVariableColor(cssVar);
+            if (colorValue) {
+              swatch.style.backgroundColor = colorValue;
 
               // Find and update the corresponding value text
               const container = swatch.parentElement;
               const valueEl = container?.querySelector('.vp-ppm-maconomy-dark-value');
-              if (valueEl) valueEl.textContent = hexValue;
+              if (valueEl) valueEl.textContent = colorValue;
             }
           }
         });
@@ -324,14 +334,14 @@ const getSemanticColors = (isDark: boolean) => {
           const cssVar = swatch.getAttribute('data-css-var');
 
           if (cssVar) {
-            const hexValue = getCSSVariableHex(cssVar);
-            if (hexValue) {
-              swatch.style.backgroundColor = hexValue;
+            const colorValue = getCSSVariableColor(cssVar);
+            if (colorValue) {
+              swatch.style.backgroundColor = colorValue;
 
               // Find and update the corresponding value text
               const container = swatch.parentElement;
               const valueEl = container?.querySelector('.semi-light-value');
-              if (valueEl) valueEl.textContent = hexValue;
+              if (valueEl) valueEl.textContent = colorValue;
             }
           }
         });
@@ -344,17 +354,17 @@ const getSemanticColors = (isDark: boolean) => {
         const cssVar = swatch?.getAttribute('data-css-var');
 
         if (cssVar) {
-          const hexValue = getCSSVariableHex(cssVar);
-          if (hexValue) {
-            if (swatch) swatch.style.backgroundColor = hexValue;
+          const colorValue = getCSSVariableColor(cssVar);
+          if (colorValue) {
+            if (swatch) swatch.style.backgroundColor = colorValue;
             const valueEl = box.querySelector('.semantic-color-value');
-            if (valueEl) valueEl.textContent = hexValue;
+            if (valueEl) valueEl.textContent = colorValue;
           }
         }
       });
 
       // Update theme primary by reading CSS variable
-      const themePrimaryHex = getCSSVariableHex('--theme-primary');
+      const themePrimaryHex = getCSSVariableColor('--theme-primary');
       const themePrimaryValue = document.getElementById('theme-primary-value');
       if (themePrimaryValue && themePrimaryHex) {
         themePrimaryValue.textContent = themePrimaryHex;

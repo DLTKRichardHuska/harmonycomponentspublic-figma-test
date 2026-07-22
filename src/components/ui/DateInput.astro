@@ -394,14 +394,12 @@ const displayValue = formatDisplayValue(value, type, locale);
           const time = e.detail.time;
           if (hiddenInput) hiddenInput.value = time;
           inputEl.value = formatDisplayValue(time, inputType, 'en-US');
-          popup.classList.remove('is-open');
         }) as EventListener);
         
         picker.addEventListener('datetime-select', ((e: CustomEvent) => {
           const datetime = e.detail.datetime;
           if (hiddenInput) hiddenInput.value = datetime;
           inputEl.value = formatDisplayValue(datetime, inputType, 'en-US');
-          popup.classList.remove('is-open');
         }) as EventListener);
         
         picker.addEventListener('month-select', ((e: CustomEvent) => {

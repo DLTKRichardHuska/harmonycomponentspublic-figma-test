@@ -1,0 +1,1825 @@
+{
+  "id": "harmony-design-system-react-mui",
+  "name": "Harmony Design System — React + MUI",
+  "type": "component-library",
+  "status": "dev-in-progress",
+  "description": "Harmony Design System implemented with React and Material UI.",
+  "converterId": "harmony-design-system-react-mui",
+  "referenceVersion": "0.9.0",
+  "referenceVersionSetAt": "2026-07-03T19:20:18.414Z",
+  "coverage": {
+    "percent": 76,
+    "completed": 42,
+    "total": 55,
+    "computedAt": "2026-07-21T00:46:22.448Z"
+  },
+  "independence": {
+    "standalone": true
+  },
+  "elements": {
+    "Colors": {
+      "status": "synced",
+      "harmonySource": "src/pages/foundation/colors.astro",
+      "strategy": "existing-mui",
+      "verificationReport": "verification/reports/foundation-4.md",
+      "lastVerified": "2026-07-06T20:00:00.000Z",
+      "gaps": [
+        "componentDefaults (input, label, badge) — deferred to Input/Badge component conversion via components.Mui* overrides"
+      ],
+      "notes": "MUI v9 theme from vendored token JSON (src/tokens/, tokens.css, global.css). Verifier PASS iteration 4 (2026-07-06)."
+    },
+    "Typography": {
+      "status": "synced",
+      "harmonySource": "src/pages/foundation/typography.astro",
+      "strategy": "existing-mui",
+      "verificationReport": "verification/reports/foundation-4.md",
+      "lastVerified": "2026-07-06T20:00:00.000Z",
+      "gaps": [
+        "Primitive font-size scale (xs–5xl) — no MUI Typography variant; use vendored tokens or sx",
+        "Layout typography patterns (page-header__title, section__title) — docs-layout only, not theme variants"
+      ],
+      "userDecision": "Native-first typography: all 12 Harmony textStyles map to standard MUI variants (h1–h6, subtitle1/2, body1/2, caption, overline, button). Harmony-named custom variants removed. Single custom variant `code` for mono font. Export HARMONY_TYPOGRAPHY_MAP for consumer reference.",
+      "notes": "Typography uses standard MUI variant names only; see HARMONY_TYPOGRAPHY_MAP. Custom `code` variant for mono. Verifier PASS iteration 4 (2026-07-06)."
+    },
+    "Spacing": {
+      "status": "synced",
+      "harmonySource": "src/pages/foundation/spacing.astro",
+      "strategy": "existing-mui",
+      "verificationReport": "verification/reports/foundation-4.md",
+      "lastVerified": "2026-07-06T20:00:00.000Z",
+      "notes": "Spacing/radius tokens via MUI theme. Verifier PASS iteration 4 (2026-07-06)."
+    },
+    "Elevations": {
+      "status": "synced",
+      "harmonySource": "src/pages/foundation/elevations.astro",
+      "strategy": "existing-mui",
+      "verificationReport": "verification/reports/foundation-4.md",
+      "lastVerified": "2026-07-06T20:00:00.000Z",
+      "notes": "Shadow/elevation tokens via MUI theme. Verifier PASS iteration 4 (2026-07-06)."
+    },
+    "Dela": {
+      "status": "synced",
+      "harmonySource": "src/pages/foundation/dela.astro",
+      "strategy": "existing-mui",
+      "verificationReport": "verification/reports/foundation-4.md",
+      "lastVerified": "2026-07-06T20:00:00.000Z",
+      "notes": "Dela brand/foundation demo at /foundation/dela. Verifier PASS iteration 4 (2026-07-06)."
+    },
+    "ShellLayout": {
+      "status": "not-started",
+      "harmonySource": "src/layouts/ShellLayout.astro"
+    },
+    "Button": {
+      "status": "synced",
+      "strategy": "existing-mui",
+      "recommendedTarget": "@mui/material/Button",
+      "harmonySource": "src/components/ui/Button.astro",
+      "skippedProps": [
+        "size xs",
+        "orientation vertical"
+      ],
+      "propMappings": [
+        {
+          "harmony": "variant primary",
+          "mui": "variant=\"contained\" color=\"primary\""
+        },
+        {
+          "harmony": "variant secondary",
+          "mui": "variant=\"outlined\" color=\"primary\""
+        },
+        {
+          "harmony": "variant tertiary",
+          "mui": "variant=\"text\" color=\"primary\""
+        },
+        {
+          "harmony": "variant pageHeader",
+          "mui": "color=\"pageHeader\" (custom palette)"
+        },
+        {
+          "harmony": "variant destructive",
+          "mui": "variant=\"contained\" color=\"error\""
+        },
+        {
+          "harmony": "size sm/md/lg",
+          "mui": "size=\"small\" | \"medium\" | \"large\""
+        }
+      ],
+      "gaps": [
+        "Button size xs — no native MUI size equivalent; skipped per userDecision",
+        "Button orientation vertical — no native MUI Button equivalent; skipped per userDecision",
+        "Dela variants — custom DelaButton export (user chose custom over skip)"
+      ],
+      "userDecision": "Native-first Button mapping: Harmony variants map to MUI variant+color; pageHeader via palette.pageHeader; xs size and vertical orientation skipped; Dela via custom DelaButton. Consumer API (DelaButton): MUI Button analog — Omit<ButtonProps,'variant'> + pill?; events/slots via ButtonProps; no public variant; default /Stars.svg start icon unless loading or consumer startIcon. See plans/consumer-api-existing.md.",
+      "verificationReport": "verification/reports/Button-2.md",
+      "lastVerified": "2026-07-06T19:38:00.000Z",
+      "notes": "Native MUI Button/IconButton + DelaButton custom export. Demo at /components/buttons. Verifier PASS iteration 2 (2026-07-06)."
+    },
+    "ButtonGroup": {
+      "status": "synced",
+      "strategy": "existing-mui",
+      "recommendedTarget": "@mui/material/ButtonGroup",
+      "harmonySource": "src/components/ui/ButtonGroup.astro",
+      "propMappings": [
+        {
+          "harmony": "variant default",
+          "mui": "variant=\"contained\"",
+          "notes": "Theme restyles contained into Harmony segmented shell"
+        },
+        {
+          "harmony": "variant outline",
+          "mui": "variant=\"outlined\"",
+          "notes": "Connected shared-edge strip"
+        },
+        {
+          "harmony": "size sm/md/lg",
+          "mui": "size=\"small\" | \"medium\" | \"large\""
+        },
+        {
+          "harmony": "orientation",
+          "mui": "orientation (same values)"
+        },
+        {
+          "harmony": "selected segment",
+          "mui": "child Button variant=\"contained\""
+        },
+        {
+          "harmony": "unselected segment",
+          "mui": "child Button variant=\"outlined\""
+        }
+      ],
+      "compositeEquivalents": [],
+      "skippedProps": [],
+      "gaps": [],
+      "userDecision": "existing-mui ButtonGroup; Harmony default→contained (segmented theme), outline→outlined; selection via child Button variants; no ToggleButtonGroup",
+      "verificationReport": "verification/reports/ButtonGroup-3.md",
+      "lastVerified": "2026-07-14T19:56:00.000Z",
+      "notes": "Demo at /components/button-groups; theme in mapButtonGroupToTheme.ts. Verifier PASS iter 3; human accepted visual match via plan execute (2026-07-14)."
+    },
+    "Input": {
+      "status": "synced",
+      "strategy": "existing-mui",
+      "recommendedTarget": "@mui/material/TextField",
+      "harmonySource": "src/components/ui/Input.astro",
+      "propMappings": [
+        {
+          "harmony": "type / placeholder / value / name / id / disabled / required",
+          "mui": "same TextField props"
+        },
+        {
+          "harmony": "error / errorMessage",
+          "mui": "error + helperText"
+        },
+        {
+          "harmony": "icon",
+          "mui": "slotProps.input.startAdornment InputAdornment + HarmonyIcon"
+        },
+        {
+          "harmony": "trailingIcon / trailing slot",
+          "mui": "slotProps.input.endAdornment InputAdornment + HarmonyIcon or IconButton"
+        },
+        {
+          "harmony": "variant (Harmony field chrome)",
+          "mui": "default variant=outlined (theme); filled/standard remain stock MUI"
+        },
+        {
+          "harmony": "CP compact field (theme-cp)",
+          "mui": "createHarmonyTheme({ product: cp }) OutlinedInput height 20px, fontSize xs, radius-04"
+        }
+      ],
+      "compositeEquivalents": [
+        {
+          "harmonyFeature": "label + labelVariant stacked",
+          "composition": "Stack spacing FormLabel above TextField",
+          "dependsOn": [
+            "Label"
+          ]
+        },
+        {
+          "harmonyFeature": "label + labelVariant inline",
+          "composition": "Stack direction=row FormLabel + TextField",
+          "dependsOn": [
+            "Label"
+          ]
+        },
+        {
+          "harmonyFeature": "icon / trailingIcon / trailing",
+          "composition": "InputAdornment + HarmonyIcon or IconButton",
+          "dependsOn": [
+            "Icon"
+          ]
+        }
+      ],
+      "skippedProps": [],
+      "gaps": [
+        "Auto-generated id when omitted — consumer responsibility (SSR); demos pass explicit id"
+      ],
+      "userDecision": "existing-mui TextField; default outlined maps Harmony; filled/standard stock MUI; CP product uses compact 20px density; labels via FormLabel composites; adornments for icons; no HarmonyInput export.",
+      "notes": "Theme mapTextFieldToTheme.ts. Demo /components/inputs. Plan input-form-controls.md. Verifier PASS input-form-controls-2; human accepted via plan execute (2026-07-15). CP compact density via mapTextFieldToTheme (20px / xs / radius-04); other products use default 40px field.",
+      "verificationReport": "verification/reports/input-form-controls-2.md",
+      "lastVerified": "2026-07-15T22:08:21.593Z"
+    },
+    "Textarea": {
+      "status": "synced",
+      "strategy": "existing-mui",
+      "recommendedTarget": "@mui/material/TextField",
+      "harmonySource": "src/components/ui/Textarea.astro",
+      "propMappings": [
+        {
+          "harmony": "placeholder / value / name / id / disabled / required",
+          "mui": "same TextField props"
+        },
+        {
+          "harmony": "rows",
+          "mui": "multiline + rows (default 4)"
+        },
+        {
+          "harmony": "CP compact field (theme-cp)",
+          "mui": "createHarmonyTheme({ product: cp }) OutlinedInput height 20px, fontSize xs, radius-04"
+        }
+      ],
+      "compositeEquivalents": [
+        {
+          "harmonyFeature": "label + labelVariant stacked",
+          "composition": "Stack spacing FormLabel above TextField",
+          "dependsOn": [
+            "Label"
+          ]
+        },
+        {
+          "harmonyFeature": "label + labelVariant inline",
+          "composition": "Stack direction=row FormLabel + TextField",
+          "dependsOn": [
+            "Label"
+          ]
+        }
+      ],
+      "skippedProps": [],
+      "gaps": [
+        "Auto-generated id when omitted — consumer responsibility (SSR); demos pass explicit id",
+        "No error/icon API in reference — not invented"
+      ],
+      "userDecision": "existing-mui TextField multiline; same outlined Harmony chrome; no invented error/icon parity.",
+      "notes": "Shared TextField theme. Demo on /components/inputs. Verifier PASS input-form-controls-2; human accepted via plan execute (2026-07-15). CP compact density via mapTextFieldToTheme (20px / xs / radius-04); other products use default 40px field.",
+      "verificationReport": "verification/reports/input-form-controls-2.md",
+      "lastVerified": "2026-07-15T22:08:21.593Z"
+    },
+    "NumberInput": {
+      "status": "synced",
+      "strategy": "existing-mui",
+      "recommendedTarget": "@mui/material/TextField",
+      "harmonySource": "src/components/ui/NumberInput.astro",
+      "propMappings": [
+        {
+          "harmony": "value / min / max / step / name / id / disabled",
+          "mui": "controlled TextField type=number + htmlInput min/max/step"
+        },
+        {
+          "harmony": "CP compact field (theme-cp)",
+          "mui": "createHarmonyTheme({ product: cp }) OutlinedInput height 20px, fontSize xs, radius-04"
+        }
+      ],
+      "compositeEquivalents": [
+        {
+          "harmonyFeature": "increment/decrement buttons",
+          "composition": "InputAdornment start/end + IconButton + HarmonyIcon minus/plus",
+          "dependsOn": [
+            "Icon"
+          ]
+        },
+        {
+          "harmonyFeature": "label + labelVariant stacked",
+          "composition": "Stack spacing FormLabel above TextField",
+          "dependsOn": [
+            "Label"
+          ]
+        },
+        {
+          "harmonyFeature": "label + labelVariant inline",
+          "composition": "Stack direction=row FormLabel + TextField",
+          "dependsOn": [
+            "Label"
+          ]
+        }
+      ],
+      "skippedProps": [],
+      "gaps": [
+        "Auto-generated id when omitted — consumer responsibility (SSR); demos pass explicit id"
+      ],
+      "userDecision": "existing-mui TextField + InputAdornment IconButton steppers composite; no HarmonyNumberInput export; outlined default.",
+      "notes": "Demo /components/specialty-inputs. Verifier PASS input-form-controls-2; human accepted via plan execute (2026-07-15). CP compact density via mapTextFieldToTheme (20px / xs / radius-04); other products use default 40px field. Specialty Inputs demo restores reference Date and Time example parity (2026-07-20).",
+      "verificationReport": "verification/reports/input-form-controls-2.md",
+      "lastVerified": "2026-07-15T22:08:21.593Z"
+    },
+    "RangeInput": {
+      "status": "synced",
+      "strategy": "existing-mui",
+      "recommendedTarget": "@mui/material/Slider",
+      "harmonySource": "src/components/ui/RangeInput.astro",
+      "propMappings": [
+        {
+          "harmony": "value / min / max / step / disabled / name / id",
+          "mui": "Slider props"
+        },
+        {
+          "harmony": "showPercent / prefix / suffix",
+          "mui": "format sibling Typography value label"
+        }
+      ],
+      "compositeEquivalents": [
+        {
+          "harmonyFeature": "value display",
+          "composition": "Slider + Typography with percent/prefix/suffix formatting",
+          "dependsOn": []
+        },
+        {
+          "harmonyFeature": "label + labelVariant stacked",
+          "composition": "Stack spacing FormLabel above TextField",
+          "dependsOn": [
+            "Label"
+          ]
+        },
+        {
+          "harmonyFeature": "label + labelVariant inline",
+          "composition": "Stack direction=row FormLabel + TextField",
+          "dependsOn": [
+            "Label"
+          ]
+        }
+      ],
+      "skippedProps": [],
+      "gaps": [],
+      "userDecision": "existing-mui Slider + Typography value label; theme mapSliderToTheme.ts.",
+      "notes": "Demo /components/specialty-inputs. Filled track uses primary (rail divider); resync after reference colored-track update. Verifier PASS range-input-filled-track-1 (2026-07-20); reverses prior DEF-002 uniform-gray remediation.",
+      "verificationReport": "verification/reports/range-input-filled-track-1.md",
+      "lastVerified": "2026-07-20T18:56:00.000Z"
+    },
+    "Checkbox": {
+      "status": "synced",
+      "strategy": "existing-mui",
+      "recommendedTarget": "@mui/material/Checkbox",
+      "harmonySource": "src/components/ui/Checkbox.astro",
+      "propMappings": [
+        {
+          "harmony": "checked / disabled / name / id / value",
+          "mui": "same props on Checkbox"
+        },
+        {
+          "harmony": "label",
+          "mui": "FormControlLabel control + label"
+        },
+        {
+          "harmony": "error",
+          "mui": "parent FormControl error (face color via theme)"
+        },
+        {
+          "harmony": "warning",
+          "mui": "parent FormControl color=\"warning\""
+        },
+        {
+          "harmony": "errorMessage / warningMessage",
+          "mui": "FormHelperText + HarmonyIcon"
+        }
+      ],
+      "compositeEquivalents": [
+        {
+          "harmonyFeature": "label",
+          "composition": "FormControlLabel control={<Checkbox />} label",
+          "dependsOn": []
+        },
+        {
+          "harmonyFeature": "error / warning / messages",
+          "composition": "FormControl error|color=\"warning\" + FormHelperText + HarmonyIcon",
+          "dependsOn": [
+            "Icon"
+          ]
+        }
+      ],
+      "skippedProps": [],
+      "gaps": [],
+      "userDecision": "existing-mui Checkbox; validation colors from parent FormControl; keep default MUI hover; no skipped props; no HarmonyCheckbox export",
+      "verificationReport": "verification/reports/checkbox-radio-2.md",
+      "lastVerified": "2026-07-14T22:30:00.000Z",
+      "notes": "Theme in mapCheckboxToTheme.ts + mapSelectionControlChromeToTheme.ts. Demo at /components/checkboxes. Verifier PASS iteration 2; human accepted visual match (2026-07-14) via complete-in-progress execute."
+    },
+    "CheckboxGroup": {
+      "status": "synced",
+      "strategy": "existing-mui",
+      "recommendedTarget": "@mui/material/FormGroup",
+      "harmonySource": "src/components/ui/CheckboxGroup.astro",
+      "propMappings": [
+        {
+          "harmony": "legend",
+          "mui": "FormLabel component=\"legend\" in FormControl fieldset"
+        },
+        {
+          "harmony": "orientation horizontal",
+          "mui": "FormGroup row"
+        },
+        {
+          "harmony": "error / warning",
+          "mui": "FormControl error / color=\"warning\""
+        },
+        {
+          "harmony": "errorMessage / warningMessage",
+          "mui": "FormHelperText + HarmonyIcon"
+        },
+        {
+          "harmony": "children",
+          "mui": "FormControlLabel + Checkbox inside FormGroup"
+        }
+      ],
+      "compositeEquivalents": [
+        {
+          "harmonyFeature": "fieldset group",
+          "composition": "FormControl component=\"fieldset\" + FormLabel + FormGroup + FormControlLabel + Checkbox",
+          "dependsOn": [
+            "Checkbox"
+          ]
+        }
+      ],
+      "skippedProps": [],
+      "gaps": [],
+      "userDecision": "existing-mui FormControl/FormGroup composition; validation from FormControl; no skipped props",
+      "verificationReport": "verification/reports/checkbox-radio-2.md",
+      "lastVerified": "2026-07-14T22:30:00.000Z",
+      "notes": "Demo at /components/checkbox-groups. Shared chrome in mapSelectionControlChromeToTheme.ts. Dependency on Checkbox synced; human accepted group visual match (2026-07-14) via complete-in-progress execute."
+    },
+    "RadioButton": {
+      "status": "synced",
+      "strategy": "existing-mui",
+      "recommendedTarget": "@mui/material/Radio",
+      "harmonySource": "src/components/ui/RadioButton.astro",
+      "propMappings": [
+        {
+          "harmony": "name / value / checked / disabled / id",
+          "mui": "same on Radio (name often from RadioGroup)"
+        },
+        {
+          "harmony": "label",
+          "mui": "FormControlLabel"
+        },
+        {
+          "harmony": "size small / medium / large",
+          "mui": "size prop; large via theme variants"
+        },
+        {
+          "harmony": "error / warning",
+          "mui": "parent FormControl error / color=\"warning\""
+        },
+        {
+          "harmony": "errorMessage / warningMessage",
+          "mui": "FormHelperText + HarmonyIcon"
+        }
+      ],
+      "compositeEquivalents": [
+        {
+          "harmonyFeature": "label",
+          "composition": "FormControlLabel control={<Radio />} label",
+          "dependsOn": []
+        },
+        {
+          "harmonyFeature": "error / warning / messages",
+          "composition": "FormControl error|color=\"warning\" + FormHelperText + HarmonyIcon",
+          "dependsOn": [
+            "Icon"
+          ]
+        }
+      ],
+      "skippedProps": [],
+      "gaps": [],
+      "userDecision": "existing-mui Radio; size large via theme; validation from FormControl; keep default MUI hover; no skipped props",
+      "verificationReport": "verification/reports/checkbox-radio-2.md",
+      "lastVerified": "2026-07-14T22:30:00.000Z",
+      "notes": "Theme in mapRadioToTheme.ts + mapSelectionControlChromeToTheme.ts. Demo at /components/radio-buttons. Verifier PASS iteration 2; human accepted visual match (2026-07-14) via complete-in-progress execute."
+    },
+    "RadioGroup": {
+      "status": "synced",
+      "strategy": "existing-mui",
+      "recommendedTarget": "@mui/material/RadioGroup",
+      "harmonySource": "src/components/ui/RadioGroup.astro",
+      "propMappings": [
+        {
+          "harmony": "name",
+          "mui": "RadioGroup name (MUI propagates to children)"
+        },
+        {
+          "harmony": "legend",
+          "mui": "FormLabel component=\"legend\""
+        },
+        {
+          "harmony": "orientation horizontal",
+          "mui": "RadioGroup row"
+        },
+        {
+          "harmony": "error / warning",
+          "mui": "FormControl error / color=\"warning\""
+        },
+        {
+          "harmony": "errorMessage / warningMessage",
+          "mui": "FormHelperText + HarmonyIcon"
+        },
+        {
+          "harmony": "children",
+          "mui": "FormControlLabel + Radio inside RadioGroup"
+        }
+      ],
+      "compositeEquivalents": [
+        {
+          "harmonyFeature": "fieldset group",
+          "composition": "FormControl component=\"fieldset\" + FormLabel + RadioGroup + FormControlLabel + Radio",
+          "dependsOn": [
+            "RadioButton"
+          ]
+        }
+      ],
+      "skippedProps": [],
+      "gaps": [],
+      "userDecision": "existing-mui RadioGroup; name auto-propagates (document vs Harmony manual); validation from FormControl; no skipped props",
+      "verificationReport": "verification/reports/checkbox-radio-2.md",
+      "lastVerified": "2026-07-14T22:30:00.000Z",
+      "notes": "Demo at /components/radio-groups. Shared chrome in mapSelectionControlChromeToTheme.ts. Dependency on RadioButton synced; human accepted group visual match (2026-07-14) via complete-in-progress execute."
+    },
+    "Toggle": {
+      "status": "synced",
+      "strategy": "existing-mui",
+      "recommendedTarget": "@mui/material/Switch",
+      "harmonySource": "src/components/ui/Toggle.astro",
+      "propMappings": [
+        {
+          "harmony": "default switch",
+          "mui": "Switch"
+        },
+        {
+          "harmony": "label",
+          "mui": "FormControlLabel label"
+        },
+        {
+          "harmony": "checked / disabled / name / id",
+          "mui": "Switch props"
+        },
+        {
+          "harmony": "size sm/md",
+          "mui": "size=\"small\" | \"medium\" + theme"
+        }
+      ],
+      "compositeEquivalents": [
+        {
+          "harmonyFeature": "label beside track",
+          "composition": "FormControlLabel control={Switch} label",
+          "dependsOn": []
+        }
+      ],
+      "skippedProps": [
+        "variant segmented",
+        "optionLabelLeft",
+        "optionLabelRight"
+      ],
+      "gaps": [
+        "variant=segmented (+ optionLabelLeft/Right) — no stock MUI Switch equivalent; skipped per userDecision"
+      ],
+      "userDecision": "existing-mui Switch + FormControlLabel + mapSwitchToTheme.ts. Skip segmented variant with UnsupportedEquivalentCallout. Map sm/md to Switch size small/medium. No HarmonyToggle export. Approved 2026-07-20.",
+      "notes": "Demo at /components/toggle-switches. Plan plans/toggle-dropdown-accordion.md. Verifier PASS Toggle-2; human accepted via plan execute (2026-07-20).",
+      "verificationReport": "verification/reports/Toggle-2.md",
+      "lastVerified": "2026-07-20T22:00:00.000Z"
+    },
+    "DateInput": {
+      "status": "synced",
+      "strategy": "existing-mui",
+      "recommendedTarget": "@mui/x-date-pickers DatePicker / TimePicker / DateTimePicker",
+      "harmonySource": "src/components/ui/DateInput.astro",
+      "propMappings": [
+        {
+          "harmony": "type=date",
+          "mui": "DatePicker"
+        },
+        {
+          "harmony": "type=time / timeFormat",
+          "mui": "TimePicker / ampm"
+        },
+        {
+          "harmony": "type=datetime-local",
+          "mui": "DateTimePicker"
+        },
+        {
+          "harmony": "type=month",
+          "mui": "DatePicker views=[year, month] openTo=month"
+        },
+        {
+          "harmony": "value",
+          "mui": "Dayjs value / defaultValue"
+        },
+        {
+          "harmony": "min / max",
+          "mui": "minDate / maxDate or minTime / maxTime"
+        },
+        {
+          "harmony": "disabled / required / name / id",
+          "mui": "picker props + slotProps.textField"
+        },
+        {
+          "harmony": "locale",
+          "mui": "LocalizationProvider adapterLocale"
+        }
+      ],
+      "compositeEquivalents": [
+        {
+          "harmonyFeature": "label + labelVariant stacked",
+          "composition": "Stack spacing FormLabel above picker",
+          "dependsOn": [
+            "Label"
+          ]
+        },
+        {
+          "harmonyFeature": "label + labelVariant inline",
+          "composition": "Stack direction=row FormLabel + picker",
+          "dependsOn": [
+            "Label"
+          ]
+        }
+      ],
+      "skippedProps": [
+        "type=week"
+      ],
+      "gaps": [
+        "type=week skipped — MUI X Community does not ship a WeekPicker",
+        "Empty-state whole-field placeholders (Select date/time/month) — MUI X accessible section fields show muted format masks; custom field wrapper declined under existing-mui",
+        "Auto-generated id when omitted — consumer responsibility; demos pass explicit ids"
+      ],
+      "blockedBy": [],
+      "userDecision": "existing-mui MUI X picker family for date/time/datetime/month; skip week type (approved 2026-07-16); accept muted format-mask empties instead of custom field wrappers; label variants use FormLabel + Stack; no HarmonyDateInput export.",
+      "notes": "Theme mapDatePickersToTheme.ts including MuiPickersOutlinedInput. Demo /components/date-picker. DateRangePicker and DateRangePickerExpanded remain separate follow-up. Verifier PASS DateInput-3; human accepted visual match (2026-07-16).",
+      "verificationReport": "verification/reports/DateInput-3.md",
+      "lastVerified": "2026-07-16T23:56:00.000Z"
+    },
+    "Label": {
+      "status": "synced",
+      "strategy": "existing-mui",
+      "recommendedTarget": "@mui/material/FormLabel",
+      "harmonySource": "src/components/ui/Label.astro",
+      "propMappings": [
+        {
+          "harmony": "for",
+          "mui": "htmlFor"
+        },
+        {
+          "harmony": "required",
+          "mui": "required (asterisk)"
+        },
+        {
+          "harmony": "helper",
+          "mui": "Typography caption color=textSecondary beside label text"
+        },
+        {
+          "harmony": "default slot",
+          "mui": "FormLabel children"
+        }
+      ],
+      "compositeEquivalents": [
+        {
+          "harmonyFeature": "helper",
+          "composition": "FormLabel children + Typography component=span variant=caption color=textSecondary",
+          "dependsOn": []
+        }
+      ],
+      "skippedProps": [],
+      "gaps": [],
+      "userDecision": "existing-mui FormLabel / InputLabel; helper as caption Typography composite; theme mapFormLabelToTheme.ts.",
+      "notes": "Demo /components/labels. Verifier PASS input-form-controls-2; human accepted via plan execute (2026-07-15).",
+      "verificationReport": "verification/reports/input-form-controls-2.md",
+      "lastVerified": "2026-07-15T22:08:21.593Z"
+    },
+    "Avatar": {
+      "status": "synced",
+      "strategy": "existing-mui",
+      "recommendedTarget": "@mui/material/Avatar",
+      "harmonySource": "src/components/ui/Avatar.astro",
+      "propMappings": [
+        {
+          "harmony": "(default shape)",
+          "mui": "variant=\"rounded\" (theme defaultProps)"
+        },
+        {
+          "harmony": "— (MUI-only shape)",
+          "mui": "variant=\"circular\" | \"square\"",
+          "notes": "Superset of reference"
+        },
+        {
+          "harmony": "size sm/md/lg",
+          "mui": "sx width/height 24/32/40 (MUI docs); theme default md 32×32"
+        },
+        {
+          "harmony": "content icon",
+          "mui": "children={<HarmonyIcon name=\"user\" size=\"sm\"|\"md\"|\"lg\" />}"
+        },
+        {
+          "harmony": "content initials",
+          "mui": "children={normalized initials}"
+        },
+        {
+          "harmony": "content image",
+          "mui": "src + alt"
+        },
+        {
+          "harmony": "interactive",
+          "mui": "ButtonBase wrapping Avatar; hover via Avatar theme; soft focus ring via MuiButtonBase theme"
+        },
+        {
+          "harmony": "disabled",
+          "mui": "ButtonBase disabled; Avatar child opacity 0.5 via theme"
+        }
+      ],
+      "compositeEquivalents": [
+        {
+          "harmonyFeature": "interactive Avatar",
+          "composition": "ButtonBase wrapping Avatar (MUI Avatar-upload pattern; no file input required)",
+          "dependsOn": []
+        }
+      ],
+      "skippedProps": [],
+      "gaps": [
+        "Per-size corner radius (4/8/12) and initials font (10/12/14) — theme applies md (8px / 12px) for all sizes; accepted per userDecision"
+      ],
+      "userDecision": "existing-mui Avatar; theme default variant=rounded; circular/square are MUI supersets; sizes via sx width/height only; md radius+font for all sizes (accepted); interactive via bare ButtonBase; hover under ButtonBase via Avatar theme; ButtonBase soft focus ring via mapButtonBaseToTheme (Button/IconButton clear outline+boxShadow); disabled Avatar opacity 0.5; docs show Default/Disabled only — hover/focus via real interaction (no staging classes; no UnsupportedEquivalentCallout for docs presentation).",
+      "verificationReport": "verification/reports/Avatar-4.md",
+      "lastVerified": "2026-07-14T23:30:00.000Z",
+      "notes": "Theme in mapAvatarToTheme.ts + mapButtonBaseToTheme.ts. Demo at /components/avatar. Soft ring + disabled fade via real pseudo-states; docs omit static hover/focus columns (presentation only, not a functional skip)."
+    },
+    "Card": {
+      "status": "synced",
+      "strategy": "existing-mui",
+      "recommendedTarget": "@mui/material/Card",
+      "harmonySource": "src/components/ui/Card.astro",
+      "propMappings": [
+        {
+          "harmony": "root container",
+          "mui": "Card (theme: paper bg, border, radius, shadow-sm)"
+        },
+        {
+          "harmony": "body slot",
+          "mui": "CardContent"
+        },
+        {
+          "harmony": "footer slot",
+          "mui": "CardActions"
+        },
+        {
+          "harmony": "header / headerTitle / headerSubtitle / withHeader",
+          "mui": "CardHeader title / subheader composition"
+        },
+        {
+          "harmony": "icon1 / icon2 / icon3",
+          "mui": "CardHeader action + IconButton + HarmonyIcon"
+        },
+        {
+          "harmony": "elevated",
+          "mui": "raised"
+        },
+        {
+          "harmony": "interactive",
+          "mui": "CardActionArea wrapping content"
+        }
+      ],
+      "compositeEquivalents": [
+        {
+          "harmonyFeature": "interactive Card",
+          "composition": "Card > CardActionArea wrapping CardHeader/CardContent (MUI primary-action pattern)",
+          "dependsOn": []
+        },
+        {
+          "harmonyFeature": "header icon actions",
+          "composition": "CardHeader action={<Stack><IconButton><HarmonyIcon /></IconButton>…</Stack>}",
+          "dependsOn": [
+            "Icon"
+          ]
+        }
+      ],
+      "skippedProps": [
+        "primary — no MUI Card prop for 6px top theme-primary border"
+      ],
+      "gaps": [
+        "primary — skipped per userDecision"
+      ],
+      "userDecision": "existing-mui Card; elevated→raised; interactive→CardActionArea composite; primary skipped; header via CardHeader composition; no HarmonyCard export.",
+      "verificationReport": "verification/reports/Card-2.md",
+      "lastVerified": "2026-07-14T21:30:00.000Z",
+      "notes": "Theme in mapCardToTheme.ts. Demo at /components/cards. Verifier PASS iter 2; human accepted via plan execute (2026-07-14)."
+    },
+    "Badge": {
+      "status": "synced",
+      "strategy": "custom",
+      "recommendedTarget": "./components/StatusBadge",
+      "harmonySource": "src/components/ui/Badge.astro",
+      "propMappings": [
+        {
+          "harmony": "variant",
+          "mui": "StatusBadge variant (same values)"
+        },
+        {
+          "harmony": "size small/medium/large",
+          "mui": "size=\"small\" | \"medium\" | \"large\""
+        },
+        {
+          "harmony": "icon",
+          "mui": "icon (Harmony icon name) + HarmonyIcon"
+        },
+        {
+          "harmony": "slot / children",
+          "mui": "children"
+        }
+      ],
+      "skippedProps": [],
+      "gaps": [],
+      "userDecision": "Custom StatusBadge export — Harmony Badge is a non-interactive status label pill with alert-chip colors; not MUI Chip or Badge. Consumer API: HTMLAttributes<span> + sx (MUI-familiar) + variant/size/icon/children; events via HTML attrs; not Chip delete/avatar API. See plans/consumer-api-existing.md.",
+      "verificationReport": "verification/reports/Badge-1.md",
+      "lastVerified": "2026-07-09T22:30:00.000Z",
+      "notes": "StatusBadge in src/components/StatusBadge/; alertChip token colors; demo at /components/badges."
+    },
+    "NotificationBadge": {
+      "status": "synced",
+      "strategy": "existing-mui",
+      "recommendedTarget": "@mui/material/Badge",
+      "harmonySource": "src/components/ui/NotificationBadge.astro",
+      "propMappings": [
+        {
+          "harmony": "type dot",
+          "mui": "variant=\"dot\""
+        },
+        {
+          "harmony": "type number",
+          "mui": "badgeContent={value}"
+        },
+        {
+          "harmony": "type overflow",
+          "mui": "badgeContent={count} max={99}"
+        },
+        {
+          "harmony": "variant primary",
+          "mui": "color=\"primary\""
+        },
+        {
+          "harmony": "variant error",
+          "mui": "color=\"error\""
+        }
+      ],
+      "compositeEquivalents": [
+        {
+          "harmonyFeature": "standalone span",
+          "composition": "Badge wrapping IconButton or Avatar anchor",
+          "dependsOn": [
+            "Icon"
+          ]
+        }
+      ],
+      "skippedProps": [
+        "size sm/lg — no native MUI Badge size prop; theme targets md dimensions (2026-07-09)",
+        "border — no native MUI Badge prop; white ring requires custom slot styling (2026-07-09)"
+      ],
+      "gaps": [
+        "NotificationBadge size sm/lg — MUI Badge has no size prop",
+        "NotificationBadge border — MUI Badge has no border prop",
+        "Standalone layout — demos use wrapped Icon/Avatar pattern per userDecision"
+      ],
+      "userDecision": "MUI Badge wrapper on Icon/Avatar; dot/number via variant and badgeContent; overflow via max; overlap only for anchor positioning (e.g. Avatar); border skipped.",
+      "verificationReport": "verification/reports/NotificationBadge-1.md",
+      "lastVerified": "2026-07-09T22:30:00.000Z",
+      "notes": "Theme in mapNotificationBadgeToTheme.ts; demo at /components/notification-badges."
+    },
+    "Chip": {
+      "status": "synced",
+      "strategy": "existing-mui",
+      "recommendedTarget": "@mui/material/Chip",
+      "harmonySource": "src/components/ui/Chip.astro",
+      "propMappings": [
+        {
+          "harmony": "variant fill",
+          "mui": "variant=\"filled\""
+        },
+        {
+          "harmony": "variant outline",
+          "mui": "variant=\"outlined\""
+        },
+        {
+          "harmony": "size sm",
+          "mui": "size=\"small\""
+        },
+        {
+          "harmony": "size md",
+          "mui": "size=\"medium\""
+        },
+        {
+          "harmony": "state disabled",
+          "mui": "disabled"
+        },
+        {
+          "harmony": "removable",
+          "mui": "onDelete"
+        },
+        {
+          "harmony": "icon",
+          "mui": "icon={<HarmonyIcon fontSize=\"inherit\" />}"
+        },
+        {
+          "harmony": "implicit clickability",
+          "mui": "onClick — enables MuiChip-clickable pointer/hover styling"
+        }
+      ],
+      "compositeEquivalents": [
+        {
+          "harmonyFeature": "type overflow",
+          "composition": "Chip label={`+${count}`}",
+          "dependsOn": []
+        },
+        {
+          "harmonyFeature": "type horiz-dots",
+          "composition": "Chip icon={<HarmonyIcon name=\"ellipsis-horizontal\" fontSize=\"inherit\" />} onClick",
+          "dependsOn": [
+            "Icon"
+          ]
+        },
+        {
+          "harmonyFeature": "type vert-dots",
+          "composition": "Chip icon={<HarmonyIcon name=\"ellipsis-vertical\" fontSize=\"inherit\" />} onClick",
+          "dependsOn": [
+            "Icon"
+          ]
+        }
+      ],
+      "skippedProps": [
+        "size lg — MUI Chip has only small/medium (2026-07-09)",
+        "state hover/focused/pressed — MUI uses CSS pseudo-states (2026-07-09)",
+        "selected (legacy) — no MUI equivalent (2026-07-09)"
+      ],
+      "gaps": [
+        "Chip size lg (32px) — no third MUI Chip size",
+        "Static state demos — skipped; use interactive chips",
+        "Legacy selected prop — skipped",
+        "Reference applies cursor:pointer to all chips; MUI conversion uses onClick-only interactivity"
+      ],
+      "userDecision": "MUI Chip via mapChipToTheme; HarmonyIcon for all chip icons; onClick-only pointer/hover; composite dots/overflow in demo; disabled via disabled prop; static states and lg size skipped.",
+      "verificationReport": "verification/reports/Chip-1.md",
+      "lastVerified": "2026-07-09T22:30:00.000Z",
+      "notes": "Theme in mapChipToTheme.ts; hover/cursor scoped to MuiChip-clickable; demo at /components/chips."
+    },
+    "Alert": {
+      "status": "synced",
+      "strategy": "existing-mui",
+      "recommendedTarget": "@mui/material/Alert",
+      "harmonySource": "src/components/ui/Alert.astro",
+      "propMappings": [
+        {
+          "harmony": "variant info/success/warning/error",
+          "mui": "severity=\"info\" | \"success\" | \"warning\" | \"error\""
+        },
+        {
+          "harmony": "style default",
+          "mui": "variant=\"standard\""
+        },
+        {
+          "harmony": "style enhanced",
+          "mui": "variant=\"outlined\""
+        },
+        {
+          "harmony": "title",
+          "mui": "<AlertTitle> child"
+        },
+        {
+          "harmony": "message",
+          "mui": "Alert children"
+        },
+        {
+          "harmony": "dismissible",
+          "mui": "onClose handler"
+        },
+        {
+          "harmony": "primaryButton / secondaryButton",
+          "mui": "Compose as Alert children with <Button size=\"small\"> in <Stack direction=\"row\">"
+        },
+        {
+          "harmony": "linkText + linkHref",
+          "mui": "Compose as Alert children with <Link href=\"…\"> in action Stack"
+        }
+      ],
+      "compositeEquivalents": [
+        {
+          "harmonyFeature": "progressValue",
+          "composition": "LinearProgress as Alert child with variant=\"determinate\" value={n} color={severity}",
+          "dependsOn": [
+            "ProgressBar"
+          ]
+        }
+      ],
+      "gaps": [],
+      "userDecision": "Existing MUI Alert via theme; progressValue composed with LinearProgress child (demo-only inline JSX).",
+      "verificationReport": "verification/reports/Alert-7.md",
+      "lastVerified": "2026-07-08T22:00:00.000Z",
+      "notes": "Theme + demo at /components/alerts. Enhanced with Progress uses default-height LinearProgress (size skipped on ProgressBar). Verifier PASS iteration 7 (2026-07-08)."
+    },
+    "Tooltip": {
+      "status": "synced",
+      "strategy": "existing-mui",
+      "recommendedTarget": "@mui/material/Tooltip",
+      "harmonySource": "src/components/ui/Tooltip.astro",
+      "propMappings": [
+        {
+          "harmony": "text",
+          "mui": "title"
+        },
+        {
+          "harmony": "position top/bottom/left/right",
+          "mui": "placement=\"top\" | \"bottom\" | \"left\" | \"right\""
+        },
+        {
+          "harmony": "slot / children",
+          "mui": "Tooltip children (must forward ref)"
+        },
+        {
+          "harmony": "CSS arrow",
+          "mui": "arrow via theme defaultProps"
+        }
+      ],
+      "compositeEquivalents": [],
+      "skippedProps": [
+        "cornerVariant — no MUI equivalent; sharp one-side corners + hidden arrow (2026-07-10)"
+      ],
+      "gaps": [
+        "cornerVariant — skipped per userDecision"
+      ],
+      "userDecision": "Existing MUI Tooltip via theme. text→title, position→placement, arrow enabled by default. cornerVariant skipped.",
+      "verificationReport": "verification/reports/Tooltip-2.md",
+      "lastVerified": "2026-07-10T18:38:00.000Z",
+      "notes": "Theme in mapTooltipToTheme.ts (CSS vars for light/dark invert). Demo at /components/tooltips. Verifier PASS iteration 2; human accepted visual match (2026-07-10)."
+    },
+    "Spinner": {
+      "status": "synced",
+      "strategy": "existing-mui",
+      "recommendedTarget": "@mui/material/CircularProgress",
+      "harmonySource": "src/components/ui/Spinner.astro",
+      "propMappings": [
+        {
+          "harmony": "(default indeterminate)",
+          "mui": "variant=\"indeterminate\" (default)"
+        },
+        {
+          "harmony": "size sm",
+          "mui": "size={16}; thickness from theme"
+        },
+        {
+          "harmony": "size md",
+          "mui": "size={24} (theme default); thickness from theme"
+        },
+        {
+          "harmony": "size lg",
+          "mui": "size={40}; thickness from theme"
+        },
+        {
+          "harmony": "Loading a11y",
+          "mui": "aria-label=\"Loading\"; enableTrackSlot via theme"
+        }
+      ],
+      "compositeEquivalents": [],
+      "skippedProps": [],
+      "gaps": [],
+      "userDecision": "existing-mui CircularProgress; Harmony sizes map to numeric size prop; theme enables track slot and default md size.",
+      "verificationReport": "verification/reports/Spinner-2.md",
+      "lastVerified": "2026-07-14T20:06:00.000Z",
+      "notes": "Theme in mapSpinnerToTheme.ts. Demo at /components/spinner. Verifier PASS iteration 2; human accepted visual match (2026-07-14) via complete-in-progress execute."
+    },
+    "ProgressBar": {
+      "status": "synced",
+      "strategy": "existing-mui",
+      "recommendedTarget": "@mui/material/LinearProgress",
+      "harmonySource": "src/components/ui/ProgressBar.astro",
+      "propMappings": [
+        {
+          "harmony": "value",
+          "mui": "variant=\"determinate\" value={(value / max) * 100}"
+        },
+        {
+          "harmony": "max",
+          "mui": "Compute percentage from value/max before passing to LinearProgress value"
+        },
+        {
+          "harmony": "variant default/success/warning/error",
+          "mui": "color=\"primary\" | \"success\" | \"warning\" | \"error\""
+        }
+      ],
+      "skippedProps": [
+        "size sm/md/lg — MUI LinearProgress has no size prop; user accepted skip (2026-07-08)"
+      ],
+      "compositeEquivalents": [
+        {
+          "harmonyFeature": "showLabel",
+          "composition": "LinearProgress + Typography variant=\"subtitle2\" color=\"textSecondary\"",
+          "dependsOn": []
+        }
+      ],
+      "gaps": [
+        "ProgressBar size sm/md/lg — no native MUI LinearProgress size prop; skipped per userDecision"
+      ],
+      "userDecision": "Existing MUI LinearProgress via theme (default md height). size skipped — UnsupportedEquivalentCallout. showLabel composite with Typography.",
+      "verificationReport": "verification/reports/ProgressBar-4.md",
+      "lastVerified": "2026-07-08T22:00:00.000Z",
+      "notes": "Removed invented size prop on LinearProgress. size skipped per AskQuestion; theme default height only. Verifier PASS iteration 4 (2026-07-08)."
+    },
+    "Table": {
+      "status": "not-started",
+      "harmonySource": "src/components/ui/Table.astro"
+    },
+    "TableCostpointGrid": {
+      "status": "not-started",
+      "products": ["cp"],
+      "harmonySource": "src/components/ui/TableCostpointGrid.astro"
+    },
+    "Icon": {
+      "status": "synced",
+      "strategy": "custom",
+      "recommendedTarget": "./components/HarmonyIcon",
+      "harmonySource": "src/components/ui/Icon.astro",
+      "userDecision": "Custom HarmonyIcon export. Consumer API (SvgIcon slot patterns): name + size/variant/product; fontSize/color/sx/className/titleAccess/ref; decorative aria-hidden; use fontSize=\"inherit\" in MUI icon slots. See plans/consumer-api-existing.md.",
+      "verificationReport": "verification/reports/Icon-2.md",
+      "lastVerified": "2026-07-06T19:40:00.000Z",
+      "notes": "Package HarmonyIcon: manifest SVG, Heroicons fallback, size map aligned with reference; SvgIcon slot compat via fontSize=\"inherit\". Demo at /components/icons. Verifier PASS iteration 2 (2026-07-06)."
+    },
+    "TabStrip": {
+      "status": "synced",
+      "verificationReport": "verification/reports/tab-strip-2.md",
+      "lastVerified": "2026-07-21T00:30:00.000Z",
+      "strategy": "existing-mui",
+      "recommendedTarget": "@mui/material/Tabs",
+      "harmonySource": "src/components/ui/TabStrip.astro",
+      "variantProducts": { "pill": ["vp"] },
+      "propMappings": [
+        {
+          "harmony": "tabs[].id + active",
+          "mui": "controlled Tabs value + Tab value"
+        },
+        {
+          "harmony": "tabs[].label",
+          "mui": "Tab label"
+        },
+        {
+          "harmony": "tabs[].icon + iconPosition left/right/top",
+          "mui": "Tab icon + iconPosition start/end/top + HarmonyIcon"
+        },
+        {
+          "harmony": "tabs[].disabled",
+          "mui": "Tab disabled"
+        },
+        {
+          "harmony": "tabs[].href",
+          "mui": "Tab component=\"a\" href"
+        },
+        {
+          "harmony": "iconPosition (component-level)",
+          "mui": "same iconPosition on every Tab"
+        },
+        {
+          "harmony": "overflow",
+          "mui": "Tabs variant=\"scrollable\" scrollButtons=\"auto\" (MUI native, not the Harmony More menu)"
+        }
+      ],
+      "compositeEquivalents": [
+        {
+          "harmonyFeature": "showAddTab",
+          "composition": "Tabs + sibling IconButton (plus) that appends/selects a tab",
+          "dependsOn": []
+        }
+      ],
+      "skippedProps": [
+        "addTabLabel",
+        "overflowMode",
+        "overflowTabs",
+        "showTabOpenInNew",
+        "showTabClose",
+        "showTabOverflowMenu",
+        "variant compact",
+        "variant pill (VP-only product variant)"
+      ],
+      "gaps": [
+        "per-tab actions (open/close/⋮) / More overflow menu — browser-tab chrome with no MUI Tabs equivalent; demo UnsupportedEquivalentCallout",
+        "variant compact — MUI Tabs variants are layout (standard/scrollable/fullWidth), not Harmony visual chrome; demo UnsupportedEquivalentCallout",
+        "variant pill — VP-only product variant (reference componentVariantProducts.TabStrip.pill = [vp]); not converted, demo UnsupportedEquivalentCallout. Converting it is a separate task via the strategy AskQuestion",
+        "showAddTab composite (ACC-06, accepted) — add affordance renders as an icon-only \"+\" IconButton adjacent to the tabs rather than the reference's labeled \"+ Add Tab\" at the far-right end; same action + accessible name"
+      ],
+      "userDecision": "existing-mui: Tabs + Tab themed via mapTabsToTheme (underline indicator, secondary→primary label). Overflow shown via MUI variant=\"scrollable\"; add-tab provided via composition (Tabs + adjacent IconButton). Per-tab close/⋮/More chrome and compact/pill variants skipped with callouts. No package export. See plans/tab-strip-stepper.md."
+    },
+    "Stepper": {
+      "status": "synced",
+      "verificationReport": "verification/reports/stepper-2.md",
+      "lastVerified": "2026-07-21T00:10:00.000Z",
+      "strategy": "existing-mui",
+      "recommendedTarget": "@mui/material/Stepper",
+      "harmonySource": "src/components/ui/Stepper.astro",
+      "propMappings": [
+        {
+          "harmony": "activeStep",
+          "mui": "Stepper activeStep"
+        },
+        {
+          "harmony": "orientation horizontal/vertical",
+          "mui": "Stepper orientation"
+        },
+        {
+          "harmony": "nonLinear",
+          "mui": "Stepper nonLinear + StepButton onClick"
+        },
+        {
+          "harmony": "labels below indicator",
+          "mui": "Stepper alternativeLabel"
+        },
+        {
+          "harmony": "connector line + active state",
+          "mui": "theme MuiStepConnector line / Mui-active / Mui-completed"
+        }
+      ],
+      "compositeEquivalents": [
+        {
+          "harmonyFeature": "non-linear clickable steps",
+          "composition": "Step + StepButton onClick sets activeStep",
+          "dependsOn": []
+        }
+      ],
+      "skippedProps": [],
+      "gaps": [],
+      "userDecision": "existing-mui: Stepper + default StepConnector themed via mapStepperToTheme. Horizontal steppers use alternativeLabel. No package export. See plans/tab-strip-stepper.md.",
+      "notes": "Step must be synced together (Stepper composes Step)."
+    },
+    "Step": {
+      "status": "synced",
+      "verificationReport": "verification/reports/stepper-2.md",
+      "lastVerified": "2026-07-21T00:10:00.000Z",
+      "strategy": "existing-mui",
+      "recommendedTarget": "@mui/material/Step",
+      "harmonySource": "src/components/ui/Step.astro",
+      "propMappings": [
+        {
+          "harmony": "label slot",
+          "mui": "StepLabel children"
+        },
+        {
+          "harmony": "description slot",
+          "mui": "StepLabel optional"
+        },
+        {
+          "harmony": "completed / disabled",
+          "mui": "Step completed / disabled"
+        },
+        {
+          "harmony": "error",
+          "mui": "StepLabel error + StepIcon error"
+        },
+        {
+          "harmony": "icon",
+          "mui": "StepLabel / StepButton icon + HarmonyIcon"
+        }
+      ],
+      "compositeEquivalents": [
+        {
+          "harmonyFeature": "step description",
+          "composition": "StepLabel optional={<Typography variant=\"caption\">…</Typography>}",
+          "dependsOn": []
+        }
+      ],
+      "skippedProps": [
+        "warning",
+        "success"
+      ],
+      "gaps": [
+        "Step warning status — MUI Step has no warning state; demo UnsupportedEquivalentCallout",
+        "Step success status (distinct from completed) — MUI Step has completed + error only; use completed; demo UnsupportedEquivalentCallout",
+        "Step error indicator shape — MUI StepIcon renders a warning triangle for the error state; reference uses a filled red circle glyph. Accepted visual divergence (existing-mui; no documented style override reshapes the error icon). User accepted 2026-07-20."
+      ],
+      "userDecision": "existing-mui: Step + StepLabel (+ StepButton for non-linear) themed via mapStepperToTheme. Distinct warning/success statuses skipped with callout (completed/error themed). Error indicator uses MUI's native warning-triangle shape (accepted gap DEF-002; reference is a red circle). No package export. See plans/tab-strip-stepper.md."
+    },
+    "FloatingNav": {
+      "status": "not-started",
+      "products": ["cp"],
+      "harmonySource": "src/components/ui/FloatingNav.astro"
+    },
+    "Link": {
+      "status": "synced",
+      "strategy": "existing-mui",
+      "recommendedTarget": "@mui/material/Link",
+      "harmonySource": "src/components/ui/Link.astro",
+      "propMappings": [
+        {
+          "harmony": "href",
+          "mui": "href"
+        },
+        {
+          "harmony": "external",
+          "mui": "target=\"_blank\" rel=\"noopener noreferrer\" + HarmonyIcon child"
+        },
+        {
+          "harmony": "muted",
+          "mui": "color=\"textSecondary\" with theme hover to text.primary"
+        },
+        {
+          "harmony": "size small",
+          "mui": "variant=\"caption\""
+        },
+        {
+          "harmony": "size medium",
+          "mui": "variant=\"subtitle2\" (default)"
+        },
+        {
+          "harmony": "size large",
+          "mui": "variant=\"body1\""
+        },
+        {
+          "harmony": "underline on hover",
+          "mui": "underline=\"hover\" via theme defaultProps"
+        }
+      ],
+      "compositeEquivalents": [
+        {
+          "harmonyFeature": "external",
+          "composition": "Link target/rel + HarmonyIcon name=\"arrow-top-right-on-square\" fontSize=\"inherit\" child",
+          "dependsOn": [
+            "Icon"
+          ]
+        }
+      ],
+      "skippedProps": [
+        "responsive default sizing below 768px — no native MUI equivalent; user accepted skip (2026-07-09)"
+      ],
+      "gaps": [
+        "Responsive default link sizing — reference media query for implicit-size links; skipped per userDecision"
+      ],
+      "userDecision": "Existing MUI Link via theme. size maps to Typography variant (caption/subtitle2/body1). muted via color=\"textSecondary\". external via target/rel + HarmonyIcon composite. Responsive sizing skipped.",
+      "verificationReport": "verification/reports/Link-2.md",
+      "lastVerified": "2026-07-09T19:40:00.000Z",
+      "notes": "Theme in mapLinkToTheme.ts; alert links scoped in mapAlertToTheme. Demo at /components/links. Verifier PASS iteration 2 (2026-07-09)."
+    },
+    "LeftSidebar": {
+      "status": "not-started",
+      "harmonySource": "src/components/ui/LeftSidebar.astro"
+    },
+    "RightSidebar": {
+      "status": "not-started",
+      "harmonySource": "src/components/ui/RightSidebar.astro"
+    },
+    "ShellPageHeader": {
+      "status": "not-started",
+      "harmonySource": "src/components/ui/ShellPageHeader.astro"
+    },
+    "ShellPanel": {
+      "status": "not-started",
+      "harmonySource": "src/components/ui/ShellPanel.astro"
+    },
+    "ShellFooter": {
+      "status": "not-started",
+      "harmonySource": "src/components/ui/ShellFooter.astro"
+    },
+    "ShellHeader": {
+      "status": "not-started",
+      "harmonySource": "src/components/ui/ShellHeader.astro"
+    },
+    "Dialog": {
+      "status": "synced",
+      "strategy": "existing-mui",
+      "recommendedTarget": "@mui/material/Dialog",
+      "harmonySource": "src/components/ui/Dialog.astro",
+      "propMappings": [
+        {
+          "harmony": "overlay + .dialog",
+          "mui": "Dialog (open / onClose; React state replaces openDialog / closeDialog)"
+        },
+        {
+          "harmony": "title + close",
+          "mui": "DialogTitle + IconButton + HarmonyIcon x-mark"
+        },
+        {
+          "harmony": "body slot",
+          "mui": "DialogContent (scroll=paper)"
+        },
+        {
+          "harmony": "footer / confirmLabel / cancelLabel / tertiaryLabel",
+          "mui": "DialogActions + Button composition (contained / outlined / text)"
+        },
+        {
+          "harmony": "buttonAlignment left (default)",
+          "mui": "Theme MuiDialogActions justifyContent flex-start"
+        },
+        {
+          "harmony": "width tokens (min 600 / max 700 / 90%)",
+          "mui": "Theme paper fullWidth + maxWidth=false; paper min/max/width from dialog tokens"
+        }
+      ],
+      "compositeEquivalents": [
+        {
+          "harmonyFeature": "close button",
+          "composition": "IconButton + HarmonyIcon name=x-mark fontSize=inherit in DialogTitle",
+          "dependsOn": [
+            "Icon"
+          ]
+        },
+        {
+          "harmonyFeature": "footer actions",
+          "composition": "Button children in DialogActions (Confirm / Cancel / tertiary text)",
+          "dependsOn": [
+            "Button"
+          ]
+        },
+        {
+          "harmonyFeature": "destructive confirmation",
+          "composition": "Button variant=contained color=error",
+          "dependsOn": [
+            "Button"
+          ]
+        }
+      ],
+      "skippedProps": [
+        "resizable",
+        "headerVariant primary",
+        "buttonAlignment right"
+      ],
+      "gaps": [
+        "resizable — no stock MUI Dialog resize grip; skipped per userDecision",
+        "headerVariant primary — no MUI DialogTitle primary-header prop; skipped per userDecision (includes Combined Variants)",
+        "buttonAlignment right — no MUI DialogActions align prop; example sx to emulate is forbidden; skipped per userDecision"
+      ],
+      "userDecision": "existing-mui via Dialog + DialogTitle/Content/Actions + mapDialogToTheme.ts. Skip resizable, headerVariant=primary, and buttonAlignment=right with UnsupportedEquivalentCallout. Theme keeps left footer alignment (Harmony default). No HarmonyDialog export. Approved 2026-07-20; right-align skip added after purity cleanup 2026-07-20.",
+      "notes": "Demo at /components/dialogs. Theme in mapDialogToTheme.ts. Plan plans/dialog.md. Verifier PASS Dialog-2; purity cleanup skip right-align; human accepted visual match 2026-07-20.",
+      "verificationReport": "verification/reports/Dialog-2.md",
+      "lastVerified": "2026-07-20T21:05:00.000Z"
+    },
+    "Dropdown": {
+      "status": "synced",
+      "strategy": "existing-mui",
+      "recommendedTarget": "@mui/material/Select",
+      "harmonySource": "src/components/ui/Dropdown.astro",
+      "propMappings": [
+        {
+          "harmony": "options[]",
+          "mui": "MenuItem children"
+        },
+        {
+          "harmony": "value / disabled / name / id",
+          "mui": "Select props"
+        },
+        {
+          "harmony": "placeholder",
+          "mui": "displayEmpty + empty MenuItem / renderValue"
+        },
+        {
+          "harmony": "label + labelVariant stacked",
+          "mui": "Stack + FormLabel above Select"
+        },
+        {
+          "harmony": "label + labelVariant inline",
+          "mui": "Stack direction=row FormLabel + Select"
+        }
+      ],
+      "compositeEquivalents": [
+        {
+          "harmonyFeature": "label + labelVariant stacked",
+          "composition": "Stack spacing FormLabel above Select",
+          "dependsOn": [
+            "Label"
+          ]
+        },
+        {
+          "harmonyFeature": "label + labelVariant inline",
+          "composition": "Stack direction=row FormLabel + Select",
+          "dependsOn": [
+            "Label"
+          ]
+        }
+      ],
+      "skippedProps": [
+        "trigger slot",
+        "option-0…9 slots"
+      ],
+      "gaps": [
+        "Astro trigger / option-N slots — MUI uses MenuItem children; skipped per userDecision"
+      ],
+      "userDecision": "existing-mui Select + MenuItem + mapSelectToTheme.ts. Skip Astro trigger/option slots with UnsupportedEquivalentCallout. Hybrid labels like Input (FormLabel + Stack). No HarmonyDropdown export. Approved 2026-07-20.",
+      "notes": "Demo at /components/dropdowns. Plan plans/toggle-dropdown-accordion.md. Depends on Icon (synced) and Label (synced). Verifier PASS Dropdown-2; human accepted via plan execute (2026-07-20).",
+      "verificationReport": "verification/reports/Dropdown-2.md",
+      "lastVerified": "2026-07-20T22:00:00.000Z"
+    },
+    "Accordion": {
+      "status": "synced",
+      "strategy": "existing-mui",
+      "recommendedTarget": "@mui/material/Accordion",
+      "harmonySource": "src/components/ui/Accordion.astro",
+      "propMappings": [
+        {
+          "harmony": "item title",
+          "mui": "AccordionSummary children"
+        },
+        {
+          "harmony": "item content / slots",
+          "mui": "AccordionDetails children"
+        },
+        {
+          "harmony": "defaultOpen",
+          "mui": "defaultExpanded"
+        },
+        {
+          "harmony": "disabled",
+          "mui": "Accordion disabled"
+        },
+        {
+          "harmony": "allowMultiple",
+          "mui": "uncontrolled multi vs controlled exclusive expanded in demo"
+        },
+        {
+          "harmony": "field label",
+          "mui": "Typography/FormLabel above group"
+        }
+      ],
+      "compositeEquivalents": [
+        {
+          "harmonyFeature": "expand icon",
+          "composition": "AccordionSummary expandIcon={HarmonyIcon name=chevron-down}",
+          "dependsOn": [
+            "Icon"
+          ]
+        },
+        {
+          "harmonyFeature": "field label",
+          "composition": "Typography/FormLabel above Accordion siblings with role=group",
+          "dependsOn": []
+        },
+        {
+          "harmonyFeature": "rich item bodies",
+          "composition": "React children in AccordionDetails",
+          "dependsOn": []
+        }
+      ],
+      "skippedProps": [],
+      "gaps": [],
+      "userDecision": "existing-mui Accordion + AccordionSummary + AccordionDetails + mapAccordionToTheme.ts. Demo-only composition (no items[] package API). Rich bodies via AccordionDetails children. No HarmonyAccordion export. Approved 2026-07-20.",
+      "notes": "Demo at /components/accordion. Plan plans/toggle-dropdown-accordion.md. Depends on Icon (synced). Verifier PASS Accordion-1; human accepted via plan execute (2026-07-20).",
+      "verificationReport": "verification/reports/Accordion-1.md",
+      "lastVerified": "2026-07-20T22:00:00.000Z"
+    },
+    "Kanban": {
+      "status": "not-started",
+      "variantProducts": { "costpoint": ["cp"] },
+      "harmonySource": "src/components/ui/Kanban.astro"
+    },
+    "KanbanCard": {
+      "status": "not-started",
+      "harmonySource": "src/components/ui/KanbanCard.astro"
+    },
+    "KanbanCardCostpoint": {
+      "status": "not-started",
+      "products": ["cp"],
+      "harmonySource": "src/components/ui/KanbanCardCostpoint.astro"
+    },
+    "DatePicker": {
+      "status": "synced",
+      "strategy": "existing-mui",
+      "recommendedTarget": "@mui/x-date-pickers/DatePicker",
+      "harmonySource": "src/components/ui/DatePicker.astro",
+      "propMappings": [
+        {
+          "harmony": "value",
+          "mui": "Dayjs value / defaultValue"
+        },
+        {
+          "harmony": "min / max",
+          "mui": "minDate / maxDate"
+        },
+        {
+          "harmony": "disabled / id",
+          "mui": "disabled / slotProps.textField.id"
+        },
+        {
+          "harmony": "locale",
+          "mui": "LocalizationProvider adapterLocale"
+        }
+      ],
+      "compositeEquivalents": [],
+      "skippedProps": [],
+      "gaps": [],
+      "userDecision": "existing-mui DatePicker; Dayjs adapter values; picker chrome via mapDatePickersToTheme.ts.",
+      "verificationReport": "verification/reports/DateInput-3.md",
+      "lastVerified": "2026-07-16T23:05:00.000Z",
+      "notes": "Synced with DateInput batch; human accepted DateInput-3 PASS (2026-07-16)."
+    },
+    "DateTimePicker": {
+      "status": "synced",
+      "strategy": "existing-mui",
+      "recommendedTarget": "@mui/x-date-pickers/DateTimePicker",
+      "harmonySource": "src/components/ui/DateTimePicker.astro",
+      "propMappings": [
+        {
+          "harmony": "value / min / max",
+          "mui": "Dayjs value / minDateTime / maxDateTime"
+        },
+        {
+          "harmony": "disabled",
+          "mui": "disabled"
+        },
+        {
+          "harmony": "timeFormat",
+          "mui": "ampm"
+        },
+        {
+          "harmony": "locale",
+          "mui": "LocalizationProvider adapterLocale"
+        }
+      ],
+      "compositeEquivalents": [],
+      "skippedProps": [],
+      "gaps": [],
+      "userDecision": "existing-mui DateTimePicker with Dayjs adapter; 12/24 hour format via ampm.",
+      "verificationReport": "verification/reports/DateInput-3.md",
+      "lastVerified": "2026-07-16T23:05:00.000Z",
+      "notes": "Synced with DateInput batch; human accepted DateInput-3 PASS (2026-07-16)."
+    },
+    "MonthPicker": {
+      "status": "synced",
+      "strategy": "existing-mui",
+      "recommendedTarget": "@mui/x-date-pickers/DatePicker",
+      "harmonySource": "src/components/ui/MonthPicker.astro",
+      "propMappings": [
+        {
+          "harmony": "value / min / max",
+          "mui": "Dayjs value / minDate / maxDate"
+        },
+        {
+          "harmony": "month-only selection",
+          "mui": "views=[year, month] openTo=month format=MMMM YYYY"
+        },
+        {
+          "harmony": "disabled / locale",
+          "mui": "disabled / LocalizationProvider adapterLocale"
+        }
+      ],
+      "compositeEquivalents": [],
+      "skippedProps": [],
+      "gaps": [],
+      "userDecision": "existing-mui DatePicker configured with year/month views; no custom MonthPicker export.",
+      "verificationReport": "verification/reports/DateInput-3.md",
+      "lastVerified": "2026-07-16T23:05:00.000Z",
+      "notes": "Synced with DateInput batch; human accepted DateInput-3 PASS (2026-07-16)."
+    },
+    "WeekPicker": {
+      "status": "gap",
+      "strategy": "skip",
+      "recommendedTarget": null,
+      "harmonySource": "src/components/ui/WeekPicker.astro",
+      "propMappings": [],
+      "compositeEquivalents": [],
+      "skippedProps": [
+        "all"
+      ],
+      "gaps": [
+        "MUI X Community does not ship a WeekPicker component"
+      ],
+      "userDecision": "Skip WeekPicker and DateInput type=week; approved 2026-07-16. Demo uses UnsupportedEquivalentCallout."
+    },
+    "TimePicker": {
+      "status": "synced",
+      "strategy": "existing-mui",
+      "recommendedTarget": "@mui/x-date-pickers/TimePicker",
+      "harmonySource": "src/components/ui/TimePicker.astro",
+      "propMappings": [
+        {
+          "harmony": "value / min / max",
+          "mui": "Dayjs value / minTime / maxTime"
+        },
+        {
+          "harmony": "format",
+          "mui": "ampm"
+        },
+        {
+          "harmony": "step",
+          "mui": "timeSteps.minutes"
+        },
+        {
+          "harmony": "disabled / id",
+          "mui": "disabled / slotProps.textField.id"
+        }
+      ],
+      "compositeEquivalents": [],
+      "skippedProps": [],
+      "gaps": [],
+      "userDecision": "existing-mui TimePicker; format maps to ampm and minute step maps to timeSteps.minutes.",
+      "verificationReport": "verification/reports/DateInput-3.md",
+      "lastVerified": "2026-07-16T23:05:00.000Z",
+      "notes": "Synced with DateInput batch; human accepted DateInput-3 PASS (2026-07-16)."
+    },
+    "PickerPopup": {
+      "status": "synced",
+      "strategy": "existing-mui",
+      "recommendedTarget": "MUI X picker popper and layout slots",
+      "harmonySource": "src/components/ui/PickerPopup.astro",
+      "propMappings": [
+        {
+          "harmony": "popup / dialog behavior",
+          "mui": "MUI X desktop popper and mobile dialog"
+        },
+        {
+          "harmony": "title / close / Escape / outside click",
+          "mui": "picker toolbar, actionBar, and built-in lifecycle"
+        }
+      ],
+      "compositeEquivalents": [],
+      "skippedProps": [],
+      "gaps": [],
+      "userDecision": "existing-mui internal picker popper/layout; no standalone PickerPopup export; themed through MuiPickerPopper and MuiPickerLayout.",
+      "verificationReport": "verification/reports/DateInput-3.md",
+      "lastVerified": "2026-07-16T23:05:00.000Z",
+      "notes": "Synced with DateInput batch; human accepted DateInput-3 PASS (2026-07-16)."
+    },
+    "ListMenu": {
+      "status": "synced",
+      "strategy": "existing-mui",
+      "recommendedTarget": "@mui/material/List",
+      "harmonySource": "src/components/ui/ListMenu.astro",
+      "propMappings": [
+        {
+          "harmony": ".list-menu",
+          "mui": "List (theme: paper bg, border, radius-lg, overflow; disablePadding)"
+        },
+        {
+          "harmony": ".list-menu__item",
+          "mui": "ListItemButton"
+        },
+        {
+          "harmony": "as=\"button\"",
+          "mui": "ListItemButton (default)"
+        },
+        {
+          "harmony": "as=\"link\"",
+          "mui": "ListItemButton component=\"a\" href={…}"
+        },
+        {
+          "harmony": "item.active",
+          "mui": "selected"
+        },
+        {
+          "harmony": "item.label",
+          "mui": "ListItemText"
+        },
+        {
+          "harmony": "item.icon",
+          "mui": "ListItemIcon + HarmonyIcon fontSize=\"inherit\""
+        },
+        {
+          "harmony": "item.isCustom + customSrc",
+          "mui": "ListItemIcon + <img alt={label}>"
+        },
+        {
+          "harmony": "items[]",
+          "mui": "Consumer maps to ListItemButton children"
+        },
+        {
+          "harmony": "variant=\"default\"",
+          "mui": "ListItemButton divider on all but last"
+        },
+        {
+          "harmony": "variant=\"no-borders\"",
+          "mui": "Omit divider prop"
+        }
+      ],
+      "compositeEquivalents": [
+        {
+          "harmonyFeature": "item.icon",
+          "composition": "ListItemIcon + HarmonyIcon fontSize=\"inherit\"",
+          "dependsOn": [
+            "Icon"
+          ]
+        },
+        {
+          "harmonyFeature": "item.isCustom + customSrc",
+          "composition": "ListItemIcon + <img alt={label}>"
+        },
+        {
+          "harmonyFeature": "as=\"link\"",
+          "composition": "ListItemButton component=\"a\" href={…}"
+        },
+        {
+          "harmonyFeature": "variant=\"default\" separators",
+          "composition": "ListItemButton divider prop"
+        }
+      ],
+      "skippedProps": [],
+      "gaps": [],
+      "userDecision": "existing-mui List + ListItemButton; no-borders via omit divider; custom icons via img composition; no package export. Plan plans/list-menu.md. Human accepted ListMenu-2 PASS (2026-07-20).",
+      "verificationReport": "verification/reports/ListMenu-2.md",
+      "lastVerified": "2026-07-20T23:18:00.000Z",
+      "notes": "Demo at /components/list-menu. Theme in mapListToTheme.ts. Plan plans/list-menu.md. Verifier PASS ListMenu-2; human accepted synced."
+    }
+  },
+  "deliverables": {
+    "npmPackageName": "@dltkrichardhuska/harmony-design-system-react-mui",
+    "scripts": {
+      "dev": "dev",
+      "build:lib": "build:lib"
+    },
+    "exports": {
+      "./theme": "./dist/index.js",
+      "./components": "./src/components/index.ts"
+    }
+  },
+  "documentation": {
+    "consumerGuide": "docs/CONSUMER_GUIDE.md"
+  }
+}

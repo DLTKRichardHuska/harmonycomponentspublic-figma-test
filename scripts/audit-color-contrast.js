@@ -302,37 +302,36 @@ function testButtonCombinations(colors) {
   const themes = ['cp', 'vp', 'ppm', 'maconomy'];
   const modes = ['light', 'dark'];
 
-  // Theme buttons
+  // Theme buttons — primary/secondary/tertiary colors derive from themes.<product>.primary
+  const buttonRoles = colors.buttonRoleTokens?.theme;
+  const textInverse = '#FFFFFF';
+
   themes.forEach(theme => {
     modes.forEach(mode => {
-      // Primary button - foreground on background
-      const primaryDefault = colors.themeButton?.primary?.default?.[mode];
-      if (primaryDefault) {
-        // Test on white background (typical button background)
-        const whiteBg = colors.light.white.value;
-        const ratio = getContrastRatio(primaryDefault, whiteBg);
+      const primaryBg = colors.themes?.[theme]?.primary?.[mode];
+      if (primaryBg) {
+        const ratio = getContrastRatio(textInverse, primaryBg);
         results.push({
           category: 'button',
           theme,
           mode,
-          foreground: primaryDefault,
-          background: whiteBg,
+          foreground: textInverse,
+          background: primaryBg,
           contrastRatio: ratio,
           requiredRatio: WCAG_AA_NORMAL,
           passes: ratio >= WCAG_AA_NORMAL,
           passesLarge: ratio >= WCAG_AA_LARGE,
-          context: `themeButton.primary.default on white`,
+          context: `themes.${theme}.primary (${mode}) with text-inverse`,
           severity: 'critical',
           usage: [],
           cssVars: {
-            foreground: '--theme-btn-primary',
-            background: '--card-bg or white'
+            foreground: '--text-inverse',
+            background: '--theme-primary'
           }
         });
       }
 
-      // Primary disabled
-      const primaryDisabled = colors.themeButton?.primary?.disabled;
+      const primaryDisabled = buttonRoles?.primary?.disabled;
       if (primaryDisabled?.foreground && primaryDisabled?.background) {
         const ratio = getContrastRatio(primaryDisabled.foreground, primaryDisabled.background);
         results.push({
@@ -345,7 +344,7 @@ function testButtonCombinations(colors) {
           requiredRatio: WCAG_AA_NORMAL,
           passes: ratio >= WCAG_AA_NORMAL,
           passesLarge: ratio >= WCAG_AA_LARGE,
-          context: `themeButton.primary.disabled`,
+          context: `buttonRoleTokens.primary.disabled`,
           severity: 'warning',
           usage: [],
           cssVars: {
@@ -355,52 +354,49 @@ function testButtonCombinations(colors) {
         });
       }
 
-      // Secondary hover
-      const secondaryHover = colors.themeButton?.secondary?.hover;
-      if (secondaryHover?.foreground && secondaryHover?.background) {
-        const fgColor = secondaryHover.foreground[mode] || secondaryHover.foreground;
-        const bgColor = secondaryHover.background;
-        const ratio = getContrastRatio(fgColor, bgColor);
+      const secondaryHoverBg = buttonRoles?.secondary?.hover?.background;
+      const secondaryHoverFg = colors.themes?.[theme]?.primary?.[mode];
+      if (secondaryHoverFg && secondaryHoverBg) {
+        const ratio = getContrastRatio(secondaryHoverFg, secondaryHoverBg);
         results.push({
           category: 'button',
           theme,
           mode,
-          foreground: fgColor,
-          background: bgColor,
+          foreground: secondaryHoverFg,
+          background: secondaryHoverBg,
           contrastRatio: ratio,
           requiredRatio: WCAG_AA_NORMAL,
           passes: ratio >= WCAG_AA_NORMAL,
           passesLarge: ratio >= WCAG_AA_LARGE,
-          context: `themeButton.secondary.hover`,
+          context: `buttonRoleTokens.secondary.hover`,
           severity: 'critical',
           usage: [],
           cssVars: {
-            foreground: '--theme-btn-secondary-hover-fg',
+            foreground: '--theme-btn-secondary-hover-fg (var(--theme-primary))',
             background: '--theme-btn-secondary-hover-bg'
           }
         });
       }
 
-      // Tertiary default
-      const tertiaryDefault = colors.themeButton?.tertiary?.default?.foreground?.[mode];
-      if (tertiaryDefault) {
+      const tertiaryFg = colors.themes?.[theme]?.primary?.[mode];
+      if (tertiaryFg) {
         const whiteBg = colors.light.white.value;
-        const ratio = getContrastRatio(tertiaryDefault, whiteBg);
+        const ratio = getContrastRatio(tertiaryFg, whiteBg);
         results.push({
           category: 'button',
           theme,
           mode,
-          foreground: tertiaryDefault,
+          foreground: tertiaryFg,
           background: whiteBg,
           contrastRatio: ratio,
           requiredRatio: WCAG_AA_NORMAL,
           passes: ratio >= WCAG_AA_NORMAL,
           passesLarge: ratio >= WCAG_AA_LARGE,
-          context: `themeButton.tertiary.default on white`,
+          context: `themes.${theme}.primary tertiary on white`,
           severity: 'critical',
           usage: [],
           cssVars: {
-            foreground: '--theme-btn-tertiary-fg',
+            foreground: '--theme-btn-tertiary-fg (var(--theme-primary))',
             background: '--card-bg or white'
           }
         });

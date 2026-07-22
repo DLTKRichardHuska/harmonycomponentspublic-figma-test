@@ -112,12 +112,12 @@ function tryPublic(): boolean {
   return false;
 }
 
-if (tryHeroicons()) {
+if (tryPublic()) {
+  // resolved from public/{name}.svg
+} else if (tryHeroicons()) {
   // resolved from Heroicons
 } else if (tryTabler()) {
   // resolved from Tabler (used when Hero has no mapping or icon not in library)
-} else if (tryPublic()) {
-  // resolved from public/{name}.svg
 } else {
   console.warn(`Icon "${name}" not found in heroicons, tabler, or custom icons`);
 }

@@ -1,0 +1,106 @@
+{
+  "ref": {
+    "a11y": {
+      "titles": [
+        "ARIA Roles",
+        "Keyboard Navigation",
+        "Focus Management",
+        "Screen Reader Support"
+      ],
+      "hasScreenReader": true,
+      "textSnippet": "Screen Reader"
+    },
+    "desktopButtons": [
+      {
+        "text": "Confirm",
+        "w": 86,
+        "minWidth": "auto"
+      },
+      {
+        "text": "Cancel",
+        "w": 80,
+        "minWidth": "auto"
+      }
+    ],
+    "right": {
+      "justifyContent": "flex-start",
+      "footerWidth": 665,
+      "footerRight": 1053,
+      "firstLeft": 410,
+      "lastRight": 588,
+      "gapToRight": 465,
+      "gapToLeft": 23
+    },
+    "long": {
+      "scrollHeight": 100,
+      "clientHeight": 100,
+      "canScroll": false,
+      "overflowY": "auto"
+    },
+    "longAfter": {
+      "scrollTop": 0
+    }
+  },
+  "conv": {
+    "a11y": {
+      "titles": [],
+      "hasScreenReader": true,
+      "textSnippet": "Screen Reader"
+    },
+    "desktopButtons": [
+      {
+        "text": "Yes",
+        "w": 64,
+        "minWidth": "64px"
+      },
+      {
+        "text": "No",
+        "w": 64,
+        "minWidth": "64px"
+      },
+      {
+        "text": "Cancel",
+        "w": 82,
+        "minWidth": "64px"
+      }
+    ],
+    "right": {
+      "justifyContent": "flex-end",
+      "footerWidth": 700,
+      "footerRight": 1070,
+      "firstLeft": 859,
+      "lastRight": 1046,
+      "gapToRight": 24,
+      "gapToLeft": 489
+    },
+    "long": {
+      "scrollHeight": 688,
+      "clientHeight": 600,
+      "canScroll": true,
+      "overflowY": "auto"
+    },
+    "longAfter": {
+      "scrollTop": 88
+    }
+  },
+  "convMdDown": [
+    {
+      "text": "Yes",
+      "w": 239,
+      "minWidth": "120px",
+      "flex": "1 1 0%"
+    },
+    {
+      "text": "No",
+      "w": 241,
+      "minWidth": "120px",
+      "flex": "1 1 0%"
+    },
+    {
+      "text": "Cancel",
+      "w": 239,
+      "minWidth": "120px",
+      "flex": "1 1 0%"
+    }
+  ]
+}

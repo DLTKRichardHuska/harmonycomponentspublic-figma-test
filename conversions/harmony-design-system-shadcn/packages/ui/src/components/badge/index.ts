@@ -1,0 +1,7 @@
+export {
+  Badge,
+  badgeVariants,
+  type BadgeProps,
+  type BadgeVariant,
+  type BadgeSize,
+} from './Badge';

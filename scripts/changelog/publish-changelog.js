@@ -8,6 +8,7 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { isDuplicate } from './utils.js';
+import { getBaseVersion } from '../lib/version.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -43,9 +44,12 @@ function saveChangelog(changelog) {
  */
 function updateMetadata(addedCount) {
   let metadata = {
-    currentVersion: '1.0.0',
+    currentReleasedVersion: getBaseVersion(),
+    lastReleaseDate: null,
+    lastReleaseTag: null,
     lastProcessedCommit: null,
-    lastUpdated: null
+    lastUpdated: null,
+    totalEntries: 0,
   };
 
   if (fs.existsSync(metadataFile)) {
@@ -58,6 +62,9 @@ function updateMetadata(addedCount) {
 
   metadata.lastUpdated = new Date().toISOString();
   metadata.totalEntries = (metadata.totalEntries || 0) + addedCount;
+  if (!metadata.currentReleasedVersion) {
+    metadata.currentReleasedVersion = getBaseVersion();
+  }
 
   fs.writeFileSync(metadataFile, JSON.stringify(metadata, null, 2));
 }

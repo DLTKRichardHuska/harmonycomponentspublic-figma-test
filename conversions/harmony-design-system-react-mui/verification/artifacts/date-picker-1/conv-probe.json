@@ -1,0 +1,243 @@
+{
+  "title": "Date Picker | Design System",
+  "htmlClass": "",
+  "h1": "Harmony CP Design System",
+  "description": "",
+  "h2s": [
+    "Examples",
+    "Date Range Picker",
+    "Props",
+    "Accessibility",
+    "Harmony → MUI mapping"
+  ],
+  "h3s": [
+    "Date Input",
+    "Time Input",
+    "Date and Time",
+    "With Constraints",
+    "Disabled",
+    "With Label (Stacked)",
+    "With Label (Inline)",
+    "Month Picker",
+    "Week Picker",
+    "12-Hour Time Format",
+    "Date range conversion follows separately"
+  ],
+  "nav": [],
+  "callouts": [],
+  "labels": [
+    "Select Date",
+    "Select Time",
+    "Select Date & Time",
+    "Select Date (Next 30 days)",
+    "Select Date (Disabled)",
+    "Select Date",
+    "Select Date",
+    "Select Month",
+    "Select Time (12-hour)"
+  ],
+  "inputCount": 10,
+  "inputs": [
+    {
+      "type": "text",
+      "id": "",
+      "disabled": false,
+      "placeholder": "Search components...",
+      "value": "",
+      "className": "MuiInputBase-input css-1943rd7-MuiInputBase-input"
+    },
+    {
+      "type": "text",
+      "id": "date-basic",
+      "disabled": false,
+      "placeholder": "",
+      "value": "",
+      "className": "MuiPickersInputBase-input MuiPickersOutlinedInput-input css-31lcvl-MuiPickersInp"
+    },
+    {
+      "type": "text",
+      "id": "time-basic",
+      "disabled": false,
+      "placeholder": "",
+      "value": "",
+      "className": "MuiPickersInputBase-input MuiPickersOutlinedInput-input css-31lcvl-MuiPickersInp"
+    },
+    {
+      "type": "text",
+      "id": "datetime-basic",
+      "disabled": false,
+      "placeholder": "",
+      "value": "",
+      "className": "MuiPickersInputBase-input MuiPickersOutlinedInput-input css-31lcvl-MuiPickersInp"
+    },
+    {
+      "type": "text",
+      "id": "date-constrained",
+      "disabled": false,
+      "placeholder": "",
+      "value": "",
+      "className": "MuiPickersInputBase-input MuiPickersOutlinedInput-input css-31lcvl-MuiPickersInp"
+    },
+    {
+      "type": "text",
+      "id": "date-disabled",
+      "disabled": true,
+      "placeholder": "",
+      "value": "Jan 15, 2024",
+      "className": "MuiPickersInputBase-input MuiPickersOutlinedInput-input css-31lcvl-MuiPickersInp"
+    },
+    {
+      "type": "text",
+      "id": "date-stacked",
+      "disabled": false,
+      "placeholder": "",
+      "value": "",
+      "className": "MuiPickersInputBase-input MuiPickersOutlinedInput-input css-31lcvl-MuiPickersInp"
+    },
+    {
+      "type": "text",
+      "id": "date-inline",
+      "disabled": false,
+      "placeholder": "",
+      "value": "",
+      "className": "MuiPickersInputBase-input MuiPickersOutlinedInput-input css-31lcvl-MuiPickersInp"
+    },
+    {
+      "type": "text",
+      "id": "month-basic",
+      "disabled": false,
+      "placeholder": "",
+      "value": "",
+      "className": "MuiPickersInputBase-input MuiPickersOutlinedInput-input css-31lcvl-MuiPickersInp"
+    },
+    {
+      "type": "text",
+      "id": "time-12h",
+      "disabled": false,
+      "placeholder": "",
+      "value": "",
+      "className": "MuiPickersInputBase-input MuiPickersOutlinedInput-input css-31lcvl-MuiPickersInp"
+    }
+  ],
+  "fields": [
+    {
+      "tag": "DIV",
+      "className": "MuiPickersInputBase-root MuiPickersOutlinedInput-root MuiPickersInputBase-fullWidth MuiPickersInputB",
+      "height": 56,
+      "width": 360,
+      "bg": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(55, 63, 78)",
+      "borderWidth": "0px",
+      "color": "rgb(55, 63, 78)",
+      "fontSize": "16px",
+      "fontFamily": "Figtree, sans-serif",
+      "radius": "8px"
+    },
+    {
+      "tag": "DIV",
+      "className": "MuiPickersInputBase-root MuiPickersOutlinedInput-root MuiPickersInputBase-fullWidth MuiPickersInputB",
+      "height": 56,
+      "width": 360,
+      "bg": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(55, 63, 78)",
+      "borderWidth": "0px",
+      "color": "rgb(55, 63, 78)",
+      "fontSize": "16px",
+      "fontFamily": "Figtree, sans-serif",
+      "radius": "8px"
+    },
+    {
+      "tag": "DIV",
+      "className": "MuiPickersInputBase-root MuiPickersOutlinedInput-root MuiPickersInputBase-fullWidth MuiPickersInputB",
+      "height": 56,
+      "width": 360,
+      "bg": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(55, 63, 78)",
+      "borderWidth": "0px",
+      "color": "rgb(55, 63, 78)",
+      "fontSize": "16px",
+      "fontFamily": "Figtree, sans-serif",
+      "radius": "8px"
+    },
+    {
+      "tag": "DIV",
+      "className": "MuiPickersInputBase-root MuiPickersOutlinedInput-root MuiPickersInputBase-fullWidth MuiPickersInputB",
+      "height": 56,
+      "width": 360,
+      "bg": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(55, 63, 78)",
+      "borderWidth": "0px",
+      "color": "rgb(55, 63, 78)",
+      "fontSize": "16px",
+      "fontFamily": "Figtree, sans-serif",
+      "radius": "8px"
+    },
+    {
+      "tag": "DIV",
+      "className": "MuiPickersInputBase-root MuiPickersOutlinedInput-root Mui-disabled MuiPickersInputBase-fullWidth Mui",
+      "height": 56,
+      "width": 360,
+      "bg": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgba(0, 0, 0, 0.26)",
+      "borderWidth": "0px",
+      "color": "rgba(0, 0, 0, 0.26)",
+      "fontSize": "16px",
+      "fontFamily": "Figtree, sans-serif",
+      "radius": "8px"
+    },
+    {
+      "tag": "DIV",
+      "className": "MuiPickersInputBase-root MuiPickersOutlinedInput-root MuiPickersInputBase-fullWidth MuiPickersInputB",
+      "height": 56,
+      "width": 360,
+      "bg": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(55, 63, 78)",
+      "borderWidth": "0px",
+      "color": "rgb(55, 63, 78)",
+      "fontSize": "16px",
+      "fontFamily": "Figtree, sans-serif",
+      "radius": "8px"
+    },
+    {
+      "tag": "DIV",
+      "className": "MuiPickersInputBase-root MuiPickersOutlinedInput-root MuiPickersInputBase-fullWidth MuiPickersInputB",
+      "height": 56,
+      "width": 338,
+      "bg": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(55, 63, 78)",
+      "borderWidth": "0px",
+      "color": "rgb(55, 63, 78)",
+      "fontSize": "16px",
+      "fontFamily": "Figtree, sans-serif",
+      "radius": "8px"
+    },
+    {
+      "tag": "DIV",
+      "className": "MuiPickersInputBase-root MuiPickersOutlinedInput-root MuiPickersInputBase-fullWidth MuiPickersInputB",
+      "height": 56,
+      "width": 360,
+      "bg": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(55, 63, 78)",
+      "borderWidth": "0px",
+      "color": "rgb(55, 63, 78)",
+      "fontSize": "16px",
+      "fontFamily": "Figtree, sans-serif",
+      "radius": "8px"
+    },
+    {
+      "tag": "DIV",
+      "className": "MuiPickersInputBase-root MuiPickersOutlinedInput-root MuiPickersInputBase-fullWidth MuiPickersInputB",
+      "height": 56,
+      "width": 360,
+      "bg": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(55, 63, 78)",
+      "borderWidth": "0px",
+      "color": "rgb(55, 63, 78)",
+      "fontSize": "16px",
+      "fontFamily": "Figtree, sans-serif",
+      "radius": "8px"
+    }
+  ],
+  "iconAffordances": 19,
+  "bodyBg": "rgb(226, 228, 233)"
+}

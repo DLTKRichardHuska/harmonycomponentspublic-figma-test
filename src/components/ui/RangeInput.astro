@@ -43,9 +43,14 @@ const {
 } = Astro.props;
 
 const rangeId = id || `range-${Math.random().toString(36).substr(2, 9)}`;
+const rangeSpan = max - min;
+const fillPercent = rangeSpan === 0
+  ? 0
+  : Math.min(100, Math.max(0, ((value - min) / rangeSpan) * 100));
 const displayValue = showPercent 
-  ? `${prefix}${Math.round((value - min) / (max - min) * 100)}%${suffix}` 
+  ? `${prefix}${Math.round(fillPercent)}%${suffix}` 
   : `${prefix}${value}${suffix}`;
+const rangeStyle = `--range-fill-percent: ${fillPercent}%`;
 
 // Determine label variant
 // If explicitly provided, use that; otherwise CSS will handle default (inline for CP theme, stacked for others)
@@ -75,6 +80,7 @@ const classes = ['range-wrap', className].filter(Boolean).join(' ');
         step={step}
         disabled={disabled}
         class="range"
+        style={rangeStyle}
         data-show-percent={showPercent ? 'true' : undefined}
         data-prefix={prefix || undefined}
         data-suffix={suffix || undefined}
@@ -97,6 +103,7 @@ const classes = ['range-wrap', className].filter(Boolean).join(' ');
       step={step}
       disabled={disabled}
       class="range"
+      style={rangeStyle}
       data-show-percent={showPercent ? 'true' : undefined}
       data-prefix={prefix || undefined}
       data-suffix={suffix || undefined}
@@ -120,13 +127,17 @@ const classes = ['range-wrap', className].filter(Boolean).join(' ');
         const v = parseFloat(input.value);
         const mn = parseFloat(input.min) || 0;
         const mx = parseFloat(input.max) || 100;
+        const span = mx - mn;
+        const fill = span === 0 ? 0 : Math.min(100, Math.max(0, ((v - mn) / span) * 100));
+        input.style.setProperty('--range-fill-percent', `${fill}%`);
         const pct = input.dataset.showPercent === 'true';
         const pre = input.dataset.prefix || '';
         const suf = input.dataset.suffix || '';
-        val.textContent = pct ? `${pre}${Math.round((v - mn) / (mx - mn) * 100)}%${suf}` : `${pre}${v}${suf}`;
+        val.textContent = pct ? `${pre}${Math.round(fill)}%${suf}` : `${pre}${v}${suf}`;
       };
       
       input.addEventListener('input', update);
+      update();
     });
   }
   

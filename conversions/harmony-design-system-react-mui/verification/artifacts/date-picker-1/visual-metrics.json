@@ -1,0 +1,73 @@
+{
+  "ref": {
+    "input": {
+      "h": 20,
+      "w": 384,
+      "fontSize": "12px",
+      "bg": "rgb(255, 255, 255)",
+      "color": "rgb(55, 63, 78)",
+      "borderColor": "rgb(191, 198, 212)",
+      "borderWidth": "1px",
+      "radius": "4px",
+      "placeholder": "Select date",
+      "padding": "0px 32px 0px 8px",
+      "lineHeight": "20px"
+    },
+    "icon": {
+      "w": 16,
+      "h": 16
+    },
+    "disabled": {
+      "h": 20,
+      "bg": "rgb(234, 234, 234)",
+      "color": "rgb(107, 114, 128)",
+      "value": "Jan 15, 2024"
+    }
+  },
+  "conv": {
+    "field": {
+      "h": 56,
+      "w": 360,
+      "fontSize": "16px",
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(55, 63, 78)",
+      "radius": "8px",
+      "padding": "0px 14px"
+    },
+    "notch": {
+      "borderColor": "rgba(0, 0, 0, 0.23)",
+      "borderWidth": "1px"
+    },
+    "sections": [
+      "MMMM DD, YYYY"
+    ],
+    "iconBtn": {
+      "w": 20,
+      "h": 20
+    },
+    "disabled": {
+      "h": 56,
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(84, 84, 84)",
+      "value": "Jan 15, 2024",
+      "rootOpacity": "1"
+    },
+    "className": "MuiPickersInputBase-root MuiPickersOutlinedInput-root MuiPickersInputBase-fullWidth MuiPickersInputBase-colorPrimary MuiPickersInputBase-ado"
+  },
+  "refDay": {
+    "today": null,
+    "selected": null,
+    "paper": {
+      "border": "1px solid rgb(191, 198, 212)",
+      "radius": "8px",
+      "bg": "rgb(247, 248, 250)",
+      "w": 310,
+      "h": 358
+    }
+  },
+  "convDay": {
+    "today": null,
+    "selected": null,
+    "paper": null
+  }
+}

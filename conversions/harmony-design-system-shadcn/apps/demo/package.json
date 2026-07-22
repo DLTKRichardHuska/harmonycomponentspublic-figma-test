@@ -1,0 +1,27 @@
+{
+  "name": "@dltkrichardhuska/harmony-design-system-shadcn-demo",
+  "private": true,
+  "version": "0.9.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "typecheck": "tsc --noEmit",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@dltkrichardhuska/harmony-design-system-shadcn": "*",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-router-dom": "^7.6.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "^6.0.0",
+    "tailwindcss": "^4.0.0",
+    "typescript": "^7.0.0",
+    "vite": "^8.0.0"
+  }
+}

@@ -6,6 +6,7 @@
 
 import { generateDescription, generateTitle } from './description-templates.js';
 import { generateEntryId, getLastCommitMetadata } from './utils.js';
+import { getChangelogEntryVersion } from '../lib/version.js';
 
 /**
  * Generate structured changelog entries from changes
@@ -34,7 +35,7 @@ export async function generateChangelogEntries(changes) {
 
     const entry = {
       id,
-      version: 'recent', // Recent changes on main branch
+      version: getChangelogEntryVersion(),
       date: commitDateISO,
       category: change.category,
       type: change.type,

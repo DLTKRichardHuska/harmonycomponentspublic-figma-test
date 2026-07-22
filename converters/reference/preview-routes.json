@@ -1,0 +1,137 @@
+{
+  "version": 1,
+  "description": "Astro reference preview routes for automated conversion verification capture.",
+  "dev": {
+    "command": "npm run dev",
+    "cwd": ".",
+    "port": 4321,
+    "baseUrl": "http://localhost:4321"
+  },
+  "scopes": {
+    "foundation": {
+      "path": "/preview/conversion-foundation",
+      "selector": "#conversion-capture-root",
+      "notes": "Token swatches and typography samples for fidelity compare"
+    },
+    "ShellLayout": {
+      "path": "/preview/shell-layout",
+      "selector": "body"
+    },
+    "ShellHeader": {
+      "path": "/preview/shell-header",
+      "selector": "body"
+    },
+    "ShellFooter": {
+      "path": "/preview/shell-footer",
+      "selector": "body"
+    },
+    "LeftSidebar": {
+      "path": "/preview/left-sidebar",
+      "selector": "body"
+    },
+    "RightSidebar": {
+      "path": "/preview/right-sidebar",
+      "selector": "body"
+    },
+    "FloatingNav": {
+      "path": "/preview/floating-nav",
+      "selector": "body"
+    },
+    "ShellPanel": {
+      "path": "/preview/shell-panel",
+      "selector": "body"
+    },
+    "Button": {
+      "path": "/preview/buttons",
+      "selector": "#conversion-capture-root"
+    },
+    "ButtonGroup": {
+      "path": "/preview/button-groups",
+      "selector": "body"
+    },
+    "Input": {
+      "path": "/preview/inputs",
+      "selector": "body"
+    },
+    "Textarea": {
+      "path": "/preview/inputs",
+      "selector": "body"
+    },
+    "Checkbox": {
+      "path": "/preview/checkboxes",
+      "selector": "body"
+    },
+    "RadioButton": {
+      "path": "/preview/radio-buttons",
+      "selector": "body"
+    },
+    "Toggle": {
+      "path": "/preview/toggle-switches",
+      "selector": "body"
+    },
+    "Card": {
+      "path": "/preview/cards",
+      "selector": "body"
+    },
+    "Dialog": {
+      "path": "/preview/dialogs",
+      "selector": "body"
+    },
+    "Alert": {
+      "path": "/preview/alerts",
+      "selector": "body"
+    },
+    "Badge": {
+      "path": "/preview/badges",
+      "selector": "body"
+    },
+    "Avatar": {
+      "path": "/preview/avatar",
+      "selector": "body"
+    },
+    "Chip": {
+      "path": "/preview/chips",
+      "selector": "body"
+    },
+    "Label": {
+      "path": "/preview/labels",
+      "selector": "body"
+    },
+    "Link": {
+      "path": "/preview/links",
+      "selector": "body"
+    },
+    "Tooltip": {
+      "path": "/preview/tooltips",
+      "selector": "body"
+    },
+    "Spinner": {
+      "path": "/preview/spinner",
+      "selector": "body"
+    },
+    "ProgressBar": {
+      "path": "/preview/progress-bar",
+      "selector": "body"
+    },
+    "Table": {
+      "path": "/preview/tables",
+      "selector": "body"
+    },
+    "ListMenu": {
+      "path": "/preview/list-menu",
+      "selector": "body"
+    },
+    "Accordion": {
+      "path": "/preview/accordion",
+      "selector": "body"
+    },
+    "TabStrip": {
+      "path": "/preview/tab-strip",
+      "selector": "body"
+    },
+    "Icon": {
+      "path": "/preview/icons",
+      "selector": "body"
+    }
+  }
+}

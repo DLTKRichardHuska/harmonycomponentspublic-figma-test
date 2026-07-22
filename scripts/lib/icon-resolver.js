@@ -52,7 +52,7 @@ export function resolveIconToSvg(name, style = 'outline', library = 'heroicons',
  * Deduplicates by (name, style) so each file is read at most once.
  * @param {{ name: string, style?: string, library?: string }[]} descriptors
  * @param {string} rootDir - Project root
- * @returns {Record<string, string>} { "information-circle": "<svg>...</svg>", ... }
+ * @returns {Record<string, string>} { "information-circle": "<svg>…</svg>", ... }
  */
 export function resolveIconsToMap(descriptors, rootDir = ROOT) {
   const seen = new Set();

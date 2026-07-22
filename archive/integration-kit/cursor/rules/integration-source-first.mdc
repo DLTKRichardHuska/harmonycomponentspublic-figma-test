@@ -1,0 +1,17 @@
+---
+description: Harmony integration — read pinned sources, playbook, and inventory before theming MUI or shadcn
+globs: ["**/theme/**/*", "**/*theme*", "**/tailwind.config.*", "**/src/**/*"]
+alwaysApply: false
+---
+
+# Integration: source first
+
+When applying Harmony to **MUI** or **shadcn**:
+
+1. **Read** [docs/PINNED_SOURCES.md](docs/PINNED_SOURCES.md) and open the pinned `harmony-styles/*.css` and `harmony-data/icon-manifest.json`.
+2. **Read** [docs/MAPPING_PLAYBOOK.md](docs/MAPPING_PLAYBOOK.md) — identify which pass you are running and follow its checklist.
+3. **Read** [docs/harmony-source-inventory.md](docs/harmony-source-inventory.md). If sections are still `TBD`, run [docs/GENERATE_INVENTORY.md](docs/GENERATE_INVENTORY.md) and update the inventory before claiming "theme complete."
+4. **Derive** product themes and modes from **`tokens.css`** and the app's `html` class pattern — **not** from informal user lists in chat.
+5. **Do not** paste designer starter reference-components components into the customer app as the integration deliverable; use them as **spec** only unless the user explicitly requests a hybrid.
+
+After each pass, update **inventory §12** with mapped rows. After all passes, run the **harmony-completeness** agent, then the **harmony-verifier** agent (read-only).

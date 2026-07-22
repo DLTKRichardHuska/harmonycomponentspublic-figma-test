@@ -1,0 +1,30 @@
+{
+  "dev": {
+    "port": 5177,
+    "baseUrl": "http://localhost:5177",
+    "command": "npm run dev",
+    "cwd": "conversions/harmony-design-system-shadcn"
+  },
+  "scopes": {
+    "Button": {
+      "path": "/components/buttons",
+      "selector": "main, [role='main'], .demo-page, body"
+    },
+    "Icon": {
+      "path": "/components/icons",
+      "selector": "main, [role='main'], .demo-page, body"
+    },
+    "Dela": {
+      "path": "/foundation/dela",
+      "selector": "main, [role='main'], .demo-page, article, body"
+    },
+    "ButtonGroup": {
+      "path": "/components/button-groups",
+      "selector": "main, [role='main'], .demo-page, body"
+    },
+    "Spinner": {
+      "path": "/components/spinner",
+      "selector": "main, [role='main'], .demo-page, body"
+    }
+  }
+}

@@ -1,0 +1,1 @@
+export { TabStripsDemo } from './TabStripsDemo';

@@ -1,0 +1,44 @@
+{
+  "id": "harmony-design-system-react-mui",
+  "name": "Harmony Design System — React + MUI",
+  "type": "component-library",
+  "status": "active",
+  "description": "Harmony Design System for existing MUI projects. Exports createHarmonyTheme (colorSchemes + components.Mui* overrides) and custom components only where no MUI equivalent exists. Consumers keep @mui/material APIs unchanged — no Harmony prop wrappers.",
+  "framework": {
+    "runtime": "react",
+    "uiLibrary": "mui",
+    "muiVersion": "9",
+    "muiVersionPolicy": {
+      "major": 9,
+      "track": "latest"
+    }
+  },
+  "host": {
+    "mcpServer": "user-mui-mcp"
+  },
+  "conversion": {
+    "outputId": "harmony-design-system-react-mui",
+    "outputPath": "conversions/harmony-design-system-react-mui",
+    "playbook": "playbook/SKILL.md",
+    "verification": {
+      "playbook": "playbook/VERIFICATION.md",
+      "agent": "playbook/VERIFIER.md"
+    }
+  },
+  "elementStrategies": {
+    "allowed": ["existing-mui", "custom", "skip"],
+    "deprecated": ["theme-only"],
+    "forbidden": ["thin-wrapper"],
+    "descriptions": {
+      "existing-mui": "Theme/restyle stock MUI; consumer keeps @mui/material API",
+      "custom": "Package export when MUI has no equivalent (built on MUI stack)",
+      "skip": "Do not convert; placeholder or accepted gap",
+      "theme-only": "Deprecated alias of existing-mui"
+    }
+  },
+  "readiness": {
+    "level": "ready",
+    "lastReviewed": "2026-06-26",
+    "summary": "Engineer + QA agents documented with converter-specific equivalence. Review surface on :5176. QA verify proven for demo, foundation, Button; remediate loop documented."
+  }
+}

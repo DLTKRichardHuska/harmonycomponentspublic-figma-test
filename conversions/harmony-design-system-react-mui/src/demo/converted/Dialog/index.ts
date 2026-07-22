@@ -1,0 +1,1 @@
+export { DialogsDemo } from './DialogsDemo';

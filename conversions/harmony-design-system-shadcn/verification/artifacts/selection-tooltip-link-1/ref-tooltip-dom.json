@@ -1,0 +1,48 @@
+{
+  "visibles": [
+    {
+      "tag": "BUTTON",
+      "cls": "btn btn--outline btn--md",
+      "text": "Hover me",
+      "bg": "rgb(229, 231, 235)",
+      "color": "rgb(55, 63, 78)",
+      "opacity": "1",
+      "vis": "visible",
+      "w": 104,
+      "h": 40,
+      "top": 497
+    },
+    {
+      "tag": "SPAN",
+      "cls": "tooltip__content",
+      "text": "This is a tooltip",
+      "bg": "rgb(55, 63, 78)",
+      "color": "rgb(255, 255, 255)",
+      "opacity": "1",
+      "vis": "visible",
+      "w": 105,
+      "h": 34,
+      "top": 455
+    }
+  ],
+  "before": {
+    "content": "none",
+    "bg": "rgba(0, 0, 0, 0)",
+    "display": "block"
+  },
+  "after": {
+    "content": "none",
+    "bg": "rgba(0, 0, 0, 0)",
+    "w": "auto",
+    "h": "auto"
+  },
+  "parentAfter": {
+    "content": "none",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(55, 63, 78)",
+    "w": "auto",
+    "h": "auto",
+    "display": "inline"
+  },
+  "parentCls": "tooltip"
+}

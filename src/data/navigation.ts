@@ -1,3 +1,5 @@
+import { EXPORTED_UI_COMPONENT_COUNT } from './component-catalog';
+
 export interface NavItem {
   title: string;
   href: string;
@@ -44,6 +46,7 @@ export const navigation: NavSection[] = [
     items: [
       { title: 'Accordion', href: '/components/accordion', icon: 'chevron-down' },
       { title: 'Alerts', href: '/components/alerts', icon: 'exclamation-circle' },
+      { title: 'Avatar', href: '/components/avatar', icon: 'user' },
       { title: 'Badges', href: '/components/badges', icon: 'star' },
       { title: 'Button Groups', href: '/components/button-groups', icon: 'queue-list' },
       { title: 'Buttons', href: '/components/buttons', icon: 'cursor-arrow-ripple' },
@@ -76,5 +79,13 @@ export const navigation: NavSection[] = [
   },
 ];
 
-export const componentCount = navigation.reduce((acc, section) => acc + section.items.length, 0);
+export const navSectionCount = navigation.reduce((acc, section) => acc + section.items.length, 0);
+
+/** @deprecated Use `navSectionCount` — this counts all nav sections, not UI components. */
+export const componentCount = navSectionCount;
+
+export const componentDocPageCount =
+  navigation.find((section) => section.title === 'Components')?.items.length ?? 0;
+
+export { EXPORTED_UI_COMPONENT_COUNT };
 

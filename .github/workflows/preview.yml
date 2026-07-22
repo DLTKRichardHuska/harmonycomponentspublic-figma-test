@@ -1,0 +1,33 @@
+name: Preview
+
+on:
+  push:
+    branches-ignore:
+      - main
+
+jobs:
+  preview-build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build preview site
+        env:
+          GITHUB_REF_NAME: ${{ github.ref_name }}
+          GITHUB_RUN_NUMBER: ${{ github.run_number }}
+        run: npm run build
+
+      - name: Preview version summary
+        run: |
+          node --input-type=module -e "import { getEffectiveVersion } from './scripts/lib/version.js'; console.log('Preview version:', getEffectiveVersion());"

@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
- * Compare documentation pages with actual component Props interfaces
- * Identifies missing, extra, or mismatched props
+ * Compare documentation pages with actual component Props interfaces.
+ * Doc mappings are sourced from src/data/component-catalog.ts.
  */
 
 import fs from 'fs';
@@ -10,72 +10,41 @@ import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const componentsDir = path.join(__dirname, '../src/components/ui');
-const docsDir = path.join(__dirname, '../src/pages/components');
-const inventoryFile = path.join(__dirname, '../component-props-inventory.json');
+const root = path.join(__dirname, '..');
+const docsDir = path.join(root, 'src/pages/components');
+const inventoryFile = path.join(root, 'component-props-inventory.json');
+const catalogFile = path.join(root, 'src/data/component-catalog.ts');
+
+function readCatalogObject(constName) {
+  const content = fs.readFileSync(catalogFile, 'utf-8');
+  const match = content.match(
+    new RegExp(`export const ${constName}(?:[^=]*)= \\{([\\s\\S]*?)\\};`)
+  );
+  if (!match) {
+    throw new Error(`Could not parse ${constName} from component-catalog.ts`);
+  }
+
+  const entries = {};
+  for (const line of match[1].split('\n')) {
+    const entryMatch = line.match(/^\s*(\w+):\s*(?:'([^']*)'|null)/);
+    if (entryMatch) {
+      entries[entryMatch[1]] = entryMatch[2] ?? null;
+    }
+  }
+  return entries;
+}
+
+const componentToDocMap = readCatalogObject('componentDocMapping');
+const componentToPropsVar = readCatalogObject('componentDocPropsVar');
 
 const inventory = JSON.parse(fs.readFileSync(inventoryFile, 'utf-8'));
 const mismatches = {};
 
-// Map of component names to doc file names
-const componentToDocMap = {
-  'Button': 'buttons',
-  'Badge': 'badges',
-  'Card': 'cards',
-  'Input': 'inputs',
-  'Textarea': 'inputs', // Same page
-  'Checkbox': 'checkboxes',
-  'CheckboxGroup': 'checkbox-groups',
-  'RadioButton': 'radio-buttons',
-  'RadioGroup': 'radio-groups',
-  'Dropdown': 'dropdowns',
-  'Alert': 'alerts',
-  'Dialog': 'dialogs',
-  'Tooltip': 'tooltips',
-  'Spinner': 'spinner',
-  'ProgressBar': 'progress-bar',
-  'Toggle': 'toggle-switches',
-  'Chip': 'chips',
-  'Link': 'links',
-  'Label': 'labels',
-  'Accordion': 'accordion',
-  'TabStrip': 'tab-strip',
-  'ButtonGroup': 'button-groups',
-  'NotificationBadge': 'notification-badges',
-  'Avatar': null, // No doc page found
-  'Icon': 'icons',
-  'ListMenu': 'list-menu',
-  'DatePicker': 'date-picker',
-  'DateInput': 'date-picker', // Same page as DatePicker; uses dateInputProps
-  'TimePicker': 'specialty-inputs',
-  'MonthPicker': 'specialty-inputs',
-  'WeekPicker': 'specialty-inputs',
-  'DateTimePicker': 'specialty-inputs',
-  'RangeInput': 'specialty-inputs',
-  'NumberInput': 'specialty-inputs',
-  'PickerPopup': null, // Internal component
-};
-
-// When a doc file has multiple components, map component name to the variable holding its props (default: 'props')
-const componentToPropsVar = {
-  'Textarea': 'textareaProps',
-  'DatePicker': 'datePickerProps',
-  'DateInput': 'dateInputProps',
-  'NumberInput': 'numberInputProps',
-  'RangeInput': 'rangeInputProps',
-  'TimePicker': 'timePickerProps',
-  'MonthPicker': 'monthPickerProps',
-  'WeekPicker': 'weekPickerProps',
-  'DateTimePicker': 'dateTimePickerProps',
-};
-
 /**
- * Extract prop names from a doc file's props array. Uses variable name to find the right array
- * and only matches name: '...' so union types and complex strings don't break extraction.
+ * Extract prop names from a doc file's props array.
  */
 function extractPropsFromDoc(docContent, propsVariableName = 'props') {
   const names = [];
-  // Match const variableName = [ ... ]; (array may contain nested brackets)
   const re = new RegExp(
     `const\\s+${propsVariableName.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\s*=\\s*\\[`,
     's'
@@ -94,7 +63,6 @@ function extractPropsFromDoc(docContent, propsVariableName = 'props') {
   }
   const arrayBody = docContent.slice(startIndex, i - 1);
 
-  // Extract every name: 'propName' or name: "propName"
   const nameRe = /name:\s*['"]([^'"]+)['"]/g;
   let nameMatch;
   while ((nameMatch = nameRe.exec(arrayBody)) !== null) {
@@ -103,63 +71,62 @@ function extractPropsFromDoc(docContent, propsVariableName = 'props') {
   return names;
 }
 
-// Compare each component
 for (const [componentName, docFileName] of Object.entries(componentToDocMap)) {
   if (!docFileName || !inventory[componentName] || !inventory[componentName].hasProps) {
     continue;
   }
-  
+
   const docFile = path.join(docsDir, `${docFileName}.astro`);
   if (!fs.existsSync(docFile)) {
     mismatches[componentName] = {
-      error: `Documentation file not found: ${docFileName}.astro`
+      error: `Documentation file not found: ${docFileName}.astro`,
     };
     continue;
   }
-  
+
   const docContent = fs.readFileSync(docFile, 'utf-8');
   const propsVarName = componentToPropsVar[componentName] ?? 'props';
-  // Omit `class` on both sides: Astro/HTML convention; inventory may include it but we do not require or forbid it in docs.
   const docPropNames = new Set(
     extractPropsFromDoc(docContent, propsVarName).filter((k) => k !== 'class')
   );
   const componentProps = inventory[componentName].props || {};
-  const componentPropNames = new Set(Object.keys(componentProps).filter(k => k !== 'class' && k !== '[key: string]'));
-  
-  const missingInDocs = Array.from(componentPropNames).filter(name => !docPropNames.has(name));
-  const extraInDocs = Array.from(docPropNames).filter(name => !componentPropNames.has(name));
-  
+  const componentPropNames = new Set(
+    Object.keys(componentProps).filter((k) => k !== 'class' && k !== '[key: string]')
+  );
+
+  const missingInDocs = Array.from(componentPropNames).filter((name) => !docPropNames.has(name));
+  const extraInDocs = Array.from(docPropNames).filter((name) => !componentPropNames.has(name));
+
   if (missingInDocs.length > 0 || extraInDocs.length > 0) {
     mismatches[componentName] = {
       missingInDocs,
       extraInDocs,
       docProps: Array.from(docPropNames),
-      componentProps: Array.from(componentPropNames)
+      componentProps: Array.from(componentPropNames),
     };
   }
 }
 
-// Write report
-const reportFile = path.join(__dirname, '../docs-mismatch-report.json');
+const reportFile = path.join(root, 'docs-mismatch-report.json');
 fs.writeFileSync(reportFile, JSON.stringify(mismatches, null, 2));
 
-console.log('📊 Documentation Mismatch Report');
-console.log('================================\n');
+console.log('Documentation Mismatch Report');
+console.log('=============================\n');
 for (const [component, issues] of Object.entries(mismatches)) {
   console.log(`\n${component}:`);
   if (issues.error) {
-    console.log(`  ❌ ${issues.error}`);
+    console.log(`  ERROR: ${issues.error}`);
   } else {
     if (issues.missingInDocs?.length > 0) {
-      console.log(`  ⚠️  Missing in docs: ${issues.missingInDocs.join(', ')}`);
+      console.log(`  Missing in docs: ${issues.missingInDocs.join(', ')}`);
     }
     if (issues.extraInDocs?.length > 0) {
-      console.log(`  ⚠️  Extra in docs: ${issues.extraInDocs.join(', ')}`);
+      console.log(`  Extra in docs: ${issues.extraInDocs.join(', ')}`);
     }
   }
 }
 
-console.log(`\n📄 Full report written to: ${reportFile}`);
+console.log(`\nFull report written to: ${reportFile}`);
 
 if (Object.keys(mismatches).length > 0) {
   process.exit(1);

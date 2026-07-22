@@ -1,0 +1,259 @@
+{
+  "ref": {
+    "a11y": [
+      "Labels",
+      "Keyboard Navigation",
+      "ARIA Attributes",
+      "Disabled State"
+    ],
+    "root": {
+      "tag": "DIV",
+      "cls": "dropdown",
+      "w": 180,
+      "h": 24,
+      "bg": "rgba(0, 0, 0, 0)",
+      "border": "0px rgb(55, 63, 78)",
+      "radius": "0px",
+      "fontSize": "16px",
+      "color": "rgb(55, 63, 78)",
+      "padding": "0px"
+    },
+    "select": {
+      "tag": "BUTTON",
+      "cls": "dropdown__trigger",
+      "w": 180,
+      "h": 20,
+      "bg": "rgb(255, 255, 255)",
+      "border": "1px rgb(191, 198, 212)",
+      "radius": "4px",
+      "fontSize": "12px",
+      "color": "rgb(55, 63, 78)",
+      "padding": "0px 8px"
+    },
+    "outline": null,
+    "callout": false
+  },
+  "conv": {
+    "a11y": [],
+    "root": {
+      "tag": "DIV",
+      "cls": "MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-f",
+      "w": 360,
+      "h": 20,
+      "bg": "rgb(255, 255, 255)",
+      "border": "0px rgb(55, 63, 78)",
+      "radius": "4px",
+      "fontSize": "12px",
+      "color": "rgb(55, 63, 78)",
+      "padding": "0px"
+    },
+    "select": {
+      "tag": "DIV",
+      "cls": "MuiSelect-select MuiSelect-outlined MuiInputBase-input MuiOutlinedInput-input cs",
+      "w": 360,
+      "h": 20,
+      "bg": "rgba(0, 0, 0, 0)",
+      "border": "0px rgb(55, 63, 78)",
+      "radius": "8px",
+      "fontSize": "12px",
+      "color": "rgb(55, 63, 78)",
+      "padding": "0px 32px 0px 8px"
+    },
+    "outline": {
+      "tag": "FIELDSET",
+      "cls": "MuiOutlinedInput-notchedOutline css-1ohs4y1-MuiNotchedOutlined-root-MuiOutlinedI",
+      "w": 360,
+      "h": 25,
+      "bg": "rgba(0, 0, 0, 0)",
+      "border": "1px rgb(191, 198, 212)",
+      "radius": "4px",
+      "fontSize": "12px",
+      "color": "rgb(55, 63, 78)",
+      "padding": "0px 8px"
+    },
+    "callout": true
+  },
+  "refA": {
+    "a11y": [
+      "Keyboard Navigation",
+      "ARIA Attributes",
+      "Screen Reader Support"
+    ],
+    "items": [
+      {
+        "text": "What is this design system?",
+        "w": 670,
+        "h": 53,
+        "bg": "rgba(0, 0, 0, 0)",
+        "borderTop": "0px rgb(55, 63, 78)",
+        "borderBottom": "0px rgb(55, 63, 78)",
+        "color": "rgb(55, 63, 78)",
+        "fontSize": "14px",
+        "fontWeight": "500",
+        "padding": "16px",
+        "radius": "7px 7px 0px 0px"
+      },
+      {
+        "text": "How do I get started?",
+        "w": 670,
+        "h": 53,
+        "bg": "rgba(0, 0, 0, 0)",
+        "borderTop": "0px rgb(55, 63, 78)",
+        "borderBottom": "0px rgb(55, 63, 78)",
+        "color": "rgb(55, 63, 78)",
+        "fontSize": "14px",
+        "fontWeight": "500",
+        "padding": "16px",
+        "radius": "0px"
+      },
+      {
+        "text": "Is it accessible?",
+        "w": 670,
+        "h": 53,
+        "bg": "rgba(0, 0, 0, 0)",
+        "borderTop": "0px rgb(55, 63, 78)",
+        "borderBottom": "0px rgb(55, 63, 78)",
+        "color": "rgb(55, 63, 78)",
+        "fontSize": "14px",
+        "fontWeight": "500",
+        "padding": "16px",
+        "radius": "0px 0px 7px 7px"
+      }
+    ],
+    "locked": {
+      "w": 670,
+      "h": 53,
+      "bg": "rgba(0, 0, 0, 0)",
+      "borderTop": "0px rgb(107, 114, 128)",
+      "borderBottom": "0px rgb(107, 114, 128)",
+      "color": "rgb(107, 114, 128)",
+      "fontSize": "14px",
+      "fontWeight": "500",
+      "padding": "16px",
+      "radius": "0px"
+    },
+    "details": null,
+    "headerCount": 17
+  },
+  "convA": {
+    "a11y": [],
+    "items": [
+      {
+        "text": "What is this design system?",
+        "w": 670,
+        "h": 49,
+        "bg": "rgba(0, 0, 0, 0)",
+        "borderTop": "0px rgb(55, 63, 78)",
+        "borderBottom": "0px rgb(55, 63, 78)",
+        "color": "rgb(55, 63, 78)",
+        "fontSize": "14px",
+        "fontWeight": "500",
+        "padding": "16px",
+        "radius": "0px"
+      },
+      {
+        "text": "How do I get started?",
+        "w": 670,
+        "h": 49,
+        "bg": "rgba(0, 0, 0, 0)",
+        "borderTop": "0px rgb(55, 63, 78)",
+        "borderBottom": "0px rgb(55, 63, 78)",
+        "color": "rgb(55, 63, 78)",
+        "fontSize": "14px",
+        "fontWeight": "500",
+        "padding": "16px",
+        "radius": "0px"
+      },
+      {
+        "text": "Is it accessible?",
+        "w": 670,
+        "h": 49,
+        "bg": "rgba(0, 0, 0, 0)",
+        "borderTop": "0px rgb(55, 63, 78)",
+        "borderBottom": "0px rgb(55, 63, 78)",
+        "color": "rgb(55, 63, 78)",
+        "fontSize": "14px",
+        "fontWeight": "500",
+        "padding": "16px",
+        "radius": "0px"
+      }
+    ],
+    "locked": {
+      "w": 670,
+      "h": 49,
+      "bg": "rgba(0, 0, 0, 0)",
+      "borderTop": "0px rgb(107, 114, 128)",
+      "borderBottom": "0px rgb(107, 114, 128)",
+      "color": "rgb(107, 114, 128)",
+      "fontSize": "14px",
+      "fontWeight": "500",
+      "padding": "16px",
+      "radius": "0px"
+    },
+    "details": {
+      "w": 670,
+      "h": 74,
+      "bg": "rgba(0, 0, 0, 0)",
+      "borderTop": "0px rgb(82, 89, 105)",
+      "borderBottom": "0px rgb(82, 89, 105)",
+      "color": "rgb(82, 89, 105)",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "padding": "16px",
+      "radius": "0px"
+    },
+    "headerCount": 17
+  },
+  "refT": {
+    "a11y": [
+      "Labels",
+      "Keyboard Navigation",
+      "ARIA Attributes",
+      "Screen Reader Support",
+      "Disabled State"
+    ],
+    "small": null,
+    "medium": null,
+    "callout": false,
+    "segmentedSection": true
+  },
+  "convT": {
+    "a11y": [],
+    "small": {
+      "root": {
+        "w": 36,
+        "h": 20
+      },
+      "track": {
+        "w": 36,
+        "h": 20,
+        "bg": "rgb(191, 198, 212)",
+        "opacity": "1"
+      },
+      "thumb": {
+        "w": 16,
+        "h": 16,
+        "bg": "rgb(255, 255, 255)"
+      }
+    },
+    "medium": {
+      "root": {
+        "w": 44,
+        "h": 24
+      },
+      "track": {
+        "w": 44,
+        "h": 24,
+        "bg": "rgb(191, 198, 212)",
+        "opacity": "1"
+      },
+      "thumb": {
+        "w": 20,
+        "h": 20,
+        "bg": "rgb(255, 255, 255)"
+      }
+    },
+    "callout": true,
+    "segmentedSection": false
+  }
+}

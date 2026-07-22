@@ -24,6 +24,8 @@ export type Typography = typeof typographyJson;
 // Convenience exports
 export const semanticColors = colors.semantic;
 export const themeColors = colors.themes;
+export const buttonRoleTokens = colors.buttonRoleTokens;
+export const pageHeaderButtonTokens = colors.pageHeaderButton;
 export const darkPalette = colors.dark;
 export const lightPalette = colors.light;
 

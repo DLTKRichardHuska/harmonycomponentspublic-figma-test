@@ -33,7 +33,7 @@ import Button from '../../components/ui/Button.astro';
       <p class="text-secondary">
         This is a basic dialog with sticky header and footer. Min width 600px, default 700px; all styles use design tokens.
       </p>
-      <div slot="footer">
+      <div slot="footer" class="dialog__footer-actions">
         <Button variant="secondary" onclick="closeDialog('preview-dialog')">Cancel</Button>
         <Button onclick="closeDialog('preview-dialog')">Confirm</Button>
       </div>
@@ -45,7 +45,7 @@ import Button from '../../components/ui/Button.astro';
         <p class="text-secondary">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
         <p class="text-secondary">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
       </div>
-      <div slot="footer">
+      <div slot="footer" class="dialog__footer-actions">
         <Button onclick="closeDialog('preview-dialog-long')">Confirm</Button>
         <Button variant="secondary" onclick="closeDialog('preview-dialog-long')">Cancel</Button>
       </div>

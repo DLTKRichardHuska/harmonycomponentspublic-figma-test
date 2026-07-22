@@ -1,0 +1,179 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://harmony.deltek.com/schemas/conversion.manifest.json",
+  "title": "Harmony Conversion Manifest",
+  "type": "object",
+  "required": ["id", "name", "type", "status", "description", "converterId", "referenceVersion", "coverage", "elements"],
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "name": { "type": "string" },
+    "type": {
+      "type": "string",
+      "enum": ["component-library", "external"]
+    },
+    "status": {
+      "type": "string",
+      "enum": ["placeholder", "dev-in-progress", "active", "deprecated"]
+    },
+    "description": { "type": "string" },
+    "converterId": { "type": "string" },
+    "referenceVersion": { "type": "string" },
+    "referenceVersionSetAt": { "type": "string", "format": "date-time" },
+    "coverage": { "$ref": "#/$defs/coverage" },
+    "independence": {
+      "type": "object",
+      "properties": {
+        "standalone": { "type": "boolean" },
+        "layout": {
+          "type": "string",
+          "enum": ["single-package", "npm-workspace"],
+          "description": "single-package (default): one package.json. npm-workspace: packages/ui + apps/demo."
+        },
+        "packagePath": {
+          "type": "string",
+          "description": "Relative path to publishable package when layout is npm-workspace (default packages/ui)."
+        },
+        "demoPath": {
+          "type": "string",
+          "description": "Relative path to demo app when layout is npm-workspace (default apps/demo)."
+        }
+      }
+    },
+    "projectRoot": { "type": "string" },
+    "elements": {
+      "type": "object",
+      "minProperties": 1,
+      "description": "Per-element conversion state. Foundation pages use Colors, Typography, Spacing, Elevations, Dela (not a single foundation key).",
+      "additionalProperties": { "$ref": "#/$defs/catalogElement" }
+    },
+    "deliverables": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "documentation": {
+      "type": "object",
+      "properties": {
+        "consumerGuide": { "type": "string" }
+      }
+    }
+  },
+  "$defs": {
+    "coverage": {
+      "type": "object",
+      "required": ["percent", "completed", "total", "computedAt"],
+      "properties": {
+        "percent": { "type": "integer", "minimum": 0, "maximum": 100 },
+        "completed": { "type": "integer", "minimum": 0 },
+        "total": { "type": "integer", "minimum": 1 },
+        "computedAt": { "type": "string", "format": "date-time" }
+      },
+      "additionalProperties": false
+    },
+    "elementStatus": {
+      "type": "string",
+      "enum": ["not-started", "in-progress", "review", "synced", "gap"],
+      "description": "not-started → in-progress → review (verifier PASS, awaiting human sign-off) → synced. gap = accepted difference. `review` is primarily used by external/host-tracked converters (e.g. figma); component-library conversions may also use it before human sync sign-off."
+    },
+    "propMapping": {
+      "type": "object",
+      "required": ["harmony", "mui"],
+      "properties": {
+        "harmony": { "type": "string" },
+        "mui": { "type": "string" },
+        "notes": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "compositeEquivalent": {
+      "type": "object",
+      "required": ["harmonyFeature", "composition", "dependsOn"],
+      "properties": {
+        "harmonyFeature": { "type": "string" },
+        "composition": { "type": "string" },
+        "dependsOn": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      },
+      "additionalProperties": false
+    },
+    "catalogElement": {
+      "type": "object",
+      "required": ["status", "harmonySource"],
+      "properties": {
+        "status": { "$ref": "#/$defs/elementStatus" },
+        "harmonySource": { "type": "string" },
+        "strategy": {
+          "type": ["string", "null"],
+          "description": "Element conversion strategy. Allowed values are defined by the linked converter's elementStrategies.allowed — not a global enum."
+        },
+        "recommendedTarget": { "type": ["string", "null"] },
+        "targetCandidates": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "blockedBy": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "propMappings": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/propMapping" }
+        },
+        "compositeEquivalents": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/compositeEquivalent" }
+        },
+        "skippedProps": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "gaps": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "userDecision": { "type": ["string", "null"] },
+        "notes": { "type": "string" }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "type": { "const": "component-library" } } },
+      "then": {
+        "required": ["independence", "projectRoot", "deliverables"],
+        "properties": {
+          "independence": {
+            "properties": {
+              "standalone": { "const": true },
+              "layout": {
+                "type": "string",
+                "enum": ["single-package", "npm-workspace"]
+              },
+              "packagePath": { "type": "string" },
+              "demoPath": { "type": "string" }
+            }
+          },
+          "deliverables": {
+            "required": ["npmPackageName", "scripts", "exports"],
+            "properties": {
+              "npmPackageName": { "type": "string" },
+              "scripts": {
+                "type": "object",
+                "required": ["dev", "build:lib"]
+              },
+              "exports": {
+                "type": "object",
+                "minProperties": 1
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

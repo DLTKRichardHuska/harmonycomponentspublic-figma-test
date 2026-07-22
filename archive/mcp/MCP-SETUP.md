@@ -18,7 +18,7 @@ When designers configure DSManager to use the Harmony repo from GitHub:
       "command": "node",
       "args": ["/path/to/DSManager/build/index.js"],
       "env": {
-        "DESIGN_SYSTEMS_PATH": "https://github.com/DLTKfrancesmunoz/harmonycomponents.git",
+        "DESIGN_SYSTEMS_PATH": "https://github.com/DLTKRichardHuska/harmonycomponentspublic-figma-test.git",
         "GITHUB_CLONE_CACHE": "/tmp/dsmanager-cache"
       }
     }

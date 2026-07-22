@@ -1,0 +1,111 @@
+/*
+ * Harmony (shadcn) style entry — Tailwind v4, CSS-first.
+ *
+ * Importing this one file gives a consuming app: Tailwind core, the Harmony
+ * design tokens as Tailwind utilities (bg-primary, text-heading-xl, shadow-md,
+ * font-display, …), class-based dark mode, bundled fonts, and the package's own
+ * component classes registered for scanning. No tailwind.config, no content
+ * globs, no preset import, no safelist.
+ *
+ * Product is baked in per build (see tokens.css); there is no product switching.
+ */
+@import "tailwindcss";
+@import "./fonts.css";
+@import "./tokens.css";
+@import "./shell.css";
+
+/* Dark mode follows the .dark class toggled by HarmonyThemeProvider. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Self-register the package's classes so consumers never edit `content`. */
+@source "../components";
+@source "../layouts";
+
+/*
+ * Map Harmony CSS variables to Tailwind's theme namespaces. `inline` inlines the
+ * reference into each utility instead of emitting a theme variable, so (a) tokens
+ * that share a name with a Tailwind namespace (--font-*, --shadow-*) don't recurse,
+ * and (b) utilities keep resolving the runtime var, so colors/shadows flip with
+ * .dark automatically. Spacing, radius and text-xs…6xl already equal Tailwind's
+ * defaults, so they are intentionally not remapped.
+ */
+@theme inline {
+  --color-background: var(--page-bg);
+  --color-foreground: var(--text-primary);
+  --color-card: var(--card-bg);
+  --color-card-foreground: var(--text-primary);
+  --color-muted: var(--surface-bg);
+  --color-muted-foreground: var(--text-muted);
+  --color-border: var(--border-color);
+  --color-input: var(--input-bg);
+  --color-primary: var(--theme-primary);
+  --color-primary-foreground: var(--text-inverse);
+  --color-primary-hover: var(--theme-primary-hover);
+  --color-secondary: var(--text-secondary);
+  --color-secondary-foreground: var(--text-primary);
+  --color-accent: var(--accent-color);
+  --color-accent-foreground: var(--text-primary);
+  --color-link: var(--link-color);
+  --color-hover: var(--hover-bg);
+  --color-success: var(--color-success);
+  --color-warning: var(--color-warning);
+  --color-error: var(--color-error);
+  --color-info: var(--color-info);
+  --color-destructive: var(--color-error);
+  --color-destructive-foreground: var(--text-inverse);
+  --color-dela-foreground: var(--dela-header-content-fg);
+  --color-dela-start: var(--gradient-dela-start);
+  --color-dela-end: var(--gradient-dela-end);
+
+  --font-sans: var(--font-sans);
+  --font-display: var(--font-display);
+  --font-mono: var(--font-mono);
+
+  --text-display-xl: var(--display-xl);
+  --text-display-l: var(--display-l);
+  --text-display-m: var(--display-m);
+  --text-heading-xl: var(--heading-xl);
+  --text-heading-l: var(--heading-l);
+  --text-heading-m: var(--heading-m);
+  --text-heading-s: var(--heading-s);
+  --text-caption: var(--caption);
+  --text-label: var(--label);
+  --text-overline: var(--overline);
+
+  --shadow-sm: var(--shadow-sm);
+  --shadow-md: var(--shadow-md);
+  --shadow-lg: var(--shadow-lg);
+  --shadow-xl: var(--shadow-xl);
+  --shadow-2xl: var(--shadow-2xl);
+}
+
+/* Accordion animation (Radix content-height driven). */
+@theme {
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+}
+
+@keyframes accordion-down {
+  from { height: 0; }
+  to { height: var(--radix-accordion-content-height); }
+}
+@keyframes accordion-up {
+  from { height: var(--radix-accordion-content-height); }
+  to { height: 0; }
+}
+
+/* Dela gradient background (was backgroundImage.dela in the v3 preset). */
+@utility bg-dela {
+  background-image: var(--gradient-dela);
+}
+
+html {
+  font-family: var(--font-sans);
+}
+
+body {
+  margin: 0;
+  min-height: 100%;
+  background-color: var(--page-bg);
+  color: var(--text-primary);
+}

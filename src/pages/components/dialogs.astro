@@ -2,13 +2,9 @@
 import DocsLayout from '../../layouts/DocsLayout.astro';
 import Icon from '../../components/ui/Icon.astro';
 import PropsTable from '../../components/PropsTable.astro';
-import Icon from '../../components/ui/Icon.astro';
 import ExampleSection from '../../components/ExampleSection.astro';
-import Icon from '../../components/ui/Icon.astro';
 import Dialog from '../../components/ui/Dialog.astro';
-import Icon from '../../components/ui/Icon.astro';
 import Button from '../../components/ui/Button.astro';
-import Icon from '../../components/ui/Icon.astro';
 
 const props = [
   { name: 'id', type: 'string', default: '—', description: 'Unique dialog id (required)' },
@@ -53,7 +49,7 @@ const props = [
           <p class="text-secondary">
             This is a basic dialog with some content. You can add any content here including forms, images, or other components.
           </p>
-          <div slot="footer">
+          <div slot="footer" class="dialog__footer-actions">
             <Button onclick="closeDialog('basic-dialog')">Confirm</Button>
             <Button variant="secondary" onclick="closeDialog('basic-dialog')">Cancel</Button>
           </div>
@@ -67,7 +63,7 @@ const props = [
           <p class="text-secondary">
             Are you sure you want to delete this item? This action cannot be undone.
           </p>
-          <div slot="footer">
+          <div slot="footer" class="dialog__footer-actions">
             <Button variant="destructive" onclick="closeDialog('confirm-dialog')">Delete</Button>
             <Button variant="secondary" onclick="closeDialog('confirm-dialog')">Cancel</Button>
           </div>
@@ -97,7 +93,7 @@ const props = [
           <p class="text-secondary">
             This dialog has buttons aligned to the right. Use buttonAlignment="right" to override the default left alignment.
           </p>
-          <div slot="footer">
+          <div slot="footer" class="dialog__footer-actions">
             <Button variant="secondary" onclick="closeDialog('right-align-dialog')">Cancel</Button>
             <Button onclick="closeDialog('right-align-dialog')">Confirm</Button>
           </div>
@@ -111,7 +107,7 @@ const props = [
           <p class="text-secondary">
             This dialog has a primary blue header background with inverse text color for better contrast.
           </p>
-          <div slot="footer">
+          <div slot="footer" class="dialog__footer-actions">
             <Button onclick="closeDialog('primary-header-dialog')">Confirm</Button>
             <Button variant="secondary" onclick="closeDialog('primary-header-dialog')">Cancel</Button>
           </div>
@@ -125,7 +121,7 @@ const props = [
           <p class="text-secondary">
             This dialog combines both variants: left-aligned buttons and a primary blue header.
           </p>
-          <div slot="footer">
+          <div slot="footer" class="dialog__footer-actions">
             <Button onclick="closeDialog('combined-dialog')">Confirm</Button>
             <Button variant="secondary" onclick="closeDialog('combined-dialog')">Cancel</Button>
           </div>
@@ -139,7 +135,7 @@ const props = [
           <p class="text-secondary">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
           </p>
-          <div slot="footer">
+          <div slot="footer" class="dialog__footer-actions">
             <Button onclick="closeDialog('resizable-dialog')">Submit</Button>
             <Button variant="secondary" onclick="closeDialog('resizable-dialog')">Cancel</Button>
           </div>
@@ -173,7 +169,7 @@ const props = [
               Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Donec sed odio dui. Scroll to see that the header and footer remain fixed.
             </p>
           </div>
-          <div slot="footer">
+          <div slot="footer" class="dialog__footer-actions">
             <Button onclick="closeDialog('long-content-dialog')">Confirm</Button>
             <Button variant="secondary" onclick="closeDialog('long-content-dialog')">Cancel</Button>
           </div>
@@ -184,7 +180,7 @@ const props = [
     <section id="layout" class="space-y-4">
       <h2 class="section__title">Layout</h2>
       <p class="text-secondary">
-        The dialog uses a column flex layout: the header and footer are sticky (always visible), and only the body scrolls when content overflows. Sizing and spacing use design tokens only (e.g. <code>--dialog-min-width</code>, <code>--dialog-max-width-default</code>, <code>--dialog-margin</code>, <code>--space-*</code>, <code>--radius-xl</code>).
+        The dialog uses a column flex layout: the header and footer are sticky (always visible), and only the body scrolls when content overflows. Sizing and spacing use design tokens only (e.g. <code>--dialog-min-width</code>, <code>--dialog-max-width-default</code>, <code>--dialog-margin</code>, <code>--space-*</code>, <code>--radius-xl</code>). Footer action buttons use <code>gap: var(--space-3)</code> between siblings (via <code>.dialog__footer-actions</code> or any footer slot wrapper).
       </p>
     </section>
 

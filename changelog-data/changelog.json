@@ -1,8 +1,1346 @@
 {
   "entries": [
     {
+      "id": "2026-05-13-component-TableCostpointGrid-4b5d88c9",
+      "version": "0.9.0",
+      "date": "2026-05-13T21:01:37.000Z",
+      "category": "added",
+      "type": "component",
+      "target": "TableCostpointGrid",
+      "title": "TableCostpointGrid",
+      "description": "New TableCostpointGrid component added to the design system",
+      "breaking": false,
+      "commit": {
+        "hash": "827ff90",
+        "message": "Merge pull request #90 from DLTKfrancesmunoz/cp-table",
+        "author": "DLTKfrancesmunoz",
+        "date": "2026-05-13T15:01:37-06:00"
+      },
+      "filePath": "src/components/ui/TableCostpointGrid.astro"
+    },
+    {
+      "id": "2026-05-13-component-CommandCenterPanel-5be4947f",
+      "version": "0.9.0",
+      "date": "2026-05-13T21:01:37.000Z",
+      "category": "changed",
+      "type": "component",
+      "target": "CommandCenterPanel",
+      "title": "CommandCenterPanel",
+      "description": "Update CommandCenterPanel component implementation",
+      "breaking": false,
+      "commit": {
+        "hash": "827ff90",
+        "message": "Merge pull request #90 from DLTKfrancesmunoz/cp-table",
+        "author": "DLTKfrancesmunoz",
+        "date": "2026-05-13T15:01:37-06:00"
+      },
+      "filePath": "src/components/ui/CommandCenterPanel.astro"
+    },
+    {
+      "id": "2026-05-13-component-RightSidebar-e316cfcc",
+      "version": "0.9.0",
+      "date": "2026-05-13T21:01:37.000Z",
+      "category": "changed",
+      "type": "component",
+      "target": "RightSidebar",
+      "title": "RightSidebar",
+      "description": "Update RightSidebar component implementation",
+      "breaking": false,
+      "commit": {
+        "hash": "827ff90",
+        "message": "Merge pull request #90 from DLTKfrancesmunoz/cp-table",
+        "author": "DLTKfrancesmunoz",
+        "date": "2026-05-13T15:01:37-06:00"
+      },
+      "filePath": "src/components/ui/RightSidebar.astro"
+    },
+    {
+      "id": "2026-05-13-component-Table-e72f5ac4",
+      "version": "0.9.0",
+      "date": "2026-05-13T21:01:37.000Z",
+      "category": "changed",
+      "type": "component",
+      "target": "Table",
+      "title": "Table",
+      "description": "Update Table component implementation",
+      "breaking": false,
+      "commit": {
+        "hash": "827ff90",
+        "message": "Merge pull request #90 from DLTKfrancesmunoz/cp-table",
+        "author": "DLTKfrancesmunoz",
+        "date": "2026-05-13T15:01:37-06:00"
+      },
+      "filePath": "src/components/ui/Table.astro"
+    },
+    {
+      "id": "2026-05-13-system-Styles-c56a4e3d",
+      "version": "0.9.0",
+      "date": "2026-05-13T21:01:37.000Z",
+      "category": "changed",
+      "type": "system",
+      "target": "Styles",
+      "title": "Styles",
+      "description": "Update design system styles (e.g. components.css, layout.css)",
+      "breaking": false,
+      "commit": {
+        "hash": "827ff90",
+        "message": "Merge pull request #90 from DLTKfrancesmunoz/cp-table",
+        "author": "DLTKfrancesmunoz",
+        "date": "2026-05-13T15:01:37-06:00"
+      },
+      "filePath": "src/styles/components.css"
+    },
+    {
+      "id": "2026-04-28-component-Table-e72f5ac4",
+      "version": "0.9.0",
+      "date": "2026-04-28T13:00:50.000Z",
+      "category": "changed",
+      "type": "component",
+      "target": "Table",
+      "title": "Table",
+      "description": "Update Table component implementation",
+      "breaking": false,
+      "commit": {
+        "hash": "9e77b4a",
+        "message": "Merge pull request #88 from DLTKfrancesmunoz/cc-table-updates",
+        "author": "DLTKfrancesmunoz",
+        "date": "2026-04-28T07:00:50-06:00"
+      },
+      "filePath": "src/components/ui/Table.astro"
+    },
+    {
+      "id": "2026-04-28-system-Styles-c56a4e3d",
+      "version": "0.9.0",
+      "date": "2026-04-28T13:00:50.000Z",
+      "category": "changed",
+      "type": "system",
+      "target": "Styles",
+      "title": "Styles",
+      "description": "Update design system styles (e.g. components.css, layout.css)",
+      "breaking": false,
+      "commit": {
+        "hash": "9e77b4a",
+        "message": "Merge pull request #88 from DLTKfrancesmunoz/cc-table-updates",
+        "author": "DLTKfrancesmunoz",
+        "date": "2026-04-28T07:00:50-06:00"
+      },
+      "filePath": "src/styles/components.css"
+    },
+    {
+      "id": "2026-04-24-component-TabStrip-7e0ec474",
+      "version": "0.9.0",
+      "date": "2026-04-24T15:41:10.000Z",
+      "category": "changed",
+      "type": "component",
+      "target": "TabStrip",
+      "title": "TabStrip",
+      "description": "Update TabStrip component implementation",
+      "breaking": false,
+      "commit": {
+        "hash": "9c463a3",
+        "message": "Merge pull request #86 from DLTKfrancesmunoz/tabstrip-042426",
+        "author": "DLTKfrancesmunoz",
+        "date": "2026-04-24T09:41:10-06:00"
+      },
+      "filePath": "src/components/ui/TabStrip.astro"
+    },
+    {
+      "id": "2026-04-24-system-Styles-c56a4e3d",
+      "version": "0.9.0",
+      "date": "2026-04-24T15:41:10.000Z",
+      "category": "changed",
+      "type": "system",
+      "target": "Styles",
+      "title": "Styles",
+      "description": "Update design system styles (e.g. components.css, layout.css)",
+      "breaking": false,
+      "commit": {
+        "hash": "9c463a3",
+        "message": "Merge pull request #86 from DLTKfrancesmunoz/tabstrip-042426",
+        "author": "DLTKfrancesmunoz",
+        "date": "2026-04-24T09:41:10-06:00"
+      },
+      "filePath": "src/styles/components.css"
+    },
+    {
+      "id": "2026-04-23-component-CommandCenterPanel-df645195",
+      "version": "0.9.0",
+      "date": "2026-04-23T18:19:04.000Z",
+      "category": "added",
+      "type": "component",
+      "target": "CommandCenterPanel",
+      "title": "CommandCenterPanel",
+      "description": "New CommandCenterPanel component added to the design system",
+      "breaking": false,
+      "commit": {
+        "hash": "90845a7",
+        "message": "Merge pull request #82 from DLTKfrancesmunoz/command-center-tables",
+        "author": "DLTKfrancesmunoz",
+        "date": "2026-04-23T12:19:04-06:00"
+      },
+      "filePath": "src/components/ui/CommandCenterPanel.astro"
+    },
+    {
+      "id": "2026-04-23-component-CommandCenterPanelSection-4f191cdc",
+      "version": "0.9.0",
+      "date": "2026-04-23T18:19:04.000Z",
+      "category": "added",
+      "type": "component",
+      "target": "CommandCenterPanelSection",
+      "title": "CommandCenterPanelSection",
+      "description": "New CommandCenterPanelSection component added to the design system",
+      "breaking": false,
+      "commit": {
+        "hash": "90845a7",
+        "message": "Merge pull request #82 from DLTKfrancesmunoz/command-center-tables",
+        "author": "DLTKfrancesmunoz",
+        "date": "2026-04-23T12:19:04-06:00"
+      },
+      "filePath": "src/components/ui/CommandCenterPanelSection.astro"
+    },
+    {
+      "id": "2026-04-23-component-TableDataRegion-dd1558c9",
+      "version": "0.9.0",
+      "date": "2026-04-23T18:19:04.000Z",
+      "category": "added",
+      "type": "component",
+      "target": "TableDataRegion",
+      "title": "TableDataRegion",
+      "description": "New TableDataRegion component added to the design system",
+      "breaking": false,
+      "commit": {
+        "hash": "90845a7",
+        "message": "Merge pull request #82 from DLTKfrancesmunoz/command-center-tables",
+        "author": "DLTKfrancesmunoz",
+        "date": "2026-04-23T12:19:04-06:00"
+      },
+      "filePath": "src/components/ui/TableDataRegion.astro"
+    },
+    {
+      "id": "2026-04-23-component-Table-91c05acb",
+      "version": "0.9.0",
+      "date": "2026-04-23T18:19:04.000Z",
+      "category": "added",
+      "type": "component",
+      "target": "Table",
+      "title": "Table.variant",
+      "description": "Add variant prop to Table component ('default' | 'commandCenter')",
+      "breaking": false,
+      "commit": {
+        "hash": "90845a7",
+        "message": "Merge pull request #82 from DLTKfrancesmunoz/command-center-tables",
+        "author": "DLTKfrancesmunoz",
+        "date": "2026-04-23T12:19:04-06:00"
+      },
+      "properties": [
+        {
+          "name": "variant",
+          "change": "prop_added"
+        }
+      ]
+    },
+    {
+      "id": "2026-04-23-component-Table-eab1264c",
+      "version": "0.9.0",
+      "date": "2026-04-23T18:19:04.000Z",
+      "category": "added",
+      "type": "component",
+      "target": "Table",
+      "title": "Table.groupedDefaultExpanded",
+      "description": "Add groupedDefaultExpanded prop to Table component (string)",
+      "breaking": false,
+      "commit": {
+        "hash": "90845a7",
+        "message": "Merge pull request #82 from DLTKfrancesmunoz/command-center-tables",
+        "author": "DLTKfrancesmunoz",
+        "date": "2026-04-23T12:19:04-06:00"
+      },
+      "properties": [
+        {
+          "name": "groupedDefaultExpanded",
+          "change": "prop_added"
+        }
+      ]
+    },
+    {
+      "id": "2026-04-23-component-Table-32c1dc4a",
+      "version": "0.9.0",
+      "date": "2026-04-23T18:19:04.000Z",
+      "category": "added",
+      "type": "component",
+      "target": "Table",
+      "title": "Table.variant",
+      "description": "Add variant 'default' to Table",
+      "breaking": false,
+      "commit": {
+        "hash": "90845a7",
+        "message": "Merge pull request #82 from DLTKfrancesmunoz/command-center-tables",
+        "author": "DLTKfrancesmunoz",
+        "date": "2026-04-23T12:19:04-06:00"
+      },
+      "properties": [
+        {
+          "name": "variant",
+          "change": "variant_added",
+          "variantName": "default"
+        }
+      ]
+    },
+    {
+      "id": "2026-04-23-component-Table-dfd307a8",
+      "version": "0.9.0",
+      "date": "2026-04-23T18:19:04.000Z",
+      "category": "added",
+      "type": "component",
+      "target": "Table",
+      "title": "Table.variant",
+      "description": "Add variant 'commandCenter' to Table",
+      "breaking": false,
+      "commit": {
+        "hash": "90845a7",
+        "message": "Merge pull request #82 from DLTKfrancesmunoz/command-center-tables",
+        "author": "DLTKfrancesmunoz",
+        "date": "2026-04-23T12:19:04-06:00"
+      },
+      "properties": [
+        {
+          "name": "variant",
+          "change": "variant_added",
+          "variantName": "commandCenter"
+        }
+      ]
+    },
+    {
+      "id": "2026-04-23-system-Styles-c56a4e3d",
+      "version": "0.9.0",
+      "date": "2026-04-23T18:19:04.000Z",
+      "category": "changed",
+      "type": "system",
+      "target": "Styles",
+      "title": "Styles",
+      "description": "Update design system styles (e.g. components.css, layout.css)",
+      "breaking": false,
+      "commit": {
+        "hash": "90845a7",
+        "message": "Merge pull request #82 from DLTKfrancesmunoz/command-center-tables",
+        "author": "DLTKfrancesmunoz",
+        "date": "2026-04-23T12:19:04-06:00"
+      },
+      "filePath": "src/styles/components.css"
+    },
+    {
+      "id": "2026-04-15-system-Styles-c56a4e3d",
+      "version": "0.9.0",
+      "date": "2026-04-15T12:56:21.000Z",
+      "category": "changed",
+      "type": "system",
+      "target": "Styles",
+      "title": "Styles",
+      "description": "Update design system styles (e.g. components.css, layout.css)",
+      "breaking": false,
+      "commit": {
+        "hash": "e74f48d",
+        "message": "Merge pull request #79 from DLTKfrancesmunoz/kanban-update-cards",
+        "author": "DLTKfrancesmunoz",
+        "date": "2026-04-15T06:56:21-06:00"
+      },
+      "filePath": "src/styles/components.css"
+    },
+    {
+      "id": "2026-04-14-component-ShellFooter-b698ab41",
+      "version": "0.9.0",
+      "date": "2026-04-14T19:20:17.000Z",
+      "category": "changed",
+      "type": "component",
+      "target": "ShellFooter",
+      "title": "ShellFooter.moreCount",
+      "description": "Remove default value for moreCount in ShellFooter",
+      "breaking": false,
+      "commit": {
+        "hash": "38e9dd9",
+        "message": "Merge pull request #77 from DLTKfrancesmunoz/footer-and-panel-fixes",
+        "author": "DLTKfrancesmunoz",
+        "date": "2026-04-14T13:20:17-06:00"
+      },
+      "properties": [
+        {
+          "name": "moreCount",
+          "change": "prop_default_changed",
+          "before": "0",
+          "after": null
+        }
+      ]
+    },
+    {
+      "id": "2026-04-14-component-ShellFooter-567709df",
+      "version": "0.9.0",
+      "date": "2026-04-14T19:20:17.000Z",
+      "category": "added",
+      "type": "component",
+      "target": "ShellFooter",
+      "title": "ShellFooter.showTabOpenInNew",
+      "description": "Add showTabOpenInNew prop to ShellFooter component (boolean)",
+      "breaking": false,
+      "commit": {
+        "hash": "38e9dd9",
+        "message": "Merge pull request #77 from DLTKfrancesmunoz/footer-and-panel-fixes",
+        "author": "DLTKfrancesmunoz",
+        "date": "2026-04-14T13:20:17-06:00"
+      },
+      "properties": [
+        {
+          "name": "showTabOpenInNew",
+          "change": "prop_added"
+        }
+      ]
+    },
+    {
+      "id": "2026-04-14-component-ShellFooter-e75fcfd4",
+      "version": "0.9.0",
+      "date": "2026-04-14T19:20:17.000Z",
+      "category": "added",
+      "type": "component",
+      "target": "ShellFooter",
+      "title": "ShellFooter.showTabClose",
+      "description": "Add showTabClose prop to ShellFooter component (boolean)",
+      "breaking": false,
+      "commit": {
+        "hash": "38e9dd9",
+        "message": "Merge pull request #77 from DLTKfrancesmunoz/footer-and-panel-fixes",
+        "author": "DLTKfrancesmunoz",
+        "date": "2026-04-14T13:20:17-06:00"
+      },
+      "properties": [
+        {
+          "name": "showTabClose",
+          "change": "prop_added"
+        }
+      ]
+    },
+    {
+      "id": "2026-04-14-component-ShellFooter-d928849f",
+      "version": "0.9.0",
+      "date": "2026-04-14T19:20:17.000Z",
+      "category": "added",
+      "type": "component",
+      "target": "ShellFooter",
+      "title": "ShellFooter.showTabOverflowMenu",
+      "description": "Add showTabOverflowMenu prop to ShellFooter component (boolean)",
+      "breaking": false,
+      "commit": {
+        "hash": "38e9dd9",
+        "message": "Merge pull request #77 from DLTKfrancesmunoz/footer-and-panel-fixes",
+        "author": "DLTKfrancesmunoz",
+        "date": "2026-04-14T13:20:17-06:00"
+      },
+      "properties": [
+        {
+          "name": "showTabOverflowMenu",
+          "change": "prop_added"
+        }
+      ]
+    },
+    {
+      "id": "2026-04-14-component-TabStrip-5f98cf41",
+      "version": "0.9.0",
+      "date": "2026-04-14T19:20:17.000Z",
+      "category": "added",
+      "type": "component",
+      "target": "TabStrip",
+      "title": "TabStrip.showTabOpenInNew",
+      "description": "Add showTabOpenInNew prop to TabStrip component (boolean)",
+      "breaking": false,
+      "commit": {
+        "hash": "38e9dd9",
+        "message": "Merge pull request #77 from DLTKfrancesmunoz/footer-and-panel-fixes",
+        "author": "DLTKfrancesmunoz",
+        "date": "2026-04-14T13:20:17-06:00"
+      },
+      "properties": [
+        {
+          "name": "showTabOpenInNew",
+          "change": "prop_added"
+        }
+      ]
+    },
+    {
+      "id": "2026-04-14-component-TabStrip-4ec30a49",
+      "version": "0.9.0",
+      "date": "2026-04-14T19:20:17.000Z",
+      "category": "added",
+      "type": "component",
+      "target": "TabStrip",
+      "title": "TabStrip.showTabClose",
+      "description": "Add showTabClose prop to TabStrip component (boolean)",
+      "breaking": false,
+      "commit": {
+        "hash": "38e9dd9",
+        "message": "Merge pull request #77 from DLTKfrancesmunoz/footer-and-panel-fixes",
+        "author": "DLTKfrancesmunoz",
+        "date": "2026-04-14T13:20:17-06:00"
+      },
+      "properties": [
+        {
+          "name": "showTabClose",
+          "change": "prop_added"
+        }
+      ]
+    },
+    {
+      "id": "2026-04-14-component-TabStrip-7aee6fe5",
+      "version": "0.9.0",
+      "date": "2026-04-14T19:20:17.000Z",
+      "category": "added",
+      "type": "component",
+      "target": "TabStrip",
+      "title": "TabStrip.showTabOverflowMenu",
+      "description": "Add showTabOverflowMenu prop to TabStrip component (boolean)",
+      "breaking": false,
+      "commit": {
+        "hash": "38e9dd9",
+        "message": "Merge pull request #77 from DLTKfrancesmunoz/footer-and-panel-fixes",
+        "author": "DLTKfrancesmunoz",
+        "date": "2026-04-14T13:20:17-06:00"
+      },
+      "properties": [
+        {
+          "name": "showTabOverflowMenu",
+          "change": "prop_added"
+        }
+      ]
+    },
+    {
+      "id": "2026-04-14-component-RightSidebar-e316cfcc",
+      "version": "0.9.0",
+      "date": "2026-04-14T19:20:17.000Z",
+      "category": "changed",
+      "type": "component",
+      "target": "RightSidebar",
+      "title": "RightSidebar",
+      "description": "Update RightSidebar component implementation",
+      "breaking": false,
+      "commit": {
+        "hash": "38e9dd9",
+        "message": "Merge pull request #77 from DLTKfrancesmunoz/footer-and-panel-fixes",
+        "author": "DLTKfrancesmunoz",
+        "date": "2026-04-14T13:20:17-06:00"
+      },
+      "filePath": "src/components/ui/RightSidebar.astro"
+    },
+    {
+      "id": "2026-04-14-component-ShellPanel-062d12bf",
+      "version": "0.9.0",
+      "date": "2026-04-14T19:20:17.000Z",
+      "category": "changed",
+      "type": "component",
+      "target": "ShellPanel",
+      "title": "ShellPanel",
+      "description": "Update ShellPanel component implementation",
+      "breaking": false,
+      "commit": {
+        "hash": "38e9dd9",
+        "message": "Merge pull request #77 from DLTKfrancesmunoz/footer-and-panel-fixes",
+        "author": "DLTKfrancesmunoz",
+        "date": "2026-04-14T13:20:17-06:00"
+      },
+      "filePath": "src/components/ui/ShellPanel.astro"
+    },
+    {
+      "id": "2026-04-09-component-KanbanCardCostpoint-0b2b17cf",
+      "version": "0.9.0",
+      "date": "2026-04-09T12:56:55.000Z",
+      "category": "added",
+      "type": "component",
+      "target": "KanbanCardCostpoint",
+      "title": "KanbanCardCostpoint",
+      "description": "New KanbanCardCostpoint component added to the design system",
+      "breaking": false,
+      "commit": {
+        "hash": "ae57b5a",
+        "message": "Merge pull request #75 from DLTKfrancesmunoz/kanban",
+        "author": "Alex Hart",
+        "date": "2026-04-09T08:56:55-04:00"
+      },
+      "filePath": "src/components/ui/KanbanCardCostpoint.astro"
+    },
+    {
+      "id": "2026-04-09-component-Kanban-df0237fe",
+      "version": "0.9.0",
+      "date": "2026-04-09T12:56:55.000Z",
+      "category": "changed",
+      "type": "component",
+      "target": "Kanban",
+      "title": "Kanban.columns",
+      "description": "Update columns type in Kanban from KanbanColumn[] to KanbanColumn[] | KanbanCostpointColumn[]",
+      "breaking": true,
+      "commit": {
+        "hash": "ae57b5a",
+        "message": "Merge pull request #75 from DLTKfrancesmunoz/kanban",
+        "author": "Alex Hart",
+        "date": "2026-04-09T08:56:55-04:00"
+      },
+      "properties": [
+        {
+          "name": "columns",
+          "change": "prop_type_changed",
+          "before": "KanbanColumn[]",
+          "after": "KanbanColumn[] | KanbanCostpointColumn[]"
+        }
+      ]
+    },
+    {
+      "id": "2026-04-09-component-Kanban-b5fd3b86",
+      "version": "0.9.0",
+      "date": "2026-04-09T12:56:55.000Z",
+      "category": "added",
+      "type": "component",
+      "target": "Kanban",
+      "title": "Kanban.variant",
+      "description": "Add variant prop to Kanban component ('default' | 'costpoint')",
+      "breaking": false,
+      "commit": {
+        "hash": "ae57b5a",
+        "message": "Merge pull request #75 from DLTKfrancesmunoz/kanban",
+        "author": "Alex Hart",
+        "date": "2026-04-09T08:56:55-04:00"
+      },
+      "properties": [
+        {
+          "name": "variant",
+          "change": "prop_added"
+        }
+      ]
+    },
+    {
+      "id": "2026-04-09-component-Kanban-921e4179",
+      "version": "0.9.0",
+      "date": "2026-04-09T12:56:55.000Z",
+      "category": "added",
+      "type": "component",
+      "target": "Kanban",
+      "title": "Kanban.cardFieldsConfig",
+      "description": "Add cardFieldsConfig prop to Kanban component (KanbanViewCardField[])",
+      "breaking": false,
+      "commit": {
+        "hash": "ae57b5a",
+        "message": "Merge pull request #75 from DLTKfrancesmunoz/kanban",
+        "author": "Alex Hart",
+        "date": "2026-04-09T08:56:55-04:00"
+      },
+      "properties": [
+        {
+          "name": "cardFieldsConfig",
+          "change": "prop_added"
+        }
+      ]
+    },
+    {
+      "id": "2026-04-09-component-Kanban-be505e98",
+      "version": "0.9.0",
+      "date": "2026-04-09T12:56:55.000Z",
+      "category": "added",
+      "type": "component",
+      "target": "Kanban",
+      "title": "Kanban.cpRecordCount",
+      "description": "Add cpRecordCount prop to Kanban component (number)",
+      "breaking": false,
+      "commit": {
+        "hash": "ae57b5a",
+        "message": "Merge pull request #75 from DLTKfrancesmunoz/kanban",
+        "author": "Alex Hart",
+        "date": "2026-04-09T08:56:55-04:00"
+      },
+      "properties": [
+        {
+          "name": "cpRecordCount",
+          "change": "prop_added"
+        }
+      ]
+    },
+    {
+      "id": "2026-04-09-component-Kanban-c255d4a5",
+      "version": "0.9.0",
+      "date": "2026-04-09T12:56:55.000Z",
+      "category": "added",
+      "type": "component",
+      "target": "Kanban",
+      "title": "Kanban.cpRecordShown",
+      "description": "Add cpRecordShown prop to Kanban component (number)",
+      "breaking": false,
+      "commit": {
+        "hash": "ae57b5a",
+        "message": "Merge pull request #75 from DLTKfrancesmunoz/kanban",
+        "author": "Alex Hart",
+        "date": "2026-04-09T08:56:55-04:00"
+      },
+      "properties": [
+        {
+          "name": "cpRecordShown",
+          "change": "prop_added"
+        }
+      ]
+    },
+    {
+      "id": "2026-04-09-component-Kanban-7275862f",
+      "version": "0.9.0",
+      "date": "2026-04-09T12:56:55.000Z",
+      "category": "added",
+      "type": "component",
+      "target": "Kanban",
+      "title": "Kanban.cpRecordTotal",
+      "description": "Add cpRecordTotal prop to Kanban component (number)",
+      "breaking": false,
+      "commit": {
+        "hash": "ae57b5a",
+        "message": "Merge pull request #75 from DLTKfrancesmunoz/kanban",
+        "author": "Alex Hart",
+        "date": "2026-04-09T08:56:55-04:00"
+      },
+      "properties": [
+        {
+          "name": "cpRecordTotal",
+          "change": "prop_added"
+        }
+      ]
+    },
+    {
+      "id": "2026-04-09-component-Kanban-ff8094b6",
+      "version": "0.9.0",
+      "date": "2026-04-09T12:56:55.000Z",
+      "category": "added",
+      "type": "component",
+      "target": "Kanban",
+      "title": "Kanban.cpToolbarTitle",
+      "description": "Add cpToolbarTitle prop to Kanban component (string)",
+      "breaking": false,
+      "commit": {
+        "hash": "ae57b5a",
+        "message": "Merge pull request #75 from DLTKfrancesmunoz/kanban",
+        "author": "Alex Hart",
+        "date": "2026-04-09T08:56:55-04:00"
+      },
+      "properties": [
+        {
+          "name": "cpToolbarTitle",
+          "change": "prop_added"
+        }
+      ]
+    },
+    {
+      "id": "2026-04-09-component-Kanban-4cb06461",
+      "version": "0.9.0",
+      "date": "2026-04-09T12:56:55.000Z",
+      "category": "added",
+      "type": "component",
+      "target": "Kanban",
+      "title": "Kanban.cpSortedBy",
+      "description": "Add cpSortedBy prop to Kanban component (string)",
+      "breaking": false,
+      "commit": {
+        "hash": "ae57b5a",
+        "message": "Merge pull request #75 from DLTKfrancesmunoz/kanban",
+        "author": "Alex Hart",
+        "date": "2026-04-09T08:56:55-04:00"
+      },
+      "properties": [
+        {
+          "name": "cpSortedBy",
+          "change": "prop_added"
+        }
+      ]
+    },
+    {
+      "id": "2026-04-09-component-Kanban-4b419992",
+      "version": "0.9.0",
+      "date": "2026-04-09T12:56:55.000Z",
+      "category": "added",
+      "type": "component",
+      "target": "Kanban",
+      "title": "Kanban.cpSortLabel",
+      "description": "Add cpSortLabel prop to Kanban component (string)",
+      "breaking": false,
+      "commit": {
+        "hash": "ae57b5a",
+        "message": "Merge pull request #75 from DLTKfrancesmunoz/kanban",
+        "author": "Alex Hart",
+        "date": "2026-04-09T08:56:55-04:00"
+      },
+      "properties": [
+        {
+          "name": "cpSortLabel",
+          "change": "prop_added"
+        }
+      ]
+    },
+    {
+      "id": "2026-04-09-component-Kanban-ab08cdbd",
+      "version": "0.9.0",
+      "date": "2026-04-09T12:56:55.000Z",
+      "category": "added",
+      "type": "component",
+      "target": "Kanban",
+      "title": "Kanban.cpActiveView",
+      "description": "Add cpActiveView prop to Kanban component ('table' | 'form' | 'kanban')",
+      "breaking": false,
+      "commit": {
+        "hash": "ae57b5a",
+        "message": "Merge pull request #75 from DLTKfrancesmunoz/kanban",
+        "author": "Alex Hart",
+        "date": "2026-04-09T08:56:55-04:00"
+      },
+      "properties": [
+        {
+          "name": "cpActiveView",
+          "change": "prop_added"
+        }
+      ]
+    },
+    {
+      "id": "2026-04-09-component-Kanban-0492e24a",
+      "version": "0.9.0",
+      "date": "2026-04-09T12:56:55.000Z",
+      "category": "added",
+      "type": "component",
+      "target": "Kanban",
+      "title": "Kanban.cpSearchPlaceholder",
+      "description": "Add cpSearchPlaceholder prop to Kanban component (string)",
+      "breaking": false,
+      "commit": {
+        "hash": "ae57b5a",
+        "message": "Merge pull request #75 from DLTKfrancesmunoz/kanban",
+        "author": "Alex Hart",
+        "date": "2026-04-09T08:56:55-04:00"
+      },
+      "properties": [
+        {
+          "name": "cpSearchPlaceholder",
+          "change": "prop_added"
+        }
+      ]
+    },
+    {
+      "id": "2026-04-09-component-Kanban-134b1847",
+      "version": "0.9.0",
+      "date": "2026-04-09T12:56:55.000Z",
+      "category": "added",
+      "type": "component",
+      "target": "Kanban",
+      "title": "Kanban.cpScrollColumnIndex",
+      "description": "Add cpScrollColumnIndex prop to Kanban component (number)",
+      "breaking": false,
+      "commit": {
+        "hash": "ae57b5a",
+        "message": "Merge pull request #75 from DLTKfrancesmunoz/kanban",
+        "author": "Alex Hart",
+        "date": "2026-04-09T08:56:55-04:00"
+      },
+      "properties": [
+        {
+          "name": "cpScrollColumnIndex",
+          "change": "prop_added"
+        }
+      ]
+    },
+    {
+      "id": "2026-04-09-component-Kanban-8ed30308",
+      "version": "0.9.0",
+      "date": "2026-04-09T12:56:55.000Z",
+      "category": "added",
+      "type": "component",
+      "target": "Kanban",
+      "title": "Kanban.showLoadMore",
+      "description": "Add showLoadMore prop to Kanban component (boolean)",
+      "breaking": false,
+      "commit": {
+        "hash": "ae57b5a",
+        "message": "Merge pull request #75 from DLTKfrancesmunoz/kanban",
+        "author": "Alex Hart",
+        "date": "2026-04-09T08:56:55-04:00"
+      },
+      "properties": [
+        {
+          "name": "showLoadMore",
+          "change": "prop_added"
+        }
+      ]
+    },
+    {
+      "id": "2026-04-09-component-Kanban-791121c7",
+      "version": "0.9.0",
+      "date": "2026-04-09T12:56:55.000Z",
+      "category": "added",
+      "type": "component",
+      "target": "Kanban",
+      "title": "Kanban.variant",
+      "description": "Add variant 'default' to Kanban",
+      "breaking": false,
+      "commit": {
+        "hash": "ae57b5a",
+        "message": "Merge pull request #75 from DLTKfrancesmunoz/kanban",
+        "author": "Alex Hart",
+        "date": "2026-04-09T08:56:55-04:00"
+      },
+      "properties": [
+        {
+          "name": "variant",
+          "change": "variant_added",
+          "variantName": "default"
+        }
+      ]
+    },
+    {
+      "id": "2026-04-09-component-Kanban-55aff413",
+      "version": "0.9.0",
+      "date": "2026-04-09T12:56:55.000Z",
+      "category": "added",
+      "type": "component",
+      "target": "Kanban",
+      "title": "Kanban.variant",
+      "description": "Add variant 'costpoint' to Kanban",
+      "breaking": false,
+      "commit": {
+        "hash": "ae57b5a",
+        "message": "Merge pull request #75 from DLTKfrancesmunoz/kanban",
+        "author": "Alex Hart",
+        "date": "2026-04-09T08:56:55-04:00"
+      },
+      "properties": [
+        {
+          "name": "variant",
+          "change": "variant_added",
+          "variantName": "costpoint"
+        }
+      ]
+    },
+    {
+      "id": "2026-04-09-component-Dropdown-e99fc3a8",
+      "version": "0.9.0",
+      "date": "2026-04-09T12:56:55.000Z",
+      "category": "changed",
+      "type": "component",
+      "target": "Dropdown",
+      "title": "Dropdown",
+      "description": "Update Dropdown component implementation",
+      "breaking": false,
+      "commit": {
+        "hash": "ae57b5a",
+        "message": "Merge pull request #75 from DLTKfrancesmunoz/kanban",
+        "author": "Alex Hart",
+        "date": "2026-04-09T08:56:55-04:00"
+      },
+      "filePath": "src/components/ui/Dropdown.astro"
+    },
+    {
+      "id": "2026-04-09-system-Styles-c56a4e3d",
+      "version": "0.9.0",
+      "date": "2026-04-09T12:56:55.000Z",
+      "category": "changed",
+      "type": "system",
+      "target": "Styles",
+      "title": "Styles",
+      "description": "Update design system styles (e.g. components.css, layout.css)",
+      "breaking": false,
+      "commit": {
+        "hash": "ae57b5a",
+        "message": "Merge pull request #75 from DLTKfrancesmunoz/kanban",
+        "author": "Alex Hart",
+        "date": "2026-04-09T08:56:55-04:00"
+      },
+      "filePath": "src/styles/components.css"
+    },
+    {
+      "id": "2026-04-07-system-Styles-c56a4e3d",
+      "version": "0.9.0",
+      "date": "2026-04-07T12:57:30.000Z",
+      "category": "changed",
+      "type": "system",
+      "target": "Styles",
+      "title": "Styles",
+      "description": "Update design system styles (e.g. components.css, layout.css)",
+      "breaking": false,
+      "commit": {
+        "hash": "361e861",
+        "message": "Merge pull request #73 from DLTKfrancesmunoz/list-menus",
+        "author": "DLTKfrancesmunoz",
+        "date": "2026-04-07T06:57:30-06:00"
+      },
+      "filePath": "src/styles/components.css"
+    },
+    {
+      "id": "2026-04-02-component-TabStrip-e7e1a35e",
+      "version": "0.9.0",
+      "date": "2026-04-02T21:23:47.000Z",
+      "category": "changed",
+      "type": "component",
+      "target": "TabStrip",
+      "title": "TabStrip.variant",
+      "description": "Update variant type in TabStrip from 'default' | 'compact' to 'default' | 'compact' | 'pill'",
+      "breaking": true,
+      "commit": {
+        "hash": "fb7aae6",
+        "message": "Merge pull request #71 from DLTKfrancesmunoz/tabstrip-0402",
+        "author": "DLTKfrancesmunoz",
+        "date": "2026-04-02T15:23:47-06:00"
+      },
+      "properties": [
+        {
+          "name": "variant",
+          "change": "prop_type_changed",
+          "before": "'default' | 'compact'",
+          "after": "'default' | 'compact' | 'pill'"
+        }
+      ]
+    },
+    {
+      "id": "2026-04-02-component-TabStrip-77aaa92d",
+      "version": "0.9.0",
+      "date": "2026-04-02T21:23:47.000Z",
+      "category": "added",
+      "type": "component",
+      "target": "TabStrip",
+      "title": "TabStrip.variant",
+      "description": "Add variant 'pill' to TabStrip",
+      "breaking": false,
+      "commit": {
+        "hash": "fb7aae6",
+        "message": "Merge pull request #71 from DLTKfrancesmunoz/tabstrip-0402",
+        "author": "DLTKfrancesmunoz",
+        "date": "2026-04-02T15:23:47-06:00"
+      },
+      "properties": [
+        {
+          "name": "variant",
+          "change": "variant_added",
+          "variantName": "pill"
+        }
+      ]
+    },
+    {
+      "id": "2026-04-02-system-Styles-c56a4e3d",
+      "version": "0.9.0",
+      "date": "2026-04-02T21:23:47.000Z",
+      "category": "changed",
+      "type": "system",
+      "target": "Styles",
+      "title": "Styles",
+      "description": "Update design system styles (e.g. components.css, layout.css)",
+      "breaking": false,
+      "commit": {
+        "hash": "fb7aae6",
+        "message": "Merge pull request #71 from DLTKfrancesmunoz/tabstrip-0402",
+        "author": "DLTKfrancesmunoz",
+        "date": "2026-04-02T15:23:47-06:00"
+      },
+      "filePath": "src/styles/components.css"
+    },
+    {
+      "id": "2026-03-31-component-Avatar-06f91c49",
+      "version": "0.9.0",
+      "date": "2026-03-31T18:44:45.000Z",
+      "category": "added",
+      "type": "component",
+      "target": "Avatar",
+      "title": "Avatar.variant",
+      "description": "Add variant prop to Avatar component ('icon' | 'initials' | 'image')",
+      "breaking": false,
+      "commit": {
+        "hash": "147f02a",
+        "message": "Merge pull request #67 from DLTKfrancesmunoz/avatar-update",
+        "author": "Alex Hart",
+        "date": "2026-03-31T14:44:45-04:00"
+      },
+      "properties": [
+        {
+          "name": "variant",
+          "change": "prop_added"
+        }
+      ]
+    },
+    {
+      "id": "2026-03-31-component-Avatar-4f0c01ba",
+      "version": "0.9.0",
+      "date": "2026-03-31T18:44:45.000Z",
+      "category": "added",
+      "type": "component",
+      "target": "Avatar",
+      "title": "Avatar.initials",
+      "description": "Add initials prop to Avatar component (string)",
+      "breaking": false,
+      "commit": {
+        "hash": "147f02a",
+        "message": "Merge pull request #67 from DLTKfrancesmunoz/avatar-update",
+        "author": "Alex Hart",
+        "date": "2026-03-31T14:44:45-04:00"
+      },
+      "properties": [
+        {
+          "name": "initials",
+          "change": "prop_added"
+        }
+      ]
+    },
+    {
+      "id": "2026-03-31-component-Avatar-8bbfc709",
+      "version": "0.9.0",
+      "date": "2026-03-31T18:44:45.000Z",
+      "category": "added",
+      "type": "component",
+      "target": "Avatar",
+      "title": "Avatar.src",
+      "description": "Add src prop to Avatar component (string)",
+      "breaking": false,
+      "commit": {
+        "hash": "147f02a",
+        "message": "Merge pull request #67 from DLTKfrancesmunoz/avatar-update",
+        "author": "Alex Hart",
+        "date": "2026-03-31T14:44:45-04:00"
+      },
+      "properties": [
+        {
+          "name": "src",
+          "change": "prop_added"
+        }
+      ]
+    },
+    {
+      "id": "2026-03-31-component-Avatar-416eb33f",
+      "version": "0.9.0",
+      "date": "2026-03-31T18:44:45.000Z",
+      "category": "added",
+      "type": "component",
+      "target": "Avatar",
+      "title": "Avatar.alt",
+      "description": "Add alt prop to Avatar component (string)",
+      "breaking": false,
+      "commit": {
+        "hash": "147f02a",
+        "message": "Merge pull request #67 from DLTKfrancesmunoz/avatar-update",
+        "author": "Alex Hart",
+        "date": "2026-03-31T14:44:45-04:00"
+      },
+      "properties": [
+        {
+          "name": "alt",
+          "change": "prop_added"
+        }
+      ]
+    },
+    {
+      "id": "2026-03-31-component-Avatar-0575ae38",
+      "version": "0.9.0",
+      "date": "2026-03-31T18:44:45.000Z",
+      "category": "added",
+      "type": "component",
+      "target": "Avatar",
+      "title": "Avatar.interactive",
+      "description": "Add interactive prop to Avatar component (boolean)",
+      "breaking": false,
+      "commit": {
+        "hash": "147f02a",
+        "message": "Merge pull request #67 from DLTKfrancesmunoz/avatar-update",
+        "author": "Alex Hart",
+        "date": "2026-03-31T14:44:45-04:00"
+      },
+      "properties": [
+        {
+          "name": "interactive",
+          "change": "prop_added"
+        }
+      ]
+    },
+    {
+      "id": "2026-03-31-component-Avatar-1e3a1ac7",
+      "version": "0.9.0",
+      "date": "2026-03-31T18:44:45.000Z",
+      "category": "added",
+      "type": "component",
+      "target": "Avatar",
+      "title": "Avatar.disabled",
+      "description": "Add disabled prop to Avatar component (boolean)",
+      "breaking": false,
+      "commit": {
+        "hash": "147f02a",
+        "message": "Merge pull request #67 from DLTKfrancesmunoz/avatar-update",
+        "author": "Alex Hart",
+        "date": "2026-03-31T14:44:45-04:00"
+      },
+      "properties": [
+        {
+          "name": "disabled",
+          "change": "prop_added"
+        }
+      ]
+    },
+    {
+      "id": "2026-03-31-component-Avatar-888a0125",
+      "version": "0.9.0",
+      "date": "2026-03-31T18:44:45.000Z",
+      "category": "added",
+      "type": "component",
+      "target": "Avatar",
+      "title": "Avatar.variant",
+      "description": "Add variant 'icon' to Avatar",
+      "breaking": false,
+      "commit": {
+        "hash": "147f02a",
+        "message": "Merge pull request #67 from DLTKfrancesmunoz/avatar-update",
+        "author": "Alex Hart",
+        "date": "2026-03-31T14:44:45-04:00"
+      },
+      "properties": [
+        {
+          "name": "variant",
+          "change": "variant_added",
+          "variantName": "icon"
+        }
+      ]
+    },
+    {
+      "id": "2026-03-31-component-Avatar-a1d2237c",
+      "version": "0.9.0",
+      "date": "2026-03-31T18:44:45.000Z",
+      "category": "added",
+      "type": "component",
+      "target": "Avatar",
+      "title": "Avatar.variant",
+      "description": "Add variant 'initials' to Avatar",
+      "breaking": false,
+      "commit": {
+        "hash": "147f02a",
+        "message": "Merge pull request #67 from DLTKfrancesmunoz/avatar-update",
+        "author": "Alex Hart",
+        "date": "2026-03-31T14:44:45-04:00"
+      },
+      "properties": [
+        {
+          "name": "variant",
+          "change": "variant_added",
+          "variantName": "initials"
+        }
+      ]
+    },
+    {
+      "id": "2026-03-31-component-Avatar-f0af556b",
+      "version": "0.9.0",
+      "date": "2026-03-31T18:44:45.000Z",
+      "category": "added",
+      "type": "component",
+      "target": "Avatar",
+      "title": "Avatar.variant",
+      "description": "Add variant 'image' to Avatar",
+      "breaking": false,
+      "commit": {
+        "hash": "147f02a",
+        "message": "Merge pull request #67 from DLTKfrancesmunoz/avatar-update",
+        "author": "Alex Hart",
+        "date": "2026-03-31T14:44:45-04:00"
+      },
+      "properties": [
+        {
+          "name": "variant",
+          "change": "variant_added",
+          "variantName": "image"
+        }
+      ]
+    },
+    {
+      "id": "2026-03-31-component-ShellHeader-d5158e22",
+      "version": "0.9.0",
+      "date": "2026-03-31T18:44:45.000Z",
+      "category": "changed",
+      "type": "component",
+      "target": "ShellHeader",
+      "title": "ShellHeader",
+      "description": "Update ShellHeader component implementation",
+      "breaking": false,
+      "commit": {
+        "hash": "147f02a",
+        "message": "Merge pull request #67 from DLTKfrancesmunoz/avatar-update",
+        "author": "Alex Hart",
+        "date": "2026-03-31T14:44:45-04:00"
+      },
+      "filePath": "src/components/ui/ShellHeader.astro"
+    },
+    {
+      "id": "2026-03-31-system-Styles-c56a4e3d",
+      "version": "0.9.0",
+      "date": "2026-03-31T18:44:45.000Z",
+      "category": "changed",
+      "type": "system",
+      "target": "Styles",
+      "title": "Styles",
+      "description": "Update design system styles (e.g. components.css, layout.css)",
+      "breaking": false,
+      "commit": {
+        "hash": "147f02a",
+        "message": "Merge pull request #67 from DLTKfrancesmunoz/avatar-update",
+        "author": "Alex Hart",
+        "date": "2026-03-31T14:44:45-04:00"
+      },
+      "filePath": "src/styles/components.css"
+    },
+    {
+      "id": "2026-03-30-component-Input-1e07e262",
+      "version": "0.9.0",
+      "date": "2026-03-30T16:36:52.000Z",
+      "category": "added",
+      "type": "component",
+      "target": "Input",
+      "title": "Input.trailingIcon",
+      "description": "Add trailingIcon prop to Input component (string)",
+      "breaking": false,
+      "commit": {
+        "hash": "f5fd154",
+        "message": "Merge pull request #65 from DLTKfrancesmunoz/input-right-icons",
+        "author": "DLTKfrancesmunoz",
+        "date": "2026-03-30T10:36:52-06:00"
+      },
+      "properties": [
+        {
+          "name": "trailingIcon",
+          "change": "prop_added"
+        }
+      ]
+    },
+    {
+      "id": "2026-03-30-system-Styles-c56a4e3d",
+      "version": "0.9.0",
+      "date": "2026-03-30T16:36:52.000Z",
+      "category": "changed",
+      "type": "system",
+      "target": "Styles",
+      "title": "Styles",
+      "description": "Update design system styles (e.g. components.css, layout.css)",
+      "breaking": false,
+      "commit": {
+        "hash": "f5fd154",
+        "message": "Merge pull request #65 from DLTKfrancesmunoz/input-right-icons",
+        "author": "DLTKfrancesmunoz",
+        "date": "2026-03-30T10:36:52-06:00"
+      },
+      "filePath": "src/styles/components.css"
+    },
+    {
+      "id": "2026-03-26-system-Styles-c56a4e3d",
+      "version": "0.9.0",
+      "date": "2026-03-26T16:17:51.000Z",
+      "category": "changed",
+      "type": "system",
+      "target": "Styles",
+      "title": "Styles",
+      "description": "Update design system styles (e.g. components.css, layout.css)",
+      "breaking": false,
+      "commit": {
+        "hash": "d2cf5a6",
+        "message": "Merge pull request #61 from DLTKfrancesmunoz/alert-updates",
+        "author": "DLTKfrancesmunoz",
+        "date": "2026-03-26T10:17:51-06:00"
+      },
+      "filePath": "src/styles/components.css"
+    },
+    {
       "id": "2026-03-23-component-Toggle-51d183f3",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-03-23T17:43:08.000Z",
       "category": "added",
       "type": "component",
@@ -12,7 +1350,7 @@
       "breaking": false,
       "commit": {
         "hash": "e5f1102",
-        "message": "Merge pull request #56 from deltek-sst/032326-toggles",
+        "message": "Merge pull request #56 from DLTKfrancesmunoz/032326-toggles",
         "author": "DLTKfrancesmunoz",
         "date": "2026-03-23T11:43:08-06:00"
       },
@@ -25,7 +1363,7 @@
     },
     {
       "id": "2026-03-23-component-Toggle-c6dc1476",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-03-23T17:43:08.000Z",
       "category": "added",
       "type": "component",
@@ -35,7 +1373,7 @@
       "breaking": false,
       "commit": {
         "hash": "e5f1102",
-        "message": "Merge pull request #56 from deltek-sst/032326-toggles",
+        "message": "Merge pull request #56 from DLTKfrancesmunoz/032326-toggles",
         "author": "DLTKfrancesmunoz",
         "date": "2026-03-23T11:43:08-06:00"
       },
@@ -48,7 +1386,7 @@
     },
     {
       "id": "2026-03-23-component-Toggle-455ba26d",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-03-23T17:43:08.000Z",
       "category": "added",
       "type": "component",
@@ -58,7 +1396,7 @@
       "breaking": false,
       "commit": {
         "hash": "e5f1102",
-        "message": "Merge pull request #56 from deltek-sst/032326-toggles",
+        "message": "Merge pull request #56 from DLTKfrancesmunoz/032326-toggles",
         "author": "DLTKfrancesmunoz",
         "date": "2026-03-23T11:43:08-06:00"
       },
@@ -71,7 +1409,7 @@
     },
     {
       "id": "2026-03-23-component-Toggle-dc686a1f",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-03-23T17:43:08.000Z",
       "category": "added",
       "type": "component",
@@ -81,7 +1419,7 @@
       "breaking": false,
       "commit": {
         "hash": "e5f1102",
-        "message": "Merge pull request #56 from deltek-sst/032326-toggles",
+        "message": "Merge pull request #56 from DLTKfrancesmunoz/032326-toggles",
         "author": "DLTKfrancesmunoz",
         "date": "2026-03-23T11:43:08-06:00"
       },
@@ -95,7 +1433,7 @@
     },
     {
       "id": "2026-03-23-component-Toggle-0eed1e0e",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-03-23T17:43:08.000Z",
       "category": "added",
       "type": "component",
@@ -105,7 +1443,7 @@
       "breaking": false,
       "commit": {
         "hash": "e5f1102",
-        "message": "Merge pull request #56 from deltek-sst/032326-toggles",
+        "message": "Merge pull request #56 from DLTKfrancesmunoz/032326-toggles",
         "author": "DLTKfrancesmunoz",
         "date": "2026-03-23T11:43:08-06:00"
       },
@@ -119,7 +1457,7 @@
     },
     {
       "id": "2026-03-23-component-Accordion-f6837d8e",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-03-23T16:12:16.000Z",
       "category": "added",
       "type": "component",
@@ -129,7 +1467,7 @@
       "breaking": false,
       "commit": {
         "hash": "9bfeb46",
-        "message": "Merge pull request #54 from deltek-sst/03232026-accordions",
+        "message": "Merge pull request #54 from DLTKfrancesmunoz/03232026-accordions",
         "author": "Alex Hart",
         "date": "2026-03-23T12:12:16-04:00"
       },
@@ -142,7 +1480,7 @@
     },
     {
       "id": "2026-03-23-system-Styles-c56a4e3d",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-03-23T16:12:16.000Z",
       "category": "changed",
       "type": "system",
@@ -152,7 +1490,7 @@
       "breaking": false,
       "commit": {
         "hash": "9bfeb46",
-        "message": "Merge pull request #54 from deltek-sst/03232026-accordions",
+        "message": "Merge pull request #54 from DLTKfrancesmunoz/03232026-accordions",
         "author": "Alex Hart",
         "date": "2026-03-23T12:12:16-04:00"
       },
@@ -160,7 +1498,7 @@
     },
     {
       "id": "2026-03-17-system-Styles-c56a4e3d",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-03-17T12:59:28.000Z",
       "category": "changed",
       "type": "system",
@@ -170,7 +1508,7 @@
       "breaking": false,
       "commit": {
         "hash": "0293f4b",
-        "message": "Merge pull request #50 from deltek-sst/03-16-26-more-updates",
+        "message": "Merge pull request #50 from DLTKfrancesmunoz/03-16-26-more-updates",
         "author": "DLTKfrancesmunoz",
         "date": "2026-03-17T06:59:28-06:00"
       },
@@ -178,7 +1516,7 @@
     },
     {
       "id": "2026-03-16-component-Badge-5eb465e6",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-03-16T18:02:37.000Z",
       "category": "added",
       "type": "component",
@@ -188,7 +1526,7 @@
       "breaking": false,
       "commit": {
         "hash": "7d1f6a2",
-        "message": "Merge pull request #48 from deltek-sst/03-16-26-updates-badges",
+        "message": "Merge pull request #48 from DLTKfrancesmunoz/03-16-26-updates-badges",
         "author": "DLTKfrancesmunoz",
         "date": "2026-03-16T12:02:37-06:00"
       },
@@ -201,7 +1539,7 @@
     },
     {
       "id": "2026-03-16-component-Badge-d9ff5402",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-03-16T18:02:37.000Z",
       "category": "added",
       "type": "component",
@@ -211,7 +1549,7 @@
       "breaking": false,
       "commit": {
         "hash": "7d1f6a2",
-        "message": "Merge pull request #48 from deltek-sst/03-16-26-updates-badges",
+        "message": "Merge pull request #48 from DLTKfrancesmunoz/03-16-26-updates-badges",
         "author": "DLTKfrancesmunoz",
         "date": "2026-03-16T12:02:37-06:00"
       },
@@ -225,7 +1563,7 @@
     },
     {
       "id": "2026-03-16-component-Badge-cacd7789",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-03-16T18:02:37.000Z",
       "category": "added",
       "type": "component",
@@ -235,7 +1573,7 @@
       "breaking": false,
       "commit": {
         "hash": "7d1f6a2",
-        "message": "Merge pull request #48 from deltek-sst/03-16-26-updates-badges",
+        "message": "Merge pull request #48 from DLTKfrancesmunoz/03-16-26-updates-badges",
         "author": "DLTKfrancesmunoz",
         "date": "2026-03-16T12:02:37-06:00"
       },
@@ -249,7 +1587,7 @@
     },
     {
       "id": "2026-03-16-component-Badge-f8b77121",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-03-16T18:02:37.000Z",
       "category": "added",
       "type": "component",
@@ -259,7 +1597,7 @@
       "breaking": false,
       "commit": {
         "hash": "7d1f6a2",
-        "message": "Merge pull request #48 from deltek-sst/03-16-26-updates-badges",
+        "message": "Merge pull request #48 from DLTKfrancesmunoz/03-16-26-updates-badges",
         "author": "DLTKfrancesmunoz",
         "date": "2026-03-16T12:02:37-06:00"
       },
@@ -273,7 +1611,7 @@
     },
     {
       "id": "2026-03-16-system-Styles-c56a4e3d",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-03-16T18:02:37.000Z",
       "category": "changed",
       "type": "system",
@@ -283,7 +1621,7 @@
       "breaking": false,
       "commit": {
         "hash": "7d1f6a2",
-        "message": "Merge pull request #48 from deltek-sst/03-16-26-updates-badges",
+        "message": "Merge pull request #48 from DLTKfrancesmunoz/03-16-26-updates-badges",
         "author": "DLTKfrancesmunoz",
         "date": "2026-03-16T12:02:37-06:00"
       },
@@ -291,7 +1629,7 @@
     },
     {
       "id": "2026-03-16-token-typography-2cf29d9c",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-03-16T18:02:37.000Z",
       "category": "changed",
       "type": "token",
@@ -301,7 +1639,7 @@
       "breaking": false,
       "commit": {
         "hash": "7d1f6a2",
-        "message": "Merge pull request #48 from deltek-sst/03-16-26-updates-badges",
+        "message": "Merge pull request #48 from DLTKfrancesmunoz/03-16-26-updates-badges",
         "author": "DLTKfrancesmunoz",
         "date": "2026-03-16T12:02:37-06:00"
       },
@@ -309,7 +1647,7 @@
     },
     {
       "id": "2026-03-16-token-typography-328664c2",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-03-16T18:02:37.000Z",
       "category": "removed",
       "type": "token",
@@ -319,7 +1657,7 @@
       "breaking": false,
       "commit": {
         "hash": "7d1f6a2",
-        "message": "Merge pull request #48 from deltek-sst/03-16-26-updates-badges",
+        "message": "Merge pull request #48 from DLTKfrancesmunoz/03-16-26-updates-badges",
         "author": "DLTKfrancesmunoz",
         "date": "2026-03-16T12:02:37-06:00"
       },
@@ -327,7 +1665,7 @@
     },
     {
       "id": "2026-03-16-token-typography-205e062c",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-03-16T18:02:37.000Z",
       "category": "changed",
       "type": "token",
@@ -337,7 +1675,7 @@
       "breaking": false,
       "commit": {
         "hash": "7d1f6a2",
-        "message": "Merge pull request #48 from deltek-sst/03-16-26-updates-badges",
+        "message": "Merge pull request #48 from DLTKfrancesmunoz/03-16-26-updates-badges",
         "author": "DLTKfrancesmunoz",
         "date": "2026-03-16T12:02:37-06:00"
       },
@@ -345,7 +1683,7 @@
     },
     {
       "id": "2026-03-13-component-RadioButton-275ea457",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-03-13T19:08:50.000Z",
       "category": "added",
       "type": "component",
@@ -355,7 +1693,7 @@
       "breaking": false,
       "commit": {
         "hash": "d50c038",
-        "message": "Merge pull request #46 from deltek-sst/0313-radiobtns",
+        "message": "Merge pull request #46 from DLTKfrancesmunoz/0313-radiobtns",
         "author": "DLTKfrancesmunoz",
         "date": "2026-03-13T13:08:50-06:00"
       },
@@ -368,7 +1706,7 @@
     },
     {
       "id": "2026-03-13-component-RadioButton-75fe530f",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-03-13T19:08:50.000Z",
       "category": "added",
       "type": "component",
@@ -378,7 +1716,7 @@
       "breaking": false,
       "commit": {
         "hash": "d50c038",
-        "message": "Merge pull request #46 from deltek-sst/0313-radiobtns",
+        "message": "Merge pull request #46 from DLTKfrancesmunoz/0313-radiobtns",
         "author": "DLTKfrancesmunoz",
         "date": "2026-03-13T13:08:50-06:00"
       },
@@ -392,7 +1730,7 @@
     },
     {
       "id": "2026-03-13-component-RadioButton-47ca2631",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-03-13T19:08:50.000Z",
       "category": "added",
       "type": "component",
@@ -402,7 +1740,7 @@
       "breaking": false,
       "commit": {
         "hash": "d50c038",
-        "message": "Merge pull request #46 from deltek-sst/0313-radiobtns",
+        "message": "Merge pull request #46 from DLTKfrancesmunoz/0313-radiobtns",
         "author": "DLTKfrancesmunoz",
         "date": "2026-03-13T13:08:50-06:00"
       },
@@ -416,7 +1754,7 @@
     },
     {
       "id": "2026-03-13-component-RadioButton-b3e54c69",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-03-13T19:08:50.000Z",
       "category": "added",
       "type": "component",
@@ -426,7 +1764,7 @@
       "breaking": false,
       "commit": {
         "hash": "d50c038",
-        "message": "Merge pull request #46 from deltek-sst/0313-radiobtns",
+        "message": "Merge pull request #46 from DLTKfrancesmunoz/0313-radiobtns",
         "author": "DLTKfrancesmunoz",
         "date": "2026-03-13T13:08:50-06:00"
       },
@@ -440,7 +1778,7 @@
     },
     {
       "id": "2026-03-13-system-Styles-c56a4e3d",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-03-13T19:08:50.000Z",
       "category": "changed",
       "type": "system",
@@ -450,7 +1788,7 @@
       "breaking": false,
       "commit": {
         "hash": "d50c038",
-        "message": "Merge pull request #46 from deltek-sst/0313-radiobtns",
+        "message": "Merge pull request #46 from DLTKfrancesmunoz/0313-radiobtns",
         "author": "DLTKfrancesmunoz",
         "date": "2026-03-13T13:08:50-06:00"
       },
@@ -458,7 +1796,7 @@
     },
     {
       "id": "2026-03-12-component-Dialog-a373b6e7",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-03-12T18:03:48.000Z",
       "category": "added",
       "type": "component",
@@ -468,7 +1806,7 @@
       "breaking": false,
       "commit": {
         "hash": "66a0204",
-        "message": "Merge pull request #44 from deltek-sst/Dialog-updates",
+        "message": "Merge pull request #44 from DLTKfrancesmunoz/Dialog-updates",
         "author": "DLTKfrancesmunoz",
         "date": "2026-03-12T12:03:48-06:00"
       },
@@ -481,7 +1819,7 @@
     },
     {
       "id": "2026-03-12-component-Dialog-4615688a",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-03-12T18:03:48.000Z",
       "category": "added",
       "type": "component",
@@ -491,7 +1829,7 @@
       "breaking": false,
       "commit": {
         "hash": "66a0204",
-        "message": "Merge pull request #44 from deltek-sst/Dialog-updates",
+        "message": "Merge pull request #44 from DLTKfrancesmunoz/Dialog-updates",
         "author": "DLTKfrancesmunoz",
         "date": "2026-03-12T12:03:48-06:00"
       },
@@ -504,7 +1842,7 @@
     },
     {
       "id": "2026-03-12-component-Dialog-61744757",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-03-12T18:03:48.000Z",
       "category": "added",
       "type": "component",
@@ -514,7 +1852,7 @@
       "breaking": false,
       "commit": {
         "hash": "66a0204",
-        "message": "Merge pull request #44 from deltek-sst/Dialog-updates",
+        "message": "Merge pull request #44 from DLTKfrancesmunoz/Dialog-updates",
         "author": "DLTKfrancesmunoz",
         "date": "2026-03-12T12:03:48-06:00"
       },
@@ -527,7 +1865,7 @@
     },
     {
       "id": "2026-03-12-system-Styles-c56a4e3d",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-03-12T18:03:48.000Z",
       "category": "changed",
       "type": "system",
@@ -537,7 +1875,7 @@
       "breaking": false,
       "commit": {
         "hash": "66a0204",
-        "message": "Merge pull request #44 from deltek-sst/Dialog-updates",
+        "message": "Merge pull request #44 from DLTKfrancesmunoz/Dialog-updates",
         "author": "DLTKfrancesmunoz",
         "date": "2026-03-12T12:03:48-06:00"
       },
@@ -545,7 +1883,7 @@
     },
     {
       "id": "2026-03-10-component-Table-30df342f",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-03-10T23:39:39.000Z",
       "category": "added",
       "type": "component",
@@ -555,7 +1893,7 @@
       "breaking": false,
       "commit": {
         "hash": "173daa4",
-        "message": "Merge pull request #42 from deltek-sst/031026-tables",
+        "message": "Merge pull request #42 from DLTKfrancesmunoz/031026-tables",
         "author": "ecaggiani",
         "date": "2026-03-10T17:39:39-06:00"
       },
@@ -568,7 +1906,7 @@
     },
     {
       "id": "2026-03-10-component-Link-eeb7c66d",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-03-10T13:31:43.000Z",
       "category": "added",
       "type": "component",
@@ -578,7 +1916,7 @@
       "breaking": false,
       "commit": {
         "hash": "5d8df9c",
-        "message": "Merge pull request #37 from deltek-sst/Links-updates",
+        "message": "Merge pull request #37 from DLTKfrancesmunoz/Links-updates",
         "author": "Alex Hart",
         "date": "2026-03-10T09:31:43-04:00"
       },
@@ -591,7 +1929,7 @@
     },
     {
       "id": "2026-03-10-component-Link-16ae46a4",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-03-10T13:31:43.000Z",
       "category": "added",
       "type": "component",
@@ -601,7 +1939,7 @@
       "breaking": false,
       "commit": {
         "hash": "5d8df9c",
-        "message": "Merge pull request #37 from deltek-sst/Links-updates",
+        "message": "Merge pull request #37 from DLTKfrancesmunoz/Links-updates",
         "author": "Alex Hart",
         "date": "2026-03-10T09:31:43-04:00"
       },
@@ -615,7 +1953,7 @@
     },
     {
       "id": "2026-03-10-component-Link-a5b10e04",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-03-10T13:31:43.000Z",
       "category": "added",
       "type": "component",
@@ -625,7 +1963,7 @@
       "breaking": false,
       "commit": {
         "hash": "5d8df9c",
-        "message": "Merge pull request #37 from deltek-sst/Links-updates",
+        "message": "Merge pull request #37 from DLTKfrancesmunoz/Links-updates",
         "author": "Alex Hart",
         "date": "2026-03-10T09:31:43-04:00"
       },
@@ -639,7 +1977,7 @@
     },
     {
       "id": "2026-03-10-component-Link-e0022063",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-03-10T13:31:43.000Z",
       "category": "added",
       "type": "component",
@@ -649,7 +1987,7 @@
       "breaking": false,
       "commit": {
         "hash": "5d8df9c",
-        "message": "Merge pull request #37 from deltek-sst/Links-updates",
+        "message": "Merge pull request #37 from DLTKfrancesmunoz/Links-updates",
         "author": "Alex Hart",
         "date": "2026-03-10T09:31:43-04:00"
       },
@@ -663,7 +2001,7 @@
     },
     {
       "id": "2026-03-10-system-Styles-c56a4e3d",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-03-10T13:31:43.000Z",
       "category": "changed",
       "type": "system",
@@ -673,7 +2011,7 @@
       "breaking": false,
       "commit": {
         "hash": "5d8df9c",
-        "message": "Merge pull request #37 from deltek-sst/Links-updates",
+        "message": "Merge pull request #37 from DLTKfrancesmunoz/Links-updates",
         "author": "Alex Hart",
         "date": "2026-03-10T09:31:43-04:00"
       },
@@ -681,7 +2019,7 @@
     },
     {
       "id": "2026-03-09-component-Table-2a04c237",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-03-09T16:11:00.000Z",
       "category": "added",
       "type": "component",
@@ -691,7 +2029,7 @@
       "breaking": false,
       "commit": {
         "hash": "17cbeeb",
-        "message": "Merge pull request #35 from deltek-sst/030626-tables",
+        "message": "Merge pull request #35 from DLTKfrancesmunoz/030626-tables",
         "author": "DLTKfrancesmunoz",
         "date": "2026-03-09T10:11:00-06:00"
       },
@@ -704,7 +2042,7 @@
     },
     {
       "id": "2026-03-09-system-Styles-c56a4e3d",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-03-09T16:11:00.000Z",
       "category": "changed",
       "type": "system",
@@ -714,7 +2052,7 @@
       "breaking": false,
       "commit": {
         "hash": "17cbeeb",
-        "message": "Merge pull request #35 from deltek-sst/030626-tables",
+        "message": "Merge pull request #35 from DLTKfrancesmunoz/030626-tables",
         "author": "DLTKfrancesmunoz",
         "date": "2026-03-09T10:11:00-06:00"
       },
@@ -722,7 +2060,7 @@
     },
     {
       "id": "2026-03-04-component-Table-e72f5ac4",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-03-04T18:16:40.000Z",
       "category": "changed",
       "type": "component",
@@ -732,7 +2070,7 @@
       "breaking": false,
       "commit": {
         "hash": "9a49e65",
-        "message": "Merge pull request #29 from deltek-sst/akh",
+        "message": "Merge pull request #29 from DLTKfrancesmunoz/akh",
         "author": "DLTKfrancesmunoz",
         "date": "2026-03-04T11:16:40-07:00"
       },
@@ -740,7 +2078,7 @@
     },
     {
       "id": "2026-03-04-component-DateRangePicker-14b0d5f2",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-03-04T14:48:02.000Z",
       "category": "added",
       "type": "component",
@@ -750,7 +2088,7 @@
       "breaking": false,
       "commit": {
         "hash": "4029d3b",
-        "message": "Merge pull request #27 from deltek-sst/03-03-2026-update-2",
+        "message": "Merge pull request #27 from DLTKfrancesmunoz/03-03-2026-update-2",
         "author": "DLTKfrancesmunoz",
         "date": "2026-03-04T07:48:02-07:00"
       },
@@ -758,7 +2096,7 @@
     },
     {
       "id": "2026-03-04-component-DateRangePickerExpanded-2da613d1",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-03-04T14:48:02.000Z",
       "category": "added",
       "type": "component",
@@ -768,7 +2106,7 @@
       "breaking": false,
       "commit": {
         "hash": "4029d3b",
-        "message": "Merge pull request #27 from deltek-sst/03-03-2026-update-2",
+        "message": "Merge pull request #27 from DLTKfrancesmunoz/03-03-2026-update-2",
         "author": "DLTKfrancesmunoz",
         "date": "2026-03-04T07:48:02-07:00"
       },
@@ -776,7 +2114,7 @@
     },
     {
       "id": "2026-03-04-system-Styles-c56a4e3d",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-03-04T14:48:02.000Z",
       "category": "changed",
       "type": "system",
@@ -786,7 +2124,7 @@
       "breaking": false,
       "commit": {
         "hash": "4029d3b",
-        "message": "Merge pull request #27 from deltek-sst/03-03-2026-update-2",
+        "message": "Merge pull request #27 from DLTKfrancesmunoz/03-03-2026-update-2",
         "author": "DLTKfrancesmunoz",
         "date": "2026-03-04T07:48:02-07:00"
       },
@@ -794,7 +2132,7 @@
     },
     {
       "id": "2026-03-03-component-Card-07002452",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-03-03T19:39:02.000Z",
       "category": "added",
       "type": "component",
@@ -804,7 +2142,7 @@
       "breaking": false,
       "commit": {
         "hash": "df106ed",
-        "message": "Merge pull request #25 from deltek-sst/03-03-2026-Updates",
+        "message": "Merge pull request #25 from DLTKfrancesmunoz/03-03-2026-Updates",
         "author": "DLTKfrancesmunoz",
         "date": "2026-03-03T12:39:02-07:00"
       },
@@ -817,7 +2155,7 @@
     },
     {
       "id": "2026-03-03-component-Card-2b65b3aa",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-03-03T19:39:02.000Z",
       "category": "added",
       "type": "component",
@@ -827,7 +2165,7 @@
       "breaking": false,
       "commit": {
         "hash": "df106ed",
-        "message": "Merge pull request #25 from deltek-sst/03-03-2026-Updates",
+        "message": "Merge pull request #25 from DLTKfrancesmunoz/03-03-2026-Updates",
         "author": "DLTKfrancesmunoz",
         "date": "2026-03-03T12:39:02-07:00"
       },
@@ -840,7 +2178,7 @@
     },
     {
       "id": "2026-03-03-component-Card-f943226f",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-03-03T19:39:02.000Z",
       "category": "added",
       "type": "component",
@@ -850,7 +2188,7 @@
       "breaking": false,
       "commit": {
         "hash": "df106ed",
-        "message": "Merge pull request #25 from deltek-sst/03-03-2026-Updates",
+        "message": "Merge pull request #25 from DLTKfrancesmunoz/03-03-2026-Updates",
         "author": "DLTKfrancesmunoz",
         "date": "2026-03-03T12:39:02-07:00"
       },
@@ -863,7 +2201,7 @@
     },
     {
       "id": "2026-03-03-system-Styles-c56a4e3d",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-03-03T19:39:02.000Z",
       "category": "changed",
       "type": "system",
@@ -873,7 +2211,7 @@
       "breaking": false,
       "commit": {
         "hash": "df106ed",
-        "message": "Merge pull request #25 from deltek-sst/03-03-2026-Updates",
+        "message": "Merge pull request #25 from DLTKfrancesmunoz/03-03-2026-Updates",
         "author": "DLTKfrancesmunoz",
         "date": "2026-03-03T12:39:02-07:00"
       },
@@ -881,7 +2219,7 @@
     },
     {
       "id": "2026-02-27-component-Card-9cdc4815",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-02-27T20:41:08.000Z",
       "category": "changed",
       "type": "component",
@@ -891,7 +2229,7 @@
       "breaking": false,
       "commit": {
         "hash": "8db8379",
-        "message": "Merge pull request #23 from deltek-sst/Card-style-updates",
+        "message": "Merge pull request #23 from DLTKfrancesmunoz/Card-style-updates",
         "author": "DLTKfrancesmunoz",
         "date": "2026-02-27T13:41:08-07:00"
       },
@@ -906,7 +2244,7 @@
     },
     {
       "id": "2026-02-27-component-Dialog-1c1cdefb",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-02-27T17:08:15.000Z",
       "category": "added",
       "type": "component",
@@ -916,7 +2254,7 @@
       "breaking": false,
       "commit": {
         "hash": "3ae8e55",
-        "message": "Merge pull request #17 from deltek-sst/button-and-table-fixes",
+        "message": "Merge pull request #17 from DLTKfrancesmunoz/button-and-table-fixes",
         "author": "DLTKfrancesmunoz",
         "date": "2026-02-27T10:08:15-07:00"
       },
@@ -929,7 +2267,7 @@
     },
     {
       "id": "2026-02-27-component-Dialog-b329b8a7",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-02-27T17:08:15.000Z",
       "category": "added",
       "type": "component",
@@ -939,7 +2277,7 @@
       "breaking": false,
       "commit": {
         "hash": "3ae8e55",
-        "message": "Merge pull request #17 from deltek-sst/button-and-table-fixes",
+        "message": "Merge pull request #17 from DLTKfrancesmunoz/button-and-table-fixes",
         "author": "DLTKfrancesmunoz",
         "date": "2026-02-27T10:08:15-07:00"
       },
@@ -952,7 +2290,7 @@
     },
     {
       "id": "2026-02-27-component-Dialog-b2cbc687",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-02-27T17:08:15.000Z",
       "category": "added",
       "type": "component",
@@ -962,7 +2300,7 @@
       "breaking": false,
       "commit": {
         "hash": "3ae8e55",
-        "message": "Merge pull request #17 from deltek-sst/button-and-table-fixes",
+        "message": "Merge pull request #17 from DLTKfrancesmunoz/button-and-table-fixes",
         "author": "DLTKfrancesmunoz",
         "date": "2026-02-27T10:08:15-07:00"
       },
@@ -975,7 +2313,7 @@
     },
     {
       "id": "2026-02-27-component-Table-e4253619",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-02-27T17:08:15.000Z",
       "category": "added",
       "type": "component",
@@ -985,7 +2323,7 @@
       "breaking": false,
       "commit": {
         "hash": "3ae8e55",
-        "message": "Merge pull request #17 from deltek-sst/button-and-table-fixes",
+        "message": "Merge pull request #17 from DLTKfrancesmunoz/button-and-table-fixes",
         "author": "DLTKfrancesmunoz",
         "date": "2026-02-27T10:08:15-07:00"
       },
@@ -998,7 +2336,7 @@
     },
     {
       "id": "2026-02-27-component-Table-c55c29f7",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-02-27T17:08:15.000Z",
       "category": "added",
       "type": "component",
@@ -1008,7 +2346,7 @@
       "breaking": false,
       "commit": {
         "hash": "3ae8e55",
-        "message": "Merge pull request #17 from deltek-sst/button-and-table-fixes",
+        "message": "Merge pull request #17 from DLTKfrancesmunoz/button-and-table-fixes",
         "author": "DLTKfrancesmunoz",
         "date": "2026-02-27T10:08:15-07:00"
       },
@@ -1021,7 +2359,7 @@
     },
     {
       "id": "2026-02-27-component-Table-e5e78aa1",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-02-27T17:08:15.000Z",
       "category": "added",
       "type": "component",
@@ -1031,7 +2369,7 @@
       "breaking": false,
       "commit": {
         "hash": "3ae8e55",
-        "message": "Merge pull request #17 from deltek-sst/button-and-table-fixes",
+        "message": "Merge pull request #17 from DLTKfrancesmunoz/button-and-table-fixes",
         "author": "DLTKfrancesmunoz",
         "date": "2026-02-27T10:08:15-07:00"
       },
@@ -1044,7 +2382,7 @@
     },
     {
       "id": "2026-02-27-component-Stepper-396b8e20",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-02-27T17:08:15.000Z",
       "category": "changed",
       "type": "component",
@@ -1054,7 +2392,7 @@
       "breaking": false,
       "commit": {
         "hash": "3ae8e55",
-        "message": "Merge pull request #17 from deltek-sst/button-and-table-fixes",
+        "message": "Merge pull request #17 from DLTKfrancesmunoz/button-and-table-fixes",
         "author": "DLTKfrancesmunoz",
         "date": "2026-02-27T10:08:15-07:00"
       },
@@ -1062,7 +2400,7 @@
     },
     {
       "id": "2026-02-27-system-Styles-c56a4e3d",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-02-27T17:08:15.000Z",
       "category": "changed",
       "type": "system",
@@ -1072,7 +2410,7 @@
       "breaking": false,
       "commit": {
         "hash": "3ae8e55",
-        "message": "Merge pull request #17 from deltek-sst/button-and-table-fixes",
+        "message": "Merge pull request #17 from DLTKfrancesmunoz/button-and-table-fixes",
         "author": "DLTKfrancesmunoz",
         "date": "2026-02-27T10:08:15-07:00"
       },
@@ -1080,7 +2418,7 @@
     },
     {
       "id": "2026-02-27-token-typography-2cc99721",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-02-27T17:08:15.000Z",
       "category": "changed",
       "type": "token",
@@ -1090,7 +2428,7 @@
       "breaking": false,
       "commit": {
         "hash": "3ae8e55",
-        "message": "Merge pull request #17 from deltek-sst/button-and-table-fixes",
+        "message": "Merge pull request #17 from DLTKfrancesmunoz/button-and-table-fixes",
         "author": "DLTKfrancesmunoz",
         "date": "2026-02-27T10:08:15-07:00"
       },
@@ -1098,7 +2436,7 @@
     },
     {
       "id": "2026-02-27-token-typography-7890dad2",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-02-27T17:08:15.000Z",
       "category": "changed",
       "type": "token",
@@ -1108,7 +2446,7 @@
       "breaking": false,
       "commit": {
         "hash": "3ae8e55",
-        "message": "Merge pull request #17 from deltek-sst/button-and-table-fixes",
+        "message": "Merge pull request #17 from DLTKfrancesmunoz/button-and-table-fixes",
         "author": "DLTKfrancesmunoz",
         "date": "2026-02-27T10:08:15-07:00"
       },
@@ -1116,7 +2454,7 @@
     },
     {
       "id": "2026-02-17-system-Styles-c56a4e3d",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-02-17T20:29:38.000Z",
       "category": "changed",
       "type": "system",
@@ -1134,7 +2472,7 @@
     },
     {
       "id": "2026-02-12-system-Styles-c56a4e3d",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-02-12T22:11:44.000Z",
       "category": "changed",
       "type": "system",
@@ -1152,7 +2490,7 @@
     },
     {
       "id": "2026-02-12-component-Alert-bf4e7e0f",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-02-12T21:42:27.000Z",
       "category": "changed",
       "type": "component",
@@ -1170,7 +2508,7 @@
     },
     {
       "id": "2026-02-12-component-Dialog-0ff8d11c",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-02-12T21:42:27.000Z",
       "category": "changed",
       "type": "component",
@@ -1188,7 +2526,7 @@
     },
     {
       "id": "2026-02-12-component-Kanban-634977d3",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-02-12T21:42:27.000Z",
       "category": "changed",
       "type": "component",
@@ -1206,7 +2544,7 @@
     },
     {
       "id": "2026-02-12-component-Chip-44b7b447",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-02-12T21:28:53.000Z",
       "category": "added",
       "type": "component",
@@ -1229,7 +2567,7 @@
     },
     {
       "id": "2026-02-12-component-Card-61a04cbe",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-02-12T21:09:14.000Z",
       "category": "changed",
       "type": "component",
@@ -1254,7 +2592,7 @@
     },
     {
       "id": "2026-02-12-component-Card-5f80a084",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-02-12T21:09:14.000Z",
       "category": "changed",
       "type": "component",
@@ -1279,7 +2617,7 @@
     },
     {
       "id": "2026-02-10-component-ShellFooter-46345366",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-02-10T19:21:28.000Z",
       "category": "changed",
       "type": "component",
@@ -1297,7 +2635,7 @@
     },
     {
       "id": "2026-02-10-system-Styles-c56a4e3d",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-02-10T19:21:28.000Z",
       "category": "changed",
       "type": "system",
@@ -1315,7 +2653,7 @@
     },
     {
       "id": "2026-02-10-component-ShellPageHeader-1aa4f282",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-02-10T19:07:41.000Z",
       "category": "added",
       "type": "component",
@@ -1338,7 +2676,7 @@
     },
     {
       "id": "2026-02-09-component-ShellFooter-46345366",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-02-09T22:54:04.000Z",
       "category": "changed",
       "type": "component",
@@ -1356,7 +2694,7 @@
     },
     {
       "id": "2026-02-06-component-ShellHeader-d5158e22",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-02-06T16:16:06.000Z",
       "category": "changed",
       "type": "component",
@@ -1374,7 +2712,7 @@
     },
     {
       "id": "2026-02-06-component-Dialog-0ff8d11c",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-02-06T15:59:44.000Z",
       "category": "changed",
       "type": "component",
@@ -1392,7 +2730,7 @@
     },
     {
       "id": "2026-02-06-system-Styles-c56a4e3d",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-02-06T15:59:44.000Z",
       "category": "changed",
       "type": "system",
@@ -1410,7 +2748,7 @@
     },
     {
       "id": "2026-02-05-component-Alert-bf4e7e0f",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-02-05T23:12:42.000Z",
       "category": "changed",
       "type": "component",
@@ -1428,7 +2766,7 @@
     },
     {
       "id": "2026-02-05-component-Badge-20c677f4",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-02-05T23:12:42.000Z",
       "category": "changed",
       "type": "component",
@@ -1446,7 +2784,7 @@
     },
     {
       "id": "2026-02-05-component-Button-0c375007",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-02-05T23:12:42.000Z",
       "category": "changed",
       "type": "component",
@@ -1464,7 +2802,7 @@
     },
     {
       "id": "2026-02-05-component-ButtonGroup-4ad9e252",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-02-05T23:12:42.000Z",
       "category": "changed",
       "type": "component",
@@ -1482,7 +2820,7 @@
     },
     {
       "id": "2026-02-05-component-Card-9bae4d43",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-02-05T23:12:42.000Z",
       "category": "changed",
       "type": "component",
@@ -1500,7 +2838,7 @@
     },
     {
       "id": "2026-02-05-component-Chip-7c36f0e3",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-02-05T23:12:42.000Z",
       "category": "changed",
       "type": "component",
@@ -1518,7 +2856,7 @@
     },
     {
       "id": "2026-02-05-component-KanbanCard-6d31bdb1",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-02-05T23:12:42.000Z",
       "category": "changed",
       "type": "component",
@@ -1536,7 +2874,7 @@
     },
     {
       "id": "2026-02-05-component-Label-075a389f",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-02-05T23:12:42.000Z",
       "category": "changed",
       "type": "component",
@@ -1554,7 +2892,7 @@
     },
     {
       "id": "2026-02-05-component-Link-0e1f362d",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-02-05T23:12:42.000Z",
       "category": "changed",
       "type": "component",
@@ -1572,7 +2910,7 @@
     },
     {
       "id": "2026-02-05-component-PickerPopup-138b9f1c",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-02-05T23:12:42.000Z",
       "category": "changed",
       "type": "component",
@@ -1590,7 +2928,7 @@
     },
     {
       "id": "2026-02-05-component-ShellPanel-062d12bf",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-02-05T23:12:42.000Z",
       "category": "changed",
       "type": "component",
@@ -1608,7 +2946,7 @@
     },
     {
       "id": "2026-02-05-component-Step-659a72ec",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-02-05T23:12:42.000Z",
       "category": "changed",
       "type": "component",
@@ -1626,7 +2964,7 @@
     },
     {
       "id": "2026-02-05-component-Stepper-396b8e20",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-02-05T23:12:42.000Z",
       "category": "changed",
       "type": "component",
@@ -1644,7 +2982,7 @@
     },
     {
       "id": "2026-02-05-component-Table-e72f5ac4",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-02-05T23:12:42.000Z",
       "category": "changed",
       "type": "component",
@@ -1662,7 +3000,7 @@
     },
     {
       "id": "2026-02-05-component-Dialog-0ff8d11c",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-02-05T22:20:43.000Z",
       "category": "changed",
       "type": "component",
@@ -1680,7 +3018,7 @@
     },
     {
       "id": "2026-02-05-component-FloatingNav-31973c15",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-02-05T22:20:43.000Z",
       "category": "changed",
       "type": "component",
@@ -1698,7 +3036,7 @@
     },
     {
       "id": "2026-02-05-component-Icon-44d08c21",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-02-05T22:20:43.000Z",
       "category": "changed",
       "type": "component",
@@ -1716,7 +3054,7 @@
     },
     {
       "id": "2026-02-05-component-LeftSidebar-a439b589",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-02-05T22:20:43.000Z",
       "category": "changed",
       "type": "component",
@@ -1734,7 +3072,7 @@
     },
     {
       "id": "2026-02-05-component-RightSidebar-e316cfcc",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-02-05T22:20:43.000Z",
       "category": "changed",
       "type": "component",
@@ -1752,7 +3090,7 @@
     },
     {
       "id": "2026-02-05-component-ShellFooter-46345366",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-02-05T22:20:43.000Z",
       "category": "changed",
       "type": "component",
@@ -1770,7 +3108,7 @@
     },
     {
       "id": "2026-02-05-component-ShellHeader-d5158e22",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-02-05T22:20:43.000Z",
       "category": "changed",
       "type": "component",
@@ -1788,7 +3126,7 @@
     },
     {
       "id": "2026-02-04-component-ShellFooter-46345366",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-02-04T20:44:37.000Z",
       "category": "changed",
       "type": "component",
@@ -1806,7 +3144,7 @@
     },
     {
       "id": "2026-02-04-component-TabStrip-7e0ec474",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-02-04T20:44:37.000Z",
       "category": "changed",
       "type": "component",
@@ -1824,7 +3162,7 @@
     },
     {
       "id": "2026-02-04-system-Styles-c56a4e3d",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-02-04T20:44:37.000Z",
       "category": "changed",
       "type": "system",
@@ -1842,7 +3180,7 @@
     },
     {
       "id": "2026-01-30-component-ShellFooter-46345366",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-30T17:43:19.000Z",
       "category": "changed",
       "type": "component",
@@ -1860,7 +3198,7 @@
     },
     {
       "id": "2026-01-30-component-ShellHeader-d5158e22",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-30T17:43:19.000Z",
       "category": "changed",
       "type": "component",
@@ -1878,7 +3216,7 @@
     },
     {
       "id": "2026-01-30-component-ShellPageHeader-cf46434a",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-30T17:09:24.000Z",
       "category": "changed",
       "type": "component",
@@ -1896,7 +3234,7 @@
     },
     {
       "id": "2026-01-30-system-Styles-sidebar-responsive",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-30T00:00:00.000Z",
       "category": "changed",
       "type": "system",
@@ -1908,7 +3246,7 @@
     },
     {
       "id": "2026-01-29-component-Icon-44d08c21",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T22:05:41.000Z",
       "category": "changed",
       "type": "component",
@@ -1926,7 +3264,7 @@
     },
     {
       "id": "2026-01-29-component-ShellPanel-ec12e3b4",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T21:34:50.000Z",
       "category": "added",
       "type": "component",
@@ -1949,7 +3287,7 @@
     },
     {
       "id": "2026-01-29-component-ShellPanel-a225c5ea",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T21:34:50.000Z",
       "category": "added",
       "type": "component",
@@ -1973,7 +3311,7 @@
     },
     {
       "id": "2026-01-29-component-ShellPanel-0519c51c",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T21:34:50.000Z",
       "category": "added",
       "type": "component",
@@ -1997,7 +3335,7 @@
     },
     {
       "id": "2026-01-29-component-RightSidebar-e316cfcc",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T21:34:50.000Z",
       "category": "changed",
       "type": "component",
@@ -2015,7 +3353,7 @@
     },
     {
       "id": "2026-01-29-component-Alert-3e9daeb5",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T19:10:45.000Z",
       "category": "added",
       "type": "component",
@@ -2038,7 +3376,7 @@
     },
     {
       "id": "2026-01-29-component-Alert-d560a7c4",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T19:10:45.000Z",
       "category": "added",
       "type": "component",
@@ -2061,7 +3399,7 @@
     },
     {
       "id": "2026-01-29-component-Alert-c5935852",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T19:10:45.000Z",
       "category": "added",
       "type": "component",
@@ -2084,7 +3422,7 @@
     },
     {
       "id": "2026-01-29-component-Alert-9929897d",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T19:10:45.000Z",
       "category": "added",
       "type": "component",
@@ -2107,7 +3445,7 @@
     },
     {
       "id": "2026-01-29-component-Alert-b11c3ee5",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T19:10:45.000Z",
       "category": "added",
       "type": "component",
@@ -2130,7 +3468,7 @@
     },
     {
       "id": "2026-01-29-component-Button-7e0040c6",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T19:10:45.000Z",
       "category": "changed",
       "type": "component",
@@ -2155,7 +3493,7 @@
     },
     {
       "id": "2026-01-29-component-Alert-26ab2b70",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T19:10:45.000Z",
       "category": "added",
       "type": "component",
@@ -2179,7 +3517,7 @@
     },
     {
       "id": "2026-01-29-component-Alert-1fdf203f",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T19:10:45.000Z",
       "category": "added",
       "type": "component",
@@ -2203,7 +3541,7 @@
     },
     {
       "id": "2026-01-29-component-Alert-e0a488cc",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T19:10:45.000Z",
       "category": "added",
       "type": "component",
@@ -2227,7 +3565,7 @@
     },
     {
       "id": "2026-01-29-component-Alert-26a7df37",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T19:10:45.000Z",
       "category": "added",
       "type": "component",
@@ -2251,7 +3589,7 @@
     },
     {
       "id": "2026-01-29-component-Alert-def56fa8",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T19:10:45.000Z",
       "category": "added",
       "type": "component",
@@ -2275,7 +3613,7 @@
     },
     {
       "id": "2026-01-29-component-Alert-b8af5cf8",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T19:10:45.000Z",
       "category": "added",
       "type": "component",
@@ -2299,7 +3637,7 @@
     },
     {
       "id": "2026-01-29-component-Avatar-01203600",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T19:10:45.000Z",
       "category": "added",
       "type": "component",
@@ -2323,7 +3661,7 @@
     },
     {
       "id": "2026-01-29-component-Avatar-ac289cb1",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T19:10:45.000Z",
       "category": "added",
       "type": "component",
@@ -2347,7 +3685,7 @@
     },
     {
       "id": "2026-01-29-component-Avatar-9d9709d1",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T19:10:45.000Z",
       "category": "added",
       "type": "component",
@@ -2371,7 +3709,7 @@
     },
     {
       "id": "2026-01-29-component-Badge-8c283af6",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T19:10:45.000Z",
       "category": "added",
       "type": "component",
@@ -2395,7 +3733,7 @@
     },
     {
       "id": "2026-01-29-component-Badge-b797cf83",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T19:10:45.000Z",
       "category": "added",
       "type": "component",
@@ -2419,7 +3757,7 @@
     },
     {
       "id": "2026-01-29-component-Badge-9c8bde77",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T19:10:45.000Z",
       "category": "added",
       "type": "component",
@@ -2443,7 +3781,7 @@
     },
     {
       "id": "2026-01-29-component-Badge-3fa7cf03",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T19:10:45.000Z",
       "category": "added",
       "type": "component",
@@ -2467,7 +3805,7 @@
     },
     {
       "id": "2026-01-29-component-Badge-4ca449aa",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T19:10:45.000Z",
       "category": "added",
       "type": "component",
@@ -2491,7 +3829,7 @@
     },
     {
       "id": "2026-01-29-component-Badge-58d16915",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T19:10:45.000Z",
       "category": "added",
       "type": "component",
@@ -2515,7 +3853,7 @@
     },
     {
       "id": "2026-01-29-component-Badge-c53d3aff",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T19:10:45.000Z",
       "category": "added",
       "type": "component",
@@ -2539,7 +3877,7 @@
     },
     {
       "id": "2026-01-29-component-Badge-9dbe3b7d",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T19:10:45.000Z",
       "category": "added",
       "type": "component",
@@ -2563,7 +3901,7 @@
     },
     {
       "id": "2026-01-29-component-Badge-85d81b35",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T19:10:45.000Z",
       "category": "added",
       "type": "component",
@@ -2587,7 +3925,7 @@
     },
     {
       "id": "2026-01-29-component-Button-86873c4e",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T19:10:45.000Z",
       "category": "added",
       "type": "component",
@@ -2611,7 +3949,7 @@
     },
     {
       "id": "2026-01-29-component-Button-ea52faee",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T19:10:45.000Z",
       "category": "added",
       "type": "component",
@@ -2635,7 +3973,7 @@
     },
     {
       "id": "2026-01-29-component-Button-13af3bde",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T19:10:45.000Z",
       "category": "added",
       "type": "component",
@@ -2659,7 +3997,7 @@
     },
     {
       "id": "2026-01-29-component-Button-415648ed",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T19:10:45.000Z",
       "category": "added",
       "type": "component",
@@ -2683,7 +4021,7 @@
     },
     {
       "id": "2026-01-29-component-Button-6ca3647d",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T19:10:45.000Z",
       "category": "added",
       "type": "component",
@@ -2707,7 +4045,7 @@
     },
     {
       "id": "2026-01-29-component-Button-ad79b5b1",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T19:10:45.000Z",
       "category": "added",
       "type": "component",
@@ -2731,7 +4069,7 @@
     },
     {
       "id": "2026-01-29-component-Button-2d84e0fd",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T19:10:45.000Z",
       "category": "added",
       "type": "component",
@@ -2755,7 +4093,7 @@
     },
     {
       "id": "2026-01-29-component-Button-6147a320",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T19:10:45.000Z",
       "category": "added",
       "type": "component",
@@ -2779,7 +4117,7 @@
     },
     {
       "id": "2026-01-29-component-Button-cccac58d",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T19:10:45.000Z",
       "category": "added",
       "type": "component",
@@ -2803,7 +4141,7 @@
     },
     {
       "id": "2026-01-29-component-Button-0cb59eb3",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T19:10:45.000Z",
       "category": "added",
       "type": "component",
@@ -2827,7 +4165,7 @@
     },
     {
       "id": "2026-01-29-component-Button-7fd39714",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T19:10:45.000Z",
       "category": "added",
       "type": "component",
@@ -2851,7 +4189,7 @@
     },
     {
       "id": "2026-01-29-component-Button-08551590",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T19:10:45.000Z",
       "category": "added",
       "type": "component",
@@ -2875,7 +4213,7 @@
     },
     {
       "id": "2026-01-29-component-ButtonGroup-af8aca41",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T19:10:45.000Z",
       "category": "added",
       "type": "component",
@@ -2899,7 +4237,7 @@
     },
     {
       "id": "2026-01-29-component-ButtonGroup-3bdc8dd1",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T19:10:45.000Z",
       "category": "added",
       "type": "component",
@@ -2923,7 +4261,7 @@
     },
     {
       "id": "2026-01-29-component-ButtonGroup-cd10ec7e",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T19:10:45.000Z",
       "category": "added",
       "type": "component",
@@ -2947,7 +4285,7 @@
     },
     {
       "id": "2026-01-29-component-ButtonGroup-5237fbad",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T19:10:45.000Z",
       "category": "added",
       "type": "component",
@@ -2971,7 +4309,7 @@
     },
     {
       "id": "2026-01-29-component-ButtonGroup-bc4ee249",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T19:10:45.000Z",
       "category": "added",
       "type": "component",
@@ -2995,7 +4333,7 @@
     },
     {
       "id": "2026-01-29-component-Chip-20b40fa5",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T19:10:45.000Z",
       "category": "added",
       "type": "component",
@@ -3019,7 +4357,7 @@
     },
     {
       "id": "2026-01-29-component-Chip-a6aebed1",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T19:10:45.000Z",
       "category": "added",
       "type": "component",
@@ -3043,7 +4381,7 @@
     },
     {
       "id": "2026-01-29-component-Chip-2a66c44a",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T19:10:45.000Z",
       "category": "added",
       "type": "component",
@@ -3067,7 +4405,7 @@
     },
     {
       "id": "2026-01-29-component-Chip-e81632c8",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T19:10:45.000Z",
       "category": "added",
       "type": "component",
@@ -3091,7 +4429,7 @@
     },
     {
       "id": "2026-01-29-component-Chip-e016ce3c",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T19:10:45.000Z",
       "category": "added",
       "type": "component",
@@ -3115,7 +4453,7 @@
     },
     {
       "id": "2026-01-29-component-FloatingNav-9d8fccde",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T19:10:45.000Z",
       "category": "added",
       "type": "component",
@@ -3139,7 +4477,7 @@
     },
     {
       "id": "2026-01-29-component-FloatingNav-52beaf67",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T19:10:45.000Z",
       "category": "added",
       "type": "component",
@@ -3163,7 +4501,7 @@
     },
     {
       "id": "2026-01-29-component-Icon-fcf74029",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T19:10:45.000Z",
       "category": "added",
       "type": "component",
@@ -3187,7 +4525,7 @@
     },
     {
       "id": "2026-01-29-component-Icon-39e33d06",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T19:10:45.000Z",
       "category": "added",
       "type": "component",
@@ -3211,7 +4549,7 @@
     },
     {
       "id": "2026-01-29-component-Icon-2739e6d5",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T19:10:45.000Z",
       "category": "added",
       "type": "component",
@@ -3235,7 +4573,7 @@
     },
     {
       "id": "2026-01-29-component-Icon-1f6aaaa3",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T19:10:45.000Z",
       "category": "added",
       "type": "component",
@@ -3259,7 +4597,7 @@
     },
     {
       "id": "2026-01-29-component-Icon-3bbbae31",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T19:10:45.000Z",
       "category": "added",
       "type": "component",
@@ -3283,7 +4621,7 @@
     },
     {
       "id": "2026-01-29-component-Icon-ea7b0acf",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T19:10:45.000Z",
       "category": "added",
       "type": "component",
@@ -3307,7 +4645,7 @@
     },
     {
       "id": "2026-01-29-component-Icon-84abfa36",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T19:10:45.000Z",
       "category": "added",
       "type": "component",
@@ -3331,7 +4669,7 @@
     },
     {
       "id": "2026-01-29-component-LeftSidebar-abdae3c1",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T19:10:45.000Z",
       "category": "added",
       "type": "component",
@@ -3355,7 +4693,7 @@
     },
     {
       "id": "2026-01-29-component-LeftSidebar-851da837",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T19:10:45.000Z",
       "category": "added",
       "type": "component",
@@ -3379,7 +4717,7 @@
     },
     {
       "id": "2026-01-29-component-LeftSidebar-043aa063",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T19:10:45.000Z",
       "category": "added",
       "type": "component",
@@ -3403,7 +4741,7 @@
     },
     {
       "id": "2026-01-29-component-LeftSidebar-cd7b52c3",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T19:10:45.000Z",
       "category": "added",
       "type": "component",
@@ -3427,7 +4765,7 @@
     },
     {
       "id": "2026-01-29-component-ListMenu-67faa925",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T19:10:45.000Z",
       "category": "added",
       "type": "component",
@@ -3451,7 +4789,7 @@
     },
     {
       "id": "2026-01-29-component-ListMenu-6dab4843",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T19:10:45.000Z",
       "category": "added",
       "type": "component",
@@ -3475,7 +4813,7 @@
     },
     {
       "id": "2026-01-29-component-NotificationBadge-e0a40b8e",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T19:10:45.000Z",
       "category": "added",
       "type": "component",
@@ -3499,7 +4837,7 @@
     },
     {
       "id": "2026-01-29-component-NotificationBadge-1bc02f5f",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T19:10:45.000Z",
       "category": "added",
       "type": "component",
@@ -3523,7 +4861,7 @@
     },
     {
       "id": "2026-01-29-component-NotificationBadge-c4a91274",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T19:10:45.000Z",
       "category": "added",
       "type": "component",
@@ -3547,7 +4885,7 @@
     },
     {
       "id": "2026-01-29-component-NotificationBadge-bb34d5bc",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T19:10:45.000Z",
       "category": "added",
       "type": "component",
@@ -3571,7 +4909,7 @@
     },
     {
       "id": "2026-01-29-component-NotificationBadge-9c7e932f",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T19:10:45.000Z",
       "category": "added",
       "type": "component",
@@ -3595,7 +4933,7 @@
     },
     {
       "id": "2026-01-29-component-ProgressBar-495691a9",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T19:10:45.000Z",
       "category": "added",
       "type": "component",
@@ -3619,7 +4957,7 @@
     },
     {
       "id": "2026-01-29-component-ProgressBar-e40ff691",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T19:10:45.000Z",
       "category": "added",
       "type": "component",
@@ -3643,7 +4981,7 @@
     },
     {
       "id": "2026-01-29-component-ProgressBar-c47547c6",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T19:10:45.000Z",
       "category": "added",
       "type": "component",
@@ -3667,7 +5005,7 @@
     },
     {
       "id": "2026-01-29-component-ProgressBar-c5473e2d",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T19:10:45.000Z",
       "category": "added",
       "type": "component",
@@ -3691,7 +5029,7 @@
     },
     {
       "id": "2026-01-29-component-ProgressBar-ac1761aa",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T19:10:45.000Z",
       "category": "added",
       "type": "component",
@@ -3715,7 +5053,7 @@
     },
     {
       "id": "2026-01-29-component-ProgressBar-099c10d0",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T19:10:45.000Z",
       "category": "added",
       "type": "component",
@@ -3739,7 +5077,7 @@
     },
     {
       "id": "2026-01-29-component-ProgressBar-9afa8974",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T19:10:45.000Z",
       "category": "added",
       "type": "component",
@@ -3763,7 +5101,7 @@
     },
     {
       "id": "2026-01-29-component-RightSidebar-fa285c91",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T19:10:45.000Z",
       "category": "added",
       "type": "component",
@@ -3787,7 +5125,7 @@
     },
     {
       "id": "2026-01-29-component-RightSidebar-bc2b839e",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T19:10:45.000Z",
       "category": "added",
       "type": "component",
@@ -3811,7 +5149,7 @@
     },
     {
       "id": "2026-01-29-component-RightSidebar-fae55e50",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T19:10:45.000Z",
       "category": "added",
       "type": "component",
@@ -3835,7 +5173,7 @@
     },
     {
       "id": "2026-01-29-component-RightSidebar-c9013aac",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T19:10:45.000Z",
       "category": "added",
       "type": "component",
@@ -3859,7 +5197,7 @@
     },
     {
       "id": "2026-01-29-component-ShellFooter-4dc5db8e",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T19:10:45.000Z",
       "category": "added",
       "type": "component",
@@ -3883,7 +5221,7 @@
     },
     {
       "id": "2026-01-29-component-ShellFooter-60404d80",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T19:10:45.000Z",
       "category": "added",
       "type": "component",
@@ -3907,7 +5245,7 @@
     },
     {
       "id": "2026-01-29-component-Spinner-ab2db545",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T19:10:45.000Z",
       "category": "added",
       "type": "component",
@@ -3931,7 +5269,7 @@
     },
     {
       "id": "2026-01-29-component-Spinner-057f375c",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T19:10:45.000Z",
       "category": "added",
       "type": "component",
@@ -3955,7 +5293,7 @@
     },
     {
       "id": "2026-01-29-component-Spinner-0218061b",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T19:10:45.000Z",
       "category": "added",
       "type": "component",
@@ -3979,7 +5317,7 @@
     },
     {
       "id": "2026-01-29-component-TabStrip-2a712e1f",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T19:10:45.000Z",
       "category": "added",
       "type": "component",
@@ -4003,7 +5341,7 @@
     },
     {
       "id": "2026-01-29-component-TabStrip-f95ccad7",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T19:10:45.000Z",
       "category": "added",
       "type": "component",
@@ -4027,7 +5365,7 @@
     },
     {
       "id": "2026-01-29-component-Toggle-ff3a6af2",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T19:10:45.000Z",
       "category": "added",
       "type": "component",
@@ -4051,7 +5389,7 @@
     },
     {
       "id": "2026-01-29-component-Toggle-c560f322",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T19:10:45.000Z",
       "category": "added",
       "type": "component",
@@ -4075,7 +5413,7 @@
     },
     {
       "id": "2026-01-29-component-Accordion-11c36952",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T19:10:45.000Z",
       "category": "changed",
       "type": "component",
@@ -4093,7 +5431,7 @@
     },
     {
       "id": "2026-01-29-component-Card-9bae4d43",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T19:10:45.000Z",
       "category": "changed",
       "type": "component",
@@ -4111,7 +5449,7 @@
     },
     {
       "id": "2026-01-29-component-CheckboxGroup-87ed8a82",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T19:10:45.000Z",
       "category": "changed",
       "type": "component",
@@ -4129,7 +5467,7 @@
     },
     {
       "id": "2026-01-29-component-Dialog-0ff8d11c",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T19:10:45.000Z",
       "category": "changed",
       "type": "component",
@@ -4147,7 +5485,7 @@
     },
     {
       "id": "2026-01-29-component-Dropdown-e99fc3a8",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T19:10:45.000Z",
       "category": "changed",
       "type": "component",
@@ -4165,7 +5503,7 @@
     },
     {
       "id": "2026-01-29-component-Input-858993a4",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T19:10:45.000Z",
       "category": "changed",
       "type": "component",
@@ -4183,7 +5521,7 @@
     },
     {
       "id": "2026-01-29-component-Kanban-634977d3",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T19:10:45.000Z",
       "category": "changed",
       "type": "component",
@@ -4201,7 +5539,7 @@
     },
     {
       "id": "2026-01-29-component-RadioGroup-1a8f2c1c",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T19:10:45.000Z",
       "category": "changed",
       "type": "component",
@@ -4219,7 +5557,7 @@
     },
     {
       "id": "2026-01-29-component-ShellPanel-062d12bf",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T19:10:45.000Z",
       "category": "changed",
       "type": "component",
@@ -4237,7 +5575,7 @@
     },
     {
       "id": "2026-01-29-component-Stepper-396b8e20",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T19:10:45.000Z",
       "category": "changed",
       "type": "component",
@@ -4255,7 +5593,7 @@
     },
     {
       "id": "2026-01-29-component-Tooltip-48c3f238",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T19:10:45.000Z",
       "category": "changed",
       "type": "component",
@@ -4273,7 +5611,7 @@
     },
     {
       "id": "2026-01-29-button-dela-variants-a99aadf0",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-29T00:00:00.000Z",
       "category": "added",
       "type": "component",
@@ -4290,7 +5628,7 @@
     },
     {
       "id": "2026-01-27-component-ShellHeader-495facfc",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-27T17:17:12.000Z",
       "category": "added",
       "type": "component",
@@ -4313,7 +5651,7 @@
     },
     {
       "id": "2026-01-26-component-CPLeftSidebar-b59add39",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-26T21:41:50.000Z",
       "category": "removed",
       "type": "component",
@@ -4330,7 +5668,7 @@
     },
     {
       "id": "2026-01-26-component-CPRightSidebar-c226944f",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-26T21:41:50.000Z",
       "category": "removed",
       "type": "component",
@@ -4347,7 +5685,7 @@
     },
     {
       "id": "2026-01-23-component-CPLeftSidebar-62ad39c0",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-23T01:33:24.000Z",
       "category": "added",
       "type": "component",
@@ -4370,7 +5708,7 @@
     },
     {
       "id": "2026-01-23-component-CPRightSidebar-15fee6b6",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-23T01:33:24.000Z",
       "category": "added",
       "type": "component",
@@ -4393,7 +5731,7 @@
     },
     {
       "id": "2026-01-21-component-ShellFooter-8feca018",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-21T19:52:29.000Z",
       "category": "added",
       "type": "component",
@@ -4416,7 +5754,7 @@
     },
     {
       "id": "2026-01-16-token-colors-9683f528",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-16T14:47:00.000Z",
       "category": "changed",
       "type": "token",
@@ -4434,7 +5772,7 @@
     },
     {
       "id": "2026-01-16-token-colors-1f684bb0",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-16T14:47:00.000Z",
       "category": "changed",
       "type": "token",
@@ -4452,7 +5790,7 @@
     },
     {
       "id": "2026-01-15-token-colors-511a36a1",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-15T23:07:37.794Z",
       "category": "changed",
       "type": "token",
@@ -4470,7 +5808,7 @@
     },
     {
       "id": "2026-01-15-token-colors-ffc50e62",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-15T22:38:32.600Z",
       "category": "changed",
       "type": "token",
@@ -4488,7 +5826,7 @@
     },
     {
       "id": "2026-01-15-component-Button-a092f002",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-15T22:23:26.252Z",
       "category": "added",
       "type": "component",
@@ -4511,7 +5849,7 @@
     },
     {
       "id": "2026-01-15-token-colors-18e6aaed",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-15T22:23:26.252Z",
       "category": "changed",
       "type": "token",
@@ -4529,7 +5867,7 @@
     },
     {
       "id": "2026-01-15-token-colors-a4afa647",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-15T22:23:26.252Z",
       "category": "changed",
       "type": "token",
@@ -4547,7 +5885,7 @@
     },
     {
       "id": "2026-01-15-token-colors-83a60933",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-15T22:23:26.252Z",
       "category": "changed",
       "type": "token",
@@ -4565,7 +5903,7 @@
     },
     {
       "id": "2026-01-15-token-colors-23e81113",
-      "version": "recent",
+      "version": "0.9.0",
       "date": "2026-01-15T22:23:26.252Z",
       "category": "changed",
       "type": "token",
@@ -4583,7 +5921,7 @@
     },
     {
       "id": "2026-01-15-component-TabStrip-8839b05c",
-      "version": "unreleased",
+      "version": "0.9.0",
       "date": "2026-01-15T17:15:34.000Z",
       "category": "added",
       "type": "component",
@@ -4606,7 +5944,7 @@
     },
     {
       "id": "2026-01-15-token-colors-cc532656",
-      "version": "unreleased",
+      "version": "0.9.0",
       "date": "2026-01-15T15:00:47.000Z",
       "category": "changed",
       "type": "token",
@@ -4624,7 +5962,7 @@
     },
     {
       "id": "2026-01-15-token-colors-d4adc0f5",
-      "version": "unreleased",
+      "version": "0.9.0",
       "date": "2026-01-15T15:00:47.000Z",
       "category": "changed",
       "type": "token",
@@ -4642,7 +5980,7 @@
     },
     {
       "id": "2026-01-15-token-colors-e7fe0b63",
-      "version": "unreleased",
+      "version": "0.9.0",
       "date": "2026-01-15T15:00:47.000Z",
       "category": "changed",
       "type": "token",
@@ -4660,7 +5998,7 @@
     },
     {
       "id": "2026-01-15-token-colors-169e6ef8",
-      "version": "unreleased",
+      "version": "0.9.0",
       "date": "2026-01-15T15:00:47.000Z",
       "category": "changed",
       "type": "token",
@@ -4678,7 +6016,7 @@
     },
     {
       "id": "2026-01-15-token-colors-d175b243",
-      "version": "unreleased",
+      "version": "0.9.0",
       "date": "2026-01-15T15:00:47.000Z",
       "category": "changed",
       "type": "token",
@@ -4696,7 +6034,7 @@
     },
     {
       "id": "2026-01-15-token-colors-9c7c0dfb",
-      "version": "unreleased",
+      "version": "0.9.0",
       "date": "2026-01-15T15:00:47.000Z",
       "category": "changed",
       "type": "token",
@@ -4714,7 +6052,7 @@
     },
     {
       "id": "2026-01-15-token-colors-3f6eb376",
-      "version": "unreleased",
+      "version": "0.9.0",
       "date": "2026-01-15T15:00:47.000Z",
       "category": "changed",
       "type": "token",
@@ -4732,7 +6070,7 @@
     },
     {
       "id": "2026-01-15-token-colors-d69a2a40",
-      "version": "unreleased",
+      "version": "0.9.0",
       "date": "2026-01-15T15:00:47.000Z",
       "category": "changed",
       "type": "token",
@@ -4750,7 +6088,7 @@
     },
     {
       "id": "2026-01-15-token-colors-31eb0719",
-      "version": "unreleased",
+      "version": "0.9.0",
       "date": "2026-01-15T15:00:47.000Z",
       "category": "changed",
       "type": "token",
@@ -4768,7 +6106,7 @@
     },
     {
       "id": "2026-01-15-token-colors-98d79844",
-      "version": "unreleased",
+      "version": "0.9.0",
       "date": "2026-01-15T15:00:47.000Z",
       "category": "changed",
       "type": "token",
@@ -4786,7 +6124,7 @@
     },
     {
       "id": "2026-01-15-token-colors-141114b7",
-      "version": "unreleased",
+      "version": "0.9.0",
       "date": "2026-01-15T15:00:47.000Z",
       "category": "changed",
       "type": "token",
@@ -4804,7 +6142,7 @@
     },
     {
       "id": "2026-01-15-token-colors-38467e95",
-      "version": "unreleased",
+      "version": "0.9.0",
       "date": "2026-01-15T15:00:47.000Z",
       "category": "changed",
       "type": "token",
@@ -4822,7 +6160,7 @@
     },
     {
       "id": "2026-01-15-token-colors-badc6b5e",
-      "version": "unreleased",
+      "version": "0.9.0",
       "date": "2026-01-15T15:00:47.000Z",
       "category": "changed",
       "type": "token",
@@ -4840,7 +6178,7 @@
     },
     {
       "id": "2026-01-15-token-colors-aad1ac93",
-      "version": "unreleased",
+      "version": "0.9.0",
       "date": "2026-01-15T15:00:47.000Z",
       "category": "changed",
       "type": "token",
@@ -4858,7 +6196,7 @@
     },
     {
       "id": "2026-01-15-token-colors-085fc2bf",
-      "version": "unreleased",
+      "version": "0.9.0",
       "date": "2026-01-15T15:00:47.000Z",
       "category": "changed",
       "type": "token",
@@ -4876,7 +6214,7 @@
     },
     {
       "id": "2026-01-15-token-colors-a70c2a2e",
-      "version": "unreleased",
+      "version": "0.9.0",
       "date": "2026-01-15T15:00:47.000Z",
       "category": "changed",
       "type": "token",
@@ -4894,7 +6232,7 @@
     },
     {
       "id": "2026-01-15-token-colors-54b234b3",
-      "version": "unreleased",
+      "version": "0.9.0",
       "date": "2026-01-15T15:00:47.000Z",
       "category": "changed",
       "type": "token",
@@ -4912,7 +6250,7 @@
     },
     {
       "id": "2026-01-15-token-colors-7b805149",
-      "version": "unreleased",
+      "version": "0.9.0",
       "date": "2026-01-15T15:00:47.000Z",
       "category": "changed",
       "type": "token",
@@ -4930,7 +6268,7 @@
     },
     {
       "id": "2026-01-15-token-colors-3a67bd28",
-      "version": "unreleased",
+      "version": "0.9.0",
       "date": "2026-01-15T15:00:47.000Z",
       "category": "changed",
       "type": "token",
@@ -4948,7 +6286,7 @@
     },
     {
       "id": "2026-01-15-token-colors-54e4800f",
-      "version": "unreleased",
+      "version": "0.9.0",
       "date": "2026-01-15T15:00:47.000Z",
       "category": "changed",
       "type": "token",
@@ -4966,7 +6304,7 @@
     },
     {
       "id": "2026-01-15-token-colors-1d080ef3",
-      "version": "unreleased",
+      "version": "0.9.0",
       "date": "2026-01-15T15:00:47.000Z",
       "category": "changed",
       "type": "token",
@@ -4984,7 +6322,7 @@
     },
     {
       "id": "2026-01-15-token-colors-3c2baab7",
-      "version": "unreleased",
+      "version": "0.9.0",
       "date": "2026-01-15T15:00:47.000Z",
       "category": "changed",
       "type": "token",
@@ -5002,7 +6340,7 @@
     },
     {
       "id": "2026-01-15-token-colors-9c62ec13",
-      "version": "unreleased",
+      "version": "0.9.0",
       "date": "2026-01-15T15:00:47.000Z",
       "category": "changed",
       "type": "token",
@@ -5020,7 +6358,7 @@
     },
     {
       "id": "2026-01-15-token-colors-43722db7",
-      "version": "unreleased",
+      "version": "0.9.0",
       "date": "2026-01-15T15:00:47.000Z",
       "category": "changed",
       "type": "token",
@@ -5038,7 +6376,7 @@
     },
     {
       "id": "2026-01-15-token-colors-1bd13f8a",
-      "version": "unreleased",
+      "version": "0.9.0",
       "date": "2026-01-15T15:00:47.000Z",
       "category": "changed",
       "type": "token",
@@ -5056,7 +6394,7 @@
     },
     {
       "id": "2026-01-15-token-colors-3f4e01a8",
-      "version": "unreleased",
+      "version": "0.9.0",
       "date": "2026-01-15T15:00:47.000Z",
       "category": "changed",
       "type": "token",
@@ -5074,7 +6412,7 @@
     },
     {
       "id": "2026-01-15-token-colors-d14c4e08",
-      "version": "unreleased",
+      "version": "0.9.0",
       "date": "2026-01-15T15:00:47.000Z",
       "category": "changed",
       "type": "token",
@@ -5092,7 +6430,7 @@
     },
     {
       "id": "2026-01-15-token-colors-c410b49c",
-      "version": "unreleased",
+      "version": "0.9.0",
       "date": "2026-01-15T15:00:47.000Z",
       "category": "added",
       "type": "token",
@@ -5110,7 +6448,7 @@
     },
     {
       "id": "2026-01-15-token-colors-87bfa32e",
-      "version": "unreleased",
+      "version": "0.9.0",
       "date": "2026-01-15T15:00:47.000Z",
       "category": "changed",
       "type": "token",
@@ -5128,7 +6466,7 @@
     },
     {
       "id": "2026-01-15-token-colors-1382719e",
-      "version": "unreleased",
+      "version": "0.9.0",
       "date": "2026-01-15T15:00:47.000Z",
       "category": "changed",
       "type": "token",
@@ -5146,7 +6484,7 @@
     },
     {
       "id": "2026-01-15-token-colors-cf37b428",
-      "version": "unreleased",
+      "version": "0.9.0",
       "date": "2026-01-15T15:00:47.000Z",
       "category": "changed",
       "type": "token",
@@ -5164,7 +6502,7 @@
     },
     {
       "id": "2026-01-15-token-colors-058dd521",
-      "version": "unreleased",
+      "version": "0.9.0",
       "date": "2026-01-15T15:00:47.000Z",
       "category": "changed",
       "type": "token",
@@ -5182,7 +6520,7 @@
     },
     {
       "id": "2026-01-15-token-colors-3f156831",
-      "version": "unreleased",
+      "version": "0.9.0",
       "date": "2026-01-15T15:00:47.000Z",
       "category": "changed",
       "type": "token",
@@ -5200,7 +6538,7 @@
     },
     {
       "id": "2026-01-15-token-colors-e3e60ebc",
-      "version": "unreleased",
+      "version": "0.9.0",
       "date": "2026-01-15T15:00:47.000Z",
       "category": "changed",
       "type": "token",
@@ -5218,7 +6556,7 @@
     },
     {
       "id": "2026-01-15-token-colors-dfe70159",
-      "version": "unreleased",
+      "version": "0.9.0",
       "date": "2026-01-15T15:00:47.000Z",
       "category": "added",
       "type": "token",
@@ -5236,7 +6574,7 @@
     },
     {
       "id": "2026-01-15-token-colors-c92d6de6",
-      "version": "unreleased",
+      "version": "0.9.0",
       "date": "2026-01-15T15:00:47.000Z",
       "category": "changed",
       "type": "token",
@@ -5254,7 +6592,7 @@
     },
     {
       "id": "2026-01-15-token-colors-ce0fe26e",
-      "version": "unreleased",
+      "version": "0.9.0",
       "date": "2026-01-15T15:00:47.000Z",
       "category": "added",
       "type": "token",
@@ -5272,7 +6610,7 @@
     },
     {
       "id": "2026-01-15-token-colors-3036d053",
-      "version": "unreleased",
+      "version": "0.9.0",
       "date": "2026-01-15T15:00:47.000Z",
       "category": "changed",
       "type": "token",
@@ -5290,7 +6628,7 @@
     },
     {
       "id": "2026-01-15-token-colors-2ddc12bf",
-      "version": "unreleased",
+      "version": "0.9.0",
       "date": "2026-01-15T15:00:47.000Z",
       "category": "changed",
       "type": "token",
@@ -5308,7 +6646,7 @@
     },
     {
       "id": "2026-01-15-token-colors-5242583f",
-      "version": "unreleased",
+      "version": "0.9.0",
       "date": "2026-01-15T15:00:47.000Z",
       "category": "changed",
       "type": "token",
@@ -5326,7 +6664,7 @@
     },
     {
       "id": "2026-01-15-token-colors-4d60c20d",
-      "version": "unreleased",
+      "version": "0.9.0",
       "date": "2026-01-15T15:00:47.000Z",
       "category": "changed",
       "type": "token",
@@ -5344,7 +6682,7 @@
     },
     {
       "id": "2026-01-15-token-colors-2322c6ef",
-      "version": "unreleased",
+      "version": "0.9.0",
       "date": "2026-01-15T15:00:47.000Z",
       "category": "changed",
       "type": "token",
@@ -5362,7 +6700,7 @@
     },
     {
       "id": "2026-01-15-token-colors-e844435d",
-      "version": "unreleased",
+      "version": "0.9.0",
       "date": "2026-01-15T15:00:47.000Z",
       "category": "added",
       "type": "token",
@@ -5380,7 +6718,7 @@
     },
     {
       "id": "2026-01-15-token-colors-269e1d43",
-      "version": "unreleased",
+      "version": "0.9.0",
       "date": "2026-01-15T15:00:47.000Z",
       "category": "changed",
       "type": "token",
@@ -5398,7 +6736,7 @@
     },
     {
       "id": "2026-01-15-token-colors-5cfa244f",
-      "version": "unreleased",
+      "version": "0.9.0",
       "date": "2026-01-15T15:00:47.000Z",
       "category": "added",
       "type": "token",
@@ -5416,7 +6754,7 @@
     },
     {
       "id": "2026-01-15-token-colors-cc3bdf77",
-      "version": "unreleased",
+      "version": "0.9.0",
       "date": "2026-01-15T15:00:47.000Z",
       "category": "changed",
       "type": "token",
@@ -5434,7 +6772,7 @@
     },
     {
       "id": "2026-01-15-token-colors-e501c7b8",
-      "version": "unreleased",
+      "version": "0.9.0",
       "date": "2026-01-15T15:00:47.000Z",
       "category": "changed",
       "type": "token",
@@ -5452,7 +6790,7 @@
     },
     {
       "id": "2026-01-15-token-colors-bd5d63ad",
-      "version": "unreleased",
+      "version": "0.9.0",
       "date": "2026-01-15T15:00:47.000Z",
       "category": "changed",
       "type": "token",
@@ -5470,7 +6808,7 @@
     },
     {
       "id": "2026-01-15-token-colors-678161de",
-      "version": "unreleased",
+      "version": "0.9.0",
       "date": "2026-01-15T15:00:47.000Z",
       "category": "changed",
       "type": "token",
@@ -5488,7 +6826,7 @@
     },
     {
       "id": "2026-01-15-token-colors-dde8175a",
-      "version": "unreleased",
+      "version": "0.9.0",
       "date": "2026-01-15T15:00:47.000Z",
       "category": "changed",
       "type": "token",
@@ -5506,7 +6844,7 @@
     },
     {
       "id": "2026-01-15-token-colors-410837d5",
-      "version": "unreleased",
+      "version": "0.9.0",
       "date": "2026-01-15T15:00:47.000Z",
       "category": "added",
       "type": "token",
@@ -5524,7 +6862,7 @@
     },
     {
       "id": "2026-01-15-token-colors-65b8611b",
-      "version": "unreleased",
+      "version": "0.9.0",
       "date": "2026-01-15T15:00:47.000Z",
       "category": "changed",
       "type": "token",
@@ -5542,7 +6880,7 @@
     },
     {
       "id": "2026-01-15-token-colors-e0e2a8ab",
-      "version": "unreleased",
+      "version": "0.9.0",
       "date": "2026-01-15T15:00:47.000Z",
       "category": "added",
       "type": "token",
@@ -5560,7 +6898,7 @@
     },
     {
       "id": "2026-01-15-component-NumberInput-156dca04",
-      "version": "unreleased",
+      "version": "0.9.0",
       "date": "2026-01-14T23:20:19.000Z",
       "category": "added",
       "type": "component",
@@ -5577,7 +6915,7 @@
     },
     {
       "id": "2026-01-15-component-StepperInput-a824ee2d",
-      "version": "unreleased",
+      "version": "0.9.0",
       "date": "2026-01-14T23:20:19.000Z",
       "category": "removed",
       "type": "component",
@@ -5591,6 +6929,17 @@
         "author": "“builtbyfrances”",
         "date": "2026-01-14T23:20:19.000Z"
       }
+    },
+    {
+      "id": "2026-06-26-system-release-process-baseline0001",
+      "version": "0.9.0",
+      "date": "2026-06-26T20:04:35.472Z",
+      "category": "changed",
+      "type": "system",
+      "target": "Release process",
+      "title": "Refactored for initial release",
+      "description": "Refactored for initial release (versioning workflow, CI, and changelog grouping).",
+      "breaking": false
     }
   ]
 }

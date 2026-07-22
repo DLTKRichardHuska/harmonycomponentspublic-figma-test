@@ -1,0 +1,120 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://harmony.deltek.com/schemas/converter.manifest.json",
+  "title": "Harmony Converter Manifest",
+  "type": "object",
+  "required": ["id", "name", "type", "status", "description", "conversion", "readiness"],
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "name": { "type": "string" },
+    "type": {
+      "type": "string",
+      "enum": ["component-library", "external"]
+    },
+    "status": {
+      "type": "string",
+      "enum": ["placeholder", "dev-in-progress", "active", "deprecated"]
+    },
+    "description": { "type": "string" },
+    "framework": {
+      "type": "object",
+      "additionalProperties": { "type": "string" }
+    },
+    "host": {
+      "type": "object",
+      "additionalProperties": { "type": "string" }
+    },
+    "conversion": {
+      "type": "object",
+      "required": ["playbook", "verification"],
+      "properties": {
+        "outputId": { "type": "string" },
+        "outputPath": { "type": "string" },
+        "playbook": { "type": "string" },
+        "verification": {
+          "type": "object",
+          "required": ["playbook", "agent"],
+          "properties": {
+            "playbook": { "type": "string" },
+            "agent": { "type": "string" }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "readiness": {
+      "type": "object",
+      "required": ["level"],
+      "properties": {
+        "level": {
+          "type": "string",
+          "enum": ["not-ready", "dev-in-progress", "partial", "ready"]
+        },
+        "lastReviewed": { "type": "string" },
+        "summary": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "elementStrategies": {
+      "type": "object",
+      "description": "Converter-specific vocabulary for conversion.manifest.json elements.*.strategy. Keeps targets independent.",
+      "required": ["allowed"],
+      "additionalProperties": false,
+      "properties": {
+        "allowed": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string", "minLength": 1 },
+          "description": "Strategy values this converter may write on elements.*.strategy (plus null)."
+        },
+        "deprecated": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Still accepted with a warning; migrate to an allowed value."
+        },
+        "forbidden": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Hard-fail if present (e.g. thin-wrapper for react-mui)."
+        },
+        "descriptions": {
+          "type": "object",
+          "additionalProperties": { "type": "string" },
+          "description": "Human/agent docs keyed by strategy id."
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "type": { "const": "component-library" } } },
+      "then": {
+        "required": ["framework", "conversion", "elementStrategies"],
+        "properties": {
+          "conversion": {
+            "required": ["outputId", "outputPath", "playbook", "verification"]
+          }
+        }
+      }
+    },
+    {
+      "if": { "properties": { "type": { "const": "external" } } },
+      "then": {
+        "required": ["host"],
+        "properties": {
+          "host": {
+            "required": ["system"]
+          },
+          "elementStrategies": {
+            "description": "Optional until the external host defines a sync-state model."
+          }
+        }
+      }
+    }
+  ]
+}

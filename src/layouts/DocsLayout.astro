@@ -3,6 +3,7 @@ import '../styles/global.css';
 import { navigation, componentCount } from '../data/navigation';
 import { themeConfig } from '../data/theme-config';
 import Icon from '../components/ui/Icon.astro';
+import { getEffectiveVersion } from '../lib/version';
 
 interface Props {
   title: string;
@@ -10,7 +11,23 @@ interface Props {
 }
 
 const { title, description } = Astro.props;
+const projectVersion = getEffectiveVersion();
 const currentPath = Astro.url.pathname;
+
+function normalizePath(p: string): string {
+  const s = p.replace(/\/$/, '');
+  return s === '' ? '/' : s;
+}
+
+/** Kanban doc exists at /components/kanban (default) and /cp/kanban (Costpoint); both should highlight the same nav item. */
+function isNavItemActive(itemHref: string, pathname: string): boolean {
+  const path = normalizePath(pathname);
+  const href = normalizePath(itemHref);
+  if (href === '/components/kanban') {
+    return path === '/components/kanban' || path === '/cp/kanban';
+  }
+  return path === href;
+}
 ---
 
 <!DOCTYPE html>
@@ -46,6 +63,16 @@ const currentPath = Astro.url.pathname;
     <header class="header">
       <!-- Brand / Left -->
       <div class="header__brand">
+        <button
+          type="button"
+          id="sidebar-toggle"
+          class="sidebar-toggle icon-btn"
+          aria-controls="docs-sidebar"
+          aria-expanded="false"
+          aria-label="Open navigation"
+        >
+          <Icon name="bars-3" size="sm" class="icon-btn__icon" />
+        </button>
         <a href="/" class="header__brand-link">
           <img id="header-logo" src="/logos/CPVPLogo.svg" alt="Logo" class="header__logo" />
           <h1 class="header__title">
@@ -114,13 +141,20 @@ const currentPath = Astro.url.pathname;
         </a>
       </div>
     </header>
+
+    <div id="sidebar-backdrop" class="sidebar-backdrop" hidden></div>
     
     <!-- CONTENT WRAPPER -->
     <div class="content-wrapper">
       <!-- LEFT SIDEBAR -->
-      <aside class="sidebar">
+      <aside id="docs-sidebar" class="sidebar">
         <div class="sidebar__header">
-          <div class="sidebar__label">Navigation</div>
+          <div class="sidebar__header-row">
+            <div class="sidebar__label">Navigation</div>
+            <button type="button" id="sidebar-close" class="sidebar__close icon-btn" aria-label="Close navigation">
+              <Icon name="x-mark" size="sm" class="icon-btn__icon" />
+            </button>
+          </div>
           <div class="sidebar__stats">
             <Icon name="squares-plus" size="sm" class="sidebar__stats-icon" />
             {componentCount} Sections
@@ -136,7 +170,8 @@ const currentPath = Astro.url.pathname;
               {section.items.map((item) => (
                 <a
                   href={item.href}
-                  class={`nav__item ${currentPath === item.href || currentPath === item.href + '/' ? 'is-active' : ''}`}
+                  {...(item.href === '/components/kanban' ? { 'data-kanban-doc-link': '' } : {})}
+                  class={`nav__item ${isNavItemActive(item.href, currentPath) ? 'is-active' : ''}`}
                 >
                   <Icon name={item.icon} size="sm" class="nav__item-icon" />
                   {item.title}
@@ -150,6 +185,7 @@ const currentPath = Astro.url.pathname;
         </nav>
         
         <div class="sidebar__footer">
+          <div class="sidebar__version">v{projectVersion}</div>
           <div class="sidebar__progress">
             <div class="sidebar__progress-header">
               <span class="sidebar__progress-label">Coverage</span>
@@ -276,6 +312,14 @@ const currentPath = Astro.url.pathname;
     if (typeof window.renderThemeSpecificNav === 'function') {
       window.renderThemeSpecificNav(savedColorTheme);
     }
+
+    window.syncKanbanDocNavLink = function () {
+      const t = localStorage.getItem('colorTheme') || 'cp';
+      document.querySelectorAll('[data-kanban-doc-link]').forEach((el) => {
+        el.setAttribute('href', t === 'cp' ? '/cp/kanban' : '/components/kanban');
+      });
+    };
+    window.syncKanbanDocNavLink();
     
     // Toggle theme picker dropdown
     themePickerBtn?.addEventListener('click', (e) => {
@@ -324,11 +368,22 @@ const currentPath = Astro.url.pathname;
         }
         
         themePickerMenu?.classList.remove('is-open');
-        
+
+        const pathNorm = window.location.pathname.replace(/\/$/, '') || '/';
+        const nt = newTheme || 'cp';
+        if (nt === 'cp' && pathNorm === '/components/kanban') {
+          window.location.href = '/cp/kanban';
+          return;
+        }
+        if (nt !== 'cp' && pathNorm === '/cp/kanban') {
+          window.location.href = '/components/kanban';
+          return;
+        }
+
         // Check if current page is theme-specific and redirect if needed
-        const currentPath = window.location.pathname;
-        const themePathMatch = currentPath.match(/^\/(cp|vp|ppm|maconomy)\//);
-        
+        const locPath = window.location.pathname;
+        const themePathMatch = locPath.match(/^\/(cp|vp|ppm|maconomy)\//);
+
         if (themePathMatch) {
           const pageTheme = themePathMatch[1];
           // If we switched away from the theme this page belongs to, redirect home
@@ -337,11 +392,13 @@ const currentPath = Astro.url.pathname;
             return;
           }
         }
-        
+
         // Update theme-specific navigation
         if (typeof window.renderThemeSpecificNav === 'function') {
           window.renderThemeSpecificNav(newTheme || 'cp');
         }
+
+        window.syncKanbanDocNavLink?.();
       });
     });
     
@@ -359,6 +416,63 @@ const currentPath = Astro.url.pathname;
         e.preventDefault();
         document.getElementById('search-input')?.focus();
       }
+    });
+
+    // Mobile sidebar drawer
+    const sidebarToggle = document.getElementById('sidebar-toggle');
+    const sidebarClose = document.getElementById('sidebar-close');
+    const docsSidebar = document.getElementById('docs-sidebar');
+    const sidebarBackdrop = document.getElementById('sidebar-backdrop');
+    const DESKTOP_BREAKPOINT = 1024;
+
+    function isMobileNav() {
+      return window.innerWidth < DESKTOP_BREAKPOINT;
+    }
+
+    function setSidebarOpen(open: boolean) {
+      if (!docsSidebar || !sidebarBackdrop || !sidebarToggle) return;
+
+      docsSidebar.classList.toggle('is-open', open);
+      sidebarBackdrop.classList.toggle('is-open', open);
+      sidebarBackdrop.hidden = !open;
+      document.body.classList.toggle('sidebar-open', open);
+      sidebarToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      sidebarToggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
+    }
+
+    function closeSidebar() {
+      setSidebarOpen(false);
+    }
+
+    sidebarToggle?.addEventListener('click', () => {
+      if (!isMobileNav()) return;
+      const isOpen = docsSidebar?.classList.contains('is-open') ?? false;
+      setSidebarOpen(!isOpen);
+    });
+
+    sidebarClose?.addEventListener('click', closeSidebar);
+    sidebarBackdrop?.addEventListener('click', closeSidebar);
+
+    docsSidebar?.querySelectorAll('.nav__item').forEach((link) => {
+      link.addEventListener('click', () => {
+        if (isMobileNav()) closeSidebar();
+      });
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && docsSidebar?.classList.contains('is-open')) {
+        closeSidebar();
+      }
+    });
+
+    window.addEventListener('resize', () => {
+      if (!isMobileNav()) closeSidebar();
+    });
+
+    // Close drawer when theme-specific nav links are clicked (delegated)
+    document.getElementById('theme-specific-nav')?.addEventListener('click', (e) => {
+      const target = (e.target as Element).closest('.nav__item');
+      if (target && isMobileNav()) closeSidebar();
     });
   </script>
 </body>

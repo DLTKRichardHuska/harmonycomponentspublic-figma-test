@@ -1,0 +1,73 @@
+---
+description: Distinguish converter (agent) vs conversion (output); Cursor-only conversion workflow
+alwaysApply: true
+---
+
+# Converter vs conversion
+
+Read [CONVERTER_VS_CONVERSION.md](../skills/harmony-conversion/reference/CONVERTER_VS_CONVERSION.md) when the user mentions converters, conversions, react+mui, figma sync, "ready", or "status".
+
+## Three parts
+
+1. **Reference** — Astro DS, `src/data/component-catalog.ts`, `src/data/navigation.ts`
+2. **Converters** — `converters/<id>/playbook/` (expert agents)
+3. **Conversions** — `conversions/<id>/` (output + `conversion.manifest.json`)
+
+Discover converters: scan `converters/*/converter.manifest.json` — no registry JSON.
+
+## Paths
+
+| Concept | Root | Manifest |
+|---------|------|----------|
+| **Converter** | `converters/<id>/` | `converter.manifest.json` — `readiness.level` |
+| **Conversion** | `conversions/<id>/` | `conversion.manifest.json` — all element state |
+
+## Routing
+
+| User intent | Mode | Response header |
+|-------------|------|-----------------|
+| Converter readiness, tooling, playbooks | `readiness` / `converter` | `## Converter readiness: <id>` |
+| Conversion status, synced, gaps, converted | `status` / `conversion-status` | `## Conversion status: <id>` |
+
+Ambiguous "ready" or "status of \<id\>" → **AskQuestion** before answering.
+
+## Hard rules
+
+1. Converter not `ready` → say **No — the converter is not ready**; list completion tasks.
+2. Never conflate `readiness.level` with conversion `elements` status.
+3. **Reference is discovery** — read catalog/nav/source; no parallel inventory JSON.
+4. **No npm for conversion** — conversion runs only in Cursor via `/conversion-agent`. Agents invoke Node helpers via Shell internally.
+5. Verify converter before recommending conversion plan/execute (unless user is developing the converter).
+6. **Hard dependencies** — plan/execute of a catalog element is blocked while its catalog dependencies are not `synced`; never offer dependency workarounds (partial convert, skip/defer dep, callout in place of dep). Redirect to planning the blocker only.
+
+## Fidelity compare (verify mode)
+
+Read [FIDELITY_PRINCIPLES.md](../skills/harmony-conversion/reference/FIDELITY_PRINCIPLES.md). **Capture** is scripted; **compare** is verifier-agent judgment — **acceptance** is converter playbook + human.
+
+## Scope fence (mandatory)
+
+**Converter readiness** answers only: *Can the converter agent plan, apply, verify, and remediate?*
+
+| Mode | Read | Never read or report |
+|------|------|---------------------|
+| **readiness** | `converters/<id>/` (manifest, playbooks, scripts), `validate_converter.mjs` | `conversions/<id>/conversion.manifest.json` `elements`, per-component sync tables, "what's converted", demo placeholder pages as sync status |
+| **status** | `conversions/<id>/`, reference catalog/nav | `readiness.level` as a proxy for sync progress |
+
+Component-library pairs share an id — that is **not** permission to answer a readiness question with conversion sync facts.
+
+**Verify harness vs sync state:** For readiness, `conversions/<id>/` may appear only as the **verify harness location** (capture fixtures, demo render path) when the playbook lists a converter dev task there. Label it *converter dev task*, not *conversion status*.
+
+## Vocabulary (readiness answers)
+
+| Say | Do not say (implies conversion status) |
+|-----|----------------------------------------|
+| converter playbooks, verify harness, capture fixtures | conversion output, placeholder scaffold, reset, synced |
+| converter not ready / playbook gap | Button isn't converted, elements pending |
+
+## Example (readiness)
+
+**User:** Is the react+mui converter ready?
+
+**Good:** `## Converter readiness: harmony-design-system-react-mui` — `not-ready`; shell apply missing in playbook; verify loop not proven. Sources: `converter.manifest.json`, `playbook/SKILL.md`.
+
+**Bad:** Conversion output is a placeholder; foundation not synced — *(that is status, not readiness)*.

@@ -93,11 +93,11 @@ const classes = [
     ) : (
       <>
         {isDelaVariant && <img src="/Stars.svg" alt="" class="btn__dela-stars" />}
-        {icon && iconPosition === 'left' && (
+        {!isDelaVariant && icon && iconPosition === 'left' && (
           <Icon name={icon} size={iconSize} />
         )}
         <slot />
-        {icon && iconPosition === 'right' && (
+        {!isDelaVariant && icon && iconPosition === 'right' && (
           <Icon name={icon} size={iconSize} />
         )}
       </>
@@ -122,11 +122,11 @@ const classes = [
     ) : (
       <>
         {isDelaVariant && <img src="/Stars.svg" alt="" class="btn__dela-stars" />}
-        {icon && iconPosition === 'left' && (
+        {!isDelaVariant && icon && iconPosition === 'left' && (
           <Icon name={icon} size={iconSize} />
         )}
         <slot />
-        {icon && iconPosition === 'right' && (
+        {!isDelaVariant && icon && iconPosition === 'right' && (
           <Icon name={icon} size={iconSize} />
         )}
       </>

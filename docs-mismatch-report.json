@@ -1,1 +1,136 @@
-{}
+{
+  "Kanban": {
+    "missingInDocs": [
+      "variant",
+      "cardFieldsConfig",
+      "cpRecordCount",
+      "cpRecordShown",
+      "cpRecordTotal",
+      "cpToolbarTitle",
+      "cpSortedBy",
+      "cpSortLabel",
+      "cpActiveView",
+      "cpSearchPlaceholder",
+      "cpScrollColumnIndex",
+      "showLoadMore"
+    ],
+    "extraInDocs": [],
+    "docProps": [
+      "columns",
+      "title",
+      "actionButtons",
+      "actionDropdowns",
+      "showAddButton"
+    ],
+    "componentProps": [
+      "columns",
+      "variant",
+      "title",
+      "actionButtons",
+      "actionDropdowns",
+      "showAddButton",
+      "cardFieldsConfig",
+      "cpRecordCount",
+      "cpRecordShown",
+      "cpRecordTotal",
+      "cpToolbarTitle",
+      "cpSortedBy",
+      "cpSortLabel",
+      "cpActiveView",
+      "cpSearchPlaceholder",
+      "cpScrollColumnIndex",
+      "showLoadMore"
+    ]
+  },
+  "KanbanCardCostpoint": {
+    "missingInDocs": [
+      "id",
+      "title",
+      "fieldsConfig",
+      "valuesByFieldName",
+      "moveOptions",
+      "selected",
+      "graphicalClass",
+      "accentColor",
+      "openRecordLabel"
+    ],
+    "extraInDocs": [],
+    "docProps": [],
+    "componentProps": [
+      "id",
+      "title",
+      "fieldsConfig",
+      "valuesByFieldName",
+      "moveOptions",
+      "selected",
+      "graphicalClass",
+      "accentColor",
+      "openRecordLabel"
+    ]
+  },
+  "Table": {
+    "missingInDocs": [
+      "sortColumns",
+      "sortColumn",
+      "sortDirection"
+    ],
+    "extraInDocs": [
+      "variant",
+      "groupedDefaultExpanded",
+      "groupedExpandedRowIds / onGroupedExpandedRowIdsChange (React only)",
+      "sortColumns / sortColumn / sortDirection",
+      "filter-bar (slot)",
+      "command-center-toolbar (slot)"
+    ],
+    "docProps": [
+      "headerVariant",
+      "variant",
+      "striped",
+      "reorderable",
+      "grouped",
+      "groupedDefaultExpanded",
+      "groupedExpandedRowIds / onGroupedExpandedRowIdsChange (React only)",
+      "sortColumns / sortColumn / sortDirection",
+      "filter-bar (slot)",
+      "command-center-toolbar (slot)"
+    ],
+    "componentProps": [
+      "headerVariant",
+      "striped",
+      "reorderable",
+      "grouped",
+      "sortColumns",
+      "sortColumn",
+      "sortDirection"
+    ]
+  },
+  "TabStrip": {
+    "missingInDocs": [],
+    "extraInDocs": [
+      "showTabOpenInNew",
+      "showTabClose",
+      "showTabOverflowMenu"
+    ],
+    "docProps": [
+      "tabs",
+      "showAddTab",
+      "addTabLabel",
+      "overflowMode",
+      "overflowTabs",
+      "variant",
+      "iconPosition",
+      "showTabOpenInNew",
+      "showTabClose",
+      "showTabOverflowMenu"
+    ],
+    "componentProps": [
+      "tabs",
+      "showAddTab",
+      "addTabLabel",
+      "overflowMode",
+      "overflowTabs",
+      "variant",
+      "iconPosition"
+    ]
+  }
+}

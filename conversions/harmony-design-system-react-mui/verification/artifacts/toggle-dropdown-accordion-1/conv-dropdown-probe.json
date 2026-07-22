@@ -1,0 +1,86 @@
+{
+  "closed": {
+    "titles": [
+      "Basic Dropdown",
+      "With Label (Stacked)",
+      "With Label (Inline)",
+      "With Pre-selected Value",
+      "Disabled"
+    ],
+    "callout": "Not supported in this conversionHarmony trigger / option-0…9 slots has no supported equivalent here. MUI Select uses MenuItem children for options instead of Astro named slots. Custom trigger replacement is not mapped. R",
+    "trigger": {
+      "w": 360,
+      "h": 20,
+      "bg": "rgba(0, 0, 0, 0)",
+      "border": "rgb(55, 63, 78) 0px",
+      "color": "rgb(55, 63, 78)",
+      "radius": "8px",
+      "fontSize": "12px"
+    },
+    "field": {
+      "w": 256,
+      "h": 32,
+      "bg": "rgba(0, 0, 0, 0)",
+      "border": "rgb(55, 63, 78) 0px",
+      "color": "rgb(55, 63, 78)",
+      "radius": "0px",
+      "fontSize": "16px"
+    },
+    "label": {
+      "text": "Country",
+      "w": 360,
+      "h": 20,
+      "bg": "rgba(0, 0, 0, 0)",
+      "border": "rgb(55, 63, 78) 0px",
+      "color": "rgb(55, 63, 78)",
+      "radius": "0px",
+      "fontSize": "14px"
+    }
+  },
+  "open": {
+    "found": true,
+    "w": 360,
+    "h": 232,
+    "bg": "rgb(247, 248, 250)",
+    "shadow": "rgba(15, 23, 42, 0.1) 0px 10px 15px -3px, rgba(15, 23, 42, 0.1) 0px 4px 6px -4px",
+    "radius": "4px",
+    "items": [
+      {
+        "text": "Select a country",
+        "h": 37,
+        "color": "rgb(55, 63, 78)",
+        "bg": "color(srgb 0.164706 0.470588 0.776471 / 0.12)"
+      },
+      {
+        "text": "United States",
+        "h": 37,
+        "color": "rgb(55, 63, 78)",
+        "bg": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "text": "Canada",
+        "h": 37,
+        "color": "rgb(55, 63, 78)",
+        "bg": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "text": "United Kingdom",
+        "h": 37,
+        "color": "rgb(55, 63, 78)",
+        "bg": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "text": "Germany",
+        "h": 37,
+        "color": "rgb(55, 63, 78)",
+        "bg": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "text": "France",
+        "h": 37,
+        "color": "rgb(55, 63, 78)",
+        "bg": "rgba(0, 0, 0, 0)"
+      }
+    ]
+  }
+}

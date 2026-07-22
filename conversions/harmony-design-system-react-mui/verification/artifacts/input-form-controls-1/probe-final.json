@@ -1,0 +1,403 @@
+{
+  "ref-inputs": {
+    "pageBg": "rgb(31, 37, 46)",
+    "email": {
+      "label": "Email",
+      "h": 20,
+      "w": 384,
+      "bg": "rgb(31, 37, 46)",
+      "color": "rgb(233, 236, 239)",
+      "fs": "12px",
+      "radius": "4px",
+      "border": "rgb(95, 104, 113)"
+    },
+    "defaultState": {
+      "label": "Default",
+      "h": 20,
+      "w": 384,
+      "bg": "rgb(31, 37, 46)",
+      "color": "rgb(233, 236, 239)",
+      "fs": "12px",
+      "radius": "4px",
+      "border": "rgb(95, 104, 113)"
+    },
+    "disabled": {
+      "label": "Disabled",
+      "h": 20,
+      "w": 384,
+      "bg": "rgb(51, 61, 71)",
+      "color": "rgb(187, 187, 198)",
+      "fs": "12px",
+      "radius": "4px",
+      "border": "rgb(95, 104, 113)"
+    },
+    "error": {
+      "border": "rgb(244, 98, 134)",
+      "helperText": "Please enter a valid value",
+      "helperColor": "rgb(244, 98, 134)",
+      "helperFs": "14px",
+      "helperClass": "input-wrapper__error"
+    },
+    "num": null,
+    "range": null,
+    "req": [
+      {
+        "text": "Email Address",
+        "after": "none",
+        "afterColor": "rgb(233, 236, 239)",
+        "asterisk": null
+      },
+      {
+        "text": "Email Address",
+        "after": "none",
+        "afterColor": "rgb(233, 236, 239)",
+        "asterisk": null
+      },
+      {
+        "text": "First Name",
+        "after": "\" *\"",
+        "afterColor": "rgb(244, 98, 134)",
+        "asterisk": null
+      },
+      {
+        "text": "First Name",
+        "after": "none",
+        "afterColor": "rgb(233, 236, 239)",
+        "asterisk": null
+      }
+    ],
+    "a11yTitles": [
+      "Labels",
+      "Error Announcements"
+    ],
+    "helperSample": null,
+    "headings": [
+      "Harmony CP Design System",
+      "Inputs",
+      "Examples",
+      "Basic Input",
+      "Input Types",
+      "With Icon",
+      "Trailing icon and slot",
+      "States",
+      "Textarea",
+      "With Label (Stacked)",
+      "With Label (Inline)",
+      "Textarea With Label",
+      "Form Example",
+      "Contact Form",
+      "Form Example with Inline Labels",
+      "Contact Form",
+      "Input Props",
+      "Textarea Props",
+      "Usage Guidelines",
+      "Do",
+      "Don't",
+      "Accessibility",
+      "Labels",
+      "Error Announcements"
+    ]
+  },
+  "ref-labels": {
+    "pageBg": "rgb(31, 37, 46)",
+    "email": {
+      "label": "Email Address",
+      "h": 20,
+      "w": 384,
+      "bg": "rgb(31, 37, 46)",
+      "color": "rgb(233, 236, 239)",
+      "fs": "12px",
+      "radius": "4px",
+      "border": "rgb(95, 104, 113)"
+    },
+    "defaultState": null,
+    "disabled": null,
+    "error": null,
+    "num": null,
+    "range": null,
+    "req": [
+      {
+        "text": "Email Address",
+        "after": "\" *\"",
+        "afterColor": "rgb(244, 98, 134)",
+        "asterisk": null
+      }
+    ],
+    "a11yTitles": [
+      "Label Association",
+      "Required Indicators",
+      "Screen Reader Support",
+      "Semantic HTML"
+    ],
+    "helperSample": {
+      "text": "Phone Number (optional)",
+      "helperColor": "rgb(187, 187, 198)"
+    },
+    "headings": [
+      "Harmony CP Design System",
+      "Labels",
+      "Examples",
+      "Basic Label",
+      "Required Label",
+      "With Helper Text",
+      "Props",
+      "Accessibility",
+      "Label Association",
+      "Required Indicators",
+      "Screen Reader Support",
+      "Semantic HTML"
+    ]
+  },
+  "ref-specialty": {
+    "pageBg": "rgb(31, 37, 46)",
+    "email": null,
+    "defaultState": null,
+    "disabled": {
+      "label": "Disabled",
+      "h": 20,
+      "w": 40,
+      "bg": "rgb(31, 37, 46)",
+      "color": "rgb(233, 236, 239)",
+      "fs": "12px",
+      "radius": "0px",
+      "border": "rgb(233, 236, 239) rgb(95, 104, 113)"
+    },
+    "error": null,
+    "num": {
+      "kind": "number-input",
+      "h": 22,
+      "w": 82,
+      "bg": "rgba(0, 0, 0, 0)",
+      "border": "1px solid rgb(95, 104, 113)",
+      "btnW": 20,
+      "btnBg": "rgb(55, 66, 77)"
+    },
+    "range": {
+      "kind": "range-wrap",
+      "w": 384,
+      "thumb": null,
+      "track": null,
+      "rail": null,
+      "value": {
+        "text": "75%",
+        "color": "rgb(182, 182, 196)",
+        "fs": "14px"
+      },
+      "accent": "auto"
+    },
+    "req": [],
+    "a11yTitles": [],
+    "helperSample": null,
+    "headings": [
+      "Harmony CP Design System",
+      "Specialty Inputs",
+      "Examples",
+      "Number Input",
+      "Number Input",
+      "Number Input With Label",
+      "Range Input",
+      "Range Input With Label",
+      "Date and Time",
+      "URL Input",
+      "Phone Input",
+      "Props",
+      "NumberInput",
+      "RangeInput",
+      "TimePicker",
+      "MonthPicker",
+      "WeekPicker",
+      "DateTimePicker"
+    ]
+  },
+  "conv-inputs": {
+    "pageBg": "rgb(226, 228, 233)",
+    "email": {
+      "label": "Email",
+      "h": 40,
+      "w": 360,
+      "bg": "rgb(255, 255, 255)",
+      "color": "rgb(55, 63, 78)",
+      "fs": "16px",
+      "radius": "8px",
+      "border": "rgb(191, 198, 212)"
+    },
+    "defaultState": {
+      "label": "Default",
+      "h": 40,
+      "w": 360,
+      "bg": "rgb(255, 255, 255)",
+      "color": "rgb(55, 63, 78)",
+      "fs": "16px",
+      "radius": "8px",
+      "border": "rgb(191, 198, 212)"
+    },
+    "disabled": {
+      "label": "Disabled",
+      "h": 40,
+      "w": 360,
+      "bg": "rgb(234, 234, 234)",
+      "color": "rgb(107, 114, 128)",
+      "fs": "16px",
+      "radius": "8px",
+      "border": "rgb(191, 198, 212)"
+    },
+    "error": {
+      "border": "rgb(216, 49, 72)",
+      "helperText": "Please enter a valid value",
+      "helperColor": "rgb(82, 89, 105)",
+      "helperFs": "14px",
+      "helperClass": "MuiFormHelperText-root Mui-error MuiFormHelperText-sizeMedium MuiFormHelperText-contained MuiFormHel"
+    },
+    "num": null,
+    "range": null,
+    "req": [
+      {
+        "text": "Email Address",
+        "after": "none",
+        "afterColor": "rgb(55, 63, 78)",
+        "asterisk": null
+      },
+      {
+        "text": "Email Address",
+        "after": "none",
+        "afterColor": "rgb(55, 63, 78)",
+        "asterisk": null
+      },
+      {
+        "text": "First Name *",
+        "after": "none",
+        "afterColor": "rgb(55, 63, 78)",
+        "asterisk": "rgb(216, 49, 72)"
+      },
+      {
+        "text": "Last Name *",
+        "after": "none",
+        "afterColor": "rgb(55, 63, 78)",
+        "asterisk": "rgb(216, 49, 72)"
+      }
+    ],
+    "a11yTitles": [],
+    "helperSample": null,
+    "headings": [
+      "Harmony CP Design System",
+      "Inputs",
+      "Examples",
+      "Basic Input",
+      "Input Types",
+      "With Icon",
+      "Trailing icon and slot",
+      "States",
+      "Textarea",
+      "With Label (Stacked)",
+      "With Label (Inline)",
+      "Textarea With Label",
+      "Form Example",
+      "Form Example with Inline Labels",
+      "Input Props",
+      "Harmony → MUI mapping",
+      "Usage Guidelines",
+      "Accessibility"
+    ]
+  },
+  "conv-labels": {
+    "pageBg": "rgb(226, 228, 233)",
+    "email": {
+      "label": "Email Address *",
+      "h": 40,
+      "w": 360,
+      "bg": "rgb(255, 255, 255)",
+      "color": "rgb(55, 63, 78)",
+      "fs": "16px",
+      "radius": "8px",
+      "border": "rgb(191, 198, 212)"
+    },
+    "defaultState": null,
+    "disabled": null,
+    "error": null,
+    "num": null,
+    "range": null,
+    "req": [
+      {
+        "text": "Email Address *",
+        "after": "none",
+        "afterColor": "rgb(55, 63, 78)",
+        "asterisk": "rgb(216, 49, 72)"
+      }
+    ],
+    "a11yTitles": [],
+    "helperSample": {
+      "text": "Phone Number (optional)",
+      "helperColor": "rgb(82, 89, 105)"
+    },
+    "headings": [
+      "Harmony CP Design System",
+      "Labels",
+      "Examples",
+      "Basic Label",
+      "Required Label",
+      "With Helper Text",
+      "Props",
+      "Harmony → MUI mapping",
+      "Accessibility"
+    ]
+  },
+  "conv-specialty": {
+    "pageBg": "rgb(226, 228, 233)",
+    "email": null,
+    "defaultState": null,
+    "disabled": {
+      "label": "Disabled",
+      "h": 40,
+      "w": 280,
+      "bg": "rgb(234, 234, 234)",
+      "color": "rgb(107, 114, 128)",
+      "fs": "16px",
+      "radius": "8px",
+      "border": "rgb(191, 198, 212)"
+    },
+    "error": null,
+    "num": {
+      "kind": "MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiI",
+      "h": 40,
+      "w": 280,
+      "bg": "rgb(255, 255, 255)",
+      "border": "0px none rgb(55, 63, 78)",
+      "btnW": 32,
+      "btnBg": "rgba(0, 0, 0, 0)"
+    },
+    "range": {
+      "kind": "MuiSlider-root MuiSlider-colorPrimary MuiSlider-sizeMedium css-qaxasc-",
+      "w": 304,
+      "thumb": {
+        "bg": "rgb(42, 120, 198)",
+        "size": 20
+      },
+      "track": "rgb(42, 120, 198)",
+      "rail": "rgb(191, 198, 212)",
+      "value": {
+        "text": "75%",
+        "color": "rgb(82, 89, 105)",
+        "fs": "16px"
+      },
+      "accent": "auto"
+    },
+    "req": [],
+    "a11yTitles": [],
+    "helperSample": null,
+    "headings": [
+      "Harmony CP Design System",
+      "Specialty Inputs",
+      "Examples",
+      "Date inputs deferred",
+      "Number Input",
+      "Number Input with steppers",
+      "Number Input With Label",
+      "Range Input",
+      "Range Input With Label",
+      "URL Input",
+      "Phone Input",
+      "Props",
+      "Harmony → MUI mapping"
+    ]
+  }
+}

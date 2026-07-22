@@ -1,0 +1,25 @@
+---
+description: Where to build and update Agent Skills in this repo
+globs: ["**/.cursor/skills/**", "**/SKILL.md"]
+---
+
+# Skills: single source of truth
+
+- **All Agent Skills for this project live in `.cursor/skills/`.**
+- When adding or editing skills, change **only** `.cursor/skills/<skill-name>/`.
+
+## Exception: converter playbooks
+
+**Converter-specific logic** belongs in:
+
+- `converters/<id>/playbook/SKILL.md` — apply/sync
+- `converters/<id>/playbook/VERIFICATION.md` — capture, compare, remediate
+- `converters/<id>/playbook/VERIFIER.md` — verify agent
+
+**Conversion output** (sync status, projects) lives in `conversions/<id>/`.
+
+Do not describe `conversions/<id>/` as "conversion status" when answering **converter readiness** — only as verify-harness location for converter dev tasks. See [converter-vs-conversion.mdc](../rules/converter-vs-conversion.mdc).
+
+These are loaded by path when **sync-target**, **conversion-loop**, or verifier agents route to a converter. Do not duplicate converter playbooks into `.cursor/skills/`.
+
+See [CONVERTER_VS_CONVERSION.md](../skills/harmony-conversion/reference/CONVERTER_VS_CONVERSION.md).

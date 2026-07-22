@@ -1,0 +1,737 @@
+{
+  "refCheck": {
+    "unchecked": {
+      "w": 18,
+      "h": 18,
+      "borderColor": "rgb(191, 198, 212)",
+      "borderWidth": "2px",
+      "bg": "rgb(255, 255, 255)",
+      "color": "rgb(55, 63, 78)",
+      "boxShadow": "none",
+      "fill": "rgb(0, 0, 0)",
+      "opacity": "1",
+      "label": "Option 1"
+    },
+    "checked": {
+      "w": 18,
+      "h": 18,
+      "borderColor": "rgb(42, 120, 198)",
+      "borderWidth": "2px",
+      "bg": "rgb(42, 120, 198)",
+      "color": "rgb(55, 63, 78)",
+      "boxShadow": "none",
+      "fill": "rgb(0, 0, 0)",
+      "opacity": "1",
+      "label": "Option 2 (checked)"
+    },
+    "warnU": {
+      "w": 18,
+      "h": 18,
+      "borderColor": "rgb(255, 176, 32)",
+      "borderWidth": "2px",
+      "bg": "rgb(255, 255, 255)",
+      "color": "rgb(55, 63, 78)",
+      "boxShadow": "none",
+      "fill": "rgb(0, 0, 0)",
+      "opacity": "1",
+      "label": "Unchecked with warning"
+    },
+    "warnC": {
+      "w": 18,
+      "h": 18,
+      "borderColor": "rgb(42, 120, 198)",
+      "borderWidth": "2px",
+      "bg": "rgb(42, 120, 198)",
+      "color": "rgb(55, 63, 78)",
+      "boxShadow": "rgb(255, 176, 32) 0px 0px 0px 1px",
+      "fill": "rgb(0, 0, 0)",
+      "opacity": "1",
+      "label": "Checked with warning"
+    },
+    "errU": {
+      "w": 18,
+      "h": 18,
+      "borderColor": "rgb(216, 49, 72)",
+      "borderWidth": "2px",
+      "bg": "rgb(255, 255, 255)",
+      "color": "rgb(55, 63, 78)",
+      "boxShadow": "none",
+      "fill": "rgb(0, 0, 0)",
+      "opacity": "1",
+      "label": "Unchecked with error"
+    },
+    "errC": {
+      "w": 18,
+      "h": 18,
+      "borderColor": "rgb(42, 120, 198)",
+      "borderWidth": "2px",
+      "bg": "rgb(42, 120, 198)",
+      "color": "rgb(55, 63, 78)",
+      "boxShadow": "rgb(216, 49, 72) 0px 0px 0px 2px",
+      "fill": "rgb(0, 0, 0)",
+      "opacity": "1",
+      "label": "Checked with error"
+    },
+    "small": null,
+    "medium": null,
+    "large": null,
+    "helpers": [
+      {
+        "text": "This action may have unintended consequences",
+        "color": "rgb(82, 89, 105)",
+        "iconColor": "rgb(255, 176, 32)"
+      },
+      {
+        "text": "Review this selection carefully",
+        "color": "rgb(82, 89, 105)",
+        "iconColor": "rgb(255, 176, 32)"
+      },
+      {
+        "text": "This option is currently unavailable",
+        "color": "rgb(82, 89, 105)",
+        "iconColor": "rgb(255, 176, 32)"
+      },
+      {
+        "text": "This field is required",
+        "color": "rgb(82, 89, 105)",
+        "iconColor": "rgb(216, 49, 72)"
+      }
+    ],
+    "groupErrorLegend": null
+  },
+  "convCheck": {
+    "unchecked": {
+      "w": 18,
+      "h": 18,
+      "borderColor": "rgb(82, 89, 105)",
+      "borderWidth": "0px",
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(82, 89, 105)",
+      "boxShadow": "none",
+      "fill": "rgb(82, 89, 105)",
+      "opacity": "1",
+      "label": "Option 1"
+    },
+    "checked": {
+      "w": 18,
+      "h": 18,
+      "borderColor": "rgb(42, 120, 198)",
+      "borderWidth": "0px",
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(42, 120, 198)",
+      "boxShadow": "none",
+      "fill": "rgb(42, 120, 198)",
+      "opacity": "1",
+      "label": "Option 2 (checked)"
+    },
+    "warnU": {
+      "w": 18,
+      "h": 18,
+      "borderColor": "rgb(255, 176, 32)",
+      "borderWidth": "0px",
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(255, 176, 32)",
+      "boxShadow": "none",
+      "fill": "rgb(255, 176, 32)",
+      "opacity": "1",
+      "label": "Unchecked with warning"
+    },
+    "warnC": {
+      "w": 18,
+      "h": 18,
+      "borderColor": "rgb(42, 120, 198)",
+      "borderWidth": "0px",
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(42, 120, 198)",
+      "boxShadow": "none",
+      "fill": "rgb(42, 120, 198)",
+      "opacity": "1",
+      "label": "Checked with warning"
+    },
+    "errU": {
+      "w": 18,
+      "h": 18,
+      "borderColor": "rgb(216, 49, 72)",
+      "borderWidth": "0px",
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(216, 49, 72)",
+      "boxShadow": "none",
+      "fill": "rgb(216, 49, 72)",
+      "opacity": "1",
+      "label": "Unchecked with error"
+    },
+    "errC": {
+      "w": 18,
+      "h": 18,
+      "borderColor": "rgb(42, 120, 198)",
+      "borderWidth": "0px",
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(42, 120, 198)",
+      "boxShadow": "none",
+      "fill": "rgb(42, 120, 198)",
+      "opacity": "1",
+      "label": "Checked with error"
+    },
+    "small": null,
+    "medium": null,
+    "large": null,
+    "helpers": [
+      {
+        "text": "This action may have unintended consequences",
+        "color": "rgb(82, 89, 105)",
+        "iconColor": "rgb(255, 176, 32)"
+      },
+      {
+        "text": "Review this selection carefully",
+        "color": "rgb(82, 89, 105)",
+        "iconColor": "rgb(255, 176, 32)"
+      },
+      {
+        "text": "This option is currently unavailable",
+        "color": "rgb(82, 89, 105)",
+        "iconColor": "rgb(255, 176, 32)"
+      },
+      {
+        "text": "This field is required",
+        "color": "rgb(82, 89, 105)",
+        "iconColor": "rgb(216, 49, 72)"
+      }
+    ],
+    "groupErrorLegend": null
+  },
+  "refRadio": {
+    "unchecked": {
+      "w": 18,
+      "h": 18,
+      "borderColor": "rgb(191, 198, 212)",
+      "borderWidth": "2px",
+      "bg": "rgb(255, 255, 255)",
+      "color": "rgb(55, 63, 78)",
+      "boxShadow": "none",
+      "fill": "rgb(0, 0, 0)",
+      "opacity": "1",
+      "label": "Option 1"
+    },
+    "checked": {
+      "w": 18,
+      "h": 18,
+      "borderColor": "rgb(42, 120, 198)",
+      "borderWidth": "2px",
+      "bg": "rgb(255, 255, 255)",
+      "color": "rgb(55, 63, 78)",
+      "boxShadow": "none",
+      "fill": "rgb(0, 0, 0)",
+      "opacity": "1",
+      "label": "Option 2"
+    },
+    "warnU": {
+      "w": 18,
+      "h": 18,
+      "borderColor": "rgb(255, 176, 32)",
+      "borderWidth": "2px",
+      "bg": "rgb(255, 255, 255)",
+      "color": "rgb(55, 63, 78)",
+      "boxShadow": "none",
+      "fill": "rgb(0, 0, 0)",
+      "opacity": "1",
+      "label": "Unchecked with warning"
+    },
+    "warnC": {
+      "w": 18,
+      "h": 18,
+      "borderColor": "rgb(42, 120, 198)",
+      "borderWidth": "2px",
+      "bg": "rgb(255, 255, 255)",
+      "color": "rgb(55, 63, 78)",
+      "boxShadow": "rgb(255, 176, 32) 0px 0px 0px 1px",
+      "fill": "rgb(0, 0, 0)",
+      "opacity": "1",
+      "label": "Checked with warning"
+    },
+    "errU": {
+      "w": 18,
+      "h": 18,
+      "borderColor": "rgb(216, 49, 72)",
+      "borderWidth": "2px",
+      "bg": "rgb(255, 255, 255)",
+      "color": "rgb(55, 63, 78)",
+      "boxShadow": "none",
+      "fill": "rgb(0, 0, 0)",
+      "opacity": "1",
+      "label": "Unchecked with error"
+    },
+    "errC": {
+      "w": 18,
+      "h": 18,
+      "borderColor": "rgb(42, 120, 198)",
+      "borderWidth": "2px",
+      "bg": "rgb(255, 255, 255)",
+      "color": "rgb(55, 63, 78)",
+      "boxShadow": "rgb(216, 49, 72) 0px 0px 0px 2px",
+      "fill": "rgb(0, 0, 0)",
+      "opacity": "1",
+      "label": "Checked with error"
+    },
+    "small": {
+      "w": 14,
+      "h": 14,
+      "borderColor": "rgb(191, 198, 212)",
+      "borderWidth": "2px",
+      "bg": "rgb(255, 255, 255)",
+      "color": "rgb(55, 63, 78)",
+      "boxShadow": "none",
+      "fill": "rgb(0, 0, 0)",
+      "opacity": "1",
+      "label": "Small"
+    },
+    "medium": {
+      "w": 18,
+      "h": 18,
+      "borderColor": "rgb(42, 120, 198)",
+      "borderWidth": "2px",
+      "bg": "rgb(255, 255, 255)",
+      "color": "rgb(55, 63, 78)",
+      "boxShadow": "none",
+      "fill": "rgb(0, 0, 0)",
+      "opacity": "1",
+      "label": "Medium (default)"
+    },
+    "large": {
+      "w": 22,
+      "h": 22,
+      "borderColor": "rgb(191, 198, 212)",
+      "borderWidth": "2px",
+      "bg": "rgb(255, 255, 255)",
+      "color": "rgb(55, 63, 78)",
+      "boxShadow": "none",
+      "fill": "rgb(0, 0, 0)",
+      "opacity": "1",
+      "label": "Large"
+    },
+    "helpers": [],
+    "groupErrorLegend": null
+  },
+  "convRadio": {
+    "unchecked": {
+      "w": 18,
+      "h": 18,
+      "borderColor": "rgb(82, 89, 105)",
+      "borderWidth": "0px",
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(82, 89, 105)",
+      "boxShadow": "none",
+      "fill": "rgb(82, 89, 105)",
+      "opacity": "1",
+      "label": "Option 1"
+    },
+    "checked": {
+      "w": 18,
+      "h": 18,
+      "borderColor": "rgb(42, 120, 198)",
+      "borderWidth": "0px",
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(42, 120, 198)",
+      "boxShadow": "none",
+      "fill": "rgb(42, 120, 198)",
+      "opacity": "1",
+      "label": "Option 2"
+    },
+    "warnU": {
+      "w": 18,
+      "h": 18,
+      "borderColor": "rgb(255, 176, 32)",
+      "borderWidth": "0px",
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(255, 176, 32)",
+      "boxShadow": "none",
+      "fill": "rgb(255, 176, 32)",
+      "opacity": "1",
+      "label": "Unchecked with warning"
+    },
+    "warnC": {
+      "w": 18,
+      "h": 18,
+      "borderColor": "rgb(42, 120, 198)",
+      "borderWidth": "0px",
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(42, 120, 198)",
+      "boxShadow": "none",
+      "fill": "rgb(42, 120, 198)",
+      "opacity": "1",
+      "label": "Checked with warning"
+    },
+    "errU": {
+      "w": 18,
+      "h": 18,
+      "borderColor": "rgb(216, 49, 72)",
+      "borderWidth": "0px",
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(216, 49, 72)",
+      "boxShadow": "none",
+      "fill": "rgb(216, 49, 72)",
+      "opacity": "1",
+      "label": "Unchecked with error"
+    },
+    "errC": {
+      "w": 18,
+      "h": 18,
+      "borderColor": "rgb(42, 120, 198)",
+      "borderWidth": "0px",
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(42, 120, 198)",
+      "boxShadow": "none",
+      "fill": "rgb(42, 120, 198)",
+      "opacity": "1",
+      "label": "Checked with error"
+    },
+    "small": {
+      "w": 14,
+      "h": 14,
+      "borderColor": "rgb(82, 89, 105)",
+      "borderWidth": "0px",
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(82, 89, 105)",
+      "boxShadow": "none",
+      "fill": "rgb(82, 89, 105)",
+      "opacity": "1",
+      "label": "Small"
+    },
+    "medium": {
+      "w": 18,
+      "h": 18,
+      "borderColor": "rgb(42, 120, 198)",
+      "borderWidth": "0px",
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(42, 120, 198)",
+      "boxShadow": "none",
+      "fill": "rgb(42, 120, 198)",
+      "opacity": "1",
+      "label": "Medium (default)"
+    },
+    "large": {
+      "w": 22,
+      "h": 22,
+      "borderColor": "rgb(82, 89, 105)",
+      "borderWidth": "0px",
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(82, 89, 105)",
+      "boxShadow": "none",
+      "fill": "rgb(82, 89, 105)",
+      "opacity": "1",
+      "label": "Large"
+    },
+    "helpers": [
+      {
+        "text": "This action may have unintended consequences",
+        "color": "rgb(82, 89, 105)",
+        "iconColor": "rgb(255, 176, 32)"
+      },
+      {
+        "text": "Review this selection carefully",
+        "color": "rgb(82, 89, 105)",
+        "iconColor": "rgb(255, 176, 32)"
+      },
+      {
+        "text": "This option is currently unavailable",
+        "color": "rgb(82, 89, 105)",
+        "iconColor": "rgb(255, 176, 32)"
+      },
+      {
+        "text": "This field is required",
+        "color": "rgb(82, 89, 105)",
+        "iconColor": "rgb(216, 49, 72)"
+      }
+    ],
+    "groupErrorLegend": null
+  },
+  "refSizes": {
+    "unchecked": {
+      "w": 18,
+      "h": 18,
+      "borderColor": "rgb(191, 198, 212)",
+      "borderWidth": "2px",
+      "bg": "rgb(255, 255, 255)",
+      "color": "rgb(55, 63, 78)",
+      "boxShadow": "none",
+      "fill": "rgb(0, 0, 0)",
+      "opacity": "1",
+      "label": "Option 1"
+    },
+    "checked": {
+      "w": 18,
+      "h": 18,
+      "borderColor": "rgb(42, 120, 198)",
+      "borderWidth": "2px",
+      "bg": "rgb(255, 255, 255)",
+      "color": "rgb(55, 63, 78)",
+      "boxShadow": "none",
+      "fill": "rgb(0, 0, 0)",
+      "opacity": "1",
+      "label": "Option 2"
+    },
+    "warnU": {
+      "w": 18,
+      "h": 18,
+      "borderColor": "rgb(255, 176, 32)",
+      "borderWidth": "2px",
+      "bg": "rgb(255, 255, 255)",
+      "color": "rgb(55, 63, 78)",
+      "boxShadow": "none",
+      "fill": "rgb(0, 0, 0)",
+      "opacity": "1",
+      "label": "Unchecked with warning"
+    },
+    "warnC": {
+      "w": 18,
+      "h": 18,
+      "borderColor": "rgb(42, 120, 198)",
+      "borderWidth": "2px",
+      "bg": "rgb(255, 255, 255)",
+      "color": "rgb(55, 63, 78)",
+      "boxShadow": "rgb(255, 176, 32) 0px 0px 0px 1px",
+      "fill": "rgb(0, 0, 0)",
+      "opacity": "1",
+      "label": "Checked with warning"
+    },
+    "errU": {
+      "w": 18,
+      "h": 18,
+      "borderColor": "rgb(216, 49, 72)",
+      "borderWidth": "2px",
+      "bg": "rgb(255, 255, 255)",
+      "color": "rgb(55, 63, 78)",
+      "boxShadow": "none",
+      "fill": "rgb(0, 0, 0)",
+      "opacity": "1",
+      "label": "Unchecked with error"
+    },
+    "errC": {
+      "w": 18,
+      "h": 18,
+      "borderColor": "rgb(42, 120, 198)",
+      "borderWidth": "2px",
+      "bg": "rgb(255, 255, 255)",
+      "color": "rgb(55, 63, 78)",
+      "boxShadow": "rgb(216, 49, 72) 0px 0px 0px 2px",
+      "fill": "rgb(0, 0, 0)",
+      "opacity": "1",
+      "label": "Checked with error"
+    },
+    "small": {
+      "w": 14,
+      "h": 14,
+      "borderColor": "rgb(191, 198, 212)",
+      "borderWidth": "2px",
+      "bg": "rgb(255, 255, 255)",
+      "color": "rgb(55, 63, 78)",
+      "boxShadow": "none",
+      "fill": "rgb(0, 0, 0)",
+      "opacity": "1",
+      "label": "Small"
+    },
+    "medium": {
+      "w": 18,
+      "h": 18,
+      "borderColor": "rgb(42, 120, 198)",
+      "borderWidth": "2px",
+      "bg": "rgb(255, 255, 255)",
+      "color": "rgb(55, 63, 78)",
+      "boxShadow": "none",
+      "fill": "rgb(0, 0, 0)",
+      "opacity": "1",
+      "label": "Medium (default)"
+    },
+    "large": {
+      "w": 22,
+      "h": 22,
+      "borderColor": "rgb(191, 198, 212)",
+      "borderWidth": "2px",
+      "bg": "rgb(255, 255, 255)",
+      "color": "rgb(55, 63, 78)",
+      "boxShadow": "none",
+      "fill": "rgb(0, 0, 0)",
+      "opacity": "1",
+      "label": "Large"
+    },
+    "helpers": [],
+    "groupErrorLegend": null
+  },
+  "convSizes": {
+    "unchecked": {
+      "w": 18,
+      "h": 18,
+      "borderColor": "rgb(82, 89, 105)",
+      "borderWidth": "0px",
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(82, 89, 105)",
+      "boxShadow": "none",
+      "fill": "rgb(82, 89, 105)",
+      "opacity": "1",
+      "label": "Option 1"
+    },
+    "checked": {
+      "w": 18,
+      "h": 18,
+      "borderColor": "rgb(42, 120, 198)",
+      "borderWidth": "0px",
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(42, 120, 198)",
+      "boxShadow": "none",
+      "fill": "rgb(42, 120, 198)",
+      "opacity": "1",
+      "label": "Option 2"
+    },
+    "warnU": {
+      "w": 18,
+      "h": 18,
+      "borderColor": "rgb(255, 176, 32)",
+      "borderWidth": "0px",
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(255, 176, 32)",
+      "boxShadow": "none",
+      "fill": "rgb(255, 176, 32)",
+      "opacity": "1",
+      "label": "Unchecked with warning"
+    },
+    "warnC": {
+      "w": 18,
+      "h": 18,
+      "borderColor": "rgb(42, 120, 198)",
+      "borderWidth": "0px",
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(42, 120, 198)",
+      "boxShadow": "none",
+      "fill": "rgb(42, 120, 198)",
+      "opacity": "1",
+      "label": "Checked with warning"
+    },
+    "errU": {
+      "w": 18,
+      "h": 18,
+      "borderColor": "rgb(216, 49, 72)",
+      "borderWidth": "0px",
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(216, 49, 72)",
+      "boxShadow": "none",
+      "fill": "rgb(216, 49, 72)",
+      "opacity": "1",
+      "label": "Unchecked with error"
+    },
+    "errC": {
+      "w": 18,
+      "h": 18,
+      "borderColor": "rgb(42, 120, 198)",
+      "borderWidth": "0px",
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(42, 120, 198)",
+      "boxShadow": "none",
+      "fill": "rgb(42, 120, 198)",
+      "opacity": "1",
+      "label": "Checked with error"
+    },
+    "small": {
+      "w": 14,
+      "h": 14,
+      "borderColor": "rgb(82, 89, 105)",
+      "borderWidth": "0px",
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(82, 89, 105)",
+      "boxShadow": "none",
+      "fill": "rgb(82, 89, 105)",
+      "opacity": "1",
+      "label": "Small"
+    },
+    "medium": {
+      "w": 18,
+      "h": 18,
+      "borderColor": "rgb(42, 120, 198)",
+      "borderWidth": "0px",
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(42, 120, 198)",
+      "boxShadow": "none",
+      "fill": "rgb(42, 120, 198)",
+      "opacity": "1",
+      "label": "Medium (default)"
+    },
+    "large": {
+      "w": 22,
+      "h": 22,
+      "borderColor": "rgb(82, 89, 105)",
+      "borderWidth": "0px",
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(82, 89, 105)",
+      "boxShadow": "none",
+      "fill": "rgb(82, 89, 105)",
+      "opacity": "1",
+      "label": "Large"
+    },
+    "helpers": [
+      {
+        "text": "This action may have unintended consequences",
+        "color": "rgb(82, 89, 105)",
+        "iconColor": "rgb(255, 176, 32)"
+      },
+      {
+        "text": "Review this selection carefully",
+        "color": "rgb(82, 89, 105)",
+        "iconColor": "rgb(255, 176, 32)"
+      },
+      {
+        "text": "This option is currently unavailable",
+        "color": "rgb(82, 89, 105)",
+        "iconColor": "rgb(255, 176, 32)"
+      },
+      {
+        "text": "This field is required",
+        "color": "rgb(82, 89, 105)",
+        "iconColor": "rgb(216, 49, 72)"
+      }
+    ],
+    "groupErrorLegend": null
+  },
+  "refCbg": {
+    "unchecked": null,
+    "checked": null,
+    "warnU": null,
+    "warnC": null,
+    "errU": null,
+    "errC": null,
+    "small": null,
+    "medium": null,
+    "large": null,
+    "helpers": [],
+    "groupErrorLegend": {
+      "text": "Notification Preferences *",
+      "color": "rgb(216, 49, 72)",
+      "fontWeight": "600"
+    }
+  },
+  "convCbg": {
+    "unchecked": null,
+    "checked": null,
+    "warnU": null,
+    "warnC": null,
+    "errU": null,
+    "errC": null,
+    "small": null,
+    "medium": null,
+    "large": null,
+    "helpers": [
+      {
+        "text": "Please select at least one notification method",
+        "color": "rgb(82, 89, 105)",
+        "iconColor": "rgb(216, 49, 72)"
+      },
+      {
+        "text": "Marketing emails may contain promotional content",
+        "color": "rgb(82, 89, 105)",
+        "iconColor": "rgb(255, 176, 32)"
+      }
+    ],
+    "groupErrorLegend": {
+      "text": "Notification Preferences *",
+      "color": "rgb(216, 49, 72)",
+      "fontWeight": "600"
+    }
+  }
+}

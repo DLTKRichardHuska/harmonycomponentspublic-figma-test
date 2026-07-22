@@ -1,0 +1,26 @@
+{
+  "name": "{{PACKAGE_NAME}}",
+  "version": "0.0.0-placeholder",
+  "description": "Harmony Design System — {{TARGET_NAME}} (placeholder)",
+  "type": "module",
+  "license": "UNLICENSED",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/",
+    "access": "restricted"
+  },
+  "scripts": {
+    "dev": "node scripts/dev-placeholder.mjs",
+    "build:lib": "node scripts/build-lib-placeholder.mjs",
+    "build": "node scripts/build-lib-placeholder.mjs"
+  },
+  "exports": {
+    "./components": "./src/components/index.ts",
+    "./styles/*": "./src/styles/*"
+  },
+  "files": [
+    "src/components",
+    "src/layouts",
+    "src/styles"
+  ],
+  "peerDependencies": {}
+}

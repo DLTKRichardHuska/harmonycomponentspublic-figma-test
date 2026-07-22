@@ -1,0 +1,1 @@
+export { AccordionsDemo } from './AccordionsDemo';

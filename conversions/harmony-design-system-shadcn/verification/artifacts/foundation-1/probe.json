@@ -1,0 +1,1878 @@
+{
+  "conv": {
+    "cpLight": {
+      "product": "cp",
+      "mode": "light",
+      "h1": "Color System",
+      "headings": [
+        "Usage from npm",
+        "Semi-Light Palette",
+        "Semantic Colors",
+        "Accent Colors",
+        "Accessibility"
+      ],
+      "indicator": "Showing Semi-Light Colors",
+      "swatches": [
+        {
+          "name": "Page Background",
+          "valueLabel": "#E2E4E9",
+          "cssVar": "--page-bg",
+          "bg": "rgb(226, 228, 233)",
+          "inline": "rgb(226, 228, 233)",
+          "bgHex": "#e2e4e9"
+        },
+        {
+          "name": "Cell Background",
+          "valueLabel": "#FFFFFF",
+          "cssVar": "--surface-bg",
+          "bg": "rgb(255, 255, 255)",
+          "inline": "rgb(255, 255, 255)",
+          "bgHex": "#ffffff"
+        },
+        {
+          "name": "Card Background",
+          "valueLabel": "#F7F8FA",
+          "cssVar": "--card-bg",
+          "bg": "rgb(247, 248, 250)",
+          "inline": "rgb(247, 248, 250)",
+          "bgHex": "#f7f8fa"
+        },
+        {
+          "name": "Nav Background",
+          "valueLabel": "#FCFDFF",
+          "cssVar": "--nav-bg",
+          "bg": "rgb(252, 253, 255)",
+          "inline": "rgb(252, 253, 255)",
+          "bgHex": "#fcfdff"
+        },
+        {
+          "name": "Input Background",
+          "valueLabel": "#FFFFFF",
+          "cssVar": "--input-bg",
+          "bg": "rgb(255, 255, 255)",
+          "inline": "rgb(255, 255, 255)",
+          "bgHex": "#ffffff"
+        },
+        {
+          "name": "Input Disabled",
+          "valueLabel": "#EAEAEA",
+          "cssVar": "--input-disabled-bg",
+          "bg": "rgb(234, 234, 234)",
+          "inline": "rgb(234, 234, 234)",
+          "bgHex": "#eaeaea"
+        },
+        {
+          "name": "Table Total",
+          "valueLabel": "rgba(0, 115, 230, 0.15)",
+          "cssVar": "--table-total-bg",
+          "bg": "rgba(0, 115, 230, 0.15)",
+          "inline": "rgba(0, 115, 230, 0.15)",
+          "bgHex": "rgba(0, 115, 230, 0.15)"
+        },
+        {
+          "name": "Border",
+          "valueLabel": "#BFC6D4",
+          "cssVar": "--border-color",
+          "bg": "rgb(191, 198, 212)",
+          "inline": "rgb(191, 198, 212)",
+          "bgHex": "#bfc6d4"
+        },
+        {
+          "name": "Hover",
+          "valueLabel": "#E5E7EB",
+          "cssVar": "--hover-bg",
+          "bg": "rgb(229, 231, 235)",
+          "inline": "rgb(229, 231, 235)",
+          "bgHex": "#e5e7eb"
+        },
+        {
+          "name": "Title Text",
+          "valueLabel": "#373F4E",
+          "cssVar": "--text-primary",
+          "bg": "rgb(55, 63, 78)",
+          "inline": "rgb(55, 63, 78)",
+          "bgHex": "#373f4e"
+        },
+        {
+          "name": "Secondary Text",
+          "valueLabel": "#525969",
+          "cssVar": "--text-secondary",
+          "bg": "rgb(82, 89, 105)",
+          "inline": "rgb(82, 89, 105)",
+          "bgHex": "#525969"
+        },
+        {
+          "name": "Muted Text",
+          "valueLabel": "#6B7280",
+          "cssVar": "--text-muted",
+          "bg": "rgb(107, 114, 128)",
+          "inline": "rgb(107, 114, 128)",
+          "bgHex": "#6b7280"
+        },
+        {
+          "name": "Link",
+          "valueLabel": "#005BB3",
+          "cssVar": "--link-color",
+          "bg": "rgb(0, 91, 179)",
+          "inline": "rgb(0, 91, 179)",
+          "bgHex": "#005bb3"
+        },
+        {
+          "name": "Success",
+          "valueLabel": "#17A871",
+          "cssVar": "--color-success",
+          "bg": "rgb(23, 168, 113)",
+          "inline": "rgb(23, 168, 113)",
+          "bgHex": "#17a871"
+        },
+        {
+          "name": "Warning",
+          "valueLabel": "#FFB020",
+          "cssVar": "--color-warning",
+          "bg": "rgb(255, 176, 32)",
+          "inline": "rgb(255, 176, 32)",
+          "bgHex": "#ffb020"
+        },
+        {
+          "name": "Error",
+          "valueLabel": "#D83148",
+          "cssVar": "--color-error",
+          "bg": "rgb(216, 49, 72)",
+          "inline": "rgb(216, 49, 72)",
+          "bgHex": "#d83148"
+        },
+        {
+          "name": "Info",
+          "valueLabel": "#3366FF",
+          "cssVar": "--color-info",
+          "bg": "rgb(51, 102, 255)",
+          "inline": "rgb(51, 102, 255)",
+          "bgHex": "#3366ff"
+        },
+        {
+          "name": "Theme Primary",
+          "valueLabel": "#2A78C6",
+          "cssVar": "--theme-primary",
+          "bg": "rgb(42, 120, 198)",
+          "inline": "rgb(42, 120, 198)",
+          "bgHex": "#2a78c6"
+        },
+        {
+          "name": "Accent",
+          "valueLabel": "#043852",
+          "cssVar": "--accent-color",
+          "bg": "rgb(4, 56, 82)",
+          "inline": "rgb(4, 56, 82)",
+          "bgHex": "#043852"
+        }
+      ],
+      "h1Fs": "30px",
+      "labelFs": "14px",
+      "pageBg": "rgb(226, 228, 233)",
+      "htmlAttrs": {
+        "class": "",
+        "product": "cp",
+        "dark": false
+      },
+      "title": "Colors | Harmony shadcn",
+      "pageBgHex": "#e2e4e9"
+    },
+    "cpDark": {
+      "product": "cp",
+      "mode": "dark",
+      "h1": "Color System",
+      "headings": [
+        "Usage from npm",
+        "CP Semi-Dark Palette",
+        "Semantic Colors",
+        "Accent Colors",
+        "Accessibility"
+      ],
+      "indicator": "Showing CP Semi-Dark Colors",
+      "swatches": [
+        {
+          "name": "Page Background",
+          "valueLabel": "#1F252E",
+          "cssVar": "--page-bg",
+          "bg": "rgb(31, 37, 46)",
+          "inline": "rgb(31, 37, 46)",
+          "bgHex": "#1f252e"
+        },
+        {
+          "name": "Cell Background",
+          "valueLabel": "#212935",
+          "cssVar": "--surface-bg",
+          "bg": "rgb(33, 41, 53)",
+          "inline": "rgb(33, 41, 53)",
+          "bgHex": "#212935"
+        },
+        {
+          "name": "Card Background",
+          "valueLabel": "#37424D",
+          "cssVar": "--card-bg",
+          "bg": "rgb(55, 66, 77)",
+          "inline": "rgb(55, 66, 77)",
+          "bgHex": "#37424d"
+        },
+        {
+          "name": "Nav Background",
+          "valueLabel": "#333D47",
+          "cssVar": "--nav-bg",
+          "bg": "rgb(51, 61, 71)",
+          "inline": "rgb(51, 61, 71)",
+          "bgHex": "#333d47"
+        },
+        {
+          "name": "Input Background",
+          "valueLabel": "#1F252E",
+          "cssVar": "--input-bg",
+          "bg": "rgb(31, 37, 46)",
+          "inline": "rgb(31, 37, 46)",
+          "bgHex": "#1f252e"
+        },
+        {
+          "name": "Input Disabled",
+          "valueLabel": "#333D47",
+          "cssVar": "--input-disabled-bg",
+          "bg": "rgb(51, 61, 71)",
+          "inline": "rgb(51, 61, 71)",
+          "bgHex": "#333d47"
+        },
+        {
+          "name": "Table Total",
+          "valueLabel": "rgba(89, 172, 255, 0.15)",
+          "cssVar": "--table-total-bg",
+          "bg": "rgba(89, 172, 255, 0.15)",
+          "inline": "rgba(89, 172, 255, 0.15)",
+          "bgHex": "rgba(89, 172, 255, 0.15)"
+        },
+        {
+          "name": "Border",
+          "valueLabel": "#5F6871",
+          "cssVar": "--border-color",
+          "bg": "rgb(95, 104, 113)",
+          "inline": "rgb(95, 104, 113)",
+          "bgHex": "#5f6871"
+        },
+        {
+          "name": "Hover",
+          "valueLabel": "#3D4A5C",
+          "cssVar": "--hover-bg",
+          "bg": "rgb(61, 74, 92)",
+          "inline": "rgb(61, 74, 92)",
+          "bgHex": "#3d4a5c"
+        },
+        {
+          "name": "Title Text",
+          "valueLabel": "#E9ECEF",
+          "cssVar": "--text-primary",
+          "bg": "rgb(233, 236, 239)",
+          "inline": "rgb(233, 236, 239)",
+          "bgHex": "#e9ecef"
+        },
+        {
+          "name": "Secondary Text",
+          "valueLabel": "#B6B6C4",
+          "cssVar": "--text-secondary",
+          "bg": "rgb(182, 182, 196)",
+          "inline": "rgb(182, 182, 196)",
+          "bgHex": "#b6b6c4"
+        },
+        {
+          "name": "Muted Text",
+          "valueLabel": "#BBBBC6",
+          "cssVar": "--text-muted",
+          "bg": "rgb(187, 187, 198)",
+          "inline": "rgb(187, 187, 198)",
+          "bgHex": "#bbbbc6"
+        },
+        {
+          "name": "Link",
+          "valueLabel": "#ADD0FF",
+          "cssVar": "--link-color",
+          "bg": "rgb(173, 208, 255)",
+          "inline": "rgb(173, 208, 255)",
+          "bgHex": "#add0ff"
+        },
+        {
+          "name": "Success",
+          "valueLabel": "#00E78E",
+          "cssVar": "--color-success",
+          "bg": "rgb(0, 231, 142)",
+          "inline": "rgb(0, 231, 142)",
+          "bgHex": "#00e78e"
+        },
+        {
+          "name": "Warning",
+          "valueLabel": "#F9AF00",
+          "cssVar": "--color-warning",
+          "bg": "rgb(249, 175, 0)",
+          "inline": "rgb(249, 175, 0)",
+          "bgHex": "#f9af00"
+        },
+        {
+          "name": "Error",
+          "valueLabel": "#F46286",
+          "cssVar": "--color-error",
+          "bg": "rgb(244, 98, 134)",
+          "inline": "rgb(244, 98, 134)",
+          "bgHex": "#f46286"
+        },
+        {
+          "name": "Info",
+          "valueLabel": "#00ADFD",
+          "cssVar": "--color-info",
+          "bg": "rgb(0, 173, 253)",
+          "inline": "rgb(0, 173, 253)",
+          "bgHex": "#00adfd"
+        },
+        {
+          "name": "Theme Primary",
+          "valueLabel": "#59ACFF",
+          "cssVar": "--theme-primary",
+          "bg": "rgb(89, 172, 255)",
+          "inline": "rgb(89, 172, 255)",
+          "bgHex": "#59acff"
+        },
+        {
+          "name": "Accent",
+          "valueLabel": "#043852",
+          "cssVar": "--accent-color",
+          "bg": "rgb(4, 56, 82)",
+          "inline": "rgb(4, 56, 82)",
+          "bgHex": "#043852"
+        }
+      ],
+      "h1Fs": "30px",
+      "labelFs": "14px",
+      "pageBg": "rgb(31, 37, 46)",
+      "htmlAttrs": {
+        "class": "dark",
+        "product": "cp",
+        "dark": true
+      },
+      "title": "Colors | Harmony shadcn",
+      "pageBgHex": "#1f252e"
+    },
+    "vpDark": {
+      "product": "vp",
+      "mode": "dark",
+      "h1": "Color System",
+      "headings": [
+        "Usage from npm",
+        "Dark Mode Palette",
+        "Semantic Colors",
+        "Accent Colors",
+        "Accessibility"
+      ],
+      "indicator": "Showing Dark Mode Colors",
+      "swatches": [
+        {
+          "name": "Page Background",
+          "valueLabel": "#15171A",
+          "cssVar": "--page-bg",
+          "bg": "rgb(21, 23, 26)",
+          "inline": "rgb(21, 23, 26)",
+          "bgHex": "#15171a"
+        },
+        {
+          "name": "Cell Background",
+          "valueLabel": "#1A1C1F",
+          "cssVar": "--surface-bg",
+          "bg": "rgb(26, 28, 31)",
+          "inline": "rgb(26, 28, 31)",
+          "bgHex": "#1a1c1f"
+        },
+        {
+          "name": "Card Background",
+          "valueLabel": "#1F2124",
+          "cssVar": "--card-bg",
+          "bg": "rgb(31, 33, 36)",
+          "inline": "rgb(31, 33, 36)",
+          "bgHex": "#1f2124"
+        },
+        {
+          "name": "Nav Background",
+          "valueLabel": "#1A1C1F",
+          "cssVar": "--nav-bg",
+          "bg": "rgb(26, 28, 31)",
+          "inline": "rgb(26, 28, 31)",
+          "bgHex": "#1a1c1f"
+        },
+        {
+          "name": "Input Background",
+          "valueLabel": "#1F2124",
+          "cssVar": "--input-bg",
+          "bg": "rgb(31, 33, 36)",
+          "inline": "rgb(31, 33, 36)",
+          "bgHex": "#1f2124"
+        },
+        {
+          "name": "Input Disabled",
+          "valueLabel": "#2A2D32",
+          "cssVar": "--input-disabled-bg",
+          "bg": "rgb(42, 45, 50)",
+          "inline": "rgb(42, 45, 50)",
+          "bgHex": "#2a2d32"
+        },
+        {
+          "name": "Table Total",
+          "valueLabel": "rgba(89, 172, 255, 0.15)",
+          "cssVar": "--table-total-bg",
+          "bg": "rgba(89, 172, 255, 0.15)",
+          "inline": "rgba(89, 172, 255, 0.15)",
+          "bgHex": "rgba(89, 172, 255, 0.15)"
+        },
+        {
+          "name": "Border",
+          "valueLabel": "#2A2D32",
+          "cssVar": "--border-color",
+          "bg": "rgb(42, 45, 50)",
+          "inline": "rgb(42, 45, 50)",
+          "bgHex": "#2a2d32"
+        },
+        {
+          "name": "Hover",
+          "valueLabel": "#2A2D32",
+          "cssVar": "--hover-bg",
+          "bg": "rgb(42, 45, 50)",
+          "inline": "rgb(42, 45, 50)",
+          "bgHex": "#2a2d32"
+        },
+        {
+          "name": "Title Text",
+          "valueLabel": "#FAFAFA",
+          "cssVar": "--text-primary",
+          "bg": "rgb(250, 250, 250)",
+          "inline": "rgb(250, 250, 250)",
+          "bgHex": "#fafafa"
+        },
+        {
+          "name": "Secondary Text",
+          "valueLabel": "#B5B5BC",
+          "cssVar": "--text-secondary",
+          "bg": "rgb(181, 181, 188)",
+          "inline": "rgb(181, 181, 188)",
+          "bgHex": "#b5b5bc"
+        },
+        {
+          "name": "Muted Text",
+          "valueLabel": "#B5B5BC",
+          "cssVar": "--text-muted",
+          "bg": "rgb(181, 181, 188)",
+          "inline": "rgb(181, 181, 188)",
+          "bgHex": "#b5b5bc"
+        },
+        {
+          "name": "Link",
+          "valueLabel": "#ADD0FF",
+          "cssVar": "--link-color",
+          "bg": "rgb(173, 208, 255)",
+          "inline": "rgb(173, 208, 255)",
+          "bgHex": "#add0ff"
+        },
+        {
+          "name": "Success",
+          "valueLabel": "#00E78E",
+          "cssVar": "--color-success",
+          "bg": "rgb(0, 231, 142)",
+          "inline": "rgb(0, 231, 142)",
+          "bgHex": "#00e78e"
+        },
+        {
+          "name": "Warning",
+          "valueLabel": "#F9AF00",
+          "cssVar": "--color-warning",
+          "bg": "rgb(249, 175, 0)",
+          "inline": "rgb(249, 175, 0)",
+          "bgHex": "#f9af00"
+        },
+        {
+          "name": "Error",
+          "valueLabel": "#F46286",
+          "cssVar": "--color-error",
+          "bg": "rgb(244, 98, 134)",
+          "inline": "rgb(244, 98, 134)",
+          "bgHex": "#f46286"
+        },
+        {
+          "name": "Info",
+          "valueLabel": "#00ADFD",
+          "cssVar": "--color-info",
+          "bg": "rgb(0, 173, 253)",
+          "inline": "rgb(0, 173, 253)",
+          "bgHex": "#00adfd"
+        },
+        {
+          "name": "Theme Primary",
+          "valueLabel": "#59ACFF",
+          "cssVar": "--theme-primary",
+          "bg": "rgb(89, 172, 255)",
+          "inline": "rgb(89, 172, 255)",
+          "bgHex": "#59acff"
+        },
+        {
+          "name": "Accent",
+          "valueLabel": "#043852",
+          "cssVar": "--accent-color",
+          "bg": "rgb(4, 56, 82)",
+          "inline": "rgb(4, 56, 82)",
+          "bgHex": "#043852"
+        }
+      ],
+      "h1Fs": "30px",
+      "labelFs": "14px",
+      "pageBg": "rgb(21, 23, 26)",
+      "htmlAttrs": {
+        "class": "dark",
+        "product": "vp",
+        "dark": true
+      },
+      "title": "Colors | Harmony shadcn",
+      "pageBgHex": "#15171a"
+    }
+  },
+  "ref": {
+    "light": {
+      "mode": "light",
+      "h1": "Color System",
+      "headings": [
+        "Semi-Light Palette",
+        "Semantic Colors",
+        "Accent Colors",
+        "Accessibility"
+      ],
+      "indicator": "Showing Semi-Light Colors",
+      "swatches": [
+        {
+          "key": "pageBackground",
+          "name": "",
+          "valueLabel": "",
+          "bg": "rgb(226, 228, 233)",
+          "bgHex": "#e2e4e9"
+        },
+        {
+          "key": "cardBackground",
+          "name": "",
+          "valueLabel": "",
+          "bg": "rgb(247, 248, 250)",
+          "bgHex": "#f7f8fa"
+        },
+        {
+          "key": "navBackground",
+          "name": "",
+          "valueLabel": "",
+          "bg": "rgb(252, 253, 255)",
+          "bgHex": "#fcfdff"
+        },
+        {
+          "key": "inputBackground",
+          "name": "",
+          "valueLabel": "",
+          "bg": "rgb(255, 255, 255)",
+          "bgHex": "#ffffff"
+        },
+        {
+          "key": "inputDisabled",
+          "name": "",
+          "valueLabel": "",
+          "bg": "rgb(234, 234, 234)",
+          "bgHex": "#eaeaea"
+        },
+        {
+          "key": "cellBackground",
+          "name": "",
+          "valueLabel": "",
+          "bg": "rgb(255, 255, 255)",
+          "bgHex": "#ffffff"
+        },
+        {
+          "key": "hover",
+          "name": "",
+          "valueLabel": "",
+          "bg": "rgb(229, 231, 235)",
+          "bgHex": "#e5e7eb"
+        },
+        {
+          "key": "tableTotal",
+          "name": "",
+          "valueLabel": "",
+          "bg": "rgba(0, 115, 230, 0.15)",
+          "bgHex": "rgba(0, 115, 230, 0.15)"
+        },
+        {
+          "key": "titleText",
+          "name": "",
+          "valueLabel": "",
+          "bg": "rgb(55, 63, 78)",
+          "bgHex": "#373f4e"
+        },
+        {
+          "key": "secondaryText",
+          "name": "",
+          "valueLabel": "",
+          "bg": "rgb(82, 89, 105)",
+          "bgHex": "#525969"
+        },
+        {
+          "key": "mutedText",
+          "name": "",
+          "valueLabel": "",
+          "bg": "rgb(107, 114, 128)",
+          "bgHex": "#6b7280"
+        },
+        {
+          "key": "border",
+          "name": "",
+          "valueLabel": "",
+          "bg": "rgb(191, 198, 212)",
+          "bgHex": "#bfc6d4"
+        },
+        {
+          "key": "link",
+          "name": "",
+          "valueLabel": "",
+          "bg": "rgb(0, 91, 179)",
+          "bgHex": "#005bb3"
+        },
+        {
+          "key": "",
+          "name": "Success",
+          "valueLabel": "#17A871",
+          "bg": "rgb(23, 168, 113)",
+          "bgHex": "#17a871"
+        },
+        {
+          "key": "",
+          "name": "Warning",
+          "valueLabel": "#FFB020",
+          "bg": "rgb(255, 176, 32)",
+          "bgHex": "#ffb020"
+        },
+        {
+          "key": "",
+          "name": "Error",
+          "valueLabel": "#D83148",
+          "bg": "rgb(216, 49, 72)",
+          "bgHex": "#d83148"
+        },
+        {
+          "key": "",
+          "name": "Info",
+          "valueLabel": "#3366FF",
+          "bg": "rgb(51, 102, 255)",
+          "bgHex": "#3366ff"
+        }
+      ],
+      "semantic": [
+        {
+          "key": "success",
+          "name": "Success",
+          "valueLabel": "#17A871",
+          "bg": "rgb(23, 168, 113)",
+          "bgHex": "#17a871"
+        },
+        {
+          "key": "warning",
+          "name": "Warning",
+          "valueLabel": "#FFB020",
+          "bg": "rgb(255, 176, 32)",
+          "bgHex": "#ffb020"
+        },
+        {
+          "key": "error",
+          "name": "Error",
+          "valueLabel": "#D83148",
+          "bg": "rgb(216, 49, 72)",
+          "bgHex": "#d83148"
+        },
+        {
+          "key": "info",
+          "name": "Info",
+          "valueLabel": "#3366FF",
+          "bg": "rgb(51, 102, 255)",
+          "bgHex": "#3366ff"
+        }
+      ],
+      "sections": [
+        {
+          "id": "semi-light-palette",
+          "hidden": false,
+          "title": "Semi-Light Palette"
+        },
+        {
+          "id": "cp-semi-dark-palette",
+          "hidden": true,
+          "title": "CP Semi-Dark Palette"
+        },
+        {
+          "id": "vp-ppm-maconomy-dark-palette",
+          "hidden": true,
+          "title": "Dark Mode Palette"
+        },
+        {
+          "id": "semantic-colors-section",
+          "hidden": false,
+          "title": "Semantic Colors"
+        },
+        {
+          "id": "",
+          "hidden": false,
+          "title": "Accent Colors"
+        },
+        {
+          "id": "accessibility",
+          "hidden": false,
+          "title": "Accessibility"
+        }
+      ],
+      "h1Fs": "36px",
+      "pageBg": "rgb(226, 228, 233)",
+      "htmlClass": "theme-cp",
+      "dark": false,
+      "pageBgHex": "#e2e4e9"
+    },
+    "dark": {
+      "mode": "dark",
+      "h1": "Color System",
+      "headings": [
+        "CP Semi-Dark Palette",
+        "Semantic Colors",
+        "Accent Colors",
+        "Accessibility"
+      ],
+      "indicator": "Showing CP Semi-Dark Colors",
+      "swatches": [
+        {
+          "key": "pageBackground",
+          "name": "",
+          "valueLabel": "",
+          "bg": "rgb(31, 37, 46)",
+          "bgHex": "#1f252e"
+        },
+        {
+          "key": "cardBackground",
+          "name": "",
+          "valueLabel": "",
+          "bg": "rgb(55, 66, 77)",
+          "bgHex": "#37424d"
+        },
+        {
+          "key": "navBackground",
+          "name": "",
+          "valueLabel": "",
+          "bg": "rgb(51, 61, 71)",
+          "bgHex": "#333d47"
+        },
+        {
+          "key": "inputBackground",
+          "name": "",
+          "valueLabel": "",
+          "bg": "rgb(31, 37, 46)",
+          "bgHex": "#1f252e"
+        },
+        {
+          "key": "inputDisabled",
+          "name": "",
+          "valueLabel": "",
+          "bg": "rgb(51, 61, 71)",
+          "bgHex": "#333d47"
+        },
+        {
+          "key": "cellBackground",
+          "name": "",
+          "valueLabel": "",
+          "bg": "rgb(33, 41, 53)",
+          "bgHex": "#212935"
+        },
+        {
+          "key": "hover",
+          "name": "",
+          "valueLabel": "",
+          "bg": "rgb(61, 74, 92)",
+          "bgHex": "#3d4a5c"
+        },
+        {
+          "key": "tableTotal",
+          "name": "",
+          "valueLabel": "",
+          "bg": "rgba(89, 172, 255, 0.15)",
+          "bgHex": "rgba(89, 172, 255, 0.15)"
+        },
+        {
+          "key": "titleText",
+          "name": "",
+          "valueLabel": "",
+          "bg": "rgb(233, 236, 239)",
+          "bgHex": "#e9ecef"
+        },
+        {
+          "key": "secondaryText",
+          "name": "",
+          "valueLabel": "",
+          "bg": "rgb(182, 182, 196)",
+          "bgHex": "#b6b6c4"
+        },
+        {
+          "key": "mutedText",
+          "name": "",
+          "valueLabel": "",
+          "bg": "rgb(187, 187, 198)",
+          "bgHex": "#bbbbc6"
+        },
+        {
+          "key": "border",
+          "name": "",
+          "valueLabel": "",
+          "bg": "rgb(95, 104, 113)",
+          "bgHex": "#5f6871"
+        },
+        {
+          "key": "link",
+          "name": "",
+          "valueLabel": "",
+          "bg": "rgb(173, 208, 255)",
+          "bgHex": "#add0ff"
+        },
+        {
+          "key": "",
+          "name": "Success",
+          "valueLabel": "#00E78E",
+          "bg": "rgb(0, 231, 142)",
+          "bgHex": "#00e78e"
+        },
+        {
+          "key": "",
+          "name": "Warning",
+          "valueLabel": "#F9AF00",
+          "bg": "rgb(249, 175, 0)",
+          "bgHex": "#f9af00"
+        },
+        {
+          "key": "",
+          "name": "Error",
+          "valueLabel": "#F46286",
+          "bg": "rgb(244, 98, 134)",
+          "bgHex": "#f46286"
+        },
+        {
+          "key": "",
+          "name": "Info",
+          "valueLabel": "#00ADFD",
+          "bg": "rgb(0, 173, 253)",
+          "bgHex": "#00adfd"
+        }
+      ],
+      "semantic": [
+        {
+          "key": "success",
+          "name": "Success",
+          "valueLabel": "#00E78E",
+          "bg": "rgb(0, 231, 142)",
+          "bgHex": "#00e78e"
+        },
+        {
+          "key": "warning",
+          "name": "Warning",
+          "valueLabel": "#F9AF00",
+          "bg": "rgb(249, 175, 0)",
+          "bgHex": "#f9af00"
+        },
+        {
+          "key": "error",
+          "name": "Error",
+          "valueLabel": "#F46286",
+          "bg": "rgb(244, 98, 134)",
+          "bgHex": "#f46286"
+        },
+        {
+          "key": "info",
+          "name": "Info",
+          "valueLabel": "#00ADFD",
+          "bg": "rgb(0, 173, 253)",
+          "bgHex": "#00adfd"
+        }
+      ],
+      "sections": [
+        {
+          "id": "semi-light-palette",
+          "hidden": true,
+          "title": "Semi-Light Palette"
+        },
+        {
+          "id": "cp-semi-dark-palette",
+          "hidden": false,
+          "title": "CP Semi-Dark Palette"
+        },
+        {
+          "id": "vp-ppm-maconomy-dark-palette",
+          "hidden": true,
+          "title": "Dark Mode Palette"
+        },
+        {
+          "id": "semantic-colors-section",
+          "hidden": false,
+          "title": "Semantic Colors"
+        },
+        {
+          "id": "",
+          "hidden": false,
+          "title": "Accent Colors"
+        },
+        {
+          "id": "accessibility",
+          "hidden": false,
+          "title": "Accessibility"
+        }
+      ],
+      "h1Fs": "36px",
+      "pageBg": "rgb(31, 37, 46)",
+      "htmlClass": "dark theme-cp",
+      "dark": true,
+      "pageBgHex": "#1f252e"
+    }
+  },
+  "typography": {
+    "ref": {
+      "h1": "Typography",
+      "headings": [
+        "Display",
+        "Headings",
+        "Body",
+        "Supporting Styles",
+        "Font Families",
+        "Type Scale Reference",
+        "Usage Guidelines"
+      ],
+      "measured": [
+        {
+          "sel": ".text-display-xl",
+          "text": "The quick brown fox",
+          "fontSize": "60px",
+          "fontFamily": "Lexend",
+          "fontWeight": "700",
+          "lineHeight": "75px"
+        },
+        {
+          "sel": ".text-display-l",
+          "text": "The quick brown fox jumps",
+          "fontSize": "48px",
+          "fontFamily": "Lexend",
+          "fontWeight": "700",
+          "lineHeight": "60px"
+        },
+        {
+          "sel": ".text-display-m",
+          "text": "The quick brown fox jumps over",
+          "fontSize": "36px",
+          "fontFamily": "Lexend",
+          "fontWeight": "700",
+          "lineHeight": "45px"
+        },
+        {
+          "sel": ".text-heading-xl",
+          "text": "Heading Extra Large",
+          "fontSize": "30px",
+          "fontFamily": "Lexend",
+          "fontWeight": "600",
+          "lineHeight": "41.25px"
+        },
+        {
+          "sel": ".text-heading-l",
+          "text": "Heading Large",
+          "fontSize": "24px",
+          "fontFamily": "Lexend",
+          "fontWeight": "600",
+          "lineHeight": "33px"
+        },
+        {
+          "sel": ".text-heading-m",
+          "text": "Heading Medium",
+          "fontSize": "20px",
+          "fontFamily": "Lexend",
+          "fontWeight": "600",
+          "lineHeight": "27.5px"
+        },
+        {
+          "sel": ".text-heading-s",
+          "text": "Heading Small",
+          "fontSize": "18px",
+          "fontFamily": "Lexend",
+          "fontWeight": "500",
+          "lineHeight": "24.75px"
+        },
+        {
+          "sel": "h1",
+          "text": "Typography",
+          "fontSize": "36px",
+          "fontFamily": "Lexend",
+          "fontWeight": "700",
+          "lineHeight": "45px"
+        }
+      ],
+      "large": [
+        {
+          "text": "Typography",
+          "fontSize": "36px",
+          "fontFamily": "Lexend",
+          "fontWeight": "700"
+        },
+        {
+          "text": "A comprehensive typography system based ",
+          "fontSize": "18px",
+          "fontFamily": "Figtree",
+          "fontWeight": "400"
+        },
+        {
+          "text": "Display",
+          "fontSize": "24px",
+          "fontFamily": "Lexend",
+          "fontWeight": "700"
+        },
+        {
+          "text": "Large, bold text for hero sections, mark",
+          "fontSize": "14px",
+          "fontFamily": "Figtree",
+          "fontWeight": "400"
+        },
+        {
+          "text": "Display XL",
+          "fontSize": "18px",
+          "fontFamily": "Lexend",
+          "fontWeight": "600"
+        },
+        {
+          "text": "60px / 3.75rem - Hero headlines, landing",
+          "fontSize": "14px",
+          "fontFamily": "Figtree",
+          "fontWeight": "400"
+        },
+        {
+          "text": "The quick brown fox",
+          "fontSize": "60px",
+          "fontFamily": "Lexend",
+          "fontWeight": "700"
+        },
+        {
+          "text": "Display L",
+          "fontSize": "18px",
+          "fontFamily": "Lexend",
+          "fontWeight": "600"
+        },
+        {
+          "text": "48px / 3rem - Section heroes, major anno",
+          "fontSize": "14px",
+          "fontFamily": "Figtree",
+          "fontWeight": "400"
+        },
+        {
+          "text": "The quick brown fox jumps",
+          "fontSize": "48px",
+          "fontFamily": "Lexend",
+          "fontWeight": "700"
+        },
+        {
+          "text": "Display M",
+          "fontSize": "18px",
+          "fontFamily": "Lexend",
+          "fontWeight": "600"
+        },
+        {
+          "text": "36px / 2.25rem - Feature highlights, car",
+          "fontSize": "14px",
+          "fontFamily": "Figtree",
+          "fontWeight": "400"
+        },
+        {
+          "text": "The quick brown fox jumps over",
+          "fontSize": "36px",
+          "fontFamily": "Lexend",
+          "fontWeight": "700"
+        },
+        {
+          "text": "Headings",
+          "fontSize": "24px",
+          "fontFamily": "Lexend",
+          "fontWeight": "700"
+        },
+        {
+          "text": "Semantic hierarchy for page structure. U",
+          "fontSize": "14px",
+          "fontFamily": "Figtree",
+          "fontWeight": "400"
+        },
+        {
+          "text": "Heading XL",
+          "fontSize": "18px",
+          "fontFamily": "Lexend",
+          "fontWeight": "600"
+        },
+        {
+          "text": "30px / 1.875rem - Page titles, primary s",
+          "fontSize": "14px",
+          "fontFamily": "Figtree",
+          "fontWeight": "400"
+        },
+        {
+          "text": "Heading Extra Large",
+          "fontSize": "30px",
+          "fontFamily": "Lexend",
+          "fontWeight": "600"
+        },
+        {
+          "text": "Heading L",
+          "fontSize": "18px",
+          "fontFamily": "Lexend",
+          "fontWeight": "600"
+        },
+        {
+          "text": "24px / 1.5rem - Major sections, card tit",
+          "fontSize": "14px",
+          "fontFamily": "Figtree",
+          "fontWeight": "400"
+        },
+        {
+          "text": "Heading Large",
+          "fontSize": "24px",
+          "fontFamily": "Lexend",
+          "fontWeight": "600"
+        },
+        {
+          "text": "Heading M",
+          "fontSize": "18px",
+          "fontFamily": "Lexend",
+          "fontWeight": "600"
+        },
+        {
+          "text": "20px / 1.25rem - Subsections, modal titl",
+          "fontSize": "14px",
+          "fontFamily": "Figtree",
+          "fontWeight": "400"
+        },
+        {
+          "text": "Heading Medium",
+          "fontSize": "20px",
+          "fontFamily": "Lexend",
+          "fontWeight": "600"
+        },
+        {
+          "text": "Heading S",
+          "fontSize": "18px",
+          "fontFamily": "Lexend",
+          "fontWeight": "600"
+        },
+        {
+          "text": "18px / 1.125rem - Minor sections, group ",
+          "fontSize": "14px",
+          "fontFamily": "Figtree",
+          "fontWeight": "400"
+        },
+        {
+          "text": "Heading Small",
+          "fontSize": "18px",
+          "fontFamily": "Lexend",
+          "fontWeight": "500"
+        },
+        {
+          "text": "Body",
+          "fontSize": "24px",
+          "fontFamily": "Lexend",
+          "fontWeight": "700"
+        },
+        {
+          "text": "Primary content text for readability and",
+          "fontSize": "14px",
+          "fontFamily": "Figtree",
+          "fontWeight": "400"
+        },
+        {
+          "text": "Body Default",
+          "fontSize": "18px",
+          "fontFamily": "Lexend",
+          "fontWeight": "600"
+        }
+      ],
+      "nav": [
+        "Display",
+        "Headings",
+        "Body",
+        "Supporting",
+        "Fonts"
+      ],
+      "tableRows": 13,
+      "title": "Typography | Design System"
+    },
+    "conv": {
+      "h1": "Typography",
+      "headings": [
+        "Usage from npm",
+        "Display",
+        "Headings",
+        "Body",
+        "Supporting",
+        "Font Families",
+        "Style table"
+      ],
+      "measured": [
+        {
+          "sel": ".text-display-xl",
+          "text": "The quick brown fox",
+          "fontSize": "60px",
+          "fontFamily": "Lexend",
+          "fontWeight": "700",
+          "lineHeight": "75px"
+        },
+        {
+          "sel": ".text-display-l",
+          "text": "The quick brown fox jumps",
+          "fontSize": "48px",
+          "fontFamily": "Lexend",
+          "fontWeight": "700",
+          "lineHeight": "60px"
+        },
+        {
+          "sel": ".text-display-m",
+          "text": "The quick brown fox jumps over",
+          "fontSize": "36px",
+          "fontFamily": "Lexend",
+          "fontWeight": "700",
+          "lineHeight": "45px"
+        },
+        {
+          "sel": ".text-heading-xl",
+          "text": "Heading Extra Large",
+          "fontSize": "30px",
+          "fontFamily": "Lexend",
+          "fontWeight": "600",
+          "lineHeight": "45px"
+        },
+        {
+          "sel": ".text-heading-l",
+          "text": "Heading Large",
+          "fontSize": "24px",
+          "fontFamily": "Lexend",
+          "fontWeight": "600",
+          "lineHeight": "36px"
+        },
+        {
+          "sel": ".text-heading-m",
+          "text": "Heading Medium",
+          "fontSize": "20px",
+          "fontFamily": "Lexend",
+          "fontWeight": "600",
+          "lineHeight": "30px"
+        },
+        {
+          "sel": ".text-heading-s",
+          "text": "Heading Small",
+          "fontSize": "18px",
+          "fontFamily": "Lexend",
+          "fontWeight": "600",
+          "lineHeight": "27px"
+        },
+        {
+          "sel": ".text-base",
+          "text": "Body default — The quick brown fox jumps over th",
+          "fontSize": "16px",
+          "fontFamily": "Figtree",
+          "fontWeight": "400",
+          "lineHeight": "24px"
+        },
+        {
+          "sel": "h1",
+          "text": "Typography",
+          "fontSize": "30px",
+          "fontFamily": "Lexend",
+          "fontWeight": "700",
+          "lineHeight": "45px"
+        }
+      ],
+      "large": [
+        {
+          "text": "Typography",
+          "fontSize": "30px",
+          "fontFamily": "Lexend",
+          "fontWeight": "700"
+        },
+        {
+          "text": "A comprehensive typography system based ",
+          "fontSize": "16px",
+          "fontFamily": "Figtree",
+          "fontWeight": "400"
+        },
+        {
+          "text": "Usage from npm",
+          "fontSize": "14px",
+          "fontFamily": "Figtree",
+          "fontWeight": "600"
+        },
+        {
+          "text": "Display",
+          "fontSize": "20px",
+          "fontFamily": "Figtree",
+          "fontWeight": "600"
+        },
+        {
+          "text": "Large, bold text for hero sections, mark",
+          "fontSize": "14px",
+          "fontFamily": "Figtree",
+          "fontWeight": "400"
+        },
+        {
+          "text": "The quick brown fox",
+          "fontSize": "60px",
+          "fontFamily": "Lexend",
+          "fontWeight": "700"
+        },
+        {
+          "text": "The quick brown fox jumps",
+          "fontSize": "48px",
+          "fontFamily": "Lexend",
+          "fontWeight": "700"
+        },
+        {
+          "text": "The quick brown fox jumps over",
+          "fontSize": "36px",
+          "fontFamily": "Lexend",
+          "fontWeight": "700"
+        },
+        {
+          "text": "Headings",
+          "fontSize": "20px",
+          "fontFamily": "Figtree",
+          "fontWeight": "600"
+        },
+        {
+          "text": "Semantic hierarchy for page structure. U",
+          "fontSize": "14px",
+          "fontFamily": "Figtree",
+          "fontWeight": "400"
+        },
+        {
+          "text": "Heading Extra Large",
+          "fontSize": "30px",
+          "fontFamily": "Lexend",
+          "fontWeight": "600"
+        },
+        {
+          "text": "Heading Large",
+          "fontSize": "24px",
+          "fontFamily": "Lexend",
+          "fontWeight": "600"
+        },
+        {
+          "text": "Heading Medium",
+          "fontSize": "20px",
+          "fontFamily": "Lexend",
+          "fontWeight": "600"
+        },
+        {
+          "text": "Heading Small",
+          "fontSize": "18px",
+          "fontFamily": "Lexend",
+          "fontWeight": "600"
+        },
+        {
+          "text": "Body",
+          "fontSize": "20px",
+          "fontFamily": "Figtree",
+          "fontWeight": "600"
+        },
+        {
+          "text": "Default and emphasized body copy.",
+          "fontSize": "14px",
+          "fontFamily": "Figtree",
+          "fontWeight": "400"
+        },
+        {
+          "text": "Body default — The quick brown fox jumps",
+          "fontSize": "16px",
+          "fontFamily": "Figtree",
+          "fontWeight": "400"
+        },
+        {
+          "text": "Body emphasized — The quick brown fox ju",
+          "fontSize": "16px",
+          "fontFamily": "Figtree",
+          "fontWeight": "600"
+        },
+        {
+          "text": "Supporting",
+          "fontSize": "20px",
+          "fontFamily": "Figtree",
+          "fontWeight": "600"
+        },
+        {
+          "text": "Labels, captions, and overlines.",
+          "fontSize": "14px",
+          "fontFamily": "Figtree",
+          "fontWeight": "400"
+        },
+        {
+          "text": "Label",
+          "fontSize": "14px",
+          "fontFamily": "Figtree",
+          "fontWeight": "500"
+        },
+        {
+          "text": "Font Families",
+          "fontSize": "20px",
+          "fontFamily": "Figtree",
+          "fontWeight": "600"
+        },
+        {
+          "text": "Figtree",
+          "fontSize": "18px",
+          "fontFamily": "Figtree",
+          "fontWeight": "400"
+        },
+        {
+          "text": "Lexend",
+          "fontSize": "18px",
+          "fontFamily": "Lexend",
+          "fontWeight": "400"
+        },
+        {
+          "text": "JetBrains Mono",
+          "fontSize": "18px",
+          "fontFamily": "JetBrains Mono",
+          "fontWeight": "400"
+        },
+        {
+          "text": "Style table",
+          "fontSize": "20px",
+          "fontFamily": "Figtree",
+          "fontWeight": "600"
+        }
+      ],
+      "nav": [
+        "Display",
+        "Headings",
+        "Body",
+        "Supporting",
+        "Fonts"
+      ],
+      "tableRows": 13,
+      "title": "Typography | Harmony shadcn"
+    }
+  },
+  "spacing": {
+    "ref": {
+      "h1": "Spacing",
+      "headings": [
+        "Spacing Scale",
+        "Usage Patterns",
+        "Border Radius",
+        "CSS Variables"
+      ],
+      "bars": [
+        {
+          "row": "0",
+          "widthStyle": "0px",
+          "widthPx": 0,
+          "bg": "rgb(89, 172, 255)"
+        },
+        {
+          "row": "1",
+          "widthStyle": "4px",
+          "widthPx": 4,
+          "bg": "rgb(89, 172, 255)"
+        },
+        {
+          "row": "2",
+          "widthStyle": "8px",
+          "widthPx": 8,
+          "bg": "rgb(89, 172, 255)"
+        },
+        {
+          "row": "3",
+          "widthStyle": "12px",
+          "widthPx": 12,
+          "bg": "rgb(89, 172, 255)"
+        },
+        {
+          "row": "4",
+          "widthStyle": "16px",
+          "widthPx": 16,
+          "bg": "rgb(89, 172, 255)"
+        },
+        {
+          "row": "5",
+          "widthStyle": "20px",
+          "widthPx": 20,
+          "bg": "rgb(89, 172, 255)"
+        },
+        {
+          "row": "6",
+          "widthStyle": "24px",
+          "widthPx": 24,
+          "bg": "rgb(89, 172, 255)"
+        },
+        {
+          "row": "7",
+          "widthStyle": "28px",
+          "widthPx": 28,
+          "bg": "rgb(89, 172, 255)"
+        },
+        {
+          "row": "8",
+          "widthStyle": "32px",
+          "widthPx": 32,
+          "bg": "rgb(89, 172, 255)"
+        },
+        {
+          "row": "9",
+          "widthStyle": "36px",
+          "widthPx": 36,
+          "bg": "rgb(89, 172, 255)"
+        },
+        {
+          "row": "10",
+          "widthStyle": "40px",
+          "widthPx": 40,
+          "bg": "rgb(89, 172, 255)"
+        },
+        {
+          "row": "11",
+          "widthStyle": "44px",
+          "widthPx": 44,
+          "bg": "rgb(89, 172, 255)"
+        },
+        {
+          "row": "12",
+          "widthStyle": "48px",
+          "widthPx": 48,
+          "bg": "rgb(89, 172, 255)"
+        },
+        {
+          "row": "14",
+          "widthStyle": "56px",
+          "widthPx": 56,
+          "bg": "rgb(89, 172, 255)"
+        },
+        {
+          "row": "16",
+          "widthStyle": "64px",
+          "widthPx": 64,
+          "bg": "rgb(89, 172, 255)"
+        },
+        {
+          "row": "20",
+          "widthStyle": "80px",
+          "widthPx": 80,
+          "bg": "rgb(89, 172, 255)"
+        },
+        {
+          "row": "24",
+          "widthStyle": "96px",
+          "widthPx": 96,
+          "bg": "rgb(89, 172, 255)"
+        },
+        {
+          "row": "0.5",
+          "widthStyle": "2px",
+          "widthPx": 2,
+          "bg": "rgb(89, 172, 255)"
+        },
+        {
+          "row": "1.5",
+          "widthStyle": "6px",
+          "widthPx": 6,
+          "bg": "rgb(89, 172, 255)"
+        },
+        {
+          "row": "2.5",
+          "widthStyle": "10px",
+          "widthPx": 10,
+          "bg": "rgb(89, 172, 255)"
+        },
+        {
+          "row": "3.5",
+          "widthStyle": "14px",
+          "widthPx": 14,
+          "bg": "rgb(89, 172, 255)"
+        }
+      ],
+      "radiusTiles": [
+        {
+          "label": "radius-04",
+          "radius": "4px",
+          "size": 64
+        },
+        {
+          "label": "radius-08",
+          "radius": "8px",
+          "size": 64
+        },
+        {
+          "label": "radius-12",
+          "radius": "12px",
+          "size": 64
+        },
+        {
+          "label": "radius-16",
+          "radius": "16px",
+          "size": 64
+        },
+        {
+          "label": "radius-24",
+          "radius": "24px",
+          "size": 64
+        },
+        {
+          "label": "radius-100",
+          "radius": "9999px",
+          "size": 64
+        }
+      ]
+    },
+    "conv": {
+      "h1": "Spacing",
+      "headings": [
+        "Usage from npm",
+        "Spacing Scale",
+        "Usage Patterns",
+        "Border Radius"
+      ],
+      "bars": [
+        {
+          "row": "0",
+          "widthStyle": "0px",
+          "widthPx": 0,
+          "bg": "rgb(42, 120, 198)"
+        },
+        {
+          "row": "1",
+          "widthStyle": "4px",
+          "widthPx": 4,
+          "bg": "rgb(42, 120, 198)"
+        },
+        {
+          "row": "2",
+          "widthStyle": "8px",
+          "widthPx": 8,
+          "bg": "rgb(42, 120, 198)"
+        },
+        {
+          "row": "3",
+          "widthStyle": "12px",
+          "widthPx": 12,
+          "bg": "rgb(42, 120, 198)"
+        },
+        {
+          "row": "4",
+          "widthStyle": "16px",
+          "widthPx": 16,
+          "bg": "rgb(42, 120, 198)"
+        },
+        {
+          "row": "5",
+          "widthStyle": "20px",
+          "widthPx": 20,
+          "bg": "rgb(42, 120, 198)"
+        },
+        {
+          "row": "6",
+          "widthStyle": "24px",
+          "widthPx": 24,
+          "bg": "rgb(42, 120, 198)"
+        },
+        {
+          "row": "7",
+          "widthStyle": "28px",
+          "widthPx": 28,
+          "bg": "rgb(42, 120, 198)"
+        },
+        {
+          "row": "8",
+          "widthStyle": "32px",
+          "widthPx": 32,
+          "bg": "rgb(42, 120, 198)"
+        },
+        {
+          "row": "9",
+          "widthStyle": "36px",
+          "widthPx": 36,
+          "bg": "rgb(42, 120, 198)"
+        },
+        {
+          "row": "10",
+          "widthStyle": "40px",
+          "widthPx": 40,
+          "bg": "rgb(42, 120, 198)"
+        },
+        {
+          "row": "11",
+          "widthStyle": "44px",
+          "widthPx": 44,
+          "bg": "rgb(42, 120, 198)"
+        },
+        {
+          "row": "12",
+          "widthStyle": "48px",
+          "widthPx": 48,
+          "bg": "rgb(42, 120, 198)"
+        },
+        {
+          "row": "14",
+          "widthStyle": "56px",
+          "widthPx": 56,
+          "bg": "rgb(42, 120, 198)"
+        },
+        {
+          "row": "16",
+          "widthStyle": "64px",
+          "widthPx": 64,
+          "bg": "rgb(42, 120, 198)"
+        },
+        {
+          "row": "20",
+          "widthStyle": "80px",
+          "widthPx": 80,
+          "bg": "rgb(42, 120, 198)"
+        },
+        {
+          "row": "24",
+          "widthStyle": "96px",
+          "widthPx": 96,
+          "bg": "rgb(42, 120, 198)"
+        },
+        {
+          "row": "0.5",
+          "widthStyle": "2px",
+          "widthPx": 2,
+          "bg": "rgb(42, 120, 198)"
+        },
+        {
+          "row": "1.5",
+          "widthStyle": "6px",
+          "widthPx": 6,
+          "bg": "rgb(42, 120, 198)"
+        },
+        {
+          "row": "2.5",
+          "widthStyle": "10px",
+          "widthPx": 10,
+          "bg": "rgb(42, 120, 198)"
+        },
+        {
+          "row": "3.5",
+          "widthStyle": "14px",
+          "widthPx": 14,
+          "bg": "rgb(42, 120, 198)"
+        }
+      ],
+      "radiusTiles": [
+        {
+          "label": "radius-04",
+          "radius": "4px",
+          "size": 80
+        },
+        {
+          "label": "radius-08",
+          "radius": "8px",
+          "size": 80
+        },
+        {
+          "label": "radius-12",
+          "radius": "12px",
+          "size": 80
+        },
+        {
+          "label": "radius-16",
+          "radius": "16px",
+          "size": 80
+        },
+        {
+          "label": "radius-24",
+          "radius": "24px",
+          "size": 80
+        },
+        {
+          "label": "radius-100",
+          "radius": "9999px",
+          "size": 80
+        }
+      ]
+    }
+  },
+  "elevations": {
+    "refLight": {
+      "h1": "Elevations",
+      "headings": [
+        "Shadow Scale",
+        "Shadow Values",
+        "Elevation Hierarchy"
+      ],
+      "styled": [],
+      "dark": true
+    },
+    "convLight": {
+      "h1": "Elevations",
+      "headings": [
+        "Usage from npm",
+        "Shadow Scale",
+        "Hierarchy"
+      ],
+      "styled": [
+        {
+          "text": "Sm |  | Subtle elevation for buttons and small elements",
+          "boxShadow": "rgba(15, 23, 42, 0.05) 0px 1px 2px 0px"
+        },
+        {
+          "text": "Md |  | Medium elevation for floating elements, cards, and enhanced alerts",
+          "boxShadow": "rgba(15, 23, 42, 0.1) 0px 4px 6px -1px, rgba(15, 23, 42, 0.1) 0px 2px 4px -2px"
+        },
+        {
+          "text": "Lg |  | High elevation for prominent elements",
+          "boxShadow": "rgba(15, 23, 42, 0.1) 0px 10px 15px -3px, rgba(15, 23, 42, 0.1) 0px 4px 6px -4px"
+        },
+        {
+          "text": "Xl |  | Extra high elevation for overlays",
+          "boxShadow": "rgba(15, 23, 42, 0.1) 0px 20px 25px -5px, rgba(15, 23, 42, 0.1) 0px 8px 10px -6px"
+        },
+        {
+          "text": "2xl |  | Maximum elevation for dramatic effect",
+          "boxShadow": "rgba(15, 23, 42, 0.15) 0px 30px 35px -8px, rgba(15, 23, 42, 0.12) 0px 12px 15px -7px"
+        }
+      ],
+      "dark": false
+    },
+    "convDark": {
+      "h1": "Elevations",
+      "headings": [
+        "Usage from npm",
+        "Shadow Scale",
+        "Hierarchy"
+      ],
+      "styled": [
+        {
+          "text": "Sm |  | Subtle elevation for buttons and small elements",
+          "boxShadow": "rgba(0, 0, 0, 0.3) 0px 1px 2px 0px"
+        },
+        {
+          "text": "Md |  | Medium elevation for floating elements, cards, and enhanced alerts",
+          "boxShadow": "rgba(0, 0, 0, 0.3) 0px 4px 6px -1px, rgba(0, 0, 0, 0.2) 0px 2px 4px -2px"
+        },
+        {
+          "text": "Lg |  | High elevation for prominent elements",
+          "boxShadow": "rgba(0, 0, 0, 0.4) 0px 10px 15px -3px, rgba(0, 0, 0, 0.3) 0px 4px 6px -4px"
+        },
+        {
+          "text": "Xl |  | Extra high elevation for overlays",
+          "boxShadow": "rgba(0, 0, 0, 0.4) 0px 20px 25px -5px, rgba(0, 0, 0, 0.3) 0px 8px 10px -6px"
+        },
+        {
+          "text": "2xl |  | Maximum elevation for dramatic effect",
+          "boxShadow": "rgba(0, 0, 0, 0.5) 0px 30px 35px -8px, rgba(0, 0, 0, 0.4) 0px 12px 15px -7px"
+        }
+      ],
+      "dark": true
+    }
+  },
+  "dela": {
+    "title": "Dela | Harmony shadcn",
+    "h1": "Dela",
+    "body": "Dela\n\nStatus: in-progress\n\nThis scope is not converted yet. The demo route exists so navigation matches the reference docs site. After conversion, this page will show Harmony on shadcn/ui + Tailwind + Radix and element-specific npm import snippets.\n\nReference docs: localhost:4321/foundation/dela · Getting Started"
+  }
+}

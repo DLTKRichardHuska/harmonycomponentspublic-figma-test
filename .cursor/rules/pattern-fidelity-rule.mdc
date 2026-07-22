@@ -1,0 +1,21 @@
+---
+description: When building pattern preview pages from pattern markdown docs — every named item, component, label, and count in the Component Tree and Key Elements must appear in the built output exactly as specified. No simplification, no partial lists, no generic placeholders. Build with Harmony Astro components.
+globs: ["src/pages/preview/**/*"]
+alwaysApply: false
+---
+
+# Pattern page fidelity
+
+When building a pattern preview page from a pattern markdown reference doc:
+
+- **Build with Harmony Astro components** from `src/components/ui/` and layouts from `src/layouts/`.
+- **Shell is imported, not rebuilt ad hoc.** Use ShellLayout or the documented shell pattern for the preview.
+- **Named items are exact.** If the Component Tree or Key Elements lists specific items (e.g. "Board, Table, List, Calendar, Schedule, Gantt, Network graph"), every one of those items must appear in the built page with those exact labels.
+- **Counts are exact.** If the Component Tree shows 3 Dropdowns (Period, Project, Category), the output has 3 Dropdowns with those labels.
+- **Required means required.** Every element marked Required = Yes in the Key Elements table must exist in the built page.
+- **Components match the tree.** Every component listed in the Component Tree must have a corresponding Harmony element in the output.
+- **Behaviors are wired.** If the pattern says "dismissible" chips, they have dismiss handlers. If it says "overflow handled by More (N) menu", there is conditional rendering for overflow.
+- **No stubs, no placeholders, no simplified demos.** Use realistic demo data matching the pattern's domain.
+- **Pre-flight is mandatory.** Before writing any code for a pattern, print the Component Tree contents, Required Key Elements, and named items.
+- **Verification is a hard gate.** After building a pattern page, run pattern-fidelity-verifier and layout-verifier before starting the next pattern.
+- **PASS requires proof.** A pattern can only be logged as PASS if both verifiers return "PASS: zero deviations."

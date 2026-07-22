@@ -1,0 +1,46 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - '**'
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate-and-build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Astro check
+        run: npm run check
+
+      - name: Validate component catalog
+        run: npm run validate:catalog
+
+      - name: Validate conversion versions (check only)
+        run: node .cursor/skills/harmony-conversion/scripts/sync_conversion_versions.mjs --all --check
+
+      - name: Validate conversions
+        run: node .cursor/skills/harmony-conversion/scripts/validate_conversion.mjs --all
+
+      - name: Build docs site
+        env:
+          GITHUB_REF_NAME: ${{ github.head_ref || github.ref_name }}
+          GITHUB_RUN_NUMBER: ${{ github.run_number }}
+        run: npm run build

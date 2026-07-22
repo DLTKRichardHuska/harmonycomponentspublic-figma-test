@@ -1,0 +1,100 @@
+{
+  "name": "@dltkrichardhuska/harmony-design-system-shadcn",
+  "version": "0.9.0",
+  "description": "Harmony Design System — React components on shadcn/ui patterns, Tailwind, and Radix (AI-optimized)",
+  "type": "module",
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DLTKRichardHuska/harmonycomponentspublic-figma-test.git",
+    "directory": "conversions/harmony-design-system-shadcn/packages/ui"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/",
+    "access": "restricted"
+  },
+  "files": [
+    "dist",
+    "src/components",
+    "src/layouts",
+    "src/styles",
+    "src/lib",
+    "src/theme",
+    "src/data",
+    "src/index.ts",
+    "AGENTS.md",
+    "llms.txt",
+    "docs",
+    "registry.json",
+    "registry"
+  ],
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "import": "./src/index.ts"
+    },
+    "./theme": {
+      "types": "./src/theme/index.tsx",
+      "import": "./src/theme/index.tsx"
+    },
+    "./components": {
+      "types": "./src/components/index.ts",
+      "import": "./src/components/index.ts"
+    },
+    "./utils": {
+      "types": "./src/lib/utils.ts",
+      "import": "./src/lib/utils.ts"
+    },
+    "./styles/*": "./src/styles/*",
+    "./registry.json": "./registry.json"
+  },
+  "scripts": {
+    "build:lib": "tsup",
+    "build:product": "node scripts/build-product.mjs",
+    "build:products": "node scripts/build-product.mjs cp && node scripts/build-product.mjs vp && node scripts/build-product.mjs ppm && node scripts/build-product.mjs maconomy",
+    "sync:fonts": "node scripts/sync-fonts.mjs",
+    "gen:registry": "node scripts/gen-registry.mjs",
+    "typecheck": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0 || ^19.0.0",
+    "react-dom": "^18.0.0 || ^19.0.0",
+    "tailwindcss": "^4.0.0"
+  },
+  "dependencies": {
+    "@heroicons/react": "^2.2.0",
+    "@radix-ui/react-accordion": "^1.2.17",
+    "@radix-ui/react-avatar": "^1.2.2",
+    "@radix-ui/react-checkbox": "^1.3.8",
+    "@radix-ui/react-dialog": "^1.1.20",
+    "@radix-ui/react-dropdown-menu": "^2.1.21",
+    "@radix-ui/react-label": "^2.1.12",
+    "@radix-ui/react-popover": "^1.1.20",
+    "@radix-ui/react-progress": "^1.1.12",
+    "@radix-ui/react-radio-group": "^1.4.4",
+    "@radix-ui/react-select": "^2.3.4",
+    "@radix-ui/react-slider": "^1.4.4",
+    "@radix-ui/react-slot": "^1.2.0",
+    "@radix-ui/react-switch": "^1.3.4",
+    "@radix-ui/react-tabs": "^1.1.18",
+    "@radix-ui/react-tooltip": "^1.2.13",
+    "@tabler/icons-react": "^3.44.0",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "date-fns": "^4.4.0",
+    "react-day-picker": "^10.0.1",
+    "tailwind-merge": "^3.0.0"
+  },
+  "devDependencies": {
+    "@fontsource-variable/figtree": "^5.0.0",
+    "@fontsource-variable/jetbrains-mono": "^5.0.0",
+    "@fontsource-variable/lexend": "^5.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "tailwindcss": "^4.0.0",
+    "tsup": "^8.5.0",
+    "typescript": "^7.0.0"
+  }
+}

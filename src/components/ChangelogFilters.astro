@@ -1,9 +1,15 @@
 ---
-interface Props {
-  entries: any[];
+interface VersionOption {
+  value: string;
+  label: string;
 }
 
-const { entries } = Astro.props;
+interface Props {
+  entries: any[];
+  versions?: VersionOption[];
+}
+
+const { entries, versions = [] } = Astro.props;
 
 // Extract unique categories
 const categories = [...new Set(entries.map(e => e.data.category))].sort();
@@ -19,6 +25,20 @@ const categories = [...new Set(entries.map(e => e.data.category))].sort();
       placeholder="Search components or tokens..."
     />
   </div>
+
+  {versions.length > 0 && (
+    <div class="filter-group">
+      <label>Version</label>
+      <div class="filter-checkboxes">
+        {versions.map((version) => (
+          <label class="filter-checkbox">
+            <input type="checkbox" value={version.value} checked data-filter-version />
+            <span class="filter-label">{version.label}</span>
+          </label>
+        ))}
+      </div>
+    </div>
+  )}
 
   <div class="filter-group">
     <label>Category</label>
@@ -64,6 +84,7 @@ const categories = [...new Set(entries.map(e => e.data.category))].sort();
     const htmlEl = el as HTMLElement;
     return {
       element: htmlEl,
+      version: htmlEl.getAttribute('data-version') || '',
       category: htmlEl.getAttribute('data-category') || '',
       type: htmlEl.getAttribute('data-type') || '',
       target: htmlEl.getAttribute('data-target') || '',
@@ -81,6 +102,11 @@ const categories = [...new Set(entries.map(e => e.data.category))].sort();
 
   // Filter state
   let searchQuery = '';
+  let selectedVersions = new Set(
+    Array.from(document.querySelectorAll('[data-filter-version]')).map(
+      (input) => (input as HTMLInputElement).value
+    )
+  );
   let selectedCategories = new Set(['added', 'changed', 'deprecated', 'removed', 'fixed', 'security']);
   let selectedTypes = new Set(['component', 'token']);
   let breakingOnly = false;
@@ -94,6 +120,9 @@ const categories = [...new Set(entries.map(e => e.data.category))].sort();
       const results = fuse.search(searchQuery);
       filtered = results.map(r => r.item);
     }
+
+    // Version filter
+    filtered = filtered.filter(e => selectedVersions.has(e.version));
 
     // Category filter
     filtered = filtered.filter(e => selectedCategories.has(e.category));
@@ -113,6 +142,12 @@ const categories = [...new Set(entries.map(e => e.data.category))].sort();
       } else {
         entry.element.style.display = 'none';
       }
+    });
+
+    // Hide empty date sections
+    document.querySelectorAll('.date-section').forEach(section => {
+      const visibleEntries = section.querySelectorAll('.changelog-entry:not([style*="display: none"])');
+      (section as HTMLElement).style.display = visibleEntries.length === 0 ? 'none' : '';
     });
 
     // Hide empty version sections
@@ -135,6 +170,18 @@ const categories = [...new Set(entries.map(e => e.data.category))].sort();
       }
     });
   }
+
+  document.querySelectorAll('[data-filter-version]').forEach(checkbox => {
+    checkbox.addEventListener('change', (e) => {
+      const target = e.target as HTMLInputElement;
+      if (target.checked) {
+        selectedVersions.add(target.value);
+      } else {
+        selectedVersions.delete(target.value);
+      }
+      applyFilters();
+    });
+  });
 
   // Event listeners
   const searchInput = document.getElementById('search');

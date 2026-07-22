@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Overview | Design System (shadcn)</title>
+    <script>
+      (function () {
+        try {
+          var p = localStorage.getItem('harmony-shadcn-product') || 'cp';
+          var m = localStorage.getItem('harmony-shadcn-mode') || 'light';
+          if (['cp', 'ppm', 'vp', 'maconomy'].indexOf(p) === -1) p = 'cp';
+          if (m !== 'dark' && m !== 'light') m = 'light';
+          document.documentElement.dataset.product = p;
+          document.documentElement.dataset.mode = m;
+          document.documentElement.classList.toggle('dark', m === 'dark');
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

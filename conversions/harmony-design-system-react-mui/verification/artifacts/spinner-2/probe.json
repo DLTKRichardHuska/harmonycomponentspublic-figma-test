@@ -1,0 +1,275 @@
+{
+  "inventory": {
+    "refInv": {
+      "headings": [
+        "Examples",
+        "Sizes",
+        "In Context",
+        "Props",
+        "Accessibility",
+        "ARIA Attributes",
+        "Screen Reader Support",
+        "Animation Preferences"
+      ],
+      "a11yTitles": [
+        "Sizes",
+        "In Context",
+        "ARIA Attributes",
+        "Screen Reader Support",
+        "Animation Preferences"
+      ],
+      "nav": [
+        "Examples",
+        "Props",
+        "Accessibility"
+      ],
+      "pageDesc": "Spinners indicate that content is loading or an action is being processed.",
+      "texts": {
+        "loading": true,
+        "loadingContent": true,
+        "animationPrefs": true,
+        "reducedMotion": true,
+        "expectedDesc": true,
+        "oldDesc": false
+      }
+    },
+    "convInv": {
+      "headings": [
+        "Examples",
+        "Sizes",
+        "In Context",
+        "Props",
+        "Harmony → MUI mapping",
+        "Accessibility"
+      ],
+      "a11yTitles": [
+        "Sizes",
+        "In Context"
+      ],
+      "nav": [],
+      "pageDesc": null,
+      "texts": {
+        "loading": true,
+        "loadingContent": true,
+        "animationPrefs": true,
+        "reducedMotion": true,
+        "expectedDesc": true,
+        "oldDesc": false
+      }
+    }
+  },
+  "sizes": {
+    "light": {
+      "ref": [
+        {
+          "i": 0,
+          "w": 22.5,
+          "h": 22.5,
+          "borderTop": "rgb(42, 120, 198)",
+          "borderRight": "rgb(191, 198, 212)",
+          "borderWidth": "2px",
+          "color": "rgb(55, 63, 78)"
+        },
+        {
+          "i": 1,
+          "w": 33.7,
+          "h": 33.7,
+          "borderTop": "rgb(42, 120, 198)",
+          "borderRight": "rgb(191, 198, 212)",
+          "borderWidth": "3px",
+          "color": "rgb(55, 63, 78)"
+        },
+        {
+          "i": 2,
+          "w": 56.2,
+          "h": 56.2,
+          "borderTop": "rgb(42, 120, 198)",
+          "borderRight": "rgb(191, 198, 212)",
+          "borderWidth": "4px",
+          "color": "rgb(55, 63, 78)"
+        },
+        {
+          "i": 3,
+          "w": 22.5,
+          "h": 22.5,
+          "borderTop": "rgb(42, 120, 198)",
+          "borderRight": "rgb(191, 198, 212)",
+          "borderWidth": "2px",
+          "color": "rgb(55, 63, 78)"
+        },
+        {
+          "i": 4,
+          "w": 56.2,
+          "h": 56.2,
+          "borderTop": "rgb(42, 120, 198)",
+          "borderRight": "rgb(191, 198, 212)",
+          "borderWidth": "4px",
+          "color": "rgb(55, 63, 78)"
+        }
+      ],
+      "conv": [
+        {
+          "i": 0,
+          "w": 20,
+          "h": 20,
+          "borderTop": "rgb(42, 120, 198)",
+          "borderRight": "rgb(42, 120, 198)",
+          "borderWidth": "0px",
+          "color": "rgb(42, 120, 198)",
+          "trackColor": "rgb(191, 198, 212)",
+          "circleColor": "rgb(42, 120, 198)"
+        },
+        {
+          "i": 1,
+          "w": 30,
+          "h": 30,
+          "borderTop": "rgb(42, 120, 198)",
+          "borderRight": "rgb(42, 120, 198)",
+          "borderWidth": "0px",
+          "color": "rgb(42, 120, 198)",
+          "trackColor": "rgb(191, 198, 212)",
+          "circleColor": "rgb(42, 120, 198)"
+        },
+        {
+          "i": 2,
+          "w": 50,
+          "h": 50,
+          "borderTop": "rgb(42, 120, 198)",
+          "borderRight": "rgb(42, 120, 198)",
+          "borderWidth": "0px",
+          "color": "rgb(42, 120, 198)",
+          "trackColor": "rgb(191, 198, 212)",
+          "circleColor": "rgb(42, 120, 198)"
+        },
+        {
+          "i": 3,
+          "w": 20,
+          "h": 20,
+          "borderTop": "rgb(42, 120, 198)",
+          "borderRight": "rgb(42, 120, 198)",
+          "borderWidth": "0px",
+          "color": "rgb(42, 120, 198)",
+          "trackColor": "rgb(191, 198, 212)",
+          "circleColor": "rgb(42, 120, 198)"
+        },
+        {
+          "i": 4,
+          "w": 50,
+          "h": 50,
+          "borderTop": "rgb(42, 120, 198)",
+          "borderRight": "rgb(42, 120, 198)",
+          "borderWidth": "0px",
+          "color": "rgb(42, 120, 198)",
+          "trackColor": "rgb(191, 198, 212)",
+          "circleColor": "rgb(42, 120, 198)"
+        }
+      ]
+    },
+    "dark": {
+      "ref": [
+        {
+          "i": 0,
+          "w": 20.9,
+          "h": 20.9,
+          "borderTop": "rgb(89, 172, 255)",
+          "borderRight": "rgb(95, 104, 113)",
+          "borderWidth": "2px",
+          "color": "rgb(233, 236, 239)"
+        },
+        {
+          "i": 1,
+          "w": 31.4,
+          "h": 31.4,
+          "borderTop": "rgb(89, 172, 255)",
+          "borderRight": "rgb(95, 104, 113)",
+          "borderWidth": "3px",
+          "color": "rgb(233, 236, 239)"
+        },
+        {
+          "i": 2,
+          "w": 52.3,
+          "h": 52.3,
+          "borderTop": "rgb(89, 172, 255)",
+          "borderRight": "rgb(95, 104, 113)",
+          "borderWidth": "4px",
+          "color": "rgb(233, 236, 239)"
+        },
+        {
+          "i": 3,
+          "w": 20.9,
+          "h": 20.9,
+          "borderTop": "rgb(89, 172, 255)",
+          "borderRight": "rgb(95, 104, 113)",
+          "borderWidth": "2px",
+          "color": "rgb(233, 236, 239)"
+        },
+        {
+          "i": 4,
+          "w": 52.3,
+          "h": 52.3,
+          "borderTop": "rgb(89, 172, 255)",
+          "borderRight": "rgb(95, 104, 113)",
+          "borderWidth": "4px",
+          "color": "rgb(233, 236, 239)"
+        }
+      ],
+      "conv": [
+        {
+          "i": 0,
+          "w": 20.7,
+          "h": 20.7,
+          "borderTop": "rgb(89, 172, 255)",
+          "borderRight": "rgb(89, 172, 255)",
+          "borderWidth": "0px",
+          "color": "rgb(89, 172, 255)",
+          "trackColor": "rgb(95, 104, 113)",
+          "circleColor": "rgb(89, 172, 255)"
+        },
+        {
+          "i": 1,
+          "w": 31.1,
+          "h": 31.1,
+          "borderTop": "rgb(89, 172, 255)",
+          "borderRight": "rgb(89, 172, 255)",
+          "borderWidth": "0px",
+          "color": "rgb(89, 172, 255)",
+          "trackColor": "rgb(95, 104, 113)",
+          "circleColor": "rgb(89, 172, 255)"
+        },
+        {
+          "i": 2,
+          "w": 51.9,
+          "h": 51.9,
+          "borderTop": "rgb(89, 172, 255)",
+          "borderRight": "rgb(89, 172, 255)",
+          "borderWidth": "0px",
+          "color": "rgb(89, 172, 255)",
+          "trackColor": "rgb(95, 104, 113)",
+          "circleColor": "rgb(89, 172, 255)"
+        },
+        {
+          "i": 3,
+          "w": 20.7,
+          "h": 20.7,
+          "borderTop": "rgb(89, 172, 255)",
+          "borderRight": "rgb(89, 172, 255)",
+          "borderWidth": "0px",
+          "color": "rgb(89, 172, 255)",
+          "trackColor": "rgb(95, 104, 113)",
+          "circleColor": "rgb(89, 172, 255)"
+        },
+        {
+          "i": 4,
+          "w": 51.9,
+          "h": 51.9,
+          "borderTop": "rgb(89, 172, 255)",
+          "borderRight": "rgb(89, 172, 255)",
+          "borderWidth": "0px",
+          "color": "rgb(89, 172, 255)",
+          "trackColor": "rgb(95, 104, 113)",
+          "circleColor": "rgb(89, 172, 255)"
+        }
+      ]
+    }
+  }
+}

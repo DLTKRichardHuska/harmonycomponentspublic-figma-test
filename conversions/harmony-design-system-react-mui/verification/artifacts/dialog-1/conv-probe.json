@@ -1,0 +1,365 @@
+{
+  "basic": {
+    "found": true,
+    "title": "Dialog Title",
+    "paper": {
+      "width": 700,
+      "height": 236,
+      "minWidth": "600px",
+      "maxWidth": "700px",
+      "borderRadius": "12px",
+      "boxShadow": "rgba(15, 23, 42, 0.1) 0px 20px 25px -5px, rgba(15, 23, 42, 0.1) 0px 8px 10px -6px",
+      "bg": "rgb(247, 248, 250)",
+      "display": "flex",
+      "flexDirection": "column"
+    },
+    "header": {
+      "padding": "16px 24px",
+      "borderBottom": "1px solid rgb(191, 198, 212)",
+      "bg": "rgb(247, 248, 250)",
+      "fontSize": "18px",
+      "fontWeight": "600",
+      "color": "rgb(55, 63, 78)",
+      "justifyContent": "space-between"
+    },
+    "body": {
+      "padding": "24px",
+      "color": "rgb(82, 89, 105)",
+      "overflowY": "auto",
+      "maxHeight": "600px",
+      "scrollHeight": 96,
+      "clientHeight": 96
+    },
+    "footer": {
+      "padding": "16px 24px",
+      "borderTop": "1px solid rgb(191, 198, 212)",
+      "justifyContent": "flex-start",
+      "gap": "12px",
+      "bg": "rgb(247, 248, 250)"
+    },
+    "buttons": [
+      {
+        "text": "Confirm",
+        "variantHint": "MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-sizeMedium MuiButton-colorPrimary MuiButton-disableElevation css-alf18f-MuiButtonBase-root-MuiButton-root",
+        "rect": {
+          "left": 394,
+          "top": 561,
+          "w": 120,
+          "h": 40
+        },
+        "bg": "rgb(42, 120, 198)",
+        "color": "rgb(255, 255, 255)",
+        "border": "rgb(255, 255, 255)"
+      },
+      {
+        "text": "Cancel",
+        "variantHint": "MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-sizeMedium MuiButton-colorPrimary MuiButton-disableElevation css-1ptyas4-MuiButtonBase-root-MuiButton-root",
+        "rect": {
+          "left": 526,
+          "top": 560,
+          "w": 120,
+          "h": 42
+        },
+        "bg": "rgb(247, 248, 250)",
+        "color": "rgb(42, 120, 198)",
+        "border": "rgb(42, 120, 198)"
+      }
+    ],
+    "footerLeft": 370,
+    "firstBtnLeft": 394,
+    "lastBtnLeft": 526
+  },
+  "confirm": {
+    "found": true,
+    "title": "Delete Item?",
+    "paper": {
+      "width": 700,
+      "height": 212,
+      "minWidth": "600px",
+      "maxWidth": "700px",
+      "borderRadius": "12px",
+      "boxShadow": "rgba(15, 23, 42, 0.1) 0px 20px 25px -5px, rgba(15, 23, 42, 0.1) 0px 8px 10px -6px",
+      "bg": "rgb(247, 248, 250)",
+      "display": "flex",
+      "flexDirection": "column"
+    },
+    "header": {
+      "padding": "16px 24px",
+      "borderBottom": "1px solid rgb(191, 198, 212)",
+      "bg": "rgb(247, 248, 250)",
+      "fontSize": "18px",
+      "fontWeight": "600",
+      "color": "rgb(55, 63, 78)",
+      "justifyContent": "space-between"
+    },
+    "body": {
+      "padding": "24px",
+      "color": "rgb(82, 89, 105)",
+      "overflowY": "auto",
+      "maxHeight": "600px",
+      "scrollHeight": 72,
+      "clientHeight": 72
+    },
+    "footer": {
+      "padding": "16px 24px",
+      "borderTop": "1px solid rgb(191, 198, 212)",
+      "justifyContent": "flex-start",
+      "gap": "12px",
+      "bg": "rgb(247, 248, 250)"
+    },
+    "buttons": [
+      {
+        "text": "Delete",
+        "variantHint": "MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-sizeMedium MuiButton-colorError MuiButton-disableElevation css-ui6yjd-MuiButtonBase-root-MuiButton-root",
+        "rect": {
+          "left": 394,
+          "top": 549,
+          "w": 120,
+          "h": 40
+        },
+        "bg": "rgb(216, 49, 72)",
+        "color": "rgb(255, 255, 255)",
+        "border": "rgb(255, 255, 255)"
+      },
+      {
+        "text": "Cancel",
+        "variantHint": "MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-sizeMedium MuiButton-colorPrimary MuiButton-disableElevation css-1ptyas4-MuiButtonBase-root-MuiButton-root",
+        "rect": {
+          "left": 526,
+          "top": 548,
+          "w": 120,
+          "h": 42
+        },
+        "bg": "rgb(247, 248, 250)",
+        "color": "rgb(42, 120, 198)",
+        "border": "rgb(42, 120, 198)"
+      }
+    ],
+    "footerLeft": 370,
+    "firstBtnLeft": 394,
+    "lastBtnLeft": 526
+  },
+  "three": {
+    "found": true,
+    "title": "Save changes?",
+    "paper": {
+      "width": 700,
+      "height": 236,
+      "minWidth": "600px",
+      "maxWidth": "700px",
+      "borderRadius": "12px",
+      "boxShadow": "rgba(15, 23, 42, 0.1) 0px 20px 25px -5px, rgba(15, 23, 42, 0.1) 0px 8px 10px -6px",
+      "bg": "rgb(247, 248, 250)",
+      "display": "flex",
+      "flexDirection": "column"
+    },
+    "header": {
+      "padding": "16px 24px",
+      "borderBottom": "1px solid rgb(191, 198, 212)",
+      "bg": "rgb(247, 248, 250)",
+      "fontSize": "18px",
+      "fontWeight": "600",
+      "color": "rgb(55, 63, 78)",
+      "justifyContent": "space-between"
+    },
+    "body": {
+      "padding": "24px",
+      "color": "rgb(82, 89, 105)",
+      "overflowY": "auto",
+      "maxHeight": "600px",
+      "scrollHeight": 96,
+      "clientHeight": 96
+    },
+    "footer": {
+      "padding": "16px 24px",
+      "borderTop": "1px solid rgb(191, 198, 212)",
+      "justifyContent": "flex-start",
+      "gap": "12px",
+      "bg": "rgb(247, 248, 250)"
+    },
+    "buttons": [
+      {
+        "text": "Yes",
+        "variantHint": "MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-sizeMedium MuiButton-colorPrimary MuiButton-disableElevation css-alf18f-MuiButtonBase-root-MuiButton-root",
+        "rect": {
+          "left": 394,
+          "top": 561,
+          "w": 120,
+          "h": 40
+        },
+        "bg": "rgb(42, 120, 198)",
+        "color": "rgb(255, 255, 255)",
+        "border": "rgb(255, 255, 255)"
+      },
+      {
+        "text": "No",
+        "variantHint": "MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-sizeMedium MuiButton-colorPrimary MuiButton-disableElevation css-1ptyas4-MuiButtonBase-root-MuiButton-root",
+        "rect": {
+          "left": 526,
+          "top": 560,
+          "w": 120,
+          "h": 42
+        },
+        "bg": "rgb(247, 248, 250)",
+        "color": "rgb(42, 120, 198)",
+        "border": "rgb(42, 120, 198)"
+      },
+      {
+        "text": "Cancel",
+        "variantHint": "MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-sizeMedium MuiButton-colorPrimary MuiButton-disableElevation css-10ec6d8-MuiButtonBase-root-MuiButton-root",
+        "rect": {
+          "left": 658,
+          "top": 561,
+          "w": 120,
+          "h": 40
+        },
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(42, 120, 198)",
+        "border": "rgb(42, 120, 198)"
+      }
+    ],
+    "footerLeft": 370,
+    "firstBtnLeft": 394,
+    "lastBtnLeft": 658
+  },
+  "right": {
+    "found": true,
+    "title": "Right-Aligned Buttons",
+    "paper": {
+      "width": 700,
+      "height": 236,
+      "minWidth": "600px",
+      "maxWidth": "700px",
+      "borderRadius": "12px",
+      "boxShadow": "rgba(15, 23, 42, 0.1) 0px 20px 25px -5px, rgba(15, 23, 42, 0.1) 0px 8px 10px -6px",
+      "bg": "rgb(247, 248, 250)",
+      "display": "flex",
+      "flexDirection": "column"
+    },
+    "header": {
+      "padding": "16px 24px",
+      "borderBottom": "1px solid rgb(191, 198, 212)",
+      "bg": "rgb(247, 248, 250)",
+      "fontSize": "18px",
+      "fontWeight": "600",
+      "color": "rgb(55, 63, 78)",
+      "justifyContent": "space-between"
+    },
+    "body": {
+      "padding": "24px",
+      "color": "rgb(82, 89, 105)",
+      "overflowY": "auto",
+      "maxHeight": "600px",
+      "scrollHeight": 96,
+      "clientHeight": 96
+    },
+    "footer": {
+      "padding": "16px 24px",
+      "borderTop": "1px solid rgb(191, 198, 212)",
+      "justifyContent": "flex-start",
+      "gap": "12px",
+      "bg": "rgb(247, 248, 250)"
+    },
+    "buttons": [
+      {
+        "text": "Cancel",
+        "variantHint": "MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-sizeMedium MuiButton-colorPrimary MuiButton-disableElevation css-1ptyas4-MuiButtonBase-root-MuiButton-root",
+        "rect": {
+          "left": 394,
+          "top": 560,
+          "w": 120,
+          "h": 42
+        },
+        "bg": "rgb(247, 248, 250)",
+        "color": "rgb(42, 120, 198)",
+        "border": "rgb(42, 120, 198)"
+      },
+      {
+        "text": "Confirm",
+        "variantHint": "MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-sizeMedium MuiButton-colorPrimary MuiButton-disableElevation css-alf18f-MuiButtonBase-root-MuiButton-root",
+        "rect": {
+          "left": 520,
+          "top": 560,
+          "w": 120,
+          "h": 42
+        },
+        "bg": "rgb(42, 120, 198)",
+        "color": "rgb(255, 255, 255)",
+        "border": "rgb(255, 255, 255)"
+      }
+    ],
+    "footerLeft": 370,
+    "firstBtnLeft": 394,
+    "lastBtnLeft": 520
+  },
+  "long": {
+    "found": true,
+    "title": "Scrollable Body",
+    "paper": {
+      "width": 700,
+      "height": 716,
+      "minWidth": "600px",
+      "maxWidth": "700px",
+      "borderRadius": "12px",
+      "boxShadow": "rgba(15, 23, 42, 0.1) 0px 20px 25px -5px, rgba(15, 23, 42, 0.1) 0px 8px 10px -6px",
+      "bg": "rgb(247, 248, 250)",
+      "display": "flex",
+      "flexDirection": "column"
+    },
+    "header": {
+      "padding": "16px 24px",
+      "borderBottom": "1px solid rgb(191, 198, 212)",
+      "bg": "rgb(247, 248, 250)",
+      "fontSize": "18px",
+      "fontWeight": "600",
+      "color": "rgb(55, 63, 78)",
+      "justifyContent": "space-between"
+    },
+    "body": {
+      "padding": "24px",
+      "color": "rgb(82, 89, 105)",
+      "overflowY": "auto",
+      "maxHeight": "600px",
+      "scrollHeight": 576,
+      "clientHeight": 576
+    },
+    "footer": {
+      "padding": "16px 24px",
+      "borderTop": "1px solid rgb(191, 198, 212)",
+      "justifyContent": "flex-start",
+      "gap": "12px",
+      "bg": "rgb(247, 248, 250)"
+    },
+    "buttons": [
+      {
+        "text": "Confirm",
+        "variantHint": "MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-sizeMedium MuiButton-colorPrimary MuiButton-disableElevation css-alf18f-MuiButtonBase-root-MuiButton-root",
+        "rect": {
+          "left": 394,
+          "top": 801,
+          "w": 120,
+          "h": 40
+        },
+        "bg": "rgb(42, 120, 198)",
+        "color": "rgb(255, 255, 255)",
+        "border": "rgb(255, 255, 255)"
+      },
+      {
+        "text": "Cancel",
+        "variantHint": "MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-sizeMedium MuiButton-colorPrimary MuiButton-disableElevation css-1ptyas4-MuiButtonBase-root-MuiButton-root",
+        "rect": {
+          "left": 526,
+          "top": 800,
+          "w": 120,
+          "h": 42
+        },
+        "bg": "rgb(247, 248, 250)",
+        "color": "rgb(42, 120, 198)",
+        "border": "rgb(42, 120, 198)"
+      }
+    ],
+    "footerLeft": 370,
+    "firstBtnLeft": 394,
+    "lastBtnLeft": 526
+  }
+}

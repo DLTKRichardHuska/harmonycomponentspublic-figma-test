@@ -1,0 +1,1620 @@
+{
+  "ref-light": {
+    "label": "ref-light",
+    "dark": false,
+    "interactiveLabels": [
+      "Small, medium, and large with default user icon.",
+      "Icon (default), initials, and a photograph for the image variant.",
+      "Default, hover, and focus-visible use real pointer and keyboard focus. The Hover and Focus columns use demo classes (avatar--demo-hover / avatar--demo-focus) so the documentation can show those looks without hovering.",
+      "Default",
+      "Hover (demo)",
+      "Focus (demo)",
+      "Disabled"
+    ],
+    "groupTitles": [
+      "Sizes (icon)",
+      "Variants",
+      "Interactive"
+    ],
+    "avatars": [
+      {
+        "i": 0,
+        "className": "avatar avatar--sm",
+        "w": 24,
+        "h": 24,
+        "bg": "rgb(42, 120, 198)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "4px",
+        "opacity": "1",
+        "boxShadow": "none",
+        "outline": "none 3px rgb(255, 255, 255)",
+        "outlineOffset": "0px",
+        "fontSize": "16px",
+        "text": "",
+        "svg": {
+          "w": 16,
+          "h": 16
+        }
+      },
+      {
+        "i": 1,
+        "className": "avatar avatar--md",
+        "w": 32,
+        "h": 32,
+        "bg": "rgb(42, 120, 198)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "8px",
+        "opacity": "1",
+        "boxShadow": "none",
+        "outline": "none 3px rgb(255, 255, 255)",
+        "outlineOffset": "0px",
+        "fontSize": "16px",
+        "text": "",
+        "svg": {
+          "w": 20,
+          "h": 20
+        }
+      },
+      {
+        "i": 2,
+        "className": "avatar avatar--lg",
+        "w": 40,
+        "h": 40,
+        "bg": "rgb(42, 120, 198)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "12px",
+        "opacity": "1",
+        "boxShadow": "none",
+        "outline": "none 3px rgb(255, 255, 255)",
+        "outlineOffset": "0px",
+        "fontSize": "16px",
+        "text": "",
+        "svg": {
+          "w": 24,
+          "h": 24
+        }
+      },
+      {
+        "i": 3,
+        "className": "avatar avatar--md",
+        "w": 32,
+        "h": 32,
+        "bg": "rgb(42, 120, 198)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "8px",
+        "opacity": "1",
+        "boxShadow": "none",
+        "outline": "none 3px rgb(255, 255, 255)",
+        "outlineOffset": "0px",
+        "fontSize": "16px",
+        "text": "",
+        "svg": {
+          "w": 20,
+          "h": 20
+        }
+      },
+      {
+        "i": 4,
+        "className": "avatar avatar--md avatar--initials",
+        "w": 32,
+        "h": 32,
+        "bg": "rgb(42, 120, 198)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "8px",
+        "opacity": "1",
+        "boxShadow": "none",
+        "outline": "none 3px rgb(255, 255, 255)",
+        "outlineOffset": "0px",
+        "fontSize": "16px",
+        "text": "JD",
+        "svg": null
+      },
+      {
+        "i": 5,
+        "className": "avatar avatar--md avatar--image",
+        "w": 32,
+        "h": 32,
+        "bg": "rgb(255, 255, 255)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "8px",
+        "opacity": "1",
+        "boxShadow": "none",
+        "outline": "none 3px rgb(255, 255, 255)",
+        "outlineOffset": "0px",
+        "fontSize": "16px",
+        "text": "",
+        "svg": null
+      },
+      {
+        "i": 6,
+        "className": "avatar avatar--md",
+        "w": 32,
+        "h": 32,
+        "bg": "rgb(42, 120, 198)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "8px",
+        "opacity": "1",
+        "boxShadow": "none",
+        "outline": "none 3px rgb(255, 255, 255)",
+        "outlineOffset": "0px",
+        "fontSize": "16px",
+        "text": "",
+        "svg": {
+          "w": 20,
+          "h": 20
+        }
+      },
+      {
+        "i": 7,
+        "className": "avatar avatar--md avatar--demo-hover",
+        "w": 32,
+        "h": 32,
+        "bg": "rgb(34, 104, 176)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "8px",
+        "opacity": "1",
+        "boxShadow": "none",
+        "outline": "none 3px rgb(255, 255, 255)",
+        "outlineOffset": "0px",
+        "fontSize": "16px",
+        "text": "",
+        "svg": {
+          "w": 20,
+          "h": 20
+        }
+      },
+      {
+        "i": 8,
+        "className": "avatar avatar--md avatar--demo-focus",
+        "w": 32,
+        "h": 32,
+        "bg": "rgb(42, 120, 198)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "8px",
+        "opacity": "1",
+        "boxShadow": "rgba(42, 120, 198, 0.1) 0px 0px 0px 3px, rgb(247, 248, 250) 0px 0px 0px 4px",
+        "outline": "none 3px rgb(255, 255, 255)",
+        "outlineOffset": "0px",
+        "fontSize": "16px",
+        "text": "",
+        "svg": {
+          "w": 20,
+          "h": 20
+        }
+      },
+      {
+        "i": 9,
+        "className": "avatar avatar--md",
+        "w": 32,
+        "h": 32,
+        "bg": "rgb(42, 120, 198)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "8px",
+        "opacity": "0.5",
+        "boxShadow": "none",
+        "outline": "none 3px rgb(255, 255, 255)",
+        "outlineOffset": "0px",
+        "fontSize": "16px",
+        "text": "",
+        "svg": {
+          "w": 20,
+          "h": 20
+        }
+      }
+    ],
+    "buttons": [
+      {
+        "i": 0,
+        "disabled": false,
+        "btn": {
+          "className": "avatar avatar--md",
+          "w": 32,
+          "h": 32,
+          "bg": "rgb(42, 120, 198)",
+          "color": "rgb(255, 255, 255)",
+          "radius": "8px",
+          "opacity": "1",
+          "boxShadow": "none",
+          "outline": "none 3px rgb(255, 255, 255)",
+          "outlineOffset": "0px",
+          "fontSize": "16px",
+          "text": "",
+          "svg": {
+            "w": 20,
+            "h": 20
+          }
+        },
+        "child": {
+          "className": "avatar avatar--md",
+          "w": 32,
+          "h": 32,
+          "bg": "rgb(42, 120, 198)",
+          "color": "rgb(255, 255, 255)",
+          "radius": "8px",
+          "opacity": "1",
+          "boxShadow": "none",
+          "outline": "none 3px rgb(255, 255, 255)",
+          "outlineOffset": "0px",
+          "fontSize": "16px",
+          "text": "",
+          "svg": {
+            "w": 20,
+            "h": 20
+          }
+        }
+      },
+      {
+        "i": 1,
+        "disabled": false,
+        "btn": {
+          "className": "avatar avatar--md avatar--demo-hover",
+          "w": 32,
+          "h": 32,
+          "bg": "rgb(34, 104, 176)",
+          "color": "rgb(255, 255, 255)",
+          "radius": "8px",
+          "opacity": "1",
+          "boxShadow": "none",
+          "outline": "none 3px rgb(255, 255, 255)",
+          "outlineOffset": "0px",
+          "fontSize": "16px",
+          "text": "",
+          "svg": {
+            "w": 20,
+            "h": 20
+          }
+        },
+        "child": {
+          "className": "avatar avatar--md avatar--demo-hover",
+          "w": 32,
+          "h": 32,
+          "bg": "rgb(34, 104, 176)",
+          "color": "rgb(255, 255, 255)",
+          "radius": "8px",
+          "opacity": "1",
+          "boxShadow": "none",
+          "outline": "none 3px rgb(255, 255, 255)",
+          "outlineOffset": "0px",
+          "fontSize": "16px",
+          "text": "",
+          "svg": {
+            "w": 20,
+            "h": 20
+          }
+        }
+      },
+      {
+        "i": 2,
+        "disabled": false,
+        "btn": {
+          "className": "avatar avatar--md avatar--demo-focus",
+          "w": 32,
+          "h": 32,
+          "bg": "rgb(42, 120, 198)",
+          "color": "rgb(255, 255, 255)",
+          "radius": "8px",
+          "opacity": "1",
+          "boxShadow": "rgba(42, 120, 198, 0.1) 0px 0px 0px 3px, rgb(247, 248, 250) 0px 0px 0px 4px",
+          "outline": "none 3px rgb(255, 255, 255)",
+          "outlineOffset": "0px",
+          "fontSize": "16px",
+          "text": "",
+          "svg": {
+            "w": 20,
+            "h": 20
+          }
+        },
+        "child": {
+          "className": "avatar avatar--md avatar--demo-focus",
+          "w": 32,
+          "h": 32,
+          "bg": "rgb(42, 120, 198)",
+          "color": "rgb(255, 255, 255)",
+          "radius": "8px",
+          "opacity": "1",
+          "boxShadow": "rgba(42, 120, 198, 0.1) 0px 0px 0px 3px, rgb(247, 248, 250) 0px 0px 0px 4px",
+          "outline": "none 3px rgb(255, 255, 255)",
+          "outlineOffset": "0px",
+          "fontSize": "16px",
+          "text": "",
+          "svg": {
+            "w": 20,
+            "h": 20
+          }
+        }
+      },
+      {
+        "i": 3,
+        "disabled": true,
+        "btn": {
+          "className": "avatar avatar--md",
+          "w": 32,
+          "h": 32,
+          "bg": "rgb(42, 120, 198)",
+          "color": "rgb(255, 255, 255)",
+          "radius": "8px",
+          "opacity": "0.5",
+          "boxShadow": "none",
+          "outline": "none 3px rgb(255, 255, 255)",
+          "outlineOffset": "0px",
+          "fontSize": "16px",
+          "text": "",
+          "svg": {
+            "w": 20,
+            "h": 20
+          }
+        },
+        "child": {
+          "className": "avatar avatar--md",
+          "w": 32,
+          "h": 32,
+          "bg": "rgb(42, 120, 198)",
+          "color": "rgb(255, 255, 255)",
+          "radius": "8px",
+          "opacity": "0.5",
+          "boxShadow": "none",
+          "outline": "none 3px rgb(255, 255, 255)",
+          "outlineOffset": "0px",
+          "fontSize": "16px",
+          "text": "",
+          "svg": {
+            "w": 20,
+            "h": 20
+          }
+        }
+      }
+    ],
+    "forcedFocus": {
+      "before": {
+        "opacity": "1",
+        "boxShadow": "none",
+        "outline": "rgb(255, 255, 255) none 3px",
+        "childBg": "rgb(42, 120, 198)"
+      },
+      "after": {
+        "opacity": "1",
+        "boxShadow": "none",
+        "outline": "rgb(255, 255, 255) none 3px",
+        "childBg": "rgb(42, 120, 198)"
+      }
+    }
+  },
+  "conv-light": {
+    "label": "conv-light",
+    "dark": false,
+    "interactiveLabels": [
+      "Small, medium, and large with default user icon. Size via width/height only (MUI docs).",
+      "Icon (default), initials, and a photograph. Harmony content variant ≠ MUI shape variant.",
+      "Default, hover, and focus-visible use real pointer and keyboard focus. The Hover and Focus columns use demo classes (avatar-demo-hover / avatar-demo-focus) so the documentation can show those looks without hovering.",
+      "Default",
+      "Hover (demo)",
+      "Focus (demo)",
+      "Disabled"
+    ],
+    "groupTitles": [
+      "Sizes (icon)",
+      "Content variants",
+      "Interactive",
+      "MUI shape supersets"
+    ],
+    "avatars": [
+      {
+        "i": 0,
+        "className": "MuiAvatar-root MuiAvatar-rounded MuiAvatar-colorDefault css-nr1f87-MuiAvatar-root",
+        "w": 24,
+        "h": 24,
+        "bg": "rgb(42, 120, 198)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "8px",
+        "opacity": "1",
+        "boxShadow": "none",
+        "outline": "none 3px rgb(255, 255, 255)",
+        "outlineOffset": "0px",
+        "fontSize": "12px",
+        "text": "",
+        "svg": {
+          "w": 16,
+          "h": 16
+        }
+      },
+      {
+        "i": 1,
+        "className": "MuiAvatar-root MuiAvatar-rounded MuiAvatar-colorDefault css-eoktk9-MuiAvatar-root",
+        "w": 32,
+        "h": 32,
+        "bg": "rgb(42, 120, 198)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "8px",
+        "opacity": "1",
+        "boxShadow": "none",
+        "outline": "none 3px rgb(255, 255, 255)",
+        "outlineOffset": "0px",
+        "fontSize": "12px",
+        "text": "",
+        "svg": {
+          "w": 20,
+          "h": 20
+        }
+      },
+      {
+        "i": 2,
+        "className": "MuiAvatar-root MuiAvatar-rounded MuiAvatar-colorDefault css-1aoex3e-MuiAvatar-root",
+        "w": 40,
+        "h": 40,
+        "bg": "rgb(42, 120, 198)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "8px",
+        "opacity": "1",
+        "boxShadow": "none",
+        "outline": "none 3px rgb(255, 255, 255)",
+        "outlineOffset": "0px",
+        "fontSize": "12px",
+        "text": "",
+        "svg": {
+          "w": 24,
+          "h": 24
+        }
+      },
+      {
+        "i": 3,
+        "className": "MuiAvatar-root MuiAvatar-rounded MuiAvatar-colorDefault css-eoktk9-MuiAvatar-root",
+        "w": 32,
+        "h": 32,
+        "bg": "rgb(42, 120, 198)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "8px",
+        "opacity": "1",
+        "boxShadow": "none",
+        "outline": "none 3px rgb(255, 255, 255)",
+        "outlineOffset": "0px",
+        "fontSize": "12px",
+        "text": "",
+        "svg": {
+          "w": 20,
+          "h": 20
+        }
+      },
+      {
+        "i": 4,
+        "className": "MuiAvatar-root MuiAvatar-rounded MuiAvatar-colorDefault css-eoktk9-MuiAvatar-root",
+        "w": 32,
+        "h": 32,
+        "bg": "rgb(42, 120, 198)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "8px",
+        "opacity": "1",
+        "boxShadow": "none",
+        "outline": "none 3px rgb(255, 255, 255)",
+        "outlineOffset": "0px",
+        "fontSize": "12px",
+        "text": "JD",
+        "svg": null
+      },
+      {
+        "i": 5,
+        "className": "MuiAvatar-root MuiAvatar-rounded css-exief5-MuiAvatar-root",
+        "w": 32,
+        "h": 32,
+        "bg": "rgb(42, 120, 198)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "8px",
+        "opacity": "1",
+        "boxShadow": "none",
+        "outline": "none 3px rgb(255, 255, 255)",
+        "outlineOffset": "0px",
+        "fontSize": "12px",
+        "text": "",
+        "svg": null
+      },
+      {
+        "i": 6,
+        "className": "MuiAvatar-root MuiAvatar-rounded MuiAvatar-colorDefault css-eoktk9-MuiAvatar-root",
+        "w": 32,
+        "h": 32,
+        "bg": "rgb(42, 120, 198)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "8px",
+        "opacity": "1",
+        "boxShadow": "none",
+        "outline": "none 3px rgb(255, 255, 255)",
+        "outlineOffset": "0px",
+        "fontSize": "12px",
+        "text": "",
+        "svg": {
+          "w": 20,
+          "h": 20
+        }
+      },
+      {
+        "i": 7,
+        "className": "MuiAvatar-root MuiAvatar-rounded MuiAvatar-colorDefault css-eoktk9-MuiAvatar-root",
+        "w": 32,
+        "h": 32,
+        "bg": "rgb(34, 104, 176)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "8px",
+        "opacity": "1",
+        "boxShadow": "none",
+        "outline": "none 3px rgb(255, 255, 255)",
+        "outlineOffset": "0px",
+        "fontSize": "12px",
+        "text": "",
+        "svg": {
+          "w": 20,
+          "h": 20
+        }
+      },
+      {
+        "i": 8,
+        "className": "MuiAvatar-root MuiAvatar-rounded MuiAvatar-colorDefault css-eoktk9-MuiAvatar-root",
+        "w": 32,
+        "h": 32,
+        "bg": "rgb(42, 120, 198)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "8px",
+        "opacity": "1",
+        "boxShadow": "none",
+        "outline": "none 3px rgb(255, 255, 255)",
+        "outlineOffset": "0px",
+        "fontSize": "12px",
+        "text": "",
+        "svg": {
+          "w": 20,
+          "h": 20
+        }
+      },
+      {
+        "i": 9,
+        "className": "MuiAvatar-root MuiAvatar-rounded MuiAvatar-colorDefault css-eoktk9-MuiAvatar-root",
+        "w": 32,
+        "h": 32,
+        "bg": "rgb(42, 120, 198)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "8px",
+        "opacity": "0.5",
+        "boxShadow": "none",
+        "outline": "none 3px rgb(255, 255, 255)",
+        "outlineOffset": "0px",
+        "fontSize": "12px",
+        "text": "",
+        "svg": {
+          "w": 20,
+          "h": 20
+        }
+      },
+      {
+        "i": 10,
+        "className": "MuiAvatar-root MuiAvatar-rounded MuiAvatar-colorDefault css-eoktk9-MuiAvatar-root",
+        "w": 32,
+        "h": 32,
+        "bg": "rgb(42, 120, 198)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "8px",
+        "opacity": "1",
+        "boxShadow": "none",
+        "outline": "none 3px rgb(255, 255, 255)",
+        "outlineOffset": "0px",
+        "fontSize": "12px",
+        "text": "RD",
+        "svg": null
+      },
+      {
+        "i": 11,
+        "className": "MuiAvatar-root MuiAvatar-circular MuiAvatar-colorDefault css-1n6nnaf-MuiAvatar-root",
+        "w": 32,
+        "h": 32,
+        "bg": "rgb(42, 120, 198)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "50%",
+        "opacity": "1",
+        "boxShadow": "none",
+        "outline": "none 3px rgb(255, 255, 255)",
+        "outlineOffset": "0px",
+        "fontSize": "12px",
+        "text": "CR",
+        "svg": null
+      },
+      {
+        "i": 12,
+        "className": "MuiAvatar-root MuiAvatar-square MuiAvatar-colorDefault css-grnrp6-MuiAvatar-root",
+        "w": 32,
+        "h": 32,
+        "bg": "rgb(42, 120, 198)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "0px",
+        "opacity": "1",
+        "boxShadow": "none",
+        "outline": "none 3px rgb(255, 255, 255)",
+        "outlineOffset": "0px",
+        "fontSize": "12px",
+        "text": "SQ",
+        "svg": null
+      }
+    ],
+    "buttons": [
+      {
+        "i": 0,
+        "disabled": false,
+        "btn": {
+          "className": "MuiButtonBase-root css-my8so3-MuiButtonBase-root",
+          "w": 32,
+          "h": 32,
+          "bg": "rgba(0, 0, 0, 0)",
+          "color": "rgb(55, 63, 78)",
+          "radius": "0px",
+          "opacity": "1",
+          "boxShadow": "none",
+          "outline": "none 0px rgb(55, 63, 78)",
+          "outlineOffset": "0px",
+          "fontSize": "13.3333px",
+          "text": "",
+          "svg": {
+            "w": 20,
+            "h": 20
+          }
+        },
+        "child": {
+          "className": "MuiAvatar-root MuiAvatar-rounded MuiAvatar-colorDefault css-eoktk9-MuiAvatar-root",
+          "w": 32,
+          "h": 32,
+          "bg": "rgb(42, 120, 198)",
+          "color": "rgb(255, 255, 255)",
+          "radius": "8px",
+          "opacity": "1",
+          "boxShadow": "none",
+          "outline": "none 3px rgb(255, 255, 255)",
+          "outlineOffset": "0px",
+          "fontSize": "12px",
+          "text": "",
+          "svg": {
+            "w": 20,
+            "h": 20
+          }
+        }
+      },
+      {
+        "i": 1,
+        "disabled": false,
+        "btn": {
+          "className": "MuiButtonBase-root avatar-demo-hover css-my8so3-MuiButtonBase-root",
+          "w": 32,
+          "h": 32,
+          "bg": "rgba(0, 0, 0, 0)",
+          "color": "rgb(55, 63, 78)",
+          "radius": "0px",
+          "opacity": "1",
+          "boxShadow": "none",
+          "outline": "none 0px rgb(55, 63, 78)",
+          "outlineOffset": "0px",
+          "fontSize": "13.3333px",
+          "text": "",
+          "svg": {
+            "w": 20,
+            "h": 20
+          }
+        },
+        "child": {
+          "className": "MuiAvatar-root MuiAvatar-rounded MuiAvatar-colorDefault css-eoktk9-MuiAvatar-root",
+          "w": 32,
+          "h": 32,
+          "bg": "rgb(34, 104, 176)",
+          "color": "rgb(255, 255, 255)",
+          "radius": "8px",
+          "opacity": "1",
+          "boxShadow": "none",
+          "outline": "none 3px rgb(255, 255, 255)",
+          "outlineOffset": "0px",
+          "fontSize": "12px",
+          "text": "",
+          "svg": {
+            "w": 20,
+            "h": 20
+          }
+        }
+      },
+      {
+        "i": 2,
+        "disabled": false,
+        "btn": {
+          "className": "MuiButtonBase-root avatar-demo-focus css-my8so3-MuiButtonBase-root",
+          "w": 32,
+          "h": 32,
+          "bg": "rgba(0, 0, 0, 0)",
+          "color": "rgb(55, 63, 78)",
+          "radius": "0px",
+          "opacity": "1",
+          "boxShadow": "color(srgb 0.164706 0.470588 0.776471 / 0.1) 0px 0px 0px 3px, rgb(247, 248, 250) 0px 0px 0px 4px",
+          "outline": "none 3px rgb(55, 63, 78)",
+          "outlineOffset": "0px",
+          "fontSize": "13.3333px",
+          "text": "",
+          "svg": {
+            "w": 20,
+            "h": 20
+          }
+        },
+        "child": {
+          "className": "MuiAvatar-root MuiAvatar-rounded MuiAvatar-colorDefault css-eoktk9-MuiAvatar-root",
+          "w": 32,
+          "h": 32,
+          "bg": "rgb(42, 120, 198)",
+          "color": "rgb(255, 255, 255)",
+          "radius": "8px",
+          "opacity": "1",
+          "boxShadow": "none",
+          "outline": "none 3px rgb(255, 255, 255)",
+          "outlineOffset": "0px",
+          "fontSize": "12px",
+          "text": "",
+          "svg": {
+            "w": 20,
+            "h": 20
+          }
+        }
+      },
+      {
+        "i": 3,
+        "disabled": true,
+        "btn": {
+          "className": "MuiButtonBase-root Mui-disabled css-my8so3-MuiButtonBase-root",
+          "w": 32,
+          "h": 32,
+          "bg": "rgba(0, 0, 0, 0)",
+          "color": "rgb(55, 63, 78)",
+          "radius": "0px",
+          "opacity": "1",
+          "boxShadow": "none",
+          "outline": "none 0px rgb(55, 63, 78)",
+          "outlineOffset": "0px",
+          "fontSize": "13.3333px",
+          "text": "",
+          "svg": {
+            "w": 20,
+            "h": 20
+          }
+        },
+        "child": {
+          "className": "MuiAvatar-root MuiAvatar-rounded MuiAvatar-colorDefault css-eoktk9-MuiAvatar-root",
+          "w": 32,
+          "h": 32,
+          "bg": "rgb(42, 120, 198)",
+          "color": "rgb(255, 255, 255)",
+          "radius": "8px",
+          "opacity": "0.5",
+          "boxShadow": "none",
+          "outline": "none 3px rgb(255, 255, 255)",
+          "outlineOffset": "0px",
+          "fontSize": "12px",
+          "text": "",
+          "svg": {
+            "w": 20,
+            "h": 20
+          }
+        }
+      }
+    ],
+    "forcedFocus": {
+      "before": {
+        "opacity": "1",
+        "boxShadow": "none",
+        "outline": "rgb(55, 63, 78) none 0px",
+        "childBg": "rgb(42, 120, 198)"
+      },
+      "after": {
+        "opacity": "1",
+        "boxShadow": "color(srgb 0.164706 0.470588 0.776471 / 0.1) 0px 0px 0px 3px, rgb(247, 248, 250) 0px 0px 0px 4px",
+        "outline": "rgb(55, 63, 78) none 3px",
+        "childBg": "rgb(42, 120, 198)"
+      }
+    }
+  },
+  "ref-dark": {
+    "label": "ref-dark",
+    "dark": true,
+    "interactiveLabels": [
+      "Small, medium, and large with default user icon.",
+      "Icon (default), initials, and a photograph for the image variant.",
+      "Default, hover, and focus-visible use real pointer and keyboard focus. The Hover and Focus columns use demo classes (avatar--demo-hover / avatar--demo-focus) so the documentation can show those looks without hovering.",
+      "Default",
+      "Hover (demo)",
+      "Focus (demo)",
+      "Disabled"
+    ],
+    "groupTitles": [
+      "Sizes (icon)",
+      "Variants",
+      "Interactive"
+    ],
+    "avatars": [
+      {
+        "i": 0,
+        "className": "avatar avatar--sm",
+        "w": 24,
+        "h": 24,
+        "bg": "rgb(89, 172, 255)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "4px",
+        "opacity": "1",
+        "boxShadow": "none",
+        "outline": "none 3px rgb(255, 255, 255)",
+        "outlineOffset": "0px",
+        "fontSize": "16px",
+        "text": "",
+        "svg": {
+          "w": 16,
+          "h": 16
+        }
+      },
+      {
+        "i": 1,
+        "className": "avatar avatar--md",
+        "w": 32,
+        "h": 32,
+        "bg": "rgb(89, 172, 255)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "8px",
+        "opacity": "1",
+        "boxShadow": "none",
+        "outline": "none 3px rgb(255, 255, 255)",
+        "outlineOffset": "0px",
+        "fontSize": "16px",
+        "text": "",
+        "svg": {
+          "w": 20,
+          "h": 20
+        }
+      },
+      {
+        "i": 2,
+        "className": "avatar avatar--lg",
+        "w": 40,
+        "h": 40,
+        "bg": "rgb(89, 172, 255)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "12px",
+        "opacity": "1",
+        "boxShadow": "none",
+        "outline": "none 3px rgb(255, 255, 255)",
+        "outlineOffset": "0px",
+        "fontSize": "16px",
+        "text": "",
+        "svg": {
+          "w": 24,
+          "h": 24
+        }
+      },
+      {
+        "i": 3,
+        "className": "avatar avatar--md",
+        "w": 32,
+        "h": 32,
+        "bg": "rgb(89, 172, 255)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "8px",
+        "opacity": "1",
+        "boxShadow": "none",
+        "outline": "none 3px rgb(255, 255, 255)",
+        "outlineOffset": "0px",
+        "fontSize": "16px",
+        "text": "",
+        "svg": {
+          "w": 20,
+          "h": 20
+        }
+      },
+      {
+        "i": 4,
+        "className": "avatar avatar--md avatar--initials",
+        "w": 32,
+        "h": 32,
+        "bg": "rgb(89, 172, 255)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "8px",
+        "opacity": "1",
+        "boxShadow": "none",
+        "outline": "none 3px rgb(255, 255, 255)",
+        "outlineOffset": "0px",
+        "fontSize": "16px",
+        "text": "JD",
+        "svg": null
+      },
+      {
+        "i": 5,
+        "className": "avatar avatar--md avatar--image",
+        "w": 32,
+        "h": 32,
+        "bg": "rgb(33, 41, 53)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "8px",
+        "opacity": "1",
+        "boxShadow": "none",
+        "outline": "none 3px rgb(255, 255, 255)",
+        "outlineOffset": "0px",
+        "fontSize": "16px",
+        "text": "",
+        "svg": null
+      },
+      {
+        "i": 6,
+        "className": "avatar avatar--md",
+        "w": 32,
+        "h": 32,
+        "bg": "rgb(89, 172, 255)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "8px",
+        "opacity": "1",
+        "boxShadow": "none",
+        "outline": "none 3px rgb(255, 255, 255)",
+        "outlineOffset": "0px",
+        "fontSize": "16px",
+        "text": "",
+        "svg": {
+          "w": 20,
+          "h": 20
+        }
+      },
+      {
+        "i": 7,
+        "className": "avatar avatar--md avatar--demo-hover",
+        "w": 32,
+        "h": 32,
+        "bg": "rgb(123, 184, 255)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "8px",
+        "opacity": "1",
+        "boxShadow": "none",
+        "outline": "none 3px rgb(255, 255, 255)",
+        "outlineOffset": "0px",
+        "fontSize": "16px",
+        "text": "",
+        "svg": {
+          "w": 20,
+          "h": 20
+        }
+      },
+      {
+        "i": 8,
+        "className": "avatar avatar--md avatar--demo-focus",
+        "w": 32,
+        "h": 32,
+        "bg": "rgb(89, 172, 255)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "8px",
+        "opacity": "1",
+        "boxShadow": "rgba(89, 172, 255, 0.1) 0px 0px 0px 3px, rgb(55, 66, 77) 0px 0px 0px 4px",
+        "outline": "none 3px rgb(255, 255, 255)",
+        "outlineOffset": "0px",
+        "fontSize": "16px",
+        "text": "",
+        "svg": {
+          "w": 20,
+          "h": 20
+        }
+      },
+      {
+        "i": 9,
+        "className": "avatar avatar--md",
+        "w": 32,
+        "h": 32,
+        "bg": "rgb(89, 172, 255)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "8px",
+        "opacity": "0.5",
+        "boxShadow": "none",
+        "outline": "none 3px rgb(255, 255, 255)",
+        "outlineOffset": "0px",
+        "fontSize": "16px",
+        "text": "",
+        "svg": {
+          "w": 20,
+          "h": 20
+        }
+      }
+    ],
+    "buttons": [
+      {
+        "i": 0,
+        "disabled": false,
+        "btn": {
+          "className": "avatar avatar--md",
+          "w": 32,
+          "h": 32,
+          "bg": "rgb(89, 172, 255)",
+          "color": "rgb(255, 255, 255)",
+          "radius": "8px",
+          "opacity": "1",
+          "boxShadow": "none",
+          "outline": "none 3px rgb(255, 255, 255)",
+          "outlineOffset": "0px",
+          "fontSize": "16px",
+          "text": "",
+          "svg": {
+            "w": 20,
+            "h": 20
+          }
+        },
+        "child": {
+          "className": "avatar avatar--md",
+          "w": 32,
+          "h": 32,
+          "bg": "rgb(89, 172, 255)",
+          "color": "rgb(255, 255, 255)",
+          "radius": "8px",
+          "opacity": "1",
+          "boxShadow": "none",
+          "outline": "none 3px rgb(255, 255, 255)",
+          "outlineOffset": "0px",
+          "fontSize": "16px",
+          "text": "",
+          "svg": {
+            "w": 20,
+            "h": 20
+          }
+        }
+      },
+      {
+        "i": 1,
+        "disabled": false,
+        "btn": {
+          "className": "avatar avatar--md avatar--demo-hover",
+          "w": 32,
+          "h": 32,
+          "bg": "rgb(123, 184, 255)",
+          "color": "rgb(255, 255, 255)",
+          "radius": "8px",
+          "opacity": "1",
+          "boxShadow": "none",
+          "outline": "none 3px rgb(255, 255, 255)",
+          "outlineOffset": "0px",
+          "fontSize": "16px",
+          "text": "",
+          "svg": {
+            "w": 20,
+            "h": 20
+          }
+        },
+        "child": {
+          "className": "avatar avatar--md avatar--demo-hover",
+          "w": 32,
+          "h": 32,
+          "bg": "rgb(123, 184, 255)",
+          "color": "rgb(255, 255, 255)",
+          "radius": "8px",
+          "opacity": "1",
+          "boxShadow": "none",
+          "outline": "none 3px rgb(255, 255, 255)",
+          "outlineOffset": "0px",
+          "fontSize": "16px",
+          "text": "",
+          "svg": {
+            "w": 20,
+            "h": 20
+          }
+        }
+      },
+      {
+        "i": 2,
+        "disabled": false,
+        "btn": {
+          "className": "avatar avatar--md avatar--demo-focus",
+          "w": 32,
+          "h": 32,
+          "bg": "rgb(89, 172, 255)",
+          "color": "rgb(255, 255, 255)",
+          "radius": "8px",
+          "opacity": "1",
+          "boxShadow": "rgba(89, 172, 255, 0.1) 0px 0px 0px 3px, rgb(55, 66, 77) 0px 0px 0px 4px",
+          "outline": "none 3px rgb(255, 255, 255)",
+          "outlineOffset": "0px",
+          "fontSize": "16px",
+          "text": "",
+          "svg": {
+            "w": 20,
+            "h": 20
+          }
+        },
+        "child": {
+          "className": "avatar avatar--md avatar--demo-focus",
+          "w": 32,
+          "h": 32,
+          "bg": "rgb(89, 172, 255)",
+          "color": "rgb(255, 255, 255)",
+          "radius": "8px",
+          "opacity": "1",
+          "boxShadow": "rgba(89, 172, 255, 0.1) 0px 0px 0px 3px, rgb(55, 66, 77) 0px 0px 0px 4px",
+          "outline": "none 3px rgb(255, 255, 255)",
+          "outlineOffset": "0px",
+          "fontSize": "16px",
+          "text": "",
+          "svg": {
+            "w": 20,
+            "h": 20
+          }
+        }
+      },
+      {
+        "i": 3,
+        "disabled": true,
+        "btn": {
+          "className": "avatar avatar--md",
+          "w": 32,
+          "h": 32,
+          "bg": "rgb(89, 172, 255)",
+          "color": "rgb(255, 255, 255)",
+          "radius": "8px",
+          "opacity": "0.5",
+          "boxShadow": "none",
+          "outline": "none 3px rgb(255, 255, 255)",
+          "outlineOffset": "0px",
+          "fontSize": "16px",
+          "text": "",
+          "svg": {
+            "w": 20,
+            "h": 20
+          }
+        },
+        "child": {
+          "className": "avatar avatar--md",
+          "w": 32,
+          "h": 32,
+          "bg": "rgb(89, 172, 255)",
+          "color": "rgb(255, 255, 255)",
+          "radius": "8px",
+          "opacity": "0.5",
+          "boxShadow": "none",
+          "outline": "none 3px rgb(255, 255, 255)",
+          "outlineOffset": "0px",
+          "fontSize": "16px",
+          "text": "",
+          "svg": {
+            "w": 20,
+            "h": 20
+          }
+        }
+      }
+    ],
+    "forcedFocus": {
+      "before": {
+        "opacity": "1",
+        "boxShadow": "none",
+        "outline": "rgb(255, 255, 255) none 3px",
+        "childBg": "rgb(89, 172, 255)"
+      },
+      "after": {
+        "opacity": "1",
+        "boxShadow": "none",
+        "outline": "rgb(255, 255, 255) none 3px",
+        "childBg": "rgb(89, 172, 255)"
+      }
+    }
+  },
+  "conv-dark": {
+    "label": "conv-dark",
+    "dark": true,
+    "interactiveLabels": [
+      "Small, medium, and large with default user icon. Size via width/height only (MUI docs).",
+      "Icon (default), initials, and a photograph. Harmony content variant ≠ MUI shape variant.",
+      "Default, hover, and focus-visible use real pointer and keyboard focus. The Hover and Focus columns use demo classes (avatar-demo-hover / avatar-demo-focus) so the documentation can show those looks without hovering.",
+      "Default",
+      "Hover (demo)",
+      "Focus (demo)",
+      "Disabled"
+    ],
+    "groupTitles": [
+      "Sizes (icon)",
+      "Content variants",
+      "Interactive",
+      "MUI shape supersets"
+    ],
+    "avatars": [
+      {
+        "i": 0,
+        "className": "MuiAvatar-root MuiAvatar-rounded MuiAvatar-colorDefault css-nr1f87-MuiAvatar-root",
+        "w": 24,
+        "h": 24,
+        "bg": "rgb(89, 172, 255)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "8px",
+        "opacity": "1",
+        "boxShadow": "none",
+        "outline": "none 3px rgb(255, 255, 255)",
+        "outlineOffset": "0px",
+        "fontSize": "12px",
+        "text": "",
+        "svg": {
+          "w": 16,
+          "h": 16
+        }
+      },
+      {
+        "i": 1,
+        "className": "MuiAvatar-root MuiAvatar-rounded MuiAvatar-colorDefault css-eoktk9-MuiAvatar-root",
+        "w": 32,
+        "h": 32,
+        "bg": "rgb(89, 172, 255)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "8px",
+        "opacity": "1",
+        "boxShadow": "none",
+        "outline": "none 3px rgb(255, 255, 255)",
+        "outlineOffset": "0px",
+        "fontSize": "12px",
+        "text": "",
+        "svg": {
+          "w": 20,
+          "h": 20
+        }
+      },
+      {
+        "i": 2,
+        "className": "MuiAvatar-root MuiAvatar-rounded MuiAvatar-colorDefault css-1aoex3e-MuiAvatar-root",
+        "w": 40,
+        "h": 40,
+        "bg": "rgb(89, 172, 255)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "8px",
+        "opacity": "1",
+        "boxShadow": "none",
+        "outline": "none 3px rgb(255, 255, 255)",
+        "outlineOffset": "0px",
+        "fontSize": "12px",
+        "text": "",
+        "svg": {
+          "w": 24,
+          "h": 24
+        }
+      },
+      {
+        "i": 3,
+        "className": "MuiAvatar-root MuiAvatar-rounded MuiAvatar-colorDefault css-eoktk9-MuiAvatar-root",
+        "w": 32,
+        "h": 32,
+        "bg": "rgb(89, 172, 255)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "8px",
+        "opacity": "1",
+        "boxShadow": "none",
+        "outline": "none 3px rgb(255, 255, 255)",
+        "outlineOffset": "0px",
+        "fontSize": "12px",
+        "text": "",
+        "svg": {
+          "w": 20,
+          "h": 20
+        }
+      },
+      {
+        "i": 4,
+        "className": "MuiAvatar-root MuiAvatar-rounded MuiAvatar-colorDefault css-eoktk9-MuiAvatar-root",
+        "w": 32,
+        "h": 32,
+        "bg": "rgb(89, 172, 255)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "8px",
+        "opacity": "1",
+        "boxShadow": "none",
+        "outline": "none 3px rgb(255, 255, 255)",
+        "outlineOffset": "0px",
+        "fontSize": "12px",
+        "text": "JD",
+        "svg": null
+      },
+      {
+        "i": 5,
+        "className": "MuiAvatar-root MuiAvatar-rounded css-exief5-MuiAvatar-root",
+        "w": 32,
+        "h": 32,
+        "bg": "rgb(89, 172, 255)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "8px",
+        "opacity": "1",
+        "boxShadow": "none",
+        "outline": "none 3px rgb(255, 255, 255)",
+        "outlineOffset": "0px",
+        "fontSize": "12px",
+        "text": "",
+        "svg": null
+      },
+      {
+        "i": 6,
+        "className": "MuiAvatar-root MuiAvatar-rounded MuiAvatar-colorDefault css-eoktk9-MuiAvatar-root",
+        "w": 32,
+        "h": 32,
+        "bg": "rgb(89, 172, 255)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "8px",
+        "opacity": "1",
+        "boxShadow": "none",
+        "outline": "none 3px rgb(255, 255, 255)",
+        "outlineOffset": "0px",
+        "fontSize": "12px",
+        "text": "",
+        "svg": {
+          "w": 20,
+          "h": 20
+        }
+      },
+      {
+        "i": 7,
+        "className": "MuiAvatar-root MuiAvatar-rounded MuiAvatar-colorDefault css-eoktk9-MuiAvatar-root",
+        "w": 32,
+        "h": 32,
+        "bg": "rgb(123, 184, 255)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "8px",
+        "opacity": "1",
+        "boxShadow": "none",
+        "outline": "none 3px rgb(255, 255, 255)",
+        "outlineOffset": "0px",
+        "fontSize": "12px",
+        "text": "",
+        "svg": {
+          "w": 20,
+          "h": 20
+        }
+      },
+      {
+        "i": 8,
+        "className": "MuiAvatar-root MuiAvatar-rounded MuiAvatar-colorDefault css-eoktk9-MuiAvatar-root",
+        "w": 32,
+        "h": 32,
+        "bg": "rgb(89, 172, 255)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "8px",
+        "opacity": "1",
+        "boxShadow": "none",
+        "outline": "none 3px rgb(255, 255, 255)",
+        "outlineOffset": "0px",
+        "fontSize": "12px",
+        "text": "",
+        "svg": {
+          "w": 20,
+          "h": 20
+        }
+      },
+      {
+        "i": 9,
+        "className": "MuiAvatar-root MuiAvatar-rounded MuiAvatar-colorDefault css-eoktk9-MuiAvatar-root",
+        "w": 32,
+        "h": 32,
+        "bg": "rgb(89, 172, 255)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "8px",
+        "opacity": "0.5",
+        "boxShadow": "none",
+        "outline": "none 3px rgb(255, 255, 255)",
+        "outlineOffset": "0px",
+        "fontSize": "12px",
+        "text": "",
+        "svg": {
+          "w": 20,
+          "h": 20
+        }
+      },
+      {
+        "i": 10,
+        "className": "MuiAvatar-root MuiAvatar-rounded MuiAvatar-colorDefault css-eoktk9-MuiAvatar-root",
+        "w": 32,
+        "h": 32,
+        "bg": "rgb(89, 172, 255)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "8px",
+        "opacity": "1",
+        "boxShadow": "none",
+        "outline": "none 3px rgb(255, 255, 255)",
+        "outlineOffset": "0px",
+        "fontSize": "12px",
+        "text": "RD",
+        "svg": null
+      },
+      {
+        "i": 11,
+        "className": "MuiAvatar-root MuiAvatar-circular MuiAvatar-colorDefault css-1n6nnaf-MuiAvatar-root",
+        "w": 32,
+        "h": 32,
+        "bg": "rgb(89, 172, 255)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "50%",
+        "opacity": "1",
+        "boxShadow": "none",
+        "outline": "none 3px rgb(255, 255, 255)",
+        "outlineOffset": "0px",
+        "fontSize": "12px",
+        "text": "CR",
+        "svg": null
+      },
+      {
+        "i": 12,
+        "className": "MuiAvatar-root MuiAvatar-square MuiAvatar-colorDefault css-grnrp6-MuiAvatar-root",
+        "w": 32,
+        "h": 32,
+        "bg": "rgb(89, 172, 255)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "0px",
+        "opacity": "1",
+        "boxShadow": "none",
+        "outline": "none 3px rgb(255, 255, 255)",
+        "outlineOffset": "0px",
+        "fontSize": "12px",
+        "text": "SQ",
+        "svg": null
+      }
+    ],
+    "buttons": [
+      {
+        "i": 0,
+        "disabled": false,
+        "btn": {
+          "className": "MuiButtonBase-root css-my8so3-MuiButtonBase-root",
+          "w": 32,
+          "h": 32,
+          "bg": "rgba(0, 0, 0, 0)",
+          "color": "rgb(233, 236, 239)",
+          "radius": "0px",
+          "opacity": "1",
+          "boxShadow": "none",
+          "outline": "none 0px rgb(233, 236, 239)",
+          "outlineOffset": "0px",
+          "fontSize": "13.3333px",
+          "text": "",
+          "svg": {
+            "w": 20,
+            "h": 20
+          }
+        },
+        "child": {
+          "className": "MuiAvatar-root MuiAvatar-rounded MuiAvatar-colorDefault css-eoktk9-MuiAvatar-root",
+          "w": 32,
+          "h": 32,
+          "bg": "rgb(89, 172, 255)",
+          "color": "rgb(255, 255, 255)",
+          "radius": "8px",
+          "opacity": "1",
+          "boxShadow": "none",
+          "outline": "none 3px rgb(255, 255, 255)",
+          "outlineOffset": "0px",
+          "fontSize": "12px",
+          "text": "",
+          "svg": {
+            "w": 20,
+            "h": 20
+          }
+        }
+      },
+      {
+        "i": 1,
+        "disabled": false,
+        "btn": {
+          "className": "MuiButtonBase-root avatar-demo-hover css-my8so3-MuiButtonBase-root",
+          "w": 32,
+          "h": 32,
+          "bg": "rgba(0, 0, 0, 0)",
+          "color": "rgb(233, 236, 239)",
+          "radius": "0px",
+          "opacity": "1",
+          "boxShadow": "none",
+          "outline": "none 0px rgb(233, 236, 239)",
+          "outlineOffset": "0px",
+          "fontSize": "13.3333px",
+          "text": "",
+          "svg": {
+            "w": 20,
+            "h": 20
+          }
+        },
+        "child": {
+          "className": "MuiAvatar-root MuiAvatar-rounded MuiAvatar-colorDefault css-eoktk9-MuiAvatar-root",
+          "w": 32,
+          "h": 32,
+          "bg": "rgb(123, 184, 255)",
+          "color": "rgb(255, 255, 255)",
+          "radius": "8px",
+          "opacity": "1",
+          "boxShadow": "none",
+          "outline": "none 3px rgb(255, 255, 255)",
+          "outlineOffset": "0px",
+          "fontSize": "12px",
+          "text": "",
+          "svg": {
+            "w": 20,
+            "h": 20
+          }
+        }
+      },
+      {
+        "i": 2,
+        "disabled": false,
+        "btn": {
+          "className": "MuiButtonBase-root avatar-demo-focus css-my8so3-MuiButtonBase-root",
+          "w": 32,
+          "h": 32,
+          "bg": "rgba(0, 0, 0, 0)",
+          "color": "rgb(233, 236, 239)",
+          "radius": "0px",
+          "opacity": "1",
+          "boxShadow": "color(srgb 0.34902 0.67451 1 / 0.1) 0px 0px 0px 3px, rgb(55, 66, 77) 0px 0px 0px 4px",
+          "outline": "none 3px rgb(233, 236, 239)",
+          "outlineOffset": "0px",
+          "fontSize": "13.3333px",
+          "text": "",
+          "svg": {
+            "w": 20,
+            "h": 20
+          }
+        },
+        "child": {
+          "className": "MuiAvatar-root MuiAvatar-rounded MuiAvatar-colorDefault css-eoktk9-MuiAvatar-root",
+          "w": 32,
+          "h": 32,
+          "bg": "rgb(89, 172, 255)",
+          "color": "rgb(255, 255, 255)",
+          "radius": "8px",
+          "opacity": "1",
+          "boxShadow": "none",
+          "outline": "none 3px rgb(255, 255, 255)",
+          "outlineOffset": "0px",
+          "fontSize": "12px",
+          "text": "",
+          "svg": {
+            "w": 20,
+            "h": 20
+          }
+        }
+      },
+      {
+        "i": 3,
+        "disabled": true,
+        "btn": {
+          "className": "MuiButtonBase-root Mui-disabled css-my8so3-MuiButtonBase-root",
+          "w": 32,
+          "h": 32,
+          "bg": "rgba(0, 0, 0, 0)",
+          "color": "rgb(233, 236, 239)",
+          "radius": "0px",
+          "opacity": "1",
+          "boxShadow": "none",
+          "outline": "none 0px rgb(233, 236, 239)",
+          "outlineOffset": "0px",
+          "fontSize": "13.3333px",
+          "text": "",
+          "svg": {
+            "w": 20,
+            "h": 20
+          }
+        },
+        "child": {
+          "className": "MuiAvatar-root MuiAvatar-rounded MuiAvatar-colorDefault css-eoktk9-MuiAvatar-root",
+          "w": 32,
+          "h": 32,
+          "bg": "rgb(89, 172, 255)",
+          "color": "rgb(255, 255, 255)",
+          "radius": "8px",
+          "opacity": "0.5",
+          "boxShadow": "none",
+          "outline": "none 3px rgb(255, 255, 255)",
+          "outlineOffset": "0px",
+          "fontSize": "12px",
+          "text": "",
+          "svg": {
+            "w": 20,
+            "h": 20
+          }
+        }
+      }
+    ],
+    "forcedFocus": {
+      "before": {
+        "opacity": "1",
+        "boxShadow": "none",
+        "outline": "rgb(233, 236, 239) none 0px",
+        "childBg": "rgb(89, 172, 255)"
+      },
+      "after": {
+        "opacity": "1",
+        "boxShadow": "color(srgb 0.34902 0.67451 1 / 0.1) 0px 0px 0px 3px, rgb(55, 66, 77) 0px 0px 0px 4px",
+        "outline": "rgb(233, 236, 239) none 3px",
+        "childBg": "rgb(89, 172, 255)"
+      }
+    }
+  }
+}

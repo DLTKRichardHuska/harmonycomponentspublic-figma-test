@@ -4,6 +4,7 @@ node_modules/
 # Build output
 dist/
 dist-kit/
+dist-products/
 .astro/
 .vite/
 
@@ -29,7 +30,21 @@ npm-debug.log*
 # Cache
 .cache/
 
+# Figma converter generated icon helpers
+converters/figma/scripts/.icon-svgs.json
+converters/figma/scripts/.icon-batch-*.json
+converters/figma/scripts/.expand-icons-code.js
+converters/figma/scripts/.expand-icons-payload.json
+converters/figma/scripts/.iconglyph-apply-*.js
+converters/figma/scripts/.custom-icon*
+converters/figma/scripts/.custom-replace*
+converters/figma/scripts/.custom-icons*
+converters/figma/scripts/.contract-clean.svg
+converters/figma/scripts/_batch-*
+converters/figma/scripts/_mcp-*
+converters/figma/scripts/_code-*
+converters/figma/scripts/_out*
+converters/figma/scripts/_tmp*
 
 # variant data report
 variant-data-report.json
-

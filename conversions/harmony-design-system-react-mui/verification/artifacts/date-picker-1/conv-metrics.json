@@ -1,0 +1,86 @@
+{
+  "basic": {
+    "w": 1,
+    "h": 1,
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(0, 0, 0)",
+    "fontSize": "13.3333px",
+    "radius": "0px",
+    "fontFamily": "Arial",
+    "borderColor": "rgb(0, 0, 0)",
+    "borderWidth": "0px",
+    "placeholder": "",
+    "inputValue": "",
+    "disabled": false
+  },
+  "basicAlt": {
+    "w": 360,
+    "h": 56,
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(55, 63, 78)",
+    "fontSize": "16px",
+    "radius": "0px",
+    "fontFamily": "Figtree, sans-serif",
+    "borderColor": "rgba(0, 0, 0, 0.23)",
+    "borderWidth": "1px",
+    "placeholder": "",
+    "inputValue": "",
+    "disabled": false
+  },
+  "disabled": {
+    "w": 1,
+    "h": 1,
+    "bg": "rgba(239, 239, 239, 0.3)",
+    "color": "rgb(84, 84, 84)",
+    "fontSize": "13.3333px",
+    "radius": "0px",
+    "fontFamily": "Arial",
+    "borderColor": "rgb(84, 84, 84)",
+    "borderWidth": "0px",
+    "placeholder": "",
+    "inputValue": "Jan 15, 2024",
+    "disabled": true
+  },
+  "disabledAlt": {
+    "w": 360,
+    "h": 56,
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(55, 63, 78)",
+    "fontSize": "16px",
+    "radius": "0px",
+    "fontFamily": "Figtree, sans-serif",
+    "borderColor": "rgba(0, 0, 0, 0.26)",
+    "borderWidth": "1px",
+    "placeholder": "",
+    "inputValue": "Jan 15, 2024",
+    "disabled": true
+  },
+  "labels": [
+    {
+      "text": "Select Date",
+      "fontSize": "14px",
+      "color": "rgb(55, 63, 78)",
+      "fontWeight": "400"
+    },
+    {
+      "text": "Select Time",
+      "fontSize": "14px",
+      "color": "rgb(55, 63, 78)",
+      "fontWeight": "400"
+    },
+    {
+      "text": "Select Date & Time",
+      "fontSize": "14px",
+      "color": "rgb(55, 63, 78)",
+      "fontWeight": "400"
+    }
+  ],
+  "htmlClass": "",
+  "hasWeekCallout": true,
+  "hasRangeCallout": true,
+  "hasWeekPickerLive": false,
+  "propHeadings": [
+    "DateInput"
+  ],
+  "a11yTitles": []
+}

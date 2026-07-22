@@ -1,0 +1,221 @@
+{
+  "refDark": {
+    "htmlClass": "dark theme-cp",
+    "bodyBg": "rgb(31, 37, 46)",
+    "toggleCount": 0,
+    "data": {
+      "groupBg": "rgb(31, 37, 46)",
+      "groupBorder": "1px solid rgb(95, 104, 113)",
+      "html": "dark theme-cp",
+      "btns": [
+        {
+          "text": "Selected",
+          "bg": "rgb(89, 172, 255)",
+          "color": "rgb(31, 37, 46)",
+          "opacity": "1"
+        },
+        {
+          "text": "Option 1",
+          "bg": "rgb(31, 37, 46)",
+          "color": "rgb(89, 172, 255)",
+          "opacity": "1"
+        },
+        {
+          "text": "Option 2",
+          "bg": "rgb(31, 37, 46)",
+          "color": "rgb(89, 172, 255)",
+          "opacity": "1"
+        }
+      ]
+    }
+  },
+  "convDark": {
+    "htmlClass": "dark",
+    "bodyBg": "rgb(31, 37, 46)",
+    "toggleCount": 1,
+    "data": {
+      "groupBg": "rgb(255, 255, 255)",
+      "groupBorder": "1px solid rgb(191, 198, 212)",
+      "html": "dark",
+      "btns": [
+        {
+          "text": "Selected",
+          "bg": "rgb(42, 120, 198)",
+          "color": "rgb(255, 255, 255)",
+          "opacity": "1"
+        },
+        {
+          "text": "Option 1",
+          "bg": "rgb(255, 255, 255)",
+          "color": "rgb(42, 120, 198)",
+          "opacity": "1"
+        },
+        {
+          "text": "Option 2",
+          "bg": "rgb(255, 255, 255)",
+          "color": "rgb(42, 120, 198)",
+          "opacity": "1"
+        }
+      ]
+    }
+  },
+  "ui": {
+    "headerInfo": [
+      {
+        "label": "Open navigation",
+        "title": null,
+        "text": "",
+        "classes": "MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-17z0jw-MuiBut"
+      },
+      {
+        "label": null,
+        "title": null,
+        "text": "CP",
+        "classes": "MuiButtonBase-root css-setw5h-MuiButtonBase-root"
+      },
+      {
+        "label": "Toggle color mode",
+        "title": null,
+        "text": "",
+        "classes": "MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-gi8qaf-MuiBut"
+      }
+    ],
+    "after": {
+      "html": "",
+      "bodyBg": "rgb(226, 228, 233)",
+      "muiMode": null,
+      "groupBg": "rgb(255, 255, 255)",
+      "groupBorder": "1px solid rgb(191, 198, 212)",
+      "btns": [
+        {
+          "text": "Selected",
+          "bg": "rgb(42, 120, 198)",
+          "color": "rgb(255, 255, 255)"
+        },
+        {
+          "text": "Option 1",
+          "bg": "rgb(255, 255, 255)",
+          "color": "rgb(42, 120, 198)"
+        },
+        {
+          "text": "Option 2",
+          "bg": "rgb(255, 255, 255)",
+          "color": "rgb(42, 120, 198)"
+        }
+      ]
+    }
+  },
+  "refIcons": {
+    "group": {
+      "bg": "rgb(255, 255, 255)",
+      "pad": "4px",
+      "gap": "8px"
+    },
+    "buttons": [
+      {
+        "label": "Bold",
+        "w": 40,
+        "h": 40,
+        "pad": "0px",
+        "bg": "rgb(42, 120, 198)",
+        "color": "rgb(255, 255, 255)",
+        "icon": {
+          "w": 16,
+          "h": 16
+        }
+      },
+      {
+        "label": "Italic",
+        "w": 40,
+        "h": 40,
+        "pad": "0px",
+        "bg": "rgb(255, 255, 255)",
+        "color": "rgb(42, 120, 198)",
+        "icon": {
+          "w": 16,
+          "h": 16
+        }
+      },
+      {
+        "label": "Underline",
+        "w": 40,
+        "h": 40,
+        "pad": "0px",
+        "bg": "rgb(255, 255, 255)",
+        "color": "rgb(42, 120, 198)",
+        "icon": {
+          "w": 16,
+          "h": 16
+        }
+      }
+    ]
+  },
+  "convIcons": {
+    "group": {
+      "bg": "rgb(255, 255, 255)",
+      "pad": "4px",
+      "gap": "8px"
+    },
+    "buttons": [
+      {
+        "label": "Bold",
+        "w": 48,
+        "h": 40,
+        "pad": "8px 16px",
+        "bg": "rgb(42, 120, 198)",
+        "color": "rgb(255, 255, 255)",
+        "icon": {
+          "w": 16,
+          "h": 16
+        }
+      },
+      {
+        "label": "Italic",
+        "w": 48,
+        "h": 40,
+        "pad": "8px 16px",
+        "bg": "rgb(255, 255, 255)",
+        "color": "rgb(42, 120, 198)",
+        "icon": {
+          "w": 16,
+          "h": 16
+        }
+      },
+      {
+        "label": "Underline",
+        "w": 48,
+        "h": 40,
+        "pad": "8px 16px",
+        "bg": "rgb(255, 255, 255)",
+        "color": "rgb(42, 120, 198)",
+        "icon": {
+          "w": 16,
+          "h": 16
+        }
+      }
+    ]
+  },
+  "refOutlineDark": {
+    "bg": "rgba(0, 0, 0, 0)",
+    "btns": [
+      {
+        "t": "Left",
+        "bg": "rgba(0, 0, 0, 0)",
+        "c": "rgb(233, 236, 239)",
+        "border": ""
+      },
+      {
+        "t": "Middle",
+        "bg": "rgba(0, 0, 0, 0)",
+        "c": "rgb(233, 236, 239)",
+        "border": ""
+      },
+      {
+        "t": "Right",
+        "bg": "rgba(0, 0, 0, 0)",
+        "c": "rgb(233, 236, 239)",
+        "border": "1px solid rgb(95, 104, 113)"
+      }
+    ]
+  }
+}

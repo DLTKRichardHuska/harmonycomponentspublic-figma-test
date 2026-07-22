@@ -1,0 +1,721 @@
+{
+  "id": "harmony-design-system-shadcn",
+  "name": "Harmony Design System — shadcn/ui + Tailwind + Radix",
+  "type": "component-library",
+  "status": "dev-in-progress",
+  "description": "Harmony Design System for AI consumers — React components on shadcn/ui patterns, Tailwind, and Radix",
+  "converterId": "harmony-design-system-shadcn",
+  "referenceVersion": "0.9.0",
+  "referenceVersionSetAt": "2026-07-17T21:11:58.191Z",
+  "independence": {
+    "standalone": true,
+    "layout": "npm-workspace",
+    "packagePath": "packages/ui",
+    "demoPath": "apps/demo"
+  },
+  "projectRoot": ".",
+  "elements": {
+    "Colors": {
+      "status": "synced",
+      "harmonySource": "src/pages/foundation/colors.astro",
+      "strategy": "component",
+      "verificationReport": "verification/reports/foundation-2.md",
+      "lastVerified": "2026-07-18T00:00:00.000Z",
+      "userDecision": "AI-first Approach A: single token source = CSS variables in tokens.css + one Tailwind preset → those vars + HarmonyThemeProvider. No JSON token export. Product is choose-once via defaultProduct for apps; demo may switch for review. Human accepted foundation-2 PASS.",
+      "notes": "Token source: packages/ui/src/styles/tokens.css + globals.css (Tailwind v4 @theme, no preset) + theme/index.tsx. Fonts bundled in styles/fonts + fonts.css."
+    },
+    "Typography": {
+      "status": "synced",
+      "harmonySource": "src/pages/foundation/typography.astro",
+      "strategy": "component",
+      "verificationReport": "verification/reports/foundation-2.md",
+      "lastVerified": "2026-07-18T00:00:00.000Z",
+      "notes": "Type scale via CSS variables + Tailwind. Human accepted foundation-2 PASS."
+    },
+    "Spacing": {
+      "status": "synced",
+      "harmonySource": "src/pages/foundation/spacing.astro",
+      "strategy": "component",
+      "verificationReport": "verification/reports/foundation-2.md",
+      "lastVerified": "2026-07-18T00:00:00.000Z",
+      "notes": "Spacing/radius via CSS variables + Tailwind. Human accepted foundation-2 PASS."
+    },
+    "Elevations": {
+      "status": "synced",
+      "harmonySource": "src/pages/foundation/elevations.astro",
+      "strategy": "component",
+      "verificationReport": "verification/reports/foundation-2.md",
+      "lastVerified": "2026-07-18T00:00:00.000Z",
+      "notes": "Shadow/elevation via CSS variables + Tailwind. Human accepted foundation-2 PASS."
+    },
+    "Dela": {
+      "status": "synced",
+      "harmonySource": "src/pages/foundation/dela.astro",
+      "strategy": "component",
+      "gaps": [
+        "Live Ask Dela panel demo deferred until RightSidebar + ShellPanel",
+        "Panel Usage, AI Guidelines, Accessibility sections deferred (shell phase)"
+      ],
+      "blockedBy": [],
+      "userDecision": "component Dela brand scope: CSS vars in tokens.css + Tailwind bg-dela / text-dela-foreground; CTA via existing Button dela/dela-pill (no DelaButton). Demo /foundation/dela mirrors react-mui brand+tokens inventory. Shell panel sections deferred. See plans/Dela.md. Human accepted Dela-1 PASS via plan execute (2026-07-18).",
+      "verificationReport": "verification/reports/Dela-1.md",
+      "lastVerified": "2026-07-18T19:30:00.000Z",
+      "notes": "Brand/foundation demo at /foundation/dela. Verifier PASS Dela-1; shell panel deferred."
+    },
+    "ShellLayout": {
+      "status": "synced",
+      "strategy": "component",
+      "harmonySource": "src/layouts/ShellLayout.astro",
+      "skippedProps": [
+        "runtime theme detection (theme-* MutationObserver) — replaced by composition",
+        "leftSidebarVariant/rightSidebarVariant/showFloatingNav auto-derivation"
+      ],
+      "gaps": [
+        "No runtime product switching in the library; product surface is chosen by composition"
+      ],
+      "blockedBy": [],
+      "userDecision": "component ShellLayout: thin prop-driven grid frame with slot props (header/leftSidebar/rightSidebar/footer/floatingNav/leftPanel/rightPanel + children). Grid derives from slot presence; productVariant only tunes spacing (cp vs standard). Zero theme detection — composition, not runtime switching. See plans/shell.md.",
+      "notes": "Package layout + demo /shell/layout (CP + standard compositions). Rendered clean; shell-1 capture.",
+      "lastVerified": "2026-07-20T19:35:00.000Z",
+      "verificationReport": "verification/reports/shell-1.md"
+    },
+    "Button": {
+      "status": "synced",
+      "strategy": "component",
+      "harmonySource": "src/components/ui/Button.astro",
+      "skippedProps": [],
+      "gaps": [],
+      "blockedBy": [],
+      "userDecision": "component Button: shadcn-style cva + Tailwind tokens + package Icon + inline loading spinner; full prop parity (xs, vertical, dela, pageHeader, href); Radix Slot asChild optional. Harmony variants kept (not stock shadcn default/destructive-only API). Consumer API: ButtonHTMLAttributes / AnchorHTMLAttributes events; href→a; asChild→Slot; export buttonVariants. See plans/consumer-api-existing.md + docs/components/Button.md.",
+      "verificationReport": "verification/reports/Button-1.md",
+      "lastVerified": "2026-07-18T19:10:00.000Z",
+      "notes": "Package Button: cva + Tailwind tokens; full prop parity; demo at /components/buttons. Verifier PASS Button-1; human accepted visual match (2026-07-18)."
+    },
+    "ButtonGroup": {
+      "status": "synced",
+      "harmonySource": "src/components/ui/ButtonGroup.astro",
+      "strategy": "component",
+      "skippedProps": [],
+      "gaps": [],
+      "blockedBy": [],
+      "userDecision": "component ButtonGroup: shadcn Button Group; default strips child borders; data-variant on Button; horizontal stacks full-width max-md; buttonGroupVariants. Remediations 2026-07-19.",
+      "notes": "Package + demo; border/responsive/hover/disabled remediations. Human accepted visual match (2026-07-19).",
+      "lastVerified": "2026-07-20T02:51:24.372Z",
+      "verificationReport": "verification/reports/ButtonGroup-1.md"
+    },
+    "Input": {
+      "status": "synced",
+      "harmonySource": "src/components/ui/Input.astro",
+      "strategy": "component",
+      "skippedProps": [],
+      "gaps": [],
+      "blockedBy": [],
+      "userDecision": "component Input hybrid: bare Input (no label/labelVariant); error/errorMessage/icon/trailingIcon/trailing; InputField convenience. Consumer API signed off hybrid plan 2026-07-20.",
+      "notes": "Package + demo /components/inputs. Hybrid with Field + InputField. 2026-07-21: geometry driven by semantic --field-* tokens (height/padding-x/radius/font/icon-gutter) + max-md responsive padding; CP compact density via product token block; label orientation token-driven (Field orientation=auto), no product JS branching.",
+      "lastVerified": "2026-07-20T05:00:00.000Z",
+      "verificationReport": "verification/reports/input-form-controls-1.md"
+    },
+    "Textarea": {
+      "status": "synced",
+      "harmonySource": "src/components/ui/Textarea.astro",
+      "strategy": "component",
+      "skippedProps": [],
+      "gaps": [],
+      "blockedBy": [],
+      "userDecision": "component Textarea hybrid: bare Textarea (no label; no error API — reference parity); TextareaField convenience. Consumer API signed off hybrid plan 2026-07-20.",
+      "notes": "Package + demo on /components/inputs. 2026-07-21: --field-* tokens (padding-x/radius/font + --field-textarea-* min-height/padding-y) + max-md responsive padding; CP compact density via product token block.",
+      "lastVerified": "2026-07-20T05:00:00.000Z",
+      "verificationReport": "verification/reports/input-form-controls-1.md"
+    },
+    "NumberInput": {
+      "status": "synced",
+      "harmonySource": "src/components/ui/NumberInput.astro",
+      "strategy": "component",
+      "skippedProps": [],
+      "gaps": [],
+      "blockedBy": [],
+      "userDecision": "component NumberInput: steppers via Button+Icon; value/onChange number API; NumberField convenience; no built-in label. Consumer API signed off hybrid plan 2026-07-20.",
+      "notes": "Package + demo /components/specialty-inputs. 2026-07-21: input + square steppers sized from --field-height; wrapper --field-radius; CP compact density via product token block.",
+      "lastVerified": "2026-07-20T05:00:00.000Z",
+      "verificationReport": "verification/reports/input-form-controls-1.md"
+    },
+    "RangeInput": {
+      "status": "synced",
+      "harmonySource": "src/components/ui/RangeInput.astro",
+      "strategy": "component",
+      "skippedProps": [],
+      "gaps": [],
+      "blockedBy": [],
+      "userDecision": "component RangeInput: Radix Slider; showPercent/prefix/suffix; RangeField convenience; no built-in label. Consumer API signed off hybrid plan 2026-07-20.",
+      "notes": "Package + demo /components/specialty-inputs. Date/Time section now live via DateInput. 2026-07-21: slider (track/thumb) has no boxed-field geometry; no --field-* changes; RangeField label orientation token-driven (auto).",
+      "lastVerified": "2026-07-20T05:00:00.000Z",
+      "verificationReport": "verification/reports/input-form-controls-1.md"
+    },
+    "Checkbox": {
+      "status": "synced",
+      "harmonySource": "src/components/ui/Checkbox.astro",
+      "strategy": "component",
+      "skippedProps": [
+        "label"
+      ],
+      "gaps": [],
+      "blockedBy": [],
+      "userDecision": "component Checkbox Hybrid C: bare Radix Checkbox (no label) + CheckboxField; Icon check indicator; validation props. Consumer API per plans/selection-tooltip-link.md 2026-07-20. Human accepted visual match (2026-07-20).",
+      "notes": "Package + demo /components/checkboxes. Verifier PASS selection-tooltip-link-3.",
+      "lastVerified": "2026-07-20T21:48:00.000Z",
+      "verificationReport": "verification/reports/selection-tooltip-link-3.md"
+    },
+    "CheckboxGroup": {
+      "status": "synced",
+      "harmonySource": "src/components/ui/CheckboxGroup.astro",
+      "strategy": "component",
+      "skippedProps": [],
+      "gaps": [],
+      "blockedBy": [],
+      "userDecision": "component CheckboxGroup fieldset shell; orientation; group validation; children Checkbox/CheckboxField. Consumer API per plans/selection-tooltip-link.md 2026-07-20. Human accepted visual match (2026-07-20).",
+      "notes": "Package + demo /components/checkbox-groups. Verifier PASS selection-tooltip-link-3.",
+      "lastVerified": "2026-07-20T21:48:00.000Z",
+      "verificationReport": "verification/reports/selection-tooltip-link-3.md"
+    },
+    "RadioButton": {
+      "status": "synced",
+      "harmonySource": "src/components/ui/RadioButton.astro",
+      "strategy": "component",
+      "skippedProps": [
+        "label"
+      ],
+      "gaps": [],
+      "blockedBy": [],
+      "userDecision": "component RadioButton Hybrid C: Radix item (no label) + RadioField; sizes sm|md|lg; CSS dot. Consumer API per plans/selection-tooltip-link.md 2026-07-20. Human accepted visual match (2026-07-20).",
+      "notes": "Package + demo /components/radio-buttons. Verifier PASS selection-tooltip-link-3.",
+      "lastVerified": "2026-07-20T21:48:00.000Z",
+      "verificationReport": "verification/reports/selection-tooltip-link-3.md"
+    },
+    "RadioGroup": {
+      "status": "synced",
+      "harmonySource": "src/components/ui/RadioGroup.astro",
+      "strategy": "component",
+      "skippedProps": [],
+      "gaps": [],
+      "blockedBy": [],
+      "userDecision": "component RadioGroup Radix root + fieldset; name propagation (stack win vs Astro); legend/orientation/validation. Consumer API per plans/selection-tooltip-link.md 2026-07-20. Human accepted visual match (2026-07-20).",
+      "notes": "Package + demo /components/radio-groups. Verifier PASS selection-tooltip-link-3.",
+      "lastVerified": "2026-07-20T21:48:00.000Z",
+      "verificationReport": "verification/reports/selection-tooltip-link-3.md"
+    },
+    "Toggle": {
+      "status": "in-progress",
+      "harmonySource": "src/components/ui/Toggle.astro",
+      "strategy": "component",
+      "skippedProps": [
+        "variant",
+        "optionLabelLeft",
+        "optionLabelRight",
+        "label"
+      ],
+      "gaps": [
+        "variant=segmented + optionLabelLeft/Right — callout on toggle-switches demo"
+      ],
+      "blockedBy": [],
+      "userDecision": "component Toggle: Radix Switch + ToggleField Hybrid C (no label on bare); size sm|md; skip segmented. Consumer API per plans/toggle-dropdown-accordion.md 2026-07-20."
+    },
+    "DateInput": {
+      "status": "synced",
+      "harmonySource": "src/components/ui/DateInput.astro",
+      "strategy": "component",
+      "skippedProps": [
+        "label",
+        "labelVariant",
+        "labelFor"
+      ],
+      "gaps": [
+        "DateRangePicker / DateRangePickerExpanded internal — callout on date-picker demo"
+      ],
+      "blockedBy": [],
+      "userDecision": "component DateInput hybrid: bare DateInput (no label props) + DateInputField; onChange(string); types date|time|datetime-local|month|week; Popover + panels. Calendar alias of DatePicker. Consumer API per plans/date-time-inputs.md 2026-07-20.",
+      "notes": "Package + demo /components/date-picker and specialty Date/Time. Verifier PASS DateInput-2; synced after execute + PASS (2026-07-20). 2026-07-21: composes Input so inherits --field-* geometry/density automatically; DateInputField label orientation token-driven (auto).",
+      "lastVerified": "2026-07-20T16:23:34.660Z",
+      "verificationReport": "verification/reports/DateInput-2.md"
+    },
+    "Label": {
+      "status": "synced",
+      "harmonySource": "src/components/ui/Label.astro",
+      "strategy": "component",
+      "skippedProps": [],
+      "gaps": [],
+      "blockedBy": [],
+      "userDecision": "component Label hybrid: Label + Field/FieldLabel/FieldDescription/FieldError; htmlFor (not for); required/helper. Prefer Field composition; *Field convenience on controls. Consumer API signed off hybrid plan 2026-07-20.",
+      "notes": "Package + demo /components/labels. Field helpers co-exported.",
+      "lastVerified": "2026-07-20T05:00:00.000Z",
+      "verificationReport": "verification/reports/input-form-controls-1.md"
+    },
+    "Avatar": {
+      "status": "synced",
+      "harmonySource": "src/components/ui/Avatar.astro",
+      "strategy": "component",
+      "skippedProps": [],
+      "gaps": [],
+      "blockedBy": [],
+      "userDecision": "component Avatar: shadcn Avatar + Image/Fallback exports; convenience variant icon|initials|image; interactive button; omit AvatarGroup/AvatarBadge. avatarVariants. Consumer API approved batch 2026-07-18.",
+      "notes": "Package + demo /components/avatar. Human accepted visual match (2026-07-19).",
+      "lastVerified": "2026-07-20T02:35:05.186Z",
+      "verificationReport": "verification/reports/Avatar-1.md"
+    },
+    "Card": {
+      "status": "synced",
+      "harmonySource": "src/components/ui/Card.astro",
+      "strategy": "component",
+      "skippedProps": [
+        "withHeader",
+        "headerTitle",
+        "headerSubtitle",
+        "icon1",
+        "icon2",
+        "icon3"
+      ],
+      "gaps": [],
+      "blockedBy": [],
+      "userDecision": "component Card: shadcn compound CardHeader/Title/Description/Action/Content/Footer + cardVariants; Harmony elevated|interactive|primary; convenience title/description when not composing CardHeader (compound wins); header actions via CardAction + Button/Icon (no Astro icon1/2/3); asChild on root. Consumer API dual-path approved 2026-07-20. See plans/cards-dialogs.md + docs/components/Card.md.",
+      "notes": "Package + demo /components/cards. Human accepted visual match (2026-07-20).",
+      "lastVerified": "2026-07-20T20:44:00.000Z",
+      "verificationReport": "verification/reports/Card-Dialog-1.md"
+    },
+    "Badge": {
+      "status": "synced",
+      "harmonySource": "src/components/ui/Badge.astro",
+      "strategy": "component",
+      "skippedProps": [],
+      "gaps": [],
+      "blockedBy": [],
+      "userDecision": "component Badge: shadcn Badge + cva; sizes sm|md|lg (Astro small/medium/large); default lg; icon via Icon; badgeVariants. Demo chrome uses Badge via demoStatusBadge. Consumer API approved batch 2026-07-18.",
+      "notes": "Package + demo /components/badges + demo chrome. Human accepted visual match (2026-07-19).",
+      "lastVerified": "2026-07-20T02:35:05.186Z",
+      "verificationReport": "verification/reports/Badge-1.md"
+    },
+    "NotificationBadge": {
+      "status": "synced",
+      "harmonySource": "src/components/ui/NotificationBadge.astro",
+      "strategy": "component",
+      "skippedProps": [],
+      "gaps": [],
+      "blockedBy": [],
+      "userDecision": "component NotificationBadge: children wrap anchor for auto top-right (AI-friendly); standalone without children; type/size/variant/value/border; notificationBadgeVariants. Consumer API delta 2026-07-19.",
+      "notes": "Package + demo; children wrap API (AI-friendly). Human accepted visual match (2026-07-19).",
+      "lastVerified": "2026-07-20T02:48:53.654Z",
+      "verificationReport": "verification/reports/NotificationBadge-1.md"
+    },
+    "Chip": {
+      "status": "synced",
+      "harmonySource": "src/components/ui/Chip.astro",
+      "strategy": "component",
+      "skippedProps": [
+        "selected",
+        "state"
+      ],
+      "gaps": [
+        "Legacy selected omitted",
+        "Static hover/focused/pressed docs states omitted (CSS pseudo)"
+      ],
+      "blockedBy": [],
+      "userDecision": "component Chip: cva (no stock Chip); fill|outline; types chip|dots|overflow; removable/onRemove; omit legacy selected and static state props. chipVariants. Consumer API approved batch 2026-07-18.",
+      "notes": "Package + demo /components/chips. Human accepted visual match (2026-07-19).",
+      "lastVerified": "2026-07-20T02:35:05.186Z",
+      "verificationReport": "verification/reports/Chip-1.md"
+    },
+    "Alert": {
+      "status": "synced",
+      "harmonySource": "src/components/ui/Alert.astro",
+      "strategy": "component",
+      "skippedProps": [],
+      "gaps": [],
+      "blockedBy": [],
+      "userDecision": "component Alert: shadcn Alert + AlertTitle/Description/Action; appearance default|enhanced (not style); compose Icon/Button/ProgressBar; onDismiss controlled; primaryAction/secondaryAction. alertVariants. Consumer API approved batch 2026-07-18. ProgressBar implemented first in batch.",
+      "notes": "Package + demo /components/alerts. Human accepted visual match (2026-07-19).",
+      "lastVerified": "2026-07-20T02:35:05.186Z",
+      "verificationReport": "verification/reports/Alert-1.md"
+    },
+    "Tooltip": {
+      "status": "synced",
+      "harmonySource": "src/components/ui/Tooltip.astro",
+      "strategy": "component",
+      "skippedProps": [
+        "cornerVariant"
+      ],
+      "gaps": [
+        "cornerVariant — no Radix Tooltip sharp-corner analog (demo callout)"
+      ],
+      "blockedBy": [],
+      "userDecision": "component Tooltip Radix/shadcn compound; text + position→side; skip cornerVariant. Consumer API per plans/selection-tooltip-link.md 2026-07-20. Human accepted visual match (2026-07-20).",
+      "notes": "Package + demo /components/tooltips. Verifier PASS selection-tooltip-link-3.",
+      "lastVerified": "2026-07-20T21:48:00.000Z",
+      "verificationReport": "verification/reports/selection-tooltip-link-3.md"
+    },
+    "Spinner": {
+      "status": "synced",
+      "strategy": "component",
+      "harmonySource": "src/components/ui/Spinner.astro",
+      "skippedProps": [],
+      "gaps": [],
+      "blockedBy": [],
+      "userDecision": "component Spinner: stock shadcn Spinner pattern; default Harmony CSS border ring (not Lucide); size sm|md|lg; optional icon via package Icon (replaces ring); role=status aria-label Loading; span root + HTML attrs/ref. Button dual patterns: keep loading+private SVG; also nest Spinner as children when loading false. Consumer API signed off 2026-07-18. See plans/Spinner.md + docs/components/Spinner.md.",
+      "verificationReport": "verification/reports/Spinner-1.md",
+      "lastVerified": "2026-07-18T19:56:00.000Z",
+      "notes": "Package Spinner: border ring + optional Icon override; demo at /components/spinner. Verifier PASS Spinner-1; human accepted visual match (2026-07-18)."
+    },
+    "ProgressBar": {
+      "status": "synced",
+      "harmonySource": "src/components/ui/ProgressBar.astro",
+      "strategy": "component",
+      "skippedProps": [],
+      "gaps": [],
+      "blockedBy": [],
+      "userDecision": "component ProgressBar: shadcn Progress / Radix; value/max/size sm|md|lg/variant/showLabel; progressBarVariants; full size parity. Consumer API approved in status-components batch plan 2026-07-18.",
+      "notes": "Package + demo /components/progress-bar. Human accepted visual match (2026-07-19).",
+      "lastVerified": "2026-07-20T02:35:05.186Z",
+      "verificationReport": "verification/reports/ProgressBar-1.md"
+    },
+    "Table": {
+      "status": "not-started",
+      "harmonySource": "src/components/ui/Table.astro"
+    },
+    "TableCostpointGrid": {
+      "status": "not-started",
+      "products": ["cp"],
+      "harmonySource": "src/components/ui/TableCostpointGrid.astro"
+    },
+    "Icon": {
+      "status": "synced",
+      "strategy": "component",
+      "harmonySource": "src/components/ui/Icon.astro",
+      "skippedProps": [],
+      "gaps": [],
+      "userDecision": "component Icon export: Tailwind+cva sizes via --icon-* tokens; resolve manifest→Heroicons→Tabler→custom public SVG→fallback; no Lucide remap; product from HarmonyThemeProvider for manifest lookup. Consumer API: presentational (no click API); name/size/variant/product/className; wrap parent for interaction. See plans/consumer-api-existing.md + docs/components/Icon.md.",
+      "verificationReport": "verification/reports/Icon-1.md",
+      "lastVerified": "2026-07-18T17:46:00.000Z",
+      "notes": "Package Icon: manifest→Heroicons→Tabler→custom SVG; cva sizes via --icon-* tokens. Demo at /components/icons. Verifier PASS iteration 1; human accepted visual match (2026-07-18)."
+    },
+    "TabStrip": {
+      "status": "synced",
+      "harmonySource": "src/components/ui/TabStrip.astro",
+      "strategy": "component",
+      "skippedProps": [],
+      "gaps": [
+        "Astro tabs[] array / named content slots / custom DOM events -> Radix Tabs compound (TabsTrigger/TabsContent), actions slot, TabsAddButton, React callbacks",
+        "overflow auto/manual -> useTabOverflow hook + composed DropdownMenu (or overflow=scroll)"
+      ],
+      "blockedBy": [],
+      "userDecision": "component Tabs/TabsList/TabsTrigger/TabsContent (+TabsAddButton, useTabOverflow) on @radix-ui/react-tabs; composition-first full parity: variant default|compact|pill (pill VP-only), iconPosition, per-tab actions slot, add-tab, overflow scroll + auto menu; kebab/overflow via new DropdownMenu (@radix-ui/react-dropdown-menu) inlining Select tokens (no shared module, no Select refactor). Consumer API per plans/tabstrip.md 2026-07-20.",
+      "notes": "Implemented package (tabs + dropdown-menu) + demo (12 sections) + docs; human accepted visual match 2026-07-20. shadcn-AI ergonomics pass: TabsTrigger supports icon-as-child + asChild; overflow narrowed to none|scroll (auto menu via useTabOverflow).",
+      "lastVerified": "2026-07-21T00:44:00.000Z"
+    },
+    "Stepper": {
+      "status": "synced",
+      "harmonySource": "src/components/ui/Stepper.astro",
+      "strategy": "component",
+      "skippedProps": [],
+      "gaps": [
+        "Astro data-* init script (linear auto-disable, auto-numbering, connector activation) -> React context/clone",
+        "stepper:step-clicked event -> onStepClick(index); slot=description -> description prop"
+      ],
+      "blockedBy": [],
+      "userDecision": "component Stepper/Step custom compound (no Radix); cva state variants + tokens; Stepper clones Step children to inject index/state; activeStep/orientation/nonLinear/onStepClick; Step completed/disabled/error/warning/success/icon/description. Consumer API per plans/stepper.md 2026-07-20.",
+      "notes": "Implemented package + demo (7 sections) + docs; human accepted visual match 2026-07-20.",
+      "lastVerified": "2026-07-21T00:44:00.000Z"
+    },
+    "Step": {
+      "status": "synced",
+      "harmonySource": "src/components/ui/Step.astro",
+      "strategy": "component",
+      "skippedProps": [],
+      "gaps": [],
+      "blockedBy": [],
+      "userDecision": "component Step: sub-component of Stepper, planned/shipped together. Consumer API per plans/stepper.md 2026-07-20.",
+      "notes": "Shipped with Stepper; human accepted visual match 2026-07-20.",
+      "lastVerified": "2026-07-21T00:44:00.000Z"
+    },
+    "FloatingNav": {
+      "status": "synced",
+      "products": ["cp"],
+      "strategy": "component",
+      "harmonySource": "src/components/ui/FloatingNav.astro",
+      "skippedProps": [],
+      "gaps": [],
+      "blockedBy": [],
+      "userDecision": "component FloatingNav: CP action toolbar (Execute/Actions/Refresh/Save/pin) with variant full|compact, showExecute, saveDisabled, React callbacks (onExecute/onSave/…), and an actions slot override. See plans/shell.md.",
+      "notes": "Package layout + demo /cp/floating-nav. Rendered clean; shell-1 capture. 2026-07-21: surfaced in the demo sidebar via the product-driven 'CP Components' section (demoThemeConfig.components + DemoShell), reproducing the reference's runtime theme nav. This demo-chrome product switching is intended and separate from the packages' 'composition, not runtime switching' decision (which governs delivered packages only).",
+      "lastVerified": "2026-07-20T19:35:00.000Z",
+      "verificationReport": "verification/reports/shell-1.md"
+    },
+    "Link": {
+      "status": "synced",
+      "harmonySource": "src/components/ui/Link.astro",
+      "strategy": "component",
+      "skippedProps": [],
+      "gaps": [
+        "responsive default size <768px when no size class — always explicit size (default md)"
+      ],
+      "blockedBy": [],
+      "userDecision": "component Link cva <a>; size/muted/external+Icon; asChild; skip Astro responsive default size. Consumer API per plans/selection-tooltip-link.md 2026-07-20. Human accepted visual match (2026-07-20).",
+      "notes": "Package + demo /components/links. Verifier PASS selection-tooltip-link-3.",
+      "lastVerified": "2026-07-20T21:48:00.000Z",
+      "verificationReport": "verification/reports/selection-tooltip-link-3.md"
+    },
+    "LeftSidebar": {
+      "status": "synced",
+      "strategy": "component",
+      "harmonySource": "src/components/ui/LeftSidebar.astro",
+      "skippedProps": [
+        "runtime theme-* variant visibility (all variants rendered) — replaced by variant prop"
+      ],
+      "gaps": [
+        "shadcn sidebar block not used — hover-expand icon rail is not a fit; custom rail on Harmony tokens (documented)"
+      ],
+      "blockedBy": [],
+      "userDecision": "component LeftSidebar: hover-expand icon rail with default sections per variant (cp/vp/ppm/maconomy) or custom sections; controlled activeId + onItemSelect for panel wiring; expanded/panelOpen flags. Custom (not shadcn Sidebar block) per plans/shell.md.",
+      "notes": "Package layout + demo /shell/left-sidebar. Rendered clean; shell-1 capture.",
+      "lastVerified": "2026-07-20T19:35:00.000Z",
+      "verificationReport": "verification/reports/shell-1.md"
+    },
+    "RightSidebar": {
+      "status": "synced",
+      "strategy": "component",
+      "harmonySource": "src/components/ui/RightSidebar.astro",
+      "skippedProps": [
+        "runtime theme-* variant visibility (all variants rendered) — replaced by variant prop"
+      ],
+      "gaps": [
+        "shadcn sidebar block not used — hover-expand icon rail is not a fit; custom rail on Harmony tokens (documented)"
+      ],
+      "blockedBy": [],
+      "userDecision": "component RightSidebar: mirror of LeftSidebar on the right edge; every variant starts with the Dela AI item (default/active logo swap + gradient tile when active); controlled activeId + onItemSelect. Custom (not shadcn Sidebar block) per plans/shell.md.",
+      "notes": "Package layout + demo /shell/right-sidebar. Dela active state verified; shell-1 capture.",
+      "lastVerified": "2026-07-20T19:35:00.000Z",
+      "verificationReport": "verification/reports/shell-1.md"
+    },
+    "ShellPageHeader": {
+      "status": "synced",
+      "strategy": "component",
+      "harmonySource": "src/components/ui/ShellPageHeader.astro",
+      "skippedProps": [],
+      "gaps": [],
+      "blockedBy": [],
+      "userDecision": "component ShellPageHeader: title/subtitle + outlineButtons[] then primaryButton (package Button, buttonType=pageHeader) or full actions override. See plans/shell.md.",
+      "notes": "Package layout + demo /shell/page-header. Rendered clean; shell-1 capture.",
+      "lastVerified": "2026-07-20T19:35:00.000Z",
+      "verificationReport": "verification/reports/shell-1.md"
+    },
+    "ShellPanel": {
+      "status": "synced",
+      "strategy": "component",
+      "harmonySource": "src/components/ui/ShellPanel.astro",
+      "skippedProps": [
+        "popout/detach (stub — onPopout callback only)",
+        "global updateShellPanel/openShellPanel/closeShellPanel — replaced by React open/onOpenChange"
+      ],
+      "gaps": [
+        "shadcn Sheet (modal overlay) not used — panel is non-modal inline; custom drawer (documented)"
+      ],
+      "blockedBy": [],
+      "userDecision": "component ShellPanel: non-modal inline drawer, side left|right, controlled open/onOpenChange, theme|default header, narrow|full width (user-toggleable), gradientHeader for Dela, showClose/showPopout. Custom (not shadcn Sheet) per plans/shell.md.",
+      "notes": "Package layout + demo /shell/panel (right wired to sidebar, left default header). shell-1 capture.",
+      "lastVerified": "2026-07-20T19:35:00.000Z",
+      "verificationReport": "verification/reports/shell-1.md"
+    },
+    "ShellFooter": {
+      "status": "synced",
+      "strategy": "component",
+      "harmonySource": "src/components/ui/ShellFooter.astro",
+      "skippedProps": [],
+      "gaps": [],
+      "blockedBy": [],
+      "userDecision": "component ShellFooter: composes package Tabs on a dark bar; tabs[] + value/onValueChange + showAddButton + variant default|compact; active tab pinned with primary underline. See plans/shell.md.",
+      "notes": "Package layout + demo /shell/footer. Active pin + underline verified; shell-1 capture.",
+      "lastVerified": "2026-07-20T19:35:00.000Z",
+      "verificationReport": "verification/reports/shell-1.md"
+    },
+    "ShellHeader": {
+      "status": "synced",
+      "strategy": "component",
+      "harmonySource": "src/components/ui/ShellHeader.astro",
+      "skippedProps": [],
+      "gaps": [],
+      "blockedBy": [],
+      "userDecision": "component ShellHeader: brand (logo+productName) + company picker (controlled dropdown, indicator + gradient bar reflect selection) + Avatar; companies/companyColor props; actions slot override. See plans/shell.md.",
+      "notes": "Package layout + demo /shell/header. Company picker + gradient verified; shell-1 capture.",
+      "lastVerified": "2026-07-20T19:35:00.000Z",
+      "verificationReport": "verification/reports/shell-1.md"
+    },
+    "Dialog": {
+      "status": "synced",
+      "harmonySource": "src/components/ui/Dialog.astro",
+      "strategy": "component",
+      "skippedProps": [
+        "id",
+        "confirmCallbackName",
+        "tertiaryCallbackName",
+        "resizable"
+      ],
+      "gaps": [
+        "resizable — no Radix Dialog resize analog; drag-to-resize omitted (demo callout)"
+      ],
+      "blockedBy": [],
+      "userDecision": "component Dialog: @radix-ui/react-dialog shadcn compound (Trigger/Content/Header/Title/Description/Body/Footer/Close); Harmony DialogHeader variant default|primary; DialogFooter buttonAlignment + convenience confirmLabel/onConfirm/cancelLabel/onCancel/tertiary (children win); Icon x-mark close; Radix open/onOpenChange (no openDialog globals). Skip resizable. Consumer API dual-path approved 2026-07-20. See plans/cards-dialogs.md + docs/components/Dialog.md.",
+      "notes": "Package + demo /components/dialogs. Positioning + close X + elevated shadow remediations. Human accepted visual match (2026-07-20).",
+      "lastVerified": "2026-07-20T20:44:00.000Z",
+      "verificationReport": "verification/reports/Card-Dialog-1.md"
+    },
+    "Dropdown": {
+      "status": "in-progress",
+      "harmonySource": "src/components/ui/Dropdown.astro",
+      "strategy": "component",
+      "skippedProps": [
+        "options",
+        "label",
+        "labelVariant",
+        "labelFor"
+      ],
+      "gaps": [
+        "Astro options[] / trigger / option-* slots — SelectItem children + SelectField instead; callout on dropdowns demo"
+      ],
+      "blockedBy": [],
+      "userDecision": "component Dropdown→Select: Radix Select compound + SelectField hybrid labels; SelectItem children (no options[]); Icon chevron-down. Consumer API per plans/toggle-dropdown-accordion.md 2026-07-20.",
+      "notes": "2026-07-21: SelectTrigger geometry from --field-* tokens (height/radius/padding-x/font) + max-md responsive padding; CP compact density via product token block; SelectField label orientation token-driven (auto)."
+    },
+    "Accordion": {
+      "status": "in-progress",
+      "harmonySource": "src/components/ui/Accordion.astro",
+      "strategy": "component",
+      "skippedProps": [
+        "items",
+        "allowMultiple",
+        "label"
+      ],
+      "gaps": [
+        "Astro items[] / item-* slots / label prop — compound Accordion + external group label; callout on accordion demo"
+      ],
+      "blockedBy": [],
+      "userDecision": "component Accordion: Radix compound Accordion/Item/Trigger/Content; type single|multiple (maps allowMultiple); no items[]; Icon chevron-down. Consumer API per plans/toggle-dropdown-accordion.md 2026-07-20."
+    },
+    "Kanban": {
+      "status": "not-started",
+      "variantProducts": { "costpoint": ["cp"] },
+      "harmonySource": "src/components/ui/Kanban.astro"
+    },
+    "KanbanCard": {
+      "status": "not-started",
+      "harmonySource": "src/components/ui/KanbanCard.astro"
+    },
+    "KanbanCardCostpoint": {
+      "status": "not-started",
+      "products": ["cp"],
+      "harmonySource": "src/components/ui/KanbanCardCostpoint.astro"
+    },
+    "DatePicker": {
+      "status": "synced",
+      "harmonySource": "src/components/ui/DatePicker.astro",
+      "strategy": "component",
+      "skippedProps": [],
+      "gaps": [],
+      "blockedBy": [],
+      "userDecision": "component DatePicker / Calendar alias: react-day-picker + Harmony tokens; value/onSelect YYYY-MM-DD. Consumer API per plans/date-time-inputs.md 2026-07-20.",
+      "notes": "Verifier PASS DateInput-2; synced after execute + PASS (2026-07-20).",
+      "lastVerified": "2026-07-20T16:23:34.660Z",
+      "verificationReport": "verification/reports/DateInput-2.md"
+    },
+    "DateTimePicker": {
+      "status": "synced",
+      "harmonySource": "src/components/ui/DateTimePicker.astro",
+      "strategy": "component",
+      "skippedProps": [],
+      "gaps": [],
+      "blockedBy": [],
+      "userDecision": "component DateTimePicker: DatePicker + TimePicker; onSelect when both set. Consumer API per plans/date-time-inputs.md 2026-07-20.",
+      "notes": "Verifier PASS DateInput-2; synced after execute + PASS (2026-07-20).",
+      "lastVerified": "2026-07-20T16:23:34.660Z",
+      "verificationReport": "verification/reports/DateInput-2.md"
+    },
+    "MonthPicker": {
+      "status": "synced",
+      "harmonySource": "src/components/ui/MonthPicker.astro",
+      "strategy": "component",
+      "skippedProps": [],
+      "gaps": [],
+      "blockedBy": [],
+      "userDecision": "component MonthPicker: year nav + month grid; YYYY-MM onSelect. Consumer API per plans/date-time-inputs.md 2026-07-20.",
+      "notes": "Verifier PASS DateInput-2; synced after execute + PASS (2026-07-20).",
+      "lastVerified": "2026-07-20T16:23:34.660Z",
+      "verificationReport": "verification/reports/DateInput-2.md"
+    },
+    "WeekPicker": {
+      "status": "synced",
+      "harmonySource": "src/components/ui/WeekPicker.astro",
+      "strategy": "component",
+      "skippedProps": [],
+      "gaps": [],
+      "blockedBy": [],
+      "userDecision": "component WeekPicker: ISO week list; YYYY-Www onSelect (not skipped). Consumer API per plans/date-time-inputs.md 2026-07-20.",
+      "notes": "Verifier PASS DateInput-2; synced after execute + PASS (2026-07-20).",
+      "lastVerified": "2026-07-20T16:23:34.660Z",
+      "verificationReport": "verification/reports/DateInput-2.md"
+    },
+    "TimePicker": {
+      "status": "synced",
+      "harmonySource": "src/components/ui/TimePicker.astro",
+      "strategy": "component",
+      "skippedProps": [],
+      "gaps": [],
+      "blockedBy": [],
+      "userDecision": "component TimePicker: spinner 12/24; HH:MM onSelect. Consumer API per plans/date-time-inputs.md 2026-07-20.",
+      "notes": "Verifier PASS DateInput-2; synced after execute + PASS (2026-07-20).",
+      "lastVerified": "2026-07-20T16:23:34.660Z",
+      "verificationReport": "verification/reports/DateInput-2.md"
+    },
+    "PickerPopup": {
+      "status": "synced",
+      "harmonySource": "src/components/ui/PickerPopup.astro",
+      "strategy": "component",
+      "skippedProps": [],
+      "gaps": [],
+      "blockedBy": [],
+      "userDecision": "component PickerPopup + Popover/Trigger/Content/Anchor exports: Radix Popover. Consumer API per plans/date-time-inputs.md 2026-07-20.",
+      "notes": "Verifier PASS DateInput-2; synced after execute + PASS (2026-07-20).",
+      "lastVerified": "2026-07-20T16:23:34.660Z",
+      "verificationReport": "verification/reports/DateInput-2.md"
+    },
+    "ListMenu": {
+      "status": "synced",
+      "harmonySource": "src/components/ui/ListMenu.astro",
+      "strategy": "component",
+      "skippedProps": [],
+      "gaps": [],
+      "blockedBy": [],
+      "userDecision": "component ListMenu / ListMenuItem / ListMenuButton: SidebarMenu-shaped compound (ul/li/button), Tailwind + cva, no Radix (Slot for asChild). isActive + data-active; optional icon name prop or composed children; variant default | no-borders. No Astro items[] / as / isCustom / customSrc. Consumer API per plans/list-menu.md 2026-07-20.",
+      "notes": "Implemented package + demo + docs; human accepted visual match 2026-07-20.",
+      "lastVerified": "2026-07-20T23:40:00.000Z"
+    }
+  },
+  "deliverables": {
+    "npmPackageName": "@dltkrichardhuska/harmony-design-system-shadcn",
+    "scripts": {
+      "dev": "dev",
+      "build:lib": "build:lib"
+    },
+    "exports": {
+      ".": "./packages/ui/src/index.ts",
+      "./theme": "./packages/ui/src/theme/index.tsx",
+      "./components": "./packages/ui/src/components/index.ts",
+      "./styles/*": "./packages/ui/src/styles/*",
+      "./utils": "./packages/ui/src/lib/utils.ts",
+      "./registry.json": "./packages/ui/registry.json"
+    }
+  },
+  "documentation": {
+    "consumerGuide": "docs/CONSUMER_GUIDE.md"
+  },
+  "coverage": {
+    "percent": 85,
+    "completed": 47,
+    "total": 55,
+    "computedAt": "2026-07-21T13:10:52.853Z"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "harmony-design-system-shadcn-workspace",
+  "private": true,
+  "version": "0.9.0",
+  "description": "Harmony Design System — shadcn/ui + Tailwind + Radix (workspace)",
+  "type": "module",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev -w @dltkrichardhuska/harmony-design-system-shadcn-demo",
+    "build:lib": "npm run build:lib -w @dltkrichardhuska/harmony-design-system-shadcn",
+    "build": "npm run build:lib",
+    "typecheck": "npm run typecheck -w @dltkrichardhuska/harmony-design-system-shadcn && npm run typecheck -w @dltkrichardhuska/harmony-design-system-shadcn-demo"
+  }
+}

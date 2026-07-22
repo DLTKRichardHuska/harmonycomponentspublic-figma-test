@@ -4,36 +4,72 @@ import DocsLayout from '../layouts/DocsLayout.astro';
 import ChangelogFilters from '../components/ChangelogFilters.astro';
 import Badge from '../components/ui/Badge.astro';
 import Card from '../components/ui/Card.astro';
+import {
+  IN_PROGRESS_VERSION,
+  compareSemverDesc,
+  getBaseVersion,
+  getVersionDisplayLabel,
+  isSemverVersion,
+} from '../lib/version';
 
 const allEntries = await getCollection('changelog');
 
 type ChangelogEntry = typeof allEntries[number];
 
-// Helper function to get date key (YYYY-MM-DD format)
 function getDateKey(date: Date): string {
   return date.toISOString().split('T')[0];
 }
 
-// Sort all entries by date/time descending first (newest first)
-const sortedAllEntries = [...allEntries].sort((a, b) => {
-  return b.data.date.getTime() - a.data.date.getTime();
-});
+const groupedByVersion = new Map<string, ChangelogEntry[]>();
 
-// Group by date first (not version), so all entries for the same date are together
-const groupedByDate: Record<string, ChangelogEntry[]> = {};
-for (const entry of sortedAllEntries) {
-  const dateKey = getDateKey(entry.data.date);
-  
-  if (!groupedByDate[dateKey]) {
-    groupedByDate[dateKey] = [];
+for (const entry of allEntries) {
+  const version = entry.data.version || IN_PROGRESS_VERSION;
+  if (!groupedByVersion.has(version)) {
+    groupedByVersion.set(version, []);
   }
-  groupedByDate[dateKey].push(entry);
+  groupedByVersion.get(version)!.push(entry);
 }
 
-// Sort dates descending (newest first)
-const sortedDates = Object.keys(groupedByDate).sort((a, b) => b.localeCompare(a));
+for (const entries of groupedByVersion.values()) {
+  entries.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+}
 
-// Category configuration
+const releasedVersions = [...groupedByVersion.keys()]
+  .filter(isSemverVersion)
+  .sort(compareSemverDesc);
+
+const versionOrder: string[] = [];
+if (groupedByVersion.has(IN_PROGRESS_VERSION)) {
+  versionOrder.push(IN_PROGRESS_VERSION);
+}
+versionOrder.push(...releasedVersions);
+
+for (const version of groupedByVersion.keys()) {
+  if (!versionOrder.includes(version)) {
+    versionOrder.push(version);
+  }
+}
+
+const versionSections = versionOrder
+  .filter((version) => groupedByVersion.has(version))
+  .map((version) => {
+    const entries = groupedByVersion.get(version)!;
+    const dates = [...new Set(entries.map((entry) => getDateKey(entry.data.date)))].sort((a, b) =>
+      b.localeCompare(a)
+    );
+
+    return {
+      version,
+      label: getVersionDisplayLabel(version),
+      subtitle:
+        version === IN_PROGRESS_VERSION
+          ? `Changes not yet in an official release (since v${getBaseVersion()})`
+          : undefined,
+      entries,
+      dates,
+    };
+  });
+
 type CategoryKey = 'added' | 'changed' | 'deprecated' | 'removed' | 'fixed' | 'security';
 const categoryConfig: Record<CategoryKey, { label: string; color: 'success' | 'info' | 'warning' | 'error' }> = {
   added: { label: 'Added', color: 'success' },
@@ -41,8 +77,13 @@ const categoryConfig: Record<CategoryKey, { label: string; color: 'success' | 'i
   deprecated: { label: 'Deprecated', color: 'warning' },
   removed: { label: 'Removed', color: 'error' },
   fixed: { label: 'Fixed', color: 'success' },
-  security: { label: 'Security', color: 'error' }
+  security: { label: 'Security', color: 'error' },
 };
+
+const filterVersions = versionSections.map((section) => ({
+  value: section.version,
+  label: section.label,
+}));
 ---
 
 <DocsLayout title="Changelog">
@@ -50,7 +91,7 @@ const categoryConfig: Record<CategoryKey, { label: string; color: 'success' | 'i
     <header class="changelog-header">
       <h1>Changelog</h1>
       <p class="changelog-description">
-        All notable changes to the Harmony Design System are automatically documented here.
+        All notable changes to the Harmony Design System are documented here by version.
         This changelog follows <a href="https://keepachangelog.com/" target="_blank" rel="noopener">Keep a Changelog</a> format
         and adheres to <a href="https://semver.org/" target="_blank" rel="noopener">Semantic Versioning</a>.
       </p>
@@ -58,123 +99,130 @@ const categoryConfig: Record<CategoryKey, { label: string; color: 'success' | 'i
 
     {allEntries.length > 0 ? (
       <>
-        <ChangelogFilters entries={allEntries} />
+        <ChangelogFilters entries={allEntries} versions={filterVersions} />
 
         <div class="changelog-timeline" id="changelog-entries">
-          <section class="version-section">
-            <div class="version-header">
-              <h2 class="version-title">Recent Changes</h2>
-            </div>
-            
-            {sortedDates.map(dateKey => {
-              const entries = groupedByDate[dateKey];
-              const entryDate = entries[0]?.data.date;
+          {versionSections.map((section) => (
+            <section class="version-section" data-version={section.version}>
+              <div class="version-header">
+                <h2 class="version-title">{section.label}</h2>
+                {section.subtitle && <p class="version-subtitle">{section.subtitle}</p>}
+                <span class="version-count">
+                  {section.entries.length} {section.entries.length === 1 ? 'entry' : 'entries'}
+                </span>
+              </div>
 
-                  // Sort entries by date/time descending (newest first) within this date group
-                  const sortedEntries = [...entries].sort((a, b) => {
-                    return b.data.date.getTime() - a.data.date.getTime();
-                  });
+              {section.dates.map((dateKey) => {
+                const dateEntries = section.entries.filter(
+                  (entry) => getDateKey(entry.data.date) === dateKey
+                );
+                const entryDate = dateEntries[0]?.data.date;
 
-            return (
-              <div class="date-section">
-                  <div class="date-header">
-                    <div class="version-meta">
-                      {entryDate && (
-                        <time class="version-date" datetime={entryDate.toISOString()}>
-                          {entryDate.toLocaleDateString('en-US', {
-                            year: 'numeric',
-                            month: 'long',
-                            day: 'numeric'
-                          })}
-                        </time>
-                      )}
-                      <span class="version-count">({entries.length} {entries.length === 1 ? 'entry' : 'entries'})</span>
+                return (
+                  <div class="date-section">
+                    <div class="date-header">
+                      <div class="version-meta">
+                        {entryDate && (
+                          <time class="version-date" datetime={entryDate.toISOString()}>
+                            {entryDate.toLocaleDateString('en-US', {
+                              year: 'numeric',
+                              month: 'long',
+                              day: 'numeric',
+                            })}
+                          </time>
+                        )}
+                        <span class="version-count">
+                          ({dateEntries.length} {dateEntries.length === 1 ? 'entry' : 'entries'})
+                        </span>
+                      </div>
+                    </div>
+
+                    <div class="version-content">
+                      <ul class="changelog-entries">
+                        {dateEntries.map((entry) => {
+                          const config = categoryConfig[entry.data.category as CategoryKey];
+                          return (
+                            <li
+                              class="changelog-entry"
+                              data-version={entry.data.version}
+                              data-category={entry.data.category}
+                              data-type={entry.data.type}
+                              data-target={entry.data.target}
+                              data-breaking={entry.data.breaking ? 'true' : 'false'}
+                            >
+                              <div class="entry-content">
+                                <Badge variant={config.color} class="entry-category-badge">
+                                  {config.label}
+                                </Badge>
+                                <strong class="entry-target">{entry.data.target}:</strong>
+                                <span class="entry-description">{entry.data.description}</span>
+                                {entry.data.breaking && (
+                                  <Badge variant="error">Breaking</Badge>
+                                )}
+                              </div>
+
+                              {entry.data.properties && entry.data.properties.length > 0 && (
+                                <ul class="entry-properties">
+                                  {entry.data.properties.map((prop) => (
+                                    <li>
+                                      <code>{prop.name}</code>: {prop.change}
+                                      {prop.before && prop.after && (
+                                        <span> ({prop.before} → {prop.after})</span>
+                                      )}
+                                    </li>
+                                  ))}
+                                </ul>
+                              )}
+
+                              <div class="entry-meta">
+                                <time class="entry-timestamp" datetime={entry.data.date.toISOString()}>
+                                  {entry.data.date.toLocaleString('en-US', {
+                                    year: 'numeric',
+                                    month: 'short',
+                                    day: 'numeric',
+                                    hour: '2-digit',
+                                    minute: '2-digit',
+                                    timeZone: 'America/Denver',
+                                  })}
+                                </time>
+                                {entry.data.commit && (
+                                  <>
+                                    <span class="entry-meta-separator">·</span>
+                                    <span class="commit-hash" title={entry.data.commit.message}>
+                                      {entry.data.commit.hash}
+                                    </span>
+                                    <span class="commit-author">
+                                      by {entry.data.commit.author}
+                                    </span>
+                                  </>
+                                )}
+                              </div>
+                            </li>
+                          );
+                        })}
+                      </ul>
                     </div>
                   </div>
-
-                  <div class="version-content">
-                    <ul class="changelog-entries">
-                      {sortedEntries.map((entry) => {
-                        const config = categoryConfig[entry.data.category as CategoryKey];
-                        return (
-                          <li
-                            class="changelog-entry"
-                            data-category={entry.data.category}
-                            data-type={entry.data.type}
-                            data-target={entry.data.target}
-                            data-breaking={entry.data.breaking ? 'true' : 'false'}
-                          >
-                            <div class="entry-content">
-                              <Badge variant={config.color} class="entry-category-badge">
-                                {config.label}
-                              </Badge>
-                              <strong class="entry-target">{entry.data.target}:</strong>
-                              <span class="entry-description">{entry.data.description}</span>
-                              {entry.data.breaking && (
-                                <Badge variant="error">Breaking</Badge>
-                              )}
-                            </div>
-
-                            {entry.data.properties && entry.data.properties.length > 0 && (
-                              <ul class="entry-properties">
-                                {entry.data.properties.map((prop: { name: string; change: string; before?: string; after?: string }) => (
-                                  <li>
-                                    <code>{prop.name}</code>: {prop.change}
-                                    {prop.before && prop.after && (
-                                      <span> ({prop.before} → {prop.after})</span>
-                                    )}
-                                  </li>
-                                ))}
-                              </ul>
-                            )}
-
-                            <div class="entry-meta">
-                              <time class="entry-timestamp" datetime={entry.data.date.toISOString()}>
-                                {entry.data.date.toLocaleString('en-US', {
-                                  year: 'numeric',
-                                  month: 'short',
-                                  day: 'numeric',
-                                  hour: '2-digit',
-                                  minute: '2-digit',
-                                  timeZone: 'America/Denver'
-                                })}
-                              </time>
-                              {entry.data.commit && (
-                                <>
-                                  <span class="entry-meta-separator">·</span>
-                                  <span class="commit-hash" title={entry.data.commit.message}>
-                                    {entry.data.commit.hash}
-                                  </span>
-                                  <span class="commit-author">
-                                    by {entry.data.commit.author}
-                                  </span>
-                                </>
-                              )}
-                            </div>
-                          </li>
-                        );
-                      })}
-                    </ul>
-                  </div>
-                </div>
-            );
-            })}
-          </section>
+                );
+              })}
+            </section>
+          ))}
         </div>
       </>
     ) : (
       <Card elevated>
         <div class="changelog-empty">
-          <p>📝 No changelog entries yet.</p>
+          <p>No changelog entries yet.</p>
           <p>
-            The changelog automatically updates when commits are pushed to main that modify components or design tokens.
+            Changes are tracked automatically when component, token, or layout files change on a branch.
+            Official versions appear here after a GitHub Release is published.
           </p>
           <details class="changelog-empty-details">
             <summary>How does it work?</summary>
             <ul>
-              <li>GitHub Actions detects component/token changes automatically</li>
-              <li>Changelog entries are generated and committed</li>
-              <li>Changes appear here after the workflow completes</li>
+              <li>Work on a feature branch and open a pull request to <code>main</code></li>
+              <li>GitHub Actions detects component/token changes and updates changelog data on your branch</li>
+              <li>After merge, publish a GitHub Release from <code>main</code> to create the next official version</li>
             </ul>
           </details>
         </div>
@@ -240,6 +288,11 @@ const categoryConfig: Record<CategoryKey, { label: string; color: 'success' | 'i
     font-weight: 600;
   }
 
+  .version-subtitle {
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-2, 8px);
+  }
+
   .date-section {
     margin-bottom: var(--spacing-8, 32px);
   }
@@ -277,16 +330,6 @@ const categoryConfig: Record<CategoryKey, { label: string; color: 'success' | 'i
 
   .date-header .version-count {
     font-size: var(--font-size-body, 1rem);
-  }
-
-  .changelog-category {
-    margin-bottom: var(--spacing-6, 24px);
-  }
-
-  .category-title {
-    font-size: var(--font-size-heading-sm, 1.25rem);
-    margin-bottom: var(--spacing-3, 12px);
-    font-weight: 600;
   }
 
   .changelog-entries {

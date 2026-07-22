@@ -1,0 +1,49 @@
+{
+  "system": "figma",
+  "mcpServer": "user-Figma",
+  "planKey": "organization::1303904496611212311",
+  "planName": "Deltek, Inc.",
+  "projectId": null,
+  "libraryNamePattern": "Harmony Design System (${product})",
+  "brandSource": "conversions/harmony-design-system-shadcn/packages/ui/src/data/product-meta.json",
+  "canonicalProduct": "vp",
+  "iconsLibrary": {
+    "fileKey": "wGxEhlZyk9kQqshrD3aQYu",
+    "fileName": "[Ignore Testing] Harmony Design System Icons",
+    "role": "shared-glyphs",
+    "note": "Shared glyph components for all product files. Component name = shadcn Icon name string. Product Icon INSTANCE_SWAP name → these components."
+  },
+  "stateHome": {
+    "mechanism": "figma-shared-plugin-data",
+    "namespace": "harmony",
+    "key": "conversionState",
+    "coversheetPage": "Coversheet",
+    "notes": "Per-element sync state lives in each bound Figma file (shared plugin data + coversheet). This repo stores only product->fileKey bindings and converter readiness."
+  },
+  "bindings": [
+    { "product": "cp", "productName": "Costpoint", "fileKey": "KMbteAHf2aat2lNSJXWoJS", "fileName": "Harmony Design System (CP)", "role": "superset", "derivedFrom": "vp", "note": "VP + superset: CP-only components (FloatingNav, KanbanCardCostpoint, TableCostpointGrid), CP-only variable families, compact --field-* density" },
+    { "product": "vp", "productName": "Vantagepoint", "fileKey": "qPVWATAnhiYb6eboWa9LoD", "fileName": "Harmony Design System (VP)", "role": "canonical", "note": "Authored first; the shared VP/PPM/Maconomy interface" },
+    { "product": "ppm", "productName": "Project Performance Management", "fileKey": "GF1P1Ke5aOwGpDefAo4cLg", "fileName": "Harmony Design System (PPM)", "role": "derived", "derivedFrom": "vp", "note": "Duplicate of VP; swap brand + light-mode primary hue only" },
+    { "product": "maconomy", "productName": "Maconomy", "fileKey": "9Q4nVS3g9uPbtTWU5Yf1Tq", "fileName": "Harmony Design System (Maconomy)", "role": "derived", "derivedFrom": "vp", "note": "Duplicate of VP; swap brand + light-mode primary hue only" }
+  ],
+  "codeConnect": {
+    "status": "locked",
+    "target": "harmony-design-system-shadcn",
+    "packagePattern": "@dltkrichardhuska/harmony-design-system-shadcn-${product}",
+    "sourcePackage": "@dltkrichardhuska/harmony-design-system-shadcn",
+    "importPathPattern": "@dltkrichardhuska/harmony-design-system-shadcn-${product}/components",
+    "filesRepo": "conversions/harmony-design-system-shadcn",
+    "authoring": "mcp-parserless",
+    "committedMirror": false,
+    "framework": "react",
+    "tailwind": "v4-css-first-globals-import",
+    "provider": "mode-only",
+    "timing": "per-element-in-convert-loop",
+    "distribution": "private-registry-auth-in-make",
+    "publicPackageFuture": true,
+    "publishGate": "manual-human-publish-required-before-mapping-write",
+    "cpOnlyComponents": ["FloatingNav", "KanbanCardCostpoint", "TableCostpointGrid"],
+    "nameMap": { "Dropdown": "Select", "DatePicker": "Calendar" }
+  },
+  "notes": "Sync uses Figma MCP tools. Production files MUST be created under planKey organization::1303904496611212311 (never the personal starter team). fileKeys are bound when the user creates or supplies each product's file."
+}

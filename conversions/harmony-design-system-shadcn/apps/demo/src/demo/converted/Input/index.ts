@@ -1,0 +1,1 @@
+export { InputsDemo } from './InputsDemo';

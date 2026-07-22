@@ -1,20 +1,23 @@
 ---
 import DocsLayout from '../layouts/DocsLayout.astro';
-import { navigation } from '../data/navigation';
+import { navigation, componentDocPageCount, EXPORTED_UI_COMPONENT_COUNT } from '../data/navigation';
 import Icon from '../components/ui/Icon.astro';
+import { getEffectiveVersion } from '../lib/version';
+
+const projectVersion = getEffectiveVersion();
 ---
 
 <DocsLayout title="Overview" description="A complete design system with foundation elements, shell layout components, and production-ready UI components.">
   <!-- HERO SECTION -->
   <header class="page-header">
     <div class="page-header__badge">
-      <span class="badge badge--primary">v1.0.0</span>
+      <span class="badge badge--primary">v{projectVersion}</span>
     </div>
     <h1 class="page-header__title">
       Design<br>System
     </h1>
     <p class="page-header__description">
-      A complete design system with foundation elements, shell layout components, and 25 production-ready UI components. 
+      A complete design system with foundation elements, shell layout components, and {EXPORTED_UI_COMPONENT_COUNT} production-ready UI components.
       Built with accessibility, performance, and flexibility in mind.
     </p>
     <div class="page-header__meta">
@@ -32,7 +35,7 @@ import Icon from '../components/ui/Icon.astro';
       </div>
       <div class="page-header__meta-item">
         <Icon name="check" size="sm" class="page-header__meta-icon" />
-        25 Components
+        {EXPORTED_UI_COMPONENT_COUNT} Components
       </div>
     </div>
   </header>
@@ -62,7 +65,7 @@ import Icon from '../components/ui/Icon.astro';
           <Icon name="cube" size="sm" class="quick-card__icon" />
         </div>
         <h3 class="quick-card__title">Components</h3>
-        <p class="quick-card__desc">25 production-ready UI components with variants.</p>
+        <p class="quick-card__desc">{EXPORTED_UI_COMPONENT_COUNT} production-ready UI components across {componentDocPageCount} doc pages.</p>
       </a>
     </div>
   </section>

@@ -1,0 +1,4652 @@
+{
+  "generatedAt": "2026-07-03T20:35:25.051Z",
+  "reference": "http://localhost:4321/foundation/colors",
+  "converted": "http://localhost:5176/foundation/colors",
+  "conversionId": "harmony-design-system-react-mui",
+  "combos": 8,
+  "mismatchCount": 104,
+  "results": [
+    {
+      "product": "cp",
+      "mode": "light",
+      "rows": [
+        {
+          "key": "pageBackground",
+          "name": "Page Background",
+          "reference": {
+            "backgroundColor": "rgb(226, 228, 233)",
+            "label": "#E2E4E9"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "cardBackground",
+          "name": "Card Background",
+          "reference": {
+            "backgroundColor": "rgb(247, 248, 250)",
+            "label": "#F7F8FA"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "navBackground",
+          "name": "Nav Background",
+          "reference": {
+            "backgroundColor": "rgb(252, 253, 255)",
+            "label": "#FCFDFF"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "inputBackground",
+          "name": "Input Background",
+          "reference": {
+            "backgroundColor": "rgb(255, 255, 255)",
+            "label": "#FFFFFF"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "inputDisabled",
+          "name": "Input Disabled",
+          "reference": {
+            "backgroundColor": "rgb(234, 234, 234)",
+            "label": "#EAEAEA"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "cellBackground",
+          "name": "Cell Background",
+          "reference": {
+            "backgroundColor": "rgb(255, 255, 255)",
+            "label": "#FFFFFF"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "hover",
+          "name": "Hover",
+          "reference": {
+            "backgroundColor": "rgb(229, 231, 235)",
+            "label": "#E5E7EB"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "tableTotal",
+          "name": "Table Total",
+          "reference": {
+            "backgroundColor": "rgba(0, 115, 230, 0.15)",
+            "label": "rgba(0, 115, 230, 0.15)"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "titleText",
+          "name": "Title Text",
+          "reference": {
+            "backgroundColor": "rgb(55, 63, 78)",
+            "label": "#373F4E"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "secondaryText",
+          "name": "Secondary Text",
+          "reference": {
+            "backgroundColor": "rgb(82, 89, 105)",
+            "label": "#525969"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "mutedText",
+          "name": "Muted Text",
+          "reference": {
+            "backgroundColor": "rgb(107, 114, 128)",
+            "label": "#6B7280"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "border",
+          "name": "Border",
+          "reference": {
+            "backgroundColor": "rgb(191, 198, 212)",
+            "label": "#BFC6D4"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "link",
+          "name": "Link",
+          "reference": {
+            "backgroundColor": "rgb(0, 91, 179)",
+            "label": "#005BB3"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        }
+      ],
+      "mismatches": [
+        {
+          "key": "pageBackground",
+          "name": "Page Background",
+          "reference": {
+            "backgroundColor": "rgb(226, 228, 233)",
+            "label": "#E2E4E9"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "cardBackground",
+          "name": "Card Background",
+          "reference": {
+            "backgroundColor": "rgb(247, 248, 250)",
+            "label": "#F7F8FA"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "navBackground",
+          "name": "Nav Background",
+          "reference": {
+            "backgroundColor": "rgb(252, 253, 255)",
+            "label": "#FCFDFF"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "inputBackground",
+          "name": "Input Background",
+          "reference": {
+            "backgroundColor": "rgb(255, 255, 255)",
+            "label": "#FFFFFF"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "inputDisabled",
+          "name": "Input Disabled",
+          "reference": {
+            "backgroundColor": "rgb(234, 234, 234)",
+            "label": "#EAEAEA"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "cellBackground",
+          "name": "Cell Background",
+          "reference": {
+            "backgroundColor": "rgb(255, 255, 255)",
+            "label": "#FFFFFF"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "hover",
+          "name": "Hover",
+          "reference": {
+            "backgroundColor": "rgb(229, 231, 235)",
+            "label": "#E5E7EB"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "tableTotal",
+          "name": "Table Total",
+          "reference": {
+            "backgroundColor": "rgba(0, 115, 230, 0.15)",
+            "label": "rgba(0, 115, 230, 0.15)"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "titleText",
+          "name": "Title Text",
+          "reference": {
+            "backgroundColor": "rgb(55, 63, 78)",
+            "label": "#373F4E"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "secondaryText",
+          "name": "Secondary Text",
+          "reference": {
+            "backgroundColor": "rgb(82, 89, 105)",
+            "label": "#525969"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "mutedText",
+          "name": "Muted Text",
+          "reference": {
+            "backgroundColor": "rgb(107, 114, 128)",
+            "label": "#6B7280"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "border",
+          "name": "Border",
+          "reference": {
+            "backgroundColor": "rgb(191, 198, 212)",
+            "label": "#BFC6D4"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "link",
+          "name": "Link",
+          "reference": {
+            "backgroundColor": "rgb(0, 91, 179)",
+            "label": "#005BB3"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        }
+      ]
+    },
+    {
+      "product": "cp",
+      "mode": "dark",
+      "rows": [
+        {
+          "key": "pageBackground",
+          "name": "Page Background",
+          "reference": {
+            "backgroundColor": "rgb(31, 37, 46)",
+            "label": "#1F252E"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "cardBackground",
+          "name": "Card Background",
+          "reference": {
+            "backgroundColor": "rgb(55, 66, 77)",
+            "label": "#37424D"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "navBackground",
+          "name": "Nav Background",
+          "reference": {
+            "backgroundColor": "rgb(51, 61, 71)",
+            "label": "#333D47"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "inputBackground",
+          "name": "Input Background",
+          "reference": {
+            "backgroundColor": "rgb(31, 37, 46)",
+            "label": "#1F252E"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "inputDisabled",
+          "name": "Input Disabled",
+          "reference": {
+            "backgroundColor": "rgb(51, 61, 71)",
+            "label": "#333D47"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "cellBackground",
+          "name": "Cell Background",
+          "reference": {
+            "backgroundColor": "rgb(33, 41, 53)",
+            "label": "#212935"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "hover",
+          "name": "Hover",
+          "reference": {
+            "backgroundColor": "rgb(61, 74, 92)",
+            "label": "#3D4A5C"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "tableTotal",
+          "name": "Table Total",
+          "reference": {
+            "backgroundColor": "rgba(89, 172, 255, 0.15)",
+            "label": "rgba(89, 172, 255, 0.15)"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "titleText",
+          "name": "Title Text",
+          "reference": {
+            "backgroundColor": "rgb(233, 236, 239)",
+            "label": "#E9ECEF"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "secondaryText",
+          "name": "Secondary Text",
+          "reference": {
+            "backgroundColor": "rgb(182, 182, 196)",
+            "label": "#B6B6C4"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "mutedText",
+          "name": "Muted Text",
+          "reference": {
+            "backgroundColor": "rgb(187, 187, 198)",
+            "label": "#BBBBC6"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "border",
+          "name": "Border",
+          "reference": {
+            "backgroundColor": "rgb(95, 104, 113)",
+            "label": "#5F6871"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "link",
+          "name": "Link",
+          "reference": {
+            "backgroundColor": "rgb(173, 208, 255)",
+            "label": "#ADD0FF"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        }
+      ],
+      "mismatches": [
+        {
+          "key": "pageBackground",
+          "name": "Page Background",
+          "reference": {
+            "backgroundColor": "rgb(31, 37, 46)",
+            "label": "#1F252E"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "cardBackground",
+          "name": "Card Background",
+          "reference": {
+            "backgroundColor": "rgb(55, 66, 77)",
+            "label": "#37424D"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "navBackground",
+          "name": "Nav Background",
+          "reference": {
+            "backgroundColor": "rgb(51, 61, 71)",
+            "label": "#333D47"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "inputBackground",
+          "name": "Input Background",
+          "reference": {
+            "backgroundColor": "rgb(31, 37, 46)",
+            "label": "#1F252E"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "inputDisabled",
+          "name": "Input Disabled",
+          "reference": {
+            "backgroundColor": "rgb(51, 61, 71)",
+            "label": "#333D47"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "cellBackground",
+          "name": "Cell Background",
+          "reference": {
+            "backgroundColor": "rgb(33, 41, 53)",
+            "label": "#212935"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "hover",
+          "name": "Hover",
+          "reference": {
+            "backgroundColor": "rgb(61, 74, 92)",
+            "label": "#3D4A5C"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "tableTotal",
+          "name": "Table Total",
+          "reference": {
+            "backgroundColor": "rgba(89, 172, 255, 0.15)",
+            "label": "rgba(89, 172, 255, 0.15)"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "titleText",
+          "name": "Title Text",
+          "reference": {
+            "backgroundColor": "rgb(233, 236, 239)",
+            "label": "#E9ECEF"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "secondaryText",
+          "name": "Secondary Text",
+          "reference": {
+            "backgroundColor": "rgb(182, 182, 196)",
+            "label": "#B6B6C4"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "mutedText",
+          "name": "Muted Text",
+          "reference": {
+            "backgroundColor": "rgb(187, 187, 198)",
+            "label": "#BBBBC6"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "border",
+          "name": "Border",
+          "reference": {
+            "backgroundColor": "rgb(95, 104, 113)",
+            "label": "#5F6871"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "link",
+          "name": "Link",
+          "reference": {
+            "backgroundColor": "rgb(173, 208, 255)",
+            "label": "#ADD0FF"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        }
+      ]
+    },
+    {
+      "product": "vp",
+      "mode": "light",
+      "rows": [
+        {
+          "key": "pageBackground",
+          "name": "Page Background",
+          "reference": {
+            "backgroundColor": "rgb(226, 228, 233)",
+            "label": "#E2E4E9"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "cardBackground",
+          "name": "Card Background",
+          "reference": {
+            "backgroundColor": "rgb(247, 248, 250)",
+            "label": "#F7F8FA"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "navBackground",
+          "name": "Nav Background",
+          "reference": {
+            "backgroundColor": "rgb(252, 253, 255)",
+            "label": "#FCFDFF"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "inputBackground",
+          "name": "Input Background",
+          "reference": {
+            "backgroundColor": "rgb(255, 255, 255)",
+            "label": "#FFFFFF"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "inputDisabled",
+          "name": "Input Disabled",
+          "reference": {
+            "backgroundColor": "rgb(234, 234, 234)",
+            "label": "#EAEAEA"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "cellBackground",
+          "name": "Cell Background",
+          "reference": {
+            "backgroundColor": "rgb(255, 255, 255)",
+            "label": "#FFFFFF"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "hover",
+          "name": "Hover",
+          "reference": {
+            "backgroundColor": "rgb(229, 231, 235)",
+            "label": "#E5E7EB"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "tableTotal",
+          "name": "Table Total",
+          "reference": {
+            "backgroundColor": "rgba(0, 115, 230, 0.15)",
+            "label": "rgba(0, 115, 230, 0.15)"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "titleText",
+          "name": "Title Text",
+          "reference": {
+            "backgroundColor": "rgb(55, 63, 78)",
+            "label": "#373F4E"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "secondaryText",
+          "name": "Secondary Text",
+          "reference": {
+            "backgroundColor": "rgb(82, 89, 105)",
+            "label": "#525969"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "mutedText",
+          "name": "Muted Text",
+          "reference": {
+            "backgroundColor": "rgb(107, 114, 128)",
+            "label": "#6B7280"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "border",
+          "name": "Border",
+          "reference": {
+            "backgroundColor": "rgb(191, 198, 212)",
+            "label": "#BFC6D4"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "link",
+          "name": "Link",
+          "reference": {
+            "backgroundColor": "rgb(0, 91, 179)",
+            "label": "#005BB3"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        }
+      ],
+      "mismatches": [
+        {
+          "key": "pageBackground",
+          "name": "Page Background",
+          "reference": {
+            "backgroundColor": "rgb(226, 228, 233)",
+            "label": "#E2E4E9"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "cardBackground",
+          "name": "Card Background",
+          "reference": {
+            "backgroundColor": "rgb(247, 248, 250)",
+            "label": "#F7F8FA"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "navBackground",
+          "name": "Nav Background",
+          "reference": {
+            "backgroundColor": "rgb(252, 253, 255)",
+            "label": "#FCFDFF"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "inputBackground",
+          "name": "Input Background",
+          "reference": {
+            "backgroundColor": "rgb(255, 255, 255)",
+            "label": "#FFFFFF"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "inputDisabled",
+          "name": "Input Disabled",
+          "reference": {
+            "backgroundColor": "rgb(234, 234, 234)",
+            "label": "#EAEAEA"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "cellBackground",
+          "name": "Cell Background",
+          "reference": {
+            "backgroundColor": "rgb(255, 255, 255)",
+            "label": "#FFFFFF"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "hover",
+          "name": "Hover",
+          "reference": {
+            "backgroundColor": "rgb(229, 231, 235)",
+            "label": "#E5E7EB"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "tableTotal",
+          "name": "Table Total",
+          "reference": {
+            "backgroundColor": "rgba(0, 115, 230, 0.15)",
+            "label": "rgba(0, 115, 230, 0.15)"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "titleText",
+          "name": "Title Text",
+          "reference": {
+            "backgroundColor": "rgb(55, 63, 78)",
+            "label": "#373F4E"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "secondaryText",
+          "name": "Secondary Text",
+          "reference": {
+            "backgroundColor": "rgb(82, 89, 105)",
+            "label": "#525969"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "mutedText",
+          "name": "Muted Text",
+          "reference": {
+            "backgroundColor": "rgb(107, 114, 128)",
+            "label": "#6B7280"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "border",
+          "name": "Border",
+          "reference": {
+            "backgroundColor": "rgb(191, 198, 212)",
+            "label": "#BFC6D4"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "link",
+          "name": "Link",
+          "reference": {
+            "backgroundColor": "rgb(0, 91, 179)",
+            "label": "#005BB3"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        }
+      ]
+    },
+    {
+      "product": "vp",
+      "mode": "dark",
+      "rows": [
+        {
+          "key": "pageBackground",
+          "name": "Page Background",
+          "reference": {
+            "backgroundColor": "rgb(21, 23, 26)",
+            "label": "#15171A"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "cardBackground",
+          "name": "Card Background",
+          "reference": {
+            "backgroundColor": "rgb(31, 33, 36)",
+            "label": "#1F2124"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "navBackground",
+          "name": "Nav Background",
+          "reference": {
+            "backgroundColor": "rgb(26, 28, 31)",
+            "label": "#1A1C1F"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "inputBackground",
+          "name": "Input Background",
+          "reference": {
+            "backgroundColor": "rgb(31, 33, 36)",
+            "label": "#1F2124"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "inputDisabled",
+          "name": "Input Disabled",
+          "reference": {
+            "backgroundColor": "rgb(42, 45, 50)",
+            "label": "#2A2D32"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "cellBackground",
+          "name": "Cell Background",
+          "reference": {
+            "backgroundColor": "rgb(26, 28, 31)",
+            "label": "#1A1C1F"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "hover",
+          "name": "Hover",
+          "reference": {
+            "backgroundColor": "rgb(42, 45, 50)",
+            "label": "#2A2D32"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "tableTotal",
+          "name": "Table Total",
+          "reference": {
+            "backgroundColor": "rgba(89, 172, 255, 0.15)",
+            "label": "rgba(89, 172, 255, 0.15)"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "titleText",
+          "name": "Title Text",
+          "reference": {
+            "backgroundColor": "rgb(250, 250, 250)",
+            "label": "#FAFAFA"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "secondaryText",
+          "name": "Secondary Text",
+          "reference": {
+            "backgroundColor": "rgb(181, 181, 188)",
+            "label": "#B5B5BC"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "mutedText",
+          "name": "Muted Text",
+          "reference": {
+            "backgroundColor": "rgb(181, 181, 188)",
+            "label": "#B5B5BC"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "border",
+          "name": "Border",
+          "reference": {
+            "backgroundColor": "rgb(42, 45, 50)",
+            "label": "#2A2D32"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "link",
+          "name": "Link",
+          "reference": {
+            "backgroundColor": "rgb(173, 208, 255)",
+            "label": "#ADD0FF"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        }
+      ],
+      "mismatches": [
+        {
+          "key": "pageBackground",
+          "name": "Page Background",
+          "reference": {
+            "backgroundColor": "rgb(21, 23, 26)",
+            "label": "#15171A"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "cardBackground",
+          "name": "Card Background",
+          "reference": {
+            "backgroundColor": "rgb(31, 33, 36)",
+            "label": "#1F2124"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "navBackground",
+          "name": "Nav Background",
+          "reference": {
+            "backgroundColor": "rgb(26, 28, 31)",
+            "label": "#1A1C1F"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "inputBackground",
+          "name": "Input Background",
+          "reference": {
+            "backgroundColor": "rgb(31, 33, 36)",
+            "label": "#1F2124"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "inputDisabled",
+          "name": "Input Disabled",
+          "reference": {
+            "backgroundColor": "rgb(42, 45, 50)",
+            "label": "#2A2D32"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "cellBackground",
+          "name": "Cell Background",
+          "reference": {
+            "backgroundColor": "rgb(26, 28, 31)",
+            "label": "#1A1C1F"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "hover",
+          "name": "Hover",
+          "reference": {
+            "backgroundColor": "rgb(42, 45, 50)",
+            "label": "#2A2D32"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "tableTotal",
+          "name": "Table Total",
+          "reference": {
+            "backgroundColor": "rgba(89, 172, 255, 0.15)",
+            "label": "rgba(89, 172, 255, 0.15)"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "titleText",
+          "name": "Title Text",
+          "reference": {
+            "backgroundColor": "rgb(250, 250, 250)",
+            "label": "#FAFAFA"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "secondaryText",
+          "name": "Secondary Text",
+          "reference": {
+            "backgroundColor": "rgb(181, 181, 188)",
+            "label": "#B5B5BC"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "mutedText",
+          "name": "Muted Text",
+          "reference": {
+            "backgroundColor": "rgb(181, 181, 188)",
+            "label": "#B5B5BC"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "border",
+          "name": "Border",
+          "reference": {
+            "backgroundColor": "rgb(42, 45, 50)",
+            "label": "#2A2D32"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "link",
+          "name": "Link",
+          "reference": {
+            "backgroundColor": "rgb(173, 208, 255)",
+            "label": "#ADD0FF"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        }
+      ]
+    },
+    {
+      "product": "ppm",
+      "mode": "light",
+      "rows": [
+        {
+          "key": "pageBackground",
+          "name": "Page Background",
+          "reference": {
+            "backgroundColor": "rgb(226, 228, 233)",
+            "label": "#E2E4E9"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "cardBackground",
+          "name": "Card Background",
+          "reference": {
+            "backgroundColor": "rgb(247, 248, 250)",
+            "label": "#F7F8FA"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "navBackground",
+          "name": "Nav Background",
+          "reference": {
+            "backgroundColor": "rgb(252, 253, 255)",
+            "label": "#FCFDFF"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "inputBackground",
+          "name": "Input Background",
+          "reference": {
+            "backgroundColor": "rgb(255, 255, 255)",
+            "label": "#FFFFFF"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "inputDisabled",
+          "name": "Input Disabled",
+          "reference": {
+            "backgroundColor": "rgb(234, 234, 234)",
+            "label": "#EAEAEA"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "cellBackground",
+          "name": "Cell Background",
+          "reference": {
+            "backgroundColor": "rgb(255, 255, 255)",
+            "label": "#FFFFFF"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "hover",
+          "name": "Hover",
+          "reference": {
+            "backgroundColor": "rgb(229, 231, 235)",
+            "label": "#E5E7EB"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "tableTotal",
+          "name": "Table Total",
+          "reference": {
+            "backgroundColor": "rgba(0, 115, 230, 0.15)",
+            "label": "rgba(0, 115, 230, 0.15)"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "titleText",
+          "name": "Title Text",
+          "reference": {
+            "backgroundColor": "rgb(55, 63, 78)",
+            "label": "#373F4E"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "secondaryText",
+          "name": "Secondary Text",
+          "reference": {
+            "backgroundColor": "rgb(82, 89, 105)",
+            "label": "#525969"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "mutedText",
+          "name": "Muted Text",
+          "reference": {
+            "backgroundColor": "rgb(107, 114, 128)",
+            "label": "#6B7280"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "border",
+          "name": "Border",
+          "reference": {
+            "backgroundColor": "rgb(191, 198, 212)",
+            "label": "#BFC6D4"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "link",
+          "name": "Link",
+          "reference": {
+            "backgroundColor": "rgb(0, 91, 179)",
+            "label": "#005BB3"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        }
+      ],
+      "mismatches": [
+        {
+          "key": "pageBackground",
+          "name": "Page Background",
+          "reference": {
+            "backgroundColor": "rgb(226, 228, 233)",
+            "label": "#E2E4E9"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "cardBackground",
+          "name": "Card Background",
+          "reference": {
+            "backgroundColor": "rgb(247, 248, 250)",
+            "label": "#F7F8FA"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "navBackground",
+          "name": "Nav Background",
+          "reference": {
+            "backgroundColor": "rgb(252, 253, 255)",
+            "label": "#FCFDFF"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "inputBackground",
+          "name": "Input Background",
+          "reference": {
+            "backgroundColor": "rgb(255, 255, 255)",
+            "label": "#FFFFFF"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "inputDisabled",
+          "name": "Input Disabled",
+          "reference": {
+            "backgroundColor": "rgb(234, 234, 234)",
+            "label": "#EAEAEA"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "cellBackground",
+          "name": "Cell Background",
+          "reference": {
+            "backgroundColor": "rgb(255, 255, 255)",
+            "label": "#FFFFFF"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "hover",
+          "name": "Hover",
+          "reference": {
+            "backgroundColor": "rgb(229, 231, 235)",
+            "label": "#E5E7EB"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "tableTotal",
+          "name": "Table Total",
+          "reference": {
+            "backgroundColor": "rgba(0, 115, 230, 0.15)",
+            "label": "rgba(0, 115, 230, 0.15)"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "titleText",
+          "name": "Title Text",
+          "reference": {
+            "backgroundColor": "rgb(55, 63, 78)",
+            "label": "#373F4E"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "secondaryText",
+          "name": "Secondary Text",
+          "reference": {
+            "backgroundColor": "rgb(82, 89, 105)",
+            "label": "#525969"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "mutedText",
+          "name": "Muted Text",
+          "reference": {
+            "backgroundColor": "rgb(107, 114, 128)",
+            "label": "#6B7280"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "border",
+          "name": "Border",
+          "reference": {
+            "backgroundColor": "rgb(191, 198, 212)",
+            "label": "#BFC6D4"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "link",
+          "name": "Link",
+          "reference": {
+            "backgroundColor": "rgb(0, 91, 179)",
+            "label": "#005BB3"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        }
+      ]
+    },
+    {
+      "product": "ppm",
+      "mode": "dark",
+      "rows": [
+        {
+          "key": "pageBackground",
+          "name": "Page Background",
+          "reference": {
+            "backgroundColor": "rgb(21, 23, 26)",
+            "label": "#15171A"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "cardBackground",
+          "name": "Card Background",
+          "reference": {
+            "backgroundColor": "rgb(31, 33, 36)",
+            "label": "#1F2124"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "navBackground",
+          "name": "Nav Background",
+          "reference": {
+            "backgroundColor": "rgb(26, 28, 31)",
+            "label": "#1A1C1F"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "inputBackground",
+          "name": "Input Background",
+          "reference": {
+            "backgroundColor": "rgb(31, 33, 36)",
+            "label": "#1F2124"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "inputDisabled",
+          "name": "Input Disabled",
+          "reference": {
+            "backgroundColor": "rgb(42, 45, 50)",
+            "label": "#2A2D32"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "cellBackground",
+          "name": "Cell Background",
+          "reference": {
+            "backgroundColor": "rgb(26, 28, 31)",
+            "label": "#1A1C1F"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "hover",
+          "name": "Hover",
+          "reference": {
+            "backgroundColor": "rgb(42, 45, 50)",
+            "label": "#2A2D32"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "tableTotal",
+          "name": "Table Total",
+          "reference": {
+            "backgroundColor": "rgba(89, 172, 255, 0.15)",
+            "label": "rgba(89, 172, 255, 0.15)"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "titleText",
+          "name": "Title Text",
+          "reference": {
+            "backgroundColor": "rgb(250, 250, 250)",
+            "label": "#FAFAFA"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "secondaryText",
+          "name": "Secondary Text",
+          "reference": {
+            "backgroundColor": "rgb(181, 181, 188)",
+            "label": "#B5B5BC"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "mutedText",
+          "name": "Muted Text",
+          "reference": {
+            "backgroundColor": "rgb(181, 181, 188)",
+            "label": "#B5B5BC"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "border",
+          "name": "Border",
+          "reference": {
+            "backgroundColor": "rgb(42, 45, 50)",
+            "label": "#2A2D32"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "link",
+          "name": "Link",
+          "reference": {
+            "backgroundColor": "rgb(173, 208, 255)",
+            "label": "#ADD0FF"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        }
+      ],
+      "mismatches": [
+        {
+          "key": "pageBackground",
+          "name": "Page Background",
+          "reference": {
+            "backgroundColor": "rgb(21, 23, 26)",
+            "label": "#15171A"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "cardBackground",
+          "name": "Card Background",
+          "reference": {
+            "backgroundColor": "rgb(31, 33, 36)",
+            "label": "#1F2124"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "navBackground",
+          "name": "Nav Background",
+          "reference": {
+            "backgroundColor": "rgb(26, 28, 31)",
+            "label": "#1A1C1F"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "inputBackground",
+          "name": "Input Background",
+          "reference": {
+            "backgroundColor": "rgb(31, 33, 36)",
+            "label": "#1F2124"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "inputDisabled",
+          "name": "Input Disabled",
+          "reference": {
+            "backgroundColor": "rgb(42, 45, 50)",
+            "label": "#2A2D32"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "cellBackground",
+          "name": "Cell Background",
+          "reference": {
+            "backgroundColor": "rgb(26, 28, 31)",
+            "label": "#1A1C1F"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "hover",
+          "name": "Hover",
+          "reference": {
+            "backgroundColor": "rgb(42, 45, 50)",
+            "label": "#2A2D32"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "tableTotal",
+          "name": "Table Total",
+          "reference": {
+            "backgroundColor": "rgba(89, 172, 255, 0.15)",
+            "label": "rgba(89, 172, 255, 0.15)"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "titleText",
+          "name": "Title Text",
+          "reference": {
+            "backgroundColor": "rgb(250, 250, 250)",
+            "label": "#FAFAFA"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "secondaryText",
+          "name": "Secondary Text",
+          "reference": {
+            "backgroundColor": "rgb(181, 181, 188)",
+            "label": "#B5B5BC"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "mutedText",
+          "name": "Muted Text",
+          "reference": {
+            "backgroundColor": "rgb(181, 181, 188)",
+            "label": "#B5B5BC"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "border",
+          "name": "Border",
+          "reference": {
+            "backgroundColor": "rgb(42, 45, 50)",
+            "label": "#2A2D32"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "link",
+          "name": "Link",
+          "reference": {
+            "backgroundColor": "rgb(173, 208, 255)",
+            "label": "#ADD0FF"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        }
+      ]
+    },
+    {
+      "product": "maconomy",
+      "mode": "light",
+      "rows": [
+        {
+          "key": "pageBackground",
+          "name": "Page Background",
+          "reference": {
+            "backgroundColor": "rgb(226, 228, 233)",
+            "label": "#E2E4E9"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "cardBackground",
+          "name": "Card Background",
+          "reference": {
+            "backgroundColor": "rgb(247, 248, 250)",
+            "label": "#F7F8FA"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "navBackground",
+          "name": "Nav Background",
+          "reference": {
+            "backgroundColor": "rgb(252, 253, 255)",
+            "label": "#FCFDFF"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "inputBackground",
+          "name": "Input Background",
+          "reference": {
+            "backgroundColor": "rgb(255, 255, 255)",
+            "label": "#FFFFFF"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "inputDisabled",
+          "name": "Input Disabled",
+          "reference": {
+            "backgroundColor": "rgb(234, 234, 234)",
+            "label": "#EAEAEA"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "cellBackground",
+          "name": "Cell Background",
+          "reference": {
+            "backgroundColor": "rgb(255, 255, 255)",
+            "label": "#FFFFFF"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "hover",
+          "name": "Hover",
+          "reference": {
+            "backgroundColor": "rgb(229, 231, 235)",
+            "label": "#E5E7EB"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "tableTotal",
+          "name": "Table Total",
+          "reference": {
+            "backgroundColor": "rgba(0, 115, 230, 0.15)",
+            "label": "rgba(0, 115, 230, 0.15)"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "titleText",
+          "name": "Title Text",
+          "reference": {
+            "backgroundColor": "rgb(55, 63, 78)",
+            "label": "#373F4E"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "secondaryText",
+          "name": "Secondary Text",
+          "reference": {
+            "backgroundColor": "rgb(82, 89, 105)",
+            "label": "#525969"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "mutedText",
+          "name": "Muted Text",
+          "reference": {
+            "backgroundColor": "rgb(107, 114, 128)",
+            "label": "#6B7280"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "border",
+          "name": "Border",
+          "reference": {
+            "backgroundColor": "rgb(191, 198, 212)",
+            "label": "#BFC6D4"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "link",
+          "name": "Link",
+          "reference": {
+            "backgroundColor": "rgb(0, 91, 179)",
+            "label": "#005BB3"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        }
+      ],
+      "mismatches": [
+        {
+          "key": "pageBackground",
+          "name": "Page Background",
+          "reference": {
+            "backgroundColor": "rgb(226, 228, 233)",
+            "label": "#E2E4E9"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "cardBackground",
+          "name": "Card Background",
+          "reference": {
+            "backgroundColor": "rgb(247, 248, 250)",
+            "label": "#F7F8FA"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "navBackground",
+          "name": "Nav Background",
+          "reference": {
+            "backgroundColor": "rgb(252, 253, 255)",
+            "label": "#FCFDFF"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "inputBackground",
+          "name": "Input Background",
+          "reference": {
+            "backgroundColor": "rgb(255, 255, 255)",
+            "label": "#FFFFFF"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "inputDisabled",
+          "name": "Input Disabled",
+          "reference": {
+            "backgroundColor": "rgb(234, 234, 234)",
+            "label": "#EAEAEA"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "cellBackground",
+          "name": "Cell Background",
+          "reference": {
+            "backgroundColor": "rgb(255, 255, 255)",
+            "label": "#FFFFFF"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "hover",
+          "name": "Hover",
+          "reference": {
+            "backgroundColor": "rgb(229, 231, 235)",
+            "label": "#E5E7EB"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "tableTotal",
+          "name": "Table Total",
+          "reference": {
+            "backgroundColor": "rgba(0, 115, 230, 0.15)",
+            "label": "rgba(0, 115, 230, 0.15)"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "titleText",
+          "name": "Title Text",
+          "reference": {
+            "backgroundColor": "rgb(55, 63, 78)",
+            "label": "#373F4E"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "secondaryText",
+          "name": "Secondary Text",
+          "reference": {
+            "backgroundColor": "rgb(82, 89, 105)",
+            "label": "#525969"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "mutedText",
+          "name": "Muted Text",
+          "reference": {
+            "backgroundColor": "rgb(107, 114, 128)",
+            "label": "#6B7280"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "border",
+          "name": "Border",
+          "reference": {
+            "backgroundColor": "rgb(191, 198, 212)",
+            "label": "#BFC6D4"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "link",
+          "name": "Link",
+          "reference": {
+            "backgroundColor": "rgb(0, 91, 179)",
+            "label": "#005BB3"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        }
+      ]
+    },
+    {
+      "product": "maconomy",
+      "mode": "dark",
+      "rows": [
+        {
+          "key": "pageBackground",
+          "name": "Page Background",
+          "reference": {
+            "backgroundColor": "rgb(21, 23, 26)",
+            "label": "#15171A"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "cardBackground",
+          "name": "Card Background",
+          "reference": {
+            "backgroundColor": "rgb(31, 33, 36)",
+            "label": "#1F2124"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "navBackground",
+          "name": "Nav Background",
+          "reference": {
+            "backgroundColor": "rgb(26, 28, 31)",
+            "label": "#1A1C1F"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "inputBackground",
+          "name": "Input Background",
+          "reference": {
+            "backgroundColor": "rgb(31, 33, 36)",
+            "label": "#1F2124"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "inputDisabled",
+          "name": "Input Disabled",
+          "reference": {
+            "backgroundColor": "rgb(42, 45, 50)",
+            "label": "#2A2D32"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "cellBackground",
+          "name": "Cell Background",
+          "reference": {
+            "backgroundColor": "rgb(26, 28, 31)",
+            "label": "#1A1C1F"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "hover",
+          "name": "Hover",
+          "reference": {
+            "backgroundColor": "rgb(42, 45, 50)",
+            "label": "#2A2D32"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "tableTotal",
+          "name": "Table Total",
+          "reference": {
+            "backgroundColor": "rgba(89, 172, 255, 0.15)",
+            "label": "rgba(89, 172, 255, 0.15)"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "titleText",
+          "name": "Title Text",
+          "reference": {
+            "backgroundColor": "rgb(250, 250, 250)",
+            "label": "#FAFAFA"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "secondaryText",
+          "name": "Secondary Text",
+          "reference": {
+            "backgroundColor": "rgb(181, 181, 188)",
+            "label": "#B5B5BC"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "mutedText",
+          "name": "Muted Text",
+          "reference": {
+            "backgroundColor": "rgb(181, 181, 188)",
+            "label": "#B5B5BC"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "border",
+          "name": "Border",
+          "reference": {
+            "backgroundColor": "rgb(42, 45, 50)",
+            "label": "#2A2D32"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "link",
+          "name": "Link",
+          "reference": {
+            "backgroundColor": "rgb(173, 208, 255)",
+            "label": "#ADD0FF"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        }
+      ],
+      "mismatches": [
+        {
+          "key": "pageBackground",
+          "name": "Page Background",
+          "reference": {
+            "backgroundColor": "rgb(21, 23, 26)",
+            "label": "#15171A"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "cardBackground",
+          "name": "Card Background",
+          "reference": {
+            "backgroundColor": "rgb(31, 33, 36)",
+            "label": "#1F2124"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "navBackground",
+          "name": "Nav Background",
+          "reference": {
+            "backgroundColor": "rgb(26, 28, 31)",
+            "label": "#1A1C1F"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "inputBackground",
+          "name": "Input Background",
+          "reference": {
+            "backgroundColor": "rgb(31, 33, 36)",
+            "label": "#1F2124"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "inputDisabled",
+          "name": "Input Disabled",
+          "reference": {
+            "backgroundColor": "rgb(42, 45, 50)",
+            "label": "#2A2D32"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "cellBackground",
+          "name": "Cell Background",
+          "reference": {
+            "backgroundColor": "rgb(26, 28, 31)",
+            "label": "#1A1C1F"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "hover",
+          "name": "Hover",
+          "reference": {
+            "backgroundColor": "rgb(42, 45, 50)",
+            "label": "#2A2D32"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "tableTotal",
+          "name": "Table Total",
+          "reference": {
+            "backgroundColor": "rgba(89, 172, 255, 0.15)",
+            "label": "rgba(89, 172, 255, 0.15)"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "titleText",
+          "name": "Title Text",
+          "reference": {
+            "backgroundColor": "rgb(250, 250, 250)",
+            "label": "#FAFAFA"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "secondaryText",
+          "name": "Secondary Text",
+          "reference": {
+            "backgroundColor": "rgb(181, 181, 188)",
+            "label": "#B5B5BC"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "mutedText",
+          "name": "Muted Text",
+          "reference": {
+            "backgroundColor": "rgb(181, 181, 188)",
+            "label": "#B5B5BC"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "border",
+          "name": "Border",
+          "reference": {
+            "backgroundColor": "rgb(42, 45, 50)",
+            "label": "#2A2D32"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        },
+        {
+          "key": "link",
+          "name": "Link",
+          "reference": {
+            "backgroundColor": "rgb(173, 208, 255)",
+            "label": "#ADD0FF"
+          },
+          "converted": {
+            "backgroundColor": null,
+            "label": null
+          },
+          "match": false,
+          "note": "unparsed"
+        }
+      ]
+    }
+  ],
+  "mismatches": [
+    {
+      "product": "cp",
+      "mode": "light",
+      "key": "pageBackground",
+      "name": "Page Background",
+      "reference": {
+        "backgroundColor": "rgb(226, 228, 233)",
+        "label": "#E2E4E9"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "cp",
+      "mode": "light",
+      "key": "cardBackground",
+      "name": "Card Background",
+      "reference": {
+        "backgroundColor": "rgb(247, 248, 250)",
+        "label": "#F7F8FA"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "cp",
+      "mode": "light",
+      "key": "navBackground",
+      "name": "Nav Background",
+      "reference": {
+        "backgroundColor": "rgb(252, 253, 255)",
+        "label": "#FCFDFF"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "cp",
+      "mode": "light",
+      "key": "inputBackground",
+      "name": "Input Background",
+      "reference": {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "label": "#FFFFFF"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "cp",
+      "mode": "light",
+      "key": "inputDisabled",
+      "name": "Input Disabled",
+      "reference": {
+        "backgroundColor": "rgb(234, 234, 234)",
+        "label": "#EAEAEA"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "cp",
+      "mode": "light",
+      "key": "cellBackground",
+      "name": "Cell Background",
+      "reference": {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "label": "#FFFFFF"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "cp",
+      "mode": "light",
+      "key": "hover",
+      "name": "Hover",
+      "reference": {
+        "backgroundColor": "rgb(229, 231, 235)",
+        "label": "#E5E7EB"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "cp",
+      "mode": "light",
+      "key": "tableTotal",
+      "name": "Table Total",
+      "reference": {
+        "backgroundColor": "rgba(0, 115, 230, 0.15)",
+        "label": "rgba(0, 115, 230, 0.15)"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "cp",
+      "mode": "light",
+      "key": "titleText",
+      "name": "Title Text",
+      "reference": {
+        "backgroundColor": "rgb(55, 63, 78)",
+        "label": "#373F4E"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "cp",
+      "mode": "light",
+      "key": "secondaryText",
+      "name": "Secondary Text",
+      "reference": {
+        "backgroundColor": "rgb(82, 89, 105)",
+        "label": "#525969"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "cp",
+      "mode": "light",
+      "key": "mutedText",
+      "name": "Muted Text",
+      "reference": {
+        "backgroundColor": "rgb(107, 114, 128)",
+        "label": "#6B7280"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "cp",
+      "mode": "light",
+      "key": "border",
+      "name": "Border",
+      "reference": {
+        "backgroundColor": "rgb(191, 198, 212)",
+        "label": "#BFC6D4"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "cp",
+      "mode": "light",
+      "key": "link",
+      "name": "Link",
+      "reference": {
+        "backgroundColor": "rgb(0, 91, 179)",
+        "label": "#005BB3"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "cp",
+      "mode": "dark",
+      "key": "pageBackground",
+      "name": "Page Background",
+      "reference": {
+        "backgroundColor": "rgb(31, 37, 46)",
+        "label": "#1F252E"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "cp",
+      "mode": "dark",
+      "key": "cardBackground",
+      "name": "Card Background",
+      "reference": {
+        "backgroundColor": "rgb(55, 66, 77)",
+        "label": "#37424D"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "cp",
+      "mode": "dark",
+      "key": "navBackground",
+      "name": "Nav Background",
+      "reference": {
+        "backgroundColor": "rgb(51, 61, 71)",
+        "label": "#333D47"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "cp",
+      "mode": "dark",
+      "key": "inputBackground",
+      "name": "Input Background",
+      "reference": {
+        "backgroundColor": "rgb(31, 37, 46)",
+        "label": "#1F252E"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "cp",
+      "mode": "dark",
+      "key": "inputDisabled",
+      "name": "Input Disabled",
+      "reference": {
+        "backgroundColor": "rgb(51, 61, 71)",
+        "label": "#333D47"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "cp",
+      "mode": "dark",
+      "key": "cellBackground",
+      "name": "Cell Background",
+      "reference": {
+        "backgroundColor": "rgb(33, 41, 53)",
+        "label": "#212935"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "cp",
+      "mode": "dark",
+      "key": "hover",
+      "name": "Hover",
+      "reference": {
+        "backgroundColor": "rgb(61, 74, 92)",
+        "label": "#3D4A5C"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "cp",
+      "mode": "dark",
+      "key": "tableTotal",
+      "name": "Table Total",
+      "reference": {
+        "backgroundColor": "rgba(89, 172, 255, 0.15)",
+        "label": "rgba(89, 172, 255, 0.15)"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "cp",
+      "mode": "dark",
+      "key": "titleText",
+      "name": "Title Text",
+      "reference": {
+        "backgroundColor": "rgb(233, 236, 239)",
+        "label": "#E9ECEF"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "cp",
+      "mode": "dark",
+      "key": "secondaryText",
+      "name": "Secondary Text",
+      "reference": {
+        "backgroundColor": "rgb(182, 182, 196)",
+        "label": "#B6B6C4"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "cp",
+      "mode": "dark",
+      "key": "mutedText",
+      "name": "Muted Text",
+      "reference": {
+        "backgroundColor": "rgb(187, 187, 198)",
+        "label": "#BBBBC6"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "cp",
+      "mode": "dark",
+      "key": "border",
+      "name": "Border",
+      "reference": {
+        "backgroundColor": "rgb(95, 104, 113)",
+        "label": "#5F6871"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "cp",
+      "mode": "dark",
+      "key": "link",
+      "name": "Link",
+      "reference": {
+        "backgroundColor": "rgb(173, 208, 255)",
+        "label": "#ADD0FF"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "vp",
+      "mode": "light",
+      "key": "pageBackground",
+      "name": "Page Background",
+      "reference": {
+        "backgroundColor": "rgb(226, 228, 233)",
+        "label": "#E2E4E9"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "vp",
+      "mode": "light",
+      "key": "cardBackground",
+      "name": "Card Background",
+      "reference": {
+        "backgroundColor": "rgb(247, 248, 250)",
+        "label": "#F7F8FA"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "vp",
+      "mode": "light",
+      "key": "navBackground",
+      "name": "Nav Background",
+      "reference": {
+        "backgroundColor": "rgb(252, 253, 255)",
+        "label": "#FCFDFF"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "vp",
+      "mode": "light",
+      "key": "inputBackground",
+      "name": "Input Background",
+      "reference": {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "label": "#FFFFFF"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "vp",
+      "mode": "light",
+      "key": "inputDisabled",
+      "name": "Input Disabled",
+      "reference": {
+        "backgroundColor": "rgb(234, 234, 234)",
+        "label": "#EAEAEA"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "vp",
+      "mode": "light",
+      "key": "cellBackground",
+      "name": "Cell Background",
+      "reference": {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "label": "#FFFFFF"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "vp",
+      "mode": "light",
+      "key": "hover",
+      "name": "Hover",
+      "reference": {
+        "backgroundColor": "rgb(229, 231, 235)",
+        "label": "#E5E7EB"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "vp",
+      "mode": "light",
+      "key": "tableTotal",
+      "name": "Table Total",
+      "reference": {
+        "backgroundColor": "rgba(0, 115, 230, 0.15)",
+        "label": "rgba(0, 115, 230, 0.15)"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "vp",
+      "mode": "light",
+      "key": "titleText",
+      "name": "Title Text",
+      "reference": {
+        "backgroundColor": "rgb(55, 63, 78)",
+        "label": "#373F4E"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "vp",
+      "mode": "light",
+      "key": "secondaryText",
+      "name": "Secondary Text",
+      "reference": {
+        "backgroundColor": "rgb(82, 89, 105)",
+        "label": "#525969"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "vp",
+      "mode": "light",
+      "key": "mutedText",
+      "name": "Muted Text",
+      "reference": {
+        "backgroundColor": "rgb(107, 114, 128)",
+        "label": "#6B7280"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "vp",
+      "mode": "light",
+      "key": "border",
+      "name": "Border",
+      "reference": {
+        "backgroundColor": "rgb(191, 198, 212)",
+        "label": "#BFC6D4"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "vp",
+      "mode": "light",
+      "key": "link",
+      "name": "Link",
+      "reference": {
+        "backgroundColor": "rgb(0, 91, 179)",
+        "label": "#005BB3"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "vp",
+      "mode": "dark",
+      "key": "pageBackground",
+      "name": "Page Background",
+      "reference": {
+        "backgroundColor": "rgb(21, 23, 26)",
+        "label": "#15171A"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "vp",
+      "mode": "dark",
+      "key": "cardBackground",
+      "name": "Card Background",
+      "reference": {
+        "backgroundColor": "rgb(31, 33, 36)",
+        "label": "#1F2124"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "vp",
+      "mode": "dark",
+      "key": "navBackground",
+      "name": "Nav Background",
+      "reference": {
+        "backgroundColor": "rgb(26, 28, 31)",
+        "label": "#1A1C1F"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "vp",
+      "mode": "dark",
+      "key": "inputBackground",
+      "name": "Input Background",
+      "reference": {
+        "backgroundColor": "rgb(31, 33, 36)",
+        "label": "#1F2124"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "vp",
+      "mode": "dark",
+      "key": "inputDisabled",
+      "name": "Input Disabled",
+      "reference": {
+        "backgroundColor": "rgb(42, 45, 50)",
+        "label": "#2A2D32"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "vp",
+      "mode": "dark",
+      "key": "cellBackground",
+      "name": "Cell Background",
+      "reference": {
+        "backgroundColor": "rgb(26, 28, 31)",
+        "label": "#1A1C1F"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "vp",
+      "mode": "dark",
+      "key": "hover",
+      "name": "Hover",
+      "reference": {
+        "backgroundColor": "rgb(42, 45, 50)",
+        "label": "#2A2D32"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "vp",
+      "mode": "dark",
+      "key": "tableTotal",
+      "name": "Table Total",
+      "reference": {
+        "backgroundColor": "rgba(89, 172, 255, 0.15)",
+        "label": "rgba(89, 172, 255, 0.15)"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "vp",
+      "mode": "dark",
+      "key": "titleText",
+      "name": "Title Text",
+      "reference": {
+        "backgroundColor": "rgb(250, 250, 250)",
+        "label": "#FAFAFA"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "vp",
+      "mode": "dark",
+      "key": "secondaryText",
+      "name": "Secondary Text",
+      "reference": {
+        "backgroundColor": "rgb(181, 181, 188)",
+        "label": "#B5B5BC"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "vp",
+      "mode": "dark",
+      "key": "mutedText",
+      "name": "Muted Text",
+      "reference": {
+        "backgroundColor": "rgb(181, 181, 188)",
+        "label": "#B5B5BC"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "vp",
+      "mode": "dark",
+      "key": "border",
+      "name": "Border",
+      "reference": {
+        "backgroundColor": "rgb(42, 45, 50)",
+        "label": "#2A2D32"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "vp",
+      "mode": "dark",
+      "key": "link",
+      "name": "Link",
+      "reference": {
+        "backgroundColor": "rgb(173, 208, 255)",
+        "label": "#ADD0FF"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "ppm",
+      "mode": "light",
+      "key": "pageBackground",
+      "name": "Page Background",
+      "reference": {
+        "backgroundColor": "rgb(226, 228, 233)",
+        "label": "#E2E4E9"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "ppm",
+      "mode": "light",
+      "key": "cardBackground",
+      "name": "Card Background",
+      "reference": {
+        "backgroundColor": "rgb(247, 248, 250)",
+        "label": "#F7F8FA"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "ppm",
+      "mode": "light",
+      "key": "navBackground",
+      "name": "Nav Background",
+      "reference": {
+        "backgroundColor": "rgb(252, 253, 255)",
+        "label": "#FCFDFF"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "ppm",
+      "mode": "light",
+      "key": "inputBackground",
+      "name": "Input Background",
+      "reference": {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "label": "#FFFFFF"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "ppm",
+      "mode": "light",
+      "key": "inputDisabled",
+      "name": "Input Disabled",
+      "reference": {
+        "backgroundColor": "rgb(234, 234, 234)",
+        "label": "#EAEAEA"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "ppm",
+      "mode": "light",
+      "key": "cellBackground",
+      "name": "Cell Background",
+      "reference": {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "label": "#FFFFFF"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "ppm",
+      "mode": "light",
+      "key": "hover",
+      "name": "Hover",
+      "reference": {
+        "backgroundColor": "rgb(229, 231, 235)",
+        "label": "#E5E7EB"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "ppm",
+      "mode": "light",
+      "key": "tableTotal",
+      "name": "Table Total",
+      "reference": {
+        "backgroundColor": "rgba(0, 115, 230, 0.15)",
+        "label": "rgba(0, 115, 230, 0.15)"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "ppm",
+      "mode": "light",
+      "key": "titleText",
+      "name": "Title Text",
+      "reference": {
+        "backgroundColor": "rgb(55, 63, 78)",
+        "label": "#373F4E"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "ppm",
+      "mode": "light",
+      "key": "secondaryText",
+      "name": "Secondary Text",
+      "reference": {
+        "backgroundColor": "rgb(82, 89, 105)",
+        "label": "#525969"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "ppm",
+      "mode": "light",
+      "key": "mutedText",
+      "name": "Muted Text",
+      "reference": {
+        "backgroundColor": "rgb(107, 114, 128)",
+        "label": "#6B7280"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "ppm",
+      "mode": "light",
+      "key": "border",
+      "name": "Border",
+      "reference": {
+        "backgroundColor": "rgb(191, 198, 212)",
+        "label": "#BFC6D4"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "ppm",
+      "mode": "light",
+      "key": "link",
+      "name": "Link",
+      "reference": {
+        "backgroundColor": "rgb(0, 91, 179)",
+        "label": "#005BB3"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "ppm",
+      "mode": "dark",
+      "key": "pageBackground",
+      "name": "Page Background",
+      "reference": {
+        "backgroundColor": "rgb(21, 23, 26)",
+        "label": "#15171A"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "ppm",
+      "mode": "dark",
+      "key": "cardBackground",
+      "name": "Card Background",
+      "reference": {
+        "backgroundColor": "rgb(31, 33, 36)",
+        "label": "#1F2124"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "ppm",
+      "mode": "dark",
+      "key": "navBackground",
+      "name": "Nav Background",
+      "reference": {
+        "backgroundColor": "rgb(26, 28, 31)",
+        "label": "#1A1C1F"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "ppm",
+      "mode": "dark",
+      "key": "inputBackground",
+      "name": "Input Background",
+      "reference": {
+        "backgroundColor": "rgb(31, 33, 36)",
+        "label": "#1F2124"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "ppm",
+      "mode": "dark",
+      "key": "inputDisabled",
+      "name": "Input Disabled",
+      "reference": {
+        "backgroundColor": "rgb(42, 45, 50)",
+        "label": "#2A2D32"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "ppm",
+      "mode": "dark",
+      "key": "cellBackground",
+      "name": "Cell Background",
+      "reference": {
+        "backgroundColor": "rgb(26, 28, 31)",
+        "label": "#1A1C1F"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "ppm",
+      "mode": "dark",
+      "key": "hover",
+      "name": "Hover",
+      "reference": {
+        "backgroundColor": "rgb(42, 45, 50)",
+        "label": "#2A2D32"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "ppm",
+      "mode": "dark",
+      "key": "tableTotal",
+      "name": "Table Total",
+      "reference": {
+        "backgroundColor": "rgba(89, 172, 255, 0.15)",
+        "label": "rgba(89, 172, 255, 0.15)"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "ppm",
+      "mode": "dark",
+      "key": "titleText",
+      "name": "Title Text",
+      "reference": {
+        "backgroundColor": "rgb(250, 250, 250)",
+        "label": "#FAFAFA"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "ppm",
+      "mode": "dark",
+      "key": "secondaryText",
+      "name": "Secondary Text",
+      "reference": {
+        "backgroundColor": "rgb(181, 181, 188)",
+        "label": "#B5B5BC"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "ppm",
+      "mode": "dark",
+      "key": "mutedText",
+      "name": "Muted Text",
+      "reference": {
+        "backgroundColor": "rgb(181, 181, 188)",
+        "label": "#B5B5BC"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "ppm",
+      "mode": "dark",
+      "key": "border",
+      "name": "Border",
+      "reference": {
+        "backgroundColor": "rgb(42, 45, 50)",
+        "label": "#2A2D32"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "ppm",
+      "mode": "dark",
+      "key": "link",
+      "name": "Link",
+      "reference": {
+        "backgroundColor": "rgb(173, 208, 255)",
+        "label": "#ADD0FF"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "maconomy",
+      "mode": "light",
+      "key": "pageBackground",
+      "name": "Page Background",
+      "reference": {
+        "backgroundColor": "rgb(226, 228, 233)",
+        "label": "#E2E4E9"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "maconomy",
+      "mode": "light",
+      "key": "cardBackground",
+      "name": "Card Background",
+      "reference": {
+        "backgroundColor": "rgb(247, 248, 250)",
+        "label": "#F7F8FA"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "maconomy",
+      "mode": "light",
+      "key": "navBackground",
+      "name": "Nav Background",
+      "reference": {
+        "backgroundColor": "rgb(252, 253, 255)",
+        "label": "#FCFDFF"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "maconomy",
+      "mode": "light",
+      "key": "inputBackground",
+      "name": "Input Background",
+      "reference": {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "label": "#FFFFFF"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "maconomy",
+      "mode": "light",
+      "key": "inputDisabled",
+      "name": "Input Disabled",
+      "reference": {
+        "backgroundColor": "rgb(234, 234, 234)",
+        "label": "#EAEAEA"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "maconomy",
+      "mode": "light",
+      "key": "cellBackground",
+      "name": "Cell Background",
+      "reference": {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "label": "#FFFFFF"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "maconomy",
+      "mode": "light",
+      "key": "hover",
+      "name": "Hover",
+      "reference": {
+        "backgroundColor": "rgb(229, 231, 235)",
+        "label": "#E5E7EB"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "maconomy",
+      "mode": "light",
+      "key": "tableTotal",
+      "name": "Table Total",
+      "reference": {
+        "backgroundColor": "rgba(0, 115, 230, 0.15)",
+        "label": "rgba(0, 115, 230, 0.15)"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "maconomy",
+      "mode": "light",
+      "key": "titleText",
+      "name": "Title Text",
+      "reference": {
+        "backgroundColor": "rgb(55, 63, 78)",
+        "label": "#373F4E"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "maconomy",
+      "mode": "light",
+      "key": "secondaryText",
+      "name": "Secondary Text",
+      "reference": {
+        "backgroundColor": "rgb(82, 89, 105)",
+        "label": "#525969"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "maconomy",
+      "mode": "light",
+      "key": "mutedText",
+      "name": "Muted Text",
+      "reference": {
+        "backgroundColor": "rgb(107, 114, 128)",
+        "label": "#6B7280"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "maconomy",
+      "mode": "light",
+      "key": "border",
+      "name": "Border",
+      "reference": {
+        "backgroundColor": "rgb(191, 198, 212)",
+        "label": "#BFC6D4"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "maconomy",
+      "mode": "light",
+      "key": "link",
+      "name": "Link",
+      "reference": {
+        "backgroundColor": "rgb(0, 91, 179)",
+        "label": "#005BB3"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "maconomy",
+      "mode": "dark",
+      "key": "pageBackground",
+      "name": "Page Background",
+      "reference": {
+        "backgroundColor": "rgb(21, 23, 26)",
+        "label": "#15171A"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "maconomy",
+      "mode": "dark",
+      "key": "cardBackground",
+      "name": "Card Background",
+      "reference": {
+        "backgroundColor": "rgb(31, 33, 36)",
+        "label": "#1F2124"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "maconomy",
+      "mode": "dark",
+      "key": "navBackground",
+      "name": "Nav Background",
+      "reference": {
+        "backgroundColor": "rgb(26, 28, 31)",
+        "label": "#1A1C1F"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "maconomy",
+      "mode": "dark",
+      "key": "inputBackground",
+      "name": "Input Background",
+      "reference": {
+        "backgroundColor": "rgb(31, 33, 36)",
+        "label": "#1F2124"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "maconomy",
+      "mode": "dark",
+      "key": "inputDisabled",
+      "name": "Input Disabled",
+      "reference": {
+        "backgroundColor": "rgb(42, 45, 50)",
+        "label": "#2A2D32"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "maconomy",
+      "mode": "dark",
+      "key": "cellBackground",
+      "name": "Cell Background",
+      "reference": {
+        "backgroundColor": "rgb(26, 28, 31)",
+        "label": "#1A1C1F"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "maconomy",
+      "mode": "dark",
+      "key": "hover",
+      "name": "Hover",
+      "reference": {
+        "backgroundColor": "rgb(42, 45, 50)",
+        "label": "#2A2D32"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "maconomy",
+      "mode": "dark",
+      "key": "tableTotal",
+      "name": "Table Total",
+      "reference": {
+        "backgroundColor": "rgba(89, 172, 255, 0.15)",
+        "label": "rgba(89, 172, 255, 0.15)"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "maconomy",
+      "mode": "dark",
+      "key": "titleText",
+      "name": "Title Text",
+      "reference": {
+        "backgroundColor": "rgb(250, 250, 250)",
+        "label": "#FAFAFA"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "maconomy",
+      "mode": "dark",
+      "key": "secondaryText",
+      "name": "Secondary Text",
+      "reference": {
+        "backgroundColor": "rgb(181, 181, 188)",
+        "label": "#B5B5BC"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "maconomy",
+      "mode": "dark",
+      "key": "mutedText",
+      "name": "Muted Text",
+      "reference": {
+        "backgroundColor": "rgb(181, 181, 188)",
+        "label": "#B5B5BC"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "maconomy",
+      "mode": "dark",
+      "key": "border",
+      "name": "Border",
+      "reference": {
+        "backgroundColor": "rgb(42, 45, 50)",
+        "label": "#2A2D32"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    },
+    {
+      "product": "maconomy",
+      "mode": "dark",
+      "key": "link",
+      "name": "Link",
+      "reference": {
+        "backgroundColor": "rgb(173, 208, 255)",
+        "label": "#ADD0FF"
+      },
+      "converted": {
+        "backgroundColor": null,
+        "label": null
+      },
+      "match": false,
+      "note": "unparsed"
+    }
+  ]
+}

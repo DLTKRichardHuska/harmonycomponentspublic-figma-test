@@ -31,7 +31,7 @@
 
 | Method | How | Updates | When to use |
 |--------|-----|---------|-------------|
-| **npm from Git** (recommended) | `npm install github:DLTKfrancesmunoz/harmonycomponents` | `npm update @deltek/harmony-components` and `npm run harmony:check-updates` | Most app projects; package lives in `node_modules` |
+| **npm from Git** (recommended) | `npm install github:dltkrichardhuska/harmonycomponentspublic-figma-test` | `npm update @deltek/harmony-components` and `npm run harmony:check-updates` | Most app projects; package lives in `node_modules` |
 | **Sparse checkout** | Clone repo with `git sparse-checkout` (components, styles, tokens, public, preview + layouts) | `git pull` in that clone | When you need a clone on disk (e.g. embedding the folder or working on the design system itself) |
 
 **Recommended path:** Install as a package from Git. Your app lists `@deltek/harmony-components` as a dependency; Harmony lives in `node_modules`. You get updates via npm and can use the helper scripts (`harmony:copy`, `harmony:check-updates`, `harmony:diff`).
@@ -61,7 +61,7 @@ git sparse-checkout set \
   astro.config.mjs
 ```
 
-Replace `<repo-url>` with your repository URL (e.g. `https://github.com/DLTKfrancesmunoz/harmonycomponents.git`).
+Replace `<repo-url>` with your repository URL (e.g. `https://github.com/dltkrichardhuska/harmonycomponents.git`).
 
 **Option B – You already cloned the full repo**
 
@@ -106,13 +106,13 @@ Root-level files such as `CHANGELOG.md`, `docs/`, and `archive/` (MCP-related as
 ### Step 1: Install Harmony
 
 ```bash
-npm install github:DLTKfrancesmunoz/harmonycomponents
+npm install github:dltkrichardhuska/harmonycomponents
 ```
 
 Or with a specific version:
 
 ```bash
-npm install git+https://github.com/DLTKfrancesmunoz/harmonycomponents.git#v1.0.1
+npm install git+https://github.com/DLTKRichardHuska/harmonycomponentspublic-figma-test.git#v0.9.0
 ```
 
 ### Step 2: Peer Dependencies
@@ -227,7 +227,7 @@ import '../styles/theme-myproject.css';
 ```json
 {
   "lastChecked": "2026-01-28",
-  "harmonyVersion": "1.0.0",
+  "harmonyVersion": "0.9.0",
   "overrides": []
 }
 ```
@@ -360,21 +360,21 @@ Harmony uses CSS custom properties you can override in your theme file.
 
 ### Complete Component List
 
-**Form controls:** Button, ButtonGroup, Input, Textarea, NumberInput, RangeInput, Checkbox, RadioButton, Toggle, DateInput, Label  
+**Form controls:** Button, ButtonGroup, Input, Textarea, NumberInput, RangeInput, Checkbox, CheckboxGroup, RadioButton, RadioGroup, Toggle, DateInput, Label  
 
-**Display:** Card, Badge, NotificationBadge, Chip, Alert, Tooltip, Spinner, ProgressBar, Table, Icon  
+**Display:** Avatar, Card, Badge, NotificationBadge, Chip, Alert, Tooltip, Spinner, ProgressBar, Table, TableCostpointGrid (Costpoint split grid; `html.theme-cp`), Icon  
 
 **Navigation:** TabStrip, Stepper, Step, FloatingNav, Link  
 
-**Layout:** LeftSidebar, RightSidebar, ShellPageHeader, ShellPanel  
+**Layout:** LeftSidebar, RightSidebar, ShellPageHeader, ShellPanel, ShellFooter, ShellHeader  
 
-**Interactive:** Dialog, Dropdown, Accordion, Kanban, KanbanCard  
-
-**Shell:** ShellFooter, ShellHeader  
+**Interactive:** Dialog, Dropdown, Accordion, Kanban, KanbanCard, KanbanCardCostpoint  
 
 **Pickers:** DatePicker, DateTimePicker, MonthPicker, WeekPicker, TimePicker, PickerPopup  
 
 **Other:** ListMenu  
+
+**Internal (not exported from `@deltek/harmony-components/ui`):** CommandCenterPanel, CommandCenterPanelSection, DateRangePicker, DateRangePickerExpanded, TableDataRegion — used in doc examples and composed UIs only.
 
 ### Public Assets
 
@@ -588,7 +588,7 @@ Wrappers usually don’t need changes when Harmony updates; base fixes and new p
 
 ### Rollback
 
-- **Option 1:** `npm install @deltek/harmony-components@<previous-version>` (e.g. `@1.0.0`).
+- **Option 1:** `npm install @deltek/harmony-components@<previous-version>` (e.g. `@0.9.0`).
 - **Option 2:** `git revert HEAD` (or reset to the commit before the update).
 - **Option 3:** Restore from a backup branch: `git checkout backup-before-harmony-update` and copy state back to main if needed.
 
@@ -619,7 +619,7 @@ The package is installed from a **private GitHub repository**. On the deployment
 
 1. Create a **Personal Access Token** (classic) with `repo` scope. Use it only for deployment; don’t commit it.
 2. Add it as an environment variable, e.g. `GITHUB_TOKEN`, in your deployment project settings.
-3. Ensure your app’s `package.json` dependency uses the HTTPS URL (e.g. `github:DLTKfrancesmunoz/harmonycomponents` or `git+https://...`). Many platforms use `GITHUB_TOKEN` automatically for `npm install` when installing from GitHub.
+3. Ensure your app’s `package.json` dependency uses the HTTPS URL (e.g. `github:dltkrichardhuska/harmonycomponents` or `git+https://...`). Many platforms use `GITHUB_TOKEN` automatically for `npm install` when installing from GitHub.
 
 **Local development:** Developers use their own GitHub auth (SSH or HTTPS); they don’t need the deployment token.
 

@@ -22,9 +22,10 @@ export const themeConfig: Record<string, ThemeConfig> = {
   cp: {
     name: 'CP',
     fullName: 'Harmony CP Design System',
-    primaryColor: '#0073E6',
+    primaryColor: '#2A78C6',
     components: [
-      { title: 'Floating Nav', href: '/cp/floating-nav', icon: 'ti-navigation' }
+      { title: 'Floating Nav', href: '/cp/floating-nav', icon: 'ti-navigation' },
+      { title: 'Kanban', href: '/cp/kanban', icon: 'ti-layout-kanban' },
     ],
     companies: [
       { id: 'acme-corp', name: 'Acme Corporation', gradientColor: '#FF507B' },
@@ -37,7 +38,7 @@ export const themeConfig: Record<string, ThemeConfig> = {
   vp: {
     name: 'VP',
     fullName: 'Harmony VP Design System',
-    primaryColor: '#0073E6',
+    primaryColor: '#2A78C6',
     components: [],
     companies: [
       { id: 'vendor-a', name: 'Vendor A', gradientColor: '#10B981' },

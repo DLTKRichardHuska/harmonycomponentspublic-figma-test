@@ -49,6 +49,18 @@
   gap: var(--space-4);
 }
 
+.sidebar-toggle {
+  display: flex;
+  flex-shrink: 0;
+}
+
+@media (min-width: 1024px) {
+  /* Must beat .icon-btn { display: flex } later in this file */
+  .sidebar-toggle.icon-btn {
+    display: none;
+  }
+}
+
 .header__brand-link {
   display: flex;
   align-items: center;
@@ -455,25 +467,91 @@
    =========================================== */
 
 .sidebar {
-  width: 256px; /* Component-specific, not in spacing scale */
   border-right: 1px solid var(--border-color);
   background-color: var(--nav-bg);
-  display: none;
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100%;
+  overflow: hidden;
   flex-shrink: 0;
+  position: fixed;
+  top: var(--shell-header-height);
+  left: 0;
+  bottom: 0;
+  width: min(256px, 85vw);
+  z-index: var(--z-modal);
+  transform: translateX(-100%);
+  transition: transform var(--transition-base);
+}
+
+.sidebar.is-open {
+  transform: translateX(0);
+}
+
+.sidebar-backdrop {
+  position: fixed;
+  top: var(--shell-header-height);
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: calc(var(--z-modal) - 1);
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+}
+
+.sidebar-backdrop.is-open {
+  display: block;
+}
+
+body.sidebar-open {
+  overflow: hidden;
+}
+
+body.sidebar-open .main {
+  overflow: hidden;
 }
 
 @media (min-width: 1024px) {
   .sidebar {
-    display: flex;
+    position: static;
+    height: 100%;
+    min-height: 0;
+    transform: none;
+    transition: none;
+    width: 256px;
+    z-index: auto;
+  }
+
+  .sidebar.is-open {
+    transform: none;
+  }
+
+  .sidebar-backdrop {
+    display: none !important;
   }
 }
 
 .sidebar__header {
   padding: var(--space-4);
   border-bottom: 1px solid var(--border-color);
+}
+
+.sidebar__header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+}
+
+.sidebar__close {
+  display: flex;
+  flex-shrink: 0;
+}
+
+@media (min-width: 1024px) {
+  .sidebar__close {
+    display: none;
+  }
 }
 
 .sidebar__label {
@@ -504,6 +582,7 @@
 
 .nav {
   flex: 1;
+  min-height: 0;
   overflow-y: auto;
   padding: var(--space-4);
 }
@@ -567,6 +646,13 @@
 .sidebar__footer {
   padding: var(--space-4);
   border-top: 1px solid var(--border-color);
+}
+
+.sidebar__version {
+  font-size: 11px;
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+  margin-bottom: var(--space-3);
 }
 
 .sidebar__progress {

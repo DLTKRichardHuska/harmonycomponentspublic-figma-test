@@ -1,0 +1,59 @@
+{
+  "id": "figma",
+  "name": "Figma",
+  "type": "external",
+  "status": "ready",
+  "description": "Harmony Design System as Figma component libraries (one file per product), synced via Figma MCP. Components are Code-Connected to the shadcn conversion's per-product npm packages. No local conversion project; per-element state lives in each Figma file.",
+  "host": {
+    "system": "figma",
+    "mcpServer": "user-Figma"
+  },
+  "conversion": {
+    "playbook": "playbook/SKILL.md",
+    "verification": {
+      "playbook": "playbook/VERIFICATION.md",
+      "agent": "playbook/VERIFIER.md"
+    }
+  },
+  "stateHome": {
+    "location": "figma-file",
+    "mechanism": "shared-plugin-data",
+    "namespace": "harmony",
+    "key": "conversionState",
+    "note": "Per-element sync state is stored in each bound Figma file (shared plugin data + coversheet page), not in a conversion.manifest.json. Repo holds only product->fileKey bindings in external.config.json."
+  },
+  "elementStrategies": {
+    "allowed": ["figma-component", "figma-variable", "skip"],
+    "descriptions": {
+      "figma-component": "Map Harmony element to a Figma component / component set authored to the shadcn Consumer API",
+      "figma-variable": "Map foundation tokens (color, density, spacing, elevation) to Figma variables; typography to text styles",
+      "skip": "Out of scope for Figma sync"
+    }
+  },
+  "elementStatuses": ["not-started", "in-progress", "review", "needs-publish", "synced", "gap"],
+  "readiness": {
+    "level": "ready",
+    "lastReviewed": "2026-07-22",
+    "summary": "Converter tooling ready: four product files bound; Icon scheme = shared Icons library (glyphs) + product Icon (size + name INSTANCE_SWAP). Hardened lifecycle (dep gate → strategy signoff → implementor↔verifier until PASS → human → publish). Button reset to not-started for major redo vs shadcn; Icon/foundation must reach synced before Button strategy. Visual baseline = shadcn demo capture.",
+    "pilotFile": { "product": "vp", "fileKey": "qPVWATAnhiYb6eboWa9LoD", "url": "https://www.figma.com/design/qPVWATAnhiYb6eboWa9LoD" },
+    "e2ePilot": {
+      "element": "Button",
+      "outcome": "not-started",
+      "verify": "prior FAIL (Button-1)",
+      "report": "verification/reports/Button-1.md",
+      "caveat": "TEST-RUN synced revoked 2026-07-22 — major redo under hardened process; keep nodeId for update-in-place"
+    },
+    "productFiles": {
+      "vp": "qPVWATAnhiYb6eboWa9LoD",
+      "ppm": "GF1P1Ke5aOwGpDefAo4cLg",
+      "maconomy": "9Q4nVS3g9uPbtTWU5Yf1Tq",
+      "cp": "KMbteAHf2aat2lNSJXWoJS"
+    },
+    "verifyCapture": {
+      "helper": "scripts/capture-shadcn-reference.mjs + scripts/resolve-capture-target.mjs",
+      "provenScope": "Button",
+      "referenceArtifact": "verification/artifacts/reference-Button.png",
+      "convertedArtifact": "verification/artifacts/vp-Button.png"
+    }
+  }
+}

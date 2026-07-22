@@ -72,6 +72,9 @@ interface Props {
   overflowTabs?: Tab[];
   showAddTab?: boolean;
   footerVariant?: 'default' | 'compact';
+  showTabOpenInNew?: boolean;
+  showTabClose?: boolean;
+  showTabOverflowMenu?: boolean;
 
   // Left sidebar props
   leftSidebarVariant?: 'cp' | 'vp' | 'ppm' | 'maconomy';
@@ -119,6 +122,9 @@ const {
   overflowTabs = [],
   showAddTab = true,
   footerVariant = 'default',
+  showTabOpenInNew = false,
+  showTabClose = false,
+  showTabOverflowMenu = false,
   leftSidebarVariant,
   leftSidebarSections,
   rightSidebarVariant,
@@ -295,6 +301,9 @@ const effectiveHasFooter = showFooter === false ? false : hasFooter;
         overflowTabs={overflowTabs}
         showAddTab={showAddTab}
         variant={footerVariant}
+        showTabOpenInNew={showTabOpenInNew}
+        showTabClose={showTabClose}
+        showTabOverflowMenu={showTabOverflowMenu}
         class="shell-layout__footer"
       />
     ) : (
@@ -306,6 +315,9 @@ const effectiveHasFooter = showFooter === false ? false : hasFooter;
           overflowTabs={overflowTabs}
           showAddTab={showAddTab}
           variant={footerVariant}
+          showTabOpenInNew={showTabOpenInNew}
+          showTabClose={showTabClose}
+          showTabOverflowMenu={showTabOverflowMenu}
           class="shell-layout__footer"
         />
       )
@@ -430,6 +442,7 @@ const effectiveHasFooter = showFooter === false ? false : hasFooter;
     grid-row: 3;
     grid-column: 1;
     z-index: var(--z-40);
+    overflow: visible;
   }
 
   /* Hide footer when data-has-footer is false */
@@ -446,7 +459,7 @@ const effectiveHasFooter = showFooter === false ? false : hasFooter;
   /* ========================================
      RESPONSIVE BEHAVIOR
      ======================================== */
-  @media (max-width: var(--breakpoint-md)) {
+  @media (max-width: 768px) {
     /* Hide sidebars on mobile */
     .shell-layout__left-sidebar,
     .shell-layout__right-sidebar {
@@ -468,7 +481,7 @@ const effectiveHasFooter = showFooter === false ? false : hasFooter;
     }
   }
 
-  @media (max-width: var(--breakpoint-lg)) {
+  @media (max-width: 1024px) {
     /* Reduce side padding on tablets */
     .shell-layout__container[data-has-floating-nav="true"] .shell-layout__main {
       padding: var(--shell-layout-padding-top) calc(var(--shell-layout-padding-side-tablet) + var(--space-5)) var(--space-6) calc(var(--shell-layout-padding-side-tablet) + var(--space-5));

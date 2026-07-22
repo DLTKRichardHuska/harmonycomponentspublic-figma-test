@@ -8,7 +8,6 @@
  * @usagePattern sticky-layout The dialog uses flexbox column layout with header and footer as flex-shrink: 0 (sticky), and body as flex: 1 with overflow-y: auto. Only the body scrolls when content exceeds available height.
  * @usagePattern footer-button-type Dialog footers are general UI (not page header). Default footer and any custom footer slot content should use theme buttons (buttonType="theme") so dialogs render correctly regardless of the consumer's Button default.
  */
-import Icon from './Icon.astro';
 import Button from './Button.astro';
 
 export interface Props {
@@ -68,9 +67,16 @@ const footerClasses = [
   <div class={classes} role="dialog" aria-modal="true" aria-labelledby={`${id}-title`}>
     <div class={headerClasses}>
       <h2 class="dialog__title" id={`${id}-title`}>{title}</h2>
-      <button type="button" class="dialog__close" data-dialog-close aria-label="Close">
-        <Icon name="x-mark" />
-      </button>
+      <Button
+        buttonType="theme"
+        variant="ghost"
+        size="lg"
+        icon="x-mark"
+        type="button"
+        class="dialog__close"
+        data-dialog-close
+        aria-label="Close"
+      />
     </div>
     <div class="dialog__body">
       <slot>

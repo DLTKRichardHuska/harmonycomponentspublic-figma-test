@@ -1,0 +1,498 @@
+# @dltkrichardhuska/harmony-design-system-shadcn
+
+> Harmony Design System — React + shadcn/ui patterns + Tailwind + Radix. Optimized for AI coding agents.
+
+## Setup
+
+- Read AGENTS.md in this package first
+- Demo Getting Started: /getting-started on the conversion demo site (port 5177)
+- Bootstrap: import `styles/globals.css` once (Tailwind v4, zero config — no preset/content) + HarmonyThemeProvider. Fonts are bundled (no @fontsource). Product-fixed builds are mode-only; the unsuffixed dev source takes `defaultProduct`.
+- **Tokens:** CSS variables (`styles/tokens.css`) surfaced as Tailwind utilities via the `@theme` block in `globals.css`. No JSON token export.
+- **Style:** prefer theme utilities (`bg-card`, `gap-2`, `rounded-lg`, `transition-colors`); `var(--…)` only when unmapped
+- **Catalog map:** Dropdown→`Select`; Hybrid C `*Field` for labels; no Lucide / no `iconLibrary`
+
+## Catalog → exports (do not invent)
+
+| Catalog | Export |
+|---------|--------|
+| Dropdown | `Select` + `SelectField` / compounds |
+| Toggle | `Toggle` / `ToggleField` |
+| Accordion | compound `Accordion*` |
+| ListMenu | compound `ListMenu` / `ListMenuItem` / `ListMenuButton` |
+| Stepper / Step | compound `Stepper` / `Step` |
+| TabStrip | compound `Tabs` / `TabsList` / `TabsTrigger` / `TabsContent` (+ `TabsAddButton`, `useTabOverflow`) |
+| Tab / overflow menu | `DropdownMenu*` (NOT catalog Dropdown → that is `Select`) |
+| DatePicker | `DatePicker` / `Calendar` |
+| Labeled controls | `*Field` or `Field`+`Label` (no `label` on bare control) |
+| Shell frame | `ShellLayout` + `ShellHeader` / `ShellFooter` / `ShellPageHeader` / `ShellPanel` / `LeftSidebar` / `RightSidebar` / `FloatingNav` (prop-driven; compose per product) |
+
+## Exports
+
+| Path | Purpose |
+|------|---------|
+| `.` (bare specifier) | Root barrel — components, layouts, theme provider, `cn` |
+| `.../theme` | HarmonyThemeProvider, useHarmonyTheme |
+| `.../utils` | cn() |
+| `.../components` | Component barrel — `Icon`, `Button`, `Spinner`, `ProgressBar`, `ButtonGroup`, `Badge`, `NotificationBadge`, `Chip`, `Avatar`, `Alert`, `Label`/`Field*`, `Input`/`InputField`, `Textarea`/`TextareaField`, `NumberInput`/`NumberField`, `RangeInput`/`RangeField`, `DateInput`/`DateInputField`, `DatePicker`/`Calendar`, `TimePicker`, `MonthPicker`, `WeekPicker`, `DateTimePicker`, `Popover`/`PickerPopup`, `Card`, `Dialog`, `Checkbox`/`CheckboxField`/`CheckboxGroup`, `RadioButton`/`RadioField`/`RadioGroup`, `Link`, `Tooltip`/`TooltipProvider`, `Toggle`/`ToggleField`, `Select`/`SelectTrigger`/`SelectValue`/`SelectContent`/`SelectItem`/`SelectField`/`SelectGroup`/`SelectLabel`/`SelectSeparator`, `Accordion`/`AccordionItem`/`AccordionTrigger`/`AccordionContent`, `ListMenu`/`ListMenuItem`/`ListMenuButton`, `Stepper`/`Step`, `Tabs`/`TabsList`/`TabsTrigger`/`TabsContent`/`TabsAddButton`/`useTabOverflow`, `DropdownMenu`/`DropdownMenuTrigger`/`DropdownMenuContent`/`DropdownMenuItem`/`DropdownMenuLabel`/`DropdownMenuSeparator`, `ShellLayout`/`ShellHeader`/`ShellFooter`/`ShellPageHeader`/`ShellPanel`/`LeftSidebar`/`RightSidebar`/`FloatingNav` (+ `*Variants` where exported) |
+| `.../styles/*` | globals.css (Tailwind v4 entry), tokens.css, fonts.css, fonts/ |
+| `.../registry.json` | Complete shadcn registry — one re-export shim per component (auto-generated) |
+
+## Foundation
+
+- Colors / typography / spacing / elevations / Dela demos teach Tailwind classes + `var(--…)`
+- Product: one-time `defaultProduct` on the provider
+- Do not invent per-product Tailwind hex configs or parallel token JSON
+
+### Dela
+
+```tsx
+import { Button } from '@dltkrichardhuska/harmony-design-system-shadcn/components';
+
+<div className="bg-dela text-dela-foreground" />
+<Button variant="dela">Ask Dela</Button>
+```
+
+- Tokens: `bg-dela` / `--gradient-dela`, `text-dela-foreground` / `--dela-header-content-fg`, `--gradient-dela-hover-bg`
+- CTA: `Button` `variant="dela" | "dela-pill"` — no `DelaButton` export
+- Demo: /foundation/dela
+
+## Button
+
+```tsx
+import { Button } from '@dltkrichardhuska/harmony-design-system-shadcn/components';
+
+<Button variant="primary">Save</Button>
+<Button variant="secondary" icon="pencil">Edit</Button>
+<Button variant="dela">Ask Dela</Button>
+<Button icon="plus" aria-label="Add" />
+```
+
+- shadcn-style `cva` (`buttonVariants`) + Harmony CSS tokens; not stock shadcn `default`/`destructive`-only API
+- Full props: `variant`, `buttonType` (`theme`|`pageHeader`), `size` `xs`–`lg`, `orientation`, `loading`/`loadingText`, `icon`/`iconPosition`, `fullWidth`, `href`, `asChild`
+- Events: native `onClick` etc. via `ButtonHTMLAttributes` / `AnchorHTMLAttributes`; `href`→`<a>`; `asChild`→Radix Slot
+- Icons via Harmony `icon` name strings — not Lucide children
+- Loading: `loading`/`loadingText` (private SVG) **or** nest `<Spinner />` as children when not using `loading`
+- See docs/components/Button.md
+
+## Spinner
+
+```tsx
+import { Spinner } from '@dltkrichardhuska/harmony-design-system-shadcn/components';
+
+<Spinner />
+<Spinner size="lg" />
+<Spinner icon="arrow-path" size="sm" />
+```
+
+- Stock shadcn Spinner pattern; default = Harmony CSS border ring (not Lucide)
+- Props: `size` (`sm`|`md`|`lg`), optional `icon` (Harmony Icon name), `className`, `aria-label` (default `"Loading"`)
+- Forwards `ref` + HTML attrs on root `<span>` (`role="status"`)
+- See docs/components/Spinner.md
+
+## ProgressBar
+
+```tsx
+import { ProgressBar } from '@dltkrichardhuska/harmony-design-system-shadcn/components';
+
+<ProgressBar value={40} />
+<ProgressBar value={72} size="lg" variant="success" showLabel />
+```
+
+- Radix Progress + Harmony tokens; export `progressBarVariants`
+- Props: `value`, `max?` (default `100`), `size` (`sm`|`md`|`lg`), `variant` (`default`|`success`|`warning`|`error`), `showLabel?`
+- See docs/components/ProgressBar.md
+
+## ButtonGroup
+
+```tsx
+import { ButtonGroup, Button } from '@dltkrichardhuska/harmony-design-system-shadcn/components';
+
+<ButtonGroup variant="default">
+  <Button variant="primary" size="sm">Day</Button>
+  <Button variant="ghost" size="sm">Week</Button>
+</ButtonGroup>
+```
+
+- Shell for package `Button` children — **not** ToggleGroup; selection = child `primary`
+- Default: strip child borders (shell only); horizontal stacks full-width below 768px
+- Props: `variant` (`default`|`outline`), `size`, `orientation`, `children`; export `buttonGroupVariants`
+- See docs/components/ButtonGroup.md
+
+## Badge
+
+```tsx
+import { Badge } from '@dltkrichardhuska/harmony-design-system-shadcn/components';
+
+<Badge>Default</Badge>
+<Badge variant="success" size="sm" icon="check-circle">Done</Badge>
+```
+
+- Astro `small`/`medium`/`large` → `sm`/`md`/`lg` (default `lg`); export `badgeVariants`
+- Props: `variant` (`default`|`primary`|`success`|`warning`|`error`|`info`|`orange`|`pink`|`disabled`), `size`, `icon?`, `children`
+- See docs/components/Badge.md
+
+## NotificationBadge
+
+```tsx
+import { Icon, NotificationBadge } from '@dltkrichardhuska/harmony-design-system-shadcn/components';
+
+<NotificationBadge type="number" value={3} variant="error">
+  <Icon name="bell" />
+</NotificationBadge>
+
+<NotificationBadge type="dot" variant="primary" />
+```
+
+- Prefer `children` anchor (auto top-right) — do not hand-roll absolute wrappers
+- Discriminated `type`; export `notificationBadgeVariants`
+- Status labels → `Badge`. See docs/components/NotificationBadge.md
+
+## Chip
+
+```tsx
+import { Chip } from '@dltkrichardhuska/harmony-design-system-shadcn/components';
+
+<Chip label="Filters" icon="funnel" onClick={() => {}} />
+<Chip type="overflow" overflowCount={5} />
+<Chip removable label="Tag" onRemove={() => {}} />
+```
+
+- No stock shadcn Chip; no `selected`/`static` props; export `chipVariants`
+- Props: `size`, `variant` (`fill`|`outline`), `type` (`chip`|`horiz-dots`|`vert-dots`|`overflow`), `overflowCount?`, `label?`, `icon?`, `removable?`, `onRemove?`, `disabled?`, `onClick?`
+- See docs/components/Chip.md
+
+## Avatar
+
+```tsx
+import { Avatar, AvatarImage, AvatarFallback } from '@dltkrichardhuska/harmony-design-system-shadcn/components';
+
+<Avatar variant="icon" />
+<Avatar variant="initials" initials="Ada Lovelace" />
+<Avatar variant="image" src="/avatar.jpg" alt="Ada" />
+<Avatar interactive onClick={() => {}} initials="AL" />
+```
+
+- Convenience + compound `AvatarImage`/`AvatarFallback`; export `avatarVariants`
+- Props: `size`, `variant` (`icon`|`initials`|`image`), `initials?`, `src?`, `alt?`, `interactive?`, `disabled?`, `onClick` when interactive
+- See docs/components/Avatar.md
+
+## Alert
+
+```tsx
+import { Alert } from '@dltkrichardhuska/harmony-design-system-shadcn/components';
+
+<Alert variant="success" title="Saved">Stored.</Alert>
+<Alert
+  appearance="enhanced"
+  variant="warning"
+  dismissible
+  onDismiss={() => {}}
+  progressValue={45}
+  primaryAction={{ label: 'Retry', onClick: () => {} }}
+>
+  Upload in progress.
+</Alert>
+```
+
+- Use `appearance` (not Astro `style`); compound `AlertTitle`/`AlertDescription`/`AlertAction`; `progressValue` composes `ProgressBar`
+- Props: `variant`, `appearance`, `title?`, `dismissible?`, `onDismiss?` (controlled), `icon?`, actions/link, `progressValue?`, `children`
+- See docs/components/Alert.md
+
+## Label + Field
+
+```tsx
+import { Label, Field, FieldLabel, Input, InputField } from '@dltkrichardhuska/harmony-design-system-shadcn/components';
+
+<Field>
+  <FieldLabel htmlFor="email">Email</FieldLabel>
+  <Input id="email" type="email" />
+</Field>
+<InputField label="Email" labelVariant="inline" type="email" />
+```
+
+- Prefer Field composition; `*Field` for one-shot labeled layouts; **no** `label` on bare Input/Textarea/NumberInput/RangeInput
+- Label: `htmlFor`, `required`, `helper`. Field: `orientation` `stacked`|`horizontal`
+- See docs/components/Label.md
+
+## Input / Textarea
+
+```tsx
+import { Input, Textarea, InputField } from '@dltkrichardhuska/harmony-design-system-shadcn/components';
+
+<Input icon="magnifying-glass" error errorMessage="Required" />
+<Textarea rows={4} />
+```
+
+- Input: `error`, `errorMessage`, `icon`, `trailingIcon`, `trailing`; HTML attrs + ref
+- Trailing actions: icon-only ghost `Button` with `h-full w-full` + muted/primary text colors to fill the right gutter (keeps ghost `--hover-bg`)
+- Textarea: no error API; see docs/components/Input.md, Textarea.md
+
+## NumberInput / RangeInput
+
+```tsx
+import { NumberInput, RangeInput, NumberField } from '@dltkrichardhuska/harmony-design-system-shadcn/components';
+
+<NumberInput value={1} min={0} onChange={setQty} />
+<RangeInput value={75} showPercent onChange={setVol} />
+```
+
+- NumberInput: Button+Icon steppers; RangeInput: Radix Slider; `onChange(value: number)`
+- See docs/components/NumberInput.md, RangeInput.md
+
+## Date / time
+
+```tsx
+import { DateInput, DateInputField, Calendar } from '@dltkrichardhuska/harmony-design-system-shadcn/components';
+
+<DateInput type="date" value={date} onChange={setDate} />
+<DateInputField label="Select Date" labelVariant="stacked" value={date} onChange={setDate} />
+<Calendar value={date} onSelect={setDate} />
+```
+
+- DateInput + DateInputField (same Field hybrid as Input); panels: DatePicker/Calendar, TimePicker, MonthPicker, WeekPicker, DateTimePicker; Popover/PickerPopup
+- DateInput `onChange(string)`; panels `onSelect(string)` ISO shapes
+- Stack: react-day-picker + Radix Popover + date-fns; Icon names only
+- See docs/components/DateInput.md
+
+## Card
+
+```tsx
+import { Card } from '@dltkrichardhuska/harmony-design-system-shadcn/components';
+
+<Card title="Title" description="Subtitle" elevated>Body</Card>
+```
+
+- Compound CardHeader/Title/Description/Action/Content/Footer; Harmony elevated|interactive|primary
+- Convenience title/description; CardAction + Button icon (no icon1/2/3)
+- See docs/components/Card.md
+
+## Dialog
+
+```tsx
+import { Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle, DialogBody, DialogFooter, Button } from '@dltkrichardhuska/harmony-design-system-shadcn/components';
+
+<Dialog>
+  <DialogTrigger asChild><Button>Open</Button></DialogTrigger>
+  <DialogContent>
+    <DialogHeader><DialogTitle>Confirm</DialogTitle></DialogHeader>
+    <DialogBody>…</DialogBody>
+    <DialogFooter confirmLabel="Confirm" cancelLabel="Cancel" />
+  </DialogContent>
+</Dialog>
+```
+
+- Radix Dialog; header variant primary; footer buttonAlignment + convenience confirm props
+- Icon x-mark close; no Lucide / openDialog; resizable skipped
+- See docs/components/Dialog.md
+
+## Checkbox / Radio / Link / Tooltip
+
+```tsx
+import {
+  CheckboxField, CheckboxGroup, RadioGroup, RadioField, Link,
+  TooltipProvider, Tooltip, TooltipTrigger, TooltipContent, Button,
+} from '@dltkrichardhuska/harmony-design-system-shadcn/components';
+
+<CheckboxField label="Email" name="email" />
+<RadioGroup defaultValue="a" name="g"><RadioField label="A" value="a" /></RadioGroup>
+<Link href="/x" external>Ext</Link>
+<TooltipProvider>
+  <Tooltip>
+    <TooltipTrigger asChild><Button>Tip</Button></TooltipTrigger>
+    <TooltipContent text="Hello" position="top" />
+  </Tooltip>
+</TooltipProvider>
+```
+
+- Hybrid C: no `label` on bare Checkbox/RadioButton — use `*Field` or Label
+- Checkbox indicator: Icon `check`; radio dot is CSS; Link external uses Icon
+- Tooltip: skip `cornerVariant`; Link: skip responsive default size
+- See docs/components/Checkbox.md, CheckboxGroup.md, RadioButton.md, RadioGroup.md, Link.md, Tooltip.md
+
+## Toggle
+
+Use package **`Toggle`** (Radix Switch) + **`ToggleField`** for labels. No `label` on bare Toggle. Segmented variant skipped.
+
+```tsx
+import { Toggle, ToggleField } from '@dltkrichardhuska/harmony-design-system-shadcn/components';
+
+<ToggleField label="Enable notifications" />
+<Toggle aria-label="Compact" defaultChecked size="sm" />
+```
+
+- Props: `checked`/`onCheckedChange`, `size` `sm`|`md`, `disabled`, `name`/`id`. Export `toggleVariants`.
+- See `docs/components/Toggle.md`.
+
+## Select (Dropdown)
+
+Catalog **Dropdown** → package **`Select`**. Compose **SelectItem** children (no `options[]`). Use **`SelectField`** for Hybrid C labels.
+
+```tsx
+import {
+  Select, SelectTrigger, SelectValue, SelectContent, SelectItem, SelectField,
+} from '@dltkrichardhuska/harmony-design-system-shadcn/components';
+
+<SelectField label="Country" placeholder="Select a country">
+  <SelectItem value="us">United States</SelectItem>
+</SelectField>
+```
+
+- Radix `value`/`onValueChange`; chevron via package Icon. See `docs/components/Select.md`.
+
+## Accordion
+
+Compound Radix Accordion only — no Astro `items[]`.
+
+```tsx
+import {
+  Accordion, AccordionItem, AccordionTrigger, AccordionContent,
+} from '@dltkrichardhuska/harmony-design-system-shadcn/components';
+
+<Accordion type="single" collapsible>
+  <AccordionItem value="a">
+    <AccordionTrigger>Title</AccordionTrigger>
+    <AccordionContent>Body</AccordionContent>
+  </AccordionItem>
+</Accordion>
+```
+
+- `type="multiple"` maps Astro `allowMultiple`. Chevron: Icon `chevron-down`. See `docs/components/Accordion.md`.
+
+## ListMenu
+
+Vertical nav/selection list. Compound shaped like stock **SidebarMenu** but standalone — no Astro `items[]`.
+
+```tsx
+import {
+  ListMenu, ListMenuItem, ListMenuButton, Icon,
+} from '@dltkrichardhuska/harmony-design-system-shadcn/components';
+
+<ListMenu>
+  <ListMenuItem>
+    <ListMenuButton isActive icon="home">Dashboard</ListMenuButton>
+  </ListMenuItem>
+  <ListMenuItem>
+    <ListMenuButton asChild>
+      <a href="/profile"><Icon name="user" size="md" /><span>Profile</span></a>
+    </ListMenuButton>
+  </ListMenuItem>
+</ListMenu>
+```
+
+- `ListMenu.variant` `default` | `no-borders`; `ListMenuButton.isActive` (not Astro `active`), `icon` name, `asChild` (Radix Slot → `<a>`/Link)
+- No Radix component, no `useSidebar`; icons via package `Icon`; export `listMenuVariants` / `listMenuButtonVariants`
+- See `docs/components/ListMenu.md`
+
+## Stepper / Step
+
+Custom compound (no Radix). `Stepper` clones `Step` children to inject index/state.
+
+```tsx
+import { Stepper, Step } from '@dltkrichardhuska/harmony-design-system-shadcn/components';
+
+<Stepper activeStep={1} nonLinear onStepClick={setActive}>
+  <Step completed success>Account</Step>
+  <Step icon="user">Profile</Step>
+  <Step disabled description="Unavailable">Payment</Step>
+</Stepper>
+```
+
+- `Stepper`: `activeStep`, `orientation` `horizontal|vertical`, `nonLinear`, `onStepClick(index)` (replaces `stepper:step-clicked`)
+- `Step`: `completed`/`disabled`/`error`/`warning`/`success`, `icon` name, `description` (replaces `slot="description"`); state icon priority error>warning>success>completed>number
+- See `docs/components/Stepper.md`
+
+## TabStrip (Tabs)
+
+Radix Tabs compound. Compose triggers/actions/add-tab/overflow instead of Astro `tabs[]`.
+
+```tsx
+import {
+  Tabs, TabsList, TabsTrigger, TabsContent, TabsAddButton, useTabOverflow,
+} from '@dltkrichardhuska/harmony-design-system-shadcn/components';
+
+<Tabs defaultValue="overview">
+  <TabsList>
+    <TabsTrigger value="overview">Overview</TabsTrigger>
+    <TabsTrigger value="features" icon="star">Features</TabsTrigger>
+    <TabsAddButton onClick={addTab} />
+  </TabsList>
+  <TabsContent value="overview">…</TabsContent>
+</Tabs>
+```
+
+- `TabsList.variant` `default|compact|pill` (pill VP-only), `iconPosition`, `overflow` `none|scroll` (auto move-into-menu = compose `useTabOverflow`)
+- `TabsTrigger`: `value`, `icon` (name string) or compose `<Icon>` child, `iconPosition`, `disabled`, `asChild` (router links), `actions` (per-tab toolbar via composed Button/DropdownMenu)
+- Events → callbacks: `tab-strip:tab-selected`→`onValueChange`, `add-tab`→`TabsAddButton onClick`, `close-tab`/`open-new-window`→`actions` Button `onClick`, `set-default`→`DropdownMenuItem onSelect`
+- Auto overflow: `useTabOverflow(count, { reserve })` → hide triggers with `index >= hiddenFrom`, surface in a `DropdownMenu`
+- See `docs/components/TabStrip.md`
+
+## DropdownMenu
+
+Radix Dropdown Menu for kebab/overflow menus (NOT catalog Dropdown → that is `Select`). Inlines the same tokens as `Select` for identical popovers.
+
+```tsx
+import {
+  DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem,
+} from '@dltkrichardhuska/harmony-design-system-shadcn/components';
+```
+
+- `DropdownMenuItem` uses `onSelect`; do not extract a shared menu-style module or refactor `Select`
+- See `docs/components/DropdownMenu.md`
+
+## Shell (application frame)
+
+Prop-driven, composition-based app frame. **No runtime product switching** — compose the pieces for the surface you want (CP → `FloatingNav`, no footer; VP/PPM/Maconomy → `ShellFooter`, no floating nav).
+
+```tsx
+import {
+  ShellLayout, ShellHeader, LeftSidebar, RightSidebar,
+  ShellPageHeader, ShellFooter, FloatingNav, ShellPanel,
+} from '@dltkrichardhuska/harmony-design-system-shadcn/components';
+
+<ShellLayout
+  productVariant="standard"
+  header={<ShellHeader productName="Vantagepoint" />}
+  leftSidebar={<LeftSidebar variant="vp" />}
+  rightSidebar={<RightSidebar variant="vp" />}
+  footer={<ShellFooter value={tab} onValueChange={setTab} tabs={tabs} />}
+>
+  <ShellPageHeader title="Projects" primaryButton={{ text: 'New', icon: 'plus' }} />
+</ShellLayout>
+```
+
+- `ShellLayout` — grid frame; slot props `header`/`leftSidebar`/`rightSidebar`/`footer`/`floatingNav`/`leftPanel`/`rightPanel`/`children`; grid derives from slot presence; `productVariant` (`cp`|`standard`) tunes spacing only.
+- `ShellHeader` — brand + company picker + Avatar; `actions` override. Company list is per-customer: `companies` (`{id,name,color}[]`) + `defaultSelectedId` (or controlled `selectedId`) + `onCompanyChange`; `companyColor` overrides indicator/gradient.
+- `ShellPageHeader` — `title`/`subtitle` + `outlineButtons[]` then `primaryButton`, or `actions`.
+- `ShellFooter` — composes `Tabs`; `tabs[]` + `value`/`onValueChange` + `showAddButton` + `variant`.
+- `FloatingNav` — CP toolbar; `variant` `full`|`compact`, `showExecute`, `saveDisabled`, callbacks, `actions`.
+- `ShellPanel` — **non-modal** drawer; `side`, `open`/`onOpenChange`, `title`/`titleIcon`, `headerVariant` `theme`|`default`, `width` `narrow`|`full`, `gradientHeader`, `showClose`/`showPopout`.
+- `LeftSidebar`/`RightSidebar` — hover-expand icon rails; `variant` (default sections) or `sections`; controlled `activeId`+`onItemSelect` drive a `ShellPanel`; `RightSidebar` leads with Dela AI.
+- Custom (not stock shadcn `sidebar`/`sheet` blocks) — hover-expand rail + non-modal inline panel do not fit those; API follows shadcn slot/`open`/`onOpenChange` conventions. Ships `styles/shell.css` via `globals.css`.
+
+## Icon
+
+```tsx
+import { Icon } from '@dltkrichardhuska/harmony-design-system-shadcn/components';
+
+<Icon name="home" />
+<Icon name="check-circle" size="lg" variant="outline" />
+<Icon name="x-mark" />
+```
+
+- Props: `name` (required), `size` (`xs`–`xl`, default `md`), `variant` (`outline`|`solid`), `className`
+- Presentational only (`aria-hidden`) — wrap in `<button>` / use `Button` `icon` for clicks
+- Resolve: manifest → Heroicons → Tabler → custom SVG → fallback (internal only — do not import those packages)
+- Requires `HarmonyThemeProvider` (product for manifest)
+- **Only** public icon API for Harmony UI. Do **not** use `lucide-react`, `@heroicons/react`, or `@tabler/icons-react` at call sites.
+- If about to import Lucide: use Harmony names (`home`, `check-circle`, `x-mark`, `magnifying-glass`, `chevron-down`).
+- Ignore stock shadcn `iconLibrary` — it cannot emit Harmony `Icon`. Omit from consumer `components.json`.
+- See docs/components/Icon.md
+
+## Component docs
+
+- docs/components/ — per-component markdown (added when each element syncs)
+- docs/foundation.md — foundation notes
+
+## Stack rules
+
+Use Tailwind + Radix + shadcn patterns. Do not introduce foreign UI libraries.
