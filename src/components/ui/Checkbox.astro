@@ -36,7 +36,7 @@ const {
   ...rest
 } = Astro.props;
 
-const checkboxId = id || `checkbox-${Math.random().toString(36).substr(2, 9)}`;
+const checkboxId = id || `checkbox-${Math.random().toString(36).substring(2, 11)}`;
 const messageId = error && errorMessage ? `${checkboxId}-error` : warning && warningMessage ? `${checkboxId}-warning` : undefined;
 
 const classes = [

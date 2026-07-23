@@ -33,7 +33,7 @@ const {
   label,
 } = Astro.props;
 
-const accordionId = `accordion-${Math.random().toString(36).substr(2, 9)}`;
+const accordionId = `accordion-${Math.random().toString(36).substring(2, 11)}`;
 const labelId = `${accordionId}-label`;
 const fieldClasses = ['accordion-field', className].filter(Boolean).join(' ');
 ---

@@ -22,12 +22,11 @@ const {
   min,
   max,
   disabled = false,
-  locale = 'en-US',
   id,
   class: className = '',
 } = Astro.props;
 
-const pickerId = id || `month-picker-${Math.random().toString(36).substr(2, 9)}`;
+const pickerId = id || `month-picker-${Math.random().toString(36).substring(2, 11)}`;
 
 // Parse value
 let currentYear = new Date().getFullYear();
@@ -149,10 +148,6 @@ const classes = ['month-picker', className].filter(Boolean).join(' ');
       const yearEl = picker.querySelector('.month-picker__year span');
       
       let currentYear = parseInt(pickerEl.dataset.year || new Date().getFullYear().toString());
-      let selectedMonth: number | null = null;
-      if (pickerEl.dataset.selectedMonth) {
-        selectedMonth = parseInt(pickerEl.dataset.selectedMonth);
-      }
       
       const minYear = pickerEl.dataset.minYear ? parseInt(pickerEl.dataset.minYear) : null;
       const minMonth = pickerEl.dataset.minMonth ? parseInt(pickerEl.dataset.minMonth) : null;
@@ -169,7 +164,7 @@ const classes = ['month-picker', className].filter(Boolean).join(' ');
         // Update disabled states
         const months = picker.querySelectorAll('.month-picker__month');
         months.forEach((month, index) => {
-          const monthEl = month as HTMLElement;
+          const monthEl = month as HTMLButtonElement;
           const isDisabledMonth = (minYear !== null && minMonth !== null && (currentYear < minYear || (currentYear === minYear && index < minMonth))) ||
                                  (maxYear !== null && maxMonth !== null && (currentYear > maxYear || (currentYear === maxYear && index > maxMonth)));
           monthEl.disabled = isDisabled || isDisabledMonth;
@@ -192,7 +187,6 @@ const classes = ['month-picker', className].filter(Boolean).join(' ');
           selectedMonthEl.focus();
         }
         
-        selectedMonth = month;
         pickerEl.dataset.selectedMonth = month.toString();
         
         // Dispatch change event
@@ -226,7 +220,7 @@ const classes = ['month-picker', className].filter(Boolean).join(' ');
         const currentMonthIndex = parseInt(currentMonth.dataset.month || '0');
         let newMonthIndex: number | null = null;
         
-        switch (e.key) {
+        switch ((e as KeyboardEvent).key) {
           case 'ArrowLeft':
             e.preventDefault();
             newMonthIndex = currentMonthIndex - 1;
@@ -255,7 +249,7 @@ const classes = ['month-picker', className].filter(Boolean).join(' ');
         }
         
         if (newMonthIndex !== null) {
-          const newMonth = picker.querySelector(`[data-month="${newMonthIndex}"]`) as HTMLElement;
+          const newMonth = picker.querySelector(`[data-month="${newMonthIndex}"]`) as HTMLButtonElement;
           if (newMonth && !newMonth.disabled) {
             newMonth.focus();
             newMonth.setAttribute('tabindex', '0');

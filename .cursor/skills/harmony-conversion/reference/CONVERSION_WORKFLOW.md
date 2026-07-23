@@ -72,7 +72,7 @@ You may also use **`/conversion-agent`** with a mode or scope. Slash commands ar
 
 6. Human approves            →  explicit go-ahead
 
-7. Agent executes            →  conversion-loop; agent runs capture scripts internally
+7. Agent executes            →  conversion-agent apply → verify → remediate (playbooks)
 
 8. Agent reports results     →  defect report, manifest updates, next steps in plain language
 
@@ -239,7 +239,7 @@ Record `blockedBy: [<ElementKey>]` in the conversion manifest (or host state for
 
 | Verify one component | "Verify Button conversion" | verify-only scoped |
 
-| Execute (after approval) | "Go ahead with the Button plan" | execute → conversion-loop |
+| Execute (after approval) | "Go ahead with the Button plan" | execute (apply → verify → remediate) |
 
 
 
@@ -281,7 +281,7 @@ Format: [CONVERSION_PLAN.md](CONVERSION_PLAN.md)
 
 
 
-After approval, **conversion-agent** delegates to **conversion-loop**:
+After approval, **conversion-agent** execute runs:
 
 
 
@@ -289,7 +289,7 @@ After approval, **conversion-agent** delegates to **conversion-loop**:
 
 - Verify → target verifier agent + **conversion-verify**
 
-- Remediate → target `conversion/VERIFICATION.md`
+- Remediate → target `playbook/VERIFICATION.md`
 
 
 

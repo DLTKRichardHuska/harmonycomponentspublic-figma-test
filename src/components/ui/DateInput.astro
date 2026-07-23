@@ -50,7 +50,7 @@ const {
   ...rest
 } = Astro.props;
 
-const dateInputId = id || `date-input-${Math.random().toString(36).substr(2, 9)}`;
+const dateInputId = id || `date-input-${Math.random().toString(36).substring(2, 11)}`;
 const popupId = `${dateInputId}-popup`;
 
 // Determine label variant

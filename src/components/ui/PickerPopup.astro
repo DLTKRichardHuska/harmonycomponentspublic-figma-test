@@ -82,7 +82,6 @@ const classes = ['picker-popup', className].filter(Boolean).join(' ');
    * Uses composedPath for reliable "outside" detection
    */
   function handleClickOutside(e: MouseEvent): void {
-    const target = e.target as HTMLElement;
     const path = e.composedPath();
 
     document.querySelectorAll('[data-picker-popup].is-open').forEach(popup => {

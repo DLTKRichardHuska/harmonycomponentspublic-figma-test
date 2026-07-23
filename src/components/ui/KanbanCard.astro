@@ -11,23 +11,24 @@ import Badge from './Badge.astro';
 import Icon from './Icon.astro';
 import ProgressBar from './ProgressBar.astro';
 
+export type KanbanIcon = { name: string; size?: 'xs' |'sm' | 'md' };
 export type BadgeVariant = 'default' | 'primary' | 'success' | 'warning' | 'error' | 'info' | 'orange' | 'pink' | 'disabled';
+export type KanbanBadge = { label: string; variant?: BadgeVariant };
 
 export interface KanbanCardProps {
   id: string;
   title?: string;
   description?: string;
   avatar?: { name?: string; size?: 'sm' | 'md' | 'lg' };
-  badges?: Array<{ label: string; variant?: BadgeVariant }>;
+  badges?: Array<KanbanBadge>;
   progress?: number; // 0-100
-  icons?: Array<{ name: string; size?: 'xs' | 'sm' | 'md' }>;
+  icons?: Array<KanbanIcon>;
   date?: string;
   time?: string;
   class?: string;
 }
 
 const {
-  id,
   title,
   description,
   avatar,
@@ -51,7 +52,7 @@ const {
     <div class="kanban-card__header-right">
       {icons.length > 0 && (
         <div class="kanban-card__icons">
-          {icons.map((icon, index) => (
+          {(icons as KanbanIcon[]).map((icon) => (
             <Icon 
               name={icon.name} 
               size={icon.size || 'sm'} 
@@ -62,7 +63,7 @@ const {
       )}
       {badges.length > 0 && (
         <div class="kanban-card__badges">
-          {badges.map((badge) => (
+          {(badges as KanbanBadge[]).map((badge) => (
             <Badge variant={badge.variant || 'default'}>{badge.label}</Badge>
           ))}
         </div>

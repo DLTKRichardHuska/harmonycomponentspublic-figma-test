@@ -26,7 +26,7 @@ const {
   class: className = '',
 } = Astro.props;
 
-const pickerId = id || `date-picker-${Math.random().toString(36).substr(2, 9)}`;
+const pickerId = id || `date-picker-${Math.random().toString(36).substring(2, 11)}`;
 
 // Parse current date or use today
 const currentDate = value ? new Date(value + 'T00:00:00') : new Date();
@@ -87,8 +87,8 @@ const classes = ['date-picker', className].filter(Boolean).join(' ');
   </div>
   
   <div class="date-picker__weekdays">
-    {dayNames.map((day, index) => (
-      <div class="date-picker__weekday" key={index} aria-label={day}>
+    {dayNames.map((day) => (
+      <div class="date-picker__weekday" aria-label={day}>
         {day}
       </div>
     ))}
@@ -157,7 +157,6 @@ const classes = ['date-picker', className].filter(Boolean).join(' ');
     const selectedDate = picker.dataset.selectedDate || null;
     const minDate = picker.dataset.minDate || null;
     const maxDate = picker.dataset.maxDate || null;
-    const locale = picker.dataset.locale || 'en-US';
     const isDisabled = picker.dataset.disabled === 'true';
     
     // Update month/year display
@@ -199,7 +198,7 @@ const classes = ['date-picker', className].filter(Boolean).join(' ');
       button.type = 'button';
       button.className = dayClasses;
       button.setAttribute('data-date', dateStr);
-      button.disabled = isDisabled || isDisabledDate;
+      button.disabled = isDisabled || isDisabledDate ? true : false;
       button.setAttribute('role', 'gridcell');
       button.setAttribute('tabindex', isSelected ? '0' : '-1');
       button.textContent = dayDate.getDate().toString();

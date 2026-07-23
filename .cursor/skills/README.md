@@ -25,12 +25,10 @@ All skills live under `.cursor/skills/`. See [.cursor/HARMONY_GUIDE.md](../HARMO
 | Folder | Purpose |
 |--------|---------|
 | **harmony-conversion** | Hub: converters, conversions, workflow |
-| **conversion-agent** | Primary orchestrator (includes execute loop, validation, tweaks) |
+| **conversion-management** | Portfolio orchestrator across all conversions |
+| **conversion-agent** | Single-target orchestrator (includes execute loop) |
 | **create-converter** | Scaffold converter (+ conversion) |
-| **verify-converter** | → conversion-agent readiness (deprecated router) |
-| **conversion-verify** | Agent-internal capture |
-| **conversion-loop** | → conversion-agent execute (deprecated router) |
-| **sync-target** | → conversion-agent execute (deprecated router) |
+| **conversion-verify** | Agent-internal designer fidelity + optional evidence scripts |
 
 Converter playbooks: `converters/<id>/playbook/`. Conversion output: `conversions/<id>/`.
 

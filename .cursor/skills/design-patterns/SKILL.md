@@ -11,7 +11,7 @@ A pattern management system enabling design teams to create, document, and refer
 
 Patterns in this registry are **design-level blueprints** — they define anatomy, structure, flow, and when-to-use guidelines.
 
-**When implementing or verifying a pattern in this repo:** Use Harmony **Astro components** from `src/components/ui/` and layouts from `src/layouts/`. Preview implementations live under `src/pages/preview/`.
+**When implementing or verifying a pattern in this repo:** Use Harmony **Astro components** from `src/components/ui/` and layouts from `src/layouts/`. Docs live under `src/pages/components/` and `src/pages/shell/`.
 
 - Pattern says `Dialog` → use `Dialog.astro`
 - Pattern says `Button` → use `Button.astro`
@@ -163,7 +163,7 @@ Patterns are designed to be AI-readable for consistency when building new compon
 2. Loads pattern documentation into context
 3. Follows pattern structure and guidelines
 4. Builds with **Harmony Astro components** using design tokens
-5. Validates against preview pages in `src/pages/preview/` when available
+5. Validates against docs pages in `src/pages/components/` and `src/pages/shell/` when available
 
 **Example prompt for AI:**
 ```

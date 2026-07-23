@@ -32,15 +32,15 @@
 | Method | How | Updates | When to use |
 |--------|-----|---------|-------------|
 | **npm from Git** (recommended) | `npm install github:dltkrichardhuska/harmonycomponentspublic-figma-test` | `npm update @deltek/harmony-components` and `npm run harmony:check-updates` | Most app projects; package lives in `node_modules` |
-| **Sparse checkout** | Clone repo with `git sparse-checkout` (components, styles, tokens, public, preview + layouts) | `git pull` in that clone | When you need a clone on disk (e.g. embedding the folder or working on the design system itself) |
+| **Sparse checkout** | Clone repo with `git sparse-checkout` (components, styles, tokens, public, layouts) | `git pull` in that clone | When you need a clone on disk (e.g. embedding the folder or working on the design system itself) |
 
 **Recommended path:** Install as a package from Git. Your app lists `@deltek/harmony-components` as a dependency; Harmony lives in `node_modules`. You get updates via npm and can use the helper scripts (`harmony:copy`, `harmony:check-updates`, `harmony:diff`).
 
-**Sparse checkout:** If you clone the Harmony repo and only check out certain folders (no docs site), you have a git checkout. Updates are `git pull`, not npm. You must specify exactly which paths to include; otherwise Git may check out the full repo and you will see root-level files (e.g. changelogs) that are unrelated to components or previews. Use the steps below so only components, styles, tokens, public, and preview files are present.
+**Sparse checkout:** If you clone the Harmony repo and only check out certain folders (no docs site), you have a git checkout. Updates are `git pull`, not npm. You must specify exactly which paths to include; otherwise Git may check out the full repo and you will see root-level files (e.g. changelogs) that are unrelated to components. Use the steps below so only components, styles, tokens, public, and layouts are present.
 
-### Sparse checkout: components, styles, tokens, public, and preview
+### Sparse checkout: components, styles, tokens, public, and layouts
 
-Use this when you want a clone on disk that includes the preview pages (e.g. to run the dev server and view component previews) without the full documentation site or root-level docs (changelog, etc.).
+Use this when you want a clone on disk with the component library and shell layouts without the full documentation site or root-level docs (changelog, etc.).
 
 **Option A – Fresh clone (recommended)**
 
@@ -52,7 +52,6 @@ git sparse-checkout set \
   src/components \
   src/styles \
   src/tokens \
-  src/pages/preview \
   src/layouts \
   public \
   README.md \
@@ -73,7 +72,6 @@ git sparse-checkout set \
   src/components \
   src/styles \
   src/tokens \
-  src/pages/preview \
   src/layouts \
   public \
   README.md \
@@ -90,14 +88,13 @@ git read-tree -mu HEAD
 - `src/components/` – UI components  
 - `src/styles/` – CSS and tokens  
 - `src/tokens/` – Design token JSON  
-- `src/pages/preview/` – Preview pages for each component/shell  
-- `src/layouts/` – ShellLayout and any layouts used by previews  
+- `src/layouts/` – ShellLayout and related layouts  
 - `public/` – Assets and icons  
-- `README.md`, `package.json`, `package-lock.json`, `astro.config.mjs` – So you can run `npm install` and `npm run dev` to view previews  
+- `README.md`, `package.json`, `package-lock.json`, `astro.config.mjs` – So you can run `npm install` and use Astro tooling  
 
 Root-level files such as `CHANGELOG.md`, `docs/`, and `archive/` (MCP-related assets were moved to `archive/mcp/` and are not part of the consumer bundle) are **not** included.
 
-**Components only (no preview pages):** Use the same sparse-checkout steps above but set only these paths: `src/components`, `src/styles`, `src/tokens`, `public`, `README.md`, `package.json`, `package-lock.json`. Omit `src/pages/preview`, `src/layouts`, and `astro.config.mjs`.
+**Components only:** Use the same sparse-checkout steps above but set only these paths: `src/components`, `src/styles`, `src/tokens`, `public`, `README.md`, `package.json`, `package-lock.json`. Omit `src/layouts` and `astro.config.mjs`.
 
 ---
 
@@ -464,9 +461,9 @@ Components (especially shell) are **prepopulated** so that out of the box you se
 
 - **Shell:** ShellHeader shows a default gradient bar (first company color when `companyColor` is not passed). ShellLayout shows a default page header (title "Page title") and default main content (a placeholder Card) when no slot content is passed. ShellPageHeader includes one primary and one outline secondary button by default; pass `showDefaultButtons={false}` to hide them, or pass `primaryButton` / `outlineButton1` to override. Shell layout structure is **theme-dependent**: CP theme includes floating nav and no footer by default; PPM (and VP, Maconomy) include a footer and different left/right sidebar sections.
 - **Icons:** Default content uses icons that resolve per theme. Icon resolution (source and path) is defined in the theme-scoped **icon manifest** (`src/data/icon-manifest.json` in the package). Each theme (cp, vp, ppm, maconomy) has its own set of icon names and sources (hero, tabler, or custom with path). Do not assume all icons are Heroicons.
-- **Canonical prepopulated shell:** The preview page `preview/shell-layout` (in the Harmony repo docs site) is the canonical example of the full prepopulated shell with all defaults visible. Default content and icon set depend on **theme**; **mode** (light/dark) does not change default structure or icon resolution.
+- **Canonical prepopulated shell:** The shell docs page `/shell/layout` is the canonical example of the full prepopulated shell with all defaults visible. Default content and icon set depend on **theme**; **mode** (light/dark) does not change default structure or icon resolution.
 
-Preview files and the npm package: Preview pages (e.g. `src/pages/preview/*.astro`) exist in the full Harmony repo; the published npm package may not include them. When they are absent, shell conversion should use ShellLayout.astro, ShellFooter.astro, layout.css, components.css, and tokens.css, plus the documented Shell layout defaults and dark-mode sources—conversion is still valid without preview files.
+When converting shell without a local docs site, use ShellLayout.astro, ShellFooter.astro, layout.css, components.css, and tokens.css, plus the documented Shell layout defaults and dark-mode sources.
 
 **Shell conversion: scoped styles and icons.** ShellPageHeader, ShellFooter, and TabStrip define **critical layout and background** in their Astro `<style>` blocks only; these rules are **not** in `components.css`. When converting to React, Vue, Angular, or another framework, copy the full `<style>` content from each of these components into the converted app’s CSS (e.g. ShellPageHeader.css, ShellFooter.css, TabStrip.css) and import them where those components are used. If you rely only on components.css and layout.css, the page header will stack vertically, the footer will have no background, and the footer tabs will stack instead of sitting in a horizontal row. For **icons:** Avatar uses the icon name `"user"`. The theme-scoped icon manifest includes `"user"` for themes that use it (e.g. cp). If your Icon implementation is manifest-only, ensure `"user"` is present in the manifest for the theme you use; otherwise implement the same resolution order as Icon.astro (Heroicons → Tabler → public/{name}.svg) so `"user"` resolves.
 
@@ -685,4 +682,4 @@ Projects like Startpoint show this system in practice: Tier 0 overrides in `src/
 
 ---
 
-Sparse-checkout steps (with or without preview) are in the **Two Ways to Get Harmony** section above.
+Sparse-checkout steps are in the **Two Ways to Get Harmony** section above.

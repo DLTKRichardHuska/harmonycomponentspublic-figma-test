@@ -65,7 +65,7 @@ const {
   class: className = ''
 } = Astro.props;
 
-const componentId = `tabstrip-${Math.random().toString(36).substr(2, 9)}`;
+const componentId = `tabstrip-${Math.random().toString(36).substring(2, 11)}`;
 
 // Validate icon positions: ensure all tabs use either inline (left/right) OR stacked (top)
 // Cannot mix inline with stacked
@@ -836,7 +836,7 @@ if (tabs.length > 0 && !componentIconPosition) {
       let totalWidth = 0;
       const cells = Array.from(tabsContainer.querySelectorAll('[data-tabstrip-tab-cell]')) as HTMLElement[];
 
-      cells.forEach((cell, i) => {
+      cells.forEach((cell) => {
         cell.style.display = '';
       });
 
@@ -1084,7 +1084,7 @@ if (tabs.length > 0 && !componentIconPosition) {
         } else if (openPerTabWrap) {
           e.preventDefault();
           closeAllPerTabMenus(container);
-          openPerTabWrap.querySelector('[data-tabstrip-per-tab-menu-btn]')?.focus();
+          (openPerTabWrap.querySelector('[data-tabstrip-per-tab-menu-btn]') as HTMLElement)?.focus();
         }
         return;
       }

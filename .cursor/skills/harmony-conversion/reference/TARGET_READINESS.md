@@ -48,9 +48,9 @@ For each target, assess:
 - [ ] Agent runs `node .cursor/skills/harmony-conversion/scripts/validate_converter.mjs --converter <id>` (or list ERRORs)
 - [ ] `converters/<id>/playbook/SKILL.md` exists
 - [ ] `converters/<id>/playbook/VERIFICATION.md` exists
-- [ ] `conversion/plans/` exists
+- [ ] `conversions/<id>/plans/` exists (component-library) when plans are used
 
-### Conversion playbook (`conversion/SKILL.md`)
+### Converter playbook (`playbook/SKILL.md`)
 
 - [ ] No top-level `Status: placeholder` (unless manifest is placeholder)
 - [ ] **Planning and status** section is actionable (not empty/TODO-only)
@@ -154,7 +154,7 @@ When readiness is **not-ready** or **dev-in-progress**, direct the user to:
 4. Implement review surface in paired project when needed (**converter dev**, not sync)
 5. Update **Converter readiness** in `playbook/SKILL.md` and `readiness` in `converter.manifest.json`
 6. Re-run `/conversion-agent converter <id>`
-7. Run `/verify-converter <id>` for folder structure
+7. Run `node .cursor/skills/harmony-conversion/scripts/validate_converter.mjs --converter <id>` for folder structure
 
 Do not implement target logic in `.cursor/skills/` — only in the target folder.
 
@@ -162,4 +162,4 @@ Do not implement target logic in `.cursor/skills/` — only in the target folder
 
 - [CONVERSION_WORKFLOW.md](CONVERSION_WORKFLOW.md) — user conversion journey
 - [ADD_CONVERTER_CHECKLIST.md](ADD_CONVERTER_CHECKLIST.md) — scaffold new converters
-- **verify-converter** — structural validation only
+- `validate_converter.mjs` — structural validation only

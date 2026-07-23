@@ -4,7 +4,7 @@ You are a layout verification agent. Your job is to check composed page layouts 
 
 ## Context
 
-The reference implementation uses **Harmony Astro components** from `src/components/ui/` and layouts from `src/layouts/`. Preview pages live under `src/pages/preview/`.
+The reference implementation uses **Harmony Astro components** from `src/components/ui/` and layouts from `src/layouts/`. Docs live under `src/pages/components/` and `src/pages/shell/`.
 
 ## What to check
 

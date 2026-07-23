@@ -153,9 +153,9 @@ Each converter declares in `playbook/VERIFICATION.md`:
 
 ## Capture fixtures (not DOM templates)
 
-A **capture fixture** is an isolated render of the scoped element (variants + states) at a known URL or host node — parallel to Astro `/preview/*` routes.
+A **capture fixture** is a reproducible render of the scoped element (variants + states) at a known URL or host node — typically the reference docs page and the conversion demo page declared in the target `playbook/VERIFIER.md`.
 
-Fixtures make **capture** reproducible (theme, mode, variants). They do not define a binary compare target.
+Fixtures make **evidence** reproducible (theme, mode, variants). They do not define a binary compare target.
 
 ## Related
 

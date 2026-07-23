@@ -14,14 +14,10 @@ Image compare when the target has no HTML (Figma, etc.). Same north star and **s
 
 | Artifact | Source | Path pattern |
 |----------|--------|--------------|
-| Reference | Astro preview via **conversion-verify** capture (screenshot or rendered PNG) | `verification/artifacts/reference-<scope>.png` |
+| Reference | Shadcn/demo or docs PNG per target playbook (e.g. `capture-shadcn-reference.mjs` for Figma) | `verification/artifacts/reference-<scope>.png` |
 | Converted | Host MCP (e.g. Figma `get_screenshot`) | `verification/artifacts/<scope>.png` |
 
-Reference images are **never manual** — use:
-
-```bash
-node .cursor/skills/conversion-verify/scripts/capture-reference.mjs --scope Button --format png --out verification/artifacts/reference-Button.png
-```
+Reference images are **never manual** — follow the target `playbook/VERIFIER.md` capture steps.
 
 If converted screenshot unavailable (MCP blocked) → **BLOCKED** — do not PASS from reference image alone.
 

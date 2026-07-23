@@ -42,7 +42,7 @@ return state.elements.<ElementKey>.nodeId;
 node converters/figma/scripts/capture-shadcn-reference.mjs --scope <scope> --product <vp|ppm|maconomy|cp> --out converters/figma/verification/artifacts/reference-<scope>.png
 ```
 
-Do **not** use Astro `capture-reference.mjs` for Figma component fidelity. (Astro capture remains for other converters.)
+Do **not** use Astro docs HTML capture as the Figma component fidelity reference. Use `capture-shadcn-reference.mjs` (or the playbook-specified PNG source) instead.
 
 ### 2. Converted (Figma MCP)
 

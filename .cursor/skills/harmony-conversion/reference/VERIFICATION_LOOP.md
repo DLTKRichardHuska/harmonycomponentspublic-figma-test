@@ -1,18 +1,18 @@
 # Conversion verification loop
 
-Part of the **Cursor-only** conversion workflow. Orchestrated by **conversion-agent** execute mode unless user invokes **conversion-loop** directly. See [CONVERSION_WORKFLOW.md](CONVERSION_WORKFLOW.md).
+Part of the **Cursor-only** conversion workflow. Orchestrated by **conversion-agent** execute mode. See [CONVERSION_WORKFLOW.md](CONVERSION_WORKFLOW.md).
 
 Global orchestration for **apply → verify (readonly) → remediate → re-verify** until zero defects or the target cannot fix remaining issues.
 
-Target-specific capture, compare, and remediate logic lives in each target's **`conversion/VERIFICATION.md`**. Global skills and agents **route only** — see [ROUTING.md](ROUTING.md).
+Target-specific capture, compare, and remediate logic lives in each target's **`playbook/VERIFICATION.md`**. Global skills and agents **route only** — see [ROUTING.md](ROUTING.md).
 
 ## Phases
 
 | Phase | Who runs it | Playbook / skill | Writable? | Purpose |
 |-------|-------------|------------------|-----------|---------|
-| **Apply** | **conversion-loop** | target `conversion/SKILL.md` | Yes | Sync/convert the requested scope |
-| **Verify** | Target verifier agent + **conversion-fidelity-verifier** router | `playbook/VERIFIER.md`, **conversion-verify** | No | Capture artifacts; **agent judges** fidelity; defect report |
-| **Remediate** | **conversion-loop** | target `conversion/VERIFICATION.md` | Yes | Fix open defects |
+| **Apply** | **conversion-agent** execute | target `playbook/SKILL.md` | Yes | Sync/convert the requested scope |
+| **Verify** | Target verifier agent + **conversion-fidelity-verifier** router | `playbook/VERIFIER.md`, **conversion-verify** | No | Browse/capture evidence; **agent judges** fidelity; defect report |
+| **Remediate** | **conversion-agent** execute | target `playbook/VERIFICATION.md` | Yes | Fix open defects |
 
 ## Loop protocol
 
@@ -25,7 +25,7 @@ repeat:
   if iteration > maxIterations:
     STOP — max iterations; attach latest defect report
 
-  1. APPLY — follow target conversion/SKILL.md for scope (skip on iteration 1 if user asked verify-only)
+  1. APPLY — follow target playbook/SKILL.md for scope (skip on iteration 1 if user asked verify-only)
 
   2. VERIFY (readonly) — invoke target verifier agent (via **conversion-fidelity-verifier** router):
      - Visual match gate + designer walkthrough per [VISUAL_MATCH_GATE.md](../conversion-verify/reference/VISUAL_MATCH_GATE.md) and [DESIGNER_COMPARE.md](../conversion-verify/reference/DESIGNER_COMPARE.md)
@@ -80,12 +80,12 @@ Each target declares in **VERIFICATION.md** how it obtains **evidence** for the 
 
 | Target type | Typical artifact | Capture |
 |-------------|------------------|---------|
-| component-library | Rendered HTML snapshot (browser evidence) | Capture fixture + Playwright |
+| component-library | Live browse (reference docs + conversion demo) | Optional Playwright evidence scripts |
 | external (Figma) | PNG/screenshot via MCP | Figma MCP `get_screenshot` or equivalent |
 
-HTML capture for React/MUI is **not** a DOM-diff workflow. The agent judges look, content, and act using the **visual match gate** in [VISUAL_MATCH_GATE.md](../conversion-verify/reference/VISUAL_MATCH_GATE.md) and [DESIGNER_COMPARE.md](../conversion-verify/reference/DESIGNER_COMPARE.md). Figma uses images because there is no HTML — same fidelity question.
+Compare is **not** a DOM-diff workflow. The agent judges look, content, and act using the **visual match gate** in [VISUAL_MATCH_GATE.md](../conversion-verify/reference/VISUAL_MATCH_GATE.md) and [DESIGNER_COMPARE.md](../conversion-verify/reference/DESIGNER_COMPARE.md).
 
-The global layer never assumes one artifact type — only that the target playbook defines automated capture and compare steps aligned with FIDELITY_PRINCIPLES.
+The global layer never assumes one artifact type — only that the target playbook defines evidence and compare steps aligned with FIDELITY_PRINCIPLES.
 
 ## Slash commands
 
@@ -95,8 +95,7 @@ Primary: `/conversion-agent` — see [CONVERSION_WORKFLOW.md](CONVERSION_WORKFLO
 
 | Name | Role |
 |------|------|
-| **conversion-agent** | Primary: status, plan, approval, scoped execute |
-| **conversion-loop** | Apply → verify → remediate execution engine |
+| **conversion-agent** | Primary: status, plan, approval, scoped execute (apply → verify → remediate) |
 | **conversion-fidelity-verifier** | Readonly compare; writes defect report |
-| **sync-target** | Advanced one-shot apply |
-| **verify-converter** | Structural validation (not fidelity) |
+| **conversion-verify** | Shared designer fidelity principles + optional evidence scripts |
+| `validate_converter.mjs` | Structural validation (not fidelity) |

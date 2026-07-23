@@ -29,7 +29,7 @@ const {
   class: className = '',
 } = Astro.props;
 
-const pickerId = id || `date-range-picker-${Math.random().toString(36).substr(2, 9)}`;
+const pickerId = id || `date-range-picker-${Math.random().toString(36).substring(2, 11)}`;
 
 const refDate = startDate ? new Date(startDate + 'T00:00:00') : new Date();
 const currentMonth = refDate.getMonth();

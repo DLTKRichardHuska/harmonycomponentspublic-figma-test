@@ -42,7 +42,7 @@ const {
   ...rest
 } = Astro.props;
 
-const rangeId = id || `range-${Math.random().toString(36).substr(2, 9)}`;
+const rangeId = id || `range-${Math.random().toString(36).substring(2, 11)}`;
 const rangeSpan = max - min;
 const fillPercent = rangeSpan === 0
   ? 0

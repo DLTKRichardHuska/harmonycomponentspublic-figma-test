@@ -24,8 +24,6 @@ Quick reference for Cursor slash commands and skills in the **Harmony Design Sys
 | `/harmony-critique` | Critique against Harmony usage rules |
 | **/ux-review** | Standalone UX review |
 
-Legacy aliases (`/verify-converter`, `/sync-target`, `/conversion-loop`) route to **conversion-agent** modes.
-
 ### Converter vs conversion
 
 | You ask about | Agent mode | Example |
@@ -46,7 +44,7 @@ Legacy aliases (`/verify-converter`, `/sync-target`, `/conversion-loop`) route t
 | **conversion-management** | Portfolio orchestrator across all conversions |
 | **conversion-agent** | Single-target orchestrator |
 | **create-converter** | Scaffold new converter |
-| **conversion-verify** | Agent-internal capture (not user-facing) |
+| **conversion-verify** | Agent-internal designer fidelity + optional evidence scripts |
 
 Converter playbooks: `converters/<id>/playbook/SKILL.md`
 

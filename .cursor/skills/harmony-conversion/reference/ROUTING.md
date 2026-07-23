@@ -12,13 +12,12 @@ Global conversion skills **route only**. Converter-specific logic lives in `conv
 |-------|----------|------|
 | Hub | `.cursor/skills/harmony-conversion/` | Registries, types, agent-internal scripts |
 | Portfolio orchestrator | `.cursor/skills/conversion-management/` | Multi-conversion status, plan, execute |
-| Single-target orchestrator | `.cursor/skills/conversion-agent/` | Converter readiness, conversion status, plan, execute |
-| Execution | `.cursor/skills/conversion-loop/` | Apply → verify → remediate |
+| Single-target orchestrator | `.cursor/skills/conversion-agent/` | Converter readiness, conversion status, plan, execute (apply → verify → remediate) |
 | Converter playbook | `converters/<id>/playbook/SKILL.md` | Apply steps |
 | Verification playbook | `converters/<id>/playbook/VERIFICATION.md` | Capture, compare, remediate |
 | Verifier agent | `converters/<id>/playbook/VERIFIER.md` | Automated verify |
 | Conversion output | `conversions/<id>/` | Project, sync status, artifacts |
-| Shared verify | `.cursor/skills/conversion-verify/` | Reference capture scripts |
+| Shared verify | `.cursor/skills/conversion-verify/` | Designer fidelity principles + optional evidence scripts |
 
 ## Playbook resolution
 
@@ -43,16 +42,15 @@ Global conversion skills **route only**. Converter-specific logic lives in `conv
 | Converter ready? | **conversion-agent** `readiness` / `converter` |
 | Conversion synced? | **conversion-agent** `status` / `conversion-status` |
 | Plan (single target) | **conversion-agent** `plan` |
-| Execute (single target) | **conversion-agent** `execute` → **conversion-loop** |
+| Execute (single target) | **conversion-agent** `execute` |
 | Verify | **conversion-agent** `verify-only` → verifier agent |
+| Structure validate | `validate_converter.mjs` / `validate_conversion.mjs` via Shell |
 | Coverage recompute | `compute_coverage.mjs --write` via Shell |
-| One-shot apply | **sync-target** (advanced) |
-| Structure | **verify-converter** |
 
 ## Adding a converter
 
 1. `/create-converter`
 2. Implement `playbook/SKILL.md` and `playbook/VERIFICATION.md`
-3. `/verify-converter <id>`
+3. `node .cursor/skills/harmony-conversion/scripts/validate_converter.mjs --converter <id>`
 4. `/conversion-agent converter <id>` until ready
 5. Then run conversion against `conversions/<id>/`

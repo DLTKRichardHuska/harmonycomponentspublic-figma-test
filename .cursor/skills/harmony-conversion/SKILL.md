@@ -35,7 +35,7 @@ See [reference/CONVERTER_VS_CONVERSION.md](reference/CONVERTER_VS_CONVERSION.md)
 | Conversion state | `conversions/<id>/conversion.manifest.json` |
 | Version + coverage | `referenceVersion`, `coverage` in manifest — see [COVERAGE.md](reference/COVERAGE.md) |
 | Defect reports | `conversions/<id>/verification/reports/` |
-| Capture (verify) | `.cursor/skills/conversion-verify/` |
+| Shared verify | `.cursor/skills/conversion-verify/` |
 | Per-conversion plans | `conversions/<id>/plans/` |
 | Portfolio plans | `plans/conversion-portfolio/` |
 

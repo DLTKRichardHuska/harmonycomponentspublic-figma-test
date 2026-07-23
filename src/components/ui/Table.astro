@@ -57,7 +57,7 @@ const hasActionBar = Astro.slots.has('action-bar');
 const hasHeaderSlot = Astro.slots.has('header');
 const hasBodySlot = Astro.slots.has('body');
 const useSortHeader = sortColumns && sortColumns.length > 0;
-const useCommandCenterHeader = isCommandCenter && useSortHeader;
+const useCommandCenterHeader = isCommandCenter && useSortHeader ? true : false;
 
 const classes = [
   'table',
@@ -198,7 +198,7 @@ function getSortLabel(key: string, label: string): string {
   <script>
     (function () {
       function initReorderableTables() {
-        document.querySelectorAll('.table-wrapper[data-reorderable]').forEach(function (wrapper) {
+        (Array.from(document.querySelectorAll('.table-wrapper[data-reorderable]')) as HTMLElement[]).forEach(function (wrapper) {
           if (wrapper.dataset.reorderableInit) return;
           wrapper.dataset.reorderableInit = 'true';
 
@@ -208,8 +208,7 @@ function getSortLabel(key: string, label: string): string {
           if (!tbody || !template) return;
 
           const rows = Array.from(tbody.querySelectorAll('tr'));
-          let draggedRow = null;
-          let draggedIndex = -1;
+          let draggedRow : HTMLTableRowElement | null = null;
 
           rows.forEach(function (row, index) {
             if (row.classList.contains('table-row--total')) {
@@ -222,7 +221,7 @@ function getSortLabel(key: string, label: string): string {
 
             const gripTd = document.createElement('td');
             gripTd.className = 'table__grip-cell';
-            const gripBtn = template.content.cloneNode(true);
+            const gripBtn = ((template as HTMLMetaElement).content as unknown as HTMLElement).cloneNode(true);
             gripTd.appendChild(gripBtn);
             row.insertBefore(gripTd, row.firstChild);
 
@@ -231,22 +230,26 @@ function getSortLabel(key: string, label: string): string {
 
             row.addEventListener('dragstart', function (e) {
               draggedRow = row;
-              draggedIndex = index;
               row.classList.add('table-row--dragging');
-              e.dataTransfer.effectAllowed = 'move';
-              e.dataTransfer.setData('text/plain', String(index));
-              e.dataTransfer.setDragImage(row, 0, 0);
+              const dragEvent = e as DragEvent;
+              if(dragEvent.dataTransfer) {
+                dragEvent.dataTransfer.effectAllowed = 'move';
+                dragEvent.dataTransfer.setData('text/plain', String(index));
+                dragEvent.dataTransfer.setDragImage(row, 0, 0);
+              }
             });
 
             row.addEventListener('dragend', function () {
               row.classList.remove('table-row--dragging');
               draggedRow = null;
-              draggedIndex = -1;
             });
 
             row.addEventListener('dragover', function (e) {
               e.preventDefault();
-              e.dataTransfer.dropEffect = 'move';
+              const dragEvent = e as DragEvent;
+              if(dragEvent.dataTransfer) {
+                dragEvent.dataTransfer.dropEffect = 'move';
+              }
               if (draggedRow && draggedRow !== row && !row.classList.contains('table-row--total')) {
                 row.classList.add('table-row--drag-over');
               }
@@ -293,7 +296,7 @@ function getSortLabel(key: string, label: string): string {
     (function () {
       const MAX_DEPTH = 4;
       function initGroupedTables() {
-        document.querySelectorAll('.table-wrapper[data-grouped]').forEach(function (wrapper) {
+        (Array.from(document.querySelectorAll('.table-wrapper[data-grouped]')) as HTMLElement[]).forEach(function (wrapper) {
           if (wrapper.dataset.groupedInit) return;
           wrapper.dataset.groupedInit = 'true';
 
@@ -312,46 +315,48 @@ function getSortLabel(key: string, label: string): string {
             });
           }
 
-          function getRowId(row) {
+          function getRowId(row: HTMLElement) {
             return row.getAttribute('data-row-id') || null;
           }
-          function hasChildren(row) {
+          function hasChildren(row: HTMLElement) {
             return row.hasAttribute('data-has-children');
           }
-          function getParentId(row) {
+          function getParentId(row: HTMLElement) {
             return row.getAttribute('data-parent-id') || null;
           }
-          function getDepth(row) {
+          function getDepth(row: HTMLElement) {
             const d = parseInt(row.getAttribute('data-depth') || '0', 10);
             return Math.min(Math.max(d, 0), MAX_DEPTH);
           }
 
-          function isVisible(row) {
+          function isVisible(row: HTMLElement): boolean {
             const parentId = getParentId(row);
             if (!parentId) return true;
             if (!expandedIds.has(parentId)) return false;
-            const parentRow = tbody.querySelector('tr[data-row-id="' + parentId + '"]');
+            const parentRow = tbody ? tbody.querySelector('tr[data-row-id="' + parentId + '"]') as HTMLElement : null;
             return parentRow ? isVisible(parentRow) : false;
           }
 
           function updateVisibility() {
-            tbody.querySelectorAll('tr[data-parent-id]').forEach(function (row) {
-              row.style.display = isVisible(row) ? '' : 'none';
-            });
+            if(tbody) {
+              (Array.from(tbody.querySelectorAll('tr[data-parent-id]')) as HTMLElement[]).forEach(function (row) {
+                row.style.display = isVisible(row) ? '' : 'none';
+              });
+            }
           }
 
-          function toggleExpanded(rowId) {
+          function toggleExpanded(rowId: string) {
             if (expandedIds.has(rowId)) {
               expandedIds.delete(rowId);
             } else {
               expandedIds.add(rowId);
             }
             updateVisibility();
-            const row = tbody.querySelector('tr[data-row-id="' + rowId + '"]');
+            const row = tbody?.querySelector('tr[data-row-id="' + rowId + '"]') as HTMLElement;
             if (row) {
               const btn = row.querySelector('.table__expand-btn');
               if (btn) {
-                btn.setAttribute('aria-expanded', expandedIds.has(rowId));
+                btn.setAttribute('aria-expanded', expandedIds.has(rowId) ? 'true' : 'false');
                 btn.setAttribute('aria-label', expandedIds.has(rowId) ? 'Collapse row' : 'Expand row');
                 btn.classList.toggle('table__expand-btn--expanded', expandedIds.has(rowId));
               }
@@ -402,11 +407,11 @@ function getSortLabel(key: string, label: string): string {
                 var rid0 = getRowId(row);
                 var wrap0 = document.createElement('span');
                 wrap0.className = 'table__cc-inline-expand';
-                var btnF = /** @type {DocumentFragment} */ (template.content.cloneNode(true));
-                var btnB = btnF.querySelector('button');
+                var btnF = ((template as HTMLMetaElement).content as unknown as HTMLElement).cloneNode(true);
+                var btnB = (btnF as HTMLElement).querySelector('button');
                 if (btnB && rid0) {
                   btnB.addEventListener('click', function () {
-                    toggleExpanded(rid0);
+                    if(rid0) toggleExpanded(rid0);
                   });
                 }
                 wrap0.appendChild(btnF);
@@ -457,11 +462,11 @@ function getSortLabel(key: string, label: string): string {
 
             if (hasChildren(row)) {
               const rowId = getRowId(row);
-              const btn = template.content.cloneNode(true);
-              const btnEl = btn.querySelector('button');
+              var btn = ((template as HTMLMetaElement).content as unknown as HTMLElement).cloneNode(true);
+              const btnEl = (btn as HTMLElement).querySelector('button');
               if (btnEl) {
                 btnEl.addEventListener('click', function () {
-                  toggleExpanded(rowId);
+                  if(rowId) toggleExpanded(rowId);
                 });
                 expandTd.appendChild(btn);
               }
@@ -473,19 +478,19 @@ function getSortLabel(key: string, label: string): string {
             if (depth > 0) {
               const firstContentCell = row.children[1];
               if (firstContentCell) {
-                firstContentCell.style.paddingLeft = 'calc(var(--space-4) * ' + depth + ' + var(--space-4))';
+                (firstContentCell as HTMLElement).style.paddingLeft = 'calc(var(--space-4) * ' + depth + ' + var(--space-4))';
               }
             }
           });
 
           function syncExpandButtons() {
-            tbody.querySelectorAll('tr[data-has-children]').forEach(function (row) {
-              var id = getRowId(row);
+            if (tbody) (tbody as HTMLElement).querySelectorAll('tr[data-has-children]').forEach(function (row) {
+              var id = getRowId(row as HTMLElement);
               if (!id) return;
               var btn = row.querySelector('.table__expand-btn');
               if (!btn) return;
               var isOpen = expandedIds.has(id);
-              btn.setAttribute('aria-expanded', isOpen);
+              btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
               btn.setAttribute('aria-label', isOpen ? 'Collapse row' : 'Expand row');
               if (isOpen) btn.classList.add('table__expand-btn--expanded');
               else btn.classList.remove('table__expand-btn--expanded');
@@ -509,7 +514,7 @@ function getSortLabel(key: string, label: string): string {
   // Handle row selection and select-all for interactive tables with checkboxes
   document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.table').forEach((table) => {
-      const checkboxes = table.querySelectorAll('.checkbox__input');
+      const checkboxes = Array.from(table.querySelectorAll('.checkbox__input')) as HTMLInputElement[];
       checkboxes.forEach((checkbox) => {
         const isSelectAll =
           checkbox.getAttribute('name') === 'select-all' ||
@@ -517,9 +522,10 @@ function getSortLabel(key: string, label: string): string {
         const row = checkbox.closest('tr');
         if (isSelectAll) {
           checkbox.addEventListener('change', () => {
-            const rowCheckboxes = table.querySelectorAll(
+            const rowCheckboxes = Array.from(table.querySelectorAll(
               'tbody .checkbox__input'
-            );
+            )) as HTMLInputElement[];
+            
             rowCheckboxes.forEach((cb) => {
               cb.checked = checkbox.checked;
               const r = cb.closest('tr');

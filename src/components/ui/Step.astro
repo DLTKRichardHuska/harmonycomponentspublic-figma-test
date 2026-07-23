@@ -26,7 +26,7 @@ const {
   class: className = '',
 } = Astro.props;
 
-const stepId = `step-${Math.random().toString(36).substr(2, 9)}`;
+const stepId = `step-${Math.random().toString(36).substring(2, 11)}`;
 const classes = [
   'step',
   completed && 'step--completed',

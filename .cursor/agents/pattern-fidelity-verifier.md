@@ -23,7 +23,7 @@ The reference implementation uses **Harmony Astro components** from `src/compone
 Each verification task supplies:
 
 - **Pattern markdown:** The pattern reference doc (e.g. `.cursor/skills/design-patterns/reference/actions-related-content-panel.md`)
-- **Built page:** The implemented preview file (e.g. `src/pages/preview/actions-related-content-panel.astro`)
+- **Built page:** The implemented Astro page (e.g. under `src/pages/components/` or `src/pages/shell/`)
 
 If either file is missing, output: **BLOCKED: [file] not found. Cannot verify.**
 

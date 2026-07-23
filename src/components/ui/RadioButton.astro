@@ -38,7 +38,7 @@ const {
   ...rest
 } = Astro.props;
 
-const radioId = id || `radio-${Math.random().toString(36).substr(2, 9)}`;
+const radioId = id || `radio-${Math.random().toString(36).substring(2, 11)}`;
 const messageId = error && errorMessage ? `${radioId}-error` : warning && warningMessage ? `${radioId}-warning` : undefined;
 
 const classes = [

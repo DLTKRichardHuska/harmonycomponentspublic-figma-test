@@ -20,6 +20,6 @@ globs: ["**/.cursor/skills/**", "**/SKILL.md"]
 
 Do not describe `conversions/<id>/` as "conversion status" when answering **converter readiness** — only as verify-harness location for converter dev tasks. See [converter-vs-conversion.mdc](../rules/converter-vs-conversion.mdc).
 
-These are loaded by path when **sync-target**, **conversion-loop**, or verifier agents route to a converter. Do not duplicate converter playbooks into `.cursor/skills/`.
+These are loaded by path when **conversion-agent** or verifier agents route to a converter. Do not duplicate converter playbooks into `.cursor/skills/`.
 
 See [CONVERTER_VS_CONVERSION.md](../skills/harmony-conversion/reference/CONVERTER_VS_CONVERSION.md).

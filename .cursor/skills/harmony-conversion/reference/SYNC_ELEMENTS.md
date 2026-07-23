@@ -10,7 +10,7 @@ All conversions track elements from the Astro reference. **Discovery is from sou
 | Doc site routes | [`src/data/navigation.ts`](../../../../src/data/navigation.ts) |
 | Component source | `src/components/ui/<Name>.astro` |
 | Doc examples | `src/pages/components/`, `src/pages/shell/`, `src/pages/foundation/` |
-| Preview fixtures | `src/pages/preview/` |
+| Verify evidence | Live docs (`:4321`) + conversion demo; optional scripts under `.cursor/skills/conversion-verify/scripts/` |
 
 On status/plan sweeps, seed missing keys in `conversion.manifest.json` from the catalog.
 

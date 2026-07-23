@@ -29,7 +29,7 @@ This repository has **three parts**:
 | Docs nav | `src/data/navigation.ts` |
 | Layouts | `src/layouts/` |
 | Tokens | `src/tokens/`, `src/styles/tokens.css` |
-| Docs site | `src/pages/components/`, `src/pages/shell/`, `src/pages/preview/` |
+| Docs site | `src/pages/components/`, `src/pages/shell/` |
 | Reference skills | `.cursor/skills/harmony/`, `design-patterns/`, etc. |
 | **Converters** | |
 | Converter agents | `converters/<id>/playbook/` |

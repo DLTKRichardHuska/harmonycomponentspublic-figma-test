@@ -86,7 +86,7 @@ Never use "ready" for a converter unless `readiness.level === ready`.
 | Root repo conversion npm scripts | **None** — not part of conversion | — |
 | Node scripts under `.cursor/skills/.../scripts/` and `converters/<id>/scripts/` | Agent-internal helpers | **Agents only** via Shell |
 | `conversions/<id>/package.json` (`dev`, `build:lib`, `npm publish`) | Output project runtime + GitHub Packages | Agents during verify capture; consumers install matching Harmony version from GitHub Packages |
-| Astro `npm run dev` | Reference preview for capture | Agents during verify capture |
+| Astro `npm run dev` | Reference docs site for live verify browse | Agents during verify |
 
 Conversion is **not** part of npm build, CI, or documented CLI workflows.
 

@@ -22,7 +22,6 @@ All paths below are relative to `{harmonyRoot}`.
 | **Docs (components)** | `src/pages/components/*.astro` | Props tables, examples, accessibility sections. |
 | **Docs (shell)** | `src/pages/shell/*.astro` | Shell layout, header, footer, left-sidebar, right-sidebar, page-header, page-content, panel. |
 | **Docs (markdown)** | `docs/*.md` | CONSUMER_GUIDE.md especially (install, customization, theme/mode). |
-| **Preview** | `src/pages/preview/*.astro` | Minimal usage examples, including shell-layout, shell-header, shell-footer, shell-layout-with-panel, shell-panel. |
 | **Tokens** | `src/tokens/*.json`, `src/styles/tokens.css` | Colors (themes, palette light/dark), spacing, typography, elevations. |
 | **Component CSS** | `src/styles/components.css` | Class names and visual patterns for components. |
 | **Patterns** | `.cursor/skills/design-patterns/reference/` | Pattern registry and anatomy docs. |

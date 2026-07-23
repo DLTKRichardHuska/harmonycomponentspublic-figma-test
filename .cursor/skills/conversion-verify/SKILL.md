@@ -67,12 +67,10 @@ Use categories from [FIDELITY_PRINCIPLES.md](../harmony-conversion/reference/FID
 
 **Verify: yes** for a converter when its `playbook/VERIFIER.md` documents **designer compare procedure + equivalence** and a QA run has been proven for representative scopes with rendered evidence — not when a global script or route registry exists.
 
-## Legacy capture scripts (optional)
+## Optional evidence scripts
 
-Node scripts under `scripts/` may exist for some targets. They are **not** the verify path for converter readiness. Target QA agents may ignore them unless the target playbook explicitly allows optional use.
+Node scripts under `scripts/` may produce artifacts for agent judgment. They are **not** the verify path for converter readiness and **never** decide PASS/FAIL.
 
-**Evidence only — never verdict:** `audit-palette-swatches.mjs`, `audit-rendered-alignment.mjs`, and capture scripts produce artifacts for agent judgment. They do **not** decide PASS/FAIL.
+**Evidence only:** `audit-palette-swatches.mjs`, `audit-rendered-alignment.mjs`, `capture-html.mjs`.
 
 **Forbidden as pass/fail gates:** ad-hoc probes under `conversions/<id>/verification/artifacts/diag/` — investigation only, not closure criteria.
-
-See [REFERENCE_CAPTURE.md](reference/REFERENCE_CAPTURE.md) only when a target playbook references legacy capture.

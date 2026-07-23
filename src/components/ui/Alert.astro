@@ -118,7 +118,7 @@ const classes = [
       )}
       {progressValue !== undefined && (
         <div class="alert__progress">
-          <ProgressBar value={progressValue} size="sm" variant={variant} />
+          <ProgressBar value={progressValue} size="sm" variant={'info' === variant ? 'default' : variant} />
         </div>
       )}
     </div>

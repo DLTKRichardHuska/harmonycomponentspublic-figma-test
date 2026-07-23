@@ -131,10 +131,6 @@ export function findNestedPackageJsons(projectDir) {
   return nested;
 }
 
-export function referencePreviewRoutesPath() {
-  return join(convertersDir(), 'reference', 'preview-routes.json');
-}
-
 /** Parse exported component names from src/data/component-catalog.ts */
 export function getExportedComponentNames() {
   const catalogPath = join(repoRoot(), 'src/data/component-catalog.ts');

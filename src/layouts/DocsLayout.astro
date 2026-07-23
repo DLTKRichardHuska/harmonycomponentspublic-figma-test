@@ -1,6 +1,6 @@
 ---
 import '../styles/global.css';
-import { navigation, componentCount } from '../data/navigation';
+import { navigation, navSectionCount } from '../data/navigation';
 import { themeConfig } from '../data/theme-config';
 import Icon from '../components/ui/Icon.astro';
 import { getEffectiveVersion } from '../lib/version';
@@ -157,7 +157,7 @@ function isNavItemActive(itemHref: string, pathname: string): boolean {
           </div>
           <div class="sidebar__stats">
             <Icon name="squares-plus" size="sm" class="sidebar__stats-icon" />
-            {componentCount} Sections
+            {navSectionCount} Sections
           </div>
         </div>
 
@@ -207,7 +207,7 @@ function isNavItemActive(itemHref: string, pathname: string): boolean {
     </div>
   </div>
 
-  <script define:vars={{ themeConfig, currentPath }}>
+  <script define:vars={{ themeConfig, currentPath }} is:inline>
     // Theme-specific component configuration (made global for access from other scripts)
     window.themeComponentConfig = themeConfig;
     window.currentPagePath = currentPath;
@@ -312,7 +312,8 @@ function isNavItemActive(itemHref: string, pathname: string): boolean {
     if (typeof window.renderThemeSpecificNav === 'function') {
       window.renderThemeSpecificNav(savedColorTheme);
     }
-
+    
+    declare const window: any;
     window.syncKanbanDocNavLink = function () {
       const t = localStorage.getItem('colorTheme') || 'cp';
       document.querySelectorAll('[data-kanban-doc-link]').forEach((el) => {

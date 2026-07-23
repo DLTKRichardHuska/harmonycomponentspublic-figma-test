@@ -29,7 +29,6 @@ const sizeDimensions: Record<string, { width: number; height: number }> = {
 // Resolution order: Heroicons (default) → Tabler (when Hero has no mapping or icon not in library) → public/{name}.svg
 // Tabler is used only when Hero doesn't resolve. Pin is the Tabler icon used in ShellFooter and FloatingNav.
 let svgContent = '';
-let isCustomIcon = false;
 let isFilledIcon = false;
 let isMixedCustomIcon = false; // custom icon with both fill and stroke paths (e.g. mic-slash) — outer svg must not add stroke
 let customViewBox = '0 0 24 24';
@@ -78,7 +77,6 @@ function tryPublic(): boolean {
 
     const pathMatch = customSvg.match(/<svg[^>]*>([\s\S]*?)<\/svg>/);
     if (pathMatch) {
-      isCustomIcon = true;
       const innerContent = pathMatch[1].trim();
 
       const hasGradients = /(fill|stroke)="url\(#[^)]+\)"/.test(innerContent);

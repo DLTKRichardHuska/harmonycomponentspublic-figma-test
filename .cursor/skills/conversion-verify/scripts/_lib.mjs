@@ -13,14 +13,6 @@ export function repoRoot() {
   return join(__dirname, '..', '..', '..', '..');
 }
 
-export function previewRoutesPath() {
-  return join(repoRoot(), 'converters', 'reference', 'preview-routes.json');
-}
-
-export function loadPreviewRoutes() {
-  return JSON.parse(readFileSync(previewRoutesPath(), 'utf8'));
-}
-
 export function loadJson(path) {
   return JSON.parse(readFileSync(path, 'utf8'));
 }
@@ -71,7 +63,12 @@ export async function waitForUrl(url, { timeoutMs = 120_000, intervalMs = 500 } 
   return false;
 }
 
-export async function ensureDevServer({ command, cwd, baseUrl, reuse = process.env.CAPTURE_REUSE_SERVER === '1' }) {
+export async function ensureDevServer({
+  command,
+  cwd,
+  baseUrl,
+  reuse = process.env.CAPTURE_REUSE_SERVER === '1',
+}) {
   if (reuse && (await isUrlReady(baseUrl))) {
     return { proc: null, started: false, baseUrl };
   }
@@ -118,7 +115,13 @@ export async function applyThemeAndMode(page, { theme = 'cp', mode = 'light' } =
     ({ theme, mode }) => {
       localStorage.setItem('theme', mode);
       localStorage.setItem('colorTheme', theme);
-      document.documentElement.classList.remove('dark', 'theme-cp', 'theme-vp', 'theme-ppm', 'theme-maconomy');
+      document.documentElement.classList.remove(
+        'dark',
+        'theme-cp',
+        'theme-vp',
+        'theme-ppm',
+        'theme-maconomy',
+      );
       document.documentElement.classList.add(`theme-${theme}`);
       if (mode === 'dark') document.documentElement.classList.add('dark');
     },
@@ -144,12 +147,6 @@ export function conversionDirForConverter(converterId) {
   const outputId = manifest.conversion?.outputId ?? converterId;
   const outputPath = manifest.conversion?.outputPath ?? `conversions/${outputId}`;
   return join(repoRoot(), outputPath);
-}
-
-/** Convention-based converted capture URL (see converter playbook). */
-export function convertedCapturePath(scope, theme = 'cp', mode = 'light') {
-  const q = new URLSearchParams({ capture: scope, theme, mode });
-  return `/?${q.toString()}`;
 }
 
 export const DEFAULT_CONVERTED_DEV = {

@@ -1,6 +1,5 @@
 ---
 import DocsLayout from '../../layouts/DocsLayout.astro';
-import CodeBlock from '../../components/CodeBlock.astro';
 import Icon from '../../components/ui/Icon.astro';
 import { colors } from '../../tokens/index.ts';
 
@@ -94,7 +93,7 @@ const getSemanticColors = (isDark: boolean) => {
         Used by all themes (CP, VP, PPM, Maconomy) in light mode.
       </p>
       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        {semiLightColors.map((color, index) => (
+        {semiLightColors.map((color) => (
           <div class="space-y-3" data-color-key={color.key}>
             <div class="h-20 rounded-lg border semi-light-swatch"
                  data-css-var={color.cssVar}
@@ -120,7 +119,7 @@ const getSemanticColors = (isDark: boolean) => {
         Used by CP theme in dark mode.
       </p>
       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        {cpSemiDarkColors.map((color, index) => (
+        {cpSemiDarkColors.map((color) => (
           <div class="space-y-3" data-color-key={color.key}>
             <div class="h-20 rounded-lg border cp-dark-swatch"
                  data-css-var={color.cssVar}
@@ -146,7 +145,7 @@ const getSemanticColors = (isDark: boolean) => {
         Used by VP, PPM, and Maconomy themes in dark mode.
       </p>
       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        {vpPpmMaconomyDarkColors.map((color, index) => (
+        {vpPpmMaconomyDarkColors.map((color) => (
           <div class="space-y-3" data-color-key={color.key}>
             <div class="h-20 rounded-lg border vp-ppm-maconomy-dark-swatch"
                  data-css-var={color.cssVar}
@@ -237,7 +236,7 @@ const getSemanticColors = (isDark: boolean) => {
 
   <script>
     // Helper: Convert RGB to Hex
-    function rgbToHex(rgb) {
+    function rgbToHex(rgb: string) {
       const values = rgb.match(/[\d.]+/g);
       if (!values || values.length < 3) return rgb;
       const r = parseInt(values[0]).toString(16).padStart(2, '0');
@@ -249,7 +248,7 @@ const getSemanticColors = (isDark: boolean) => {
     // Helper: Get a CSS variable's display value.
     // Preserves alpha for translucent tokens (e.g. tableTotal) so the swatch
     // renders the real tint instead of being flattened to an opaque hex.
-    function getCSSVariableColor(varName) {
+    function getCSSVariableColor(varName: string) {
       if (!varName) return null;
       const value = getComputedStyle(document.documentElement)
         .getPropertyValue(varName)
@@ -279,7 +278,6 @@ const getSemanticColors = (isDark: boolean) => {
       const semiLightPalette = document.getElementById('semi-light-palette');
       const cpSemiDarkPalette = document.getElementById('cp-semi-dark-palette');
       const vpPpmMaconomyDarkPalette = document.getElementById('vp-ppm-maconomy-dark-palette');
-      const semiLightDescription = document.getElementById('semi-light-description');
 
       // Toggle visibility based on theme and mode
       if (isDark && isCPTheme) {
@@ -288,7 +286,7 @@ const getSemanticColors = (isDark: boolean) => {
         vpPpmMaconomyDarkPalette?.classList.add('hidden');
 
         // Update CP dark palette values by reading CSS variables
-        document.querySelectorAll('.cp-dark-swatch').forEach(swatch => {
+        (Array.from(document.querySelectorAll('.cp-dark-swatch')) as HTMLElement[]).forEach(swatch => {
           const cssVar = swatch.getAttribute('data-css-var');
 
           if (cssVar) {
@@ -309,7 +307,7 @@ const getSemanticColors = (isDark: boolean) => {
         vpPpmMaconomyDarkPalette?.classList.remove('hidden');
 
         // Update VP/PPM/Maconomy dark palette values by reading CSS variables
-        document.querySelectorAll('.vp-ppm-maconomy-dark-swatch').forEach(swatch => {
+        (Array.from(document.querySelectorAll('.vp-ppm-maconomy-dark-swatch')) as HTMLElement[]).forEach(swatch => {
           const cssVar = swatch.getAttribute('data-css-var');
 
           if (cssVar) {
@@ -330,7 +328,7 @@ const getSemanticColors = (isDark: boolean) => {
         vpPpmMaconomyDarkPalette?.classList.add('hidden');
 
         // Update semi-light palette values by reading CSS variables
-        document.querySelectorAll('.semi-light-swatch').forEach(swatch => {
+        (Array.from(document.querySelectorAll('.semi-light-swatch')) as HTMLElement[]).forEach(swatch => {
           const cssVar = swatch.getAttribute('data-css-var');
 
           if (cssVar) {
@@ -348,9 +346,8 @@ const getSemanticColors = (isDark: boolean) => {
       }
 
       // Update semantic colors by reading CSS variables
-      document.querySelectorAll('[data-semantic]').forEach(box => {
-        const semanticName = box.getAttribute('data-semantic');
-        const swatch = box.querySelector('[data-css-var]');
+      (Array.from(document.querySelectorAll('[data-semantic]')) as HTMLElement[]).forEach(box => {
+        const swatch = box.querySelector('[data-css-var]') as HTMLElement;
         const cssVar = swatch?.getAttribute('data-css-var');
 
         if (cssVar) {

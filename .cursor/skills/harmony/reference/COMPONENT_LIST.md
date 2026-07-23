@@ -41,5 +41,4 @@ Used by doc examples or as building blocks: CommandCenterPanel, CommandCenterPan
 
 - **Component docs:** 32 pages under `src/pages/components/` (grouped; e.g. `inputs.astro` covers Input + Textarea, `date-picker.astro` covers DateInput + date range pickers).
 - **Shell docs:** 8 pages under `src/pages/shell/`.
-- **Previews:** `src/pages/preview/*.astro`.
 - **Navigation source:** `src/data/navigation.ts`.

@@ -32,22 +32,33 @@ const { items, as = 'button', variant = 'default', class: className = '' } = Ast
 ---
 
 <div class:list={['list-menu', variant === 'no-borders' && 'list-menu--no-borders', className]}>
-  {items.map((item) => {
-    const Element = as === 'link' ? 'a' : 'button';
-    const itemProps = as === 'link' ? { href: item.href || '#' } : { type: 'button' };
-
-    return (
-      <Element
-        {...itemProps}
-        class:list={['list-menu__item', item.active && 'is-active']}
-      >
-        {item.isCustom && item.customSrc ? (
-          <img src={item.customSrc} alt={item.label} class="list-menu__item-icon list-menu__custom-icon" />
-        ) : item.icon ? (
-          <Icon name={item.icon} size="md" class="list-menu__item-icon" />
-        ) : null}
-        {item.label}
-      </Element>
-    );
+  {(items as MenuItem[]).map((item) => {
+    const content = <>
+      {item.isCustom && item.customSrc ? (
+        <img src={item.customSrc} alt={item.label} class="list-menu__item-icon list-menu__custom-icon" />
+      ) : item.icon ? (
+        <Icon name={item.icon} size="md" class="list-menu__item-icon" />
+      ) : null}
+      {item.label}
+    </>;
+    if(as === 'link') {
+      return (
+        <a
+          href={item.href || '#'}
+          class:list={['list-menu__item', item.active && 'is-active']}
+        >
+          {content}
+        </a>
+      );
+    } else {
+      return (
+        <button
+          type={'button'}
+          class:list={['list-menu__item', item.active && 'is-active']}
+        >
+          {content}
+        </button>
+      );
+    }
   })}
 </div>

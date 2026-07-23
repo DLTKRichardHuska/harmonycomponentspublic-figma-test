@@ -36,7 +36,7 @@ const {
   ...rest
 } = Astro.props;
 
-const textareaId = id || `textarea-${Math.random().toString(36).substr(2, 9)}`;
+const textareaId = id || `textarea-${Math.random().toString(36).substring(2, 11)}`;
 
 // Determine label variant
 // If explicitly provided, use that; otherwise CSS will handle default (inline for CP theme, stacked for others)

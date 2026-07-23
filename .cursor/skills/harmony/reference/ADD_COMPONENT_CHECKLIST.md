@@ -11,7 +11,6 @@ Use this checklist whenever you add, remove, rename, or export a component in th
 | Categorized catalog + doc mapping | `src/data/component-catalog.ts` |
 | Docs nav | `src/data/navigation.ts` |
 | Doc pages | `src/pages/components/*.astro`, `src/pages/shell/*.astro` |
-| Previews (optional) | `src/pages/preview/*.astro` |
 | Consumer-facing list | `docs/customization/CONSUMER_GUIDE.md` → **Complete Component List** |
 | Skill snapshot | `.cursor/skills/harmony/reference/COMPONENT_LIST.md` |
 | Package readme | `README.md` → **Available Components** |
@@ -33,11 +32,10 @@ Run **`npm run docs:check`** when you also changed doc props tables (requires `@
    - Update `EXPORTED_UI_COMPONENT_COUNT` if the export count changed.
 4. **Document** — add or extend a page under `src/pages/components/` (kebab-case filename).
 5. **Navigate** — add an item to the **Components** section in `src/data/navigation.ts` (unless intentionally grouped only).
-6. **Preview** (optional) — `src/pages/preview/<name>.astro`.
-7. **Consumer docs** — add the name under **Complete Component List** in `docs/customization/CONSUMER_GUIDE.md`.
-8. **Readme + skill snapshot** — add to categorized lists in `README.md` and `.cursor/skills/harmony/reference/COMPONENT_LIST.md`.
-9. **Validate** — `npm run validate:catalog` (and `npm run docs:check` if props tables were added).
-10. **Pattern** (optional) — if the component represents a reusable UX pattern, run `/create-pattern` or `create_pattern.py` and register in `reference/registry.md`.
+6. **Consumer docs** — add the name under **Complete Component List** in `docs/customization/CONSUMER_GUIDE.md`.
+7. **Readme + skill snapshot** — add to categorized lists in `README.md` and `.cursor/skills/harmony/reference/COMPONENT_LIST.md`.
+8. **Validate** — `npm run validate:catalog` (and `npm run docs:check` if props tables were added).
+9. **Pattern** (optional) — if the component represents a reusable UX pattern, run `/create-pattern` or `create_pattern.py` and register in `reference/registry.md`.
 
 ---
 

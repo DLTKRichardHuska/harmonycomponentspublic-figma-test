@@ -44,7 +44,7 @@ Helpers:
 node converters/figma/scripts/capture-shadcn-reference.mjs --scope <scope> --product <product> --out converters/figma/verification/artifacts/reference-<scope>.png
 ```
 
-Do **not** use Astro `capture-reference.mjs` for Figma component compare.
+Do **not** use Astro docs HTML capture for Figma component compare. Use the playbook-specified PNG reference instead.
 
 ### Converted (Figma MCP) — proven
 

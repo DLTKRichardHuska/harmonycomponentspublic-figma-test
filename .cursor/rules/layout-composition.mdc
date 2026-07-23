@@ -1,6 +1,6 @@
 ---
 description: When composing page layouts with Harmony Astro components: all spacing must use Harmony tokens (var(--space-N)), no arbitrary px/rem/em values. No Card nested inside Card. Page header is always first child in content area. Button bar is always last child. Use design system grid patterns for multi-card layouts. Verify all imported components are used.
-globs: ["src/pages/preview/**/*", "src/pages/components/**/*", "src/pages/shell/**/*", "src/layouts/**/*"]
+globs: ["src/pages/components/**/*", "src/pages/shell/**/*", "src/layouts/**/*"]
 alwaysApply: false
 ---
 

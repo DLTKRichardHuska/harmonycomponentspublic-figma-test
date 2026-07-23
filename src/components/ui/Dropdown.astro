@@ -42,11 +42,10 @@ const {
   class: className = '',
   label,
   labelVariant,
-  labelFor,
-  ...rest
+  labelFor
 } = Astro.props;
 
-const dropdownId = id || `dropdown-${Math.random().toString(36).substr(2, 9)}`;
+const dropdownId = id || `dropdown-${Math.random().toString(36).substring(2, 11)}`;
 const selectedOption = options.find(opt => opt.value === value);
 
 const hasTriggerSlot = Astro.slots.has('trigger');

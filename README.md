@@ -365,7 +365,7 @@ This repo is the **Harmony Design System (Astro)** — the canonical reference i
 | `src/components/ui/` | Astro UI components (source of truth) |
 | `src/layouts/` | Shell and doc layouts |
 | `src/tokens/`, `src/styles/` | Design tokens and global CSS |
-| `src/pages/` | Component docs, shell docs, and preview pages |
+| `src/pages/` | Component docs, shell docs, and foundation pages |
 | `.cursor/` | Cursor skills, agents, and commands for maintaining the pattern library |
 | `converters/` | Converter library (playbooks, scripts); see [converters/README.md](./converters/README.md) |
 | `conversions/` | Conversion output projects; [harmony-design-system-react-mui](./conversions/harmony-design-system-react-mui/) (placeholder) |

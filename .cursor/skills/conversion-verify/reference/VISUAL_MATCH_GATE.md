@@ -103,7 +103,7 @@ Scripts under `.cursor/skills/conversion-verify/scripts/` may produce **evidence
 |--------|---------------|---------|
 | `audit-palette-swatches.mjs` | Rendered swatch colors | Agent judges |
 | `audit-rendered-alignment.mjs` | Relative rect deltas | Agent judges |
-| `capture-pair.mjs` | HTML/PNG snapshots | Agent judges |
+| `capture-html.mjs` | HTML/PNG of a URL | Agent judges |
 
 **Scripts never decide PASS or FAIL.** Header comments and skill docs state this explicitly.
 

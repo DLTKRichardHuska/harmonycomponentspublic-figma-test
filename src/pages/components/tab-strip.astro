@@ -309,7 +309,7 @@ const props = [
 <script>
   // Demo: Listen for tab strip events
   document.addEventListener('tab-strip:tab-selected', (e) => {
-    console.log('Tab selected:', e.detail.tabId);
+    console.log('Tab selected:', (e as CustomEvent).detail.tabId);
     // In a real application, you would handle tab selection here
     // For example: show corresponding tab panel, update state, etc.
   });
@@ -320,16 +320,16 @@ const props = [
   });
 
   document.addEventListener('tab-strip:close-tab', (e) => {
-    console.log('Close tab:', e.detail.tabId);
+    console.log('Close tab:', (e as CustomEvent).detail.tabId);
     // In a real application, you would handle closing the tab here
   });
 
   document.addEventListener('tab-strip:open-new-window', (e) => {
-    console.log('Open in new window:', e.detail.tabId);
+    console.log('Open in new window:', (e as CustomEvent).detail.tabId);
     // In a real application, you would handle opening in new window here
   });
 
   document.addEventListener('tab-strip:set-default', (e) => {
-    console.log('Set default tab:', e.detail.tabId);
+    console.log('Set default tab:', (e as CustomEvent).detail.tabId);
   });
 </script>

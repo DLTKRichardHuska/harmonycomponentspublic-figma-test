@@ -3,8 +3,10 @@
  * Low-level Playwright capture — URL to HTML or PNG file.
  *
  * Usage:
- *   node capture-html.mjs --url http://localhost:4321/preview/buttons --out artifacts/reference-Button.html
+ *   node capture-html.mjs --url http://localhost:4321/components/buttons --out artifacts/reference-Button.html
  *   node capture-html.mjs --url ... --out ... --format png --selector body
+ *
+ * Use docs (:4321) or conversion demo URLs from the target playbook VERIFIER.md.
  */
 import { writeFileSync } from 'node:fs';
 import { setTimeout as delay } from 'node:timers/promises';

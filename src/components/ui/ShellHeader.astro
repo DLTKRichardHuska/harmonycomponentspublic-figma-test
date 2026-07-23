@@ -166,7 +166,6 @@ const effectiveCompanyColor = companyColor ?? companyOptions[0]?.color;
       pickerMenu.querySelectorAll('[data-company-option]').forEach((option) => {
         option.addEventListener('click', (e) => {
           e.stopPropagation();
-          const companyId = option.getAttribute('data-company-id');
           const optionName = option.querySelector('.company-picker__option-name')?.textContent;
           const indicator = option.querySelector('.company-picker__option-indicator') as HTMLElement;
           

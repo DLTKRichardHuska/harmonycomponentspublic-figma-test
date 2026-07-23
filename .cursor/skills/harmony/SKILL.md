@@ -22,10 +22,8 @@ Point the user to these when they want a specific action:
 | `/ux-review` | Standalone UX review (framework-agnostic). |
 | `/conversion-agent` | Readiness, status, plan, approve, execute (primary). |
 | `/conversion-agent converter` | Audit converter playbook implementation before converting. |
+| `/conversion-management` | Portfolio status, multi-conversion plans, coordinated execution. |
 | `/create-converter` | Scaffold a new converter (and conversion for component-library). |
-| `/verify-converter` | Validate converter/conversion structure. |
-| `/sync-target` | Advanced one-shot apply. |
-| `/conversion-loop` | Advanced execute loop (usually via conversion-agent). |
 
 Commands live in `.cursor/commands/`.
 
@@ -52,7 +50,6 @@ All paths below are relative to `{harmonyRoot}`.
 - **Component catalog:** `src/data/component-catalog.ts` (categories, doc mapping; validated by `npm run validate:catalog`)
 - **Layouts:** `src/layouts/*.astro` (ShellLayout and app-shell pattern)
 - **Docs:** `src/pages/components/*.astro`, `src/pages/shell/*.astro`, `docs/*.md` (especially CONSUMER_GUIDE.md)
-- **Preview:** `src/pages/preview/*.astro`
 - **Tokens:** `src/tokens/*.json`, `src/styles/tokens.css`, `src/styles/components.css` for class names
 - **Patterns:** `.cursor/skills/design-patterns/reference/` and `registry.md`
 

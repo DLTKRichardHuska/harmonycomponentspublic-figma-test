@@ -30,7 +30,7 @@ const {
   class: className = '',
 } = Astro.props;
 
-const pickerId = id || `datetime-picker-${Math.random().toString(36).substr(2, 9)}`;
+const pickerId = id || `datetime-picker-${Math.random().toString(36).substring(2, 11)}`;
 
 // Parse datetime value
 let dateValue: string | undefined;

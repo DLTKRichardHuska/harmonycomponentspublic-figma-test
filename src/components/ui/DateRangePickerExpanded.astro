@@ -27,7 +27,7 @@ const {
   class: className = '',
 } = Astro.props;
 
-const pickerId = id || `drp-expanded-${Math.random().toString(36).substr(2, 9)}`;
+const pickerId = id || `drp-expanded-${Math.random().toString(36).substring(2, 11)}`;
 
 // Left calendar starts at current month (or startDate's month)
 const refDate = startDate ? new Date(startDate + 'T00:00:00') : new Date();
@@ -110,8 +110,8 @@ const presets = [
             </button>
           </div>
           <div class="date-picker__weekdays">
-            {dayNames.map((day, i) => (
-              <div class="date-picker__weekday" key={i}>{day}</div>
+            {dayNames.map((day) => (
+              <div class="date-picker__weekday">{day}</div>
             ))}
           </div>
           <div class="date-picker__grid" role="grid" data-calendar-grid
@@ -135,8 +135,8 @@ const presets = [
             </button>
           </div>
           <div class="date-picker__weekdays">
-            {dayNames.map((day, i) => (
-              <div class="date-picker__weekday" key={i}>{day}</div>
+            {dayNames.map((day) => (
+              <div class="date-picker__weekday">{day}</div>
             ))}
           </div>
           <div class="date-picker__grid" role="grid" data-calendar-grid
@@ -390,7 +390,7 @@ const presets = [
     picker.querySelectorAll('[data-calendar]').forEach((calEl) => {
       calEl.addEventListener('click', (e) => {
         const target = (e.target as HTMLElement).closest('[data-date]') as HTMLElement | null;
-        if (!target || target.disabled) return;
+        if (!target || (target as HTMLButtonElement).disabled) return;
         const dateStr = target.dataset.date!;
         const startDate = picker.dataset.startDate || '';
         const endDate = picker.dataset.endDate || '';

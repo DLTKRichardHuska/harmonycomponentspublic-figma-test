@@ -29,7 +29,7 @@ const {
   class: className = '',
 } = Astro.props;
 
-const pickerId = id || `time-picker-${Math.random().toString(36).substr(2, 9)}`;
+const pickerId = id || `time-picker-${Math.random().toString(36).substring(2, 11)}`;
 
 // Parse time value
 let hour = 0;
@@ -220,7 +220,6 @@ const classes = ['time-picker', className].filter(Boolean).join(' ');
       const pickerEl = picker as HTMLElement;
       const format = (pickerEl.dataset.format || '24') as '12' | '24';
       const step = parseInt(pickerEl.dataset.step || '1');
-      const isDisabled = pickerEl.dataset.disabled === 'true';
       const minTime = pickerEl.dataset.minTime || null;
       const maxTime = pickerEl.dataset.maxTime || null;
       

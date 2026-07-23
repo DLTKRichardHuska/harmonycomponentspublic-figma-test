@@ -27,7 +27,7 @@ const {
   class: className = '',
 } = Astro.props;
 
-const pickerId = id || `week-picker-${Math.random().toString(36).substr(2, 9)}`;
+const pickerId = id || `week-picker-${Math.random().toString(36).substring(2, 11)}`;
 
 // Helper to get ISO week number
 function getISOWeek(date: Date): { year: number; week: number } {
@@ -101,9 +101,7 @@ function getWeeksForYear(year: number): Array<{ week: number; startDate: Date; e
   
   // Get all weeks that have at least one day in the target year
   for (let y = startYear; y <= endYear; y++) {
-    const yearStart = new Date(y, 0, 1);
     const yearEnd = new Date(y, 11, 31);
-    const yearStartWeek = getISOWeek(yearStart);
     const yearEndWeek = getISOWeek(yearEnd);
     
     const maxWeeks = yearEndWeek.week;
@@ -237,7 +235,6 @@ const classes = ['week-picker', className].filter(Boolean).join(' ');
     const endYear = lastWeek.year;
     
     for (let y = startYear; y <= endYear; y++) {
-      const yearStart = new Date(y, 0, 1);
       const yearEnd = new Date(y, 11, 31);
       const yearEndWeek = getISOWeek(yearEnd);
       const maxWeeks = yearEndWeek.week;
@@ -384,7 +381,7 @@ const classes = ['week-picker', className].filter(Boolean).join(' ');
         const weeks = Array.from(picker.querySelectorAll('.week-picker__week:not(.week-picker__week--disabled)')) as HTMLElement[];
         const currentIndex = weeks.indexOf(currentWeek);
         
-        switch (e.key) {
+        switch ((e as KeyboardEvent).key) {
           case 'ArrowUp':
             e.preventDefault();
             if (currentIndex > 0) {

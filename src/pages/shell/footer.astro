@@ -308,13 +308,13 @@ import Icon from '../../components/ui/Icon.astro';
 <script>
   // Demo: Listen for TabStrip events (used by ShellFooter)
   document.addEventListener('tab-strip:tab-selected', (e) => {
-    console.log('Tab selected:', e.detail.tabId);
+    console.log('Tab selected:', (e as CustomEvent).detail.tabId);
     // In a real application, you would handle tab selection here
     // For example: navigate to a different workspace, update state, etc.
   });
 
   document.addEventListener('tab-strip:close-tab', (e) => {
-    console.log('Close individual tab:', e.detail.tabId);
+    console.log('Close individual tab:', (e as CustomEvent).detail.tabId);
     // In a real application, you would handle closing the individual tab here
     // For example: remove tab from state, close workspace, etc.
   });
@@ -326,11 +326,11 @@ import Icon from '../../components/ui/Icon.astro';
   });
 
   document.addEventListener('tab-strip:open-new-window', (e) => {
-    console.log('Open tab in new window:', e.detail.tabId);
+    console.log('Open tab in new window:', (e as CustomEvent).detail.tabId);
     // In a real application, you would handle opening tab in new window here
   });
 
   document.addEventListener('tab-strip:set-default', (e) => {
-    console.log('Set default tab:', e.detail.tabId);
+    console.log('Set default tab:', (e as CustomEvent).detail.tabId);
   });
 </script>
