@@ -358,7 +358,7 @@ Each conversion tracks **`referenceVersion`** (repo release-train label, matchin
 | **New reference semver / release train** | Run `sync_conversion_versions.mjs`; reset element statuses when bare semver changes; `compute_coverage.mjs --write` → 0% |
 | **Same version label, reference edited** | Do **not** auto-reset coverage — scoped re-verify only; note delta in plan |
 | **Element verified + human accepts** | Set `synced` or accepted `gap` + `userDecision`; run `compute_coverage.mjs --write` |
-| **Ready to release** | Run `validate_release_readiness.mjs --release-version <semver>`; user creates GitHub Release; workflow publishes packages |
+| **Ready to release** | Run `validate_release_readiness.mjs --release-version <semver>`; user tags `vX.Y.Z` and pushes; `publish-conversion-packages.yml` publishes packages |
 
 **Portfolio orchestration:** use **`/conversion-management`** for status, plans, release readiness, and coordinated execution. Single-target work uses **`/conversion-agent`**.
 

@@ -1,0 +1,74 @@
+name: Publish conversion packages
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - id: harmony-design-system-react-mui
+            package_name: '@dltkrichardhuska/harmony-design-system-react-mui'
+            install_dir: conversions/harmony-design-system-react-mui
+            publish_dir: conversions/harmony-design-system-react-mui
+          - id: harmony-design-system-shadcn
+            package_name: '@dltkrichardhuska/harmony-design-system-shadcn'
+            install_dir: conversions/harmony-design-system-shadcn
+            publish_dir: conversions/harmony-design-system-shadcn/packages/ui
+
+    steps:
+      - name: Checkout tagged commit
+        uses: actions/checkout@v5
+
+      - name: Parse release version
+        id: version
+        run: |
+          TAG="${GITHUB_REF_NAME}"
+          VERSION="${TAG#v}"
+          if [[ ! "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            echo "Invalid release tag: $TAG (expected vX.Y.Z)"
+            exit 1
+          fi
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+
+      - name: Verify package version matches tag
+        run: |
+          PKG_VERSION=$(node -e "const fs=require('fs'); console.log(JSON.parse(fs.readFileSync('${{ matrix.publish_dir }}/package.json','utf8')).version)")
+          EXPECTED="${{ steps.version.outputs.version }}"
+          if [ "$PKG_VERSION" != "$EXPECTED" ]; then
+            echo "Version mismatch for ${{ matrix.package_name }}: package.json has $PKG_VERSION, tag expects $EXPECTED"
+            exit 1
+          fi
+          echo "Publishing ${{ matrix.package_name }}@$PKG_VERSION"
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: 24
+          registry-url: https://npm.pkg.github.com
+          scope: '@dltkrichardhuska'
+          cache: npm
+          cache-dependency-path: ${{ matrix.install_dir }}/package-lock.json
+
+      - name: Install dependencies
+        working-directory: ${{ matrix.install_dir }}
+        run: npm ci
+
+      - name: Build library
+        working-directory: ${{ matrix.install_dir }}
+        run: npm run build:lib
+
+      - name: Publish to GitHub Packages
+        working-directory: ${{ matrix.publish_dir }}
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npm publish

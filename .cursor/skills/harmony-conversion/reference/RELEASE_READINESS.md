@@ -60,21 +60,17 @@ node .cursor/skills/harmony-conversion/scripts/validate_release_readiness.mjs --
 | Coverage gap | element not synced/accepted | portfolio-execute for scope |
 | Converter not ready | readiness ≠ ready | conversion-agent readiness |
 | Package metadata | `private: true` or missing publishConfig | fix `package.json` |
-| Workflow | release.yml missing publish steps | update workflow |
+| Workflow | publish-conversion-packages.yml missing publish steps | update workflow |
 
 ### Human release steps (when gate passes)
 
-1. Confirm semver (`vX.Y.Z`) and release notes summary.
-2. GitHub → **Releases** → **Draft a new release**.
-3. Tag `vX.Y.Z`, target `main`.
-4. Title: `Harmony Design System vX.Y.Z`.
-5. Generate or paste release notes → **Publish release**.
-6. Watch **Release** workflow in Actions.
-7. Verify Railway reference demo shows `vX.Y.Z`.
-8. Verify private GitHub Packages for root + each in-repo conversion.
-9. Run **post-release-status** for external converters.
+1. Confirm publishable package versions match the intended semver (`vX.Y.Z`).
+2. Tag and push: `git tag vX.Y.Z && git push origin vX.Y.Z`.
+3. Watch **Publish conversion packages** in Actions.
+4. Verify private GitHub Packages for each in-repo conversion library.
+5. Run **post-release-status** for external converters.
 
-Do **not** create the GitHub Release unless the user explicitly requests GitHub CLI automation.
+Do **not** create tags unless the user explicitly requests it.
 
 ## Related
 

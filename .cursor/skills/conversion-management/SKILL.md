@@ -105,9 +105,9 @@ Same checks as **release-status**, but emphasize blocker list and remediation on
 
 1. Run **release-status** checks first.
 2. If not ready: explain blockers and what must be done before release.
-3. If ready: provide step-by-step GitHub Release instructions (tag, title, publish, verify Railway demo, verify GitHub Packages, post-release external updates).
+3. If ready: provide step-by-step tag-push instructions (`git tag vX.Y.Z && git push origin vX.Y.Z`), watch **Publish conversion packages**, verify GitHub Packages, then post-release external updates.
 
-Do not create the GitHub Release unless the user explicitly requests GitHub CLI automation.
+Do not create or push tags unless the user explicitly requests it.
 
 ## Mode: post-release-status (readonly)
 
@@ -143,5 +143,5 @@ When larger differences cannot be fixed:
 - **portfolio-plan:** portfolio plan path + per-conversion plan links + "approve to execute"
 - **portfolio-execute:** per-target PASS/FAIL + coverage delta + suggest reassess
 - **release-status / release-blockers:** yes/no + blockers or release steps
-- **release-instructions:** human GitHub Release checklist when ready
+- **release-instructions:** human tag-push / GitHub Packages checklist when ready
 - **post-release-status:** external converter list + post-release reminder

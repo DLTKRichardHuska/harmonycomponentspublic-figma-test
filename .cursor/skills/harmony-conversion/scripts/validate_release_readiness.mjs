@@ -70,20 +70,24 @@ function validateCoverageComplete(manifest, conversionId, errors, warnings) {
 }
 
 function validateReleaseWorkflow(errors) {
-  const workflowPath = join(repoRoot(), '.github/workflows/release.yml');
+  const workflowPath = join(repoRoot(), '.github/workflows/publish-conversion-packages.yml');
   if (!existsSync(workflowPath)) {
-    errors.push('Missing .github/workflows/release.yml');
+    errors.push('Missing .github/workflows/publish-conversion-packages.yml');
     return;
   }
   const text = readFileSync(workflowPath, 'utf8');
   if (!/packages:\s*write/.test(text) && !/permissions:[\s\S]*packages:\s*write/.test(text)) {
-    errors.push('release.yml: add packages: write permission for GitHub Packages publish');
+    errors.push(
+      'publish-conversion-packages.yml: add packages: write permission for GitHub Packages publish',
+    );
   }
   if (!/npm publish/.test(text)) {
-    errors.push('release.yml: missing npm publish step for conversion packages');
+    errors.push('publish-conversion-packages.yml: missing npm publish step for conversion packages');
   }
-  if (!/sync_conversion_versions/.test(text)) {
-    errors.push('release.yml: missing sync_conversion_versions step for conversion packages');
+  if (!/harmony-design-system-react-mui/.test(text) || !/harmony-design-system-shadcn/.test(text)) {
+    errors.push(
+      'publish-conversion-packages.yml: must publish both react-mui and shadcn conversion packages',
+    );
   }
 }
 
@@ -203,7 +207,11 @@ async function main() {
 
   if (!opts.quiet) {
     console.log(`\nYes — ready to release ${expectedVersion}`);
-    console.log('Create a GitHub Release with tag v' + expectedVersion.replace(/-.*$/, '') + ' (or matching tag for prerelease labels).');
+    console.log(
+      'Tag and push v' +
+        expectedVersion.replace(/-.*$/, '') +
+        ' to publish conversion packages (publish-conversion-packages.yml).',
+    );
   }
   process.exit(0);
 }
