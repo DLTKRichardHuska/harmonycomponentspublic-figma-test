@@ -5,8 +5,8 @@
   "status": "dev-in-progress",
   "description": "Harmony Design System implemented with React and Material UI.",
   "converterId": "harmony-design-system-react-mui",
-  "referenceVersion": "0.9.0",
-  "referenceVersionSetAt": "2026-07-03T19:20:18.414Z",
+  "referenceVersion": "0.9.0-in-progress",
+  "referenceVersionSetAt": "2026-07-23T23:11:45.416Z",
   "coverage": {
     "percent": 76,
     "completed": 42,
@@ -1127,7 +1127,9 @@
     },
     "TableCostpointGrid": {
       "status": "not-started",
-      "products": ["cp"],
+      "products": [
+        "cp"
+      ],
       "harmonySource": "src/components/ui/TableCostpointGrid.astro"
     },
     "Icon": {
@@ -1147,7 +1149,11 @@
       "strategy": "existing-mui",
       "recommendedTarget": "@mui/material/Tabs",
       "harmonySource": "src/components/ui/TabStrip.astro",
-      "variantProducts": { "pill": ["vp"] },
+      "variantProducts": {
+        "pill": [
+          "vp"
+        ]
+      },
       "propMappings": [
         {
           "harmony": "tabs[].id + active",
@@ -1293,7 +1299,9 @@
     },
     "FloatingNav": {
       "status": "not-started",
-      "products": ["cp"],
+      "products": [
+        "cp"
+      ],
       "harmonySource": "src/components/ui/FloatingNav.astro"
     },
     "Link": {
@@ -1558,7 +1566,11 @@
     },
     "Kanban": {
       "status": "not-started",
-      "variantProducts": { "costpoint": ["cp"] },
+      "variantProducts": {
+        "costpoint": [
+          "cp"
+        ]
+      },
       "harmonySource": "src/components/ui/Kanban.astro"
     },
     "KanbanCard": {
@@ -1567,7 +1579,9 @@
     },
     "KanbanCardCostpoint": {
       "status": "not-started",
-      "products": ["cp"],
+      "products": [
+        "cp"
+      ],
       "harmonySource": "src/components/ui/KanbanCardCostpoint.astro"
     },
     "DatePicker": {

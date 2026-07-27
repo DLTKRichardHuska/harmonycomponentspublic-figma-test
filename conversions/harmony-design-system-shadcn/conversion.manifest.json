@@ -5,8 +5,8 @@
   "status": "dev-in-progress",
   "description": "Harmony Design System for AI consumers — React components on shadcn/ui patterns, Tailwind, and Radix",
   "converterId": "harmony-design-system-shadcn",
-  "referenceVersion": "0.9.0",
-  "referenceVersionSetAt": "2026-07-17T21:11:58.191Z",
+  "referenceVersion": "0.9.0-in-progress",
+  "referenceVersionSetAt": "2026-07-23T23:11:45.425Z",
   "independence": {
     "standalone": true,
     "layout": "npm-workspace",
@@ -380,7 +380,9 @@
     },
     "TableCostpointGrid": {
       "status": "not-started",
-      "products": ["cp"],
+      "products": [
+        "cp"
+      ],
       "harmonySource": "src/components/ui/TableCostpointGrid.astro"
     },
     "Icon": {
@@ -435,7 +437,9 @@
     },
     "FloatingNav": {
       "status": "synced",
-      "products": ["cp"],
+      "products": [
+        "cp"
+      ],
       "strategy": "component",
       "harmonySource": "src/components/ui/FloatingNav.astro",
       "skippedProps": [],
@@ -598,7 +602,11 @@
     },
     "Kanban": {
       "status": "not-started",
-      "variantProducts": { "costpoint": ["cp"] },
+      "variantProducts": {
+        "costpoint": [
+          "cp"
+        ]
+      },
       "harmonySource": "src/components/ui/Kanban.astro"
     },
     "KanbanCard": {
@@ -607,7 +615,9 @@
     },
     "KanbanCardCostpoint": {
       "status": "not-started",
-      "products": ["cp"],
+      "products": [
+        "cp"
+      ],
       "harmonySource": "src/components/ui/KanbanCardCostpoint.astro"
     },
     "DatePicker": {
