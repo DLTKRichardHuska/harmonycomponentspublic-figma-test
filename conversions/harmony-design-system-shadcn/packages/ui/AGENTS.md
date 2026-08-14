@@ -4,14 +4,18 @@ Harmony Design System for **AI-assisted greenfield apps** on **shadcn/ui pattern
 
 ## Choose a product first (upfront, one time)
 
-Harmony ships **one package per product** — `cp`, `vp`, `ppm`, `maconomy`. Pick the product for your app **before installing**; from then on it is a plain shadcn + Tailwind + Radix library with no product switching. See [docs/PRODUCT_BUILDS.md](docs/PRODUCT_BUILDS.md).
+Harmony ships **one package** with **four product subpaths** — `/cp`, `/vp`, `/ppm`, `/maconomy`. Install the package once, then import the subpath for your app; from then on it is a plain shadcn + Tailwind + Radix library with no product switching. See [docs/PRODUCT_BUILDS.md](docs/PRODUCT_BUILDS.md).
 
 ```bash
-# pick ONE (example: Costpoint)
-npm install @dltkrichardhuska/harmony-design-system-shadcn-cp
+npm install @dltkrichardhuska/harmony-design-system-shadcn
 ```
 
-> The unsuffixed `@dltkrichardhuska/harmony-design-system-shadcn` is the multi-product **development source** (all four palettes + a product switcher for the review demo). Application consumers install a **product-specific** package, not this one.
+```tsx
+import '@dltkrichardhuska/harmony-design-system-shadcn/cp/styles/globals.css';
+import { Button } from '@dltkrichardhuska/harmony-design-system-shadcn/cp';
+```
+
+> Application consumers import a **product subpath** (`/cp`, `/vp`, `/ppm`, or `/maconomy`). The package root with no product segment is the multi-product **development source** (all four palettes + a product switcher for the review demo).
 
 Requires **Tailwind CSS v4**. Peers: `react`, `react-dom`, `tailwindcss` (`^4`). `class-variance-authority`, `clsx`, and `tailwind-merge` are bundled as dependencies. **Fonts are bundled** (variable Figtree / Lexend / JetBrains Mono woff2) — there is no `@fontsource` setup.
 
@@ -40,19 +44,19 @@ The package is published to GitHub Packages, so npm needs auth for the scope. Us
 
 ## Global setup (once)
 
-Using the product package (examples show `-cp`; substitute your product):
+Using a product subpath (examples show `/cp`; substitute `/vp`, `/ppm`, or `/maconomy`):
 
 1. Import styles **once** at your app entry:
-   `import '@dltkrichardhuska/harmony-design-system-shadcn-cp/styles/globals.css'`
+   `import '@dltkrichardhuska/harmony-design-system-shadcn/cp/styles/globals.css'`
    This single file pulls in Tailwind, the bundled fonts, and the design tokens (already baked for the product; no token JSON export).
 2. **Tailwind v4 — no config needed.** `globals.css` already does `@import "tailwindcss"`, maps the Harmony tokens to utilities via `@theme`, enables `.dark` mode, and registers the package's own classes with `@source`. Just make sure your bundler runs Tailwind v4 (e.g. the `@tailwindcss/vite` plugin, or `@tailwindcss/postcss`). Your app's own `bg-primary`, `text-heading-xl`, `shadow-md`, `dark:*`, etc. work automatically — no `content` globs, no preset import, no `tailwind.config`.
-3. Wrap with `HarmonyThemeProvider` — **mode only** (`defaultMode="light" | "dark"`). There is **no** `defaultProduct` / product switching in a product build.
+3. Wrap with `HarmonyThemeProvider` — **mode only** (`defaultMode="light" | "dark"`). There is **no** `defaultProduct` / product switching in a product subpath.
 
 (Fonts load themselves via `globals.css`; do not import `@fontsource`.)
 
 ## Imports
 
-The bare package specifier is the primary import surface (components, layouts, theme provider, and `cn`):
+The product subpath is the primary import surface (components, layouts, theme provider, and `cn`):
 
 ```tsx
 import {
@@ -60,13 +64,13 @@ import {
   Button,
   Icon,
   cn,
-} from '@dltkrichardhuska/harmony-design-system-shadcn';
+} from '@dltkrichardhuska/harmony-design-system-shadcn/cp';
 
 <Icon name="home" size="md" />
 <Button variant="primary">Save</Button>
 ```
 
-Subpath entries remain available when you want them: `.../theme`, `.../components`, `.../utils`.
+Further subpaths remain available: `.../cp/theme`, `.../cp/components`, `.../cp/utils`.
 
 Style with Tailwind **theme utilities** (`bg-background`, `bg-card`, `text-foreground`, `text-muted-foreground`, `border-border`, `gap-2`, `rounded-lg`, `shadow-md`, `transition-colors`). Use `var(--…)` only when no utility exists (focus rings, `--icon-*`, `--z-*`, `--dropdown-*`, rare product washes).
 

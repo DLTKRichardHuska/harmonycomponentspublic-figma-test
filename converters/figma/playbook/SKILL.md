@@ -10,7 +10,7 @@ Read before executing: [CONVERTER_VS_CONVERSION.md](../../../.cursor/skills/harm
 
 ## Model (one file per product)
 
-Four Figma **product** files, one per product — each a 1:1 mirror of its `@dltkrichardhuska/harmony-design-system-shadcn-<product>` package — plus one **shared Icons library** (`external.config.json` → `iconsLibrary`) whose glyph components are INSTANCE_SWAPped by every product’s public `Icon`:
+Four Figma **product** files, one per product — each a 1:1 mirror of `@dltkrichardhuska/harmony-design-system-shadcn/<product>` — plus one **shared Icons library** (`external.config.json` → `iconsLibrary`) whose glyph components are INSTANCE_SWAPped by every product’s public `Icon`:
 
 | Product | File name | Role |
 |---------|-----------|------|
@@ -385,7 +385,7 @@ Runs per element only after verify PASS, `needs-publish`, and a successful human
 1. Identify the shadcn export (the Figma component is already named for it).
 2. `get_context_for_code_connect` on the node + read the shadcn component's exported prop unions / `docs/components/<Name>.md`.
 3. Author a parserless template (mostly identity maps since Figma props mirror shadcn); `example` imports from the file's own product package `…-<product>/components`. Write with `add_code_connect_map` / `send_code_connect_mappings`. (Optional committed `.figma.ts` mirror is off by default — see `codeConnect.committedMirror`.)
-4. Add **custom instructions** for Make: install `@dltkrichardhuska/harmony-design-system-shadcn-<product>` for this file's product, `import '.../styles/globals.css'` (Tailwind v4 — no preset/config/content globs), wrap in a **mode-only** `HarmonyThemeProvider` (`defaultMode` only), use `Icon` name strings.
+4. Add **custom instructions** for Make: install `@dltkrichardhuska/harmony-design-system-shadcn` and import `@dltkrichardhuska/harmony-design-system-shadcn/<product>` for this file's product, `import '.../<product>/styles/globals.css'` (Tailwind v4 — no preset/config/content globs), wrap in a **mode-only** `HarmonyThemeProvider` (`defaultMode` only), use `Icon` name strings.
 5. Verify via `get_code_connect_map`. Record `codeConnectStatus` in the node registry.
 
 **Maintenance (reverse dependency):** the shadcn converter flags a mapping **stale** on Consumer-API delta or version bump; the figma converter re-authors/republishes and clears the flag.

@@ -23,10 +23,10 @@ Machine-readable / agent-oriented artifacts for `@dltkrichardhuska/harmony-desig
 
 ## Per-product delivery
 
-Artifacts are authored once against the multi-product source, then **specialized per product** by the flatten build (`packages/ui/scripts/build-product.mjs`) into `dist-products/<product>/`:
+Artifacts are authored once against the multi-product source, then **specialized per product** by the flatten build (`packages/ui/scripts/build-product.mjs`) into `dist-products/<product>/`, reached as `@dltkrichardhuska/harmony-design-system-shadcn/<product>/AGENTS.md` (and `llms.txt`, `docs/`, `registry.json`):
 
-- `AGENTS.md` / `llms.txt` get a prepended **single-product banner** (fixed product, mode-only provider, no product switching, product-excluded components not exported).
-- `docs/` is copied into each product build; `registry.json` + `registry/new-york/` are **regenerated** per product (shims import the product package name; excluded components dropped). The bundled Tailwind v4 `globals.css` + fonts carry through unchanged.
+- `AGENTS.md` / `llms.txt` get a prepended **single-product banner** (fixed product via import subpath, mode-only provider, no product switching, product-excluded components not exported).
+- `docs/` is copied into each product build; import examples are rewritten to `@pkg/<product>`. `registry.json` + `registry/new-york/` are **regenerated** per product (shims import `@pkg/<product>/components`; npm `dependencies` stay the bare package; excluded components dropped). The bundled Tailwind v4 `globals.css` + fonts carry through unchanged.
 - Product-exclusive components (`componentProducts` in the reference catalog → `products` in `conversion.manifest.json`) are excluded from the product builds where they do not apply; when their docs become product-specific, drop the corresponding `docs/components/*.md` in non-matching builds.
 - Authoring stays in `packages/ui/`; never hand-maintain four parallel artifact copies.
 

@@ -6,7 +6,7 @@
 
 - Read AGENTS.md in this package first
 - Demo Getting Started: /getting-started on the conversion demo site (port 5177)
-- Bootstrap: import `styles/globals.css` once (Tailwind v4, zero config — no preset/content) + HarmonyThemeProvider. Fonts are bundled (no @fontsource). Product-fixed builds are mode-only; the unsuffixed dev source takes `defaultProduct`.
+- Bootstrap: import a product subpath `styles/globals.css` once (Tailwind v4, zero config — no preset/content) + HarmonyThemeProvider. Fonts are bundled (no @fontsource). Product subpaths are mode-only; the unsuffixed dev source takes `defaultProduct`.
 - **Tokens:** CSS variables (`styles/tokens.css`) surfaced as Tailwind utilities via the `@theme` block in `globals.css`. No JSON token export.
 - **Style:** prefer theme utilities (`bg-card`, `gap-2`, `rounded-lg`, `transition-colors`); `var(--…)` only when unmapped
 - **Catalog map:** Dropdown→`Select`; Hybrid C `*Field` for labels; no Lucide / no `iconLibrary`

@@ -168,6 +168,13 @@ export function AlertsDemo() {
           </div>
         </DemoExampleGroup>
 
+        <DemoExampleGroup title="Without Title" description="Simpler alerts without a title.">
+          <div className="flex max-w-2xl flex-col gap-3">
+            <Alert variant="info">A simple informational message.</Alert>
+            <Alert variant="success">Operation completed successfully.</Alert>
+          </div>
+        </DemoExampleGroup>
+
         <DemoExampleGroup
           title="Enhanced"
           description="Accent border, actions, link, and composed ProgressBar via progressValue."

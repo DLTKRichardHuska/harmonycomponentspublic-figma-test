@@ -1,6 +1,6 @@
-# Code Connect to shadcn per-product packages
+# Code Connect to shadcn product subpaths
 
-How each product file's Figma components are Code-Connected to `@dltkrichardhuska/harmony-design-system-shadcn-<product>` so Figma Make implements designs with the right package. Based on the Phase 0 rerun ([`phase-0-findings.md`](phase-0-findings.md)).
+How each product file's Figma components are Code-Connected to `@dltkrichardhuska/harmony-design-system-shadcn/<product>` so Figma Make implements designs with the right import. Based on the Phase 0 rerun ([`phase-0-findings.md`](phase-0-findings.md)).
 
 ## Gates (all required per element)
 
@@ -30,13 +30,13 @@ const disabled = instance.getBoolean('disabled')
 const label = instance.getString('label')
 export default {
   example: figma.code`<Button variant="${variant}" size="${size}" ${disabled ? 'disabled' : ''}>${label}</Button>`,
-  imports: ["import { Button } from '@dltkrichardhuska/harmony-design-system-shadcn-vp/components'"],
+  imports: ["import { Button } from '@dltkrichardhuska/harmony-design-system-shadcn/vp/components'"],
   id: 'button',
   metadata: { nestable: true },
 }
 ```
 
-Swap the `-vp` import segment for each product file (`-cp` / `-ppm` / `-maconomy`). CP-only components are mapped in the CP file only.
+Swap the `/vp` import segment for each product file (`/cp` / `/ppm` / `/maconomy`). CP-only components are mapped in the CP file only.
 
 ### Icon (public product component)
 
@@ -50,7 +50,7 @@ const glyph = instance.getInstanceSwap('name')
 const name = glyph && glyph.type === 'INSTANCE' ? glyph.name : 'plus'
 export default {
   example: figma.code`<Icon name="${name}" size="${size}" />`,
-  imports: ["import { Icon } from '@dltkrichardhuska/harmony-design-system-shadcn-vp/components'"],
+  imports: ["import { Icon } from '@dltkrichardhuska/harmony-design-system-shadcn/vp/components'"],
   id: 'icon',
   metadata: { nestable: true },
 }
@@ -85,8 +85,8 @@ if (iconInst && iconInst.type === 'INSTANCE') {
 Full Make bootstrap: [`figma-make.md`](figma-make.md).
 
 Tell Figma Make to:
-- Install `@dltkrichardhuska/harmony-design-system-shadcn-<product>` for **this file's product** (unambiguous — one product per file).
-- `import '@dltkrichardhuska/harmony-design-system-shadcn-<product>/styles/globals.css'` (Tailwind v4 — **no** preset, `tailwind.config`, or `content` globs).
+- Install `@dltkrichardhuska/harmony-design-system-shadcn` and import `@dltkrichardhuska/harmony-design-system-shadcn/<product>` for **this file's product** (unambiguous — one product per file).
+- `import '@dltkrichardhuska/harmony-design-system-shadcn/<product>/styles/globals.css'` (Tailwind v4 — **no** preset, `tailwind.config`, or `content` globs).
 - Wrap the app in a **mode-only** `HarmonyThemeProvider` (`defaultMode` only — no `defaultProduct`).
 - Prefer Harmony `<Icon name="…" size="…" />` from Code Connect; use `Icon` name strings — never Lucide/Tabler/Heroicons directly.
 - When a parent has an `icon` **string** prop, pass the glyph component name (from the nested Icon’s `name` swap), not JSX.

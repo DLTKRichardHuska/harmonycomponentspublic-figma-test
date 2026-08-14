@@ -171,11 +171,15 @@ function validateElementStrategy(key, el, elements, result, strategyPolicy) {
  * A `gap` element must record the accepted `userDecision`.
  * This prevents marking elements complete without proof they synced correctly.
  */
-function validateElementVerification(key, el, conversionDir, result) {
+function verifierAgentName(converterId) {
+  return converterId ? `${converterId}-verifier` : 'the target verifier';
+}
+
+function validateElementVerification(key, el, conversionDir, result, converterId) {
   if (el.status === 'synced') {
     if (!el.verificationReport) {
       result.errors.push(
-        `elements.${key}.status is 'synced' but verificationReport is missing — verify via harmony-design-system-react-mui-verifier before marking synced`,
+        `elements.${key}.status is 'synced' but verificationReport is missing — verify via ${verifierAgentName(converterId)} before marking synced`,
       );
     } else if (conversionDir && !existsSync(join(conversionDir, el.verificationReport))) {
       result.errors.push(
@@ -260,7 +264,7 @@ function validateConversionFields(manifest, result, conversionDir) {
     if (!el.harmonySource) {
       result.errors.push(`elements.${key}.harmonySource required`);
     }
-    validateElementVerification(key, el, conversionDir, result);
+    validateElementVerification(key, el, conversionDir, result, manifest.converterId);
     validateElementStrategy(key, el, elements, result, strategyPolicy);
   }
 
@@ -272,7 +276,7 @@ function validateConversionFields(manifest, result, conversionDir) {
     if (!el.harmonySource) {
       result.errors.push(`elements.${key}.harmonySource required`);
     }
-    validateElementVerification(key, el, conversionDir, result);
+    validateElementVerification(key, el, conversionDir, result, manifest.converterId);
     validateElementStrategy(key, el, elements, result, strategyPolicy);
   }
 }

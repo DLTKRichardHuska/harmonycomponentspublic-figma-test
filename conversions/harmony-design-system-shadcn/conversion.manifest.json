@@ -100,7 +100,7 @@
       "blockedBy": [],
       "userDecision": "component ButtonGroup: shadcn Button Group; default strips child borders; data-variant on Button; horizontal stacks full-width max-md; buttonGroupVariants. Remediations 2026-07-19.",
       "notes": "Package + demo; border/responsive/hover/disabled remediations. Human accepted visual match (2026-07-19).",
-      "lastVerified": "2026-07-20T02:51:24.372Z",
+      "lastVerified": "2026-08-14T13:10:00.000Z",
       "verificationReport": "verification/reports/ButtonGroup-1.md"
     },
     "Input": {
@@ -254,11 +254,13 @@
       "harmonySource": "src/components/ui/Avatar.astro",
       "strategy": "component",
       "skippedProps": [],
-      "gaps": [],
       "blockedBy": [],
       "userDecision": "component Avatar: shadcn Avatar + Image/Fallback exports; convenience variant icon|initials|image; interactive button; omit AvatarGroup/AvatarBadge. avatarVariants. Consumer API approved batch 2026-07-18.",
-      "notes": "Package + demo /components/avatar. Human accepted visual match (2026-07-19).",
-      "lastVerified": "2026-07-20T02:35:05.186Z",
+      "notes": "Package + demo /components/avatar. Human accepted visual match (2026-07-19). Static hover/focus demo columns omitted (no staging).",
+      "gaps": [
+        "Static hover/focus interactive docs columns omitted (CSS pseudo; no staging classes)"
+      ],
+      "lastVerified": "2026-08-14T13:10:00.000Z",
       "verificationReport": "verification/reports/Avatar-1.md"
     },
     "Card": {
@@ -289,7 +291,7 @@
       "blockedBy": [],
       "userDecision": "component Badge: shadcn Badge + cva; sizes sm|md|lg (Astro small/medium/large); default lg; icon via Icon; badgeVariants. Demo chrome uses Badge via demoStatusBadge. Consumer API approved batch 2026-07-18.",
       "notes": "Package + demo /components/badges + demo chrome. Human accepted visual match (2026-07-19).",
-      "lastVerified": "2026-07-20T02:35:05.186Z",
+      "lastVerified": "2026-08-14T01:35:00.000Z",
       "verificationReport": "verification/reports/Badge-1.md"
     },
     "NotificationBadge": {
@@ -301,7 +303,7 @@
       "blockedBy": [],
       "userDecision": "component NotificationBadge: children wrap anchor for auto top-right (AI-friendly); standalone without children; type/size/variant/value/border; notificationBadgeVariants. Consumer API delta 2026-07-19.",
       "notes": "Package + demo; children wrap API (AI-friendly). Human accepted visual match (2026-07-19).",
-      "lastVerified": "2026-07-20T02:48:53.654Z",
+      "lastVerified": "2026-08-14T13:10:00.000Z",
       "verificationReport": "verification/reports/NotificationBadge-1.md"
     },
     "Chip": {
@@ -319,7 +321,7 @@
       "blockedBy": [],
       "userDecision": "component Chip: cva (no stock Chip); fill|outline; types chip|dots|overflow; removable/onRemove; omit legacy selected and static state props. chipVariants. Consumer API approved batch 2026-07-18.",
       "notes": "Package + demo /components/chips. Human accepted visual match (2026-07-19).",
-      "lastVerified": "2026-07-20T02:35:05.186Z",
+      "lastVerified": "2026-08-14T01:35:00.000Z",
       "verificationReport": "verification/reports/Chip-1.md"
     },
     "Alert": {
@@ -331,7 +333,7 @@
       "blockedBy": [],
       "userDecision": "component Alert: shadcn Alert + AlertTitle/Description/Action; appearance default|enhanced (not style); compose Icon/Button/ProgressBar; onDismiss controlled; primaryAction/secondaryAction. alertVariants. Consumer API approved batch 2026-07-18. ProgressBar implemented first in batch.",
       "notes": "Package + demo /components/alerts. Human accepted visual match (2026-07-19).",
-      "lastVerified": "2026-07-20T02:35:05.186Z",
+      "lastVerified": "2026-08-14T01:45:00.000Z",
       "verificationReport": "verification/reports/Alert-1.md"
     },
     "Tooltip": {
@@ -371,7 +373,7 @@
       "blockedBy": [],
       "userDecision": "component ProgressBar: shadcn Progress / Radix; value/max/size sm|md|lg/variant/showLabel; progressBarVariants; full size parity. Consumer API approved in status-components batch plan 2026-07-18.",
       "notes": "Package + demo /components/progress-bar. Human accepted visual match (2026-07-19).",
-      "lastVerified": "2026-07-20T02:35:05.186Z",
+      "lastVerified": "2026-08-14T01:35:00.000Z",
       "verificationReport": "verification/reports/ProgressBar-1.md"
     },
     "Table": {
@@ -407,8 +409,9 @@
       ],
       "blockedBy": [],
       "userDecision": "component Tabs/TabsList/TabsTrigger/TabsContent (+TabsAddButton, useTabOverflow) on @radix-ui/react-tabs; composition-first full parity: variant default|compact|pill (pill VP-only), iconPosition, per-tab actions slot, add-tab, overflow scroll + auto menu; kebab/overflow via new DropdownMenu (@radix-ui/react-dropdown-menu) inlining Select tokens (no shared module, no Select refactor). Consumer API per plans/tabstrip.md 2026-07-20.",
-      "notes": "Implemented package (tabs + dropdown-menu) + demo (12 sections) + docs; human accepted visual match 2026-07-20. shadcn-AI ergonomics pass: TabsTrigger supports icon-as-child + asChild; overflow narrowed to none|scroll (auto menu via useTabOverflow).",
-      "lastVerified": "2026-07-21T00:44:00.000Z"
+      "notes": "Implemented package (tabs + dropdown-menu) + demo (12 sections) + docs; human accepted visual match 2026-07-20. shadcn-AI ergonomics pass: TabsTrigger supports icon-as-child + asChild; overflow narrowed to none|scroll (auto menu via useTabOverflow). Verifier PASS TabStrip-1 (2026-08-13 re-verify).",
+      "lastVerified": "2026-08-14T01:35:00.000Z",
+      "verificationReport": "verification/reports/TabStrip-1.md"
     },
     "Stepper": {
       "status": "synced",
@@ -421,8 +424,9 @@
       ],
       "blockedBy": [],
       "userDecision": "component Stepper/Step custom compound (no Radix); cva state variants + tokens; Stepper clones Step children to inject index/state; activeStep/orientation/nonLinear/onStepClick; Step completed/disabled/error/warning/success/icon/description. Consumer API per plans/stepper.md 2026-07-20.",
-      "notes": "Implemented package + demo (7 sections) + docs; human accepted visual match 2026-07-20.",
-      "lastVerified": "2026-07-21T00:44:00.000Z"
+      "notes": "Implemented package + demo (7 sections) + docs; human accepted visual match 2026-07-20. Verifier PASS Stepper-1 (2026-08-13 re-verify).",
+      "lastVerified": "2026-08-14T01:35:00.000Z",
+      "verificationReport": "verification/reports/Stepper-1.md"
     },
     "Step": {
       "status": "synced",
@@ -432,8 +436,9 @@
       "gaps": [],
       "blockedBy": [],
       "userDecision": "component Step: sub-component of Stepper, planned/shipped together. Consumer API per plans/stepper.md 2026-07-20.",
-      "notes": "Shipped with Stepper; human accepted visual match 2026-07-20.",
-      "lastVerified": "2026-07-21T00:44:00.000Z"
+      "notes": "Shipped with Stepper; human accepted visual match 2026-07-20. Verifier PASS Stepper-1 (2026-08-13 re-verify).",
+      "lastVerified": "2026-08-14T01:35:00.000Z",
+      "verificationReport": "verification/reports/Stepper-1.md"
     },
     "FloatingNav": {
       "status": "synced",
@@ -700,8 +705,9 @@
       "gaps": [],
       "blockedBy": [],
       "userDecision": "component ListMenu / ListMenuItem / ListMenuButton: SidebarMenu-shaped compound (ul/li/button), Tailwind + cva, no Radix (Slot for asChild). isActive + data-active; optional icon name prop or composed children; variant default | no-borders. No Astro items[] / as / isCustom / customSrc. Consumer API per plans/list-menu.md 2026-07-20.",
-      "notes": "Implemented package + demo + docs; human accepted visual match 2026-07-20.",
-      "lastVerified": "2026-07-20T23:40:00.000Z"
+      "notes": "Implemented package + demo + docs; human accepted visual match 2026-07-20. Verifier PASS ListMenu-1 (2026-08-13 re-verify).",
+      "lastVerified": "2026-08-14T01:35:00.000Z",
+      "verificationReport": "verification/reports/ListMenu-1.md"
     }
   },
   "deliverables": {

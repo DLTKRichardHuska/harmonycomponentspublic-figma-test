@@ -15,6 +15,7 @@
   },
   "files": [
     "dist",
+    "dist-products",
     "src/components",
     "src/layouts",
     "src/styles",
@@ -46,7 +47,95 @@
       "import": "./src/lib/utils.ts"
     },
     "./styles/*": "./src/styles/*",
-    "./registry.json": "./registry.json"
+    "./registry.json": "./registry.json",
+    "./cp": {
+      "types": "./dist-products/cp/src/index.ts",
+      "import": "./dist-products/cp/src/index.ts"
+    },
+    "./cp/theme": {
+      "types": "./dist-products/cp/src/theme/index.tsx",
+      "import": "./dist-products/cp/src/theme/index.tsx"
+    },
+    "./cp/components": {
+      "types": "./dist-products/cp/src/components/index.ts",
+      "import": "./dist-products/cp/src/components/index.ts"
+    },
+    "./cp/utils": {
+      "types": "./dist-products/cp/src/lib/utils.ts",
+      "import": "./dist-products/cp/src/lib/utils.ts"
+    },
+    "./cp/styles/*": "./dist-products/cp/src/styles/*",
+    "./cp/registry.json": "./dist-products/cp/registry.json",
+    "./cp/AGENTS.md": "./dist-products/cp/AGENTS.md",
+    "./cp/llms.txt": "./dist-products/cp/llms.txt",
+    "./cp/docs/*": "./dist-products/cp/docs/*",
+    "./cp/registry/*": "./dist-products/cp/registry/*",
+    "./vp": {
+      "types": "./dist-products/vp/src/index.ts",
+      "import": "./dist-products/vp/src/index.ts"
+    },
+    "./vp/theme": {
+      "types": "./dist-products/vp/src/theme/index.tsx",
+      "import": "./dist-products/vp/src/theme/index.tsx"
+    },
+    "./vp/components": {
+      "types": "./dist-products/vp/src/components/index.ts",
+      "import": "./dist-products/vp/src/components/index.ts"
+    },
+    "./vp/utils": {
+      "types": "./dist-products/vp/src/lib/utils.ts",
+      "import": "./dist-products/vp/src/lib/utils.ts"
+    },
+    "./vp/styles/*": "./dist-products/vp/src/styles/*",
+    "./vp/registry.json": "./dist-products/vp/registry.json",
+    "./vp/AGENTS.md": "./dist-products/vp/AGENTS.md",
+    "./vp/llms.txt": "./dist-products/vp/llms.txt",
+    "./vp/docs/*": "./dist-products/vp/docs/*",
+    "./vp/registry/*": "./dist-products/vp/registry/*",
+    "./ppm": {
+      "types": "./dist-products/ppm/src/index.ts",
+      "import": "./dist-products/ppm/src/index.ts"
+    },
+    "./ppm/theme": {
+      "types": "./dist-products/ppm/src/theme/index.tsx",
+      "import": "./dist-products/ppm/src/theme/index.tsx"
+    },
+    "./ppm/components": {
+      "types": "./dist-products/ppm/src/components/index.ts",
+      "import": "./dist-products/ppm/src/components/index.ts"
+    },
+    "./ppm/utils": {
+      "types": "./dist-products/ppm/src/lib/utils.ts",
+      "import": "./dist-products/ppm/src/lib/utils.ts"
+    },
+    "./ppm/styles/*": "./dist-products/ppm/src/styles/*",
+    "./ppm/registry.json": "./dist-products/ppm/registry.json",
+    "./ppm/AGENTS.md": "./dist-products/ppm/AGENTS.md",
+    "./ppm/llms.txt": "./dist-products/ppm/llms.txt",
+    "./ppm/docs/*": "./dist-products/ppm/docs/*",
+    "./ppm/registry/*": "./dist-products/ppm/registry/*",
+    "./maconomy": {
+      "types": "./dist-products/maconomy/src/index.ts",
+      "import": "./dist-products/maconomy/src/index.ts"
+    },
+    "./maconomy/theme": {
+      "types": "./dist-products/maconomy/src/theme/index.tsx",
+      "import": "./dist-products/maconomy/src/theme/index.tsx"
+    },
+    "./maconomy/components": {
+      "types": "./dist-products/maconomy/src/components/index.ts",
+      "import": "./dist-products/maconomy/src/components/index.ts"
+    },
+    "./maconomy/utils": {
+      "types": "./dist-products/maconomy/src/lib/utils.ts",
+      "import": "./dist-products/maconomy/src/lib/utils.ts"
+    },
+    "./maconomy/styles/*": "./dist-products/maconomy/src/styles/*",
+    "./maconomy/registry.json": "./dist-products/maconomy/registry.json",
+    "./maconomy/AGENTS.md": "./dist-products/maconomy/AGENTS.md",
+    "./maconomy/llms.txt": "./dist-products/maconomy/llms.txt",
+    "./maconomy/docs/*": "./dist-products/maconomy/docs/*",
+    "./maconomy/registry/*": "./dist-products/maconomy/registry/*"
   },
   "scripts": {
     "build:lib": "tsup",

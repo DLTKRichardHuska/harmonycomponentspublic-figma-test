@@ -36,6 +36,7 @@
     "dev": "vite",
     "build": "npm run build:lib",
     "build:lib": "tsup",
+    "build:standalone": "tsup --config tsup.standalone.config.ts",
     "typecheck": "tsc --noEmit",
     "preview": "vite preview"
   },

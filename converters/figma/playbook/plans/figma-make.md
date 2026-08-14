@@ -1,19 +1,19 @@
 # Figma Make — consuming Harmony via Code Connect
 
-How Figma Make should implement designs from a Harmony product file using the matching shadcn per-product package. Authoring details live in [`code-connect.md`](code-connect.md).
+How Figma Make should implement designs from a Harmony product file using the matching shadcn product subpath. Authoring details live in [`code-connect.md`](code-connect.md).
 
-## Pick the package from the file
+## Pick the import from the file
 
-Each Figma file is **one product**. Install exactly that product’s package:
+Each Figma file is **one product**. Install the one package, then import that product’s subpath:
 
-| Figma file | Package |
-|------------|---------|
-| Harmony Design System (VP) | `@dltkrichardhuska/harmony-design-system-shadcn-vp` |
-| Harmony Design System (PPM) | `@dltkrichardhuska/harmony-design-system-shadcn-ppm` |
-| Harmony Design System (Maconomy) | `@dltkrichardhuska/harmony-design-system-shadcn-maconomy` |
-| Harmony Design System (CP) | `@dltkrichardhuska/harmony-design-system-shadcn-cp` |
+| Figma file | Import |
+|------------|--------|
+| Harmony Design System (VP) | `@dltkrichardhuska/harmony-design-system-shadcn/vp` |
+| Harmony Design System (PPM) | `@dltkrichardhuska/harmony-design-system-shadcn/ppm` |
+| Harmony Design System (Maconomy) | `@dltkrichardhuska/harmony-design-system-shadcn/maconomy` |
+| Harmony Design System (CP) | `@dltkrichardhuska/harmony-design-system-shadcn/cp` |
 
-Do **not** install the unsuffixed `@dltkrichardhuska/harmony-design-system-shadcn` multi-product source in Make apps.
+Do **not** import the unsuffixed `@dltkrichardhuska/harmony-design-system-shadcn` multi-product source in Make apps.
 
 ## Private registry auth
 
@@ -21,17 +21,17 @@ Packages are `access: restricted` on GitHub Packages under `@dltkrichardhuska`. 
 
 ## App bootstrap (every Make project)
 
-1. Install the product package for this file (table above).
+1. Install `@dltkrichardhuska/harmony-design-system-shadcn` and import the product subpath for this file (table above).
 2. Import Tailwind v4 globals (no preset, no `tailwind.config`, no `content` globs):
 
 ```ts
-import '@dltkrichardhuska/harmony-design-system-shadcn-<product>/styles/globals.css'
+import '@dltkrichardhuska/harmony-design-system-shadcn/<product>/styles/globals.css'
 ```
 
 3. Wrap the app in a **mode-only** provider (`defaultMode` only — **no** `defaultProduct`):
 
 ```tsx
-import { HarmonyThemeProvider } from '@dltkrichardhuska/harmony-design-system-shadcn-<product>'
+import { HarmonyThemeProvider } from '@dltkrichardhuska/harmony-design-system-shadcn/<product>'
 
 export function App({ children }: { children: React.ReactNode }) {
   return (
@@ -54,10 +54,10 @@ Dev Mode / Make read Code Connect mappings authored by the figma converter (`add
 
 ## Custom instructions (paste into mappings / Make)
 
-Use per product file (swap the package suffix):
+Use per product file (swap the subpath):
 
-- Install `@dltkrichardhuska/harmony-design-system-shadcn-<product>` for **this file’s product**.
-- `import '@dltkrichardhuska/harmony-design-system-shadcn-<product>/styles/globals.css'` (Tailwind v4 — no preset/config/content globs).
+- Install `@dltkrichardhuska/harmony-design-system-shadcn` and import `@dltkrichardhuska/harmony-design-system-shadcn/<product>` for **this file’s product**.
+- `import '@dltkrichardhuska/harmony-design-system-shadcn/<product>/styles/globals.css'` (Tailwind v4 — no preset/config/content globs).
 - Wrap the app in a mode-only `HarmonyThemeProvider` (`defaultMode` only).
 - Prefer Harmony `<Icon name="…" size="…" />`; never Lucide/Tabler/Heroicons directly.
 - For string `icon` props, pass the glyph component name (nested Icon `name` swap), not JSX.

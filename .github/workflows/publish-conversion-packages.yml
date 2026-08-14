@@ -67,6 +67,11 @@ jobs:
         working-directory: ${{ matrix.install_dir }}
         run: npm run build:lib
 
+      - name: Flatten product subpaths
+        if: matrix.id == 'harmony-design-system-shadcn'
+        working-directory: ${{ matrix.install_dir }}
+        run: npm run build:products
+
       - name: Publish to GitHub Packages
         working-directory: ${{ matrix.publish_dir }}
         env:

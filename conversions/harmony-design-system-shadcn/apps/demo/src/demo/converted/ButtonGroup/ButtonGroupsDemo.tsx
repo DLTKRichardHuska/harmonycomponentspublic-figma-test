@@ -68,8 +68,8 @@ export function ButtonGroupsDemo() {
 
 <ButtonGroup aria-label="View period">
   <Button variant="primary">Day</Button>
-  <Button variant="outline">Week</Button>
-  <Button variant="outline">Month</Button>
+  <Button variant="ghost">Week</Button>
+  <Button variant="ghost">Month</Button>
 </ButtonGroup>`}
       />
 
@@ -77,13 +77,24 @@ export function ButtonGroupsDemo() {
 
       <DemoSection id="examples" title="Examples">
         <DemoExampleGroup
-          title="Default segmented"
-          description="Selected = primary. Unselected children lose their borders inside the shell (reference parity)."
+          title="Default Variant (Container with Border)"
+          description="Bordered shell with spaced buttons. Selected = primary fill; unselected sit in the tray."
+        >
+          <ButtonGroup aria-label="Selected options">
+            <Button variant="primary">Selected</Button>
+            <Button variant="ghost">Option 1</Button>
+            <Button variant="ghost">Option 2</Button>
+          </ButtonGroup>
+        </DemoExampleGroup>
+
+        <DemoExampleGroup
+          title="Default Variant - Toggle Example"
+          description="Button group used as a toggle with selected and unselected states."
         >
           <ButtonGroup aria-label="View period">
             <Button variant="primary">Day</Button>
-            <Button variant="outline">Week</Button>
-            <Button variant="outline">Month</Button>
+            <Button variant="ghost">Week</Button>
+            <Button variant="ghost">Month</Button>
           </ButtonGroup>
         </DemoExampleGroup>
 
@@ -98,12 +109,25 @@ export function ButtonGroupsDemo() {
           </ButtonGroup>
         </DemoExampleGroup>
 
-        <DemoExampleGroup title="Vertical" description="Stack segments vertically.">
-          <ButtonGroup orientation="vertical" aria-label="Vertical options">
-            <Button variant="primary">Option 1</Button>
-            <Button variant="outline">Option 2</Button>
-            <Button variant="outline">Option 3</Button>
-          </ButtonGroup>
+        <DemoExampleGroup title="Orientation Variants" description="Horizontal (default) or vertical.">
+          <div className="flex flex-col items-start gap-4">
+            <div>
+              <p className="mb-2 text-sm text-secondary">Horizontal (default)</p>
+              <ButtonGroup orientation="horizontal" aria-label="Horizontal options">
+                <Button variant="primary">Option 1</Button>
+                <Button variant="ghost">Option 2</Button>
+                <Button variant="ghost">Option 3</Button>
+              </ButtonGroup>
+            </div>
+            <div>
+              <p className="mb-2 text-sm text-secondary">Vertical</p>
+              <ButtonGroup orientation="vertical" aria-label="Vertical options">
+                <Button variant="primary">Option 1</Button>
+                <Button variant="ghost">Option 2</Button>
+                <Button variant="ghost">Option 3</Button>
+              </ButtonGroup>
+            </div>
+          </div>
         </DemoExampleGroup>
 
         <DemoExampleGroup
@@ -114,29 +138,96 @@ export function ButtonGroupsDemo() {
             <Button variant="primary" disabled>
               Selected
             </Button>
-            <Button variant="outline" disabled>
+            <Button variant="ghost" disabled>
               Option 1
             </Button>
-            <Button variant="outline" disabled>
+            <Button variant="ghost" disabled>
               Option 2
             </Button>
           </ButtonGroup>
         </DemoExampleGroup>
 
         <DemoExampleGroup
-          title="With icons"
+          title="Multiple Button Counts"
+          description="Button groups work with 2, 5, and 10 buttons."
+        >
+          <div className="flex flex-col items-start gap-4">
+            <div>
+              <p className="mb-2 text-sm text-secondary">2 Buttons</p>
+              <ButtonGroup aria-label="Two buttons">
+                <Button variant="primary">Option 1</Button>
+                <Button variant="ghost">Option 2</Button>
+              </ButtonGroup>
+            </div>
+            <div>
+              <p className="mb-2 text-sm text-secondary">5 Buttons</p>
+              <ButtonGroup aria-label="Five buttons">
+                <Button variant="primary">Option 1</Button>
+                <Button variant="ghost">Option 2</Button>
+                <Button variant="ghost">Option 3</Button>
+                <Button variant="ghost">Option 4</Button>
+                <Button variant="ghost">Option 5</Button>
+              </ButtonGroup>
+            </div>
+            <div>
+              <p className="mb-2 text-sm text-secondary">10 Buttons</p>
+              <ButtonGroup aria-label="Ten buttons">
+                {['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'].map((n) => (
+                  <Button key={n} variant={n === '1' ? 'primary' : 'ghost'}>
+                    {n}
+                  </Button>
+                ))}
+              </ButtonGroup>
+            </div>
+          </div>
+        </DemoExampleGroup>
+
+        <DemoExampleGroup
+          title="With icons and text"
           description="Use the Button icon prop — no separate icon imports."
         >
           <ButtonGroup aria-label="Actions with icons">
             <Button variant="primary" icon="plus">
-              Create
+              Button 1
             </Button>
-            <Button variant="outline" icon="squares-2x2">
-              Grid
+            <Button variant="ghost" icon="squares-2x2">
+              Button 2
             </Button>
-            <Button variant="outline" icon="chart-bar">
-              Chart
+            <Button variant="ghost" icon="chart-bar">
+              Button 3
             </Button>
+          </ButtonGroup>
+          <div className="mt-6 flex flex-col items-start gap-4">
+            <p className="text-sm text-secondary">With icons and text at every size:</p>
+            {(['sm', 'md', 'lg'] as const).map((size) => (
+              <div key={size}>
+                <p className="mb-2 text-sm text-secondary">
+                  {size === 'sm' ? 'Small' : size === 'md' ? 'Medium' : 'Large'}
+                </p>
+                <ButtonGroup size={size} aria-label={`${size} icon text group`}>
+                  <Button variant="primary" size={size} icon="plus">
+                    Button 1
+                  </Button>
+                  <Button variant="ghost" size={size} icon="squares-2x2">
+                    Button 2
+                  </Button>
+                  <Button variant="ghost" size={size} icon="chart-bar">
+                    Button 3
+                  </Button>
+                </ButtonGroup>
+              </div>
+            ))}
+          </div>
+        </DemoExampleGroup>
+
+        <DemoExampleGroup
+          title="Default Variant - With Icons"
+          description="Icon-only buttons in the default variant."
+        >
+          <ButtonGroup aria-label="Text formatting">
+            <Button variant="primary" icon="bold" aria-label="Bold" />
+            <Button variant="ghost" icon="italic" aria-label="Italic" />
+            <Button variant="ghost" icon="underline" aria-label="Underline" />
           </ButtonGroup>
         </DemoExampleGroup>
 
@@ -146,10 +237,10 @@ export function ButtonGroupsDemo() {
               <Button variant="primary" size="sm">
                 Option 1
               </Button>
-              <Button variant="outline" size="sm">
+              <Button variant="ghost" size="sm">
                 Option 2
               </Button>
-              <Button variant="outline" size="sm">
+              <Button variant="ghost" size="sm">
                 Option 3
               </Button>
             </ButtonGroup>
@@ -157,10 +248,10 @@ export function ButtonGroupsDemo() {
               <Button variant="primary" size="md">
                 Option 1
               </Button>
-              <Button variant="outline" size="md">
+              <Button variant="ghost" size="md">
                 Option 2
               </Button>
-              <Button variant="outline" size="md">
+              <Button variant="ghost" size="md">
                 Option 3
               </Button>
             </ButtonGroup>
@@ -168,10 +259,10 @@ export function ButtonGroupsDemo() {
               <Button variant="primary" size="lg">
                 Option 1
               </Button>
-              <Button variant="outline" size="lg">
+              <Button variant="ghost" size="lg">
                 Option 2
               </Button>
-              <Button variant="outline" size="lg">
+              <Button variant="ghost" size="lg">
                 Option 3
               </Button>
             </ButtonGroup>
@@ -184,9 +275,9 @@ export function ButtonGroupsDemo() {
         >
           <ButtonGroup className="max-w-md" aria-label="Responsive group">
             <Button variant="primary">Day</Button>
-            <Button variant="outline">Week</Button>
-            <Button variant="outline">Month</Button>
-            <Button variant="outline">Year</Button>
+            <Button variant="ghost">Week</Button>
+            <Button variant="ghost">Month</Button>
+            <Button variant="ghost">Year</Button>
           </ButtonGroup>
         </DemoExampleGroup>
       </DemoSection>
@@ -211,7 +302,7 @@ export function ButtonGroupsDemo() {
           </A11yCard>
           <A11yCard icon="cursor-arrow-rays" title="Selection">
             Mark the selected segment with <code>variant=&quot;primary&quot;</code>; unselected
-            segments typically use <code>outline</code> or <code>secondary</code>.
+            segments typically use <code>ghost</code>.
           </A11yCard>
         </div>
       </DemoSection>

@@ -15,16 +15,16 @@ const npmrcScopeExample = `# .npmrc — scope only; the token comes from the gh 
 const ghLoginExample = `gh auth login --scopes read:packages
 npm config set //npm.pkg.github.com/:_authToken "$(gh auth token)"`;
 
-// Consumers install ONE product package (example uses -cp / Costpoint).
-// Substitute -vp / -ppm / -maconomy for other products. See docs/PRODUCT_BUILDS.md.
-const installExample = `npm install @dltkrichardhuska/harmony-design-system-shadcn-cp
+// Consumers install the one package, then import a product subpath (example: /cp).
+// Substitute /vp / /ppm / /maconomy. See docs/PRODUCT_BUILDS.md.
+const installExample = `npm install @dltkrichardhuska/harmony-design-system-shadcn
 # peers: React + Tailwind v4 (utilities/clsx/tailwind-merge ship with the package)
 npm install react react-dom
 npm install -D tailwindcss`;
 
 const stylesExample = `// main.tsx — import ONCE at the app root.
 // This single file loads Tailwind, the bundled fonts, and the product tokens.
-import '@dltkrichardhuska/harmony-design-system-shadcn-cp/styles/globals.css';`;
+import '@dltkrichardhuska/harmony-design-system-shadcn/cp/styles/globals.css';`;
 
 // Wire Tailwind v4 through whichever build tool the consumer already uses.
 // Vite is shown as one example; pick the row that matches your stack.
@@ -43,10 +43,10 @@ export default defineConfig({
   plugins: [react(), tailwindcss()],
 });`;
 
-const providerExample = `import { HarmonyThemeProvider } from '@dltkrichardhuska/harmony-design-system-shadcn-cp';
+const providerExample = `import { HarmonyThemeProvider } from '@dltkrichardhuska/harmony-design-system-shadcn/cp';
 
 export function App() {
-  // Product is fixed by the installed package (-cp here). There is no
+  // Product is fixed by the import subpath (/cp here). There is no
   // product switching — only light/dark mode is a runtime concern.
   return (
     <HarmonyThemeProvider defaultMode="light">
@@ -55,11 +55,11 @@ export function App() {
   );
 }`;
 
-const utilsExample = `import { cn } from '@dltkrichardhuska/harmony-design-system-shadcn-cp';
+const utilsExample = `import { cn } from '@dltkrichardhuska/harmony-design-system-shadcn/cp';
 
 <div className={cn('rounded-md border border-border bg-background', isActive && 'border-primary')} />`;
 
-const iconExample = `import { Icon } from '@dltkrichardhuska/harmony-design-system-shadcn-cp';
+const iconExample = `import { Icon } from '@dltkrichardhuska/harmony-design-system-shadcn/cp';
 
 <Icon name="home" size="md" />
 <Icon name="check-circle" size="lg" />
@@ -68,9 +68,9 @@ const iconExample = `import { Icon } from '@dltkrichardhuska/harmony-design-syst
 // If you were about to import lucide-react — don't.
 // Use Harmony name strings instead (home, check-circle, x-mark, magnifying-glass, chevron-down).`;
 
-const cursorRuleSnippet = `# Harmony shadcn (single product — example: -cp)
-- Read node_modules/@dltkrichardhuska/harmony-design-system-shadcn-cp/AGENTS.md (catalog→export map)
-- Product is fixed by the installed package — no product switching, no data-product/defaultProduct
+const cursorRuleSnippet = `# Harmony shadcn (single product — example: /cp)
+- Read @dltkrichardhuska/harmony-design-system-shadcn/cp/AGENTS.md (catalog→export map)
+- Product is fixed by the import subpath — no product switching, no data-product/defaultProduct
 - Tailwind v4, zero config: styles/globals.css does @import "tailwindcss" + @theme; no preset/content
 - Prefer theme utilities (bg-card, gap-2, rounded-lg, transition-colors); var(--…) only when unmapped
 - Icons: package Icon with name strings only — never lucide-react / heroicons / tabler at call sites
@@ -88,30 +88,31 @@ export function GettingStartedPage() {
     <div>
       <DemoPageHeader
         title="Getting Started"
-        description="Add the Harmony Design System shadcn/ui package to another project: install one product package, run Tailwind v4 (zero config), wire the theme provider, then build UI with package components and Tailwind utilities. Fonts are bundled."
+        description="Add the Harmony Design System shadcn/ui package to another project: install the package, import one product subpath, run Tailwind v4 (zero config), wire the theme provider, then build UI with package components and Tailwind utilities. Fonts are bundled."
       />
 
       <DemoSection id="for-developers" title="For developers">
         <div className="mb-4 max-w-2xl rounded-md border border-border bg-card p-3 text-sm text-muted-foreground">
           <strong className="text-foreground">Choose a product first.</strong> Harmony ships one
-          package per product. Pick the one for your app up front; after that it is a plain shadcn +
-          Tailwind + Radix library with no product switching. Available packages:
+          package with four product subpaths. Pick the subpath for your app up front; after that it
+          is a plain shadcn + Tailwind + Radix library with no product switching. Available
+          imports:
           <ul className="mt-2 list-disc space-y-1 pl-5">
             <li>
-              <code>@dltkrichardhuska/harmony-design-system-shadcn-cp</code> — Costpoint
+              <code>@dltkrichardhuska/harmony-design-system-shadcn/cp</code> — Costpoint
             </li>
             <li>
-              <code>@dltkrichardhuska/harmony-design-system-shadcn-vp</code> — Vantagepoint
+              <code>@dltkrichardhuska/harmony-design-system-shadcn/vp</code> — Vantagepoint
             </li>
             <li>
-              <code>@dltkrichardhuska/harmony-design-system-shadcn-ppm</code> — PPM
+              <code>@dltkrichardhuska/harmony-design-system-shadcn/ppm</code> — PPM
             </li>
             <li>
-              <code>@dltkrichardhuska/harmony-design-system-shadcn-maconomy</code> — Maconomy
+              <code>@dltkrichardhuska/harmony-design-system-shadcn/maconomy</code> — Maconomy
             </li>
           </ul>
           <p className="mt-2">
-            Examples below use the Costpoint (<code>-cp</code>) package — substitute your product.
+            Examples below use the Costpoint (<code>/cp</code>) subpath — substitute your product.
             See <code>docs/PRODUCT_BUILDS.md</code> in the package.
           </p>
         </div>
@@ -174,7 +175,7 @@ export function GettingStartedPage() {
         </h3>
         <p className="mb-2 max-w-2xl text-sm text-muted-foreground">
           The provider is <strong className="text-foreground">mode only</strong> — product is fixed
-          by the installed package. Set <code>defaultMode</code> (<code>light</code> /{' '}
+          by the import subpath. Set <code>defaultMode</code> (<code>light</code> /{' '}
           <code>dark</code>); toggle at runtime via <code>useHarmonyTheme</code>. There is no{' '}
           <code>defaultProduct</code>. The provider toggles the <code>dark</code> class on{' '}
           <code>&lt;html&gt;</code>.
@@ -186,8 +187,8 @@ export function GettingStartedPage() {
         </h3>
         <p className="mb-2 max-w-2xl text-sm text-muted-foreground">
           Use <code>cn()</code> and semantic Tailwind classes (<code>bg-background</code>,{' '}
-          <code>text-primary</code>, …). Import everything from the bare package specifier{' '}
-          <code>@dltkrichardhuska/harmony-design-system-shadcn-cp</code> (subpaths{' '}
+          <code>text-primary</code>, …). Import everything from the product subpath{' '}
+          <code>@dltkrichardhuska/harmony-design-system-shadcn/cp</code> (further subpaths{' '}
           <code>/components</code>, <code>/theme</code>, <code>/utils</code> still work). Foundation
           tokens: see{' '}
           <Link to="/foundation/colors" className="text-primary underline">
@@ -217,13 +218,13 @@ export function GettingStartedPage() {
         </p>
         <ul className="mb-6 max-w-2xl list-disc space-y-1.5 pl-5 text-sm text-muted-foreground">
           <li>
-            <code>node_modules/@dltkrichardhuska/harmony-design-system-shadcn-cp/AGENTS.md</code>
+            <code>@dltkrichardhuska/harmony-design-system-shadcn/cp/AGENTS.md</code>
           </li>
           <li>
-            <code>node_modules/@dltkrichardhuska/harmony-design-system-shadcn-cp/llms.txt</code>
+            <code>@dltkrichardhuska/harmony-design-system-shadcn/cp/llms.txt</code>
           </li>
           <li>
-            <code>node_modules/@dltkrichardhuska/harmony-design-system-shadcn-cp/docs/components/Icon.md</code>
+            <code>@dltkrichardhuska/harmony-design-system-shadcn/cp/docs/components/Icon.md</code>
           </li>
         </ul>
         <p className="mb-6 max-w-2xl text-sm text-muted-foreground">
@@ -239,7 +240,7 @@ export function GettingStartedPage() {
           <li>
             Bootstrap once: import <code>globals.css</code> (Tailwind v4, zero config) +
             HarmonyThemeProvider with <code>defaultMode</code> (mode only; product is fixed by the
-            installed package).
+            import subpath).
           </li>
           <li>
             Use public exports only (bare specifier, or <code>/theme</code>, <code>/utils</code>,{' '}

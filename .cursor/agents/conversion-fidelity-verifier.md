@@ -44,6 +44,7 @@ If target `VERIFIER.md` or router agent missing → **BLOCKED: cannot verify.**
 | Target id | Agent |
 |-----------|-------|
 | `harmony-design-system-react-mui` | **harmony-design-system-react-mui-verifier** |
+| `harmony-design-system-shadcn` | **harmony-design-system-shadcn-verifier** |
 | `figma` | **figma-verifier** |
 
 ## Output

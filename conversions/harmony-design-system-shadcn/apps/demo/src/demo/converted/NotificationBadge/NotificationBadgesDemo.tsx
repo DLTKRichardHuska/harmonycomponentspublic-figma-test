@@ -94,6 +94,90 @@ export function NotificationBadgesDemo() {
       <DemoArticleNav links={[...articleNav]} />
 
       <DemoSection id="examples" title="Examples">
+        <DemoExampleGroup title="Dot Badges" description="Simple circular dot indicators.">
+          <div className="flex flex-wrap items-start gap-8">
+            <div className="flex flex-col gap-2">
+              <span className="text-sm text-muted-foreground">Primary (Blue)</span>
+              <div className="flex flex-wrap items-center gap-3">
+                <NotificationBadge type="dot" variant="primary" size="sm" />
+                <NotificationBadge type="dot" variant="primary" size="md" />
+                <NotificationBadge type="dot" variant="primary" size="lg" />
+                <NotificationBadge type="dot" variant="primary" size="sm" border />
+                <NotificationBadge type="dot" variant="primary" size="md" border />
+                <NotificationBadge type="dot" variant="primary" size="lg" border />
+              </div>
+            </div>
+            <div className="flex flex-col gap-2">
+              <span className="text-sm text-muted-foreground">Error (Red)</span>
+              <div className="flex flex-wrap items-center gap-3">
+                <NotificationBadge type="dot" variant="error" size="sm" />
+                <NotificationBadge type="dot" variant="error" size="md" />
+                <NotificationBadge type="dot" variant="error" size="lg" />
+                <NotificationBadge type="dot" variant="error" size="sm" border />
+                <NotificationBadge type="dot" variant="error" size="md" border />
+                <NotificationBadge type="dot" variant="error" size="lg" border />
+              </div>
+            </div>
+          </div>
+        </DemoExampleGroup>
+
+        <DemoExampleGroup title="Number Badges" description="Badges displaying specific counts.">
+          <div className="flex flex-wrap items-start gap-8">
+            <div className="flex flex-col gap-2">
+              <span className="text-sm text-muted-foreground">Primary (Blue)</span>
+              <div className="flex flex-wrap items-center gap-3">
+                <NotificationBadge type="number" value={1} variant="primary" size="sm" />
+                <NotificationBadge type="number" value={1} variant="primary" size="md" />
+                <NotificationBadge type="number" value={1} variant="primary" size="lg" />
+                <NotificationBadge type="number" value={1} variant="primary" size="sm" border />
+                <NotificationBadge type="number" value={1} variant="primary" size="md" border />
+                <NotificationBadge type="number" value={1} variant="primary" size="lg" border />
+              </div>
+            </div>
+            <div className="flex flex-col gap-2">
+              <span className="text-sm text-muted-foreground">Error (Red)</span>
+              <div className="flex flex-wrap items-center gap-3">
+                <NotificationBadge type="number" value={5} variant="error" size="sm" />
+                <NotificationBadge type="number" value={5} variant="error" size="md" />
+                <NotificationBadge type="number" value={5} variant="error" size="lg" />
+                <NotificationBadge type="number" value={5} variant="error" size="sm" border />
+                <NotificationBadge type="number" value={5} variant="error" size="md" border />
+                <NotificationBadge type="number" value={5} variant="error" size="lg" border />
+              </div>
+            </div>
+          </div>
+        </DemoExampleGroup>
+
+        <DemoExampleGroup
+          title="Overflow Badges"
+          description="Badges for counts exceeding a threshold (e.g. '99+')."
+        >
+          <div className="flex flex-wrap items-start gap-8">
+            <div className="flex flex-col gap-2">
+              <span className="text-sm text-muted-foreground">Primary (Blue)</span>
+              <div className="flex flex-wrap items-center gap-3">
+                <NotificationBadge type="overflow" value="99+" variant="primary" size="sm" />
+                <NotificationBadge type="overflow" value="99+" variant="primary" size="md" />
+                <NotificationBadge type="overflow" value="99+" variant="primary" size="lg" />
+                <NotificationBadge type="overflow" value="99+" variant="primary" size="sm" border />
+                <NotificationBadge type="overflow" value="99+" variant="primary" size="md" border />
+                <NotificationBadge type="overflow" value="99+" variant="primary" size="lg" border />
+              </div>
+            </div>
+            <div className="flex flex-col gap-2">
+              <span className="text-sm text-muted-foreground">Error (Red)</span>
+              <div className="flex flex-wrap items-center gap-3">
+                <NotificationBadge type="overflow" value="99+" variant="error" size="sm" />
+                <NotificationBadge type="overflow" value="99+" variant="error" size="md" />
+                <NotificationBadge type="overflow" value="99+" variant="error" size="lg" />
+                <NotificationBadge type="overflow" value="99+" variant="error" size="sm" border />
+                <NotificationBadge type="overflow" value="99+" variant="error" size="md" border />
+                <NotificationBadge type="overflow" value="99+" variant="error" size="lg" border />
+              </div>
+            </div>
+          </div>
+        </DemoExampleGroup>
+
         <DemoExampleGroup
           title="On an anchor (recommended)"
           description="Pass Icon / Button / Avatar as children — no relative/absolute wrapper."
@@ -108,19 +192,6 @@ export function NotificationBadgesDemo() {
             <NotificationBadge type="overflow" value="99+" variant="error">
               <Icon name="bell" size="md" />
             </NotificationBadge>
-          </div>
-        </DemoExampleGroup>
-
-        <DemoExampleGroup
-          title="Standalone"
-          description="Omit children to render the indicator alone (inventory / docs)."
-        >
-          <div className="flex flex-wrap items-center gap-4">
-            <NotificationBadge type="dot" variant="primary" size="sm" />
-            <NotificationBadge type="dot" variant="error" size="md" />
-            <NotificationBadge type="number" value={1} variant="primary" size="sm" />
-            <NotificationBadge type="number" value={5} variant="error" size="md" />
-            <NotificationBadge type="overflow" value="99+" variant="primary" size="lg" />
           </div>
         </DemoExampleGroup>
 

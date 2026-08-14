@@ -46,10 +46,17 @@ function toTitle(id) {
 
 /**
  * Generate registry.json + registry/new-york/*.tsx under registryRoot.
- * `pkgName` is the npm package the shims import from (product-suffixed in
- * single-product builds). Returns the number of items written.
+ * `pkgName` is the npm package to install (always the bare package).
+ * `importSpecifier` is what shims import from (bare `@pkg` or `@pkg/<product>`).
  */
-export function generateRegistry({ registryRoot, pkgName, componentsIndexSrc, name, homepage }) {
+export function generateRegistry({
+  registryRoot,
+  pkgName,
+  importSpecifier = pkgName,
+  componentsIndexSrc,
+  name,
+  homepage,
+}) {
   const blocks = parseComponentExports(componentsIndexSrc);
   const dir = join(registryRoot, 'registry', 'new-york');
   rmSync(dir, { recursive: true, force: true });
@@ -70,16 +77,16 @@ export function generateRegistry({ registryRoot, pkgName, componentsIndexSrc, na
  * Do not replace with stock shadcn components or Lucide icons.
  *
  * Preferred (apps): import from the package directly:
- *   import { … } from '${pkgName}'
+ *   import { … } from '${importSpecifier}'
  */
-export {${body}} from '${pkgName}/components';
+export {${body}} from '${importSpecifier}/components';
 `;
     writeFileSync(join(dir, `${id}.tsx`), shim);
     manifest.items.push({
       name: id,
       type: 'registry:ui',
       title,
-      description: `Harmony ${title} — re-exports the package component. Prefer importing from '${pkgName}' directly.`,
+      description: `Harmony ${title} — re-exports the package component. Prefer importing from '${importSpecifier}' directly.`,
       dependencies: [pkgName],
       files: [{ path: `registry/new-york/${id}.tsx`, type: 'registry:component' }],
     });
@@ -90,7 +97,21 @@ export {${body}} from '${pkgName}/components';
 }
 
 /** Convenience: read the index from disk and generate. */
-export function generateRegistryFromDisk({ registryRoot, pkgName, componentsIndexPath, name, homepage }) {
+export function generateRegistryFromDisk({
+  registryRoot,
+  pkgName,
+  importSpecifier,
+  componentsIndexPath,
+  name,
+  homepage,
+}) {
   const src = readFileSync(componentsIndexPath, 'utf8');
-  return generateRegistry({ registryRoot, pkgName, componentsIndexSrc: src, name, homepage });
+  return generateRegistry({
+    registryRoot,
+    pkgName,
+    importSpecifier,
+    componentsIndexSrc: src,
+    name,
+    homepage,
+  });
 }

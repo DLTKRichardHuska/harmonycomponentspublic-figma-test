@@ -9,7 +9,7 @@
  *   - a mode-only theme provider (no setProduct / no runtime product switching).
  *   - components/index.ts filtered to exclude components not available in the
  *     product (per src/data product scope, mirrored here).
- *   - a product-scoped package.json (name suffix -<product>).
+ *   - product-scoped AGENTS.md / llms.txt / docs / registry (imports use @pkg/<product>).
  *
  * Usage: node scripts/build-product.mjs <product> [outDir]
  */
@@ -318,15 +318,53 @@ function filterComponentIndex(indexPath, excludedIdents) {
   writeFileSync(indexPath, kept);
 }
 
+/**
+ * Rewrite package import examples in a product tree to the product subpath.
+ * Handles unsuffixed `@pkg` and legacy `@pkg-<product>`. Does not double-prefix
+ * an already-product subpath (`@pkg/cp` stays `@pkg/cp` for this product).
+ */
+function rewritePackageSpecifiers(text, baseName, product) {
+  const importName = `${baseName}/${product}`;
+  let next = text;
+  for (const p of PRODUCTS) {
+    next = next.split(`${baseName}-${p}`).join(importName);
+    next = next.split(`${baseName}/${p}`).join(importName);
+  }
+  const unsuffixed = new RegExp(
+    `(?<!npm install )${baseName.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}(?!/(?:${PRODUCTS.join('|')}))`,
+    'g',
+  );
+  return next.replace(unsuffixed, importName);
+}
+
+function rewriteArtifactSpecifiers(root, baseName, product) {
+  const files = [];
+  const walk = (dir) => {
+    for (const entry of readdirSync(dir)) {
+      const full = join(dir, entry);
+      if (statSync(full).isDirectory()) walk(full);
+      else if (/\.(md|txt|tsx?|jsx?)$/.test(entry) && entry !== 'PRODUCT_BUILDS.md') files.push(full);
+    }
+  };
+  walk(root);
+  for (const file of files) {
+    const src = readFileSync(file, 'utf8');
+    if (!src.includes(baseName)) continue;
+    const next = rewritePackageSpecifiers(src, baseName, product);
+    if (next !== src) writeFileSync(file, next);
+  }
+}
+
 /** Prepend a single-product banner to an AI artifact so agents know the fixed product. */
 function prependProductBanner(path, product, kind) {
   const P = product.toUpperCase();
   const lines = [
     `Harmony Design System (shadcn) — ${P} single-product build.`,
     '',
-    `This package is a fixed, single-product build for ${P}. Product is chosen at`,
-    'install time and cannot change at runtime. Treat this as a plain',
-    'shadcn + Tailwind + Radix component library:',
+    `This is the ${P} subpath of @dltkrichardhuska/harmony-design-system-shadcn.`,
+    `Import from @dltkrichardhuska/harmony-design-system-shadcn/${product}. Product is`,
+    'chosen by that import subpath and cannot change at runtime. Treat this as a',
+    'plain shadcn + Tailwind + Radix component library:',
     `  - There is NO product switching. HarmonyThemeProvider only toggles light/dark`,
     '    mode (defaultMode); it takes no product prop.',
     '  - Do not set data-product, defaultProduct, or reason about other products.',
@@ -341,6 +379,32 @@ function prependProductBanner(path, product, kind) {
   ];
   const banner = kind === 'md' ? `<!--\n${lines.join('\n')}\n-->\n\n` : `${lines.join('\n')}\n\n`;
   writeFileSync(path, banner + readFileSync(path, 'utf8'));
+}
+
+function assertFlattenedProduct(outDir, product, baseName, importSpecifier) {
+  const tokens = readFileSync(join(outDir, 'src', 'styles', 'tokens.css'), 'utf8');
+  if (tokens.includes('data-product')) {
+    fail(`${product} tokens.css still contains data-product`);
+  }
+  const index = readFileSync(join(outDir, 'src', 'components', 'index.ts'), 'utf8');
+  const sourceIndex = readFileSync(join(PKG, 'src', 'components', 'index.ts'), 'utf8');
+  for (const def of Object.values(PRODUCT_EXCLUSIVE)) {
+    const shouldKeep = def.products.includes(product);
+    for (const ident of def.exports) {
+      if (!new RegExp(`\\b${ident}\\b`).test(sourceIndex)) continue;
+      const present = new RegExp(`\\b${ident}\\b`).test(index);
+      if (shouldKeep && !present) fail(`${product} is missing exclusive export ${ident}`);
+      if (!shouldKeep && present) fail(`${product} still exports exclusive ${ident}`);
+    }
+  }
+  const shim = join(outDir, 'registry', 'new-york', 'button.tsx');
+  const shimSrc = readFileSync(shim, 'utf8');
+  if (!shimSrc.includes(`from '${importSpecifier}/components'`)) {
+    fail(`${product} registry shim does not import ${importSpecifier}/components`);
+  }
+  const registry = JSON.parse(readFileSync(join(outDir, 'registry.json'), 'utf8'));
+  const dep = registry.items?.[0]?.dependencies?.[0];
+  if (dep !== baseName) fail(`${product} registry dependencies must be ${baseName}, got ${dep}`);
 }
 
 function main() {
@@ -394,35 +458,32 @@ function main() {
   productlessIcon(outDir, product);
 
   // 5. Copy + product-specialize the AI/consumer artifacts.
+  const basePkg = JSON.parse(readFileSync(join(PKG, 'package.json'), 'utf8'));
+  const importSpecifier = `${basePkg.name}/${product}`;
   for (const artifact of ['AGENTS.md', 'llms.txt']) {
     cpSync(join(PKG, artifact), join(outDir, artifact));
   }
   cpSync(join(PKG, 'docs'), join(outDir, 'docs'), { recursive: true });
+  rewriteArtifactSpecifiers(join(outDir, 'docs'), basePkg.name, product);
+  for (const artifact of ['AGENTS.md', 'llms.txt']) {
+    const p = join(outDir, artifact);
+    writeFileSync(p, rewritePackageSpecifiers(readFileSync(p, 'utf8'), basePkg.name, product));
+  }
   prependProductBanner(join(outDir, 'AGENTS.md'), product, 'md');
   prependProductBanner(join(outDir, 'llms.txt'), product, 'txt');
 
-  // 6. Product-scoped package.json.
-  const basePkg = JSON.parse(readFileSync(join(PKG, 'package.json'), 'utf8'));
-  const productName = `${basePkg.name}-${product}`;
-  const pkg = {
-    ...basePkg,
-    name: productName,
-    description: `Harmony Design System (shadcn) — ${product.toUpperCase()} single-product build. Product is fixed; no runtime switching.`,
-    harmonyProduct: product,
-    scripts: { typecheck: 'tsc --noEmit' },
-  };
-  writeFileSync(join(outDir, 'package.json'), JSON.stringify(pkg, null, 2) + '\n');
-
-  // 7. Regenerate a complete, product-scoped shadcn CLI registry (shims import
-  //    from the product package name; excluded components are already dropped
-  //    from the filtered components/index.ts).
+  // 6. Product-scoped shadcn CLI registry (shims import from @pkg/<product>;
+  //    npm dependency stays the bare package name).
   generateRegistryFromDisk({
     registryRoot: outDir,
-    pkgName: productName,
+    pkgName: basePkg.name,
+    importSpecifier,
     componentsIndexPath: join(outDir, 'src', 'components', 'index.ts'),
     name: `harmony-design-system-shadcn-${product}`,
     homepage: basePkg.repository?.url?.replace(/^git\+/, '').replace(/\.git$/, '') ?? '',
   });
+
+  assertFlattenedProduct(outDir, product, basePkg.name, importSpecifier);
 
   const excludedNote = excludedIdents.size
     ? ` (excluded: ${[...excludedIdents].join(', ')})`

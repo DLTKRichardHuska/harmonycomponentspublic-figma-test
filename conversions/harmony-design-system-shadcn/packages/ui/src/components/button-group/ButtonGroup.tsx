@@ -10,7 +10,7 @@ const buttonGroupVariants = cva('inline-flex', {
   variants: {
     variant: {
       default: [
-        'gap-2 rounded-[var(--radius-08)] border border-solid',
+        'gap-[var(--space-2)] rounded-[var(--radius-08)] border border-solid',
         'border-border bg-input p-1',
         // Strip child borders — shell provides the only border (reference parity)
         '[&>button]:border-0 [&>a]:border-0',
@@ -61,7 +61,7 @@ const buttonGroupVariants = cva('inline-flex', {
       ],
       vertical: [
         'flex-col items-stretch',
-        'data-[variant=default]:gap-0',
+        'data-[variant=default]:gap-[var(--space-2)]',
         'data-[variant=default]:[&>button]:w-full data-[variant=default]:[&>a]:w-full',
         'data-[variant=outline]:[&>button]:rounded-none data-[variant=outline]:[&>a]:rounded-none',
         'data-[variant=outline]:[&>button:first-child]:rounded-t-[var(--radius-08)] data-[variant=outline]:[&>a:first-child]:rounded-t-[var(--radius-08)]',
