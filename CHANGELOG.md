@@ -7,8 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.9.0] - 2026-08-14
+
 ### Fixed
 - **Dialog**: Footer action buttons always use `gap: var(--space-3)` between siblings for default and custom footers (including mobile); custom footer slot wrappers inherit the same flex layout as `.dialog__footer-actions`.
+
 
 ## [0.9.0] - 2026-01-27
 
