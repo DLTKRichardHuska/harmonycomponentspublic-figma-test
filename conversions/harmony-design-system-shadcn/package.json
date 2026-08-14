@@ -14,5 +14,8 @@
     "build:products": "npm run build:products -w @dltkrichardhuska/harmony-design-system-shadcn",
     "build": "npm run build:lib",
     "typecheck": "npm run typecheck -w @dltkrichardhuska/harmony-design-system-shadcn && npm run typecheck -w @dltkrichardhuska/harmony-design-system-shadcn-demo"
+  },
+  "devDependencies": {
+    "typescript": "~6.0.3"
   }
 }
