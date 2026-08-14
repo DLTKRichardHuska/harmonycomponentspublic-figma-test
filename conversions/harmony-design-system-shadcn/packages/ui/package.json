@@ -138,7 +138,7 @@
     "./maconomy/registry/*": "./dist-products/maconomy/registry/*"
   },
   "scripts": {
-    "build:lib": "tsup",
+    "build:lib": "tsup && tsc -p tsconfig.build.json",
     "build:product": "node scripts/build-product.mjs",
     "build:products": "node scripts/build-product.mjs cp && node scripts/build-product.mjs vp && node scripts/build-product.mjs ppm && node scripts/build-product.mjs maconomy",
     "sync:fonts": "node scripts/sync-fonts.mjs",
