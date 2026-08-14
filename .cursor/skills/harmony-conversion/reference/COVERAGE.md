@@ -6,7 +6,7 @@ How **coverage** is computed for Harmony conversions. Coverage answers: *of the 
 
 | Field | Meaning |
 |-------|---------|
-| `referenceVersion` | Current repo release-train label for this conversion — matches `package.json.version` and the reference effective version (e.g. `1.0.0-in-progress` on `main`, `1.1.0` after release) |
+| `referenceVersion` | Current repo **train label** for this conversion — matches conversion `package.json.version` (`1.0.0-in-progress` on `main`). Root `package.json.version` stays the bare base (`1.0.0`). Publish jobs rewrite to bare semver in the workspace only. |
 | `referenceVersionSetAt` | Optional ISO timestamp when `referenceVersion` was last set |
 
 For **in-repo component-library** conversions, `referenceVersion` and `package.json.version` are kept in sync via `sync_conversion_versions.mjs`. Consumers use the package version to identify which Harmony reference release the conversion matches.

@@ -1,16 +1,14 @@
-name: Publish conversion packages
+name: Publish dev packages
 
 on:
-  push:
-    tags:
-      - 'v*'
+  workflow_dispatch:
 
 permissions:
   contents: read
   packages: write
 
 jobs:
-  publish:
+  publish-dev:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -36,32 +34,16 @@ jobs:
             cache_lock: conversions/harmony-design-system-shadcn/package-lock.json
 
     steps:
-      - name: Checkout tagged commit
+      - name: Checkout
         uses: actions/checkout@v5
 
-      - name: Parse release version
-        id: version
-        run: |
-          TAG="${GITHUB_REF_NAME}"
-          VERSION="${TAG#v}"
-          if [[ ! "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
-            echo "Invalid release tag: $TAG (expected vX.Y.Z)"
-            exit 1
-          fi
-          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+      - name: Rewrite versions to unique @dev prerelease (workspace only)
+        run: node .cursor/skills/harmony-conversion/scripts/sync_conversion_versions.mjs --all --dev
 
-      - name: Rewrite versions to release semver (workspace only)
-        run: node .cursor/skills/harmony-conversion/scripts/sync_conversion_versions.mjs --all --release-version ${{ steps.version.outputs.version }}
-
-      - name: Verify package version matches tag
+      - name: Report version
         run: |
-          PKG_VERSION=$(node -e "const fs=require('fs'); console.log(JSON.parse(fs.readFileSync('${{ matrix.publish_dir }}/package.json','utf8')).version)")
-          EXPECTED="${{ steps.version.outputs.version }}"
-          if [ "$PKG_VERSION" != "$EXPECTED" ]; then
-            echo "Version mismatch for ${{ matrix.package_name }}: package.json has $PKG_VERSION, tag expects $EXPECTED"
-            exit 1
-          fi
-          echo "Publishing ${{ matrix.package_name }}@$PKG_VERSION"
+          VERSION=$(node -e "const fs=require('fs'); console.log(JSON.parse(fs.readFileSync('${{ matrix.publish_dir }}/package.json','utf8')).version)")
+          echo "Publishing ${{ matrix.package_name }}@${VERSION} with dist-tag dev"
 
       - name: Setup Node.js
         uses: actions/setup-node@v5
@@ -86,8 +68,8 @@ jobs:
         working-directory: ${{ matrix.install_dir }}
         run: npm run build:products
 
-      - name: Publish to GitHub Packages
+      - name: Publish to GitHub Packages (dev tag)
         working-directory: ${{ matrix.publish_dir }}
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npm publish
+        run: npm publish --tag dev

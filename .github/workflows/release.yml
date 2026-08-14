@@ -1,0 +1,85 @@
+name: Release
+
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  promote-changelog:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v5
+        with:
+          ref: main
+
+      - name: Parse release version
+        id: version
+        run: |
+          TAG="${{ github.event.release.tag_name }}"
+          VERSION="${TAG#v}"
+          if [[ ! "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            echo "Invalid release tag: $TAG (expected vX.Y.Z)"
+            exit 1
+          fi
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+          echo "tag=$TAG" >> "$GITHUB_OUTPUT"
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Promote changelog
+        run: npm run release:promote -- --version ${{ steps.version.outputs.version }}
+
+      - name: Open changelog PR
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          VERSION="${{ steps.version.outputs.version }}"
+          BRANCH="chore/promote-changelog-v${VERSION}"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$BRANCH"
+          git add changelog-data CHANGELOG.md
+          if git diff --cached --quiet; then
+            echo "No changelog changes to commit."
+            exit 0
+          fi
+          git commit -m "chore: promote changelog for v${VERSION}"
+          git push -u origin "$BRANCH"
+          gh pr create \
+            --base main \
+            --head "$BRANCH" \
+            --title "chore: promote changelog for v${VERSION}" \
+            --body "$(cat <<EOF
+          Promotes in-progress changelog entries to **${VERSION}**.
+
+          Package versions on \`main\` stay on the train label (\`${VERSION}-in-progress\` on conversions). Do not rewrite conversion packages to bare semver in this PR.
+
+          After this lands, start the next train when you know the bump: **Actions → Start next version train** (patch / minor / major).
+          EOF
+          )"
+
+      - name: Note next-train on the GitHub Release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          TAG="${{ steps.version.outputs.tag }}"
+          BODY="$(gh release view "$TAG" --json body --jq .body)"
+          FOOTER="$(cat <<EOF
+
+          ---
+
+          Packages are published from the tag by **Publish conversion packages** (workspace rewrite to bare semver; \`main\` stays on \`${{ steps.version.outputs.version }}-in-progress\`).
+
+          To start the next version train, run **Actions → Start next version train** and choose patch, minor, or major. That opens a PR; it is not created automatically.
+          EOF
+          )"
+          gh release edit "$TAG" --notes "${BODY}${FOOTER}"

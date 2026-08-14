@@ -1,0 +1,80 @@
+name: Start next version train
+
+on:
+  workflow_dispatch:
+    inputs:
+      bump:
+        description: Semver bump for the next train
+        required: true
+        type: choice
+        options:
+          - patch
+          - minor
+          - major
+      from_version:
+        description: Optional base version to bump from (X.Y.Z). Defaults to root package.json.
+        required: false
+        type: string
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  open-pr:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v5
+        with:
+          ref: main
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Bump train
+        id: bump
+        run: |
+          ARGS=(--all --bump "${{ inputs.bump }}")
+          if [ -n "${{ inputs.from_version }}" ]; then
+            ARGS+=(--from-version "${{ inputs.from_version }}")
+          fi
+          node .cursor/skills/harmony-conversion/scripts/sync_conversion_versions.mjs "${ARGS[@]}"
+          NEXT=$(node -e "const fs=require('fs'); console.log(JSON.parse(fs.readFileSync('package.json','utf8')).version)")
+          echo "next=$NEXT" >> "$GITHUB_OUTPUT"
+
+      - name: Open train PR
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          NEXT="${{ steps.bump.outputs.next }}"
+          BUMP="${{ inputs.bump }}"
+          BRANCH="chore/start-train-${NEXT}"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$BRANCH"
+          git add package.json conversions
+          if git diff --cached --quiet; then
+            echo "No version changes to commit."
+            exit 1
+          fi
+          git commit -m "chore: start ${NEXT} train (${BUMP})"
+          git push -u origin "$BRANCH"
+          gh pr create \
+            --base main \
+            --head "$BRANCH" \
+            --title "chore: start ${NEXT} train (${BUMP})" \
+            --body "$(cat <<EOF
+          Starts the **${NEXT}** release train after a **${BUMP}** bump.
+
+          - Root \`package.json.version\` → \`${NEXT}\`
+          - Conversion packages and \`referenceVersion\` → \`${NEXT}-in-progress\`
+
+          CI must stay green on the train label. Do not strip \`-in-progress\` on \`main\`.
+
+          See [docs/RELEASE_AND_GITHUB_SETUP.md](docs/RELEASE_AND_GITHUB_SETUP.md).
+          EOF
+          )"

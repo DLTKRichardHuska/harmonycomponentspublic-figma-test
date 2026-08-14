@@ -166,6 +166,53 @@ export function getVersionDisplayLabel(version, baseVersion = getBaseVersion()) 
 }
 
 /**
+ * Bump a bare semver by patch, minor, or major.
+ */
+export function bumpSemver(version, bump) {
+  const parsed = parseReleaseVersion(version);
+  if (!parsed) {
+    throw new Error(`Invalid semver: ${version}`);
+  }
+  if (bump !== 'patch' && bump !== 'minor' && bump !== 'major') {
+    throw new Error(`Invalid bump: ${bump} (expected patch, minor, or major)`);
+  }
+
+  const [major, minor, patch] = parsed.split('.').map(Number);
+  if (bump === 'major') return `${major + 1}.0.0`;
+  if (bump === 'minor') return `${major}.${minor + 1}.0`;
+  return `${major}.${minor}.${patch + 1}`;
+}
+
+/**
+ * Train label stored on conversion packages/manifests on main.
+ * Root package.json.version stays the bare base; conversions use this label.
+ */
+export function getTrainLabel(baseVersion = getBaseVersion()) {
+  const base = parseReleaseVersion(baseVersion) || String(baseVersion).replace(/-.*$/, '');
+  return `${base}-in-progress`;
+}
+
+/**
+ * Unique prerelease for npm dist-tag `dev` (never updates `latest`).
+ */
+export function getDevPackageVersion(options = {}) {
+  const base = options.baseVersion || getBaseVersion();
+  const buildNumber = options.buildNumber || getBuildNumber();
+  return `${base}-in-progress.${buildNumber}`;
+}
+
+/**
+ * Write the root package.json version (bare train base).
+ */
+export function writeRootPackageVersion(version) {
+  const pkg = JSON.parse(fs.readFileSync(packageJsonPath, 'utf-8'));
+  pkg.version = version;
+  fs.writeFileSync(packageJsonPath, `${JSON.stringify(pkg, null, 2)}\n`);
+  cachedPackageJson = pkg;
+  return version;
+}
+
+/**
  * Effective version label for the Harmony repo release train (reference + in-repo conversions).
  */
 export function getRepoEffectiveVersion(options = {}) {
@@ -174,11 +221,16 @@ export function getRepoEffectiveVersion(options = {}) {
 
 /**
  * Expected conversion package + manifest referenceVersion for the current repo state.
+ * Default is the train label (`{base}-in-progress`), not a branch preview.
  * When releasing, pass releaseVersion (bare semver) via options.
+ * When publishing @dev, pass dev: true.
  */
 export function getConversionPackageVersion(options = {}) {
   if (options.releaseVersion) {
     return options.releaseVersion;
   }
-  return getRepoEffectiveVersion(options);
+  if (options.dev) {
+    return getDevPackageVersion(options);
+  }
+  return getTrainLabel(options.baseVersion || getBaseVersion());
 }

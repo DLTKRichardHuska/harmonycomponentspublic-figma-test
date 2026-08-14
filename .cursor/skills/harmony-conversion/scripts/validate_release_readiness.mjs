@@ -84,6 +84,11 @@ function validateReleaseWorkflow(errors) {
   if (!/npm publish/.test(text)) {
     errors.push('publish-conversion-packages.yml: missing npm publish step for conversion packages');
   }
+  if (!/--release-version/.test(text)) {
+    errors.push(
+      'publish-conversion-packages.yml: must rewrite versions at tag time (--release-version)',
+    );
+  }
   if (!/harmony-design-system-react-mui/.test(text) || !/harmony-design-system-shadcn/.test(text)) {
     errors.push(
       'publish-conversion-packages.yml: must publish both react-mui and shadcn conversion packages',
@@ -93,7 +98,7 @@ function validateReleaseWorkflow(errors) {
 
 async function main() {
   const opts = parseArgs(process.argv.slice(2));
-  const { getConversionPackageVersion, parseReleaseVersion } = await loadVersionHelpers();
+  const { getConversionPackageVersion, parseReleaseVersion, getBaseVersion } = await loadVersionHelpers();
 
   let releaseVersion = null;
   if (opts.releaseVersion) {
@@ -104,16 +109,23 @@ async function main() {
     }
   }
 
-  const expectedVersion = getConversionPackageVersion(
-    releaseVersion ? { releaseVersion } : {},
-  );
+  const trainLabel = getConversionPackageVersion({});
+  const trainBase = getBaseVersion();
+  const intendedRelease = releaseVersion || trainBase;
 
   const errors = [];
   const warnings = [];
   const postRelease = [];
 
   if (!opts.quiet) {
-    console.log(`Release readiness check for version: ${expectedVersion}\n`);
+    console.log(`Release readiness check for version: ${intendedRelease}`);
+    console.log(`Train on main: ${trainLabel} (root base ${trainBase})\n`);
+  }
+
+  if (releaseVersion && releaseVersion !== trainBase) {
+    errors.push(
+      `Intended release ${releaseVersion} does not match train base ${trainBase} — tag v${trainBase} or bump the train first`,
+    );
   }
 
   const validateProc = spawnSync(
@@ -127,12 +139,11 @@ async function main() {
     if (!opts.quiet && validateProc.stderr) console.log(validateProc.stderr);
   }
 
-  const syncArgs = [join(scriptDir, 'sync_conversion_versions.mjs'), '--all', '--check'];
-  if (releaseVersion) syncArgs.push('--release-version', releaseVersion);
-  const syncProc = spawnSync(process.execPath, syncArgs, {
-    cwd: repoRoot(),
-    encoding: 'utf8',
-  });
+  const syncProc = spawnSync(
+    process.execPath,
+    [join(scriptDir, 'sync_conversion_versions.mjs'), '--all', '--check'],
+    { cwd: repoRoot(), encoding: 'utf8' },
+  );
   if (syncProc.status !== 0) {
     errors.push('Conversion version drift — run sync_conversion_versions.mjs --all');
     if (!opts.quiet && syncProc.stdout) console.log(syncProc.stdout);
@@ -141,24 +152,26 @@ async function main() {
   for (const id of listComponentLibraryConversionIds()) {
     const dir = conversionDirForId(id);
     const manifest = loadConversionManifest(dir);
-    const rootPkg = JSON.parse(readFileSync(join(dir, 'package.json'), 'utf8'));
+    const conversionRootPkg = JSON.parse(readFileSync(join(dir, 'package.json'), 'utf8'));
     const isWorkspace = manifest.independence?.layout === 'npm-workspace';
     const publishPkgPath = isWorkspace
       ? join(dir, manifest.independence?.packagePath ?? 'packages/ui', 'package.json')
       : join(dir, 'package.json');
     const pkg = JSON.parse(readFileSync(publishPkgPath, 'utf8'));
 
-    if (manifest.referenceVersion !== expectedVersion) {
-      errors.push(`${id}: referenceVersion ${manifest.referenceVersion} !== expected ${expectedVersion}`);
+    if (manifest.referenceVersion !== trainLabel) {
+      errors.push(`${id}: referenceVersion ${manifest.referenceVersion} !== train ${trainLabel}`);
     }
-    if (pkg.version !== expectedVersion) {
-      errors.push(`${id}: publishable package.json.version ${pkg.version} !== expected ${expectedVersion}`);
+    if (pkg.version !== trainLabel) {
+      errors.push(`${id}: publishable package.json.version ${pkg.version} !== train ${trainLabel}`);
     }
     if (pkg.version !== manifest.referenceVersion) {
       errors.push(`${id}: publishable package.json.version !== manifest.referenceVersion`);
     }
-    if (isWorkspace && rootPkg.version !== expectedVersion) {
-      warnings.push(`${id}: workspace root package.json.version ${rootPkg.version} !== expected ${expectedVersion}`);
+    if (isWorkspace && conversionRootPkg.version !== trainLabel) {
+      warnings.push(
+        `${id}: workspace root package.json.version ${conversionRootPkg.version} !== train ${trainLabel}`,
+      );
     }
 
     validatePackagePublishMetadata(pkg, id, errors);
@@ -199,18 +212,16 @@ async function main() {
 
   if (errors.length) {
     if (!opts.quiet) {
-      console.log(`\nNo — not ready to release ${expectedVersion}`);
+      console.log(`\nNo — not ready to release ${intendedRelease}`);
       console.log('Resolve blockers above, then re-run validate_release_readiness.mjs');
     }
     process.exit(1);
   }
 
   if (!opts.quiet) {
-    console.log(`\nYes — ready to release ${expectedVersion}`);
+    console.log(`\nYes — ready to release ${intendedRelease}`);
     console.log(
-      'Tag and push v' +
-        expectedVersion.replace(/-.*$/, '') +
-        ' to publish conversion packages (publish-conversion-packages.yml).',
+      `Tag and push v${intendedRelease} from green main. Publish jobs rewrite packages to bare semver in the workspace (do not commit bare versions on main).`,
     );
   }
   process.exit(0);

@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 /**
  * Promote in-progress changelog entries to an official release version.
- * Updates changelog.json, metadata.json, package.json, and CHANGELOG.md.
+ * Updates changelog.json, metadata.json, and CHANGELOG.md.
+ * Root package.json.version is the train base and is not rewritten here.
  */
 
 import fs from 'fs';
@@ -17,7 +18,6 @@ const __dirname = path.dirname(__filename);
 const rootDir = path.join(__dirname, '../..');
 const changelogFile = path.join(rootDir, 'changelog-data/changelog.json');
 const metadataFile = path.join(rootDir, 'changelog-data/metadata.json');
-const packageJsonFile = path.join(rootDir, 'package.json');
 const changelogMdFile = path.join(rootDir, 'CHANGELOG.md');
 
 function parseArgs() {
@@ -157,14 +157,10 @@ function promoteRelease(version) {
   metadata.lastUpdated = new Date().toISOString();
   fs.writeFileSync(metadataFile, JSON.stringify(metadata, null, 2));
 
-  const packageJson = loadJson(packageJsonFile, {});
-  packageJson.version = version;
-  fs.writeFileSync(packageJsonFile, `${JSON.stringify(packageJson, null, 2)}\n`);
-
   updateChangelogMd(version, releaseDate, inProgressEntries);
 
   console.log(`Promoted ${inProgressEntries.length} entries to v${version}`);
-  console.log(`Updated package.json, metadata.json, and CHANGELOG.md`);
+  console.log(`Updated changelog.json, metadata.json, and CHANGELOG.md`);
 }
 
 if (import.meta.url.startsWith('file:') && process.argv[1]) {

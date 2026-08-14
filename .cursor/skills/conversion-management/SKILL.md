@@ -48,7 +48,7 @@ Read [RELEASE_READINESS.md](../harmony-conversion/reference/RELEASE_READINESS.md
 | Conversion | Package version | referenceVersion | Coverage | In sync? | Converter ready? |
 |------------|-----------------|------------------|----------|----------|------------------|
 
-- **In sync:** `package.json.version === referenceVersion ===` repo effective version (or accepted release version during release prep).
+- **In sync:** `package.json.version === referenceVersion ===` train label (`{root package.json.version}-in-progress`). Never require bare release semver on `main`.
 - **Behind / not ready for release:** version drift, coverage &lt; 100% without accepted gaps, or converter not `ready`.
 - **External converters** (no `conversions/<id>/`): report converter readiness only; note "portfolio coverage N/A — post-release update".
 
@@ -105,7 +105,7 @@ Same checks as **release-status**, but emphasize blocker list and remediation on
 
 1. Run **release-status** checks first.
 2. If not ready: explain blockers and what must be done before release.
-3. If ready: provide step-by-step tag-push instructions (`git tag vX.Y.Z && git push origin vX.Y.Z`), watch **Publish conversion packages**, verify GitHub Packages, then post-release external updates.
+3. If ready: tell the user to tag green `main` (`git tag vX.Y.Z && git push origin vX.Y.Z` or GitHub Releases). Watch **Publish conversion packages** (rewrites versions in the job; do not commit bare semver on `main`) and **Release** (changelog PR). Verify GitHub Packages. Then **AskQuestion** whether the next cycle is patch, minor, or major before starting the next train (`Actions → Start next version train`). Remind them of optional **Publish dev packages** (`@dev`) for pre-release verification.
 
 Do not create or push tags unless the user explicitly requests it.
 
