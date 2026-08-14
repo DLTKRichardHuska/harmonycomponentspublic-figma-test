@@ -36,6 +36,9 @@ jobs:
       - name: Validate conversion versions (check only)
         run: node .cursor/skills/harmony-conversion/scripts/sync_conversion_versions.mjs --all --check
 
+      - name: Validate conversion lockfiles after publish rewrite
+        run: node .cursor/skills/harmony-conversion/scripts/validate_publish_lockfiles.mjs
+
       - name: Validate conversions
         run: node .cursor/skills/harmony-conversion/scripts/validate_conversion.mjs --all
 

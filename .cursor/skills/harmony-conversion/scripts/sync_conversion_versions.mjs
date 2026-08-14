@@ -10,6 +10,7 @@ import {
   loadVersionHelpers,
   repoRoot,
   saveConversionManifest,
+  updatePackageLockVersion,
 } from './_lib.mjs';
 
 function parseArgs(argv) {
@@ -33,33 +34,6 @@ function parseArgs(argv) {
     else if (a === '--dev') opts.dev = true;
   }
   return opts;
-}
-
-function updatePackageLockVersion(lockPath, newVersion) {
-  if (!existsSync(lockPath)) return false;
-  const lock = JSON.parse(readFileSync(lockPath, 'utf8'));
-  const oldVersion = lock.version;
-  if (!oldVersion || oldVersion === newVersion) {
-    const rootEntry = lock.packages?.[''];
-    if (rootEntry?.version === newVersion) return false;
-  }
-
-  let changed = false;
-  if (lock.version && lock.version !== newVersion) {
-    lock.version = newVersion;
-    changed = true;
-  }
-  for (const [key, entry] of Object.entries(lock.packages ?? {})) {
-    if (!entry || typeof entry !== 'object') continue;
-    if (key.startsWith('node_modules')) continue;
-    if (entry.version && entry.version !== newVersion) {
-      entry.version = newVersion;
-      changed = true;
-    }
-  }
-  if (!changed) return false;
-  writeFileSync(lockPath, JSON.stringify(lock, null, 2) + '\n', 'utf8');
-  return true;
 }
 
 function setJsonVersion(filePath, newVersion) {

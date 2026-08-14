@@ -320,3 +320,35 @@ export function saveConversionManifest(conversionDir, manifest) {
   const path = join(conversionDir, 'conversion.manifest.json');
   writeFileSync(path, JSON.stringify(manifest, null, 2) + '\n', 'utf8');
 }
+
+/**
+ * Rewrite only workspace package versions in a lockfile.
+ * Nested third-party deps live under `<workspace>/node_modules/...` as well as
+ * top-level `node_modules/...` — renumbering those desyncs the lock for `npm ci`.
+ */
+export function updatePackageLockVersion(lockPath, newVersion) {
+  if (!existsSync(lockPath)) return false;
+  const lock = JSON.parse(readFileSync(lockPath, 'utf8'));
+  const oldVersion = lock.version;
+  if (!oldVersion || oldVersion === newVersion) {
+    const rootEntry = lock.packages?.[''];
+    if (rootEntry?.version === newVersion) return false;
+  }
+
+  let changed = false;
+  if (lock.version && lock.version !== newVersion) {
+    lock.version = newVersion;
+    changed = true;
+  }
+  for (const [key, entry] of Object.entries(lock.packages ?? {})) {
+    if (!entry || typeof entry !== 'object') continue;
+    if (key.includes('node_modules')) continue;
+    if (entry.version && entry.version !== newVersion) {
+      entry.version = newVersion;
+      changed = true;
+    }
+  }
+  if (!changed) return false;
+  writeFileSync(lockPath, JSON.stringify(lock, null, 2) + '\n', 'utf8');
+  return true;
+}
