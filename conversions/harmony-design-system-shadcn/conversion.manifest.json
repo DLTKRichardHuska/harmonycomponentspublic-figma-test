@@ -5,8 +5,8 @@
   "status": "dev-in-progress",
   "description": "Harmony Design System for AI consumers — React components on shadcn/ui patterns, Tailwind, and Radix",
   "converterId": "harmony-design-system-shadcn",
-  "referenceVersion": "0.9.0-in-progress",
-  "referenceVersionSetAt": "2026-07-23T23:11:45.425Z",
+  "referenceVersion": "0.9.0",
+  "referenceVersionSetAt": "2026-08-14T13:32:07.980Z",
   "independence": {
     "standalone": true,
     "layout": "npm-workspace",
@@ -204,7 +204,7 @@
       "verificationReport": "verification/reports/selection-tooltip-link-3.md"
     },
     "Toggle": {
-      "status": "in-progress",
+      "status": "synced",
       "harmonySource": "src/components/ui/Toggle.astro",
       "strategy": "component",
       "skippedProps": [
@@ -217,7 +217,10 @@
         "variant=segmented + optionLabelLeft/Right — callout on toggle-switches demo"
       ],
       "blockedBy": [],
-      "userDecision": "component Toggle: Radix Switch + ToggleField Hybrid C (no label on bare); size sm|md; skip segmented. Consumer API per plans/toggle-dropdown-accordion.md 2026-07-20."
+      "userDecision": "component Toggle: Radix Switch + ToggleField Hybrid C (no label on bare); size sm|md; skip segmented. Consumer API per plans/toggle-dropdown-accordion.md 2026-07-20.",
+      "notes": "Package Toggle + ToggleField; demo /components/toggle-switches. Verifier PASS toggle-dropdown-accordion-1; human accepted visual match via close-out execute (2026-08-14).",
+      "lastVerified": "2026-07-20T22:40:00.000Z",
+      "verificationReport": "verification/reports/toggle-dropdown-accordion-1.md"
     },
     "DateInput": {
       "status": "synced",
@@ -574,7 +577,7 @@
       "verificationReport": "verification/reports/Card-Dialog-1.md"
     },
     "Dropdown": {
-      "status": "in-progress",
+      "status": "synced",
       "harmonySource": "src/components/ui/Dropdown.astro",
       "strategy": "component",
       "skippedProps": [
@@ -588,10 +591,12 @@
       ],
       "blockedBy": [],
       "userDecision": "component Dropdown→Select: Radix Select compound + SelectField hybrid labels; SelectItem children (no options[]); Icon chevron-down. Consumer API per plans/toggle-dropdown-accordion.md 2026-07-20.",
-      "notes": "2026-07-21: SelectTrigger geometry from --field-* tokens (height/radius/padding-x/font) + max-md responsive padding; CP compact density via product token block; SelectField label orientation token-driven (auto)."
+      "notes": "Package Select + SelectField; demo /components/dropdowns. SelectTrigger --field-* geometry. Verifier PASS toggle-dropdown-accordion-1; human accepted visual match via close-out execute (2026-08-14).",
+      "lastVerified": "2026-07-20T22:40:00.000Z",
+      "verificationReport": "verification/reports/toggle-dropdown-accordion-1.md"
     },
     "Accordion": {
-      "status": "in-progress",
+      "status": "synced",
       "harmonySource": "src/components/ui/Accordion.astro",
       "strategy": "component",
       "skippedProps": [
@@ -603,7 +608,10 @@
         "Astro items[] / item-* slots / label prop — compound Accordion + external group label; callout on accordion demo"
       ],
       "blockedBy": [],
-      "userDecision": "component Accordion: Radix compound Accordion/Item/Trigger/Content; type single|multiple (maps allowMultiple); no items[]; Icon chevron-down. Consumer API per plans/toggle-dropdown-accordion.md 2026-07-20."
+      "userDecision": "component Accordion: Radix compound Accordion/Item/Trigger/Content; type single|multiple (maps allowMultiple); no items[]; Icon chevron-down. Consumer API per plans/toggle-dropdown-accordion.md 2026-07-20.",
+      "notes": "Package Accordion compound; demo /components/accordion. Verifier PASS toggle-dropdown-accordion-1; human accepted visual match via close-out execute (2026-08-14).",
+      "lastVerified": "2026-07-20T22:40:00.000Z",
+      "verificationReport": "verification/reports/toggle-dropdown-accordion-1.md"
     },
     "Kanban": {
       "status": "not-started",
@@ -729,9 +737,9 @@
     "consumerGuide": "docs/CONSUMER_GUIDE.md"
   },
   "coverage": {
-    "percent": 85,
-    "completed": 47,
+    "percent": 91,
+    "completed": 50,
     "total": 55,
-    "computedAt": "2026-07-21T13:10:52.853Z"
+    "computedAt": "2026-08-14T13:38:49.182Z"
   }
 }
