@@ -1,0 +1,280 @@
+{
+  "scope": "progress-bar",
+  "theme": "vp",
+  "ref": {
+    "h1": "Harmony CP Design System",
+    "h2": [
+      "Examples",
+      "Props",
+      "Accessibility"
+    ],
+    "h3": [
+      "Basic Progress",
+      "Sizes",
+      "Variants",
+      "With Label",
+      "ARIA Attributes",
+      "Screen Reader Support",
+      "Color Contrast",
+      "Labels"
+    ],
+    "nav": [
+      "Examples",
+      "Props",
+      "Accessibility"
+    ],
+    "badge": "stable",
+    "hasProps": true,
+    "hasA11y": true,
+    "badges": [
+      {
+        "text": "stable",
+        "hasIcon": false,
+        "height": 24,
+        "bg": "rgb(219, 249, 168)",
+        "color": "rgb(49, 109, 21)",
+        "border": "1px solid rgb(49, 109, 21)",
+        "fontSize": "14px"
+      }
+    ],
+    "avatars": [],
+    "chips": [],
+    "progress": [
+      {
+        "h": 8,
+        "fillPct": 25,
+        "barBg": "rgb(42, 120, 198)",
+        "trackBg": "rgb(191, 198, 212)"
+      },
+      {
+        "h": 8,
+        "fillPct": 50,
+        "barBg": "rgb(42, 120, 198)",
+        "trackBg": "rgb(191, 198, 212)"
+      },
+      {
+        "h": 8,
+        "fillPct": 75,
+        "barBg": "rgb(42, 120, 198)",
+        "trackBg": "rgb(191, 198, 212)"
+      },
+      {
+        "h": 8,
+        "fillPct": 100,
+        "barBg": "rgb(42, 120, 198)",
+        "trackBg": "rgb(191, 198, 212)"
+      },
+      {
+        "h": 4,
+        "fillPct": 60,
+        "barBg": "rgb(42, 120, 198)",
+        "trackBg": "rgb(191, 198, 212)"
+      },
+      {
+        "h": 8,
+        "fillPct": 60,
+        "barBg": "rgb(42, 120, 198)",
+        "trackBg": "rgb(191, 198, 212)"
+      },
+      {
+        "h": 12,
+        "fillPct": 60,
+        "barBg": "rgb(42, 120, 198)",
+        "trackBg": "rgb(191, 198, 212)"
+      },
+      {
+        "h": 8,
+        "fillPct": 75,
+        "barBg": "rgb(42, 120, 198)",
+        "trackBg": "rgb(191, 198, 212)"
+      },
+      {
+        "h": 8,
+        "fillPct": 75,
+        "barBg": "rgb(23, 168, 113)",
+        "trackBg": "rgb(191, 198, 212)"
+      },
+      {
+        "h": 8,
+        "fillPct": 75,
+        "barBg": "rgb(255, 176, 32)",
+        "trackBg": "rgb(191, 198, 212)"
+      },
+      {
+        "h": 8,
+        "fillPct": 75,
+        "barBg": "rgb(216, 49, 72)",
+        "trackBg": "rgb(191, 198, 212)"
+      },
+      {
+        "h": 8,
+        "fillPct": 42,
+        "barBg": "rgb(42, 120, 198)",
+        "trackBg": "rgb(191, 198, 212)"
+      }
+    ],
+    "badgeCount": 1
+  },
+  "conv": {
+    "h1": "Progress Bar",
+    "h2": [
+      "Basic Progress",
+      "Sizes",
+      "Variants",
+      "With Label",
+      "API",
+      "Accessibility"
+    ],
+    "hasApi": true,
+    "hasA11y": true,
+    "tables": 1,
+    "apiRows": [
+      "valuenumber0",
+      "maxnumber (> 0)100",
+      "sizesm | md | lgmd",
+      "variantdefault | success | warning | errordefault",
+      "show-labelbooleanfalse"
+    ],
+    "a11yText": "harmony-progress uses ElementInternals with role=\"progressbar\" and aria-valuenow / min / max. Under forced-colors, the track keeps a CanvasText border and the bar uses Highlight.",
+    "badges": [],
+    "avatars": [],
+    "chips": [],
+    "progress": [
+      {
+        "value": "25",
+        "size": "md",
+        "variant": "default",
+        "showLabel": false,
+        "h": 8,
+        "fillPct": 25,
+        "barBg": "rgb(42, 120, 198)",
+        "trackBg": "rgb(191, 198, 212)",
+        "label": null
+      },
+      {
+        "value": "50",
+        "size": "md",
+        "variant": "default",
+        "showLabel": false,
+        "h": 8,
+        "fillPct": 50,
+        "barBg": "rgb(42, 120, 198)",
+        "trackBg": "rgb(191, 198, 212)",
+        "label": null
+      },
+      {
+        "value": "75",
+        "size": "md",
+        "variant": "default",
+        "showLabel": false,
+        "h": 8,
+        "fillPct": 75,
+        "barBg": "rgb(42, 120, 198)",
+        "trackBg": "rgb(191, 198, 212)",
+        "label": null
+      },
+      {
+        "value": "100",
+        "size": "md",
+        "variant": "default",
+        "showLabel": false,
+        "h": 8,
+        "fillPct": 100,
+        "barBg": "rgb(42, 120, 198)",
+        "trackBg": "rgb(191, 198, 212)",
+        "label": null
+      },
+      {
+        "value": "60",
+        "size": "sm",
+        "variant": "default",
+        "showLabel": false,
+        "h": 4,
+        "fillPct": 60,
+        "barBg": "rgb(42, 120, 198)",
+        "trackBg": "rgb(191, 198, 212)",
+        "label": null
+      },
+      {
+        "value": "60",
+        "size": "md",
+        "variant": "default",
+        "showLabel": false,
+        "h": 8,
+        "fillPct": 60,
+        "barBg": "rgb(42, 120, 198)",
+        "trackBg": "rgb(191, 198, 212)",
+        "label": null
+      },
+      {
+        "value": "60",
+        "size": "lg",
+        "variant": "default",
+        "showLabel": false,
+        "h": 12,
+        "fillPct": 60,
+        "barBg": "rgb(42, 120, 198)",
+        "trackBg": "rgb(191, 198, 212)",
+        "label": null
+      },
+      {
+        "value": "75",
+        "size": "md",
+        "variant": "default",
+        "showLabel": false,
+        "h": 8,
+        "fillPct": 75,
+        "barBg": "rgb(42, 120, 198)",
+        "trackBg": "rgb(191, 198, 212)",
+        "label": null
+      },
+      {
+        "value": "75",
+        "size": "md",
+        "variant": "success",
+        "showLabel": false,
+        "h": 8,
+        "fillPct": 75,
+        "barBg": "rgb(23, 168, 113)",
+        "trackBg": "rgb(191, 198, 212)",
+        "label": null
+      },
+      {
+        "value": "75",
+        "size": "md",
+        "variant": "warning",
+        "showLabel": false,
+        "h": 8,
+        "fillPct": 75,
+        "barBg": "rgb(255, 176, 32)",
+        "trackBg": "rgb(191, 198, 212)",
+        "label": null
+      },
+      {
+        "value": "75",
+        "size": "md",
+        "variant": "error",
+        "showLabel": false,
+        "h": 8,
+        "fillPct": 75,
+        "barBg": "rgb(216, 49, 72)",
+        "trackBg": "rgb(191, 198, 212)",
+        "label": null
+      },
+      {
+        "value": "42",
+        "size": "md",
+        "variant": "default",
+        "showLabel": true,
+        "h": 8,
+        "fillPct": 42,
+        "barBg": "rgb(42, 120, 198)",
+        "trackBg": "rgb(191, 198, 212)",
+        "label": "42%"
+      }
+    ],
+    "badgeCount": 0,
+    "iconSectionTexts": [],
+    "themeClass": "theme-vp"
+  }
+}

@@ -1,0 +1,233 @@
+{
+  "ref": {
+    "title": "Tables | Design System",
+    "h1": "Harmony CP Design System",
+    "h2s": [
+      "Basic Table",
+      "Table with Actions",
+      "Striped Table",
+      "Table with Reorderable Rows",
+      "Table with Grouped Rows",
+      "Sortable column headers",
+      "Table with Title Bar and Action Bar",
+      "Table with Filter Bar",
+      "Command Center (variant + panel)",
+      "Purchase Requisitions",
+      "Costpoint data grid",
+      "Props",
+      "Usage Guidelines"
+    ],
+    "h3s": [
+      "Default Table with Gray Header",
+      "Table with White Header",
+      "Interactive Table",
+      "Alternating Rows",
+      "Table with Reorderable Rows",
+      "Table with Grouped Rows",
+      "Sortable column headers",
+      "Table with Title Bar",
+      "Table with Action Bar",
+      "Table with Title Bar and Action Bar",
+      "Table with Filter Bar",
+      "Command Center table with docked panel",
+      "Split frozen / scroll table",
+      "TableCostpointGrid (Astro) props",
+      "Best Practices",
+      "Accessibility"
+    ],
+    "badges": [
+      {
+        "tag": "SPAN",
+        "text": "Active",
+        "variant": "badge--success",
+        "w": 60,
+        "h": 24,
+        "bg": "rgb(219, 249, 168)",
+        "color": "rgb(49, 109, 21)",
+        "radius": "9999px"
+      },
+      {
+        "tag": "SPAN",
+        "text": "In Progress",
+        "variant": "badge--warning",
+        "w": 96,
+        "h": 24,
+        "bg": "rgb(255, 241, 190)",
+        "color": "rgb(173, 84, 0)",
+        "radius": "9999px"
+      },
+      {
+        "tag": "SPAN",
+        "text": "Pending",
+        "variant": "badge--default",
+        "w": 73,
+        "h": 24,
+        "bg": "rgb(247, 248, 250)",
+        "color": "rgb(82, 89, 105)",
+        "radius": "9999px"
+      },
+      {
+        "tag": "SPAN",
+        "text": "Review",
+        "variant": "badge--info",
+        "w": 67,
+        "h": 24,
+        "bg": "rgb(208, 223, 255)",
+        "color": "rgb(69, 75, 212)",
+        "radius": "9999px"
+      }
+    ],
+    "totalRow": {
+      "text": "Total $40,000.00",
+      "bg": "rgba(0, 115, 230, 0.15)",
+      "expectedVar": "rgba(0, 115, 230, 0.15)",
+      "fontWeight": "600"
+    },
+    "interactive": {
+      "headers": [
+        "",
+        "Employee",
+        "Department",
+        "Role",
+        "Actions"
+      ],
+      "rowCount": 3,
+      "avatars": [],
+      "emails": [
+        "JD\nJohn Doe\njohn.doe@company.com",
+        "JS\nJane Smith\njane.smith@company.com",
+        "MJ\nMike Johnson\nmike.j@company.com"
+      ],
+      "hasActionsCol": true,
+      "actionBtns": 0
+    },
+    "usage": {
+      "heading": true,
+      "bestPractices": true,
+      "a11y": true,
+      "snippet": "Best Practices\nUse tables only for tabular data, not for layout purposes\nKeep column headers concise and descriptive\nAlign numerical data to the right for easy comparison\nUse zebra striping for tables with many rows\nProvide sorting and filtering for large data sets; use the filter bar variant with dropdowns, active filter chips, and a Clear button for narrowing by period, project, or category\nUse reorderable tables when users need to customize row order; provide keyboard alternatives for accessi"
+    },
+    "callouts": [],
+    "tableCount": 16,
+    "scrollH": 1000
+  },
+  "conv": {
+    "title": "Tables · Harmony Vanilla",
+    "h2s": [
+      "Getting Started",
+      "Changelog",
+      "Foundation",
+      "Shell Layout",
+      "Components",
+      "Native — default gray header",
+      "Native — striped + white header",
+      "Interactive selection",
+      "Reorderable",
+      "Grouped",
+      "Sortable columns",
+      "Filter bar + title / action bars",
+      "Command Center (brief)",
+      "API",
+      "Usage guidelines"
+    ],
+    "h3s": [
+      "Best practices",
+      "Accessibility",
+      "Consume — npm",
+      "Consume — static zip"
+    ],
+    "badges": [
+      {
+        "tag": "HARMONY-BADGE",
+        "text": "Active",
+        "variant": "success",
+        "w": 44,
+        "h": 16,
+        "bg": "rgb(219, 249, 168)",
+        "color": "rgb(49, 109, 21)",
+        "radius": "9999px"
+      },
+      {
+        "tag": "HARMONY-BADGE",
+        "text": "In Progress",
+        "variant": "orange",
+        "w": 70,
+        "h": 16,
+        "bg": "rgb(255, 226, 192)",
+        "color": "rgb(108, 31, 7)",
+        "radius": "9999px"
+      },
+      {
+        "tag": "HARMONY-BADGE",
+        "text": "Pending",
+        "variant": "default",
+        "w": 54,
+        "h": 16,
+        "bg": "rgb(247, 248, 250)",
+        "color": "rgb(82, 89, 105)",
+        "radius": "9999px"
+      },
+      {
+        "tag": "HARMONY-BADGE",
+        "text": "Review",
+        "variant": "info",
+        "w": 49,
+        "h": 16,
+        "bg": "rgb(208, 223, 255)",
+        "color": "rgb(69, 75, 212)",
+        "radius": "9999px"
+      }
+    ],
+    "totalRow": {
+      "text": "Total $220,000",
+      "bg": "rgba(0, 115, 230, 0.15)",
+      "expectedVar": "rgba(0, 115, 230, 0.15)",
+      "fontWeight": "600"
+    },
+    "interactive": {
+      "headers": [
+        "",
+        "Employee",
+        "Department",
+        "Role",
+        "Actions"
+      ],
+      "rowCount": 3,
+      "avatars": [
+        {
+          "initials": "JD",
+          "w": 24,
+          "h": 24
+        },
+        {
+          "initials": "JS",
+          "w": 24,
+          "h": 24
+        },
+        {
+          "initials": "MJ",
+          "w": 24,
+          "h": 24
+        }
+      ],
+      "emails": [
+        "John Doe\njohn.doe@example.com",
+        "Jane Smith\njane.smith@example.com",
+        "Mike Johnson\nmike.johnson@example.com"
+      ],
+      "hasActionsCol": true,
+      "actionBtns": 3
+    },
+    "usage": {
+      "heading": true,
+      "bestPractices": true,
+      "a11y": true,
+      "snippet": "Best practices\nUse a real <table> with header cells for sortable and selectable data.\nPrefer unclassed native tables for simple read-only grids; use harmony-table when you need bars, sort headers, reorder, or grouping.\nKeep Status and other categorical cells as synced Badge/Chip surfaces for color meaning.\nEmit sort/filter intents from the CE; keep sorting and filtering logic in the host app.\nAccessibility\n\nUse a real <table> with th scope. Sortable headers set aria-sort. Expand and grip control"
+    },
+    "callouts": [
+      "TableCostpointGrid (CP split datagrid) is out of scope for this conversion — accepted gap. Use the hybrid Table surface "
+    ],
+    "tableCount": 9,
+    "scrollH": 1000
+  }
+}

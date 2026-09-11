@@ -134,6 +134,7 @@ Before implementing any catalog element, the human chooses the **element strateg
 |-----------|-----------------|---------------------|
 | react-mui | Existing MUI / Custom export / Skip | `existing-mui` \| `custom` \| `skip` |
 | shadcn | Package component / Skip | `component` \| `skip` |
+| vanilla | Native HTML+CSS / Hybrid helper / Web component / Skip | `native` \| `hybrid` \| `web-component` \| `skip` |
 | figma | Host component / Variable / Skip | `figma-component` \| `figma-variable` \| `skip` |
 
 ### React+MUI notes
@@ -168,6 +169,7 @@ Reference Astro components are **visual and interaction demos**. They do **not**
 |---------------|-------------------|
 | react-mui **`custom`** exports and **custom sub-exports** (e.g. `DelaButton`) | react-mui **`existing-mui`** — consumers keep `@mui/material` APIs via theme |
 | shadcn **`component`** package exports | **`skip`** |
+| vanilla **`native`**, **`hybrid`**, and **`web-component`** (CSS recipe and/or Custom Element package surface) | vanilla **`skip`** |
 | figma **`figma-component`** / **`figma-variable`** — use the playbook **strategy packet** (Figma property inventory + `state` + axes; identity-mirrors shadcn) | figma **`skip`** |
 
 **Target stack wins.** Do not invent Harmony-shaped props from the Astro demo API when the platform has a familiar pattern:
@@ -176,6 +178,7 @@ Reference Astro components are **visual and interaction demos**. They do **not**
 |-----------|--------------------------|
 | react-mui | Closest MUI analog (`Button`, `Chip`, `SvgIcon`, …) via MUI docs/MCP; if none, usual MUI component patterns (`sx`, event handlers, `...rest`) |
 | shadcn | shadcn + Tailwind + Radix patterns (`cva`, `asChild`/`Slot`, HTML attribute spreads, Radix controlled props) — optimized for AI consumers |
+| vanilla | Native HTML + CSS classes first; optional light-DOM hybrid CE for attr→class mapping; full Custom Element only when native HTML cannot carry look/behavior/a11y — see converter playbook packets |
 
 ### Consumer API packet (AskQuestion — wait for sign-off)
 

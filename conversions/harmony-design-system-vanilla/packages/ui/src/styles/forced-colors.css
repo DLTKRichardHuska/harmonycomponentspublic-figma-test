@@ -1,0 +1,220 @@
+/**
+ * Windows High Contrast / forced-colors layer for Harmony Vanilla.
+ *
+ * Appended after product-flattened tokens in build-product.mjs.
+ * Remaps semantic CSS variables to system colors when the OS forces colors
+ * (e.g. Windows Contrast Themes). No Theme JS API — the media query is enough.
+ *
+ * Prefer borders, outlines, text, and icons for state. Do not set
+ * forced-color-adjust: none globally; reserve it for rare semantic cases
+ * in component sheets (documented per use).
+ */
+
+@media (forced-colors: active) {
+  :root,
+  :root.dark,
+  .dark,
+  html.dark {
+    /* Surfaces */
+    --page-bg: Canvas;
+    --card-bg: Canvas;
+    --nav-bg: Canvas;
+    --input-bg: Canvas;
+    --input-disabled-bg: Canvas;
+    --surface-bg: Canvas;
+    --elevated-bg: Canvas;
+    --hover-bg: Highlight;
+    --table-total-bg: Highlight;
+    --table-header-gray-bg: Canvas;
+    --table-row-hover-bg: Highlight;
+    --table-row-selected-bg: Highlight;
+    --table-row-selected-hover-bg: Highlight;
+    --table-command-center-header-bg: Canvas;
+    --table-command-center-stripe-bg: Canvas;
+    --table-command-center-row-hover-bg: Highlight;
+    --table-command-center-border: CanvasText;
+    --table-command-center-selection-outline: Highlight;
+    --command-center-panel-header-bg: Highlight;
+    --command-center-panel-surface-bg: Canvas;
+    --command-center-panel-border: CanvasText;
+    --command-center-panel-card-border: CanvasText;
+
+    /* Text */
+    --text-primary: CanvasText;
+    --text-secondary: CanvasText;
+    --text-muted: GrayText;
+    --text-inverse: Canvas;
+
+    /* Borders & links */
+    --border-color: CanvasText;
+    --border-light: CanvasText;
+    --border-focus: Highlight;
+    --link-color: LinkText;
+
+    /* Brand / actions */
+    --theme-primary: Highlight;
+    --theme-primary-hover: Highlight;
+    --theme-primary-light: Canvas;
+    --theme-primary-border: Highlight;
+    --theme-primary-hover-light: Canvas;
+    --color-accent: Highlight;
+
+    /* Semantics — same system colors; pair with icons/labels in UI */
+    --color-success: CanvasText;
+    --color-success-hover: CanvasText;
+    --color-warning: CanvasText;
+    --color-error: CanvasText;
+    --color-info: CanvasText;
+    --color-info-light: Canvas;
+    --color-info-border: CanvasText;
+    --color-success-light: Canvas;
+    --color-success-border: CanvasText;
+    --color-success-bg-subtle: Canvas;
+    --color-warning-light: Canvas;
+    --color-warning-border: CanvasText;
+    --color-warning-focus: Highlight;
+    --color-error-light: Canvas;
+    --color-error-border: CanvasText;
+    --color-error-bg-subtle: Canvas;
+    --color-error-focus: Highlight;
+
+    /* Alert chips */
+    --alert-chip-blue-bg: Canvas;
+    --alert-chip-blue-fg: CanvasText;
+    --alert-chip-error-bg: Canvas;
+    --alert-chip-error-fg: CanvasText;
+    --alert-chip-warning-bg: Canvas;
+    --alert-chip-warning-fg: CanvasText;
+    --alert-chip-success-bg: Canvas;
+    --alert-chip-success-fg: CanvasText;
+    --alert-chip-info-bg: Canvas;
+    --alert-chip-info-fg: CanvasText;
+    --alert-chip-orange-bg: Canvas;
+    --alert-chip-orange-fg: CanvasText;
+    --notification-badge-error: CanvasText;
+
+    /* Buttons */
+    --theme-btn-primary-disabled-bg: Canvas;
+    --theme-btn-primary-disabled-fg: GrayText;
+    --theme-btn-secondary-stroke: ButtonText;
+    --theme-btn-secondary-hover-bg: Highlight;
+    --theme-btn-secondary-hover-fg: HighlightText;
+    --theme-btn-secondary-hover-stroke: Highlight;
+    --theme-btn-secondary-disabled-fg: GrayText;
+    --theme-btn-tertiary-fg: ButtonText;
+    --theme-btn-tertiary-hover-bg: Highlight;
+    --theme-btn-tertiary-disabled-fg: GrayText;
+    --page-header-btn-primary: ButtonText;
+    --page-header-btn-primary-fg: ButtonFace;
+    --page-header-btn-primary-hover: ButtonText;
+    --page-header-btn-primary-disabled-bg: Canvas;
+    --page-header-btn-primary-disabled-fg: GrayText;
+    --page-header-btn-secondary-stroke: ButtonText;
+    --page-header-btn-secondary-default-fg: ButtonText;
+    --page-header-btn-secondary-hover-bg: Highlight;
+    --page-header-btn-secondary-hover-fg: HighlightText;
+    --page-header-btn-secondary-hover-stroke: Highlight;
+    --page-header-btn-secondary-disabled-fg: GrayText;
+    --page-header-btn-tertiary-fg: ButtonText;
+    --page-header-btn-tertiary-hover-bg: Highlight;
+    --page-header-btn-tertiary-disabled-fg: GrayText;
+
+    /* Focus — box-shadow rings are suppressed; use outline-friendly tokens */
+    --focus-ring-primary: none;
+    --focus-ring-page-header: none;
+    --focus-ring-error: none;
+    --focus-ring-error-checked: none;
+    --focus-ring-warning: none;
+    --focus-ring-warning-checked: none;
+    --focus-ring-date-picker: none;
+
+    /* Elevations — shadows become borders via none + component border fallbacks */
+    --shadow-none: none;
+    --shadow-sm: none;
+    --shadow-md: none;
+    --shadow-lg: none;
+    --shadow-xl: none;
+    --shadow-2xl: none;
+    --shadow-dropdown: none;
+    --shadow-inset-sm: none;
+    --shadow-inset-md: none;
+
+    /* Gradients → solid system colors */
+    --gradient-dela: Highlight;
+    --gradient-dela-start: Highlight;
+    --gradient-dela-end: Highlight;
+    --gradient-dela-hover-bg: Canvas;
+    --linear-new: Highlight;
+
+    /* Scrollbar / misc chrome */
+    --scrollbar-track: Canvas;
+    --scrollbar-thumb: CanvasText;
+    --scrollbar-thumb-hover: Highlight;
+    --floating-nav-divider: CanvasText;
+    --floating-nav-divider-accent: CanvasText;
+    --floating-nav-pin: CanvasText;
+    --floating-nav-pin-hover: Highlight;
+    --shell-footer-tab-icon-color-active: Highlight;
+    --company-picker-indicator-default: Highlight;
+    --dela-panel-avatar-bg: Highlight;
+    --dela-panel-content-bg: Canvas;
+
+    /* Kanban / CP chrome */
+    --kanban-in-progress-border: CanvasText;
+    --kanban-done-border: CanvasText;
+    --kanban-cp-chrome-toolbar-bg: Canvas;
+    --kanban-cp-chrome-toolbar-fg: CanvasText;
+    --kanban-cp-chrome-toolbar-muted: GrayText;
+    --kanban-cp-chrome-board-bg: Canvas;
+    --kanban-cp-view-active-bg: Highlight;
+    --kanban-cp-view-active-fg: HighlightText;
+    --kanban-cp-card-surface: Canvas;
+    --cp-datagrid-row-hover-bg: Highlight;
+    --cp-datagrid-cell-edit-bg: Canvas;
+    --cp-datagrid-split-color: CanvasText;
+    --cp-datagrid-hatch: Canvas;
+    --cp-datagrid-scroll-btn-bg: ButtonFace;
+    --cp-datagrid-scroll-btn-border: ButtonText;
+  }
+
+  /* Document-level helpers (light DOM). Shadow DOM needs local rules. */
+  :focus-visible {
+    outline: var(--border-width-standard) solid Highlight;
+    outline-offset: var(--space-0-5);
+  }
+
+  button,
+  [role='button'],
+  input,
+  select,
+  textarea {
+    border: var(--border-width-thin) solid ButtonText;
+  }
+
+  button:disabled,
+  [aria-disabled='true'],
+  input:disabled,
+  select:disabled,
+  textarea:disabled {
+    color: GrayText;
+    border-color: GrayText;
+  }
+
+  /* appearance:none chevron is a background image HC may strip — restore OS chrome */
+  select,
+  .select {
+    appearance: auto;
+    background-image: none;
+    padding-right: var(--harmony-field-pad-x, var(--space-4));
+  }
+
+  a:link,
+  a:visited {
+    color: LinkText;
+  }
+
+  ::selection {
+    background: Highlight;
+    color: HighlightText;
+  }
+}

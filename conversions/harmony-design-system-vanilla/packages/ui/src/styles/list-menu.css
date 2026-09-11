@@ -1,0 +1,146 @@
+/**
+ * List Menu — native/hybrid document CSS.
+ * Extracted from reference src/styles/components.css (LIST MENU).
+ */
+
+.list-menu,
+nav.list-menu,
+ul.list-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.list-menu {
+  /* Block so CE host (harmony-list-menu) shrinks/borders like a native div/nav */
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.list-menu__item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  width: 100%;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  line-height: var(--leading-normal);
+  text-align: left;
+  text-decoration: none;
+  color: var(--text-primary);
+  background-color: transparent;
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+  border: none;
+  border-bottom: 1px solid var(--border-color);
+  border-radius: 0;
+  height: auto;
+  min-height: 0;
+  margin: 0;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.list-menu__item:last-child {
+  border-bottom: none;
+}
+
+.list-menu__item:hover {
+  background-color: var(--hover-bg);
+}
+
+.list-menu__item.is-active {
+  background-color: var(--theme-primary);
+  color: #fff;
+}
+
+.list-menu__item.is-active:hover {
+  background-color: var(--theme-primary-hover);
+}
+
+.list-menu__item:focus-visible {
+  outline: none;
+  box-shadow: inset var(--focus-ring-primary);
+}
+
+.list-menu__item-icon {
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.list-menu__custom-icon {
+  width: var(--space-5);
+  height: var(--space-5);
+  object-fit: contain;
+}
+
+.list-menu__item:hover:not(.is-active) .list-menu__item-icon {
+  color: var(--theme-primary);
+}
+
+.list-menu__item.is-active .list-menu__item-icon {
+  color: #fff;
+}
+
+.list-menu--no-borders .list-menu__item {
+  border-bottom: none;
+}
+
+/* ListMenu Responsive Styles */
+@media (max-width: 768px) {
+  .list-menu {
+    width: 100%;
+  }
+
+  .list-menu__item {
+    min-height: 44px; /* Ensure touch target size */
+    padding: var(--space-3) var(--space-4);
+  }
+}
+
+@media (forced-colors: active) {
+  .list-menu {
+    border-color: CanvasText;
+    background-color: Canvas;
+  }
+
+  .list-menu__item {
+    border-bottom-color: CanvasText;
+    color: CanvasText;
+    forced-color-adjust: none;
+  }
+
+  .list-menu__item:hover {
+    background-color: Highlight;
+    color: HighlightText;
+  }
+
+  .list-menu__item.is-active {
+    background-color: Highlight;
+    color: HighlightText;
+    outline: var(--border-width-standard) solid CanvasText;
+    outline-offset: calc(var(--space-0-5) * -1);
+  }
+
+  .list-menu__item:focus-visible {
+    outline: var(--border-width-standard) solid Highlight;
+    outline-offset: var(--space-0-5);
+    box-shadow: none;
+  }
+
+  .list-menu__item-icon,
+  .list-menu__item.is-active .list-menu__item-icon,
+  .list-menu__item:hover:not(.is-active) .list-menu__item-icon {
+    color: currentColor;
+  }
+}

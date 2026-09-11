@@ -1,18 +1,13 @@
 ---
 /**
- * ShellHeader: top bar with brand and optional company picker + avatar.
- * @usagePattern actions-slot-override When the actions slot is provided, it completely replaces the default right-side content (company picker and Avatar). When the slot is not used, the header shows the company picker when showCompanyPicker is true and the Avatar. Use the companies prop to supply custom company options and companyColor for the selected indicator and gradient bar.
- * @usagePattern company-picker-customization The companies prop overrides the default company list; companyColor sets the selected company indicator and the header gradient bar color.
+ * ShellHeader: top bar with brand and composable actions.
+ * Prefer the `actions` slot for CompanyPicker, UserMenu, and custom controls.
+ * When the slot is omitted, optional default CompanyPicker + UserMenu are shown for ShellLayout convenience.
  */
+import CompanyPicker from './CompanyPicker.astro';
+import type { CompanyOption } from './CompanyPicker.astro';
+import UserMenu from './UserMenu.astro';
 import Icon from './Icon.astro';
-import Avatar from './Avatar.astro';
-
-/** Company option for the company picker dropdown. When provided via `companies` prop, used instead of built-in list. */
-export interface CompanyOption {
-  id: string;
-  name: string;
-  color?: string;
-}
 
 interface Props {
   productName?: string;
@@ -20,8 +15,9 @@ interface Props {
   companyName?: string;
   showCompanyPicker?: boolean;
   companyColor?: string;
-  /** When provided, used to render company picker options; when not provided, built-in list is used. */
   companies?: CompanyOption[];
+  userName?: string;
+  userSrc?: string;
   class?: string;
 }
 
@@ -32,43 +28,24 @@ const {
   showCompanyPicker = true,
   companyColor,
   companies,
-  class: className = ''
+  userName = 'User',
+  userSrc,
+  class: className = '',
 } = Astro.props;
 
 const hasActionsSlot = Astro.slots.has('actions');
-
-// Icon names used in default header (e.g. company picker chevron) resolve per theme-scoped icon manifest (src/data/icon-manifest.json).
-// Default company colors align with theme-config.ts (cp companies) so the gradient bar is never empty when companyColor is not passed.
-const defaultCompanies: CompanyOption[] = [
-  { id: 'acme-corp', name: 'Acme Corporation', color: '#FF507B' },
-  { id: 'ocean-industries', name: 'Ocean Industries', color: '#285F8C' },
-  { id: 'violet-systems', name: 'Violet Systems', color: '#DC50FF' },
-  { id: 'azure-dynamics', name: 'Azure Dynamics', color: '#5077FF' },
-  { id: 'sunset-corporation', name: 'Sunset Corporation', color: '#FFAF50' },
-];
-
-const optionClassMap: Record<string, string> = {
-  'acme-corp': 'company-picker__option-indicator--acme',
-  'ocean-industries': 'company-picker__option-indicator--ocean',
-  'violet-systems': 'company-picker__option-indicator--violet',
-  'azure-dynamics': 'company-picker__option-indicator--azure',
-  'sunset-corporation': 'company-picker__option-indicator--sunset',
-};
-
-const companyOptions = companies ?? defaultCompanies;
-const effectiveCompanyColor = companyColor ?? companyOptions[0]?.color;
+const effectiveCompanyColor =
+  companyColor ?? companies?.[0]?.color ?? '#FF507B';
 ---
 
 <header class={`header ${className}`}>
-  <!-- Left: Brand -->
   <div class="header__brand">
     <a href="/" class="header__brand-link">
-      <img src={logoSrc} alt="Logo" class="header__logo" />
+      <img src={logoSrc} alt="" class="header__logo" />
       <span class="header__title">{productName}</span>
     </a>
   </div>
 
-  <!-- Right: actions slot or company dropdown + Avatar -->
   <div class="header__actions">
     {hasActionsSlot ? (
       <slot name="actions" />
@@ -76,47 +53,23 @@ const effectiveCompanyColor = companyColor ?? companyOptions[0]?.color;
       <>
         {showCompanyPicker && (
           <>
-            <!-- Company Picker -->
-            <div class="company-picker">
-              <button type="button" class="company-picker__btn" data-company-picker-btn>
-                <span 
-                  class="company-picker__indicator"
-                  data-company-indicator
-                  style={effectiveCompanyColor ? `background-color: ${effectiveCompanyColor}` : undefined}
-                ></span>
-                <span class="company-picker__name" data-company-name>{companyName}</span>
-                <Icon name="chevron-down" size="sm" class="company-picker__chevron" />
-              </button>
-              <div class="company-picker__menu" data-company-picker-menu>
-                {companyOptions.map((company, index) => (
-                  <button
-                    type="button"
-                    class:list={['company-picker__option', index === 0 && 'company-picker__option--selected']}
-                    data-company-option
-                    data-company-id={company.id}
-                  >
-                    <span
-                      class:list={['company-picker__option-indicator', !companies && optionClassMap[company.id]]}
-                      style={company.color ? `background-color: ${company.color}` : undefined}
-                    />
-                    <span class="company-picker__option-name">{company.name}</span>
-                  </button>
-                ))}
-              </div>
-            </div>
-
+            <CompanyPicker
+              companyName={companyName}
+              companyColor={companyColor}
+              companies={companies}
+            />
             <div class="divider"></div>
           </>
         )}
-
-        <!-- User Avatar -->
-        <Avatar size="sm" interactive />
+        <UserMenu name={userName} src={userSrc}>
+          <button type="button"><Icon name="user" size="sm" class="user-menu__item-icon" />Profile</button>
+          <button type="button"><Icon name="arrow-right-on-rectangle" size="sm" class="user-menu__item-icon" />Sign out</button>
+        </UserMenu>
       </>
     )}
   </div>
 
-  <!-- Gradient Border -->
-  <div 
+  <div
     class="header__gradient"
     data-header-gradient
     style={effectiveCompanyColor ? `background: linear-gradient(to right, ${effectiveCompanyColor}05, ${effectiveCompanyColor} 50%, ${effectiveCompanyColor}05)` : undefined}
@@ -124,96 +77,30 @@ const effectiveCompanyColor = companyColor ?? companyOptions[0]?.color;
 </header>
 
 <script>
-  let outsideClickListenerAdded = false;
-  
-  // Helper: Convert RGB/RGBA to hex
   function rgbToHex(rgb: string): string {
     if (!rgb || rgb.startsWith('#')) return rgb;
-    
     const values = rgb.match(/\d+/g);
     if (!values || values.length < 3) return rgb;
-    
     const r = parseInt(values[0]).toString(16).padStart(2, '0');
     const g = parseInt(values[1]).toString(16).padStart(2, '0');
     const b = parseInt(values[2]).toString(16).padStart(2, '0');
     return `#${r}${g}${b}`.toUpperCase();
   }
-  
-  function initCompanyPickers() {
-    document.querySelectorAll('[data-company-picker-btn]').forEach((pickerBtn) => {
-      // Skip if already initialized
-      if (pickerBtn.hasAttribute('data-init')) return;
-      pickerBtn.setAttribute('data-init', 'true');
-      
-      const pickerMenu = pickerBtn.parentElement?.querySelector('[data-company-picker-menu]');
-      if (!pickerMenu) return;
-      
-      // Find the header element that contains this picker
-      const header = pickerBtn.closest('.header');
-      if (!header) return;
-      
-      const companyIndicator = pickerBtn.querySelector('[data-company-indicator]') as HTMLElement;
-      const companyName = pickerBtn.querySelector('[data-company-name]') as HTMLElement;
-      const headerGradient = header.querySelector('[data-header-gradient]') as HTMLElement;
-      
-      // Toggle dropdown on button click
-      pickerBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        pickerMenu.classList.toggle('company-picker__menu--open');
-      });
-      
-      // Handle company selection
-      pickerMenu.querySelectorAll('[data-company-option]').forEach((option) => {
-        option.addEventListener('click', (e) => {
-          e.stopPropagation();
-          const optionName = option.querySelector('.company-picker__option-name')?.textContent;
-          const indicator = option.querySelector('.company-picker__option-indicator') as HTMLElement;
-          
-          // Update selected state
-          pickerMenu.querySelectorAll('[data-company-option]').forEach(opt => {
-            opt.classList.remove('company-picker__option--selected');
-          });
-          option.classList.add('company-picker__option--selected');
-          
-          // Update display
-          if (companyName && optionName) {
-            companyName.textContent = optionName;
-          }
-          
-          // Get color from CSS variable via computed style (reads from token)
-          if (companyIndicator && indicator) {
-            const computedColor = window.getComputedStyle(indicator).backgroundColor;
-            companyIndicator.style.backgroundColor = computedColor;
-            
-            // Update gradient border - convert RGB to hex if needed
-            if (headerGradient && computedColor) {
-              const hexColor = rgbToHex(computedColor);
-              headerGradient.style.background = `linear-gradient(to right, ${hexColor}05, ${hexColor} 50%, ${hexColor}05)`;
-            }
-          }
-          
-          // Close menu
-          pickerMenu.classList.remove('company-picker__menu--open');
-        });
-      });
+
+  function bindHeaderCompanyGradient() {
+    document.querySelectorAll('.header').forEach((header) => {
+      if (header.hasAttribute('data-gradient-bound')) return;
+      header.setAttribute('data-gradient-bound', 'true');
+      header.addEventListener('company-change', ((e: CustomEvent) => {
+        const color = e.detail?.color as string | undefined;
+        const gradient = header.querySelector('[data-header-gradient]') as HTMLElement | null;
+        if (!gradient || !color) return;
+        const hex = rgbToHex(color);
+        gradient.style.background = `linear-gradient(to right, ${hex}05, ${hex} 50%, ${hex}05)`;
+      }) as EventListener);
     });
-    
-    // Close dropdown when clicking outside (only one listener needed)
-    if (!outsideClickListenerAdded) {
-      outsideClickListenerAdded = true;
-      document.addEventListener('click', (e) => {
-        const target = e.target as HTMLElement;
-        document.querySelectorAll('[data-company-picker-menu]').forEach((menu) => {
-          const btn = menu.parentElement?.querySelector('[data-company-picker-btn]');
-          if (btn && !btn.contains(target) && !menu.contains(target)) {
-            menu.classList.remove('company-picker__menu--open');
-          }
-        });
-      });
-    }
   }
-  
-  // Initialize on page load
-  initCompanyPickers();
-  document.addEventListener('astro:page-load', initCompanyPickers);
+
+  bindHeaderCompanyGradient();
+  document.addEventListener('astro:page-load', bindHeaderCompanyGradient);
 </script>

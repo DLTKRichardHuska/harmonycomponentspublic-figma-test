@@ -1,0 +1,221 @@
+/**
+ * Left sidebar — Shadow DOM recipe for `<harmony-left-sidebar>`.
+ * Port of reference `.left-sidebar*` (standalone rail; shell-layout positioning deferred).
+ */
+
+:host {
+  display: block;
+  box-sizing: border-box;
+  position: fixed;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: var(--z-sticky);
+  width: 52px;
+  transition: width 0.2s ease;
+  overflow: visible;
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+}
+
+:host([inline]) {
+  position: static;
+  transform: none;
+  height: auto;
+}
+
+:host(:hover),
+:host([expanded]) {
+  width: 220px;
+}
+
+:host([panel-open]:hover) {
+  width: 52px;
+}
+
+.left-sidebar__nav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.left-sidebar__section {
+  background-color: var(--nav-bg);
+  border: 1px solid var(--border-color);
+  border-left: none;
+  border-radius: 0 var(--radius-12) var(--radius-12) 0;
+  box-shadow: var(--shadow-xl);
+  padding: var(--space-2);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  overflow: visible;
+  box-sizing: border-box;
+}
+
+.left-sidebar__item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-1-5);
+  border-radius: var(--radius-08);
+  text-decoration: none;
+  color: var(--text-primary);
+  white-space: nowrap;
+  transition: background-color var(--transition-fast);
+  background: transparent;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+.left-sidebar__item:hover {
+  background-color: var(--hover-bg);
+  text-decoration: none;
+}
+
+.left-sidebar__item:focus-visible {
+  outline: 2px solid var(--theme-primary);
+  outline-offset: 2px;
+}
+
+.left-sidebar__item--active,
+.left-sidebar__item[data-active='true'] {
+  background-color: var(--theme-primary);
+  color: var(--text-inverse);
+}
+
+.left-sidebar__item--active:hover,
+.left-sidebar__item[data-active='true']:hover {
+  background-color: var(--theme-primary-hover);
+  color: var(--text-inverse);
+}
+
+.left-sidebar__icon {
+  flex-shrink: 0;
+  width: var(--space-6);
+  height: var(--space-6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: inherit;
+}
+
+.left-sidebar__icon svg,
+.left-sidebar__icon .left-sidebar__custom-icon,
+.left-sidebar__icon harmony-icon {
+  width: var(--space-6);
+  height: var(--space-6);
+  object-fit: contain;
+}
+
+.left-sidebar__label {
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  font-weight: var(--font-normal);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+:host(:hover) .left-sidebar__label,
+:host([expanded]) .left-sidebar__label {
+  opacity: 1;
+  visibility: visible;
+}
+
+:host([panel-open]) .left-sidebar__label {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.left-sidebar__item--active .left-sidebar__icon,
+.left-sidebar__item[data-active='true'] .left-sidebar__icon {
+  color: var(--text-inverse);
+}
+
+:host-context(html.dark) .left-sidebar__item:hover {
+  background-color: var(--hover-bg);
+}
+
+:host-context(html.dark) .left-sidebar__item .left-sidebar__icon {
+  color: var(--text-primary);
+}
+
+:host-context(html.dark) .left-sidebar__item--active .left-sidebar__icon,
+:host-context(html.dark) .left-sidebar__item[data-active='true'] .left-sidebar__icon {
+  color: var(--shell-sidebar-icon-color-on-primary, #ffffff);
+}
+
+:host-context(html.dark) .left-sidebar__icon .left-sidebar__custom-icon {
+  filter: brightness(0) invert(1);
+}
+
+:host([panel-open]) .left-sidebar__section {
+  box-shadow: none;
+  border: none;
+  background-color: transparent;
+  border-radius: 0;
+}
+
+:host([panel-open]) .left-sidebar__item--active:not([data-active='true']) {
+  background-color: transparent;
+  color: inherit;
+}
+
+:host([panel-open]) .left-sidebar__item--active:not([data-active='true']) .left-sidebar__icon {
+  color: inherit;
+}
+
+.left-sidebar__item-tooltip {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  z-index: var(--z-10);
+}
+
+/* Labels cover the name when expanded; hide tooltips unless panel-open (collapsed rail). */
+:host(:not([panel-open])) .left-sidebar__item-tooltip::part(content) {
+  display: none;
+}
+
+@media (forced-colors: active) {
+  :host {
+    border-right: 1px solid CanvasText;
+  }
+
+  .left-sidebar__section {
+    border: 1px solid CanvasText;
+    border-left: none;
+    box-shadow: none;
+    background-color: Canvas;
+  }
+
+  .left-sidebar__item:focus-visible {
+    outline: 2px solid Highlight;
+    outline-offset: 2px;
+  }
+
+  .left-sidebar__item--active,
+  .left-sidebar__item[data-active='true'] {
+    forced-color-adjust: none;
+    background-color: Highlight;
+    color: HighlightText;
+    border: 1px solid CanvasText;
+  }
+
+  .left-sidebar__item--active .left-sidebar__icon,
+  .left-sidebar__item[data-active='true'] .left-sidebar__icon {
+    color: HighlightText;
+  }
+
+  :host([panel-open]) .left-sidebar__section {
+    border: none;
+  }
+}

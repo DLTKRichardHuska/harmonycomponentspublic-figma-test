@@ -1,0 +1,61 @@
+/**
+ * User menu — document styles for light-DOM slotted items.
+ * Matches company-picker options (no color indicator).
+ */
+
+harmony-user-menu > a,
+harmony-user-menu > button {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--space-3);
+  width: 100%;
+  height: auto;
+  min-height: 0;
+  margin: 0;
+  padding: var(--space-2) var(--space-3);
+  background-color: transparent !important;
+  border: none;
+  border-radius: var(--radius-md);
+  color: var(--text-secondary) !important;
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  line-height: var(--leading-normal);
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+  box-sizing: border-box;
+  appearance: none;
+  -webkit-appearance: none;
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+harmony-user-menu > a:hover,
+harmony-user-menu > button:hover {
+  background-color: var(--hover-bg) !important;
+  color: var(--text-primary) !important;
+}
+
+harmony-user-menu > a .user-menu__item-icon,
+harmony-user-menu > button .user-menu__item-icon,
+harmony-user-menu > a harmony-icon,
+harmony-user-menu > button harmony-icon {
+  flex-shrink: 0;
+  color: currentColor;
+}
+
+harmony-user-menu > a:focus-visible,
+harmony-user-menu > button:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring-primary);
+}
+
+@media (forced-colors: active) {
+  harmony-user-menu > a:focus-visible,
+  harmony-user-menu > button:focus-visible {
+    outline: 2px solid Highlight;
+    outline-offset: 2px;
+    box-shadow: none;
+  }
+}

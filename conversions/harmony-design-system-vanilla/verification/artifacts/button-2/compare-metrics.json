@@ -1,0 +1,720 @@
+{
+  "generatedAt": "2026-09-10T00:38:47.826Z",
+  "ref": {
+    "h1": "Buttons",
+    "h2s": [
+      "Examples",
+      "Props",
+      "Usage Guidelines",
+      "Accessibility"
+    ],
+    "h3s": [
+      "Button Types",
+      "Variants",
+      "Dela Buttons",
+      "Sizes",
+      "With Icons",
+      "Icon Only",
+      "States",
+      "Loading State",
+      "Full Width",
+      "Vertical Orientation",
+      "Button Combinations",
+      "When to Use Each Button Type",
+      "When to Use Each Variant",
+      "Do",
+      "Don't",
+      "Keyboard Navigation",
+      "Icon-Only Buttons",
+      "Focus States",
+      "Disabled State"
+    ],
+    "primary": {
+      "tag": "button",
+      "className": "btn btn--primary btn--md",
+      "text": "Primary",
+      "bg": "rgb(42, 120, 198)",
+      "color": "rgb(255, 255, 255)",
+      "fontSize": "16px",
+      "fontWeight": "500",
+      "height": 40,
+      "width": 87,
+      "padding": "0px 16px"
+    },
+    "pageHeader": {
+      "tag": "button",
+      "className": "btn btn--primary btn--page-header btn--md",
+      "text": "Primary",
+      "bg": "rgb(4, 56, 82)",
+      "color": "rgb(255, 255, 255)",
+      "fontSize": "16px",
+      "fontWeight": "500",
+      "height": 40,
+      "width": 87,
+      "padding": "0px 16px"
+    },
+    "sizes": {
+      "xs": {
+        "tag": "button",
+        "className": "btn btn--primary btn--xs",
+        "text": "XSmall",
+        "bg": "rgb(42, 120, 198)",
+        "color": "rgb(255, 255, 255)",
+        "fontSize": "12px",
+        "fontWeight": "500",
+        "height": 24,
+        "width": 53,
+        "padding": "0px 8px"
+      },
+      "sm": {
+        "tag": "button",
+        "className": "btn btn--primary btn--sm",
+        "text": "Small",
+        "bg": "rgb(42, 120, 198)",
+        "color": "rgb(255, 255, 255)",
+        "fontSize": "14px",
+        "fontWeight": "500",
+        "height": 32,
+        "width": 58,
+        "padding": "0px 12px"
+      },
+      "md": {
+        "tag": "button",
+        "className": "btn btn--primary btn--md",
+        "text": "Primary",
+        "bg": "rgb(42, 120, 198)",
+        "color": "rgb(255, 255, 255)",
+        "fontSize": "16px",
+        "fontWeight": "500",
+        "height": 40,
+        "width": 87,
+        "padding": "0px 16px"
+      },
+      "lg": {
+        "tag": "button",
+        "className": "btn btn--primary btn--lg",
+        "text": "Large",
+        "bg": "rgb(42, 120, 198)",
+        "color": "rgb(255, 255, 255)",
+        "fontSize": "18px",
+        "fontWeight": "500",
+        "height": 48,
+        "width": 94,
+        "padding": "0px 24px"
+      }
+    },
+    "download": {
+      "tag": "button",
+      "className": "btn btn--primary btn--md",
+      "text": "Download",
+      "bg": "rgb(42, 120, 198)",
+      "color": "rgb(255, 255, 255)",
+      "fontSize": "16px",
+      "fontWeight": "500",
+      "height": 40,
+      "width": 128,
+      "padding": "0px 16px"
+    },
+    "confirm": {
+      "tag": "button",
+      "className": "btn btn--primary btn--md",
+      "text": "Confirm",
+      "bg": "rgb(42, 120, 198)",
+      "color": "rgb(255, 255, 255)",
+      "fontSize": "16px",
+      "fontWeight": "500",
+      "height": 40,
+      "width": 115,
+      "padding": "0px 16px"
+    },
+    "reject": {
+      "tag": "button",
+      "className": "btn btn--secondary btn--md",
+      "text": "Reject",
+      "bg": "rgb(247, 248, 250)",
+      "color": "rgb(42, 120, 198)",
+      "fontSize": "16px",
+      "fontWeight": "500",
+      "height": 40,
+      "width": 105,
+      "padding": "0px 16px"
+    },
+    "hasUsage": true,
+    "hasStable": true
+  },
+  "refHeadings": [
+    {
+      "i": 0,
+      "text": "Examples",
+      "top": 373.5
+    },
+    {
+      "i": 1,
+      "text": "Props",
+      "top": 3339
+    },
+    {
+      "i": 2,
+      "text": "Usage Guidelines",
+      "top": 4143
+    },
+    {
+      "i": 3,
+      "text": "Accessibility",
+      "top": 4826.390625
+    }
+  ],
+  "refDarkPrimary": {
+    "bg": "rgb(89, 172, 255)",
+    "color": "rgb(31, 37, 46)",
+    "fontWeight": "500",
+    "text": "Primary"
+  },
+  "conv": {
+    "h1": "Buttons",
+    "h2s": [
+      "Native defaults",
+      "Button types",
+      "Variants",
+      "Dela buttons",
+      "Sizes",
+      "With icons",
+      "Icon only",
+      "States",
+      "Loading state",
+      "Full width",
+      "Vertical orientation",
+      "Hybrid helper (<harmony-button>)",
+      "Combinations",
+      "Usage guidelines",
+      "API",
+      "Accessibility"
+    ],
+    "h3s": [
+      "Consume — npm",
+      "Consume — static zip"
+    ],
+    "hasDownload": true,
+    "hasConfirm": true,
+    "hasReject": true,
+    "hasUsage": true,
+    "hasStableBadge": false,
+    "unclassed": {
+      "tag": "button",
+      "className": "",
+      "text": "Primary (unclassed)",
+      "bg": "rgb(42, 120, 198)",
+      "color": "rgb(255, 255, 255)",
+      "fontSize": "16px",
+      "fontWeight": "500",
+      "height": 40,
+      "width": 174,
+      "padding": "0px 16px",
+      "disabled": false
+    },
+    "primaryClassed": {
+      "tag": "button",
+      "className": "btn--primary",
+      "text": "Primary",
+      "bg": "rgb(42, 120, 198)",
+      "color": "rgb(255, 255, 255)",
+      "fontSize": "16px",
+      "fontWeight": "500",
+      "height": 40,
+      "width": 87,
+      "padding": "0px 16px",
+      "disabled": false
+    },
+    "pageHeader": {
+      "tag": "button",
+      "className": "btn--page-header btn--primary",
+      "text": "Primary",
+      "bg": "rgb(4, 56, 82)",
+      "color": "rgb(255, 255, 255)",
+      "fontSize": "16px",
+      "fontWeight": "500",
+      "height": 40,
+      "width": 87,
+      "padding": "0px 16px",
+      "disabled": false
+    },
+    "secondary": {
+      "tag": "button",
+      "className": "btn--secondary",
+      "text": "Secondary modifier",
+      "bg": "rgb(247, 248, 250)",
+      "color": "rgb(42, 120, 198)",
+      "fontSize": "16px",
+      "fontWeight": "500",
+      "height": 40,
+      "width": 176,
+      "padding": "0px 16px",
+      "disabled": false
+    },
+    "download": {
+      "tag": "button",
+      "className": "",
+      "text": "Download",
+      "bg": "rgb(42, 120, 198)",
+      "color": "rgb(255, 255, 255)",
+      "fontSize": "16px",
+      "fontWeight": "500",
+      "height": 40,
+      "width": 128,
+      "padding": "0px 16px",
+      "disabled": false
+    },
+    "confirm": {
+      "tag": "button",
+      "className": "",
+      "text": "Confirm",
+      "bg": "rgb(42, 120, 198)",
+      "color": "rgb(255, 255, 255)",
+      "fontSize": "16px",
+      "fontWeight": "500",
+      "height": 40,
+      "width": 115,
+      "padding": "0px 16px",
+      "disabled": false
+    },
+    "reject": {
+      "tag": "button",
+      "className": "btn--secondary",
+      "text": "Reject",
+      "bg": "rgb(247, 248, 250)",
+      "color": "rgb(42, 120, 198)",
+      "fontSize": "16px",
+      "fontWeight": "500",
+      "height": 40,
+      "width": 105,
+      "padding": "0px 16px",
+      "disabled": false
+    },
+    "sizes": {
+      "XSmall": {
+        "tag": "button",
+        "className": "btn--xs",
+        "text": "XSmall",
+        "bg": "rgb(42, 120, 198)",
+        "color": "rgb(255, 255, 255)",
+        "fontSize": "12px",
+        "fontWeight": "500",
+        "height": 24,
+        "width": 53,
+        "padding": "0px 8px",
+        "disabled": false
+      },
+      "Small": {
+        "tag": "button",
+        "className": "btn--sm",
+        "text": "Small",
+        "bg": "rgb(42, 120, 198)",
+        "color": "rgb(255, 255, 255)",
+        "fontSize": "14px",
+        "fontWeight": "500",
+        "height": 32,
+        "width": 58,
+        "padding": "0px 12px",
+        "disabled": false
+      },
+      "Medium": {
+        "tag": "button",
+        "className": "btn--md",
+        "text": "Medium",
+        "bg": "rgb(42, 120, 198)",
+        "color": "rgb(255, 255, 255)",
+        "fontSize": "16px",
+        "fontWeight": "500",
+        "height": 40,
+        "width": 90,
+        "padding": "0px 16px",
+        "disabled": false
+      },
+      "Large": {
+        "tag": "button",
+        "className": "btn--lg",
+        "text": "Large",
+        "bg": "rgb(42, 120, 198)",
+        "color": "rgb(255, 255, 255)",
+        "fontSize": "18px",
+        "fontWeight": "500",
+        "height": 48,
+        "width": 94,
+        "padding": "0px 24px",
+        "disabled": false
+      },
+      "class-xs": {
+        "tag": "button",
+        "className": "btn--xs",
+        "text": "XSmall",
+        "bg": "rgb(42, 120, 198)",
+        "color": "rgb(255, 255, 255)",
+        "fontSize": "12px",
+        "fontWeight": "500",
+        "height": 24,
+        "width": 53,
+        "padding": "0px 8px",
+        "disabled": false
+      },
+      "class-sm": {
+        "tag": "button",
+        "className": "btn--sm",
+        "text": "Small",
+        "bg": "rgb(42, 120, 198)",
+        "color": "rgb(255, 255, 255)",
+        "fontSize": "14px",
+        "fontWeight": "500",
+        "height": 32,
+        "width": 58,
+        "padding": "0px 12px",
+        "disabled": false
+      },
+      "class-md": {
+        "tag": "button",
+        "className": "btn--md",
+        "text": "Medium",
+        "bg": "rgb(42, 120, 198)",
+        "color": "rgb(255, 255, 255)",
+        "fontSize": "16px",
+        "fontWeight": "500",
+        "height": 40,
+        "width": 90,
+        "padding": "0px 16px",
+        "disabled": false
+      },
+      "class-lg": {
+        "tag": "button",
+        "className": "btn--lg",
+        "text": "Large",
+        "bg": "rgb(42, 120, 198)",
+        "color": "rgb(255, 255, 255)",
+        "fontSize": "18px",
+        "fontWeight": "500",
+        "height": 48,
+        "width": 94,
+        "padding": "0px 24px",
+        "disabled": false
+      }
+    },
+    "hybrids": [
+      {
+        "attrs": {
+          "variant": null,
+          "icon": null,
+          "loading": true,
+          "loading-text": "Saving..."
+        },
+        "textContent": "Saving...",
+        "lightDomChildren": [
+          {
+            "nodeType": 1,
+            "text": "svg"
+          },
+          {
+            "nodeType": 1,
+            "text": "SPAN"
+          }
+        ],
+        "style": {
+          "tag": "harmony-button",
+          "className": "btn btn--primary btn--md btn--disabled btn--loading",
+          "text": "Saving...",
+          "bg": "rgb(224, 228, 235)",
+          "color": "rgb(191, 198, 212)",
+          "fontSize": "16px",
+          "fontWeight": "500",
+          "height": 40,
+          "width": 115,
+          "padding": "0px 16px",
+          "disabled": false
+        },
+        "classes": "btn btn--primary btn--md btn--disabled btn--loading",
+        "width": 115
+      },
+      {
+        "attrs": {
+          "variant": "primary",
+          "icon": null,
+          "loading": false,
+          "loading-text": null
+        },
+        "textContent": "Save",
+        "lightDomChildren": [
+          {
+            "nodeType": 3,
+            "text": "Save"
+          }
+        ],
+        "style": {
+          "tag": "harmony-button",
+          "className": "btn btn--primary btn--md",
+          "text": "Save",
+          "bg": "rgb(42, 120, 198)",
+          "color": "rgb(255, 255, 255)",
+          "fontSize": "16px",
+          "fontWeight": "500",
+          "height": 40,
+          "width": 67,
+          "padding": "0px 16px",
+          "disabled": false
+        },
+        "classes": "btn btn--primary btn--md",
+        "width": 67
+      },
+      {
+        "attrs": {
+          "variant": "ghost",
+          "icon": "pencil",
+          "loading": false,
+          "loading-text": null
+        },
+        "textContent": "",
+        "lightDomChildren": [
+          {
+            "nodeType": 1,
+            "text": "HARMONY-ICON"
+          }
+        ],
+        "style": {
+          "tag": "harmony-button",
+          "className": "btn btn--ghost btn--icon-md",
+          "text": "",
+          "bg": "rgba(0, 0, 0, 0)",
+          "color": "rgb(55, 63, 78)",
+          "fontSize": "16px",
+          "fontWeight": "500",
+          "height": 40,
+          "width": 40,
+          "padding": "0px",
+          "disabled": false
+        },
+        "classes": "btn btn--ghost btn--icon-md",
+        "width": 40
+      },
+      {
+        "attrs": {
+          "variant": "secondary",
+          "icon": "plus",
+          "loading": false,
+          "loading-text": null
+        },
+        "textContent": "Add Item",
+        "lightDomChildren": [
+          {
+            "nodeType": 1,
+            "text": "HARMONY-ICON"
+          },
+          {
+            "nodeType": 3,
+            "text": "Add Item"
+          }
+        ],
+        "style": {
+          "tag": "harmony-button",
+          "className": "btn btn--secondary btn--md",
+          "text": "Add Item",
+          "bg": "rgb(247, 248, 250)",
+          "color": "rgb(42, 120, 198)",
+          "fontSize": "16px",
+          "fontWeight": "500",
+          "height": 40,
+          "width": 125,
+          "padding": "0px 16px",
+          "disabled": false
+        },
+        "classes": "btn btn--secondary btn--md",
+        "width": 125
+      },
+      {
+        "attrs": {
+          "variant": "outline",
+          "icon": "arrow-right",
+          "loading": false,
+          "loading-text": null
+        },
+        "textContent": "Continue",
+        "lightDomChildren": [
+          {
+            "nodeType": 3,
+            "text": "Continue"
+          },
+          {
+            "nodeType": 1,
+            "text": "HARMONY-ICON"
+          }
+        ],
+        "style": {
+          "tag": "harmony-button",
+          "className": "btn btn--outline btn--md",
+          "text": "Continue",
+          "bg": "rgba(0, 0, 0, 0)",
+          "color": "rgb(55, 63, 78)",
+          "fontSize": "16px",
+          "fontWeight": "500",
+          "height": 40,
+          "width": 125,
+          "padding": "0px 16px",
+          "disabled": false
+        },
+        "classes": "btn btn--outline btn--md",
+        "width": 125
+      },
+      {
+        "attrs": {
+          "variant": "destructive",
+          "icon": "trash",
+          "loading": false,
+          "loading-text": null
+        },
+        "textContent": "Delete",
+        "lightDomChildren": [
+          {
+            "nodeType": 1,
+            "text": "HARMONY-ICON"
+          },
+          {
+            "nodeType": 3,
+            "text": "Delete"
+          }
+        ],
+        "style": {
+          "tag": "harmony-button",
+          "className": "btn btn--destructive btn--md",
+          "text": "Delete",
+          "bg": "rgb(216, 49, 72)",
+          "color": "rgb(255, 255, 255)",
+          "fontSize": "16px",
+          "fontWeight": "500",
+          "height": 40,
+          "width": 103,
+          "padding": "0px 16px",
+          "disabled": false
+        },
+        "classes": "btn btn--destructive btn--md",
+        "width": 103
+      }
+    ],
+    "focusOutline": {
+      "outline": "rgb(255, 255, 255) solid 3px",
+      "outlineOffset": "0px",
+      "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px"
+    },
+    "buttonCount": 62,
+    "harmonyButtonCount": 6,
+    "aBtnCount": 1
+  },
+  "convHeadings": [
+    {
+      "i": 0,
+      "text": "Native defaults",
+      "top": 212.25
+    },
+    {
+      "i": 1,
+      "text": "Button types",
+      "top": 386.75
+    },
+    {
+      "i": 2,
+      "text": "Variants",
+      "top": 634.75
+    },
+    {
+      "i": 3,
+      "text": "Dela buttons",
+      "top": 780.25
+    },
+    {
+      "i": 4,
+      "text": "Sizes",
+      "top": 933.75
+    },
+    {
+      "i": 5,
+      "text": "With icons",
+      "top": 1087.25
+    },
+    {
+      "i": 6,
+      "text": "Icon only",
+      "top": 1232.75
+    },
+    {
+      "i": 7,
+      "text": "States",
+      "top": 1442.25
+    },
+    {
+      "i": 8,
+      "text": "Loading state",
+      "top": 1716.25
+    },
+    {
+      "i": 9,
+      "text": "Full width",
+      "top": 1861.75
+    },
+    {
+      "i": 10,
+      "text": "Vertical orientation",
+      "top": 2059.25
+    },
+    {
+      "i": 11,
+      "text": "Hybrid helper (<harmony-button>)",
+      "top": 2312.75
+    },
+    {
+      "i": 12,
+      "text": "Combinations",
+      "top": 2458.25
+    },
+    {
+      "i": 13,
+      "text": "Usage guidelines",
+      "top": 2707.75
+    },
+    {
+      "i": 14,
+      "text": "API",
+      "top": 3362.25
+    },
+    {
+      "i": 15,
+      "text": "Accessibility",
+      "top": 4330.75
+    }
+  ],
+  "modeToggleClicked": false,
+  "convDark": {
+    "htmlDark": true,
+    "bg": "rgb(89, 172, 255)",
+    "color": "rgb(21, 23, 26)",
+    "fontWeight": "500",
+    "text": "Primary",
+    "className": "btn--primary"
+  },
+  "convForcedColors": {
+    "primary": {
+      "bg": "rgb(26, 235, 255)",
+      "color": "rgb(0, 0, 0)",
+      "border": "1px solid rgb(255, 255, 255)",
+      "outline": "rgb(0, 0, 0) solid 1px",
+      "opacity": "1"
+    },
+    "disabled": {
+      "bg": "rgb(0, 0, 0)",
+      "color": "rgb(63, 242, 63)",
+      "border": "1px solid rgb(63, 242, 63)",
+      "outline": "rgb(63, 242, 63) none 3px",
+      "opacity": "1"
+    },
+    "focused": {
+      "bg": "rgb(26, 235, 255)",
+      "color": "rgb(0, 0, 0)",
+      "border": "1px solid rgb(255, 255, 255)",
+      "outline": "rgb(0, 0, 0) solid 1px",
+      "opacity": "1"
+    }
+  }
+}

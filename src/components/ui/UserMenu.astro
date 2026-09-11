@@ -1,0 +1,100 @@
+---
+/**
+ * UserMenu: interactive user avatar that opens a menu of consumer-defined items.
+ * Avatar shows image when src is set; otherwise initials from name. Full name is the tooltip.
+ * Menu items use the same visual recipe as CompanyPicker options (no color indicator).
+ */
+import Avatar from './Avatar.astro';
+import Tooltip from './Tooltip.astro';
+
+interface Props {
+  name: string;
+  src?: string;
+  class?: string;
+}
+
+const { name, src, class: className = '' } = Astro.props;
+const hasImage = Boolean(src);
+---
+
+<div class={`user-menu ${className}`.trim()} data-user-menu>
+  <Tooltip text={name} position="bottom">
+    <button
+      type="button"
+      class="user-menu__trigger"
+      data-user-menu-btn
+      aria-haspopup="menu"
+      aria-expanded="false"
+      aria-label={name}
+    >
+      {hasImage ? (
+        <Avatar size="sm" variant="image" src={src} alt="" interactive={false} />
+      ) : (
+        <Avatar size="sm" variant="initials" initials={name} interactive={false} />
+      )}
+    </button>
+  </Tooltip>
+  <div class="user-menu__menu" data-user-menu-menu role="menu" hidden>
+    <div data-user-menu-list>
+      <slot />
+    </div>
+  </div>
+</div>
+
+<script>
+  let outsideClickListenerAdded = false;
+
+  function setMenuOpen(btn: Element, menu: HTMLElement, open: boolean) {
+    menu.classList.toggle('user-menu__menu--open', open);
+    menu.hidden = !open;
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
+
+  function initUserMenus() {
+    document.querySelectorAll('[data-user-menu-btn]').forEach((btn) => {
+      if (btn.hasAttribute('data-init')) return;
+      btn.setAttribute('data-init', 'true');
+
+      const root = btn.closest('[data-user-menu]');
+      const menu = root?.querySelector('[data-user-menu-menu]') as HTMLElement | null;
+      if (!menu) return;
+
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const open = !menu.classList.contains('user-menu__menu--open');
+        setMenuOpen(btn, menu, open);
+      });
+
+      menu.querySelectorAll('a, button').forEach((item) => {
+        item.classList.add('user-menu__item');
+        item.setAttribute('role', 'menuitem');
+        item.addEventListener('click', () => setMenuOpen(btn, menu, false));
+      });
+    });
+
+    if (!outsideClickListenerAdded) {
+      outsideClickListenerAdded = true;
+      document.addEventListener('click', (e) => {
+        const target = e.target as HTMLElement;
+        document.querySelectorAll('[data-user-menu]').forEach((root) => {
+          const btn = root.querySelector('[data-user-menu-btn]');
+          const menu = root.querySelector('[data-user-menu-menu]') as HTMLElement | null;
+          if (btn && menu && !root.contains(target)) {
+            setMenuOpen(btn, menu, false);
+          }
+        });
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key !== 'Escape') return;
+        document.querySelectorAll('[data-user-menu-menu].user-menu__menu--open').forEach((menu) => {
+          const root = menu.closest('[data-user-menu]');
+          const btn = root?.querySelector('[data-user-menu-btn]');
+          if (btn) setMenuOpen(btn, menu as HTMLElement, false);
+        });
+      });
+    }
+  }
+
+  initUserMenus();
+  document.addEventListener('astro:page-load', initUserMenus);
+</script>

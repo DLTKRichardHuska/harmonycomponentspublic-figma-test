@@ -1,0 +1,193 @@
+/**
+ * CP product overlays for inputs / form-layout.
+ * Appended only when building the cp kit (no .theme-cp — product-once).
+ * Field metrics flow into Shadow DOM via inherited CSS variables.
+ */
+
+:root {
+  --harmony-field-height: var(--input-height-cp);
+  --harmony-field-pad-x: var(--space-2);
+  --harmony-field-font-size: var(--text-xs);
+  --harmony-field-radius: var(--radius-04);
+  --harmony-field-icon-gutter: var(--space-8);
+  --harmony-field-icon-top: 60%;
+  /* Unset label-variant defaults to inline on CP (explicit stacked still wins) */
+  --harmony-label-variant-default: inline;
+}
+
+input:not([type]),
+input[type='text'],
+input[type='email'],
+input[type='password'],
+input[type='number'],
+input[type='url'],
+input[type='search'],
+input[type='tel'],
+.input {
+  line-height: var(--input-height-cp);
+}
+
+/* Unset label-layout defaults to inline on CP (explicit stacked still wins) */
+harmony-form-layout:not([label-layout]) {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr) max-content minmax(0, 1fr);
+  column-gap: var(--space-1);
+  row-gap: var(--space-4);
+  align-items: start;
+  --harmony-form-field-pair-min: 200px;
+}
+
+harmony-form-layout:not([label-layout])[data-compact] {
+  grid-template-columns: max-content minmax(0, 1fr);
+}
+
+harmony-form-layout:not([label-layout]) > .label,
+harmony-form-layout:not([label-layout]) > label.label,
+harmony-form-layout:not([label-layout]) > .harmony-form-layout__cell > .label,
+harmony-form-layout:not([label-layout]) > .harmony-form-layout__cell > label.label {
+  margin-bottom: 0;
+  white-space: nowrap;
+  align-self: center;
+  grid-column: 1;
+}
+
+harmony-form-layout:not([label-layout]) > harmony-input,
+harmony-form-layout:not([label-layout]) > harmony-date-input,
+harmony-form-layout:not([label-layout]) > harmony-textarea,
+harmony-form-layout:not([label-layout]) > .input-wrapper,
+harmony-form-layout:not([label-layout]) > input,
+harmony-form-layout:not([label-layout]) > textarea,
+harmony-form-layout:not([label-layout]) > .harmony-form-layout__cell > harmony-input,
+harmony-form-layout:not([label-layout]) > .harmony-form-layout__cell > harmony-date-input,
+harmony-form-layout:not([label-layout]) > .harmony-form-layout__cell > harmony-textarea,
+harmony-form-layout:not([label-layout]) > .harmony-form-layout__cell > .input-wrapper,
+harmony-form-layout:not([label-layout]) > .harmony-form-layout__cell > input,
+harmony-form-layout:not([label-layout]) > .harmony-form-layout__cell > textarea {
+  grid-column: 2 / -1;
+  min-width: 0;
+  width: 100%;
+}
+
+harmony-form-layout:not([label-layout]) > .label:has(+ harmony-textarea),
+harmony-form-layout:not([label-layout]) > label.label:has(+ harmony-textarea),
+harmony-form-layout:not([label-layout]) > .harmony-form-layout__cell > .label:has(+ harmony-textarea),
+harmony-form-layout:not([label-layout]) > .harmony-form-layout__cell > label.label:has(+ harmony-textarea) {
+  align-self: start;
+  padding-top: var(--space-3);
+}
+
+/* Boolean controls (CP unset = inline): control | label */
+harmony-form-layout:not([label-layout]) > .harmony-form-layout__cell > harmony-checkbox,
+harmony-form-layout:not([label-layout]) > .harmony-form-layout__cell > harmony-radio,
+harmony-form-layout:not([label-layout]) > .harmony-form-layout__cell > harmony-toggle,
+harmony-form-layout:not([label-layout]) > harmony-checkbox,
+harmony-form-layout:not([label-layout]) > harmony-radio,
+harmony-form-layout:not([label-layout]) > harmony-toggle {
+  grid-column: 1;
+  width: auto;
+  max-width: max-content;
+  justify-self: start;
+  align-self: center;
+}
+
+harmony-form-layout:not([label-layout])
+  > .harmony-form-layout__cell:has(> harmony-checkbox)
+  > .label,
+harmony-form-layout:not([label-layout])
+  > .harmony-form-layout__cell:has(> harmony-checkbox)
+  > label.label,
+harmony-form-layout:not([label-layout])
+  > .harmony-form-layout__cell:has(> harmony-radio)
+  > .label,
+harmony-form-layout:not([label-layout])
+  > .harmony-form-layout__cell:has(> harmony-radio)
+  > label.label,
+harmony-form-layout:not([label-layout])
+  > .harmony-form-layout__cell:has(> harmony-toggle)
+  > .label,
+harmony-form-layout:not([label-layout])
+  > .harmony-form-layout__cell:has(> harmony-toggle)
+  > label.label {
+  grid-column: 2 / -1;
+  justify-self: start;
+}
+
+harmony-form-layout:not([label-layout]) > harmony-form-row {
+  display: contents;
+}
+
+harmony-form-layout:not([label-layout]) .harmony-form-layout__cell {
+  display: contents;
+}
+
+harmony-form-layout:not([label-layout]):not([data-compact])
+  harmony-form-row
+  > .harmony-form-layout__cell
+  > .label,
+harmony-form-layout:not([label-layout]):not([data-compact])
+  harmony-form-row
+  > .harmony-form-layout__cell
+  > label.label {
+  white-space: nowrap;
+  align-self: center;
+  grid-column: auto;
+}
+
+harmony-form-layout:not([label-layout]):not([data-compact])
+  harmony-form-row
+  > .harmony-form-layout__cell:not(:first-child)
+  > .harmony-form-layout__label {
+  margin-inline-start: calc(var(--space-4) - var(--space-1));
+}
+
+harmony-form-layout:not([label-layout]):not([data-compact])
+  harmony-form-row
+  > .harmony-form-layout__cell
+  > harmony-input,
+harmony-form-layout:not([label-layout]):not([data-compact])
+  harmony-form-row
+  > .harmony-form-layout__cell
+  > harmony-date-input,
+harmony-form-layout:not([label-layout]):not([data-compact])
+  harmony-form-row
+  > .harmony-form-layout__cell
+  > harmony-textarea {
+  grid-column: auto;
+  min-width: 0;
+  width: 100%;
+}
+
+harmony-form-layout:not([label-layout])[data-compact] .harmony-form-layout__cell > .label,
+harmony-form-layout:not([label-layout])[data-compact] .harmony-form-layout__cell > label.label {
+  white-space: nowrap;
+  align-self: center;
+  grid-column: 1;
+  margin-inline-start: 0;
+}
+
+harmony-form-layout:not([label-layout])[data-compact] .harmony-form-layout__cell > harmony-input,
+harmony-form-layout:not([label-layout])[data-compact] .harmony-form-layout__cell > harmony-date-input,
+harmony-form-layout:not([label-layout])[data-compact] .harmony-form-layout__cell > harmony-textarea,
+harmony-form-layout:not([label-layout])[data-compact] .harmony-form-layout__cell > .input-wrapper,
+harmony-form-layout:not([label-layout])[data-compact] .harmony-form-layout__cell > input,
+harmony-form-layout:not([label-layout])[data-compact] .harmony-form-layout__cell > textarea {
+  grid-column: 2;
+  min-width: 0;
+  width: 100%;
+}
+
+.input-form-wrapper:not(.input-form-wrapper--stacked),
+.textarea-form-wrapper:not(.textarea-form-wrapper--stacked) {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.input-form-wrapper:not(.input-form-wrapper--stacked) .label,
+.input-form-wrapper:not(.input-form-wrapper--stacked) .input-form-wrapper__label,
+.textarea-form-wrapper:not(.textarea-form-wrapper--stacked) .label,
+.textarea-form-wrapper:not(.textarea-form-wrapper--stacked) .textarea-form-wrapper__label {
+  margin-bottom: 0;
+  white-space: nowrap;
+}

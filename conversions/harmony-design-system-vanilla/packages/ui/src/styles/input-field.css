@@ -1,0 +1,324 @@
+/**
+ * Shadow DOM styles for <harmony-input>, <harmony-textarea>, and <harmony-select>.
+ * Document styles.css covers the native dual path; this sheet is CE-only.
+ */
+
+:host {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: var(--font-sans);
+  --harmony-select-chevron: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%236B7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+}
+
+:host-context(.dark) {
+  --harmony-select-chevron: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23B5B5BC' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+}
+
+:host([hidden]) {
+  display: none;
+}
+
+[part='label'] {
+  display: block;
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  font-weight: var(--font-normal);
+  color: var(--text-primary);
+  margin-bottom: 0;
+}
+
+[part='label'][hidden] {
+  display: none;
+}
+
+[part='label'].label--required::after {
+  content: ' *';
+  color: var(--color-error);
+}
+
+/* Hide internal label when placed inside harmony-form-layout (light-DOM labels win) */
+:host-context(harmony-form-layout) [part='label'] {
+  display: none;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1-5);
+  width: 100%;
+}
+
+.field__body {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-width: 0;
+  width: 100%;
+}
+
+/* Standalone label-variant (ignored inside harmony-form-layout) */
+:host([data-label-variant='inline']) .field {
+  flex-direction: row;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+:host([data-label-variant='inline']) [part='label'] {
+  margin-bottom: 0;
+  white-space: nowrap;
+}
+
+:host(harmony-textarea[data-label-variant='inline']) .field {
+  align-items: start;
+}
+
+:host(harmony-textarea[data-label-variant='inline']) [part='label'] {
+  padding-top: var(--space-3);
+}
+
+:host-context(harmony-form-layout) .field {
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--space-1-5);
+}
+
+:host-context(harmony-form-layout) [part='label'] {
+  padding-top: 0;
+}
+
+
+.input-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+[part='control'] {
+  box-sizing: border-box;
+  width: 100%;
+  height: var(--harmony-field-height, var(--space-10));
+  padding: 0 var(--harmony-field-pad-x, var(--space-4));
+  font-family: var(--font-sans);
+  font-size: var(--harmony-field-font-size, var(--text-base));
+  color: var(--text-primary);
+  background-color: var(--input-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--harmony-field-radius, var(--radius-lg));
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast),
+    background-color var(--transition-fast);
+  appearance: none;
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+textarea[part='control'] {
+  height: auto;
+  min-height: 100px;
+  padding: var(--harmony-field-pad-y, var(--space-3)) var(--harmony-field-pad-x, var(--space-4));
+  resize: vertical;
+  line-height: inherit;
+}
+
+select[part='control'] {
+  padding-right: calc(var(--harmony-field-pad-x, var(--space-4)) + var(--icon-sm) + var(--space-2));
+  line-height: var(--harmony-field-height, var(--space-10));
+  cursor: pointer;
+  background-image: var(--harmony-select-chevron);
+  background-repeat: no-repeat;
+  background-position: right var(--space-3) center;
+  background-size: var(--icon-sm);
+}
+
+:host([data-placeholder-shown]) select[part='control'] {
+  color: var(--text-muted);
+}
+
+/* Light-DOM option source — copied into the shadow control, not shown here. */
+slot.options-source {
+  display: none;
+}
+
+[part='control']::placeholder {
+  color: var(--text-muted);
+}
+
+[part='control']:focus,
+[part='control']:focus-visible {
+  outline: none;
+  border-color: var(--theme-primary);
+  box-shadow: var(--focus-ring-primary);
+}
+
+[part='control']:disabled {
+  background-color: var(--input-disabled-bg);
+  color: var(--text-muted);
+  cursor: not-allowed;
+}
+
+:host([error]) [part='control'] {
+  border-color: var(--color-error);
+  border-width: var(--border-width-standard);
+}
+
+:host([error]) [part='control']:focus,
+:host([error]) [part='control']:focus-visible {
+  box-shadow: var(--focus-ring-error);
+}
+
+:host([icon]) [part='control'] {
+  padding-left: var(--harmony-field-icon-gutter, var(--space-10));
+}
+
+:host([trailing-icon]) [part='control'],
+:host([data-has-trailing]) [part='control'] {
+  padding-right: var(--harmony-field-icon-gutter, var(--space-10));
+}
+
+[part='icon'],
+.input-wrapper__icon {
+  position: absolute;
+  left: calc(
+    1px + (var(--harmony-field-icon-gutter, var(--space-10)) - 1px - var(--icon-sm)) / 2
+  );
+  top: var(--harmony-field-icon-top, 50%);
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  pointer-events: none;
+  z-index: var(--z-10);
+}
+
+[part='icon'][hidden],
+.input-wrapper__icon[hidden] {
+  display: none;
+}
+
+[part='trailing-icon'],
+.input-wrapper__icon--trailing {
+  left: auto;
+  right: calc(
+    1px + (var(--harmony-field-icon-gutter, var(--space-10)) - 1px - var(--icon-sm)) / 2
+  );
+}
+
+[part='trailing'],
+.input-wrapper__trailing {
+  position: absolute;
+  top: 1px;
+  bottom: 1px;
+  right: 1px;
+  width: calc(var(--harmony-field-icon-gutter, var(--space-10)) - 1px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: var(--z-10);
+  pointer-events: auto;
+}
+
+[part='trailing'][hidden] {
+  display: none;
+}
+
+[part='trailing'] ::slotted(.btn--ghost),
+[part='trailing'] ::slotted(harmony-button) {
+  width: 100%;
+  height: 100%;
+  color: var(--text-muted);
+}
+
+[part='error'] {
+  margin-top: var(--space-1);
+  font-size: var(--text-sm);
+  color: var(--color-error);
+}
+
+[part='error'][hidden] {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  [part='control'] {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  input[part='control'] {
+    min-height: 44px;
+    padding: 0 var(--space-3);
+  }
+
+  :host([icon]) input[part='control'] {
+    padding-left: var(--space-10);
+  }
+
+  :host([trailing-icon]) input[part='control'],
+  :host([data-has-trailing]) input[part='control'] {
+    padding-right: var(--space-10);
+  }
+
+  textarea[part='control'] {
+    min-height: 120px;
+    padding: var(--space-3);
+  }
+
+  select[part='control'] {
+    min-height: 44px;
+    font-size: 16px;
+  }
+}
+
+@media (forced-colors: active) {
+  [part='control'] {
+    border: 1px solid CanvasText;
+    background-color: Canvas;
+    color: CanvasText;
+    forced-color-adjust: none;
+  }
+
+  [part='control']:focus,
+  [part='control']:focus-visible {
+    outline: 2px solid Highlight;
+    outline-offset: 2px;
+    box-shadow: none;
+    border-color: Highlight;
+  }
+
+  [part='control']:disabled {
+    color: GrayText;
+    border-color: GrayText;
+  }
+
+  :host([error]) [part='control'] {
+    border: 2px solid CanvasText;
+  }
+
+  :host([error]) [part='control']:focus,
+  :host([error]) [part='control']:focus-visible {
+    outline: 2px solid Highlight;
+    outline-offset: 2px;
+  }
+
+  [part='error'] {
+    color: CanvasText;
+  }
+
+  [part='icon'],
+  [part='trailing-icon'],
+  .input-wrapper__icon {
+    color: CanvasText;
+  }
+
+  [part='label'] {
+    color: CanvasText;
+  }
+
+  [part='label'].label--required::after {
+    color: CanvasText;
+  }
+
+  select[part='control'] {
+    appearance: auto;
+    background-image: none;
+    padding-right: var(--harmony-field-pad-x, var(--space-4));
+    color: CanvasText;
+  }
+}

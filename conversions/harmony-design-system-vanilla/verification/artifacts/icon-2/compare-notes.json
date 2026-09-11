@@ -1,0 +1,177 @@
+{
+  "refInfo": {
+    "ok": "complete",
+    "h2": [
+      "Icon Props",
+      "Usage",
+      "Icon Selection Guide",
+      "Hero Icons - Outline (24x24)",
+      "Custom Icons",
+      "Accessibility"
+    ],
+    "a11y": true,
+    "sizes": [
+      {
+        "w": 12,
+        "h": 12
+      },
+      {
+        "w": 16,
+        "h": 16
+      },
+      {
+        "w": 20,
+        "h": 20
+      },
+      {
+        "w": 24,
+        "h": 24
+      },
+      {
+        "w": 32,
+        "h": 32
+      }
+    ]
+  },
+  "convInfo": {
+    "h2": [
+      "Icon API",
+      "Sizes",
+      "Usage and behavior",
+      "Accessibility",
+      "Heroicons 24/outline (324)",
+      "Harmony custom icons (65)"
+    ],
+    "tableRows": [
+      [
+        "name",
+        "string",
+        "—",
+        "Bundled or registered icon name."
+      ],
+      [
+        "size",
+        "xs | sm | md | lg | xl",
+        "md",
+        "Token-backed icon size."
+      ],
+      [
+        "label",
+        "string",
+        "—",
+        "Optional accessible name for a standalone icon."
+      ],
+      [
+        "class",
+        "native host class",
+        "—",
+        "Styles host color and layout; it is not copied into Shadow DOM."
+      ],
+      [
+        "default slot",
+        "raw SVG",
+        "—",
+        "Overrides registry lookup."
+      ],
+      [
+        "registerIcons(map)",
+        "helper",
+        "—",
+        "Adds trusted application SVG glyphs."
+      ]
+    ],
+    "sizeCaptions": [
+      "xs (12px)",
+      "sm (16px)",
+      "md (20px)",
+      "lg (24px)",
+      "xl (32px)"
+    ],
+    "sizes": [
+      {
+        "size": "xs",
+        "w": 12,
+        "h": 12,
+        "aria": "true"
+      },
+      {
+        "size": "sm",
+        "w": 16,
+        "h": 16,
+        "aria": "true"
+      },
+      {
+        "size": "md",
+        "w": 20,
+        "h": 20,
+        "aria": "true"
+      },
+      {
+        "size": "lg",
+        "w": 24,
+        "h": 24,
+        "aria": "true"
+      },
+      {
+        "size": "xl",
+        "w": 32,
+        "h": 32,
+        "aria": "true"
+      }
+    ],
+    "snippets": [
+      "import '@dltkrichardhuska/harmony-design-system-vanilla/vp/styles.css';\nimport { registerHarmonyElements } from '@dltkrichardhuska/harmony-design-system-vanilla/vp/elements';\n\nregisterHarmonyElements();\n<harmony-icon name=\"home\" size=\"lg\"></harmony-icon>",
+      "<link rel=\"stylesheet\" href=\"/vendor/harmony/styles.css\" />\n<script type=\"module\" src=\"/vendor/harmony/elements.js\"></script>\n<harmony-icon name=\"home\" size=\"lg\"></harmony-icon>"
+    ],
+    "a11yButtons": [
+      {
+        "label": "Edit document",
+        "iconHidden": "true",
+        "iconName": "pencil"
+      },
+      {
+        "label": "Delete item",
+        "iconHidden": "true",
+        "iconName": "trash"
+      }
+    ],
+    "labeledStandalone": {
+      "role": "img",
+      "ariaLabel": "Information",
+      "hidden": null
+    },
+    "labeledDiamond": {
+      "role": "img",
+      "ariaLabel": "Registered diamond"
+    },
+    "missing": {
+      "fallback": "?",
+      "aria": "true"
+    },
+    "heroCount": 324,
+    "customCount": 65,
+    "heroUnknown": 0,
+    "customUnknown": 0,
+    "accentColor": "rgb(42, 120, 198)",
+    "navOk": true,
+    "headerHasSun": true,
+    "errorOverlay": false,
+    "hasVariantRow": false,
+    "staticHasBackslash": false,
+    "staticHasClose": true
+  },
+  "darkInfo": {
+    "htmlDark": true
+  },
+  "hcInfo": {
+    "matches": true,
+    "pageIconColor": "rgb(0, 0, 0)",
+    "modeOutline": "rgb(0, 0, 0) none 3px",
+    "a11yOutline": "rgb(55, 0, 110) solid 2px",
+    "fb": {
+      "text": "?",
+      "color": "rgb(255, 255, 255)",
+      "bg": "rgb(0, 0, 0)"
+    }
+  }
+}

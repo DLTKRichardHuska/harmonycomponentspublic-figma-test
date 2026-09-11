@@ -1,0 +1,28 @@
+﻿import { chromium } from 'playwright';
+import { writeFileSync } from 'node:fs';
+import { dirname, join } from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { setTimeout as delay } from 'node:timers/promises';
+const outDir = dirname(fileURLToPath(import.meta.url));
+const browser = await chromium.launch({ headless: true });
+const page = await browser.newPage();
+const failed = [];
+page.on('response', (r) => {
+  if (r.status() >= 400) failed.push({ status: r.status(), url: r.url() });
+});
+page.on('pageerror', (e) => console.log('PAGEERROR', e.message));
+page.on('console', (m) => console.log('CONSOLE', m.type(), m.text()));
+await page.goto('http://localhost:5178/getting-started', { waitUntil: 'domcontentloaded', timeout: 60000 });
+await delay(3000);
+console.log('failed', JSON.stringify(failed, null, 2));
+console.log('app children', await page.evaluate(() => document.getElementById('app')?.innerHTML?.slice(0, 500)));
+console.log('text', await page.evaluate(() => document.body.innerText.slice(0, 400)));
+await page.screenshot({ path: join(outDir, 'getting-started.png') });
+await page.goto('http://localhost:5178/shell/header', { waitUntil: 'domcontentloaded', timeout: 60000 });
+await delay(3000);
+console.log('failed2', JSON.stringify(failed.slice(-20), null, 2));
+console.log('app2', await page.evaluate(() => document.getElementById('app')?.innerHTML?.slice(0, 800)));
+console.log('text2', await page.evaluate(() => document.body.innerText.slice(0, 600)));
+await page.screenshot({ path: join(outDir, 'shell-header.png') });
+writeFileSync(join(outDir, 'failed.json'), JSON.stringify(failed, null, 2));
+await browser.close();

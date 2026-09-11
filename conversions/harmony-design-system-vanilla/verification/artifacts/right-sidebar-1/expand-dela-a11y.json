@@ -1,0 +1,306 @@
+{
+  "before": {
+    "x": 1275,
+    "y": 691.5,
+    "width": 52,
+    "height": 462
+  },
+  "after": {
+    "x": 1107,
+    "y": 637.5,
+    "width": 220,
+    "height": 462
+  },
+  "ref": {
+    "w": 220,
+    "secW": [
+      220,
+      220,
+      220
+    ],
+    "secH": [
+      146,
+      104,
+      188
+    ],
+    "itemH0": 36,
+    "delaImgs": [
+      {
+        "src": "/RS_DelaDefault.svg",
+        "w": 24,
+        "h": 36,
+        "display": "block"
+      },
+      {
+        "src": "/RS_Dela_Active.svg",
+        "w": 0,
+        "h": 0,
+        "display": "none"
+      }
+    ]
+  },
+  "refActive": {
+    "cls": "right-sidebar__item",
+    "grads": [
+      {
+        "cls": "right-sidebar__item",
+        "bg": "none",
+        "bgc": "rgb(229, 231, 235)"
+      },
+      {
+        "cls": "tooltip__content tooltip__content--left",
+        "bg": "none",
+        "bgc": "rgb(55, 63, 78)"
+      }
+    ],
+    "imgs": [
+      {
+        "src": "/RS_DelaDefault.svg",
+        "w": 24,
+        "h": 36,
+        "op": "1",
+        "display": "block"
+      },
+      {
+        "src": "/RS_Dela_Active.svg",
+        "w": 0,
+        "h": 0,
+        "op": "1",
+        "display": "none"
+      }
+    ]
+  },
+  "conv": {
+    "railWidth": "52px",
+    "railOverflow": "visible",
+    "collapsed": {
+      "attrs": {
+        "id": "demo-right-default",
+        "inline": ""
+      },
+      "hostW": 52,
+      "hostCSWidth": "52px",
+      "secW": [
+        52,
+        52,
+        52
+      ],
+      "secH": [
+        158,
+        104,
+        188
+      ],
+      "itemCount": 9,
+      "dela": {
+        "dataActive": null,
+        "cls": "right-sidebar__item",
+        "html": "\n        <span class=\"right-sidebar__label\" part=\"label\">Dela AI</span>\n        <harmony-tooltip text=\"Dela AI\" position=\"left\" class=\"right-sidebar__item-tooltip\">\n          <span class=\"right-sidebar__icon\" part=\"icon\" aria-describedby=\"harmony-tooltip-desc-352\">\n            <harmony-icon name=\"RS_DelaDefault\" size=\"lg\" class=\"right-sidebar__dela-logo right-sidebar__dela-logo--default\" aria-hidden=\"true\"></harmony-icon>\n            <harmony-icon name=\"RS_Dela_Active\" size=\"lg\" class=\"right-sid",
+        "icons": [
+          {
+            "name": "RS_DelaDefault",
+            "className": "right-sidebar__dela-logo right-sidebar__dela-logo--default",
+            "w": 24,
+            "h": 24
+          },
+          {
+            "name": "RS_Dela_Active",
+            "className": "right-sidebar__dela-logo right-sidebar__dela-logo--active",
+            "w": 0,
+            "h": 0
+          }
+        ],
+        "bg": "none / rgba(0, 0, 0, 0)"
+      },
+      "nameHTML": "\n        <span class=\"right-sidebar__label\" part=\"label\">Dela AI</span>\n        <harmony-tooltip text=\"Dela AI\" position=\"left\" class=\"right-sidebar__item-tooltip\">\n          <span class=\"right-sidebar__icon\" part=\"icon\" aria-describedby=\"harmony-tooltip-desc-352\">\n            <harmony-icon name=\"RS_DelaDefault\" size=\"lg\" class=\"right-sidebar__dela-logo right-sidebar__dela-logo--default\" aria-hidden=\"true\"></harmony-icon>\n            <harmony-ico",
+      "labelAria": [
+        {
+          "aria": null,
+          "label": "Dela AI",
+          "labelAriaHidden": null,
+          "text": "Dela AI Dela AI"
+        },
+        {
+          "aria": null,
+          "label": "Notifications",
+          "labelAriaHidden": null,
+          "text": "Notifications Notifications"
+        }
+      ]
+    },
+    "expanded": {
+      "attrs": {
+        "inline": "",
+        "expanded": ""
+      },
+      "hostW": 186,
+      "hostCSWidth": "185.828px",
+      "secW": [
+        186,
+        186,
+        186
+      ],
+      "secH": [
+        158,
+        104,
+        188
+      ],
+      "itemCount": 9,
+      "dela": {
+        "dataActive": null,
+        "cls": "right-sidebar__item",
+        "html": "\n        <span class=\"right-sidebar__label\" part=\"label\">Dela AI</span>\n        <harmony-tooltip text=\"Dela AI\" position=\"left\" class=\"right-sidebar__item-tooltip\">\n          <span class=\"right-sidebar__icon\" part=\"icon\" aria-describedby=\"harmony-tooltip-desc-379\">\n            <harmony-icon name=\"RS_DelaDefault\" size=\"lg\" class=\"right-sidebar__dela-logo right-sidebar__dela-logo--default\" aria-hidden=\"true\"></harmony-icon>\n            <harmony-icon name=\"RS_Dela_Active\" size=\"lg\" class=\"right-sid",
+        "icons": [
+          {
+            "name": "RS_DelaDefault",
+            "className": "right-sidebar__dela-logo right-sidebar__dela-logo--default",
+            "w": 24,
+            "h": 24
+          },
+          {
+            "name": "RS_Dela_Active",
+            "className": "right-sidebar__dela-logo right-sidebar__dela-logo--active",
+            "w": 0,
+            "h": 0
+          }
+        ],
+        "bg": "none / rgba(0, 0, 0, 0)"
+      },
+      "nameHTML": "\n        <span class=\"right-sidebar__label\" part=\"label\">Dela AI</span>\n        <harmony-tooltip text=\"Dela AI\" position=\"left\" class=\"right-sidebar__item-tooltip\">\n          <span class=\"right-sidebar__icon\" part=\"icon\" aria-describedby=\"harmony-tooltip-desc-379\">\n            <harmony-icon name=\"RS_DelaDefault\" size=\"lg\" class=\"right-sidebar__dela-logo right-sidebar__dela-logo--default\" aria-hidden=\"true\"></harmony-icon>\n            <harmony-ico",
+      "labelAria": [
+        {
+          "aria": null,
+          "label": "Dela AI",
+          "labelAriaHidden": null,
+          "text": "Dela AI Dela AI"
+        },
+        {
+          "aria": null,
+          "label": "Notifications",
+          "labelAriaHidden": null,
+          "text": "Notifications Notifications"
+        }
+      ]
+    },
+    "panelSnap": {
+      "attrs": {
+        "inline": "",
+        "panel-open": "",
+        "active-id": "right-sidebar-item-0-0"
+      },
+      "hostW": 52,
+      "hostCSWidth": "52px",
+      "secW": [
+        52,
+        52,
+        52
+      ],
+      "secH": [
+        156,
+        102,
+        186
+      ],
+      "itemCount": 9,
+      "dela": {
+        "dataActive": "true",
+        "cls": "right-sidebar__item",
+        "html": "\n        <span class=\"right-sidebar__label\" part=\"label\">Dela AI</span>\n        <harmony-tooltip text=\"Dela AI\" position=\"left\" class=\"right-sidebar__item-tooltip\">\n          <span class=\"right-sidebar__icon\" part=\"icon\" aria-describedby=\"harmony-tooltip-desc-415\">\n            <harmony-icon name=\"RS_DelaDefault\" size=\"lg\" class=\"right-sidebar__dela-logo right-sidebar__dela-logo--default\" aria-hidden=\"true\"></harmony-icon>\n            <harmony-icon name=\"RS_Dela_Active\" size=\"lg\" class=\"right-sid",
+        "icons": [
+          {
+            "name": "RS_DelaDefault",
+            "className": "right-sidebar__dela-logo right-sidebar__dela-logo--default",
+            "w": 0,
+            "h": 0
+          },
+          {
+            "name": "RS_Dela_Active",
+            "className": "right-sidebar__dela-logo right-sidebar__dela-logo--active",
+            "w": 24,
+            "h": 24
+          }
+        ],
+        "bg": "linear-gradient(136deg, rgb(0, 187, 198) 9.15%, rgb(113, 51, 255) 57.36%, rgb(205, 33, 255) 80.6%) / rgba(0, 0, 0, 0)"
+      },
+      "nameHTML": "\n        <span class=\"right-sidebar__label\" part=\"label\">Dela AI</span>\n        <harmony-tooltip text=\"Dela AI\" position=\"left\" class=\"right-sidebar__item-tooltip\">\n          <span class=\"right-sidebar__icon\" part=\"icon\" aria-describedby=\"harmony-tooltip-desc-415\">\n            <harmony-icon name=\"RS_DelaDefault\" size=\"lg\" class=\"right-sidebar__dela-logo right-sidebar__dela-logo--default\" aria-hidden=\"true\"></harmony-icon>\n            <harmony-ico",
+      "labelAria": [
+        {
+          "aria": null,
+          "label": "Dela AI",
+          "labelAriaHidden": null,
+          "text": "Dela AI Dela AI"
+        },
+        {
+          "aria": null,
+          "label": "Notifications",
+          "labelAriaHidden": null,
+          "text": "Notifications Notifications"
+        }
+      ]
+    },
+    "panelItems": [
+      {
+        "i": 0,
+        "id": "",
+        "dataActive": "true",
+        "bg": "linear-gradient(136deg, rgb(0, 187, 198) 9.15%, rgb(113, 51, 255) 57.36%, rgb(205, 33, 255) 80.6%)|rgba(0, 0, 0, 0)"
+      },
+      {
+        "i": 1,
+        "id": "",
+        "dataActive": null,
+        "bg": "none|rgba(0, 0, 0, 0)"
+      },
+      {
+        "i": 2,
+        "id": "",
+        "dataActive": null,
+        "bg": "none|rgba(0, 0, 0, 0)"
+      },
+      {
+        "i": 3,
+        "id": "",
+        "dataActive": null,
+        "bg": "none|rgba(0, 0, 0, 0)"
+      },
+      {
+        "i": 4,
+        "id": "",
+        "dataActive": null,
+        "bg": "none|rgba(0, 0, 0, 0)"
+      },
+      {
+        "i": 5,
+        "id": "",
+        "dataActive": null,
+        "bg": "none|rgba(0, 0, 0, 0)"
+      },
+      {
+        "i": 6,
+        "id": "",
+        "dataActive": null,
+        "bg": "none|rgba(0, 0, 0, 0)"
+      },
+      {
+        "i": 7,
+        "id": "",
+        "dataActive": null,
+        "bg": "none|rgba(0, 0, 0, 0)"
+      },
+      {
+        "i": 8,
+        "id": "",
+        "dataActive": null,
+        "bg": "none|rgba(0, 0, 0, 0)"
+      }
+    ]
+  },
+  "hoverW": {
+    "hostW": 186,
+    "cssW": "185.828px",
+    "secW": [
+      186,
+      186,
+      186
+    ],
+    "railW": 52
+  }
+}

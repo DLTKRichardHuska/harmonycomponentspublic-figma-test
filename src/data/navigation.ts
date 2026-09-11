@@ -33,6 +33,8 @@ export const navigation: NavSection[] = [
     items: [
       { title: 'Shell Layout', href: '/shell/layout', icon: 'view-columns' },
       { title: 'Shell Header', href: '/shell/header', icon: 'bars-3' },
+      { title: 'Company Picker', href: '/components/company-picker', icon: 'building-office' },
+      { title: 'User Menu', href: '/components/user-menu', icon: 'user' },
       { title: 'Shell Footer', href: '/shell/footer', icon: 'bars-3-bottom-left' },
       { title: 'Page Header', href: '/shell/page-header', icon: 'document-text' },
       { title: 'Page Content', href: '/shell/page-content', icon: 'document-text' },

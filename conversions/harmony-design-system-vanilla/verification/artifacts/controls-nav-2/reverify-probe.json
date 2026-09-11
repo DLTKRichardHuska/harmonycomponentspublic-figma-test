@@ -1,0 +1,776 @@
+{
+  "refNb": {
+    "h2": [
+      "Examples",
+      "Props",
+      "Accessibility"
+    ],
+    "numbers": [
+      {
+        "className": "notification-badge notification-badge--number notification-badge--sm notification-badge--primary",
+        "text": "1",
+        "w": 15,
+        "h": 15,
+        "boxSizing": "border-box",
+        "border": false
+      },
+      {
+        "className": "notification-badge notification-badge--number notification-badge--md notification-badge--primary",
+        "text": "1",
+        "w": 15,
+        "h": 15,
+        "boxSizing": "border-box",
+        "border": false
+      },
+      {
+        "className": "notification-badge notification-badge--number notification-badge--lg notification-badge--primary",
+        "text": "1",
+        "w": 14,
+        "h": 15,
+        "boxSizing": "border-box",
+        "border": false
+      },
+      {
+        "className": "notification-badge notification-badge--number notification-badge--sm notification-badge--primary notification-badge--border",
+        "text": "1",
+        "w": 20,
+        "h": 16,
+        "boxSizing": "border-box",
+        "border": true
+      },
+      {
+        "className": "notification-badge notification-badge--number notification-badge--md notification-badge--primary notification-badge--border",
+        "text": "1",
+        "w": 20,
+        "h": 20,
+        "boxSizing": "border-box",
+        "border": true
+      },
+      {
+        "className": "notification-badge notification-badge--number notification-badge--lg notification-badge--primary notification-badge--border",
+        "text": "1",
+        "w": 32,
+        "h": 24,
+        "boxSizing": "border-box",
+        "border": true
+      },
+      {
+        "className": "notification-badge notification-badge--number notification-badge--sm notification-badge--error",
+        "text": "5",
+        "w": 15,
+        "h": 15,
+        "boxSizing": "border-box",
+        "border": false
+      },
+      {
+        "className": "notification-badge notification-badge--number notification-badge--md notification-badge--error",
+        "text": "5",
+        "w": 15,
+        "h": 15,
+        "boxSizing": "border-box",
+        "border": false
+      },
+      {
+        "className": "notification-badge notification-badge--number notification-badge--lg notification-badge--error",
+        "text": "5",
+        "w": 16,
+        "h": 15,
+        "boxSizing": "border-box",
+        "border": false
+      },
+      {
+        "className": "notification-badge notification-badge--number notification-badge--sm notification-badge--error notification-badge--border",
+        "text": "5",
+        "w": 22,
+        "h": 16,
+        "boxSizing": "border-box",
+        "border": true
+      },
+      {
+        "className": "notification-badge notification-badge--number notification-badge--md notification-badge--error notification-badge--border",
+        "text": "5",
+        "w": 22,
+        "h": 20,
+        "boxSizing": "border-box",
+        "border": true
+      },
+      {
+        "className": "notification-badge notification-badge--number notification-badge--lg notification-badge--error notification-badge--border",
+        "text": "5",
+        "w": 32,
+        "h": 24,
+        "boxSizing": "border-box",
+        "border": true
+      }
+    ]
+  },
+  "convNb": {
+    "h2": [
+      "Dot badges",
+      "Number badges",
+      "Overflow badges",
+      "Wrapped on a button",
+      "API",
+      "Accessibility"
+    ],
+    "badges": [
+      {
+        "size": "sm",
+        "border": false,
+        "variant": "primary",
+        "text": "1",
+        "w": 15,
+        "h": 15,
+        "boxSizing": "border-box"
+      },
+      {
+        "size": "md",
+        "border": false,
+        "variant": "primary",
+        "text": "1",
+        "w": 15,
+        "h": 15,
+        "boxSizing": "border-box"
+      },
+      {
+        "size": "lg",
+        "border": false,
+        "variant": "primary",
+        "text": "1",
+        "w": 14,
+        "h": 15,
+        "boxSizing": "border-box"
+      },
+      {
+        "size": "sm",
+        "border": true,
+        "variant": "primary",
+        "text": "1",
+        "w": 20,
+        "h": 16,
+        "boxSizing": "border-box"
+      },
+      {
+        "size": "md",
+        "border": true,
+        "variant": "primary",
+        "text": "1",
+        "w": 20,
+        "h": 20,
+        "boxSizing": "border-box"
+      },
+      {
+        "size": "lg",
+        "border": true,
+        "variant": "primary",
+        "text": "1",
+        "w": 32,
+        "h": 24,
+        "boxSizing": "border-box"
+      },
+      {
+        "size": "sm",
+        "border": false,
+        "variant": "error",
+        "text": "5",
+        "w": 15,
+        "h": 15,
+        "boxSizing": "border-box"
+      },
+      {
+        "size": "md",
+        "border": false,
+        "variant": "error",
+        "text": "5",
+        "w": 15,
+        "h": 15,
+        "boxSizing": "border-box"
+      },
+      {
+        "size": "lg",
+        "border": false,
+        "variant": "error",
+        "text": "5",
+        "w": 16,
+        "h": 15,
+        "boxSizing": "border-box"
+      },
+      {
+        "size": "sm",
+        "border": true,
+        "variant": "error",
+        "text": "5",
+        "w": 22,
+        "h": 16,
+        "boxSizing": "border-box"
+      },
+      {
+        "size": "md",
+        "border": true,
+        "variant": "error",
+        "text": "5",
+        "w": 22,
+        "h": 20,
+        "boxSizing": "border-box"
+      },
+      {
+        "size": "lg",
+        "border": true,
+        "variant": "error",
+        "text": "5",
+        "w": 32,
+        "h": 24,
+        "boxSizing": "border-box"
+      }
+    ],
+    "hasForcedColors": false,
+    "fcSnippet": ""
+  },
+  "fcNb": [
+    {
+      "type": "number",
+      "size": "sm",
+      "text": "1",
+      "color": "rgb(255, 255, 255)",
+      "bg": "rgb(0, 0, 159)",
+      "borderColor": "rgb(255, 255, 255)",
+      "w": 16,
+      "h": 15,
+      "forcedColorAdjust": "none"
+    },
+    {
+      "type": "number",
+      "size": "md",
+      "text": "1",
+      "color": "rgb(255, 255, 255)",
+      "bg": "rgb(0, 0, 159)",
+      "borderColor": "rgb(255, 255, 255)",
+      "w": 16,
+      "h": 15,
+      "forcedColorAdjust": "none"
+    },
+    {
+      "type": "number",
+      "size": "lg",
+      "text": "1",
+      "color": "rgb(255, 255, 255)",
+      "bg": "rgb(0, 0, 159)",
+      "borderColor": "rgb(255, 255, 255)",
+      "w": 18,
+      "h": 15,
+      "forcedColorAdjust": "none"
+    },
+    {
+      "type": "number",
+      "size": "sm",
+      "text": "1",
+      "color": "rgb(255, 255, 255)",
+      "bg": "rgb(0, 0, 159)",
+      "borderColor": "rgb(255, 255, 255)",
+      "w": 20,
+      "h": 16,
+      "forcedColorAdjust": "none"
+    },
+    {
+      "type": "number",
+      "size": "md",
+      "text": "1",
+      "color": "rgb(255, 255, 255)",
+      "bg": "rgb(0, 0, 159)",
+      "borderColor": "rgb(255, 255, 255)",
+      "w": 20,
+      "h": 20,
+      "forcedColorAdjust": "none"
+    },
+    {
+      "type": "number",
+      "size": "lg",
+      "text": "1",
+      "color": "rgb(255, 255, 255)",
+      "bg": "rgb(0, 0, 159)",
+      "borderColor": "rgb(255, 255, 255)",
+      "w": 32,
+      "h": 24,
+      "forcedColorAdjust": "none"
+    },
+    {
+      "type": "number",
+      "size": "sm",
+      "text": "5",
+      "color": "rgb(255, 255, 255)",
+      "bg": "rgb(0, 0, 0)",
+      "borderColor": "rgb(255, 255, 255)",
+      "w": 18,
+      "h": 15,
+      "forcedColorAdjust": "none"
+    },
+    {
+      "type": "number",
+      "size": "md",
+      "text": "5",
+      "color": "rgb(255, 255, 255)",
+      "bg": "rgb(0, 0, 0)",
+      "borderColor": "rgb(255, 255, 255)",
+      "w": 18,
+      "h": 15,
+      "forcedColorAdjust": "none"
+    }
+  ],
+  "refCb": {
+    "h2": [
+      "Examples",
+      "Props",
+      "Usage Guidelines",
+      "Accessibility"
+    ],
+    "usage": true,
+    "boxes": [
+      {
+        "w": 0,
+        "h": 0,
+        "boxSizing": "border-box",
+        "checked": false
+      },
+      {
+        "w": 0,
+        "h": 0,
+        "boxSizing": "border-box",
+        "checked": true
+      },
+      {
+        "w": 0,
+        "h": 0,
+        "boxSizing": "border-box",
+        "checked": false
+      },
+      {
+        "w": 0,
+        "h": 0,
+        "boxSizing": "border-box",
+        "checked": false
+      },
+      {
+        "w": 0,
+        "h": 0,
+        "boxSizing": "border-box",
+        "checked": true
+      },
+      {
+        "w": 0,
+        "h": 0,
+        "boxSizing": "border-box",
+        "checked": false
+      }
+    ],
+    "doDont": [
+      "DIV:Do• Use for multiple selections• Provide",
+      "DIV:Do• Use for multiple selections• Provide",
+      "H3:Do",
+      "UL:• Use for multiple selections• Provide c",
+      "DIV:Don't• Use for mutually exclusive option",
+      "H3:Don't",
+      "UL:• Use for mutually exclusive options (us"
+    ],
+    "usageText": "Usage Guidelines\nDo\n• Use for multiple selections\n• Provide clear, concise labels\n• Group related options together\n• Use for binary on/off choices\n• Use error state for validation failures\n• Use warni"
+  },
+  "convCb": {
+    "h2": [
+      "Native checkboxes",
+      "Basic — harmony-checkbox",
+      "States",
+      "Without labels",
+      "Warning & error",
+      "Inline layout",
+      "Form layout",
+      "API",
+      "Usage Guidelines",
+      "Accessibility"
+    ],
+    "usage": true,
+    "guidelinesText": null,
+    "native": [
+      {
+        "w": 18,
+        "h": 18,
+        "boxSizing": "border-box",
+        "path": "native"
+      },
+      {
+        "w": 18,
+        "h": 18,
+        "boxSizing": "border-box",
+        "path": "native"
+      },
+      {
+        "w": 18,
+        "h": 18,
+        "boxSizing": "border-box",
+        "path": "native"
+      }
+    ],
+    "ceBoxes": [
+      {
+        "label": "Option 1",
+        "w": 18,
+        "h": 18,
+        "boxSizing": "border-box",
+        "border": "2px",
+        "path": "ce"
+      },
+      {
+        "label": "Option 2 (checked)",
+        "w": 18,
+        "h": 18,
+        "boxSizing": "border-box",
+        "border": "2px",
+        "path": "ce"
+      },
+      {
+        "label": "Option 3",
+        "w": 18,
+        "h": 18,
+        "boxSizing": "border-box",
+        "border": "2px",
+        "path": "ce"
+      },
+      {
+        "label": "Unchecked",
+        "w": 18,
+        "h": 18,
+        "boxSizing": "border-box",
+        "border": "2px",
+        "path": "ce"
+      },
+      {
+        "label": "Checked",
+        "w": 18,
+        "h": 18,
+        "boxSizing": "border-box",
+        "border": "2px",
+        "path": "ce"
+      },
+      {
+        "label": "Disabled",
+        "w": 18,
+        "h": 18,
+        "boxSizing": "border-box",
+        "border": "2px",
+        "path": "ce"
+      }
+    ]
+  },
+  "refRadio": {
+    "h2": [
+      "Examples",
+      "Props",
+      "Accessibility"
+    ],
+    "radios": [
+      {
+        "w": 0,
+        "h": 0,
+        "boxSizing": "border-box",
+        "sizeClass": "radio__input"
+      },
+      {
+        "w": 0,
+        "h": 0,
+        "boxSizing": "border-box",
+        "sizeClass": "radio__input"
+      },
+      {
+        "w": 0,
+        "h": 0,
+        "boxSizing": "border-box",
+        "sizeClass": "radio__input"
+      },
+      {
+        "w": 0,
+        "h": 0,
+        "boxSizing": "border-box",
+        "sizeClass": "radio__input"
+      },
+      {
+        "w": 0,
+        "h": 0,
+        "boxSizing": "border-box",
+        "sizeClass": "radio__input"
+      },
+      {
+        "w": 0,
+        "h": 0,
+        "boxSizing": "border-box",
+        "sizeClass": "radio__input"
+      },
+      {
+        "w": 0,
+        "h": 0,
+        "boxSizing": "border-box",
+        "sizeClass": "radio__input"
+      },
+      {
+        "w": 0,
+        "h": 0,
+        "boxSizing": "border-box",
+        "sizeClass": "radio__input"
+      },
+      {
+        "w": 0,
+        "h": 0,
+        "boxSizing": "border-box",
+        "sizeClass": "radio__input"
+      }
+    ]
+  },
+  "convRadio": {
+    "h2": [
+      "Native radios",
+      "Basic — harmony-radio",
+      "Sizes",
+      "States",
+      "Inline layout",
+      "Warning & error",
+      "Form layout",
+      "API",
+      "Accessibility"
+    ],
+    "native": [
+      {
+        "w": 18,
+        "h": 18,
+        "boxSizing": "border-box",
+        "path": "native",
+        "cls": ""
+      },
+      {
+        "w": 18,
+        "h": 18,
+        "boxSizing": "border-box",
+        "path": "native",
+        "cls": ""
+      },
+      {
+        "w": 18,
+        "h": 18,
+        "boxSizing": "border-box",
+        "path": "native",
+        "cls": ""
+      }
+    ],
+    "ce": [
+      {
+        "size": "md",
+        "label": "Option 1",
+        "w": 18,
+        "h": 18,
+        "boxSizing": "border-box",
+        "path": "ce"
+      },
+      {
+        "size": "md",
+        "label": "Option 2",
+        "w": 18,
+        "h": 18,
+        "boxSizing": "border-box",
+        "path": "ce"
+      },
+      {
+        "size": "md",
+        "label": "Option 3",
+        "w": 18,
+        "h": 18,
+        "boxSizing": "border-box",
+        "path": "ce"
+      },
+      {
+        "size": "small",
+        "label": "Small",
+        "w": 14,
+        "h": 14,
+        "boxSizing": "border-box",
+        "path": "ce"
+      },
+      {
+        "size": "medium",
+        "label": "Medium (default)",
+        "w": 18,
+        "h": 18,
+        "boxSizing": "border-box",
+        "path": "ce"
+      },
+      {
+        "size": "large",
+        "label": "Large",
+        "w": 22,
+        "h": 22,
+        "boxSizing": "border-box",
+        "path": "ce"
+      },
+      {
+        "size": "md",
+        "label": "Unchecked",
+        "w": 18,
+        "h": 18,
+        "boxSizing": "border-box",
+        "path": "ce"
+      },
+      {
+        "size": "md",
+        "label": "Checked",
+        "w": 18,
+        "h": 18,
+        "boxSizing": "border-box",
+        "path": "ce"
+      },
+      {
+        "size": "md",
+        "label": "Disabled",
+        "w": 18,
+        "h": 18,
+        "boxSizing": "border-box",
+        "path": "ce"
+      }
+    ]
+  },
+  "refTabs": {
+    "h2": [
+      "Examples",
+      "Props",
+      "Accessibility"
+    ],
+    "layout": [
+      {
+        "text": "Home",
+        "iconLeft": 345,
+        "labelLeft": 369,
+        "iconAfterLabel": false,
+        "flexDir": "row-reverse"
+      },
+      {
+        "text": "Profile",
+        "iconLeft": 443.3,
+        "labelLeft": 467.3,
+        "iconAfterLabel": false,
+        "flexDir": "row-reverse"
+      },
+      {
+        "text": "Settings",
+        "iconLeft": 544,
+        "labelLeft": 568,
+        "iconAfterLabel": false,
+        "flexDir": "row-reverse"
+      }
+    ],
+    "rightCount": 3
+  },
+  "convTabs": {
+    "h2": [
+      "Basic tabs",
+      "Icons left",
+      "Icons right",
+      "Icons top",
+      "Disabled",
+      "Add Tab",
+      "Per-tab actions",
+      "Overflow (narrow container)",
+      "Manual overflow",
+      "Compact",
+      "Pill (VP)",
+      "Enforced icon position",
+      "API",
+      "Accessibility"
+    ],
+    "layout": [
+      {
+        "text": "Home",
+        "className": "tab is-active tab--icon-right",
+        "iconLeft": 367.3,
+        "labelLeft": 321,
+        "iconAfterLabel": true,
+        "flexDir": "row",
+        "html": "<span class=\"tab__label\">Home</span><harmony-icon name=\"home\" size=\"sm\" class=\"tab__icon\" aria-hidden=\"true\"></harmony-icon>"
+      },
+      {
+        "text": "Profile",
+        "className": "tab tab--icon-right",
+        "iconLeft": 468,
+        "labelLeft": 419.3,
+        "iconAfterLabel": true,
+        "flexDir": "row",
+        "html": "<span class=\"tab__label\">Profile</span><harmony-icon name=\"user\" size=\"sm\" class=\"tab__icon\" aria-hidden=\"true\"></harmony-icon>"
+      },
+      {
+        "text": "Settings",
+        "className": "tab tab--icon-right",
+        "iconLeft": 581,
+        "labelLeft": 520,
+        "iconAfterLabel": true,
+        "flexDir": "row",
+        "html": "<span class=\"tab__label\">Settings</span><harmony-icon name=\"cog-6-tooth\" size=\"sm\" class=\"tab__icon\" aria-hidden=\"true\"></harmony-icon>"
+      }
+    ]
+  },
+  "convBg": {
+    "h2": [
+      "Default variant",
+      "Default — toggle example",
+      "Sizes",
+      "Orientation",
+      "Disabled",
+      "Multiple counts",
+      "With icons and text",
+      "Icon only",
+      "Outline variant",
+      "API",
+      "Accessibility"
+    ],
+    "groups": 18,
+    "sizes": [
+      50,
+      50,
+      42,
+      50,
+      58
+    ]
+  },
+  "refBg": {
+    "h2": [
+      "Examples",
+      "Props"
+    ],
+    "sizes": [
+      50,
+      50,
+      42,
+      50,
+      58
+    ]
+  },
+  "convLm": {
+    "h2": [
+      "Basic (native)",
+      "Without icons",
+      "Helper — harmony-list-menu",
+      "No borders",
+      "API",
+      "Accessibility"
+    ],
+    "activeStyle": {
+      "bg": "rgb(42, 120, 198)",
+      "color": "rgb(255, 255, 255)",
+      "h": 46
+    },
+    "menus": 4
+  },
+  "refLm": {
+    "h2": [
+      "Examples",
+      "Props"
+    ],
+    "activeStyle": {
+      "bg": "rgb(42, 120, 198)",
+      "color": "rgb(255, 255, 255)",
+      "h": 46
+    }
+  }
+}

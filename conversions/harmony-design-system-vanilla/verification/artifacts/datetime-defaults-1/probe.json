@@ -1,0 +1,31 @@
+{
+  "result": {
+    "before": {
+      "defaults": {
+        "locale": "en-US",
+        "timeFormat": "24"
+      },
+      "fieldValue": null,
+      "found": {
+        "field": true,
+        "datePicker": true,
+        "timePicker": true,
+        "pageTag": "DEMO-DATE-PICKER-PAGE"
+      }
+    },
+    "afterSet": {
+      "machine": "2024-01-15",
+      "asDate": "2024-01-15T07:00:00.000Z",
+      "helper": "2024-01-15T07:00:00.000Z"
+    },
+    "pickerDate": "2024-06-01",
+    "pickerTime": "09:45",
+    "defaultsAfter": {
+      "locale": "fr-FR",
+      "timeFormat": "12"
+    },
+    "timeFormatResolved": "12",
+    "fieldLocale": "fr-FR"
+  },
+  "errors": []
+}

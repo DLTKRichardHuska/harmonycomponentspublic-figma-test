@@ -1,0 +1,20 @@
+{
+  "name": "harmony-design-system-vanilla-workspace",
+  "private": true,
+  "version": "0.9.0-in-progress",
+  "description": "Harmony Design System — Vanilla Web (Custom Elements) workspace",
+  "type": "module",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "predev": "npm run generate -w @dltkrichardhuska/harmony-design-system-vanilla",
+    "dev": "npm run dev -w @dltkrichardhuska/harmony-design-system-vanilla-demo",
+    "build:lib": "npm run build:lib -w @dltkrichardhuska/harmony-design-system-vanilla",
+    "build:products": "npm run build:products -w @dltkrichardhuska/harmony-design-system-vanilla",
+    "build:static": "npm run build:static -w @dltkrichardhuska/harmony-design-system-vanilla",
+    "build": "npm run build:lib",
+    "gen:cem": "npm run gen:cem -w @dltkrichardhuska/harmony-design-system-vanilla"
+  }
+}

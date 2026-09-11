@@ -1,0 +1,109 @@
+{
+  "htmlTheme": [
+    "theme-cp"
+  ],
+  "desc": "Tooltips via <harmony-tooltip>. Show on hover and focus; Escape dismisses. Use text or a content slot for rich HTML.",
+  "headings": [
+    "H2:Getting Started",
+    "H2:Changelog",
+    "H2:Foundation",
+    "H2:Shell Layout",
+    "H2:Components",
+    "H2:Examples",
+    "H3:Basic Tooltip",
+    "H3:Positions",
+    "H3:On Different Elements",
+    "H3:Corner Variants",
+    "H3:Rich content slot",
+    "H2:API",
+    "H2:Accessibility",
+    "H1:Tooltips",
+    "H3:Consume — npm",
+    "H3:Consume — static zip"
+  ],
+  "exampleTitles": [
+    "Basic Tooltip",
+    "Positions",
+    "On Different Elements",
+    "Corner Variants",
+    "Rich content slot"
+  ],
+  "tipCount": 12,
+  "hasApi": true,
+  "hasA11y": true,
+  "hasConsume": true,
+  "tipAttrs": [
+    {
+      "text": "This is a tooltip",
+      "position": "top",
+      "corner": null,
+      "hasContentSlot": false
+    },
+    {
+      "text": "Appears on top",
+      "position": "top",
+      "corner": null,
+      "hasContentSlot": false
+    },
+    {
+      "text": "Appears on bottom",
+      "position": "bottom",
+      "corner": null,
+      "hasContentSlot": false
+    },
+    {
+      "text": "Appears on left",
+      "position": "left",
+      "corner": null,
+      "hasContentSlot": false
+    },
+    {
+      "text": "Appears on right",
+      "position": "right",
+      "corner": null,
+      "hasContentSlot": false
+    },
+    {
+      "text": "Icon button info",
+      "position": "top",
+      "corner": null,
+      "hasContentSlot": false
+    },
+    {
+      "text": "More information about this text",
+      "position": "top",
+      "corner": null,
+      "hasContentSlot": false
+    },
+    {
+      "text": "Top corners sharp",
+      "position": "top",
+      "corner": "top",
+      "hasContentSlot": false
+    },
+    {
+      "text": "Bottom corners sharp",
+      "position": "bottom",
+      "corner": "bottom",
+      "hasContentSlot": false
+    },
+    {
+      "text": "Left corners sharp",
+      "position": "left",
+      "corner": "left",
+      "hasContentSlot": false
+    },
+    {
+      "text": "Right corners sharp",
+      "position": "right",
+      "corner": "right",
+      "hasContentSlot": false
+    },
+    {
+      "text": null,
+      "position": "bottom",
+      "corner": null,
+      "hasContentSlot": true
+    }
+  ]
+}

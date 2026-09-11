@@ -1,0 +1,346 @@
+/**
+ * Harmony CSS reset — port of reference `src/styles/reset.css`.
+ *
+ * Fonts are not bundled: the host loads Figtree, Lexend, and JetBrains Mono.
+ * Typography style sizes (h1 = Heading XL, etc.) live in typography.css and
+ * override the generic heading/body rules here.
+ *
+ * Prepended to product styles.css by build-product.mjs (before typography),
+ * and included in `typographySheet` for Shadow DOM.
+ */
+
+/* ===========================================
+   BOX SIZING
+   =========================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* ===========================================
+   MARGINS & PADDING RESET
+   =========================================== */
+
+/* Enumerated rather than `*` (as in the reference): a universal margin/padding
+   rule in the document tree also matches custom elements, and normal document
+   declarations beat a shadow root's own `:host` rules — so `*` silently zeroes
+   the padding every Harmony element sets on its host. */
+:where(
+  address, blockquote, body, button, caption, dd, details, dialog, dl, dt,
+  fieldset, figure, form, h1, h2, h3, h4, h5, h6, hr, input, legend, li, menu,
+  ol, optgroup, option, p, pre, search, select, summary, table, td, textarea,
+  th, ul
+) {
+  margin: 0;
+  padding: 0;
+}
+
+/* ===========================================
+   ROOT & BODY
+   =========================================== */
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: var(--body-default);
+  font-weight: var(--font-normal);
+  line-height: var(--leading-normal);
+  color: var(--text-primary);
+  background-color: var(--page-bg);
+  min-height: 100vh;
+}
+
+/* ===========================================
+   TYPOGRAPHY (generic — type styles override in typography.css)
+   =========================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+  color: var(--text-primary);
+}
+
+p {
+  color: var(--text-secondary);
+}
+
+/* ===========================================
+   LINKS
+   =========================================== */
+
+a {
+  color: var(--link-color);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ===========================================
+   LISTS
+   =========================================== */
+
+/* Lists keep their markers (the reference resets them away). A component that
+   uses a list for structure rather than for content — nav, tab strip, menu —
+   opts out with `list-style: none` in its own styles. */
+ul {
+  list-style-type: disc;
+}
+
+ol {
+  list-style-type: decimal;
+}
+
+/* Markers sit outside the content box, so the indent has to come back after
+   the margin/padding reset above. */
+ul,
+ol {
+  padding-inline-start: var(--space-6);
+}
+
+/* ===========================================
+   FIELDSET & LEGEND
+   =========================================== */
+
+fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+}
+
+legend {
+  padding: 0;
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  color: var(--text-primary);
+  margin-bottom: var(--space-2);
+}
+
+/* ===========================================
+   IMAGES & MEDIA
+   =========================================== */
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* ===========================================
+   FORM ELEMENTS
+   =========================================== */
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+input:focus,
+textarea:focus,
+select:focus,
+button:focus {
+  outline: none;
+}
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+input[type='date'],
+input[type='time'],
+input[type='datetime-local'],
+input[type='month'],
+input[type='week'] {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+html:not(.dark) input[type='date'],
+html:not(.dark) input[type='time'],
+html:not(.dark) input[type='datetime-local'],
+html:not(.dark) input[type='month'],
+html:not(.dark) input[type='week'] {
+  color-scheme: light;
+}
+
+html.dark input[type='date'],
+html.dark input[type='time'],
+html.dark input[type='datetime-local'],
+html.dark input[type='month'],
+html.dark input[type='week'] {
+  color-scheme: dark;
+}
+
+input[type='color'] {
+  -webkit-appearance: none;
+  appearance: none;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+}
+
+input[type='color']::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+input[type='color']::-webkit-color-swatch {
+  border: none;
+  border-radius: var(--radius-lg);
+}
+
+input:disabled,
+textarea:disabled,
+select:disabled,
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* ===========================================
+   TABLE
+   =========================================== */
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+}
+
+/* ===========================================
+   CODE
+   =========================================== */
+
+code,
+pre,
+kbd,
+samp {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+}
+
+pre {
+  overflow-x: auto;
+  background-color: var(--surface-bg);
+  border: var(--border-width-thin) solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+}
+
+code {
+  background-color: var(--elevated-bg);
+  padding: var(--space-0-5) var(--space-1-5);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+}
+
+pre code {
+  background: none;
+  padding: 0;
+  border-radius: 0;
+  /* Take the block's color so a themed `pre` is not overridden by the inline
+     `code` color above. */
+  color: inherit;
+}
+
+/* ===========================================
+   SELECTION
+   =========================================== */
+
+::selection {
+  background-color: var(--theme-primary-light);
+  color: var(--text-primary);
+}
+
+/* ===========================================
+   SCROLLBAR
+   =========================================== */
+
+::-webkit-scrollbar {
+  width: var(--space-1-5);
+  height: var(--space-1-5);
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: var(--radius-03);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+}
+
+/* ===========================================
+   FOCUS VISIBLE
+   =========================================== */
+
+:focus-visible {
+  outline: var(--border-width-standard) solid var(--theme-primary);
+  outline-offset: var(--space-0-5);
+}
+
+/* ===========================================
+   HIDDEN UTILITY
+   =========================================== */
+
+[hidden] {
+  display: none !important;
+}
+
+/* ===========================================
+   SCREEN READER ONLY
+   =========================================== */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}

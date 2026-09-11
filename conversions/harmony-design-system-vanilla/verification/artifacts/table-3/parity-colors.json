@@ -1,0 +1,92 @@
+{
+  "ref": {
+    "totalBg": "rgba(89, 172, 255, 0.15)",
+    "totalColor": "rgb(233, 236, 239)",
+    "badges": [
+      {
+        "text": "Active",
+        "cls": "badge badge--success",
+        "bg": "rgb(219, 249, 168)",
+        "color": "rgb(49, 109, 21)",
+        "radius": "9999px"
+      },
+      {
+        "text": "In Progress",
+        "cls": "badge badge--warning",
+        "bg": "rgb(255, 241, 190)",
+        "color": "rgb(173, 84, 0)",
+        "radius": "9999px"
+      },
+      {
+        "text": "Pending",
+        "cls": "badge badge--default",
+        "bg": "rgb(55, 66, 77)",
+        "color": "rgb(182, 182, 196)",
+        "radius": "9999px"
+      },
+      {
+        "text": "Review",
+        "cls": "badge badge--info",
+        "bg": "rgb(208, 223, 255)",
+        "color": "rgb(69, 75, 212)",
+        "radius": "9999px"
+      }
+    ]
+  },
+  "conv": {
+    "totalBg": "rgb(247, 248, 250)",
+    "chips": [
+      {
+        "text": "Active",
+        "variant": "outline",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(42, 120, 198)",
+        "border": "rgb(42, 120, 198)",
+        "radius": "0px",
+        "h": 16
+      },
+      {
+        "text": "In Progress",
+        "variant": "outline",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(42, 120, 198)",
+        "border": "rgb(42, 120, 198)",
+        "radius": "0px",
+        "h": 16
+      },
+      {
+        "text": "Pending",
+        "variant": "outline",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(42, 120, 198)",
+        "border": "rgb(42, 120, 198)",
+        "radius": "0px",
+        "h": 16
+      },
+      {
+        "text": "Active",
+        "variant": "outline",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(42, 120, 198)",
+        "border": "rgb(42, 120, 198)",
+        "radius": "0px",
+        "h": 16
+      }
+    ],
+    "badgeCount": 0,
+    "ccHeaders": [
+      "PR ID",
+      "Preferred Vendor",
+      "Total Amount",
+      "Status"
+    ],
+    "ccRows": [
+      "PR-1001 ACME Supplies $4,200 Open",
+      "PR-1002 Contoso LLC $1,150 Pending",
+      "PR-1003 Fabrikam Parts $880 Open"
+    ],
+    "a11y": true,
+    "usage": false,
+    "literalStub": false
+  }
+}

@@ -1,0 +1,27 @@
+/**
+ * Link extras — muted variant + icon inherit.
+ * Default link look lives on unclassed `a` in reset.css.
+ * Do not add a base `.link` class.
+ */
+
+.link--muted {
+  color: var(--text-muted);
+}
+
+.link--muted:hover {
+  color: var(--text-primary);
+}
+
+a harmony-icon,
+a .link__external-icon,
+.link__external-icon {
+  color: inherit;
+  vertical-align: middle;
+  margin-inline-start: var(--space-1);
+}
+
+/* Button links keep button chrome; reset link underline must not win */
+a.btn,
+a.btn:hover {
+  text-decoration: none;
+}

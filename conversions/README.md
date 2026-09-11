@@ -9,5 +9,7 @@ Discover conversions: scan `conversions/*/conversion.manifest.json`.
 | Conversion | Converter |
 |------------|-----------|
 | `harmony-design-system-react-mui` | `harmony-design-system-react-mui` |
+| `harmony-design-system-shadcn` | `harmony-design-system-shadcn` |
+| `harmony-design-system-vanilla` | `harmony-design-system-vanilla` |
 
 Entry point: **`/conversion-agent`**

@@ -1,0 +1,128 @@
+{
+  "theme": [
+    "theme-cp",
+    "dark"
+  ],
+  "selectedWeeks": [
+    {
+      "text": "Week 3Jan 15 - Jan 21",
+      "className": "week-picker__week week-picker__week--selected",
+      "ariaSelected": "true",
+      "bg": "rgb(89, 172, 255)",
+      "color": "rgb(31, 37, 46)",
+      "border": "1px solid rgb(89, 172, 255)",
+      "fontWeight": "600",
+      "rangeColor": "rgb(31, 37, 46)",
+      "numColor": "rgb(31, 37, 46)"
+    }
+  ],
+  "neighborWeek": [
+    {
+      "text": "Week 1Jan 1 - Jan 7",
+      "className": "week-picker__week",
+      "ariaSelected": "false",
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(233, 236, 239)",
+      "border": "1px solid rgba(0, 0, 0, 0)",
+      "fontWeight": "400",
+      "rangeColor": "rgb(182, 182, 196)",
+      "numColor": "rgb(233, 236, 239)"
+    }
+  ],
+  "selectedMonths": [
+    {
+      "text": "Jun",
+      "className": "month-picker__month month-picker__month--selected",
+      "ariaSelected": "true",
+      "bg": "rgb(89, 172, 255)",
+      "color": "rgb(31, 37, 46)",
+      "border": "1px solid rgb(89, 172, 255)",
+      "fontWeight": "600",
+      "rangeColor": null,
+      "numColor": null
+    }
+  ],
+  "today": [
+    {
+      "text": "10",
+      "className": "date-picker__day date-picker__day--today",
+      "ariaSelected": "false",
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(233, 236, 239)",
+      "border": "1px solid rgb(89, 172, 255)",
+      "fontWeight": "600",
+      "rangeColor": null,
+      "numColor": null
+    },
+    {
+      "text": "10",
+      "className": "date-picker__day date-picker__day--today",
+      "ariaSelected": "false",
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(233, 236, 239)",
+      "border": "1px solid rgb(89, 172, 255)",
+      "fontWeight": "600",
+      "rangeColor": null,
+      "numColor": null
+    }
+  ],
+  "selectedDays": [
+    {
+      "text": "15",
+      "className": "date-picker__day date-picker__day--selected date-picker__day--disabled",
+      "ariaSelected": "true",
+      "bg": "rgb(89, 172, 255)",
+      "color": "rgb(187, 187, 198)",
+      "border": "1px solid rgb(89, 172, 255)",
+      "fontWeight": "600",
+      "rangeColor": null,
+      "numColor": null
+    }
+  ],
+  "periods": [
+    {
+      "text": "AM",
+      "className": "time-picker__period-btn time-picker__period-btn--active",
+      "ariaSelected": null,
+      "bg": "rgb(89, 172, 255)",
+      "color": "rgb(31, 37, 46)",
+      "border": "1px solid rgb(89, 172, 255)",
+      "fontWeight": "600",
+      "rangeColor": null,
+      "numColor": null
+    },
+    {
+      "text": "PM",
+      "className": "time-picker__period-btn",
+      "ariaSelected": null,
+      "bg": "rgb(31, 37, 46)",
+      "color": "rgb(182, 182, 196)",
+      "border": "1px solid rgb(95, 104, 113)",
+      "fontWeight": "500",
+      "rangeColor": null,
+      "numColor": null
+    },
+    {
+      "text": "AM",
+      "className": "time-picker__period-btn",
+      "ariaSelected": null,
+      "bg": "rgb(31, 37, 46)",
+      "color": "rgb(182, 182, 196)",
+      "border": "1px solid rgb(95, 104, 113)",
+      "fontWeight": "500",
+      "rangeColor": null,
+      "numColor": null
+    },
+    {
+      "text": "PM",
+      "className": "time-picker__period-btn time-picker__period-btn--active",
+      "ariaSelected": null,
+      "bg": "rgb(89, 172, 255)",
+      "color": "rgb(31, 37, 46)",
+      "border": "1px solid rgb(89, 172, 255)",
+      "fontWeight": "600",
+      "rangeColor": null,
+      "numColor": null
+    }
+  ]
+}

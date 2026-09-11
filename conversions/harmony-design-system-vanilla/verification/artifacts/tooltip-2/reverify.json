@@ -1,0 +1,249 @@
+{
+  "boot": {
+    "hasApp": true,
+    "defined": true
+  },
+  "convInv": {
+    "tipCount": 12,
+    "headings": [
+      "H2:Examples",
+      "H3:Basic Tooltip",
+      "H3:Positions",
+      "H3:On Different Elements",
+      "H3:Corner Variants",
+      "H3:Rich content slot",
+      "H2:API",
+      "H2:Accessibility",
+      "H1:Tooltips"
+    ],
+    "hasApi": true,
+    "hasA11y": true
+  },
+  "refInv": {
+    "tipCount": 11,
+    "headings": [
+      "H1:Tooltips",
+      "H2:Examples",
+      "H3:Basic Tooltip",
+      "H3:Positions",
+      "H3:On Different Elements",
+      "H3:Corner Variants",
+      "H2:Props",
+      "H2:Accessibility",
+      "H3:Keyboard Access"
+    ],
+    "hasApi": true,
+    "hasA11y": true
+  },
+  "a11ySummary": {
+    "tipCount": 12,
+    "textTipsOk": true,
+    "richDescText": "More detail in the tip",
+    "richAssigned": "More detail in the tip",
+    "richMatch": true,
+    "richDescribedBy": "harmony-tooltip-desc-36",
+    "allDescNonEmpty": true,
+    "allMatch": true
+  },
+  "a11y": [
+    {
+      "textAttr": "This is a tooltip",
+      "assigned": "",
+      "describedBy": "harmony-tooltip-desc-25",
+      "descText": "This is a tooltip",
+      "descFound": true,
+      "ariaIds": [
+        "harmony-tooltip-desc-25"
+      ],
+      "tipTextEmpty": false,
+      "match": true
+    },
+    {
+      "textAttr": "Appears on top",
+      "assigned": "",
+      "describedBy": "harmony-tooltip-desc-26",
+      "descText": "Appears on top",
+      "descFound": true,
+      "ariaIds": [
+        "harmony-tooltip-desc-26"
+      ],
+      "tipTextEmpty": false,
+      "match": true
+    },
+    {
+      "textAttr": "Appears on bottom",
+      "assigned": "",
+      "describedBy": "harmony-tooltip-desc-27",
+      "descText": "Appears on bottom",
+      "descFound": true,
+      "ariaIds": [
+        "harmony-tooltip-desc-27"
+      ],
+      "tipTextEmpty": false,
+      "match": true
+    },
+    {
+      "textAttr": "Appears on left",
+      "assigned": "",
+      "describedBy": "harmony-tooltip-desc-28",
+      "descText": "Appears on left",
+      "descFound": true,
+      "ariaIds": [
+        "harmony-tooltip-desc-28"
+      ],
+      "tipTextEmpty": false,
+      "match": true
+    },
+    {
+      "textAttr": "Appears on right",
+      "assigned": "",
+      "describedBy": "harmony-tooltip-desc-29",
+      "descText": "Appears on right",
+      "descFound": true,
+      "ariaIds": [
+        "harmony-tooltip-desc-29"
+      ],
+      "tipTextEmpty": false,
+      "match": true
+    },
+    {
+      "textAttr": "Icon button info",
+      "assigned": "",
+      "describedBy": "harmony-tooltip-desc-30",
+      "descText": "Icon button info",
+      "descFound": true,
+      "ariaIds": [
+        "harmony-tooltip-desc-30"
+      ],
+      "tipTextEmpty": false,
+      "match": true
+    },
+    {
+      "textAttr": "More information about this text",
+      "assigned": "",
+      "describedBy": "harmony-tooltip-desc-31",
+      "descText": "More information about this text",
+      "descFound": true,
+      "ariaIds": [
+        "harmony-tooltip-desc-31"
+      ],
+      "tipTextEmpty": false,
+      "match": true
+    },
+    {
+      "textAttr": "Top corners sharp",
+      "assigned": "",
+      "describedBy": "harmony-tooltip-desc-32",
+      "descText": "Top corners sharp",
+      "descFound": true,
+      "ariaIds": [
+        "harmony-tooltip-desc-32"
+      ],
+      "tipTextEmpty": false,
+      "match": true
+    },
+    {
+      "textAttr": "Bottom corners sharp",
+      "assigned": "",
+      "describedBy": "harmony-tooltip-desc-33",
+      "descText": "Bottom corners sharp",
+      "descFound": true,
+      "ariaIds": [
+        "harmony-tooltip-desc-33"
+      ],
+      "tipTextEmpty": false,
+      "match": true
+    },
+    {
+      "textAttr": "Left corners sharp",
+      "assigned": "",
+      "describedBy": "harmony-tooltip-desc-34",
+      "descText": "Left corners sharp",
+      "descFound": true,
+      "ariaIds": [
+        "harmony-tooltip-desc-34"
+      ],
+      "tipTextEmpty": false,
+      "match": true
+    },
+    {
+      "textAttr": "Right corners sharp",
+      "assigned": "",
+      "describedBy": "harmony-tooltip-desc-35",
+      "descText": "Right corners sharp",
+      "descFound": true,
+      "ariaIds": [
+        "harmony-tooltip-desc-35"
+      ],
+      "tipTextEmpty": false,
+      "match": true
+    },
+    {
+      "textAttr": null,
+      "assigned": "More detail in the tip",
+      "describedBy": "harmony-tooltip-desc-36",
+      "descText": "More detail in the tip",
+      "descFound": true,
+      "ariaIds": [
+        "harmony-tooltip-desc-36"
+      ],
+      "tipTextEmpty": true,
+      "match": true
+    }
+  ],
+  "behavior": {
+    "onFocus": {
+      "opacity": "1",
+      "visibility": "visible"
+    },
+    "afterEsc": {
+      "opacity": "0",
+      "visibility": "hidden",
+      "dismissed": true
+    }
+  },
+  "basicHover": {
+    "text": "This is a tooltip",
+    "opacity": "1",
+    "visibility": "visible",
+    "color": "rgb(255, 255, 255)",
+    "bg": "rgb(55, 63, 78)",
+    "w": 105,
+    "h": 34
+  },
+  "richHover": {
+    "text": "",
+    "opacity": "1",
+    "visibility": "visible",
+    "color": "rgb(255, 255, 255)",
+    "bg": "rgb(55, 63, 78)",
+    "w": 136,
+    "h": 34
+  },
+  "darkHover": {
+    "text": "This is a tooltip",
+    "opacity": "1",
+    "visibility": "visible",
+    "color": "rgb(31, 37, 46)",
+    "bg": "rgb(233, 236, 239)",
+    "w": 105,
+    "h": 34
+  },
+  "fcHover": {
+    "text": "This is a tooltip",
+    "opacity": "1",
+    "visibility": "visible",
+    "color": "rgb(0, 0, 0)",
+    "bg": "rgb(255, 255, 255)",
+    "w": 107,
+    "h": 36
+  },
+  "refBasic": {
+    "text": "This is a tooltip",
+    "opacity": "1",
+    "color": "rgb(255, 255, 255)",
+    "bg": "rgb(55, 63, 78)",
+    "fontSize": "12px",
+    "padding": "8px 12px"
+  }
+}

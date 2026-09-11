@@ -30,16 +30,6 @@ export function PlaceholderPage({ path }: { path: string }) {
       </div>
       <p className="mb-4 max-w-2xl text-muted-foreground">{statusDescription(conversionStatus.status)}</p>
       <p className="text-sm text-muted-foreground">
-        Reference docs:{' '}
-        <a
-          className="text-primary underline"
-          href={`http://localhost:4321${path}`}
-          target="_blank"
-          rel="noreferrer"
-        >
-          localhost:4321{path}
-        </a>
-        {' · '}
         <Link className="text-primary underline" to="/getting-started">
           Getting Started
         </Link>

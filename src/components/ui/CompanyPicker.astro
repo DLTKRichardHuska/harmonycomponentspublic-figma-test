@@ -1,0 +1,176 @@
+---
+/**
+ * CompanyPicker: company selector with color indicator and dropdown menu.
+ * Used in ShellHeader actions; also usable standalone.
+ */
+import Icon from './Icon.astro';
+
+export interface CompanyOption {
+  id: string;
+  name: string;
+  color?: string;
+}
+
+interface Props {
+  companyName?: string;
+  companyId?: string;
+  companyColor?: string;
+  companies?: CompanyOption[];
+  class?: string;
+}
+
+const {
+  companyName = 'Company name',
+  companyId,
+  companyColor,
+  companies,
+  class: className = '',
+} = Astro.props;
+
+const defaultCompanies: CompanyOption[] = [
+  { id: 'acme-corp', name: 'Acme Corporation', color: '#FF507B' },
+  { id: 'ocean-industries', name: 'Ocean Industries', color: '#285F8C' },
+  { id: 'violet-systems', name: 'Violet Systems', color: '#DC50FF' },
+  { id: 'azure-dynamics', name: 'Azure Dynamics', color: '#5077FF' },
+  { id: 'sunset-corporation', name: 'Sunset Corporation', color: '#FFAF50' },
+];
+
+const optionClassMap: Record<string, string> = {
+  'acme-corp': 'company-picker__option-indicator--acme',
+  'ocean-industries': 'company-picker__option-indicator--ocean',
+  'violet-systems': 'company-picker__option-indicator--violet',
+  'azure-dynamics': 'company-picker__option-indicator--azure',
+  'sunset-corporation': 'company-picker__option-indicator--sunset',
+};
+
+const companyOptions = companies ?? defaultCompanies;
+const selectedIndex = companyId
+  ? Math.max(0, companyOptions.findIndex((c) => c.id === companyId))
+  : 0;
+const selected = companyOptions[selectedIndex] ?? companyOptions[0];
+const effectiveCompanyColor = companyColor ?? selected?.color;
+const displayName = companyName || selected?.name || 'Company name';
+---
+
+<div class={`company-picker ${className}`.trim()} data-company-picker>
+  <button type="button" class="company-picker__btn" data-company-picker-btn aria-haspopup="listbox" aria-expanded="false">
+    <span
+      class="company-picker__indicator"
+      data-company-indicator
+      style={effectiveCompanyColor ? `background-color: ${effectiveCompanyColor}` : undefined}
+    ></span>
+    <span class="company-picker__name" data-company-name>{displayName}</span>
+    <Icon name="chevron-down" size="sm" class="company-picker__chevron" />
+  </button>
+  <div class="company-picker__menu" data-company-picker-menu role="listbox" hidden>
+    {companyOptions.map((company, index) => (
+      <button
+        type="button"
+        role="option"
+        class:list={['company-picker__option', index === selectedIndex && 'company-picker__option--selected']}
+        data-company-option
+        data-company-id={company.id}
+        data-company-color={company.color}
+        aria-selected={index === selectedIndex ? 'true' : 'false'}
+      >
+        <span
+          class:list={['company-picker__option-indicator', !companies && optionClassMap[company.id]]}
+          style={company.color ? `background-color: ${company.color}` : undefined}
+        />
+        <span class="company-picker__option-name">{company.name}</span>
+      </button>
+    ))}
+  </div>
+</div>
+
+<script>
+  let outsideClickListenerAdded = false;
+
+  function rgbToHex(rgb: string): string {
+    if (!rgb || rgb.startsWith('#')) return rgb;
+    const values = rgb.match(/\d+/g);
+    if (!values || values.length < 3) return rgb;
+    const r = parseInt(values[0]).toString(16).padStart(2, '0');
+    const g = parseInt(values[1]).toString(16).padStart(2, '0');
+    const b = parseInt(values[2]).toString(16).padStart(2, '0');
+    return `#${r}${g}${b}`.toUpperCase();
+  }
+
+  function setMenuOpen(btn: Element, menu: HTMLElement, open: boolean) {
+    menu.classList.toggle('company-picker__menu--open', open);
+    menu.hidden = !open;
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
+
+  function initCompanyPickers() {
+    document.querySelectorAll('[data-company-picker-btn]').forEach((pickerBtn) => {
+      if (pickerBtn.hasAttribute('data-init')) return;
+      pickerBtn.setAttribute('data-init', 'true');
+
+      const root = pickerBtn.closest('[data-company-picker]') ?? pickerBtn.parentElement;
+      const pickerMenu = root?.querySelector('[data-company-picker-menu]') as HTMLElement | null;
+      if (!pickerMenu) return;
+
+      const companyIndicator = pickerBtn.querySelector('[data-company-indicator]') as HTMLElement;
+      const companyName = pickerBtn.querySelector('[data-company-name]') as HTMLElement;
+
+      pickerBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const open = !pickerMenu.classList.contains('company-picker__menu--open');
+        setMenuOpen(pickerBtn, pickerMenu, open);
+      });
+
+      pickerMenu.querySelectorAll('[data-company-option]').forEach((option) => {
+        option.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const optionName = option.querySelector('.company-picker__option-name')?.textContent;
+          const indicator = option.querySelector('.company-picker__option-indicator') as HTMLElement;
+          const id = (option as HTMLElement).dataset.companyId || '';
+          const colorAttr = (option as HTMLElement).dataset.companyColor || '';
+
+          pickerMenu.querySelectorAll('[data-company-option]').forEach((opt) => {
+            opt.classList.remove('company-picker__option--selected');
+            opt.setAttribute('aria-selected', 'false');
+          });
+          option.classList.add('company-picker__option--selected');
+          option.setAttribute('aria-selected', 'true');
+
+          if (companyName && optionName) companyName.textContent = optionName;
+
+          let hexColor = colorAttr;
+          if (companyIndicator && indicator) {
+            const computedColor = window.getComputedStyle(indicator).backgroundColor;
+            companyIndicator.style.backgroundColor = computedColor;
+            hexColor = colorAttr || rgbToHex(computedColor);
+          }
+
+          root?.dispatchEvent(
+            new CustomEvent('company-change', {
+              bubbles: true,
+              detail: { id, name: optionName || '', color: hexColor },
+            }),
+          );
+
+          setMenuOpen(pickerBtn, pickerMenu, false);
+        });
+      });
+    });
+
+    if (!outsideClickListenerAdded) {
+      outsideClickListenerAdded = true;
+      document.addEventListener('click', (e) => {
+        const target = e.target as HTMLElement;
+        document.querySelectorAll('[data-company-picker-menu]').forEach((menu) => {
+          const root = menu.closest('[data-company-picker]');
+          const btn = root?.querySelector('[data-company-picker-btn]');
+          if (btn && !btn.contains(target) && !menu.contains(target)) {
+            setMenuOpen(btn, menu as HTMLElement, false);
+          }
+        });
+      });
+    }
+  }
+
+  initCompanyPickers();
+  document.addEventListener('astro:page-load', initCompanyPickers);
+</script>

@@ -1,0 +1,437 @@
+{
+  "progress-bar": {
+    "refH2": [
+      "Examples",
+      "Props",
+      "Accessibility"
+    ],
+    "convH2": [
+      "Basic Progress",
+      "Sizes",
+      "Variants",
+      "With Label",
+      "API",
+      "Accessibility"
+    ],
+    "refHasProps": true,
+    "refHasA11y": true,
+    "convHasApi": true,
+    "convHasA11y": true,
+    "convTables": 1,
+    "badgeCounts": {
+      "ref": 1,
+      "conv": 0
+    },
+    "iconSection": [],
+    "progressSample": {
+      "ref": [
+        {
+          "h": 8,
+          "fillPct": 25,
+          "barBg": "rgb(42, 120, 198)",
+          "trackBg": "rgb(191, 198, 212)"
+        },
+        {
+          "h": 8,
+          "fillPct": 50,
+          "barBg": "rgb(42, 120, 198)",
+          "trackBg": "rgb(191, 198, 212)"
+        },
+        {
+          "h": 8,
+          "fillPct": 75,
+          "barBg": "rgb(42, 120, 198)",
+          "trackBg": "rgb(191, 198, 212)"
+        },
+        {
+          "h": 8,
+          "fillPct": 100,
+          "barBg": "rgb(42, 120, 198)",
+          "trackBg": "rgb(191, 198, 212)"
+        }
+      ],
+      "conv": [
+        {
+          "value": "25",
+          "size": "md",
+          "variant": "default",
+          "showLabel": false,
+          "h": 8,
+          "fillPct": 25,
+          "barBg": "rgb(42, 120, 198)",
+          "trackBg": "rgb(191, 198, 212)",
+          "label": null
+        },
+        {
+          "value": "50",
+          "size": "md",
+          "variant": "default",
+          "showLabel": false,
+          "h": 8,
+          "fillPct": 50,
+          "barBg": "rgb(42, 120, 198)",
+          "trackBg": "rgb(191, 198, 212)",
+          "label": null
+        },
+        {
+          "value": "75",
+          "size": "md",
+          "variant": "default",
+          "showLabel": false,
+          "h": 8,
+          "fillPct": 75,
+          "barBg": "rgb(42, 120, 198)",
+          "trackBg": "rgb(191, 198, 212)",
+          "label": null
+        },
+        {
+          "value": "100",
+          "size": "md",
+          "variant": "default",
+          "showLabel": false,
+          "h": 8,
+          "fillPct": 100,
+          "barBg": "rgb(42, 120, 198)",
+          "trackBg": "rgb(191, 198, 212)",
+          "label": null
+        }
+      ]
+    },
+    "avatarSample": {
+      "ref": [],
+      "conv": []
+    },
+    "chipSample": {
+      "ref": [],
+      "conv": []
+    },
+    "a11yText": "harmony-progress uses ElementInternals with role=\"progressbar\" and aria-valuenow / min / max. Under forced-colors, the track keeps a CanvasText border and the bar uses Highlight.",
+    "apiRows": [
+      "valuenumber0",
+      "maxnumber (> 0)100",
+      "sizesm | md | lgmd",
+      "variantdefault | success | warning | errordefault",
+      "show-labelbooleanfalse"
+    ]
+  },
+  "badges": {
+    "refH2": [
+      "Examples",
+      "Props",
+      "Accessibility"
+    ],
+    "convH2": [
+      "Variants",
+      "Sizes",
+      "With icons",
+      "API",
+      "Accessibility"
+    ],
+    "refHasProps": true,
+    "refHasA11y": true,
+    "convHasApi": true,
+    "convHasA11y": true,
+    "convTables": 1,
+    "badgeCounts": {
+      "ref": 20,
+      "conv": 19
+    },
+    "iconSection": [
+      {
+        "text": "Approved",
+        "icon": "check",
+        "size": "large",
+        "variant": "success",
+        "height": 24
+      },
+      {
+        "text": "Pending",
+        "icon": "clock",
+        "size": "large",
+        "variant": "warning",
+        "height": 24
+      },
+      {
+        "text": "Rejected",
+        "icon": "x-mark",
+        "size": "large",
+        "variant": "error",
+        "height": 24
+      },
+      {
+        "text": "Info",
+        "icon": "information-circle",
+        "size": "large",
+        "variant": "info",
+        "height": 24
+      },
+      {
+        "text": "Small",
+        "icon": "check",
+        "size": "small",
+        "variant": "success",
+        "height": 16
+      },
+      {
+        "text": "Medium",
+        "icon": "check",
+        "size": "medium",
+        "variant": "success",
+        "height": 20
+      },
+      {
+        "text": "Large",
+        "icon": "check",
+        "size": "large",
+        "variant": "success",
+        "height": 24
+      }
+    ],
+    "progressSample": {
+      "ref": [],
+      "conv": []
+    },
+    "avatarSample": {
+      "ref": [],
+      "conv": []
+    },
+    "chipSample": {
+      "ref": [],
+      "conv": []
+    },
+    "a11yText": "Badges are typically decorative status labels. When a badge carries essential meaning, associate it with related content (proximity or ARIA). Do not rely on color alone — pair with text and/or an icon. Icon-only badges need an accessible name on the badge or parent.",
+    "apiRows": [
+      "variantdefault | primary | success | warning | error | info | orange | pink | disableddefault",
+      "sizesmall | medium | largelarge",
+      "iconharmony-icon name—"
+    ]
+  },
+  "avatar": {
+    "refH2": [
+      "Examples",
+      "Props",
+      "Accessibility"
+    ],
+    "convH2": [
+      "Sizes (icon)",
+      "Variants",
+      "Interactive",
+      "API",
+      "Accessibility"
+    ],
+    "refHasProps": true,
+    "refHasA11y": true,
+    "convHasApi": true,
+    "convHasA11y": true,
+    "convTables": 1,
+    "badgeCounts": {
+      "ref": 1,
+      "conv": 0
+    },
+    "iconSection": [],
+    "progressSample": {
+      "ref": [],
+      "conv": []
+    },
+    "avatarSample": {
+      "ref": [
+        {
+          "className": "avatar avatar--sm",
+          "h": 24,
+          "w": 24,
+          "bg": "rgb(42, 120, 198)",
+          "radius": "4px",
+          "opacity": "1"
+        },
+        {
+          "className": "avatar avatar--md",
+          "h": 32,
+          "w": 32,
+          "bg": "rgb(42, 120, 198)",
+          "radius": "8px",
+          "opacity": "1"
+        },
+        {
+          "className": "avatar avatar--lg",
+          "h": 40,
+          "w": 40,
+          "bg": "rgb(42, 120, 198)",
+          "radius": "12px",
+          "opacity": "1"
+        }
+      ],
+      "conv": [
+        {
+          "size": "sm",
+          "variant": "icon",
+          "interactive": false,
+          "disabled": false,
+          "h": 24,
+          "w": 24,
+          "bg": "rgb(42, 120, 198)",
+          "radius": "4px",
+          "opacity": "1"
+        },
+        {
+          "size": "md",
+          "variant": "icon",
+          "interactive": false,
+          "disabled": false,
+          "h": 32,
+          "w": 32,
+          "bg": "rgb(42, 120, 198)",
+          "radius": "8px",
+          "opacity": "1"
+        },
+        {
+          "size": "lg",
+          "variant": "icon",
+          "interactive": false,
+          "disabled": false,
+          "h": 40,
+          "w": 40,
+          "bg": "rgb(42, 120, 198)",
+          "radius": "12px",
+          "opacity": "1"
+        }
+      ]
+    },
+    "chipSample": {
+      "ref": [],
+      "conv": []
+    },
+    "a11yText": "Non-interactive avatars use role=\"img\" with an accessible name. Interactive avatars use role=\"button\", are focusable, and fire host click (Enter/Space included). Decorative inner content is aria-hidden. Image alt=\"\"; name lives on the host.",
+    "apiRows": [
+      "sizesm | md | lgmd",
+      "varianticon | initials | imageicon",
+      "initialsstring—",
+      "src / altimage URL / accessible name—",
+      "interactive / disabledbooleanfalse"
+    ]
+  },
+  "chips": {
+    "refH2": [
+      "Examples",
+      "Props",
+      "Accessibility"
+    ],
+    "convH2": [
+      "Sizes",
+      "Variants — Fill",
+      "Variants — Outline",
+      "Selected & disabled",
+      "With icon & removable",
+      "Types",
+      "API",
+      "Accessibility"
+    ],
+    "refHasProps": true,
+    "refHasA11y": true,
+    "convHasApi": true,
+    "convHasA11y": true,
+    "convTables": 1,
+    "badgeCounts": {
+      "ref": 1,
+      "conv": 0
+    },
+    "iconSection": [],
+    "progressSample": {
+      "ref": [],
+      "conv": []
+    },
+    "avatarSample": {
+      "ref": [],
+      "conv": []
+    },
+    "chipSample": {
+      "ref": [
+        {
+          "text": "Chip Text",
+          "h": 16,
+          "bg": "rgb(42, 120, 198)",
+          "color": "rgb(255, 255, 255)",
+          "border": "1px solid rgb(42, 120, 198)",
+          "fontSize": "10px",
+          "opacity": "1"
+        },
+        {
+          "text": "Chip Text",
+          "h": 24,
+          "bg": "rgb(42, 120, 198)",
+          "color": "rgb(255, 255, 255)",
+          "border": "1px solid rgb(42, 120, 198)",
+          "fontSize": "14px",
+          "opacity": "1"
+        },
+        {
+          "text": "Chip Text",
+          "h": 32,
+          "bg": "rgb(42, 120, 198)",
+          "color": "rgb(255, 255, 255)",
+          "border": "1px solid rgb(42, 120, 198)",
+          "fontSize": "16px",
+          "opacity": "1"
+        }
+      ],
+      "conv": [
+        {
+          "text": "Chip Text",
+          "size": "sm",
+          "variant": "fill",
+          "type": "chip",
+          "selected": false,
+          "removable": false,
+          "disabled": false,
+          "icon": null,
+          "h": 16,
+          "bg": "rgb(42, 120, 198)",
+          "color": "rgb(255, 255, 255)",
+          "border": "1px solid rgb(42, 120, 198)",
+          "opacity": "1",
+          "fontSize": "10px"
+        },
+        {
+          "text": "Chip Text",
+          "size": "md",
+          "variant": "fill",
+          "type": "chip",
+          "selected": false,
+          "removable": false,
+          "disabled": false,
+          "icon": null,
+          "h": 24,
+          "bg": "rgb(42, 120, 198)",
+          "color": "rgb(255, 255, 255)",
+          "border": "1px solid rgb(42, 120, 198)",
+          "opacity": "1",
+          "fontSize": "14px"
+        },
+        {
+          "text": "Chip Text",
+          "size": "lg",
+          "variant": "fill",
+          "type": "chip",
+          "selected": false,
+          "removable": false,
+          "disabled": false,
+          "icon": null,
+          "h": 32,
+          "bg": "rgb(42, 120, 198)",
+          "color": "rgb(255, 255, 255)",
+          "border": "1px solid rgb(42, 120, 198)",
+          "opacity": "1",
+          "fontSize": "16px"
+        }
+      ]
+    },
+    "a11yText": "Chips used as filters should expose pressed state (aria-pressed when selected). The remove control is a real button with aria-label=\"Remove\". Disabled chips set aria-disabled and are not focusable. Prefer text or icons plus color — not color alone.",
+    "apiRows": [
+      "sizesm | md | lgmd",
+      "variantfill | outlinefill",
+      "typechip | horiz-dots | vert-dots | overflowchip",
+      "overflow-countnumber10",
+      "selected / removable / disabledbooleanfalse",
+      "iconharmony-icon name—"
+    ]
+  }
+}

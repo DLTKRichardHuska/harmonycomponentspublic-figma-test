@@ -1,0 +1,108 @@
+{
+  "name": "@dltkrichardhuska/harmony-design-system-vanilla",
+  "version": "0.9.0-in-progress",
+  "description": "Harmony Design System — Custom Elements, open Shadow DOM, native ESM (AI + human, npm + static zip)",
+  "type": "module",
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DLTKRichardHuska/harmonycomponentspublic-figma-test.git",
+    "directory": "conversions/harmony-design-system-vanilla/packages/ui"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/",
+    "access": "restricted"
+  },
+  "files": [
+    "dist",
+    "dist-products",
+    "dist-static",
+    "src",
+    "AGENTS.md",
+    "llms.txt",
+    "docs",
+    "custom-elements.json"
+  ],
+  "exports": {
+    ".": {
+      "types": "./src/index.js",
+      "import": "./src/index.js",
+      "default": "./src/index.js"
+    },
+    "./theme": {
+      "types": "./src/theme/index.js",
+      "import": "./src/theme/index.js",
+      "default": "./src/theme/index.js"
+    },
+    "./datetime": {
+      "types": "./src/datetime/index.js",
+      "import": "./src/datetime/index.js",
+      "default": "./src/datetime/index.js",
+      "browser": "./src/datetime/index.js",
+      "module": "./src/datetime/index.js"
+    },
+    "./elements": {
+      "types": "./src/elements/index.js",
+      "import": "./src/elements/index.js",
+      "default": "./src/elements/index.js"
+    },
+    "./styles/*": "./src/styles/*",
+    "./custom-elements.json": "./custom-elements.json",
+    "./AGENTS.md": "./AGENTS.md",
+    "./llms.txt": "./llms.txt",
+    "./cp": {
+      "import": "./dist-products/cp/index.js"
+    },
+    "./cp/elements": {
+      "import": "./dist-products/cp/elements.js"
+    },
+    "./cp/styles.css": "./dist-products/cp/styles.css",
+    "./cp/AGENTS.md": "./dist-products/cp/AGENTS.md",
+    "./cp/llms.txt": "./dist-products/cp/llms.txt",
+    "./cp/docs/*": "./dist-products/cp/docs/*",
+    "./vp": {
+      "import": "./dist-products/vp/index.js"
+    },
+    "./vp/elements": {
+      "import": "./dist-products/vp/elements.js"
+    },
+    "./vp/styles.css": "./dist-products/vp/styles.css",
+    "./vp/AGENTS.md": "./dist-products/vp/AGENTS.md",
+    "./vp/llms.txt": "./dist-products/vp/llms.txt",
+    "./vp/docs/*": "./dist-products/vp/docs/*",
+    "./ppm": {
+      "import": "./dist-products/ppm/index.js"
+    },
+    "./ppm/elements": {
+      "import": "./dist-products/ppm/elements.js"
+    },
+    "./ppm/styles.css": "./dist-products/ppm/styles.css",
+    "./ppm/AGENTS.md": "./dist-products/ppm/AGENTS.md",
+    "./ppm/llms.txt": "./dist-products/ppm/llms.txt",
+    "./ppm/docs/*": "./dist-products/ppm/docs/*",
+    "./maconomy": {
+      "import": "./dist-products/maconomy/index.js"
+    },
+    "./maconomy/elements": {
+      "import": "./dist-products/maconomy/elements.js"
+    },
+    "./maconomy/styles.css": "./dist-products/maconomy/styles.css",
+    "./maconomy/AGENTS.md": "./dist-products/maconomy/AGENTS.md",
+    "./maconomy/llms.txt": "./dist-products/maconomy/llms.txt",
+    "./maconomy/docs/*": "./dist-products/maconomy/docs/*"
+  },
+  "scripts": {
+    "generate:icons": "node scripts/generate-icons.mjs",
+    "generate:styles": "node scripts/generate-styles.mjs",
+    "generate:product-logos": "node scripts/generate-product-logos.mjs",
+    "generate": "npm run generate:icons && npm run generate:product-logos && npm run generate:styles",
+    "build:lib": "npm run generate && node scripts/build-product.mjs --all --npm-only",
+    "build:product": "node scripts/build-product.mjs",
+    "build:products": "npm run generate && node scripts/build-product.mjs --all --npm-only",
+    "build:static": "npm run generate && node scripts/build-product.mjs --all --static-only",
+    "gen:cem": "node scripts/gen-cem.mjs"
+  },
+  "devDependencies": {
+    "heroicons": "^2.2.0"
+  }
+}

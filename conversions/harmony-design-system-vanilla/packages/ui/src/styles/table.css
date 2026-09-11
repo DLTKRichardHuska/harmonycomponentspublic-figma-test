@@ -1,0 +1,1058 @@
+/**
+ * Table — native recipe for document styles.css + hybrid harmony-table
+ *
+ * Unclassed <table> gets the default gray-header Harmony look (no .table required).
+ * Modifiers: .table--header-white | .table--header-none | .table--striped |
+ *            .table--reorderable | .table--grouped | .table--command-center
+ * Structural chrome: .table-wrapper, filter/title/action bars, grip/expand,
+ * row state classes, command-center canvas helpers.
+ *
+ * Extracted from reference src/styles/components.css (TABLE sections).
+ * Hybrid CE: optional light-DOM `<harmony-table>` (see HarmonyTable.js).
+ */
+
+/* --------------------------------------------------------------------------
+   1. Base table (unclassed native)
+   -------------------------------------------------------------------------- */
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  overflow: hidden;
+  border-radius: var(--radius-12);
+}
+
+/* --------------------------------------------------------------------------
+   2. Header — default gray
+   -------------------------------------------------------------------------- */
+
+table thead th {
+  padding: var(--space-3) var(--space-4);
+  text-align: left;
+  font-weight: var(--font-medium);
+  color: var(--text-secondary);
+  border-bottom: var(--border-width-thin) solid var(--border-color);
+  background-color: var(--table-header-gray-bg);
+  border-left: var(--border-width-thin) solid var(--border-color);
+  border-right: var(--border-width-thin) solid var(--border-color);
+}
+
+table thead tr:first-child th:first-child {
+  border-top-left-radius: var(--radius-12);
+  border-top: var(--border-width-thin) solid var(--border-color);
+}
+
+table thead tr:first-child th:last-child {
+  border-top-right-radius: var(--radius-12);
+  border-top: var(--border-width-thin) solid var(--border-color);
+}
+
+table thead tr:first-child th {
+  border-top: var(--border-width-thin) solid var(--border-color);
+}
+
+table thead th:not(:first-child) {
+  border-left: none;
+}
+
+table thead th:not(:last-child) {
+  border-right: none;
+}
+
+/* --------------------------------------------------------------------------
+   3. Header variants
+   -------------------------------------------------------------------------- */
+
+.table--header-white thead th {
+  background-color: var(--surface-bg);
+}
+
+.table--header-none thead th {
+  background-color: transparent;
+}
+
+/* --------------------------------------------------------------------------
+   4. Body rows & cells
+   -------------------------------------------------------------------------- */
+
+table tbody tr {
+  background-color: var(--surface-bg);
+  transition: background-color var(--transition-fast);
+}
+
+table tbody td {
+  padding: var(--space-3) var(--space-4);
+  color: var(--text-primary);
+  border-bottom: var(--border-width-thin) solid var(--border-light);
+  vertical-align: middle;
+  background-color: inherit;
+  border-left: var(--border-width-thin) solid var(--border-color);
+  border-right: var(--border-width-thin) solid var(--border-color);
+}
+
+table tbody tr:last-child td:first-child {
+  border-bottom-left-radius: var(--radius-12);
+  border-bottom: var(--border-width-thin) solid var(--border-color);
+}
+
+table tbody tr:last-child td:last-child {
+  border-bottom-right-radius: var(--radius-12);
+  border-bottom: var(--border-width-thin) solid var(--border-color);
+}
+
+table tbody tr:last-child td {
+  border-bottom: var(--border-width-thin) solid var(--border-color);
+}
+
+/* When a footer is present, the table bottom edge lives on tfoot. */
+table:has(> tfoot) tbody tr:last-child td:first-child,
+table:has(> tfoot) tbody tr:last-child td:last-child {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+table:has(> tfoot) tbody tr:last-child td {
+  border-bottom: var(--border-width-thin) solid var(--border-light);
+}
+
+table tbody td:not(:first-child) {
+  border-left: none;
+}
+
+table tbody td:not(:last-child) {
+  border-right: none;
+}
+
+/* --------------------------------------------------------------------------
+   4b. Footer (totals) — native tfoot
+   -------------------------------------------------------------------------- */
+
+table tfoot tr {
+  background-color: var(--table-total-bg);
+  font-weight: var(--font-semibold);
+}
+
+table tfoot td,
+table tfoot th {
+  padding: var(--space-3) var(--space-4);
+  color: var(--text-primary);
+  vertical-align: middle;
+  background-color: inherit;
+  border-bottom: var(--border-width-thin) solid var(--border-color);
+  border-left: var(--border-width-thin) solid var(--border-color);
+  border-right: var(--border-width-thin) solid var(--border-color);
+}
+
+table tfoot tr:last-child td:first-child,
+table tfoot tr:last-child th:first-child {
+  border-bottom-left-radius: var(--radius-12);
+}
+
+table tfoot tr:last-child td:last-child,
+table tfoot tr:last-child th:last-child {
+  border-bottom-right-radius: var(--radius-12);
+}
+
+table tfoot td:not(:first-child),
+table tfoot th:not(:first-child) {
+  border-left: none;
+}
+
+table tfoot td:not(:last-child),
+table tfoot th:not(:last-child) {
+  border-right: none;
+}
+
+/* --------------------------------------------------------------------------
+   5. Striped
+   -------------------------------------------------------------------------- */
+
+.table--striped tbody tr:nth-child(even) {
+  background-color: var(--card-bg);
+}
+
+.table--striped tbody tr:nth-child(odd) {
+  background-color: var(--surface-bg);
+}
+
+/* --------------------------------------------------------------------------
+   6. Row selection (overrides striped)
+   -------------------------------------------------------------------------- */
+
+table tbody tr.table-row--selected,
+table tbody tr:has(.checkbox__input:checked) {
+  background-color: var(--table-row-selected-bg);
+}
+
+.table--striped tbody tr.table-row--selected,
+.table--striped tbody tr:has(.checkbox__input:checked) {
+  background-color: var(--table-row-selected-bg);
+}
+
+/* --------------------------------------------------------------------------
+   7. Row hover
+   -------------------------------------------------------------------------- */
+
+table tbody tr:hover:not(.table-row--selected):not(:has(.checkbox__input:checked)) {
+  background-color: var(--table-row-hover-bg);
+}
+
+table tbody tr.table-row--selected:hover,
+table tbody tr:has(.checkbox__input:checked):hover {
+  background-color: var(--table-row-selected-hover-bg);
+}
+
+.table--striped tbody tr:hover:not(.table-row--selected):not(:has(.checkbox__input:checked)) {
+  background-color: var(--table-row-hover-bg);
+}
+
+.table--striped tbody tr.table-row--selected:hover,
+.table--striped tbody tr:has(.checkbox__input:checked):hover {
+  background-color: var(--table-row-selected-hover-bg);
+}
+
+/* --------------------------------------------------------------------------
+   8. Total row (legacy class in tbody — prefer native tfoot)
+   -------------------------------------------------------------------------- */
+
+table tbody tr.table-row--total {
+  background-color: var(--table-total-bg);
+  font-weight: var(--font-semibold);
+}
+
+table tbody tr.table-row--total:hover {
+  background-color: var(--table-total-bg);
+}
+
+table tbody tr.table-row--total.table-row--selected,
+table tbody tr.table-row--total:has(.checkbox__input:checked) {
+  background-color: var(--table-total-bg);
+}
+
+.table--striped tbody tr.table-row--total,
+.table--striped tbody tr.table-row--total:nth-child(odd),
+.table--striped tbody tr.table-row--total:nth-child(even) {
+  background-color: var(--table-total-bg);
+}
+
+/* --------------------------------------------------------------------------
+   9. Actions column
+   -------------------------------------------------------------------------- */
+
+table tbody td.table-cell--actions {
+  text-align: right;
+  vertical-align: middle;
+  padding-right: var(--space-4);
+}
+
+table tbody td.table-cell--actions .icon-btn {
+  display: inline-flex;
+  vertical-align: middle;
+}
+
+/* --------------------------------------------------------------------------
+   10. Reorderable grip (.table--reorderable is semantic; grip classes do the work)
+   -------------------------------------------------------------------------- */
+
+.table__grip-column {
+  width: 40px;
+  min-width: 40px;
+  padding: var(--space-3) var(--space-2);
+  text-align: center;
+  vertical-align: middle;
+}
+
+.table__grip-cell {
+  width: 40px;
+  min-width: 40px;
+  padding: var(--space-3) var(--space-2);
+  vertical-align: middle;
+  text-align: center;
+}
+
+.table__grip-cell--placeholder {
+  cursor: default;
+  background-color: inherit;
+}
+
+.table__grip-handle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-1);
+  border: none;
+  background: transparent;
+  color: var(--text-secondary);
+  cursor: grab;
+  border-radius: var(--radius-04);
+  transition: color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.table__grip-handle::before {
+  content: '';
+  display: block;
+  width: 16px;
+  height: 16px;
+  background-color: currentColor;
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='9' cy='5' r='1.5' fill='black'/%3E%3Ccircle cx='9' cy='12' r='1.5' fill='black'/%3E%3Ccircle cx='9' cy='19' r='1.5' fill='black'/%3E%3Ccircle cx='15' cy='5' r='1.5' fill='black'/%3E%3Ccircle cx='15' cy='12' r='1.5' fill='black'/%3E%3Ccircle cx='15' cy='19' r='1.5' fill='black'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='9' cy='5' r='1.5' fill='black'/%3E%3Ccircle cx='9' cy='12' r='1.5' fill='black'/%3E%3Ccircle cx='9' cy='19' r='1.5' fill='black'/%3E%3Ccircle cx='15' cy='5' r='1.5' fill='black'/%3E%3Ccircle cx='15' cy='12' r='1.5' fill='black'/%3E%3Ccircle cx='15' cy='19' r='1.5' fill='black'/%3E%3C/svg%3E");
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+}
+
+.table__grip-handle:hover {
+  color: var(--text-primary);
+  background-color: var(--elevated-bg);
+}
+
+.table__grip-handle:focus {
+  outline: var(--border-width-standard) solid var(--theme-primary);
+  outline-offset: var(--space-0-5);
+}
+
+.table__grip-handle:active {
+  cursor: grabbing;
+}
+
+table tbody tr.table-row--dragging {
+  opacity: 0.6;
+}
+
+table tbody tr.table-row--drag-over {
+  background-color: var(--table-row-hover-bg);
+}
+
+/* --------------------------------------------------------------------------
+   11. Grouped expand
+   -------------------------------------------------------------------------- */
+
+.table__expand-column {
+  width: 36px;
+  min-width: 36px;
+  padding: var(--space-3) var(--space-2);
+  text-align: center;
+  vertical-align: middle;
+}
+
+.table__expand-cell {
+  width: 36px;
+  min-width: 36px;
+  padding: var(--space-3) var(--space-2);
+  vertical-align: middle;
+  text-align: center;
+}
+
+.table__expand-cell--placeholder {
+  cursor: default;
+  background-color: inherit;
+}
+
+.table__expand-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-1);
+  border: none;
+  background: transparent;
+  color: var(--text-secondary);
+  cursor: pointer;
+  border-radius: var(--radius-04);
+  transition: color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.table__expand-btn:hover {
+  color: var(--text-primary);
+  background-color: var(--elevated-bg);
+}
+
+.table__expand-btn:focus {
+  outline: var(--border-width-standard) solid var(--theme-primary);
+  outline-offset: var(--space-0-5);
+}
+
+.table__expand-icon {
+  display: block;
+  width: 16px;
+  height: 16px;
+  background-color: currentColor;
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m9 18 6-6-6-6'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m9 18 6-6-6-6'/%3E%3C/svg%3E");
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  transition: transform var(--transition-fast);
+}
+
+.table__expand-btn--expanded .table__expand-icon {
+  transform: rotate(90deg);
+}
+
+/* Reserve width for max indentation (depth 4) — default grouped only */
+.table--grouped:not(.table--command-center) tbody td:nth-child(2) {
+  min-width: calc(var(--space-4) * 5 + 12ch);
+}
+
+/* Command Center + grouped: chevron lives inside the Project ID cell */
+.table--command-center.table--grouped .table__cc-project-id-cell {
+  vertical-align: middle;
+}
+
+.table--command-center.table--grouped .table__cc-project-id-inner {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--space-1);
+  min-width: 0;
+}
+
+.table--command-center.table--grouped .table__cc-project-id-inner .text-link,
+.table--command-center.table--grouped .table__cc-project-id-inner a.text-link {
+  white-space: nowrap;
+}
+
+.table--command-center.table--grouped .table__cc-inline-expand,
+.table--command-center.table--grouped .table__cc-inline-expand-gutter {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.5rem;
+  width: 1.5rem;
+  box-sizing: content-box;
+}
+
+.table--command-center.table--grouped .table__cc-inline-expand-gutter {
+  min-height: 1.25rem;
+}
+
+.table--command-center.table--grouped .table__expand-icon--cc-leaf {
+  opacity: 0.85;
+}
+
+.table--command-center.table--grouped .table__cc-inline-expand .table__expand-btn:focus,
+.table--command-center.table--grouped .table__cc-inline-expand .table__expand-btn:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+
+/* --------------------------------------------------------------------------
+   12. Alignment & sort header
+   -------------------------------------------------------------------------- */
+
+table thead th.text-left,
+table tbody td.text-left {
+  text-align: left;
+}
+
+table thead th.text-right,
+table tbody td.text-right {
+  text-align: right;
+}
+
+table thead th:last-child,
+table tbody td:last-child {
+  white-space: nowrap;
+}
+
+.table__sort-header {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: 0;
+  border: none;
+  background: none;
+  font: inherit;
+  color: inherit;
+  font-weight: var(--font-medium);
+  cursor: pointer;
+  text-align: inherit;
+}
+
+.table__sort-header:hover {
+  color: var(--text-primary);
+}
+
+table thead th.text-right .table__sort-header {
+  flex-direction: row-reverse;
+}
+
+/* --------------------------------------------------------------------------
+   13. Command Center table
+   -------------------------------------------------------------------------- */
+
+.table-wrapper--command-center {
+  border-radius: 0;
+  max-width: 100%;
+  overflow: visible;
+}
+
+.table__command-center-toolbar {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  width: 100%;
+  /* Inset from the canvas (overflow: hidden) so control borders are not clipped */
+  padding: var(--space-1) var(--space-1) var(--space-2) var(--space-1);
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+}
+
+.table--command-center {
+  border-radius: 0;
+  border-collapse: collapse;
+  border: var(--border-width-thin) solid var(--table-command-center-border);
+  overflow: visible;
+  font-size: var(--text-sm);
+}
+
+/* Full 2D grid: explicit borders on every cell */
+table.table--command-center thead th,
+table.table--command-center tbody td {
+  border: var(--border-width-thin) solid var(--table-command-center-border);
+  border-width: var(--border-width-thin);
+  border-color: var(--table-command-center-border);
+  border-style: solid;
+}
+
+.table--command-center thead th {
+  vertical-align: middle;
+  color: var(--text-primary);
+  font-weight: var(--font-semibold);
+  background-color: var(--table-command-center-header-bg);
+  padding: var(--space-3) var(--space-4);
+}
+
+.table--command-center tbody td {
+  vertical-align: middle;
+  padding: var(--space-3) var(--space-4);
+  color: var(--text-primary);
+}
+
+.table--command-center thead tr:first-child th:first-child,
+.table--command-center thead tr:first-child th:last-child,
+.table--command-center tbody tr:last-child td:first-child,
+.table--command-center tbody tr:last-child td:last-child {
+  border-radius: 0;
+}
+
+.table__cc-header {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-1);
+  width: 100%;
+  text-align: left;
+}
+
+table thead th.text-left .table__cc-header,
+.table--command-center thead th.text-left .table__cc-header {
+  text-align: left;
+  justify-content: flex-start;
+}
+
+table thead th.text-right .table__cc-header,
+.table--command-center thead th.text-right .table__cc-header {
+  flex-direction: row;
+  text-align: right;
+  justify-content: flex-end;
+}
+
+.table--command-center thead th .table__cc-header {
+  align-items: center;
+}
+
+.table--command-center thead th .table__cc-header-label {
+  padding-top: 0;
+}
+
+.table__cc-header-label {
+  flex: 1 1 auto;
+  min-width: 0;
+  line-height: var(--leading-tight, 1.3);
+  padding-top: 2px;
+}
+
+.table__cc-header-actions {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 0;
+}
+
+.table__cc-header-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-1);
+  border: none;
+  background: transparent;
+  color: var(--text-secondary);
+  border-radius: var(--radius-04);
+  cursor: pointer;
+  transition: color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.table--command-center .table__cc-header-btn {
+  color: var(--text-muted, #6b7280);
+}
+
+.table__cc-header-btn:hover {
+  color: var(--text-primary);
+  background-color: var(--elevated-bg);
+}
+
+.table__cc-header-btn:focus-visible {
+  outline: var(--border-width-standard) solid var(--border-focus);
+  outline-offset: 2px;
+}
+
+.table--command-center tbody tr.table-row--command-center-selected {
+  position: relative;
+  z-index: 1;
+}
+
+.table--command-center tbody tr.table-row--command-center-selected > td,
+.table--command-center tbody tr.table-row--command-center-selected > th {
+  position: relative;
+  z-index: 1;
+  background-color: var(--table-command-center-selection-bg, #0073e626) !important;
+  border-width: var(--border-width-thin) !important;
+  border-style: solid !important;
+  border-color: var(--table-command-center-border) !important;
+}
+
+.table--striped.table--command-center tbody tr:nth-child(odd) {
+  background-color: var(--table-command-center-stripe-bg);
+}
+
+.table--striped.table--command-center tbody tr:nth-child(even) {
+  background-color: var(--surface-bg);
+}
+
+.table--command-center tbody tr:hover:not(.table-row--selected):not(:has(.checkbox__input:checked)) {
+  background-color: var(--table-command-center-row-hover-bg) !important;
+}
+
+/* --------------------------------------------------------------------------
+   14. Command Center canvas layout
+   -------------------------------------------------------------------------- */
+
+.command-center-layout {
+  display: block;
+  width: 100%;
+  min-width: 0;
+}
+
+.command-center-canvas {
+  display: grid;
+  width: 100%;
+  min-width: 0;
+  column-gap: 0;
+  row-gap: 0;
+  align-items: start;
+  overflow: hidden;
+}
+
+.command-center-canvas--with-toolbar {
+  grid-template-columns: minmax(0, 1fr) min(420px, 42vw);
+  grid-template-rows: auto minmax(0, 1fr);
+}
+
+.command-center-canvas--with-toolbar .command-center-canvas__toolbar {
+  grid-column: 1;
+  grid-row: 1;
+  min-width: 0;
+}
+
+.command-center-canvas--with-toolbar .command-center-canvas__spacer {
+  grid-column: 2;
+  grid-row: 1;
+  min-width: 0;
+}
+
+.command-center-canvas--with-toolbar .command-center-canvas__main {
+  grid-column: 1;
+  grid-row: 2;
+  min-width: 0;
+  min-height: 0;
+  overflow-x: auto;
+}
+
+.command-center-canvas--with-toolbar .command-center-canvas__aside {
+  grid-column: 2;
+  grid-row: 2;
+  min-width: 0;
+  align-self: stretch;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.command-center-canvas--no-toolbar {
+  grid-template-columns: minmax(0, 1fr) min(420px, 42vw);
+  grid-template-rows: minmax(0, 1fr);
+}
+
+.command-center-canvas--no-toolbar .command-center-canvas__main {
+  grid-column: 1;
+  grid-row: 1;
+  min-width: 0;
+  min-height: 0;
+  overflow-x: auto;
+}
+
+.command-center-canvas--no-toolbar .command-center-canvas__aside {
+  grid-column: 2;
+  grid-row: 1;
+  min-width: 0;
+  align-self: stretch;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.command-center-canvas__aside .command-center-panel {
+  flex: 1 1 auto;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  box-sizing: border-box;
+}
+
+.table-wrapper--has-command-center-aside {
+  min-width: 0;
+}
+
+@keyframes command-center-panel-slide-in {
+  from {
+    transform: translate3d(100%, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.command-center-layout__main {
+  min-width: 0;
+  width: 100%;
+  overflow: auto;
+}
+
+/* --------------------------------------------------------------------------
+   15. Avatar in table cells
+   -------------------------------------------------------------------------- */
+
+table tbody td .avatar {
+  background-color: var(--theme-primary);
+}
+
+table tbody td .avatar span {
+  color: var(--text-inverse);
+}
+
+/* --------------------------------------------------------------------------
+   16. Wrapper, filter / title / action bars
+   -------------------------------------------------------------------------- */
+
+.table-wrapper {
+  border-radius: var(--radius-12);
+  overflow: hidden;
+}
+
+.table__title-bar {
+  padding: var(--space-4) var(--space-4) var(--space-3);
+  border-top: var(--border-width-thin) solid var(--border-color);
+  border-left: var(--border-width-thin) solid var(--border-color);
+  border-right: var(--border-width-thin) solid var(--border-color);
+  border-bottom: var(--border-width-thin) solid var(--border-color);
+  background-color: var(--surface-bg);
+}
+
+.table-wrapper:has(.table__title-bar):not(:has(.table__filter-bar)) .table__title-bar {
+  border-top-left-radius: var(--radius-12);
+  border-top-right-radius: var(--radius-12);
+  font-family: var(--font-display);
+  font-size: var(--text-13);
+}
+
+.table__title-bar-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.table__title-bar-icons {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.table__title-bar-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--space-6);
+  height: var(--space-6);
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: var(--text-secondary);
+  cursor: pointer;
+  border-radius: var(--radius-04);
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.table__title-bar-icon:hover {
+  background-color: var(--elevated-bg);
+  color: var(--text-primary);
+}
+
+.table__title-bar-icon:focus {
+  outline: var(--border-width-standard) solid var(--theme-primary);
+  outline-offset: var(--space-0-5);
+}
+
+.table__filter-bar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  border-top: var(--border-width-thin) solid var(--border-color);
+  border-left: var(--border-width-thin) solid var(--border-color);
+  border-right: var(--border-width-thin) solid var(--border-color);
+  border-bottom: var(--border-width-thin) solid var(--border-color);
+  background-color: var(--table-header-gray-bg);
+  border-top-left-radius: var(--radius-12);
+  border-top-right-radius: var(--radius-12);
+}
+
+.table__action-bar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: var(--space-3) var(--space-4) var(--space-3) var(--space-1);
+  border-left: var(--border-width-thin) solid var(--border-color);
+  border-right: var(--border-width-thin) solid var(--border-color);
+  border-bottom: var(--border-width-thin) solid var(--border-color);
+  background-color: var(--table-header-gray-bg);
+  gap: var(--space-4);
+}
+
+.table-wrapper:has(.table__action-bar):not(:has(.table__title-bar)):not(:has(.table__filter-bar)) .table__action-bar {
+  border-top: var(--border-width-thin) solid var(--border-color);
+  border-top-left-radius: var(--radius-12);
+  border-top-right-radius: var(--radius-12);
+}
+
+.table__action-items {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.table__action-divider {
+  color: var(--text-secondary);
+  font-size: var(--text-sm);
+  padding: 0 var(--space-1);
+  flex-shrink: 0;
+}
+
+/* Flatten top radius when chrome bars sit above the table */
+.table-wrapper:has(.table__filter-bar) table {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.table-wrapper:has(.table__filter-bar) table thead tr:first-child th:first-child {
+  border-top-left-radius: 0;
+  border-top: none;
+}
+
+.table-wrapper:has(.table__filter-bar) table thead tr:first-child th:last-child {
+  border-top-right-radius: 0;
+  border-top: none;
+}
+
+.table-wrapper:has(.table__filter-bar) table thead tr:first-child th {
+  border-top: none;
+}
+
+.table-wrapper:has(.table__title-bar) table {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.table-wrapper:has(.table__title-bar) table thead tr:first-child th:first-child {
+  border-top-left-radius: 0;
+  border-top: none;
+}
+
+.table-wrapper:has(.table__title-bar) table thead tr:first-child th:last-child {
+  border-top-right-radius: 0;
+  border-top: none;
+}
+
+.table-wrapper:has(.table__title-bar) table thead tr:first-child th {
+  border-top: none;
+}
+
+.table-wrapper:has(.table__action-bar):not(:has(.table__title-bar)):not(:has(.table__filter-bar)) table {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.table-wrapper:has(.table__action-bar):not(:has(.table__title-bar)):not(:has(.table__filter-bar)) table thead tr:first-child th:first-child {
+  border-top-left-radius: 0;
+  border-top: none;
+}
+
+.table-wrapper:has(.table__action-bar):not(:has(.table__title-bar)):not(:has(.table__filter-bar)) table thead tr:first-child th:last-child {
+  border-top-right-radius: 0;
+  border-top: none;
+}
+
+.table-wrapper:has(.table__action-bar):not(:has(.table__title-bar)):not(:has(.table__filter-bar)) table thead tr:first-child th {
+  border-top: none;
+}
+
+/* --------------------------------------------------------------------------
+   17. Responsive
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 768px) {
+  .table-wrapper,
+  .overflow-x-auto:has(table) {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+  }
+
+  table {
+    min-width: var(--table-min-width);
+    font-size: var(--text-xs);
+  }
+
+  table thead th,
+  table tbody td {
+    padding: var(--space-2) var(--space-3);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   18. Forced colors (borders / selection / focus)
+   -------------------------------------------------------------------------- */
+
+@media (forced-colors: active) {
+  table {
+    border: var(--border-width-thin) solid CanvasText;
+    forced-color-adjust: none;
+  }
+
+  table thead th,
+  table tbody td {
+    border-color: CanvasText;
+    color: CanvasText;
+  }
+
+  table thead th {
+    background-color: Canvas;
+  }
+
+  table tbody tr {
+    background-color: Canvas;
+  }
+
+  .table--header-white thead th,
+  .table--header-none thead th {
+    background-color: Canvas;
+  }
+
+  .table--striped tbody tr:nth-child(even) {
+    background-color: Canvas;
+  }
+
+  table tbody tr.table-row--selected,
+  table tbody tr:has(.checkbox__input:checked),
+  .table--striped tbody tr.table-row--selected,
+  .table--striped tbody tr:has(.checkbox__input:checked),
+  table tbody tr.table-row--total,
+  table tfoot tr {
+    background-color: Highlight;
+    color: HighlightText;
+  }
+
+  table tbody tr:hover:not(.table-row--selected):not(:has(.checkbox__input:checked)),
+  .table--striped tbody tr:hover:not(.table-row--selected):not(:has(.checkbox__input:checked)) {
+    background-color: Highlight;
+    color: HighlightText;
+  }
+
+  .table-wrapper,
+  .table__filter-bar,
+  .table__title-bar,
+  .table__action-bar {
+    border-color: CanvasText;
+  }
+
+  .table__filter-bar,
+  .table__action-bar {
+    background-color: Canvas;
+  }
+
+  .table__grip-handle:focus,
+  .table__expand-btn:focus,
+  .table__title-bar-icon:focus,
+  .table__cc-header-btn:focus-visible {
+    outline: var(--border-width-standard) solid Highlight;
+  }
+
+  .table--command-center {
+    border-color: CanvasText;
+  }
+
+  table.table--command-center thead th,
+  table.table--command-center tbody td {
+    border-color: CanvasText;
+  }
+
+  .table--command-center thead th {
+    background-color: Canvas;
+  }
+
+  .table--command-center tbody tr.table-row--command-center-selected > td,
+  .table--command-center tbody tr.table-row--command-center-selected > th {
+    background-color: Highlight !important;
+    color: HighlightText;
+    border-color: CanvasText !important;
+    outline: var(--border-width-standard) solid Highlight;
+    outline-offset: calc(var(--space-0-5) * -1);
+  }
+
+  .table--striped.table--command-center tbody tr:nth-child(odd),
+  .table--striped.table--command-center tbody tr:nth-child(even) {
+    background-color: Canvas;
+  }
+
+  .table--command-center tbody tr:hover:not(.table-row--selected):not(:has(.checkbox__input:checked)) {
+    background-color: Highlight !important;
+    color: HighlightText;
+  }
+}

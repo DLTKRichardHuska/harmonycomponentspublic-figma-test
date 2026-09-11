@@ -1,0 +1,778 @@
+{
+  "data": {
+    "def": {
+      "attrs": {
+        "id": "demo-left-default",
+        "inline": "",
+        "data-density": "cp"
+      },
+      "host": {
+        "w": 52,
+        "h": 662,
+        "bg": "rgba(0, 0, 0, 0)",
+        "radius": "0px",
+        "shadow": "none",
+        "border": "0px 0px rgb(55, 63, 78)",
+        "overflow": "visible",
+        "position": "static"
+      },
+      "nav": {
+        "w": 52,
+        "bg": "rgba(0, 0, 0, 0)",
+        "radius": "0px",
+        "shadow": "none",
+        "border": "0px/0px rgb(55, 63, 78)",
+        "gap": "8px",
+        "padding": "0px"
+      },
+      "section": {
+        "count": 2,
+        "w": 52,
+        "h": 180,
+        "bg": "rgb(252, 253, 255)",
+        "radius": "0px 12px 12px 0px",
+        "shadow": "rgba(15, 23, 42, 0.1) 0px 20px 25px -5px, rgba(15, 23, 42, 0.1) 0px 8px 10px -6px",
+        "border": "1px/1px rgb(191, 198, 212)",
+        "padding": "8px"
+      },
+      "separator": false,
+      "itemCount": 15,
+      "items": [
+        {
+          "label": "Welcome screen",
+          "className": "left-sidebar__item",
+          "ariaCurrent": null,
+          "dataActive": null,
+          "bg": "rgba(0, 0, 0, 0)",
+          "color": "rgb(55, 63, 78)",
+          "radius": "8px",
+          "h": 36,
+          "w": 35,
+          "icon": true
+        },
+        {
+          "label": "Dashboard",
+          "className": "left-sidebar__item",
+          "ariaCurrent": null,
+          "dataActive": null,
+          "bg": "rgba(0, 0, 0, 0)",
+          "color": "rgb(55, 63, 78)",
+          "radius": "8px",
+          "h": 36,
+          "w": 35,
+          "icon": true
+        },
+        {
+          "label": "My menu",
+          "className": "left-sidebar__item",
+          "ariaCurrent": null,
+          "dataActive": null,
+          "bg": "rgba(0, 0, 0, 0)",
+          "color": "rgb(55, 63, 78)",
+          "radius": "8px",
+          "h": 36,
+          "w": 35,
+          "icon": true
+        },
+        {
+          "label": "Recent",
+          "className": "left-sidebar__item",
+          "ariaCurrent": null,
+          "dataActive": null,
+          "bg": "rgba(0, 0, 0, 0)",
+          "color": "rgb(55, 63, 78)",
+          "radius": "8px",
+          "h": 36,
+          "w": 35,
+          "icon": true
+        },
+        {
+          "label": "Search",
+          "className": "left-sidebar__item",
+          "ariaCurrent": null,
+          "dataActive": null,
+          "bg": "rgba(0, 0, 0, 0)",
+          "color": "rgb(55, 63, 78)",
+          "radius": "8px",
+          "h": 36,
+          "w": 35,
+          "icon": true
+        },
+        {
+          "label": "Command Center",
+          "className": "left-sidebar__item",
+          "ariaCurrent": null,
+          "dataActive": null,
+          "bg": "rgba(0, 0, 0, 0)",
+          "color": "rgb(55, 63, 78)",
+          "radius": "8px",
+          "h": 36,
+          "w": 35,
+          "icon": true
+        },
+        {
+          "label": "Accounting",
+          "className": "left-sidebar__item",
+          "ariaCurrent": null,
+          "dataActive": null,
+          "bg": "rgba(0, 0, 0, 0)",
+          "color": "rgb(55, 63, 78)",
+          "radius": "8px",
+          "h": 36,
+          "w": 35,
+          "icon": true
+        },
+        {
+          "label": "Planning",
+          "className": "left-sidebar__item",
+          "ariaCurrent": null,
+          "dataActive": null,
+          "bg": "rgba(0, 0, 0, 0)",
+          "color": "rgb(55, 63, 78)",
+          "radius": "8px",
+          "h": 36,
+          "w": 35,
+          "icon": true
+        },
+        {
+          "label": "Capture & contracts",
+          "className": "left-sidebar__item",
+          "ariaCurrent": null,
+          "dataActive": null,
+          "bg": "rgba(0, 0, 0, 0)",
+          "color": "rgb(55, 63, 78)",
+          "radius": "8px",
+          "h": 36,
+          "w": 35,
+          "icon": true
+        },
+        {
+          "label": "Projects",
+          "className": "left-sidebar__item",
+          "ariaCurrent": null,
+          "dataActive": null,
+          "bg": "rgba(0, 0, 0, 0)",
+          "color": "rgb(55, 63, 78)",
+          "radius": "8px",
+          "h": 36,
+          "w": 35,
+          "icon": true
+        },
+        {
+          "label": "Materials",
+          "className": "left-sidebar__item",
+          "ariaCurrent": null,
+          "dataActive": null,
+          "bg": "rgba(0, 0, 0, 0)",
+          "color": "rgb(55, 63, 78)",
+          "radius": "8px",
+          "h": 36,
+          "w": 35,
+          "icon": true
+        },
+        {
+          "label": "Time & expense",
+          "className": "left-sidebar__item",
+          "ariaCurrent": null,
+          "dataActive": null,
+          "bg": "rgba(0, 0, 0, 0)",
+          "color": "rgb(55, 63, 78)",
+          "radius": "8px",
+          "h": 36,
+          "w": 35,
+          "icon": true
+        },
+        {
+          "label": "People",
+          "className": "left-sidebar__item",
+          "ariaCurrent": null,
+          "dataActive": null,
+          "bg": "rgba(0, 0, 0, 0)",
+          "color": "rgb(55, 63, 78)",
+          "radius": "8px",
+          "h": 36,
+          "w": 35,
+          "icon": true
+        },
+        {
+          "label": "Reports",
+          "className": "left-sidebar__item",
+          "ariaCurrent": null,
+          "dataActive": null,
+          "bg": "rgba(0, 0, 0, 0)",
+          "color": "rgb(55, 63, 78)",
+          "radius": "8px",
+          "h": 36,
+          "w": 35,
+          "icon": true
+        },
+        {
+          "label": "Admin",
+          "className": "left-sidebar__item",
+          "ariaCurrent": null,
+          "dataActive": null,
+          "bg": "rgba(0, 0, 0, 0)",
+          "color": "rgb(55, 63, 78)",
+          "radius": "8px",
+          "h": 36,
+          "w": 35,
+          "icon": true
+        }
+      ]
+    },
+    "custom": {
+      "attrs": {
+        "id": "demo-left-custom",
+        "inline": "",
+        "expanded": "",
+        "data-density": "cp"
+      },
+      "host": {
+        "w": 118,
+        "h": 138,
+        "bg": "rgba(0, 0, 0, 0)",
+        "radius": "0px",
+        "shadow": "none",
+        "border": "0px 0px rgb(55, 63, 78)",
+        "overflow": "visible",
+        "position": "static"
+      },
+      "nav": {
+        "w": 118,
+        "bg": "rgba(0, 0, 0, 0)",
+        "radius": "0px",
+        "shadow": "none",
+        "border": "0px/0px rgb(55, 63, 78)",
+        "gap": "8px",
+        "padding": "0px"
+      },
+      "section": {
+        "count": 1,
+        "w": 118,
+        "h": 138,
+        "bg": "rgb(252, 253, 255)",
+        "radius": "0px 12px 12px 0px",
+        "shadow": "rgba(15, 23, 42, 0.1) 0px 20px 25px -5px, rgba(15, 23, 42, 0.1) 0px 8px 10px -6px",
+        "border": "1px/1px rgb(191, 198, 212)",
+        "padding": "8px"
+      },
+      "separator": false,
+      "itemCount": 3,
+      "items": [
+        {
+          "label": "Home",
+          "className": "left-sidebar__item left-sidebar__item--active",
+          "ariaCurrent": null,
+          "dataActive": "true",
+          "bg": "rgb(42, 120, 198)",
+          "color": "rgb(255, 255, 255)",
+          "radius": "8px",
+          "h": 36,
+          "w": 101,
+          "icon": true
+        },
+        {
+          "label": "Favorites",
+          "className": "left-sidebar__item",
+          "ariaCurrent": null,
+          "dataActive": null,
+          "bg": "rgba(0, 0, 0, 0)",
+          "color": "rgb(55, 63, 78)",
+          "radius": "8px",
+          "h": 36,
+          "w": 101,
+          "icon": true
+        },
+        {
+          "label": "Settings",
+          "className": "left-sidebar__item",
+          "ariaCurrent": null,
+          "dataActive": null,
+          "bg": "rgba(0, 0, 0, 0)",
+          "color": "rgb(55, 63, 78)",
+          "radius": "8px",
+          "h": 36,
+          "w": 101,
+          "icon": true
+        }
+      ]
+    },
+    "panel": {
+      "attrs": {
+        "inline": "",
+        "panel-open": "",
+        "active-id": "left-sidebar-item-0-0",
+        "data-density": "cp"
+      },
+      "host": {
+        "w": 52,
+        "h": 658,
+        "bg": "rgba(0, 0, 0, 0)",
+        "radius": "0px",
+        "shadow": "none",
+        "border": "0px 0px rgb(55, 63, 78)",
+        "overflow": "visible",
+        "position": "static"
+      },
+      "nav": {
+        "w": 52,
+        "bg": "rgba(0, 0, 0, 0)",
+        "radius": "0px",
+        "shadow": "none",
+        "border": "0px/0px rgb(55, 63, 78)",
+        "gap": "8px",
+        "padding": "0px"
+      },
+      "section": {
+        "count": 2,
+        "w": 52,
+        "h": 178,
+        "bg": "rgba(0, 0, 0, 0)",
+        "radius": "0px",
+        "shadow": "none",
+        "border": "0px/0px rgb(55, 63, 78)",
+        "padding": "8px"
+      },
+      "separator": false,
+      "itemCount": 15,
+      "items": [
+        {
+          "label": "Welcome screen",
+          "className": "left-sidebar__item",
+          "ariaCurrent": null,
+          "dataActive": "true",
+          "bg": "rgb(42, 120, 198)",
+          "color": "rgb(255, 255, 255)",
+          "radius": "8px",
+          "h": 36,
+          "w": 36,
+          "icon": true
+        },
+        {
+          "label": "Dashboard",
+          "className": "left-sidebar__item",
+          "ariaCurrent": null,
+          "dataActive": null,
+          "bg": "rgba(0, 0, 0, 0)",
+          "color": "rgb(55, 63, 78)",
+          "radius": "8px",
+          "h": 36,
+          "w": 36,
+          "icon": true
+        },
+        {
+          "label": "My menu",
+          "className": "left-sidebar__item",
+          "ariaCurrent": null,
+          "dataActive": null,
+          "bg": "rgba(0, 0, 0, 0)",
+          "color": "rgb(55, 63, 78)",
+          "radius": "8px",
+          "h": 36,
+          "w": 36,
+          "icon": true
+        },
+        {
+          "label": "Recent",
+          "className": "left-sidebar__item",
+          "ariaCurrent": null,
+          "dataActive": null,
+          "bg": "rgba(0, 0, 0, 0)",
+          "color": "rgb(55, 63, 78)",
+          "radius": "8px",
+          "h": 36,
+          "w": 36,
+          "icon": true
+        },
+        {
+          "label": "Search",
+          "className": "left-sidebar__item",
+          "ariaCurrent": null,
+          "dataActive": null,
+          "bg": "rgba(0, 0, 0, 0)",
+          "color": "rgb(55, 63, 78)",
+          "radius": "8px",
+          "h": 36,
+          "w": 36,
+          "icon": true
+        },
+        {
+          "label": "Command Center",
+          "className": "left-sidebar__item",
+          "ariaCurrent": null,
+          "dataActive": null,
+          "bg": "rgba(0, 0, 0, 0)",
+          "color": "rgb(55, 63, 78)",
+          "radius": "8px",
+          "h": 36,
+          "w": 36,
+          "icon": true
+        },
+        {
+          "label": "Accounting",
+          "className": "left-sidebar__item",
+          "ariaCurrent": null,
+          "dataActive": null,
+          "bg": "rgba(0, 0, 0, 0)",
+          "color": "rgb(55, 63, 78)",
+          "radius": "8px",
+          "h": 36,
+          "w": 36,
+          "icon": true
+        },
+        {
+          "label": "Planning",
+          "className": "left-sidebar__item",
+          "ariaCurrent": null,
+          "dataActive": null,
+          "bg": "rgba(0, 0, 0, 0)",
+          "color": "rgb(55, 63, 78)",
+          "radius": "8px",
+          "h": 36,
+          "w": 36,
+          "icon": true
+        },
+        {
+          "label": "Capture & contracts",
+          "className": "left-sidebar__item",
+          "ariaCurrent": null,
+          "dataActive": null,
+          "bg": "rgba(0, 0, 0, 0)",
+          "color": "rgb(55, 63, 78)",
+          "radius": "8px",
+          "h": 36,
+          "w": 36,
+          "icon": true
+        },
+        {
+          "label": "Projects",
+          "className": "left-sidebar__item",
+          "ariaCurrent": null,
+          "dataActive": null,
+          "bg": "rgba(0, 0, 0, 0)",
+          "color": "rgb(55, 63, 78)",
+          "radius": "8px",
+          "h": 36,
+          "w": 36,
+          "icon": true
+        },
+        {
+          "label": "Materials",
+          "className": "left-sidebar__item",
+          "ariaCurrent": null,
+          "dataActive": null,
+          "bg": "rgba(0, 0, 0, 0)",
+          "color": "rgb(55, 63, 78)",
+          "radius": "8px",
+          "h": 36,
+          "w": 36,
+          "icon": true
+        },
+        {
+          "label": "Time & expense",
+          "className": "left-sidebar__item",
+          "ariaCurrent": null,
+          "dataActive": null,
+          "bg": "rgba(0, 0, 0, 0)",
+          "color": "rgb(55, 63, 78)",
+          "radius": "8px",
+          "h": 36,
+          "w": 36,
+          "icon": true
+        },
+        {
+          "label": "People",
+          "className": "left-sidebar__item",
+          "ariaCurrent": null,
+          "dataActive": null,
+          "bg": "rgba(0, 0, 0, 0)",
+          "color": "rgb(55, 63, 78)",
+          "radius": "8px",
+          "h": 36,
+          "w": 36,
+          "icon": true
+        },
+        {
+          "label": "Reports",
+          "className": "left-sidebar__item",
+          "ariaCurrent": null,
+          "dataActive": null,
+          "bg": "rgba(0, 0, 0, 0)",
+          "color": "rgb(55, 63, 78)",
+          "radius": "8px",
+          "h": 36,
+          "w": 36,
+          "icon": true
+        },
+        {
+          "label": "Admin",
+          "className": "left-sidebar__item",
+          "ariaCurrent": null,
+          "dataActive": null,
+          "bg": "rgba(0, 0, 0, 0)",
+          "color": "rgb(55, 63, 78)",
+          "radius": "8px",
+          "h": 36,
+          "w": 36,
+          "icon": true
+        }
+      ]
+    },
+    "expanded": {
+      "attrs": {
+        "inline": "",
+        "expanded": "",
+        "data-density": "cp"
+      },
+      "host": {
+        "w": 188,
+        "h": 662,
+        "bg": "rgba(0, 0, 0, 0)",
+        "radius": "0px",
+        "shadow": "none",
+        "border": "0px 0px rgb(55, 63, 78)",
+        "overflow": "visible",
+        "position": "static"
+      },
+      "nav": {
+        "w": 188,
+        "bg": "rgba(0, 0, 0, 0)",
+        "radius": "0px",
+        "shadow": "none",
+        "border": "0px/0px rgb(55, 63, 78)",
+        "gap": "8px",
+        "padding": "0px"
+      },
+      "section": {
+        "count": 2,
+        "w": 188,
+        "h": 180,
+        "bg": "rgb(252, 253, 255)",
+        "radius": "0px 12px 12px 0px",
+        "shadow": "rgba(15, 23, 42, 0.1) 0px 20px 25px -5px, rgba(15, 23, 42, 0.1) 0px 8px 10px -6px",
+        "border": "1px/1px rgb(191, 198, 212)",
+        "padding": "8px"
+      },
+      "separator": false,
+      "itemCount": 15,
+      "items": [
+        {
+          "label": "Welcome screen",
+          "className": "left-sidebar__item",
+          "ariaCurrent": null,
+          "dataActive": null,
+          "bg": "rgba(0, 0, 0, 0)",
+          "color": "rgb(55, 63, 78)",
+          "radius": "8px",
+          "h": 36,
+          "w": 171,
+          "icon": true
+        },
+        {
+          "label": "Dashboard",
+          "className": "left-sidebar__item",
+          "ariaCurrent": null,
+          "dataActive": null,
+          "bg": "rgba(0, 0, 0, 0)",
+          "color": "rgb(55, 63, 78)",
+          "radius": "8px",
+          "h": 36,
+          "w": 171,
+          "icon": true
+        },
+        {
+          "label": "My menu",
+          "className": "left-sidebar__item",
+          "ariaCurrent": null,
+          "dataActive": null,
+          "bg": "rgba(0, 0, 0, 0)",
+          "color": "rgb(55, 63, 78)",
+          "radius": "8px",
+          "h": 36,
+          "w": 171,
+          "icon": true
+        },
+        {
+          "label": "Recent",
+          "className": "left-sidebar__item",
+          "ariaCurrent": null,
+          "dataActive": null,
+          "bg": "rgba(0, 0, 0, 0)",
+          "color": "rgb(55, 63, 78)",
+          "radius": "8px",
+          "h": 36,
+          "w": 171,
+          "icon": true
+        },
+        {
+          "label": "Search",
+          "className": "left-sidebar__item",
+          "ariaCurrent": null,
+          "dataActive": null,
+          "bg": "rgba(0, 0, 0, 0)",
+          "color": "rgb(55, 63, 78)",
+          "radius": "8px",
+          "h": 36,
+          "w": 171,
+          "icon": true
+        },
+        {
+          "label": "Command Center",
+          "className": "left-sidebar__item",
+          "ariaCurrent": null,
+          "dataActive": null,
+          "bg": "rgba(0, 0, 0, 0)",
+          "color": "rgb(55, 63, 78)",
+          "radius": "8px",
+          "h": 36,
+          "w": 171,
+          "icon": true
+        },
+        {
+          "label": "Accounting",
+          "className": "left-sidebar__item",
+          "ariaCurrent": null,
+          "dataActive": null,
+          "bg": "rgba(0, 0, 0, 0)",
+          "color": "rgb(55, 63, 78)",
+          "radius": "8px",
+          "h": 36,
+          "w": 171,
+          "icon": true
+        },
+        {
+          "label": "Planning",
+          "className": "left-sidebar__item",
+          "ariaCurrent": null,
+          "dataActive": null,
+          "bg": "rgba(0, 0, 0, 0)",
+          "color": "rgb(55, 63, 78)",
+          "radius": "8px",
+          "h": 36,
+          "w": 171,
+          "icon": true
+        },
+        {
+          "label": "Capture & contracts",
+          "className": "left-sidebar__item",
+          "ariaCurrent": null,
+          "dataActive": null,
+          "bg": "rgba(0, 0, 0, 0)",
+          "color": "rgb(55, 63, 78)",
+          "radius": "8px",
+          "h": 36,
+          "w": 171,
+          "icon": true
+        },
+        {
+          "label": "Projects",
+          "className": "left-sidebar__item",
+          "ariaCurrent": null,
+          "dataActive": null,
+          "bg": "rgba(0, 0, 0, 0)",
+          "color": "rgb(55, 63, 78)",
+          "radius": "8px",
+          "h": 36,
+          "w": 171,
+          "icon": true
+        },
+        {
+          "label": "Materials",
+          "className": "left-sidebar__item",
+          "ariaCurrent": null,
+          "dataActive": null,
+          "bg": "rgba(0, 0, 0, 0)",
+          "color": "rgb(55, 63, 78)",
+          "radius": "8px",
+          "h": 36,
+          "w": 171,
+          "icon": true
+        },
+        {
+          "label": "Time & expense",
+          "className": "left-sidebar__item",
+          "ariaCurrent": null,
+          "dataActive": null,
+          "bg": "rgba(0, 0, 0, 0)",
+          "color": "rgb(55, 63, 78)",
+          "radius": "8px",
+          "h": 36,
+          "w": 171,
+          "icon": true
+        },
+        {
+          "label": "People",
+          "className": "left-sidebar__item",
+          "ariaCurrent": null,
+          "dataActive": null,
+          "bg": "rgba(0, 0, 0, 0)",
+          "color": "rgb(55, 63, 78)",
+          "radius": "8px",
+          "h": 36,
+          "w": 171,
+          "icon": true
+        },
+        {
+          "label": "Reports",
+          "className": "left-sidebar__item",
+          "ariaCurrent": null,
+          "dataActive": null,
+          "bg": "rgba(0, 0, 0, 0)",
+          "color": "rgb(55, 63, 78)",
+          "radius": "8px",
+          "h": 36,
+          "w": 171,
+          "icon": true
+        },
+        {
+          "label": "Admin",
+          "className": "left-sidebar__item",
+          "ariaCurrent": null,
+          "dataActive": null,
+          "bg": "rgba(0, 0, 0, 0)",
+          "color": "rgb(55, 63, 78)",
+          "radius": "8px",
+          "h": 36,
+          "w": 171,
+          "icon": true
+        }
+      ]
+    },
+    "focus": {
+      "outline": "rgb(42, 120, 198) solid 2px",
+      "outlineOffset": "2px",
+      "boxShadow": "none"
+    },
+    "hasA11y": false,
+    "hasStyling": true,
+    "hasBehavior": true,
+    "snippets": false,
+    "headerTitle": "Left Sidebar"
+  },
+  "vp": {
+    "labels": [
+      "Command Center",
+      "Programs",
+      "Portfolios",
+      "Projects",
+      "Risk",
+      "Reports",
+      "Calendars",
+      "Codes",
+      "Rates",
+      "Resources",
+      "Settings",
+      "Add Menu"
+    ],
+    "sections": 1
+  },
+  "hc2": {
+    "sectionBg": "rgb(255, 255, 255)",
+    "sectionBorder": "",
+    "itemOutline": "rgb(55, 0, 110) solid 2px",
+    "activeBg": "rgba(0, 0, 0, 0)",
+    "activeOutline": "rgb(55, 0, 110) solid 2px",
+    "activeBorder": "1px solid rgb(0, 0, 0)",
+    "activeColor": "rgb(255, 255, 255)"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "id": "harmony-design-system-vanilla",
+  "name": "Harmony Design System — Vanilla Web",
+  "type": "component-library",
+  "status": "active",
+  "description": "Harmony Design System for frameworkless modern browsers — native HTML + CSS recipes, optional hybrid Custom Element helpers, and encapsulated Custom Elements. Dual consume: npm and static zip. WCAG 2.3 AA.",
+  "framework": {
+    "runtime": "browser",
+    "uiLibrary": "web-components"
+  },
+  "conversion": {
+    "outputId": "harmony-design-system-vanilla",
+    "outputPath": "conversions/harmony-design-system-vanilla",
+    "playbook": "playbook/SKILL.md",
+    "verification": {
+      "playbook": "playbook/VERIFICATION.md",
+      "agent": "playbook/VERIFIER.md"
+    }
+  },
+  "elementStrategies": {
+    "allowed": ["native", "hybrid", "web-component", "skip"],
+    "deprecated": ["css-tokens"],
+    "descriptions": {
+      "native": "Ship CSS (and docs) so the catalog item is real HTML and/or documented classes/tokens on the product stylesheet. Consumers compose children as they would in HTML — no Harmony-only wrappers or prescribed inner scaffolding. Foundation tokens use this strategy (CSS-only).",
+      "hybrid": "Same native CSS recipe is the source of truth; also ship an optional light-DOM Custom Element that maps attributes to those classes. Both paths remain complete and valid.",
+      "web-component": "Ship a Harmony Custom Element (typically open Shadow DOM, native ESM) when native HTML + classes cannot carry look, behavior, or a11y. Production data/events via attributes, properties, slots, and CustomEvent / ElementInternals — not a visual-only Astro port.",
+      "skip": "Do not convert; placeholder or accepted gap",
+      "css-tokens": "Deprecated alias of native (foundation CSS-only)"
+    }
+  },
+  "readiness": {
+    "level": "ready",
+    "lastReviewed": "2026-09-09",
+    "summary": "Playbooks complete for npm + static kit, product-once, WCAG 2.3 AA, production-gap HITL, AI artifacts. Element strategies: native | hybrid | web-component | skip. Demo bootstrap on :5178 proven (demo-bootstrap-1). Catalog execute awaits HITL plans."
+  }
+}

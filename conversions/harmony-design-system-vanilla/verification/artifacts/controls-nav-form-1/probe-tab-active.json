@@ -1,0 +1,75 @@
+{
+  "overviewBeforeClick": {
+    "text": "Overview",
+    "selected": "true",
+    "color": "rgb(42, 120, 198)",
+    "h": 45,
+    "borderBottomWidth": "4px",
+    "borderBottomColor": "rgb(42, 120, 198)",
+    "boxShadow": "none",
+    "kids": []
+  },
+  "afterClick": [
+    {
+      "text": "Overview",
+      "selected": "false",
+      "color": "rgb(42, 120, 198)",
+      "h": 45,
+      "borderBottomWidth": "4px",
+      "borderBottomColor": "rgb(42, 120, 198)",
+      "boxShadow": "none",
+      "kids": []
+    },
+    {
+      "text": "Features",
+      "selected": "true",
+      "color": "rgb(82, 89, 105)",
+      "h": 45,
+      "borderBottomWidth": "2px",
+      "borderBottomColor": "rgba(0, 0, 0, 0)",
+      "boxShadow": "none",
+      "kids": []
+    },
+    {
+      "text": "Pricing",
+      "selected": "false",
+      "color": "rgb(82, 89, 105)",
+      "h": 45,
+      "borderBottomWidth": "2px",
+      "borderBottomColor": "rgba(0, 0, 0, 0)",
+      "boxShadow": "none",
+      "kids": []
+    },
+    {
+      "text": "Reviews",
+      "selected": "false",
+      "color": "rgb(82, 89, 105)",
+      "h": 45,
+      "borderBottomWidth": "2px",
+      "borderBottomColor": "rgba(0, 0, 0, 0)",
+      "boxShadow": "none",
+      "kids": []
+    }
+  ],
+  "irLayout": [
+    {
+      "text": "Home",
+      "iconLeft": 321,
+      "labelLeft": 345,
+      "iconBeforeLabel": true
+    },
+    {
+      "text": "Profile",
+      "iconLeft": 419.3,
+      "labelLeft": 443.3,
+      "iconBeforeLabel": true
+    },
+    {
+      "text": "Settings",
+      "iconLeft": 520,
+      "labelLeft": 544,
+      "iconBeforeLabel": true
+    }
+  ],
+  "tabHtml": "<button type=\"button\" role=\"tab\" aria-selected=\"false\" aria-disabled=\"false\" class=\"tab tab--icon-left\" tabindex=\"-1\" data-tab-id=\"1\" data-tab-icon=\"\"><span class=\"tab__label\">Overview</span></button>"
+}

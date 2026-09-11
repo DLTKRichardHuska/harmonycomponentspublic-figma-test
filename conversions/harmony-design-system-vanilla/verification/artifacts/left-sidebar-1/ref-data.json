@@ -1,0 +1,196 @@
+{
+  "h1": "Harmony CP Design System",
+  "desc": "A unified collapsible left navigation sidebar that supports all Harmony themes. The sidebar adapts its icons and sections based on the theme variant. CP theme includes two sections (Main Navigation + Application Modules), while VP, PPM, and Maconomy themes include a single section with theme-specifi",
+  "badges": [
+    "Shell Component",
+    "Theme Adaptive"
+  ],
+  "h2": [
+    "Live Demo",
+    "Behavior",
+    "Theme Variants",
+    "Styling",
+    "Accessibility"
+  ],
+  "h3": [
+    "Left Sidebar - Theme Adaptive",
+    "Collapsible",
+    "Fixed Position",
+    "Configurable Sections",
+    "Smooth Animation",
+    "CPCostpoint Theme",
+    "PPMPPM Theme",
+    "VPVantagepoint Theme",
+    "MaconomyMaconomy Theme",
+    "Visual Properties",
+    "Keyboard Navigation"
+  ],
+  "sidebar": {
+    "tag": "NAV",
+    "className": "left-sidebar left-sidebar--cp",
+    "w": 52,
+    "h": 800,
+    "bg": "rgba(0, 0, 0, 0)",
+    "borderRadius": "0px",
+    "boxShadow": "none",
+    "border": "0px none rgb(233, 236, 239)",
+    "position": "static",
+    "left": "0px",
+    "top": "50%"
+  },
+  "itemCount": 51,
+  "items": [
+    {
+      "text": "Welcome screenWelcome screen",
+      "title": null,
+      "active": false,
+      "w": 35,
+      "h": 36
+    },
+    {
+      "text": "DashboardDashboard",
+      "title": null,
+      "active": false,
+      "w": 35,
+      "h": 36
+    },
+    {
+      "text": "My menuMy menu",
+      "title": null,
+      "active": false,
+      "w": 35,
+      "h": 36
+    },
+    {
+      "text": "RecentRecent",
+      "title": null,
+      "active": false,
+      "w": 35,
+      "h": 36
+    },
+    {
+      "text": "SearchSearch",
+      "title": null,
+      "active": false,
+      "w": 35,
+      "h": 36
+    },
+    {
+      "text": "Command CenterCommand Center",
+      "title": null,
+      "active": false,
+      "w": 35,
+      "h": 36
+    },
+    {
+      "text": "AccountingAccounting",
+      "title": null,
+      "active": false,
+      "w": 35,
+      "h": 36
+    },
+    {
+      "text": "PlanningPlanning",
+      "title": null,
+      "active": false,
+      "w": 35,
+      "h": 36
+    },
+    {
+      "text": "Capture & contractsCapture & contracts",
+      "title": null,
+      "active": false,
+      "w": 35,
+      "h": 36
+    },
+    {
+      "text": "ProjectsProjects",
+      "title": null,
+      "active": false,
+      "w": 35,
+      "h": 36
+    },
+    {
+      "text": "MaterialsMaterials",
+      "title": null,
+      "active": false,
+      "w": 35,
+      "h": 36
+    },
+    {
+      "text": "Time & expenseTime & expense",
+      "title": null,
+      "active": false,
+      "w": 35,
+      "h": 36
+    },
+    {
+      "text": "PeoplePeople",
+      "title": null,
+      "active": false,
+      "w": 35,
+      "h": 36
+    },
+    {
+      "text": "ReportsReports",
+      "title": null,
+      "active": false,
+      "w": 35,
+      "h": 36
+    },
+    {
+      "text": "AdminAdmin",
+      "title": null,
+      "active": false,
+      "w": 35,
+      "h": 36
+    },
+    {
+      "text": "Command CenterCommand Center",
+      "title": null,
+      "active": false,
+      "w": 0,
+      "h": 0
+    },
+    {
+      "text": "ProgramsPrograms",
+      "title": null,
+      "active": false,
+      "w": 0,
+      "h": 0
+    },
+    {
+      "text": "PortfoliosPortfolios",
+      "title": null,
+      "active": false,
+      "w": 0,
+      "h": 0
+    },
+    {
+      "text": "ProjectsProjects",
+      "title": null,
+      "active": false,
+      "w": 0,
+      "h": 0
+    },
+    {
+      "text": "RiskRisk",
+      "title": null,
+      "active": false,
+      "w": 0,
+      "h": 0
+    }
+  ],
+  "icons": 102,
+  "demo": {
+    "w": 998,
+    "h": 832
+  },
+  "bodyTextSample": "Harmony CP Design System\n⌘K\nCP\nNAVIGATION\n47 Sections\nCHANGELOG\nChangelog\nFOUNDATION\nColors\nTypography\nSpacing\nElevations\nDela\nSHELL LAYOUT\nShell Layout\nShell Header\nCompany Picker\nUser Menu\nShell Footer\nPage Header\nPage Content\nLeft Sidebar\nRight Sidebar\nShell Panel\nCOMPONENTS\nAccordion\nAlerts\nAvatar\nBadges\nButton Groups\nButtons\nCards\nCheckbox Groups\nCheckboxes\nChips\nDate Picker\nDialogs\nDropdowns\nIcons\nInputs\nKanban\nLabels\nLinks\nList Menu\nNotification Badges\nProgress Bar\nRadio Buttons\nRadio Groups\nScrollbar\nSpecialty Inputs\nSpinner\nStepper\nTab Strip\nTables\nToggle Switches\nTooltips\nCP COMPONENTS\nFloating Nav\nKanban\nv0.9.0-in-progress\nCoverage\n100%\nLeft Sidebar\nShell Component\nTheme Adaptive\n\nA unified collapsible left navigation sidebar that supports all Harmony themes. The sidebar adapts its icons and sections based on the theme variant. CP theme includes two sections (Main Navigation + Application Modules), while VP, PPM, and Maconomy themes include a single section with theme-specific icons.\n\nLive Demo\n\nSwitch themes using the picker in the top header to see how the left sidebar adapts. The sidebar automatically shows the correct icons and sections based on the current theme.\n\nLeft Sidebar - Theme Adaptive\n\nHover over the sidebar to see it expand with labels. Switch themes to see different icon sets and section configurations.\n\nThe left sidebar is docked to the left edge. Hover over it to see the expanded state with labels.\n\nCP Theme (2 sections):\n\nSection 1 - Main Navigation: Welcome screen, Dashboard, My menu, Recent\nSection 2 - Application Modules: Search, Command Center, Accounting, Planning, Capture & contracts, Projects, Materials, Time & expense, People, Reports, Admin\n\nVP/PPM/Maconomy Themes (1 section):\n\nCommand Center, Programs, Portfolios, Projects, Risk, Reports, Calendars, Codes, Rates, Resources, Settings, Add Menu\nBehavior\nCollapsible\n\nCollapsed by default showing only icons (~52px width). Expands on hover to reveal labels (~220px width).\n\nFixed Position\n\nDocked to the left edge of the viewport, vertically centered. Stays in place while content scrolls.\n\nConfigurable Sections\n\nCP theme includes two sections (Main Navigation + Application Modules). VP, PPM, and Maconomy themes include a single section with theme-specific navigation items.\n\nSmooth Animation\n\nCSS transitions provide smooth expand/collapse animation with 200ms duration.\n\nTheme Variants\nCP\nCostpoint Theme\n\n2 Sections:\n\nMain Navigation (4 items)\nApplication Modules (11 items)\nP",
+  "hover": {
+    "before": 52,
+    "afterHover": 52,
+    "afterLeave": 52,
+    "className": "left-sidebar left-sidebar--cp"
+  }
+}

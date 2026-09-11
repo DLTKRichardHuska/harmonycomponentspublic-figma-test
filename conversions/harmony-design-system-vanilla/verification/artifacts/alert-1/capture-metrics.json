@@ -1,0 +1,157 @@
+{
+  "refMetrics": {
+    "heights": [
+      83,
+      83,
+      83,
+      83,
+      83,
+      55,
+      55,
+      66,
+      66,
+      106,
+      98,
+      86,
+      86
+    ],
+    "linkDelta": 0,
+    "linkOnlyH": 98
+  },
+  "convHeights": {
+    "heights": [
+      83,
+      83,
+      83,
+      83,
+      83,
+      55,
+      55,
+      66,
+      66,
+      106,
+      106,
+      86,
+      86
+    ],
+    "linkDelta": 0,
+    "linkOnlyH": 106
+  },
+  "convDark": {
+    "basicBg": "rgba(0, 173, 253, 0.1)",
+    "enhancedBg": "rgb(55, 66, 77)",
+    "borderBg": "rgb(0, 231, 142)"
+  },
+  "fc": {
+    "basic": {
+      "bg": "rgb(255, 255, 255)",
+      "border": "1px solid rgb(0, 0, 0)",
+      "color": "rgb(0, 0, 0)",
+      "borderPart": {
+        "display": "none",
+        "bg": "rgb(55, 0, 110)"
+      },
+      "title": "rgb(0, 0, 0)",
+      "msg": "rgb(0, 0, 0)"
+    },
+    "enhanced": {
+      "bg": "rgb(255, 255, 255)",
+      "border": "1px solid rgb(0, 0, 0)",
+      "color": "rgb(0, 0, 0)",
+      "borderPart": {
+        "display": "block",
+        "bg": "rgb(0, 0, 0)"
+      },
+      "title": "rgb(0, 0, 0)",
+      "msg": "rgb(0, 0, 0)"
+    }
+  },
+  "axAlert": [
+    {
+      "name": "Information",
+      "role": "alert"
+    },
+    {
+      "name": "Success",
+      "role": "alert"
+    },
+    {
+      "name": "Warning",
+      "role": "alert"
+    },
+    {
+      "name": "Error",
+      "role": "alert"
+    },
+    {
+      "name": "Dismissible Alert",
+      "role": "alert"
+    },
+    {
+      "name": {
+        "type": "computedString",
+        "value": "",
+        "sources": [
+          {
+            "type": "relatedElement",
+            "attribute": "aria-labelledby"
+          },
+          {
+            "type": "attribute",
+            "attribute": "aria-label"
+          },
+          {
+            "type": "attribute",
+            "attribute": "title"
+          }
+        ]
+      },
+      "role": "alert"
+    },
+    {
+      "name": {
+        "type": "computedString",
+        "value": "",
+        "sources": [
+          {
+            "type": "relatedElement",
+            "attribute": "aria-labelledby"
+          },
+          {
+            "type": "attribute",
+            "attribute": "aria-label"
+          },
+          {
+            "type": "attribute",
+            "attribute": "title"
+          }
+        ]
+      },
+      "role": "alert"
+    },
+    {
+      "name": "Alert Title",
+      "role": "alert"
+    },
+    {
+      "name": "Warning Alert",
+      "role": "alert"
+    },
+    {
+      "name": "Success Alert",
+      "role": "alert"
+    },
+    {
+      "name": "Information Alert",
+      "role": "alert"
+    },
+    {
+      "name": "Progress Alert",
+      "role": "alert"
+    },
+    {
+      "name": "Countdown Alert",
+      "role": "alert"
+    }
+  ]
+}

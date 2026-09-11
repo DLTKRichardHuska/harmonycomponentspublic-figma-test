@@ -1,0 +1,101 @@
+{
+  "title": "Accordion · Harmony Vanilla",
+  "productClass": [
+    "theme-cp"
+  ],
+  "headings": [
+    {
+      "tag": "H2",
+      "text": "Getting Started"
+    },
+    {
+      "tag": "H2",
+      "text": "Changelog"
+    },
+    {
+      "tag": "H2",
+      "text": "Foundation"
+    },
+    {
+      "tag": "H2",
+      "text": "Shell Layout"
+    },
+    {
+      "tag": "H2",
+      "text": "Components"
+    },
+    {
+      "tag": "H2",
+      "text": "Basic Accordion"
+    },
+    {
+      "tag": "H2",
+      "text": "With Label"
+    },
+    {
+      "tag": "H2",
+      "text": "With Default Open"
+    },
+    {
+      "tag": "H2",
+      "text": "Allow Multiple"
+    },
+    {
+      "tag": "H2",
+      "text": "Disabled Sections"
+    },
+    {
+      "tag": "H2",
+      "text": "Focus"
+    },
+    {
+      "tag": "H2",
+      "text": "API"
+    },
+    {
+      "tag": "H2",
+      "text": "Accessibility"
+    },
+    {
+      "tag": "H1",
+      "text": "Accordion"
+    },
+    {
+      "tag": "H3",
+      "text": "Consume — npm"
+    },
+    {
+      "tag": "H3",
+      "text": "Consume — static zip"
+    }
+  ],
+  "accordionHosts": 6,
+  "accordionItems": 17,
+  "tables": [
+    {
+      "w": 798,
+      "h": 129,
+      "top": 1974,
+      "rows": 3,
+      "headers": [
+        "Element",
+        "Attribute",
+        "Notes"
+      ]
+    }
+  ],
+  "pageDisplay": null,
+  "pageH": null,
+  "pageW": null,
+  "bodyScroll": 1100,
+  "hasA11y": false,
+  "hasApi": false,
+  "hasCostpointNote": false,
+  "hasDisabled": false,
+  "hasAllowMultiple": false,
+  "hasDefaultOpen": false,
+  "hasFocus": true,
+  "hasWithLabel": false,
+  "textHead": "Accordion · Harmony Vanilla\n/* Global page only — chrome and pages live in Custom Elements (Shadow DOM + sheets). */\r\nhtml,\r\nbody {\r\n  margin: 0;\r\n  height: 100%;\r\n}\r\n\r\n#app {\r\n  height: 100%;\r\n}\r\n\r\nbody {\r\n  font-family: var(--font-sans);\r\n  font-size: var(--body-default);\r\n  font-weight: var(--font-normal);\r\n  line-height: var(--leading-normal);\r\n  background: var(--page-bg);\r\n  color: var(--text-primary);\r\n}\r\n\r\nhtml.dark body {\r\n  background: var(--page-bg);\r\n  color: var(--text-primary);\r\n}\r\n\r\n@media (forced-colors: active) {\r\n  body,\r\n  html.dark body {\r\n    background: Canvas;\r\n    color: CanvasText;\r\n  }\r\n\r\n  :focus-visible {\r\n    outline: var(--border-width-standard) solid Highlight;\r\n    outline-offset: var(--space-0-5);\r\n  }\r\n}",
+  "textTail": "Accordion · Harmony Vanilla\n/* Global page only — chrome and pages live in Custom Elements (Shadow DOM + sheets). */\r\nhtml,\r\nbody {\r\n  margin: 0;\r\n  height: 100%;\r\n}\r\n\r\n#app {\r\n  height: 100%;\r\n}\r\n\r\nbody {\r\n  font-family: var(--font-sans);\r\n  font-size: var(--body-default);\r\n  font-weight: var(--font-normal);\r\n  line-height: var(--leading-normal);\r\n  background: var(--page-bg);\r\n  color: var(--text-primary);\r\n}\r\n\r\nhtml.dark body {\r\n  background: var(--page-bg);\r\n  color: var(--text-primary);\r\n}\r\n\r\n@media (forced-colors: active) {\r\n  body,\r\n  html.dark body {\r\n    background: Canvas;\r\n    color: CanvasText;\r\n  }\r\n\r\n  :focus-visible {\r\n    outline: var(--border-width-standard) solid Highlight;\r\n    outline-offset: var(--space-0-5);\r\n  }\r\n}"
+}

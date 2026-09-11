@@ -1,0 +1,797 @@
+{
+  "generatedAt": "2026-09-11T20:00:58.767Z",
+  "ref": {
+    "headings": [
+      "Basic Table",
+      "Default Table with Gray Header",
+      "Table with White Header",
+      "Table with Actions",
+      "Interactive Table",
+      "Striped Table",
+      "Alternating Rows",
+      "Table with Reorderable Rows",
+      "Table with Reorderable Rows",
+      "Table with Grouped Rows",
+      "Table with Grouped Rows",
+      "Sortable column headers",
+      "Sortable column headers",
+      "Table with Title Bar and Action Bar",
+      "Table with Title Bar",
+      "Table with Action Bar",
+      "Table with Title Bar and Action Bar",
+      "Table with Filter Bar",
+      "Table with Filter Bar",
+      "Command Center (variant + panel)",
+      "Command Center table with docked panel",
+      "Purchase Requisitions",
+      "Costpoint data grid",
+      "Split frozen / scroll table",
+      "TableCostpointGrid (Astro) props",
+      "Props",
+      "Usage Guidelines",
+      "Best Practices",
+      "Accessibility"
+    ],
+    "tableCount": 16,
+    "stubMentions": 17,
+    "hasAccessibility": true,
+    "hasUsage": true,
+    "tables": [
+      {
+        "i": 0,
+        "tag": "table",
+        "rows": 4,
+        "chips": [
+          "Active",
+          "In Progress",
+          "Pending",
+          "Review"
+        ],
+        "hasStub": false,
+        "headers": [
+          "Project ID",
+          "Name",
+          "Status",
+          "Budget"
+        ],
+        "checkboxes": 0,
+        "visible": true,
+        "h": 243,
+        "w": 998,
+        "nestedTable": false,
+        "attrs": null
+      },
+      {
+        "i": 1,
+        "tag": "table",
+        "rows": 2,
+        "chips": [
+          "Active",
+          "In Progress"
+        ],
+        "hasStub": false,
+        "headers": [
+          "Project ID",
+          "Name",
+          "Status",
+          "Budget"
+        ],
+        "checkboxes": 0,
+        "visible": true,
+        "h": 145,
+        "w": 998,
+        "nestedTable": false,
+        "attrs": null
+      },
+      {
+        "i": 2,
+        "tag": "table",
+        "rows": 3,
+        "chips": [],
+        "hasStub": false,
+        "headers": [
+          "",
+          "Employee",
+          "Department",
+          "Role",
+          "Actions"
+        ],
+        "checkboxes": 8,
+        "visible": true,
+        "h": 239,
+        "w": 998,
+        "nestedTable": false,
+        "attrs": null
+      },
+      {
+        "i": 3,
+        "tag": "table",
+        "rows": 5,
+        "chips": [],
+        "hasStub": false,
+        "headers": [
+          "Code",
+          "Description",
+          "Amount"
+        ],
+        "checkboxes": 0,
+        "visible": true,
+        "h": 277,
+        "w": 998,
+        "nestedTable": false,
+        "attrs": null
+      },
+      {
+        "i": 4,
+        "tag": "table",
+        "rows": 4,
+        "chips": [
+          "Active",
+          "In Progress",
+          "Pending",
+          "Review"
+        ],
+        "hasStub": true,
+        "headers": [
+          "",
+          "Project ID",
+          "Name",
+          "Status",
+          "Budget"
+        ],
+        "checkboxes": 0,
+        "visible": true,
+        "h": 251,
+        "w": 998,
+        "nestedTable": false,
+        "attrs": null
+      },
+      {
+        "i": 5,
+        "tag": "table",
+        "rows": 6,
+        "chips": [
+          "Active",
+          "In Progress",
+          "Pending",
+          "In Progress",
+          "Review",
+          "Pending"
+        ],
+        "hasStub": true,
+        "headers": [
+          "",
+          "Project ID",
+          "Name",
+          "Status",
+          "Budget",
+          "Actions"
+        ],
+        "checkboxes": 0,
+        "visible": true,
+        "h": 218,
+        "w": 998,
+        "nestedTable": false,
+        "attrs": null
+      },
+      {
+        "i": 6,
+        "tag": "table",
+        "rows": 4,
+        "chips": [
+          "Active",
+          "In Progress",
+          "Pending",
+          "Review"
+        ],
+        "hasStub": false,
+        "headers": [
+          "Project ID",
+          "Name",
+          "Status",
+          "Budget"
+        ],
+        "checkboxes": 0,
+        "visible": true,
+        "h": 247,
+        "w": 998,
+        "nestedTable": false,
+        "attrs": null
+      },
+      {
+        "i": 7,
+        "tag": "table",
+        "rows": 2,
+        "chips": [
+          "Active",
+          "In Progress"
+        ],
+        "hasStub": false,
+        "headers": [
+          "Project ID",
+          "Name",
+          "Status",
+          "Budget"
+        ],
+        "checkboxes": 0,
+        "visible": true,
+        "h": 144,
+        "w": 998,
+        "nestedTable": false,
+        "attrs": null
+      },
+      {
+        "i": 8,
+        "tag": "table",
+        "rows": 2,
+        "chips": [
+          "Active",
+          "In Progress"
+        ],
+        "hasStub": false,
+        "headers": [
+          "Project ID",
+          "Name",
+          "Status",
+          "Budget"
+        ],
+        "checkboxes": 0,
+        "visible": true,
+        "h": 144,
+        "w": 998,
+        "nestedTable": false,
+        "attrs": null
+      },
+      {
+        "i": 9,
+        "tag": "table",
+        "rows": 2,
+        "chips": [
+          "Active",
+          "In Progress"
+        ],
+        "hasStub": false,
+        "headers": [
+          "Project ID",
+          "Name",
+          "Status",
+          "Budget"
+        ],
+        "checkboxes": 0,
+        "visible": true,
+        "h": 144,
+        "w": 998,
+        "nestedTable": false,
+        "attrs": null
+      },
+      {
+        "i": 10,
+        "tag": "table",
+        "rows": 3,
+        "chips": [
+          "Active",
+          "In Progress",
+          "Pending"
+        ],
+        "hasStub": false,
+        "headers": [
+          "Project ID",
+          "Name",
+          "Status",
+          "Budget"
+        ],
+        "checkboxes": 0,
+        "visible": true,
+        "h": 193,
+        "w": 998,
+        "nestedTable": false,
+        "attrs": null
+      },
+      {
+        "i": 11,
+        "tag": "table",
+        "rows": 8,
+        "chips": [],
+        "hasStub": false,
+        "headers": [
+          "PR ID",
+          "Preferred Vendor Name",
+          "Total Amount",
+          "Status",
+          "Overdue"
+        ],
+        "checkboxes": 0,
+        "visible": true,
+        "h": 615,
+        "w": 578,
+        "nestedTable": false,
+        "attrs": null
+      },
+      {
+        "i": 12,
+        "tag": "table",
+        "rows": 9,
+        "chips": [],
+        "hasStub": false,
+        "headers": [
+          "",
+          "Voucher",
+          "Fiscal year *",
+          "Period *"
+        ],
+        "checkboxes": 0,
+        "visible": true,
+        "h": 340,
+        "w": 255,
+        "nestedTable": false,
+        "attrs": null
+      },
+      {
+        "i": 13,
+        "tag": "table",
+        "rows": 9,
+        "chips": [],
+        "hasStub": false,
+        "headers": [
+          "Subperiod *",
+          "Original Voucher",
+          "Vendor *",
+          "Vendor Name",
+          "Terms",
+          "Approved",
+          "Invoice",
+          "Invoice Date",
+          "Invoice Amount *",
+          "Discount Percent",
+          "Discount Date",
+          "Discount Amount",
+          "A/P Account Description",
+          "Cash Account Description",
+          "Due Date",
+          "Due Amount",
+          "Voucher Type",
+          "Voucher Line Distribution Recalculation ",
+          "When Calculated Sales Tax is Charged",
+          "Input File Voucher No",
+          "Total Tax Amt",
+          "Remaining Balance",
+          "Tax ID",
+          "Taxing Date",
+          "Tax Location"
+        ],
+        "checkboxes": 18,
+        "visible": true,
+        "h": 340,
+        "w": 3076,
+        "nestedTable": false,
+        "attrs": null
+      },
+      {
+        "i": 14,
+        "tag": "table",
+        "rows": 5,
+        "chips": [],
+        "hasStub": false,
+        "headers": [
+          "Prop",
+          "Type",
+          "Default",
+          "Description"
+        ],
+        "checkboxes": 0,
+        "visible": true,
+        "h": 275,
+        "w": 1048,
+        "nestedTable": false,
+        "attrs": null
+      },
+      {
+        "i": 15,
+        "tag": "table",
+        "rows": 11,
+        "chips": [],
+        "hasStub": true,
+        "headers": [
+          "Prop",
+          "Type",
+          "Default",
+          "Description"
+        ],
+        "checkboxes": 0,
+        "visible": true,
+        "h": 887,
+        "w": 1048,
+        "nestedTable": false,
+        "attrs": null
+      }
+    ]
+  },
+  "conv": {
+    "headings": [
+      "Getting Started",
+      "Changelog",
+      "Foundation",
+      "Shell Layout",
+      "Components",
+      "Native — default gray header",
+      "Native — striped + white header",
+      "Interactive selection",
+      "Reorderable",
+      "Grouped",
+      "Sortable columns",
+      "Filter bar + title / action bars",
+      "Command Center (brief)",
+      "API",
+      "Accessibility",
+      "Consume — npm",
+      "Consume — static zip"
+    ],
+    "tableCount": 15,
+    "stubMentions": 0,
+    "hasAccessibility": false,
+    "hasUsage": false,
+    "hasCostpointCallout": false,
+    "tables": [
+      {
+        "i": 0,
+        "tag": "table",
+        "rows": 4,
+        "chips": [
+          "Active",
+          "In Progress",
+          "Pending",
+          "Active"
+        ],
+        "hasStub": false,
+        "headers": [
+          "Project ID",
+          "Name",
+          "Status",
+          "Budget"
+        ],
+        "checkboxes": 0,
+        "grips": 0,
+        "expanders": 0,
+        "visible": true,
+        "h": 228,
+        "w": 798,
+        "nestedTable": false,
+        "attrs": null,
+        "textSample": "PROJECT ID NAME STATUS BUDGET PRJ-001 Website Redesign Active $25,000 PRJ-002 Mobile App In Progress $150,000 PRJ-003 Database Migration Pending $45,000 PRJ-004 API Gateway Active $80,000"
+      },
+      {
+        "i": 1,
+        "tag": "table",
+        "rows": 4,
+        "chips": [],
+        "hasStub": false,
+        "headers": [
+          "Project ID",
+          "Name",
+          "Budget"
+        ],
+        "checkboxes": 0,
+        "grips": 0,
+        "expanders": 0,
+        "visible": true,
+        "h": 228,
+        "w": 798,
+        "nestedTable": false,
+        "attrs": null,
+        "textSample": "PROJECT ID NAME BUDGET PRJ-001 Website Redesign $25,000 PRJ-002 Mobile App $150,000 PRJ-003 Database Migration $45,000 Total $220,000"
+      },
+      {
+        "i": 2,
+        "tag": "harmony-table",
+        "rows": 3,
+        "chips": [],
+        "hasStub": false,
+        "headers": [
+          "",
+          "Employee",
+          "Department",
+          "Role"
+        ],
+        "checkboxes": 4,
+        "grips": 0,
+        "expanders": 0,
+        "visible": true,
+        "h": 182,
+        "w": 798,
+        "nestedTable": true,
+        "attrs": {
+          "reorderable": false,
+          "grouped": false,
+          "striped": false,
+          "variant": null,
+          "columns": false
+        },
+        "textSample": " EMPLOYEE DEPARTMENT ROLE John Doe Engineering Senior Developer Jane Smith Design UX Lead Mike Johnson Marketing Manager"
+      },
+      {
+        "i": 3,
+        "tag": "table",
+        "rows": 3,
+        "chips": [],
+        "hasStub": false,
+        "headers": [
+          "",
+          "Employee",
+          "Department",
+          "Role"
+        ],
+        "checkboxes": 4,
+        "grips": 0,
+        "expanders": 0,
+        "visible": true,
+        "h": 182,
+        "w": 798,
+        "nestedTable": false,
+        "attrs": null,
+        "textSample": " EMPLOYEE DEPARTMENT ROLE John Doe Engineering Senior Developer Jane Smith Design UX Lead Mike Johnson Marketing Manager"
+      },
+      {
+        "i": 4,
+        "tag": "harmony-table",
+        "rows": 3,
+        "chips": [],
+        "hasStub": false,
+        "headers": [
+          "Project ID",
+          "Name",
+          "Budget"
+        ],
+        "checkboxes": 0,
+        "grips": 6,
+        "expanders": 0,
+        "visible": true,
+        "h": 257,
+        "w": 798,
+        "nestedTable": true,
+        "attrs": {
+          "reorderable": true,
+          "grouped": false,
+          "striped": false,
+          "variant": null,
+          "columns": false
+        },
+        "textSample": "PROJECT ID NAME BUDGET PRJ-001 Website Redesign $25,000 PRJ-002 Mobile App $150,000 PRJ-003 Database Migration $45,000"
+      },
+      {
+        "i": 5,
+        "tag": "table",
+        "rows": 3,
+        "chips": [],
+        "hasStub": false,
+        "headers": [
+          "Project ID",
+          "Name",
+          "Budget"
+        ],
+        "checkboxes": 0,
+        "grips": 6,
+        "expanders": 0,
+        "visible": true,
+        "h": 257,
+        "w": 798,
+        "nestedTable": false,
+        "attrs": null,
+        "textSample": "PROJECT ID NAME BUDGET PRJ-001 Website Redesign $25,000 PRJ-002 Mobile App $150,000 PRJ-003 Database Migration $45,000"
+      },
+      {
+        "i": 6,
+        "tag": "harmony-table",
+        "rows": 5,
+        "chips": [],
+        "hasStub": false,
+        "headers": [
+          "Project ID",
+          "Name",
+          "Budget"
+        ],
+        "checkboxes": 0,
+        "grips": 0,
+        "expanders": 4,
+        "visible": true,
+        "h": 284,
+        "w": 798,
+        "nestedTable": true,
+        "attrs": {
+          "reorderable": false,
+          "grouped": true,
+          "striped": false,
+          "variant": null,
+          "columns": false
+        },
+        "textSample": "PROJECT ID NAME BUDGET PRJ-001 Website Redesign $25,000 PRJ-001-A Phase 1 $10,000 PRJ-001-B Phase 2 $15,000 PRJ-002 Mobile App $150,000"
+      },
+      {
+        "i": 7,
+        "tag": "table",
+        "rows": 5,
+        "chips": [],
+        "hasStub": false,
+        "headers": [
+          "Project ID",
+          "Name",
+          "Budget"
+        ],
+        "checkboxes": 0,
+        "grips": 0,
+        "expanders": 4,
+        "visible": true,
+        "h": 284,
+        "w": 798,
+        "nestedTable": false,
+        "attrs": null,
+        "textSample": "PROJECT ID NAME BUDGET PRJ-001 Website Redesign $25,000 PRJ-001-A Phase 1 $10,000 PRJ-001-B Phase 2 $15,000 PRJ-002 Mobile App $150,000"
+      },
+      {
+        "i": 8,
+        "tag": "harmony-table",
+        "rows": 3,
+        "chips": [],
+        "hasStub": true,
+        "headers": [
+          "Project ID",
+          "Name",
+          "Budget"
+        ],
+        "checkboxes": 0,
+        "grips": 0,
+        "expanders": 0,
+        "visible": true,
+        "h": 204,
+        "w": 798,
+        "nestedTable": true,
+        "attrs": {
+          "reorderable": false,
+          "grouped": false,
+          "striped": false,
+          "variant": null,
+          "columns": true
+        },
+        "textSample": "Project ID Name Budget PRJ-001 Website Redesign $25,000 PRJ-002 Mobile App $150,000 PRJ-003 Database Migration $45,000"
+      },
+      {
+        "i": 9,
+        "tag": "table",
+        "rows": 3,
+        "chips": [],
+        "hasStub": true,
+        "headers": [
+          "Project ID",
+          "Name",
+          "Budget"
+        ],
+        "checkboxes": 0,
+        "grips": 0,
+        "expanders": 0,
+        "visible": true,
+        "h": 204,
+        "w": 798,
+        "nestedTable": false,
+        "attrs": null,
+        "textSample": "Project ID Name Budget PRJ-001 Website Redesign $25,000 PRJ-002 Mobile App $150,000 PRJ-003 Database Migration $45,000"
+      },
+      {
+        "i": 10,
+        "tag": "harmony-table",
+        "rows": 2,
+        "chips": [],
+        "hasStub": false,
+        "headers": [
+          "Project ID",
+          "Name",
+          "Budget"
+        ],
+        "checkboxes": 0,
+        "grips": 0,
+        "expanders": 0,
+        "visible": true,
+        "h": 320,
+        "w": 798,
+        "nestedTable": true,
+        "attrs": {
+          "reorderable": false,
+          "grouped": false,
+          "striped": false,
+          "variant": null,
+          "columns": false
+        },
+        "textSample": "PROJECT ID NAME BUDGET PRJ-001 Website Redesign $25,000 PRJ-002 Mobile App $150,000"
+      },
+      {
+        "i": 11,
+        "tag": "table",
+        "rows": 2,
+        "chips": [],
+        "hasStub": false,
+        "headers": [
+          "Project ID",
+          "Name",
+          "Budget"
+        ],
+        "checkboxes": 0,
+        "grips": 0,
+        "expanders": 0,
+        "visible": true,
+        "h": 135,
+        "w": 798,
+        "nestedTable": false,
+        "attrs": null,
+        "textSample": "PROJECT ID NAME BUDGET PRJ-001 Website Redesign $25,000 PRJ-002 Mobile App $150,000"
+      },
+      {
+        "i": 12,
+        "tag": "harmony-table",
+        "rows": 3,
+        "chips": [],
+        "hasStub": true,
+        "headers": [
+          "PR ID",
+          "Preferred Vendor",
+          "Total Amount",
+          "Status"
+        ],
+        "checkboxes": 0,
+        "grips": 0,
+        "expanders": 0,
+        "visible": true,
+        "h": 237,
+        "w": 798,
+        "nestedTable": true,
+        "attrs": {
+          "reorderable": false,
+          "grouped": false,
+          "striped": true,
+          "variant": "commandCenter",
+          "columns": true
+        },
+        "textSample": "PR ID PREFERRED VENDOR TOTAL AMOUNT STATUS PR-1001 ACME Supplies $4,200 Open PR-1002 Contoso LLC $1,150 Pending PR-1003 Fabrikam Parts $880 Open"
+      },
+      {
+        "i": 13,
+        "tag": "table",
+        "rows": 3,
+        "chips": [],
+        "hasStub": true,
+        "headers": [
+          "PR ID",
+          "Preferred Vendor",
+          "Total Amount",
+          "Status"
+        ],
+        "checkboxes": 0,
+        "grips": 0,
+        "expanders": 0,
+        "visible": true,
+        "h": 204,
+        "w": 519,
+        "nestedTable": false,
+        "attrs": null,
+        "textSample": "PR ID PREFERRED VENDOR TOTAL AMOUNT STATUS PR-1001 ACME Supplies $4,200 Open PR-1002 Contoso LLC $1,150 Pending PR-1003 Fabrikam Parts $880 Open"
+      },
+      {
+        "i": 14,
+        "tag": "table",
+        "rows": 4,
+        "chips": [],
+        "hasStub": false,
+        "headers": [
+          "Surface",
+          "Notes"
+        ],
+        "checkboxes": 0,
+        "grips": 0,
+        "expanders": 0,
+        "visible": true,
+        "h": 228,
+        "w": 798,
+        "nestedTable": false,
+        "attrs": null,
+        "textSample": "SURFACE NOTES Unclassed table Default gray-header Harmony table .table--* modifiers white/none header, striped, reorderable, grouped, command-center <harmony-table> Light-DOM hybrid; nest a real table; optional bar slots"
+      }
+    ]
+  }
+}

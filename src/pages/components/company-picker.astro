@@ -1,0 +1,41 @@
+---
+import DocsLayout from '../../layouts/DocsLayout.astro';
+import PropsTable from '../../components/PropsTable.astro';
+import ExampleSection from '../../components/ExampleSection.astro';
+import CompanyPicker from '../../components/ui/CompanyPicker.astro';
+import Icon from '../../components/ui/Icon.astro';
+
+const props = [
+  { name: 'companyName', type: 'string', default: "'Company name'", description: 'Selected company label on the trigger' },
+  { name: 'companyId', type: 'string', default: '—', description: 'Selected company id (matches an option id)' },
+  { name: 'companyColor', type: 'string', default: '—', description: 'Selected indicator color (CSS color)' },
+  { name: 'companies', type: 'CompanyOption[]', default: 'built-in list', description: 'Options: { id, name, color? }' },
+];
+---
+
+<DocsLayout title="Company Picker" description="Company selector with color indicator and dropdown menu for shell headers.">
+  <article class="space-y-12">
+    <header class="page-header page-header--compact">
+      <h1 class="page-header__title page-header__title--sm">Company Picker</h1>
+      <p class="page-header__description">
+        Standalone company dropdown used in shell header actions. Fires a <code>company-change</code> event with id, name, and color.
+      </p>
+    </header>
+
+    <ExampleSection title="Default" description="Built-in company list with colored indicators.">
+      <div style="min-height: 160px; display: flex; justify-content: flex-end; padding: var(--space-4); background: var(--nav-bg);">
+        <CompanyPicker companyName="Acme Corporation" companyId="acme-corp" companyColor="#FF507B" />
+      </div>
+    </ExampleSection>
+
+    <section id="props" class="space-y-4">
+      <h2 class="section__title">Props</h2>
+      <PropsTable props={props} />
+    </section>
+
+    <section class="space-y-4">
+      <h2 class="section__title"><Icon name="check-badge" size="sm" /> Notes</h2>
+      <p class="text-sm text-secondary">Compose inside Shell Header <code>actions</code> with a divider and User Menu. Listen for <code>company-change</code> to update the header gradient.</p>
+    </section>
+  </article>
+</DocsLayout>

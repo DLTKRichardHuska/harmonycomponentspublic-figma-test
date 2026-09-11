@@ -4,7 +4,7 @@
  * Validated by: `node scripts/validate-component-catalog.js`
  */
 
-export const EXPORTED_UI_COMPONENT_COUNT = 49;
+export const EXPORTED_UI_COMPONENT_COUNT = 51;
 
 export const componentCategories = {
   formControls: [
@@ -44,6 +44,8 @@ export const componentCategories = {
     'ShellPanel',
     'ShellFooter',
     'ShellHeader',
+    'CompanyPicker',
+    'UserMenu',
   ],
   interactive: [
     'Dialog',
@@ -78,6 +80,8 @@ export const layouts = ['ShellLayout', 'DocsLayout'] as const;
 /** Shell pieces composed by ShellLayout (also exported individually from `index.ts`). */
 export const shellSubcomponents = [
   'ShellHeader',
+  'CompanyPicker',
+  'UserMenu',
   'ShellFooter',
   'LeftSidebar',
   'RightSidebar',
@@ -150,6 +154,7 @@ export const componentDocMapping: Record<string, string | null> = {
   Checkbox: 'checkboxes',
   CheckboxGroup: 'checkbox-groups',
   Chip: 'chips',
+  CompanyPicker: 'company-picker',
   DateInput: 'date-picker',
   DatePicker: 'date-picker',
   DateTimePicker: 'specialty-inputs',
@@ -180,6 +185,7 @@ export const componentDocMapping: Record<string, string | null> = {
   TimePicker: 'specialty-inputs',
   Toggle: 'toggle-switches',
   Tooltip: 'tooltips',
+  UserMenu: 'user-menu',
   WeekPicker: 'specialty-inputs',
   FloatingNav: null,
   LeftSidebar: null,

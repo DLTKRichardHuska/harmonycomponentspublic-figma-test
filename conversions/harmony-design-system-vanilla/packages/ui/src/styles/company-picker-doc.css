@@ -1,0 +1,60 @@
+/**
+ * Company picker — document styles for light-DOM slotted options.
+ * Needed because product `button` defaults override `::slotted` padding/font.
+ */
+
+harmony-company-picker > [data-company-option],
+harmony-company-picker > button {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--space-3);
+  width: 100%;
+  height: auto;
+  min-height: 0;
+  margin: 0;
+  padding: var(--space-2) var(--space-3);
+  background-color: transparent;
+  border: none;
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  line-height: var(--leading-normal);
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+  box-sizing: border-box;
+  appearance: none;
+  -webkit-appearance: none;
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+harmony-company-picker > [data-company-option]:hover,
+harmony-company-picker > button:hover {
+  background-color: var(--hover-bg);
+  color: var(--text-primary);
+}
+
+harmony-company-picker > [data-company-option][aria-selected='true'],
+harmony-company-picker > button[aria-selected='true'],
+harmony-company-picker > .company-picker__option--selected {
+  background-color: var(--theme-primary-light);
+  color: var(--theme-primary);
+}
+
+harmony-company-picker > [data-company-option]:focus-visible,
+harmony-company-picker > button:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring-primary);
+}
+
+@media (forced-colors: active) {
+  harmony-company-picker > [data-company-option]:focus-visible,
+  harmony-company-picker > button:focus-visible {
+    outline: 2px solid Highlight;
+    outline-offset: 2px;
+    box-shadow: none;
+  }
+}

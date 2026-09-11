@@ -1,0 +1,219 @@
+/**
+ * Chip visual recipe — used by `<harmony-chip>` Shadow DOM.
+ * Not appended to product document styles.css (CE-only surface).
+ */
+
+:host {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  font-family: var(--font-sans);
+  font-weight: var(--font-normal);
+  border-radius: var(--radius-04);
+  border: var(--border-width-thin) solid transparent;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+  cursor: pointer;
+  vertical-align: middle;
+  height: var(--space-6);
+  padding: var(--space-1) var(--space-2);
+  gap: var(--space-1);
+  font-size: var(--text-sm);
+  line-height: var(--space-5);
+  background-color: var(--theme-primary);
+  border-color: var(--theme-primary);
+  color: var(--text-inverse);
+}
+
+:host([size='sm']) {
+  height: var(--space-4);
+  padding: var(--space-1) var(--space-2);
+  gap: var(--space-1);
+  font-size: var(--overline);
+  line-height: var(--space-4);
+}
+
+:host([size='md']) {
+  height: var(--space-6);
+  padding: var(--space-1) var(--space-2);
+  gap: var(--space-1);
+  font-size: var(--text-sm);
+  line-height: var(--space-5);
+}
+
+:host([size='lg']) {
+  height: var(--space-8);
+  padding: var(--space-1-5) var(--space-2);
+  gap: var(--space-1);
+  font-size: var(--text-base);
+  line-height: var(--space-5);
+}
+
+:host([variant='outline']) {
+  background-color: transparent;
+  border-color: var(--theme-primary);
+  color: var(--theme-primary);
+}
+
+:host([variant='fill']:not([disabled]):hover) {
+  background-color: var(--theme-primary-hover);
+  border-color: var(--theme-primary-hover);
+  color: var(--text-inverse);
+}
+
+:host([variant='outline']:not([disabled]):hover) {
+  background-color: var(--hover-bg);
+  border-color: var(--theme-primary);
+  color: var(--theme-primary);
+}
+
+:host(:focus-visible) {
+  outline: 1px solid var(--card-bg);
+  outline-offset: 0;
+  box-shadow: var(--focus-ring-primary);
+}
+
+:host([variant='fill']:not([disabled]):active) {
+  background-color: var(--theme-primary-hover);
+  border-color: var(--theme-primary-hover);
+}
+
+:host([variant='outline']:not([disabled]):active) {
+  background-color: var(--theme-primary);
+  border-color: var(--theme-primary);
+  color: var(--text-inverse);
+}
+
+:host([selected]) {
+  box-shadow: inset 0 0 0 var(--border-width-thin) var(--theme-primary-hover);
+}
+
+:host([disabled]) {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+:host([type='horiz-dots']),
+:host([type='vert-dots']) {
+  padding-inline: var(--space-2);
+}
+
+[part='icon'] {
+  display: inline-flex;
+  flex-shrink: 0;
+  color: inherit;
+}
+
+:host([size='sm']) [part='icon'] {
+  --harmony-icon-size: var(--space-3);
+}
+
+:host([size='md']) [part='icon'],
+:host([size='lg']) [part='icon'] {
+  --harmony-icon-size: var(--space-4);
+}
+
+[part='dots'] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: inherit;
+}
+
+.chip__dots-svg {
+  display: block;
+}
+
+:host([size='sm']) [part='dots'] .chip__dots-svg.horiz {
+  width: 12px;
+  height: 3px;
+}
+
+:host([size='md']) [part='dots'] .chip__dots-svg.horiz {
+  width: 14px;
+  height: 4px;
+}
+
+:host([size='lg']) [part='dots'] .chip__dots-svg.horiz {
+  width: 18px;
+  height: 4px;
+}
+
+:host([size='sm']) [part='dots'] .chip__dots-svg.vert {
+  width: 3px;
+  height: 12px;
+}
+
+:host([size='md']) [part='dots'] .chip__dots-svg.vert {
+  width: 4px;
+  height: 14px;
+}
+
+:host([size='lg']) [part='dots'] .chip__dots-svg.vert {
+  width: 4px;
+  height: 18px;
+}
+
+.chip__overflow-text {
+  font-weight: var(--font-medium);
+}
+
+[part='remove'] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  border-radius: var(--radius-02);
+  line-height: 1;
+}
+
+[part='remove']:hover {
+  opacity: 0.85;
+}
+
+[part='remove']:focus-visible {
+  outline: 2px solid Highlight;
+  outline-offset: 1px;
+}
+
+slot {
+  display: inline;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+@media (forced-colors: active) {
+  :host {
+    background-color: ButtonFace;
+    color: ButtonText;
+    border: var(--border-width-thin) solid ButtonText;
+  }
+  :host([variant='outline']) {
+    background-color: Canvas;
+    color: ButtonText;
+    border-color: ButtonText;
+  }
+  :host([selected]) {
+    outline: 2px solid Highlight;
+    outline-offset: 1px;
+    box-shadow: none;
+  }
+  :host(:focus-visible) {
+    outline: 2px solid Highlight;
+    outline-offset: 2px;
+    box-shadow: none;
+  }
+  :host([disabled]) {
+    color: GrayText;
+    border-color: GrayText;
+  }
+}

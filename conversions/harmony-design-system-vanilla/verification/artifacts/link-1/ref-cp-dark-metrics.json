@@ -1,0 +1,129 @@
+{
+  "htmlTheme": [
+    "theme-cp",
+    "dark"
+  ],
+  "headings": [
+    "H1:Harmony CP Design System",
+    "H1:Links",
+    "H2:Examples",
+    "H3:Basic Link",
+    "H3:Size variants",
+    "H3:External Link",
+    "H3:Muted Link",
+    "H2:Props",
+    "H2:Accessibility",
+    "H3:Semantic HTML",
+    "H3:Keyboard Navigation",
+    "H3:External Links",
+    "H3:Focus Indicators"
+  ],
+  "samples": {
+    "documentation": {
+      "text": "documentation",
+      "className": "link link--medium",
+      "color": "rgb(173, 208, 255)",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "textDecorationLine": "none",
+      "target": null,
+      "rel": null,
+      "href": "#",
+      "w": 96,
+      "h": 17
+    },
+    "Small link": {
+      "text": "Small link",
+      "className": "link link--small",
+      "color": "rgb(173, 208, 255)",
+      "fontSize": "12px",
+      "fontWeight": "400",
+      "textDecorationLine": "none",
+      "target": null,
+      "rel": null,
+      "href": "#",
+      "w": 50,
+      "h": 14
+    },
+    "Medium link": {
+      "text": "Medium link",
+      "className": "link link--medium",
+      "color": "rgb(173, 208, 255)",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "textDecorationLine": "none",
+      "target": null,
+      "rel": null,
+      "href": "#",
+      "w": 75,
+      "h": 17
+    },
+    "Large link": {
+      "text": "Large link",
+      "className": "link link--large",
+      "color": "rgb(173, 208, 255)",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "textDecorationLine": "none",
+      "target": null,
+      "rel": null,
+      "href": "#",
+      "w": 68,
+      "h": 19
+    },
+    "GitHub": {
+      "text": "GitHub",
+      "className": "link link--medium",
+      "color": "rgb(173, 208, 255)",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "textDecorationLine": "none",
+      "target": "_blank",
+      "rel": "noopener noreferrer",
+      "href": "https://github.com",
+      "w": 62,
+      "h": 17
+    },
+    "Privacy Policy": {
+      "text": "Privacy Policy",
+      "className": "link link--medium link--muted",
+      "color": "rgb(187, 187, 198)",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "textDecorationLine": "none",
+      "target": null,
+      "rel": null,
+      "href": "#",
+      "w": 86,
+      "h": 17
+    },
+    "Terms of Service": {
+      "text": "Terms of Service",
+      "className": "link link--medium link--muted",
+      "color": "rgb(187, 187, 198)",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "textDecorationLine": "none",
+      "target": null,
+      "rel": null,
+      "href": "#",
+      "w": 105,
+      "h": 17
+    },
+    "Link with .btn": null
+  },
+  "extIcon": {
+    "tag": "svg",
+    "className": "[object SVGAnimatedString]",
+    "color": "rgb(173, 208, 255)",
+    "w": 12,
+    "h": 12,
+    "display": "inline-flex",
+    "marginInlineStart": "4px"
+  },
+  "linkCount": 59,
+  "mutedVsBasic": {
+    "muted": "rgb(187, 187, 198)",
+    "basic": "rgb(173, 208, 255)"
+  }
+}

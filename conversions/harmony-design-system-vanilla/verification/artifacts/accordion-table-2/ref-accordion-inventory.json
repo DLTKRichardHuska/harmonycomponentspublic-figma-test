@@ -1,0 +1,94 @@
+{
+  "title": "Accordion | Design System",
+  "productClass": [
+    "theme-cp"
+  ],
+  "headings": [
+    {
+      "tag": "H1",
+      "text": "Harmony CP Design System"
+    },
+    {
+      "tag": "H1",
+      "text": "Accordion"
+    },
+    {
+      "tag": "H2",
+      "text": "Examples"
+    },
+    {
+      "tag": "H3",
+      "text": "Basic Accordion"
+    },
+    {
+      "tag": "H3",
+      "text": "With Label"
+    },
+    {
+      "tag": "H3",
+      "text": "With Default Open"
+    },
+    {
+      "tag": "H3",
+      "text": "Allow Multiple"
+    },
+    {
+      "tag": "H3",
+      "text": "Disabled Sections"
+    },
+    {
+      "tag": "H3",
+      "text": "Focus"
+    },
+    {
+      "tag": "H2",
+      "text": "Props"
+    },
+    {
+      "tag": "H2",
+      "text": "Accessibility"
+    },
+    {
+      "tag": "H3",
+      "text": "Keyboard Navigation"
+    },
+    {
+      "tag": "H3",
+      "text": "ARIA Attributes"
+    },
+    {
+      "tag": "H3",
+      "text": "Screen Reader Support"
+    }
+  ],
+  "accordionHosts": 0,
+  "accordionItems": 0,
+  "tables": [
+    {
+      "w": 1048,
+      "h": 229,
+      "top": 2557,
+      "rows": 5,
+      "headers": [
+        "Prop",
+        "Type",
+        "Default",
+        "Description"
+      ]
+    }
+  ],
+  "pageDisplay": null,
+  "pageH": null,
+  "pageW": null,
+  "bodyScroll": 1100,
+  "hasA11y": true,
+  "hasApi": true,
+  "hasCostpointNote": false,
+  "hasDisabled": true,
+  "hasAllowMultiple": true,
+  "hasDefaultOpen": true,
+  "hasFocus": true,
+  "hasWithLabel": true,
+  "textHead": "// Immediately apply saved theme to prevent flash\n    (function() {\n      const savedTheme = localStorage.getItem('theme') || 'dark';\n      const savedColorTheme = localStorage.getItem('colorTheme') || 'cp';\n      if (savedTheme === 'dark') document.documentElement.classList.add('dark');\n      document.documentElement.classList.add('theme-' + savedColorTheme);\n    })();\nAccordion | Design System\n@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Lexend:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');\n/**\r\n * Harmony Design System - Global Styles\r\n * \r\n * This file imports all CSS modules in the correct order.\r\n */\r\n\r\n/* 1. Design Tokens (CSS Variables) */\r\n/**\r\n * Harmony Design System - Design Tokens\r\n * \r\n * This file contains all CSS custom properties (variables) organized by:\r\n * - Base tokens (fonts, shadows)\r\n * - Theme-specific tokens (CP, VP, PPM, Maconomy)\r\n * - Each theme has light and dark mode variants\r\n * - Semantic colors (success, warning, error, info) are theme-aware with separate light/dark values\r\n */\r\n\r\n/* ===========================================\r\n   BASE TOKENS - Shared across all themes\r\n   =========================================== */\r\n\r\n:root {\r\n  /* Fonts */\r\n  --font-sans: 'Figtree', sans-serif;\r\n  --font-display: 'Lexend', sans-serif;\r\n  --font-mono: 'JetBrains Mono', monospace;\r\n\r\n  /* Font Sizes */\r\n  --text-xs: 0.75rem;\r\n  --text-sm: 0.875rem;\r\n  --text-base: 1rem;\r\n  --text-lg: 1.125rem;\r\n  --text-xl: 1.25rem;\r\n  --text-2xl: 1.5rem;\r\n  --text-3xl: 1.875rem;\r\n  --text-4xl: 2.25rem;\r\n  --text-5xl: 3rem;\r\n  --text-6xl: 3.75rem;\r\n\r\n  /* Type Scale - Display */\r\n  --display-xl: 3.75rem;    /* 60px */\r\n  --display-l: 3rem;        /* 48px */\r\n  --display-m: 2.25rem;     /* 36px */\r\n\r\n  /* Type Scale - Headings */\r\n  --heading-xl: 1.875rem;   /* 30px */\r\n  --heading-l: 1.5rem;      /* 24px */\r\n  --heading-m: 1.25rem;     /* 20px */\r\n  --heading-s: 1.125rem;    /* 18px */\r\n\r\n  /* Type Scale - Body */\r\n  --body-default: 1rem;     /* 16px */\r\n  --body-emphasized: 1rem;  /* 16px - uses semibold weight */\r\n\r\n  /* Type Scale - Supporting */\r\n  --caption: 0.75rem;       /* 12px */\r\n  --label: 0.875rem;        /* 14px */\r\n  --overline: 0.625rem;     /* 10px */\r\n  --text-13: 0.8125rem;     /* 13px - for compact variants */\r\n\r\n  /* Font Weights */\r\n  --font-light: 300;\r\n  --font-normal: 400;\r\n  --font-medium: 500;\r\n  --font-semibold: 600;\r\n  --font-bold: 700;\r\n  --font-extrabold: 800;\r\n\r\n  /* Line Heights */\r\n  --leading-none: 1;\r\n  --leading-tight: 1.25;\r\n  --leading-snug: 1.375;\r\n  --leading-normal: 1.5;\r\n  --leading-relaxed: 1.625;\r\n\r\n  /* Spacing Scale (4px base) */\r\n  --space-0: 0;\r\n  --space-0-5: 2px;\r\n  --space-1: 4px;\r\n  --space-1-5: 6px;\r\n  --space-2: 8px;\r\n  --space-2-5: 10px;\r\n  --space-3: 12px;\r\n  --space-3-5: 14px;\r\n  --space-4: 16px;\r\n  --space-5: 20px;\r\n  --space-6: 24px;\r\n  --space-7: 28px;\r\n  --space-8: 32px;\r\n  --space-9: 36px;\r\n  --space-10: 40px;\r\n  --space-11: 44px;\r\n  --space-12: 48px;\r\n  --space-14: 56px;\r\n  --space-16: 64px;\r\n  --space-20: 80px;\r\n  --space-24: 96px;\r\n  \r\n  /* Component-specific spacing tokens */\r\n  --shell-header-height: 56px;\r\n  --shell-footer-height-default: 48px;\r\n  --shell-footer-height-compact: 40px;\r\n  --shell-layout-padding-top: 88px;\r\n  --shell-layout-padding-side-default: 52px;\r\n  --shell-layout-padding-side-standard: 52px;\r\n  --shell-layout-padding-side-tablet: 32px;\r\n  --shell-layout-padding-side-mobile: 16px;\r\n  --sidebar-width: 52px;\r\n  --left-sidebar-width-compact: 44px;\r\n  --right-sidebar-width-compact: 44px;\r\n  --left-sidebar-icon-size-compact: 20px;\r\n  --right-sidebar-icon-size-compact: 20px;\r\n  --right-sidebar-dela-size-compact: 28px;\r\n  --dropdown-min-width: 200px;\r\n  --dropdown-max-height: 400px;\r\n  --panel-width-narrow: 596px;\r\n  --panel-width-full: 1300px;\r\n  --table-min-width: 600px;\r\n  --border-width-thin: 1px;\r\n  --border-width-standard: 2px;\r\n  --border-width-me",
+  "textTail": "v\",\"icon\":\"ti-navigation\"},{\"title\":\"Kanban\",\"href\":\"/cp/kanban\",\"icon\":\"ti-layout-kanban\"}],\"companies\":[{\"id\":\"acme-corp\",\"name\":\"Acme Corporation\",\"gradientColor\":\"#FF507B\"},{\"id\":\"ocean-industries\",\"name\":\"Ocean Industries\",\"gradientColor\":\"#285F8C\"},{\"id\":\"violet-systems\",\"name\":\"Violet Systems\",\"gradientColor\":\"#DC50FF\"},{\"id\":\"azure-dynamics\",\"name\":\"Azure Dynamics\",\"gradientColor\":\"#5077FF\"},{\"id\":\"sunset-corporation\",\"name\":\"Sunset Corporation\",\"gradientColor\":\"#FFAF50\"}]},\"vp\":{\"name\":\"VP\",\"fullName\":\"Harmony VP Design System\",\"primaryColor\":\"#2A78C6\",\"components\":[],\"companies\":[{\"id\":\"vendor-a\",\"name\":\"Vendor A\",\"gradientColor\":\"#10B981\"},{\"id\":\"vendor-b\",\"name\":\"Vendor B\",\"gradientColor\":\"#F59E0B\"}]},\"ppm\":{\"name\":\"PPM\",\"fullName\":\"Harmony PPM Design System\",\"primaryColor\":\"#0073E6\",\"components\":[],\"companies\":[{\"id\":\"project-alpha\",\"name\":\"Project Alpha\",\"gradientColor\":\"#8B5CF6\"},{\"id\":\"project-beta\",\"name\":\"Project Beta\",\"gradientColor\":\"#EC4899\"}]},\"maconomy\":{\"name\":\"Maconomy\",\"fullName\":\"Harmony Maconomy Design System\",\"primaryColor\":\"#0073E6\",\"components\":[],\"companies\":[{\"id\":\"consulting-firm\",\"name\":\"Consulting Firm\",\"gradientColor\":\"#0073E6\"}]}};\nconst currentPath = \"/components/accordion\";\n\n    // Theme-specific component configuration (made global for access from other scripts)\n    window.themeComponentConfig = themeConfig;\n    window.currentPagePath = currentPath;\n    \n    // Function to render theme-specific navigation (made global)\n    window.renderThemeSpecificNav = function(themeName) {\n      const themeNav = document.getElementById('theme-specific-nav');\n      if (!themeNav) return;\n      \n      const config = window.themeComponentConfig[themeName];\n      if (!config || !config.components || config.components.length === 0) {\n        themeNav.innerHTML = '';\n        return;\n      }\n      \n      const sectionTitle = `${config.name} Components`;\n      let html = `\n        <div class=\"nav__section-title\">\n          ${sectionTitle}\n        </div>\n      `;\n      \n      config.components.forEach(item => {\n        const isActive = window.currentPagePath === item.href || window.currentPagePath === item.href + '/';\n        const activeClass = isActive ? 'is-active' : '';\n        \n        html += `\n          <a href=\"${item.href}\" class=\"nav__item ${activeClass}\">\n            <i class=\"ti ${item.icon} nav__item-icon\"></i>\n            ${item.title}\n          </a>\n        `;\n      });\n      \n      themeNav.innerHTML = html;\n    };\n  })();"
+}

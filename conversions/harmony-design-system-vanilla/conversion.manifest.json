@@ -1,0 +1,1341 @@
+{
+  "id": "harmony-design-system-vanilla",
+  "name": "Harmony Design System — Vanilla Web",
+  "type": "component-library",
+  "status": "dev-in-progress",
+  "description": "Harmony Design System for frameworkless modern browsers — native HTML + CSS recipes, optional hybrid helpers, Custom Elements, native ESM. Dual consume: npm and static zip. WCAG 2.3 AA.",
+  "converterId": "harmony-design-system-vanilla",
+  "referenceVersion": "0.9.0-in-progress",
+  "referenceVersionSetAt": "2026-09-03T23:17:54.779Z",
+  "independence": {
+    "standalone": true,
+    "layout": "npm-workspace",
+    "packagePath": "packages/ui",
+    "demoPath": "apps/demo"
+  },
+  "projectRoot": ".",
+  "elements": {
+    "Colors": {
+      "status": "synced",
+      "harmonySource": "src/pages/foundation/colors.astro",
+      "strategy": "native",
+      "userDecision": {
+        "strategy": "native",
+        "approach": "Flattened product styles.css; CSS vars on :root/.dark; demo swaps stylesheet; Theme JS initColorScheme uses prefers-color-scheme until persistColorScheme",
+        "consumerApi": "styles.css + var(--*); setColorScheme/getColorScheme/toggleColorScheme/initColorScheme/persistColorScheme; no foundation Custom Elements; no JS token modules",
+        "gaps": [
+          "No JS/JSON token modules (accepted)",
+          "Demo compares products via stylesheet swap not multi-palette page (accepted)",
+          "Decorative Icons as inline SVG until Icon synced (accepted)",
+          "Dela deferred (not-started, not skip)"
+        ]
+      },
+      "gaps": [
+        "No JS/JSON token modules (accepted)",
+        "Demo compares products via stylesheet swap not multi-palette page (accepted)",
+        "Decorative Icons as inline SVG until Icon synced (accepted)",
+        "Dela deferred (not-started, not skip)"
+      ],
+      "notes": "Foundation CSS tokens via product-once flatten; verified via demo pages reading computed vars. Forced-colors layer in product styles.css — forced-colors-1 build PASS + human accepted 2026-09-09.",
+      "syncedAt": "2026-09-04T02:01:47.326Z",
+      "verification": {
+        "lastReport": "verification/reports/foundation-2.md",
+        "result": "PASS",
+        "acceptedAt": "2026-09-04T02:01:47.326Z",
+        "note": "Human execute approval + verifier PASS (foundation-2)"
+      }
+    },
+    "Typography": {
+      "status": "synced",
+      "harmonySource": "src/pages/foundation/typography.astro",
+      "strategy": "native",
+      "userDecision": {
+        "strategy": "native",
+        "approach": "Flattened product styles.css; CSS vars on :root/.dark; demo swaps stylesheet; Theme JS initColorScheme uses prefers-color-scheme until persistColorScheme. Reset (port of src/styles/reset.css, no bundled fonts) then typography (element defaults + type-style classes) appended to styles.css by build-product.mjs and mirrored to an ESM string for Shadow DOM. Reset, shipped elements, and demo components use Harmony color, spacing, radius, border-width, shadow, and transition tokens instead of literal styling values.",
+        "consumerApi": "styles.css = tokens + Harmony reset + typography type styles/classes; var(--*); typography classes ported from reference utilities.css (.text-display-*, .text-heading-*, .text-body-*, .text-label, .text-caption, .text-overline, .font-*, .text-xs..5xl, .leading-*); element defaults h1-h6 -> Heading XL..S, p -> Body Default, label -> Label, small -> Caption, code/pre/kbd/samp -> mono, strong/b -> semibold; typographySheet + typographyCss (reset + typography) for Shadow DOM; setColorScheme/getColorScheme/toggleColorScheme/initColorScheme/persistColorScheme; no foundation Custom Elements; no JS token modules",
+        "gaps": [
+          "No JS/JSON token modules (accepted)",
+          "Demo compares products via stylesheet swap not multi-palette page (accepted)",
+          "Decorative Icons as inline SVG until Icon synced (accepted)",
+          "Dela deferred (not-started, not skip)",
+          "Element defaults deviate from reference reset.css, which gives h1-h6 display font/bold/tight with browser sizes and no type-style size (user approved 2026-09-09: heading-first tag mapping)",
+          "Display type styles are class-only — no tag maps to Display (user approved 2026-09-09)",
+          "No .leading-snug or .font-extrabold class — matches reference utilities.css (accepted)",
+          "Reset omits Google Fonts @import from reference reset.css — host loads fonts (accepted)",
+          "Reset adds `pre code { color: inherit }` (reference omits it) so a themed pre is not overridden by the inline code color; renders identically under reference tokens",
+          "Reset enumerates the margin/padding reset (`:where(body, h1-h6, p, ul, ol, pre, fieldset, table, form controls, ...)`) instead of the reference `* { margin: 0; padding: 0 }`: a universal rule in the document tree also matches Custom Elements, and normal document declarations beat a shadow root's `:host` rules, so `*` zeroed the host padding/margin of every shipped element. Same result for plain HTML",
+          "Reset keeps list markers (`ul` disc, `ol` decimal, `padding-inline-start: var(--space-6)`) instead of the reference `ul, ol { list-style: none }` (user requested 2026-09-09: lists should read as lists). Components that use a list for structure — nav, tab strip, menu — set `list-style: none` in their own styles. Nested `ul` stays disc rather than the browser circle/square ramp"
+        ]
+      },
+      "gaps": [
+        "No JS/JSON token modules (accepted)",
+        "Demo compares products via stylesheet swap not multi-palette page (accepted)",
+        "Decorative Icons as inline SVG until Icon synced (accepted)",
+        "Dela deferred (not-started, not skip)",
+        "Element defaults deviate from reference reset.css, which gives h1-h6 display font/bold/tight with browser sizes and no type-style size (user approved 2026-09-09: heading-first tag mapping)",
+        "Display type styles are class-only — no tag maps to Display (user approved 2026-09-09)",
+        "No .leading-snug or .font-extrabold class — matches reference utilities.css (accepted)",
+        "Reset omits Google Fonts @import from reference reset.css — host loads fonts (accepted)",
+        "Reset adds `pre code { color: inherit }` (reference omits it) so a themed pre is not overridden by the inline code color; renders identically under reference tokens",
+        "Reset enumerates the margin/padding reset (`:where(body, h1-h6, p, ul, ol, pre, fieldset, table, form controls, ...)`) instead of the reference `* { margin: 0; padding: 0 }`: a universal rule in the document tree also matches Custom Elements, and normal document declarations beat a shadow root's `:host` rules, so `*` zeroed the host padding/margin of every shipped element. Same result for plain HTML",
+        "Reset keeps list markers (`ul` disc, `ol` decimal, `padding-inline-start: var(--space-6)`) instead of the reference `ul, ol { list-style: none }` (user requested 2026-09-09: lists should read as lists). Components that use a list for structure — nav, tab strip, menu — set `list-style: none` in their own styles. Nested `ul` stays disc rather than the browser circle/square ramp"
+      ],
+      "notes": "Foundation CSS tokens via product-once flatten; verified via demo pages reading computed vars. Forced-colors layer in product styles.css — forced-colors-1 build PASS + human accepted 2026-09-09. Consumer API extended 2026-09-09 with typography element defaults + type-style classes + typographySheet (user sign-off); reset included 2026-09-09 (user requested full reset); color/spacing token audit applied across reset, package elements, and demo on 2026-09-09. Structural zeroes, percentages, responsive/content constraints, SVG geometry, and forced-colors system keywords remain literal by design. Human accepted typography + reset 2026-09-09.",
+      "syncedAt": "2026-09-09T23:06:00.000Z",
+      "verification": {
+        "lastReport": "verification/reports/foundation-2.md",
+        "result": "PASS",
+        "acceptedAt": "2026-09-09T23:06:00.000Z",
+        "note": "Human visual acceptance of typography/reset 2026-09-09; prior verifier PASS foundation-2"
+      }
+    },
+    "Spacing": {
+      "status": "synced",
+      "harmonySource": "src/pages/foundation/spacing.astro",
+      "strategy": "native",
+      "userDecision": {
+        "strategy": "native",
+        "approach": "Flattened product styles.css; CSS vars on :root/.dark; demo swaps stylesheet; Theme JS initColorScheme uses prefers-color-scheme until persistColorScheme",
+        "consumerApi": "styles.css + var(--*); setColorScheme/getColorScheme/toggleColorScheme/initColorScheme/persistColorScheme; no foundation Custom Elements; no JS token modules",
+        "gaps": [
+          "No JS/JSON token modules (accepted)",
+          "Demo compares products via stylesheet swap not multi-palette page (accepted)",
+          "Decorative Icons as inline SVG until Icon synced (accepted)",
+          "Dela deferred (not-started, not skip)"
+        ]
+      },
+      "gaps": [
+        "No JS/JSON token modules (accepted)",
+        "Demo compares products via stylesheet swap not multi-palette page (accepted)",
+        "Decorative Icons as inline SVG until Icon synced (accepted)",
+        "Dela deferred (not-started, not skip)"
+      ],
+      "notes": "Foundation CSS tokens via product-once flatten; verified via demo pages reading computed vars. Forced-colors layer in product styles.css — forced-colors-1 build PASS + human accepted 2026-09-09.",
+      "syncedAt": "2026-09-04T02:01:47.326Z",
+      "verification": {
+        "lastReport": "verification/reports/foundation-2.md",
+        "result": "PASS",
+        "acceptedAt": "2026-09-04T02:01:47.326Z",
+        "note": "Human execute approval + verifier PASS (foundation-2)"
+      }
+    },
+    "Elevations": {
+      "status": "synced",
+      "harmonySource": "src/pages/foundation/elevations.astro",
+      "strategy": "native",
+      "userDecision": {
+        "strategy": "native",
+        "approach": "Flattened product styles.css; CSS vars on :root/.dark; demo swaps stylesheet; Theme JS initColorScheme uses prefers-color-scheme until persistColorScheme",
+        "consumerApi": "styles.css + var(--*); setColorScheme/getColorScheme/toggleColorScheme/initColorScheme/persistColorScheme; no foundation Custom Elements; no JS token modules",
+        "gaps": [
+          "No JS/JSON token modules (accepted)",
+          "Demo compares products via stylesheet swap not multi-palette page (accepted)",
+          "Decorative Icons as inline SVG until Icon synced (accepted)",
+          "Dela deferred (not-started, not skip)"
+        ]
+      },
+      "gaps": [
+        "No JS/JSON token modules (accepted)",
+        "Demo compares products via stylesheet swap not multi-palette page (accepted)",
+        "Decorative Icons as inline SVG until Icon synced (accepted)",
+        "Dela deferred (not-started, not skip)"
+      ],
+      "notes": "Foundation CSS tokens via product-once flatten; verified via demo pages reading computed vars. Forced-colors layer in product styles.css — forced-colors-1 build PASS + human accepted 2026-09-09.",
+      "syncedAt": "2026-09-04T02:01:47.326Z",
+      "verification": {
+        "lastReport": "verification/reports/foundation-2.md",
+        "result": "PASS",
+        "acceptedAt": "2026-09-04T02:01:47.326Z",
+        "note": "Human execute approval + verifier PASS (foundation-2)"
+      }
+    },
+    "Dela": {
+      "status": "not-started",
+      "harmonySource": "src/pages/foundation/dela.astro",
+      "notes": "Deferred from foundation execute; placeholder remains; not skip"
+    },
+    "ShellLayout": {
+      "status": "not-started",
+      "harmonySource": "src/layouts/ShellLayout.astro"
+    },
+    "Button": {
+      "status": "synced",
+      "harmonySource": "src/components/ui/Button.astro",
+      "strategy": "hybrid",
+      "userDecision": {
+        "strategy": "hybrid",
+        "approach": "Default Harmony look on button and input[type=button|submit|reset]; .btn opt-in for a and other tags; optional light-DOM harmony-button maps attrs to classes; formAssociated; private spinner; icons via harmony-icon; buttonSheet for Shadow hosts",
+        "consumerApi": "Native: unclassed button/input button-types = primary+md; modifiers .btn--* without requiring .btn on built-ins; a.btn for links. CE: harmony-button attrs variant, button-type, size, orientation, disabled, loading, loading-text, icon, icon-position, type, full-width; no href",
+        "gaps": [
+          "dela / dela-pill + Stars deferred until foundation Dela synced (accepted)",
+          "No href on harmony-button — use native a.btn (accepted)",
+          "Loading uses private .btn__spinner SVG, not catalog Spinner (accepted)"
+        ]
+      },
+      "gaps": [
+        "dela / dela-pill + Stars deferred until foundation Dela synced (accepted)",
+        "No href on harmony-button — use native a.btn (accepted)",
+        "Loading uses private .btn__spinner SVG, not catalog Spinner (accepted)"
+      ],
+      "notes": "Implemented and verifier PASS on 2026-09-10; human visual acceptance 2026-09-10.",
+      "syncedAt": "2026-09-10T14:49:00.000Z",
+      "verification": {
+        "lastReport": "verification/reports/Button-2.md",
+        "result": "PASS",
+        "acceptedAt": "2026-09-10T14:49:00.000Z",
+        "note": "Human visual acceptance after Button-2 PASS"
+      }
+    },
+    "ButtonGroup": {
+      "status": "synced",
+      "harmonySource": "src/components/ui/ButtonGroup.astro",
+      "strategy": "hybrid",
+      "userDecision": {
+        "strategy": "hybrid",
+        "approach": "Native .btn-group recipe matching unclassed button / button-type input / harmony-button / .btn; optional light-DOM harmony-button-group maps variant/size/orientation",
+        "consumerApi": "Native: div.btn-group.btn-group--{default|outline}.{size}.{orientation} role=group wrapping Button children. CE: harmony-button-group attrs variant, size, orientation; slot = buttons",
+        "gaps": []
+      },
+      "gaps": [],
+      "notes": "controls-nav-batch plan execute 2026-09-11",
+      "syncedAt": "2026-09-11T17:22:22.570Z",
+      "verification": {
+        "lastReport": "verification/reports/controls-nav-hybrid-2.md",
+        "result": "PASS",
+        "acceptedAt": "2026-09-11T17:22:22.570Z",
+        "note": "Verifier PASS controls-nav-*-2; execute complete 2026-09-11"
+      }
+    },
+    "Input": {
+      "status": "synced",
+      "harmonySource": "src/components/ui/Input.astro",
+      "strategy": "web-component",
+      "userDecision": {
+        "strategy": "web-component",
+        "approach": "Dual path: native text-like input defaults + harmony-input Shadow CE (formAssociated, delegatesFocus); icons/trailing/error/label; label-variant outside harmony-form-layout; layout owns label position inside it",
+        "consumerApi": "Native: type selectors + .input/.input-wrapper*. CE: harmony-input attrs type,name,value,placeholder,disabled,required,readonly,error,error-message,icon,trailing-icon,label,label-variant; trailing slot; input/change. Layout: harmony-form-layout label-layout inline|stacked + harmony-form-row columns for multi-field rows",
+        "gaps": [
+          "No Astro auto-id (accepted)",
+          "Inner control not HTMLInputElement — ElementInternals (accepted)",
+          "Specialty NumberInput/RangeInput/DateInput out of scope"
+        ]
+      },
+      "gaps": [
+        "No Astro auto-id (accepted)",
+        "Inner control not HTMLInputElement — ElementInternals (accepted)",
+        "Specialty NumberInput/RangeInput/DateInput out of scope"
+      ],
+      "notes": "Cycle with Label/Textarea. Human visual accept 2026-09-10 after Input-2 PASS.",
+      "syncedAt": "2026-09-10T23:35:00.000Z",
+      "verification": {
+        "lastReport": "verification/reports/Input-2.md",
+        "result": "PASS",
+        "acceptedAt": "2026-09-10T23:35:00.000Z",
+        "note": "Human visual acceptance after Input-2 PASS (joint Label/Input/Textarea cycle)"
+      }
+    },
+    "Textarea": {
+      "status": "synced",
+      "harmonySource": "src/components/ui/Textarea.astro",
+      "strategy": "web-component",
+      "userDecision": {
+        "strategy": "web-component",
+        "approach": "Dual path: native textarea defaults + harmony-textarea Shadow CE; error/label parity with Input; label-variant outside harmony-form-layout",
+        "consumerApi": "Native: textarea + .textarea + wrappers. CE: harmony-textarea attrs name,value,placeholder,disabled,required,readonly,rows,error,error-message,label,label-variant; input/change",
+        "gaps": [
+          "No Astro auto-id (accepted)",
+          "Inner control not HTMLTextAreaElement — ElementInternals (accepted)"
+        ]
+      },
+      "gaps": [
+        "No Astro auto-id (accepted)",
+        "Inner control not HTMLTextAreaElement — ElementInternals (accepted)"
+      ],
+      "notes": "Cycle with Label/Input. Human visual accept 2026-09-10 after Input-2 PASS.",
+      "syncedAt": "2026-09-10T23:35:00.000Z",
+      "verification": {
+        "lastReport": "verification/reports/Input-2.md",
+        "result": "PASS",
+        "acceptedAt": "2026-09-10T23:35:00.000Z",
+        "note": "Human visual acceptance after Input-2 PASS (joint Label/Input/Textarea cycle)"
+      }
+    },
+    "NumberInput": {
+      "status": "not-started",
+      "harmonySource": "src/components/ui/NumberInput.astro"
+    },
+    "RangeInput": {
+      "status": "not-started",
+      "harmonySource": "src/components/ui/RangeInput.astro"
+    },
+    "Checkbox": {
+      "status": "synced",
+      "harmonySource": "src/components/ui/Checkbox.astro",
+      "strategy": "web-component",
+      "userDecision": {
+        "strategy": "web-component",
+        "approach": "Dual path: native input[type=checkbox] CSS + form-associated harmony-checkbox; form-layout participant like harmony-input; indeterminate property; field id optional",
+        "consumerApi": "Native: input[type=checkbox]. CE: harmony-checkbox attrs name,value,checked,disabled,required,id,label,label-variant,error,error-message,warning,warning-message; indeterminate property; input/change; form-layout",
+        "gaps": [
+          "CheckboxGroup out of scope (later)",
+          "No Astro auto-id (accepted)"
+        ]
+      },
+      "gaps": [
+        "CheckboxGroup out of scope (later)",
+        "No Astro auto-id (accepted)"
+      ],
+      "notes": "controls-nav-batch. Human style tweaks + visual accept 2026-09-11 (form-layout label order, optional id, label click).",
+      "syncedAt": "2026-09-11T18:57:00.000Z",
+      "verification": {
+        "lastReport": "verification/reports/controls-nav-form-2.md",
+        "result": "PASS",
+        "acceptedAt": "2026-09-11T18:57:00.000Z",
+        "note": "Human visual acceptance after style tweaks 2026-09-11; prior verifier PASS controls-nav-form-2"
+      }
+    },
+    "CheckboxGroup": {
+      "status": "not-started",
+      "harmonySource": "src/components/ui/CheckboxGroup.astro"
+    },
+    "RadioButton": {
+      "status": "synced",
+      "harmonySource": "src/components/ui/RadioButton.astro",
+      "strategy": "web-component",
+      "userDecision": {
+        "strategy": "web-component",
+        "approach": "Dual path: native input[type=radio] CSS + form-associated harmony-radio; size sm/md/lg; exclusive grouping via shared name (form or same root); form-layout participant; field id optional",
+        "consumerApi": "Native: input[type=radio]. CE: harmony-radio attrs name,value,checked,disabled,required,id,label,label-variant,size,error,error-message,warning,warning-message; input/change; form-layout",
+        "gaps": [
+          "RadioGroup out of scope (later)",
+          "No Astro auto-id (accepted)"
+        ]
+      },
+      "gaps": [
+        "RadioGroup out of scope (later)",
+        "No Astro auto-id (accepted)"
+      ],
+      "notes": "controls-nav-batch. Human style tweaks + visual accept 2026-09-11 (name exclusivity outside form, optional id, label click).",
+      "syncedAt": "2026-09-11T18:57:00.000Z",
+      "verification": {
+        "lastReport": "verification/reports/controls-nav-form-2.md",
+        "result": "PASS",
+        "acceptedAt": "2026-09-11T18:57:00.000Z",
+        "note": "Human visual acceptance after style tweaks 2026-09-11; prior verifier PASS controls-nav-form-2"
+      }
+    },
+    "RadioGroup": {
+      "status": "not-started",
+      "harmonySource": "src/components/ui/RadioGroup.astro"
+    },
+    "Toggle": {
+      "status": "synced",
+      "harmonySource": "src/components/ui/Toggle.astro",
+      "strategy": "web-component",
+      "userDecision": {
+        "strategy": "web-component",
+        "approach": "CE-only harmony-toggle; form-associated; default + segmented variants; form-layout participant; no native checkbox restyle as switch; field id optional",
+        "consumerApi": "harmony-toggle attrs name,checked,disabled,id,label,label-variant,variant default|segmented, option-label-left/right, size sm|md; role=switch; input/change; form-layout",
+        "gaps": [
+          "No public .toggle recipe (accepted)",
+          "No Astro auto-id (accepted)"
+        ]
+      },
+      "gaps": [
+        "No public .toggle recipe (accepted)",
+        "No Astro auto-id (accepted)"
+      ],
+      "notes": "controls-nav-batch. Human style tweaks + visual accept 2026-09-11 (form-layout label order, optional id, label click).",
+      "syncedAt": "2026-09-11T18:57:00.000Z",
+      "verification": {
+        "lastReport": "verification/reports/controls-nav-form-2.md",
+        "result": "PASS",
+        "acceptedAt": "2026-09-11T18:57:00.000Z",
+        "note": "Human visual acceptance after style tweaks 2026-09-11; prior verifier PASS controls-nav-form-2"
+      }
+    },
+    "DateInput": {
+      "status": "synced",
+      "harmonySource": "src/components/ui/DateInput.astro",
+      "strategy": "web-component",
+      "userDecision": {
+        "strategy": "web-component",
+        "approach": "Open Shadow DOM form-associated field composing harmony-picker-popup and synced widgets; field height via --harmony-field-*; icon like input trailing icon; close on date/month/week only",
+        "consumerApi": "harmony-date-input attrs type,value,name,id,min,max,disabled,required,label,label-variant,time-format,locale; valueAsDate; events input,change (machine value); parts field,icon,popup; inherits setDateTimeDefaults / data-harmony-*",
+        "gaps": [
+          "No Astro auto-id (accepted)",
+          "No labelFor (accepted)",
+          "No automatic CP inline labels (accepted)",
+          "No native input type=date|time|datetime-local|month|week dual path (accepted)",
+          "time-format affects the popup clock only; field text stays 24-hour (accepted)",
+          "No error attr (accepted)"
+        ]
+      },
+      "gaps": [
+        "No Astro auto-id (accepted)",
+        "No labelFor (accepted)",
+        "No automatic CP inline labels (accepted)",
+        "No native input type=date|time|datetime-local|month|week dual path (accepted)",
+        "time-format affects the popup clock only; field text stays 24-hour (accepted)",
+        "No error attr (accepted)"
+      ],
+      "notes": "Verifier PASS date-input-1. Human visual accept 2026-09-11. Datetime defaults/helpers delta applied.",
+      "syncedAt": "2026-09-11T16:12:00.000Z",
+      "verification": {
+        "lastReport": "verification/reports/date-input-1.md",
+        "result": "PASS",
+        "acceptedAt": "2026-09-11T16:12:00.000Z",
+        "note": "Human visual acceptance after date-input-1 PASS"
+      }
+    },
+    "Label": {
+      "status": "synced",
+      "harmonySource": "src/components/ui/Label.astro",
+      "strategy": "native",
+      "userDecision": {
+        "strategy": "native",
+        "approach": "Native label.label recipe; .label--required; .label__helper span; no harmony-label",
+        "consumerApi": "label.label + .label--required + .label__helper; native for",
+        "gaps": [
+          "No harmony-label (accepted)"
+        ]
+      },
+      "gaps": [
+        "No harmony-label (accepted)"
+      ],
+      "notes": "Cycle with Input. Human visual accept 2026-09-10 after Input-2 PASS.",
+      "syncedAt": "2026-09-10T23:35:00.000Z",
+      "verification": {
+        "lastReport": "verification/reports/Input-2.md",
+        "result": "PASS",
+        "acceptedAt": "2026-09-10T23:35:00.000Z",
+        "note": "Human visual acceptance after Input-2 PASS (joint Label/Input/Textarea cycle)"
+      }
+    },
+    "Avatar": {
+      "status": "synced",
+      "harmonySource": "src/components/ui/Avatar.astro",
+      "strategy": "web-component",
+      "userDecision": {
+        "strategy": "web-component",
+        "approach": "harmony-avatar open Shadow DOM; initials normalize; interactive click + Enter/Space; no public .avatar recipe",
+        "consumerApi": "harmony-avatar attrs size, variant, initials, src, alt, interactive, disabled; parts icon/initials/image; click when interactive",
+        "gaps": [
+          "No public .avatar / button.avatar recipe (accepted)",
+          "No Astro demo-hover/focus staging classes (accepted)"
+        ]
+      },
+      "gaps": [
+        "No public .avatar / button.avatar recipe (accepted)",
+        "No Astro demo-hover/focus staging classes (accepted)"
+      ],
+      "notes": "Implemented and verifier PASS; plan execute approval 2026-09-10.",
+      "syncedAt": "2026-09-10T18:43:36.123Z",
+      "verification": {
+        "lastReport": "verification/reports/Avatar-2.md",
+        "result": "PASS",
+        "acceptedAt": "2026-09-10T18:43:36.123Z",
+        "note": "Verifier PASS + plan execute approval 2026-09-10"
+      }
+    },
+    "Card": {
+      "status": "synced",
+      "harmonySource": "src/components/ui/Card.astro",
+      "strategy": "hybrid",
+      "userDecision": {
+        "strategy": "hybrid",
+        "approach": "BEM .card recipe in product CSS; optional light-DOM harmony-card maps elevated/interactive/primary/title/subtitle and slot markers header|header-actions|footer; interactive CE sets role=button + Enter/Space; header actions compose ghost icon-xs; cardSheet for Shadow hosts",
+        "consumerApi": "Native: .card + .card--elevated|--interactive|--primary; regions .card__header|__header-content|__header-title|__header-subtitle|__header-actions|__body|__footer; no .card__icon-btn. CE: harmony-card attrs elevated, interactive, primary, title, subtitle; slot markers; interactive → role=button focus Enter/Space",
+        "gaps": [
+          "No Astro icon1/icon2/icon3 — compose ghost icon-only buttons (accepted)",
+          "No .card__icon-btn — muted Astro chrome delta accepted",
+          "Native .card--interactive is CSS only — consumer supplies real control (accepted)",
+          "Kanban Card / CP Kanban out of scope",
+          "title attribute also sets HTML tooltip (documented)"
+        ]
+      },
+      "gaps": [
+        "No Astro icon1/icon2/icon3 — compose ghost icon-only buttons (accepted)",
+        "No .card__icon-btn — muted Astro chrome delta accepted",
+        "Native .card--interactive is CSS only — consumer supplies real control (accepted)",
+        "Kanban Card / CP Kanban out of scope",
+        "title attribute also sets HTML tooltip (documented)"
+      ],
+      "notes": "Implemented and verifier PASS Card-2; human visual acceptance 2026-09-10 (labels-inputs plan).",
+      "syncedAt": "2026-09-10T21:05:00.000Z",
+      "verification": {
+        "lastReport": "verification/reports/Card-2.md",
+        "result": "PASS",
+        "acceptedAt": "2026-09-10T21:05:00.000Z",
+        "note": "Human visual acceptance during labels-inputs execute"
+      }
+    },
+    "Badge": {
+      "status": "synced",
+      "harmonySource": "src/components/ui/Badge.astro",
+      "strategy": "web-component",
+      "userDecision": {
+        "strategy": "web-component",
+        "approach": "harmony-badge open Shadow DOM; optional icon attr; disabled visual-only; no public .badge recipe",
+        "consumerApi": "harmony-badge attrs variant, size, icon; default slot label; part icon",
+        "gaps": [
+          "No public .badge recipe (accepted)",
+          "NotificationBadge out of scope (accepted)"
+        ]
+      },
+      "gaps": [
+        "No public .badge recipe (accepted)",
+        "NotificationBadge out of scope (accepted)"
+      ],
+      "notes": "Implemented and verifier PASS; plan execute approval 2026-09-10.",
+      "syncedAt": "2026-09-10T18:43:36.123Z",
+      "verification": {
+        "lastReport": "verification/reports/Badge-2.md",
+        "result": "PASS",
+        "acceptedAt": "2026-09-10T18:43:36.123Z",
+        "note": "Verifier PASS + plan execute approval 2026-09-10"
+      }
+    },
+    "NotificationBadge": {
+      "status": "synced",
+      "harmonySource": "src/components/ui/NotificationBadge.astro",
+      "strategy": "web-component",
+      "userDecision": {
+        "strategy": "web-component",
+        "approach": "Wrapping harmony-notification-badge like Tooltip; badge absolutely positioned on default-slot target; empty slot = standalone",
+        "consumerApi": "harmony-notification-badge attrs type,size,variant,value,border,position; default slot = target; part badge",
+        "gaps": [
+          "No public .notification-badge recipe (accepted)",
+          "Wrap API not in Astro (accepted include)"
+        ]
+      },
+      "gaps": [
+        "No public .notification-badge recipe (accepted)",
+        "Wrap API not in Astro (accepted include)"
+      ],
+      "notes": "controls-nav-batch plan execute 2026-09-11",
+      "syncedAt": "2026-09-11T17:22:22.570Z",
+      "verification": {
+        "lastReport": "verification/reports/controls-nav-hybrid-2.md",
+        "result": "PASS",
+        "acceptedAt": "2026-09-11T17:22:22.570Z",
+        "note": "Verifier PASS controls-nav-*-2; execute complete 2026-09-11"
+      }
+    },
+    "Chip": {
+      "status": "synced",
+      "harmonySource": "src/components/ui/Chip.astro",
+      "strategy": "web-component",
+      "userDecision": {
+        "strategy": "web-component",
+        "approach": "harmony-chip open Shadow DOM; body click + remove CustomEvent; selected controlled; no state attr; no public .chip recipe",
+        "consumerApi": "harmony-chip attrs size, variant, type, overflow-count, selected, removable, icon, disabled; events click + remove; parts icon/remove/dots",
+        "gaps": [
+          "No public .chip recipe (accepted)",
+          "No Astro state attr — CSS pseudo-states (accepted)"
+        ]
+      },
+      "gaps": [
+        "No public .chip recipe (accepted)",
+        "No Astro state attr — CSS pseudo-states (accepted)"
+      ],
+      "notes": "Implemented and verifier PASS; plan execute approval 2026-09-10.",
+      "syncedAt": "2026-09-10T18:43:36.123Z",
+      "verification": {
+        "lastReport": "verification/reports/Chip-2.md",
+        "result": "PASS",
+        "acceptedAt": "2026-09-10T18:43:36.123Z",
+        "note": "Verifier PASS + plan execute approval 2026-09-10"
+      }
+    },
+    "Alert": {
+      "status": "synced",
+      "harmonySource": "src/components/ui/Alert.astro",
+      "strategy": "web-component",
+      "userDecision": {
+        "strategy": "web-component",
+        "approach": "harmony-alert open Shadow DOM; dismiss CustomEvent; actions slot for DS buttons/links; progress-value composes harmony-progress; boolean enhanced",
+        "consumerApi": "harmony-alert attrs variant, enhanced, title, dismissible, icon, progress-value; slots default+actions; event dismiss; parts border/icon/title/message/close/actions/progress",
+        "gaps": [
+          "No primaryButton/linkText props — actions slot (accepted)",
+          "No auto-remove on dismiss — dismiss event only (accepted)",
+          "No public .alert recipe (accepted)",
+          "Boolean enhanced instead of Astro style prop (accepted)"
+        ]
+      },
+      "gaps": [
+        "No primaryButton/linkText props — actions slot (accepted)",
+        "No auto-remove on dismiss — dismiss event only (accepted)",
+        "No public .alert recipe (accepted)",
+        "Boolean enhanced instead of Astro style prop (accepted)"
+      ],
+      "notes": "Implemented and verifier PASS Alert-2; execute approval 2026-09-10.",
+      "syncedAt": "2026-09-10T19:15:31.000Z",
+      "verification": {
+        "lastReport": "verification/reports/Alert-2.md",
+        "result": "PASS",
+        "acceptedAt": "2026-09-10T19:15:31.000Z",
+        "note": "Verifier PASS + build alert execute request 2026-09-10"
+      }
+    },
+    "Tooltip": {
+      "status": "synced",
+      "harmonySource": "src/components/ui/Tooltip.astro",
+      "strategy": "web-component",
+      "userDecision": {
+        "strategy": "web-component",
+        "approach": "harmony-tooltip open Shadow DOM; absolute CSS port; hover+focus-within; Escape dismiss; text + content slot; aria-describedby light-DOM desc node",
+        "consumerApi": "harmony-tooltip attrs text, position, corner-variant; slots default+content; part content; no events",
+        "gaps": [
+          "No public .tooltip recipe (accepted)",
+          "No title-attribute tooltip API (accepted)",
+          "No show delay / click-to-pin / touch / Popover (accepted)"
+        ]
+      },
+      "gaps": [
+        "No public .tooltip recipe (accepted)",
+        "No title-attribute tooltip API (accepted)",
+        "No show delay / click-to-pin / touch / Popover (accepted)"
+      ],
+      "notes": "Implemented and verifier PASS Tooltip-2; execute approval 2026-09-10.",
+      "syncedAt": "2026-09-10T20:12:00.000Z",
+      "verification": {
+        "lastReport": "verification/reports/Tooltip-2.md",
+        "result": "PASS",
+        "acceptedAt": "2026-09-10T20:12:00.000Z",
+        "note": "Verifier PASS Tooltip-2 + plan execute approval 2026-09-10"
+      }
+    },
+    "Spinner": {
+      "status": "synced",
+      "harmonySource": "src/components/ui/Spinner.astro",
+      "strategy": "web-component",
+      "userDecision": {
+        "strategy": "web-component",
+        "approach": "harmony-spinner open Shadow DOM; CSS ring; ElementInternals status; no public .spinner recipe",
+        "consumerApi": "harmony-spinner attrs size sm|md|lg, label (default Loading); part spinner; no events",
+        "gaps": [
+          "No public .spinner recipe (accepted)",
+          "No events / determinate progress (use ProgressBar) (accepted)"
+        ]
+      },
+      "gaps": [
+        "No public .spinner recipe (accepted)",
+        "No events / determinate progress (use ProgressBar) (accepted)"
+      ],
+      "notes": "Implemented 2026-09-11 per approved plan. Verifier PASS Spinner-1.",
+      "syncedAt": "2026-09-11T19:30:00.000Z",
+      "verification": {
+        "lastReport": "verification/reports/Spinner-1.md",
+        "result": "PASS",
+        "acceptedAt": "2026-09-11T19:30:00.000Z",
+        "note": "Verifier PASS Spinner-1 + plan execute approval"
+      }
+    },
+    "ProgressBar": {
+      "status": "synced",
+      "harmonySource": "src/components/ui/ProgressBar.astro",
+      "strategy": "web-component",
+      "userDecision": {
+        "strategy": "web-component",
+        "approach": "harmony-progress open Shadow DOM; fill in shadow; ElementInternals progressbar; no HTML progress; no public .progress recipe",
+        "consumerApi": "harmony-progress attrs value, max, size, variant, show-label; parts track/bar/label; no events",
+        "gaps": [
+          "No HTML progress element (accepted)",
+          "No public .progress recipe (accepted)"
+        ]
+      },
+      "gaps": [
+        "No HTML progress element (accepted)",
+        "No public .progress recipe (accepted)"
+      ],
+      "notes": "Implemented and verifier PASS; plan execute approval 2026-09-10.",
+      "syncedAt": "2026-09-10T18:43:36.123Z",
+      "verification": {
+        "lastReport": "verification/reports/ProgressBar-2.md",
+        "result": "PASS",
+        "acceptedAt": "2026-09-10T18:43:36.123Z",
+        "note": "Verifier PASS + plan execute approval 2026-09-10"
+      }
+    },
+    "Table": {
+      "status": "synced",
+      "harmonySource": "src/components/ui/Table.astro",
+      "strategy": "hybrid",
+      "userDecision": {
+        "strategy": "hybrid",
+        "approach": "Native unclassed table + modifier classes; optional light-DOM harmony-table wrapping nested table + bar slots; sort/reorder/grouped/selection/CC behaviors",
+        "consumerApi": "Native: table (+ .table--header-white|none, --striped, --reorderable, --grouped, --command-center, wrapper/bars). CE: harmony-table nest real table; header-variant, variant, striped, reorderable, grouped, grouped-default-expanded, columns JSON, sort-column/direction, selected-row-ids; slots filter-bar, title-bar-*, action-bar, command-center-*; events table-reorder, sort-change, filter-click, expand-change, selection-change, row-select; methods expandAll/collapseAll/setExpanded/getExpanded/getSelected/getOrder",
+        "gaps": [
+          "Filter popovers / sort&filter algorithms stay in host (accepted)",
+          "Title-bar window chrome behavior skipped — demo only (accepted)",
+          "Keyboard reorder deferred (accepted)",
+          "CommandCenterPanel not inside Table — compose in aside slot (accepted)",
+          "TableCostpointGrid skipped separately (accepted)"
+        ]
+      },
+      "gaps": [
+        "Filter popovers / sort&filter algorithms stay in host (accepted)",
+        "Title-bar window chrome behavior skipped — demo only (accepted)",
+        "Keyboard reorder deferred (accepted)",
+        "CommandCenterPanel not inside Table — compose in aside slot (accepted)",
+        "TableCostpointGrid skipped separately (accepted)"
+      ],
+      "notes": "Implemented 2026-09-11. Verifier PASS Table-4.",
+      "syncedAt": "2026-09-11T20:15:00.000Z",
+      "verification": {
+        "lastReport": "verification/reports/Table-4.md",
+        "result": "PASS",
+        "acceptedAt": "2026-09-11T20:15:00.000Z",
+        "note": "Verifier PASS Table-4 + plan execute approval"
+      }
+    },
+    "TableCostpointGrid": {
+      "status": "gap",
+      "harmonySource": "src/components/ui/TableCostpointGrid.astro",
+      "strategy": "skip",
+      "skippedProps": [
+        "all"
+      ],
+      "userDecision": {
+        "strategy": "skip",
+        "approach": "Do not convert TableCostpointGrid to vanilla for now. CP-only split datagrid out of scope; tables demo keeps accepted-gap placeholder.",
+        "gaps": [
+          "Entire TableCostpointGrid out of vanilla scope (accepted 2026-09-11)"
+        ]
+      },
+      "gaps": [
+        "Not converting to vanilla (accepted 2026-09-11)"
+      ],
+      "notes": "Human decision 2026-09-11: TableCostpointGrid skipped; unblocks Table hybrid conversion."
+    },
+    "Icon": {
+      "status": "synced",
+      "harmonySource": "src/components/ui/Icon.astro",
+      "strategy": "web-component",
+      "userDecision": {
+        "strategy": "web-component",
+        "approach": "harmony-icon with open Shadow DOM; generated full heroicons 24/outline registry plus Harmony public SVG registry; app registerIcons and raw SVG slot; currentColor and token sizes",
+        "consumerApi": "harmony-icon attributes/properties name, size xs|sm|md|lg|xl, optional label, native host class; default raw SVG slot; parts svg/fallback; registerIcons(map); decorative unless labeled",
+        "gaps": [
+          "Outline only; no variant attribute (accepted)",
+          "No Tabler webfont or Tabler runtime (accepted)",
+          "No product attribute or runtime product switching (accepted)",
+          "No runtime Node, fs, heroicons, or external SVG fetch (accepted)"
+        ]
+      },
+      "gaps": [
+        "Outline only; no variant attribute (accepted)",
+        "No Tabler webfont or Tabler runtime (accepted)",
+        "No product attribute or runtime product switching (accepted)",
+        "No runtime Node, fs, heroicons, or external SVG fetch (accepted)"
+      ],
+      "notes": "Implemented and verifier PASS on 2026-09-09; human visual acceptance 2026-09-09.",
+      "syncedAt": "2026-09-09T23:06:00.000Z",
+      "verification": {
+        "lastReport": "verification/reports/Icon-2.md",
+        "result": "PASS",
+        "acceptedAt": "2026-09-09T23:06:00.000Z",
+        "note": "Zero open conversion defects after remediating Icon-1; human visual acceptance 2026-09-09."
+      }
+    },
+    "TabStrip": {
+      "status": "synced",
+      "harmonySource": "src/components/ui/TabStrip.astro",
+      "strategy": "web-component",
+      "userDecision": {
+        "strategy": "web-component",
+        "approach": "Open Shadow harmony-tab-strip; tabs property; overflow auto/manual/none; Add Tab; per-tab toolbar/menu; consumer-owned panels outside CE",
+        "consumerApi": "harmony-tab-strip attrs variant,overflow-mode,show-add-tab,add-tab-label,icon-position,show-tab-open-in-new,show-tab-close,show-tab-overflow-menu,selected; props tabs,overflowTabs; events tab-select,tab-close,tab-add,tab-open-new,tab-set-default",
+        "gaps": [
+          "No public .tab-strip recipe (accepted)",
+          "Named slots tab-0..tab-9 skipped (accepted)",
+          "Panels consumer-owned (accepted)"
+        ]
+      },
+      "gaps": [
+        "No public .tab-strip recipe (accepted)",
+        "Named slots tab-0..tab-9 skipped (accepted)",
+        "Panels consumer-owned (accepted)"
+      ],
+      "notes": "controls-nav-batch plan execute 2026-09-11",
+      "syncedAt": "2026-09-11T17:22:22.570Z",
+      "verification": {
+        "lastReport": "verification/reports/controls-nav-form-2.md",
+        "result": "PASS",
+        "acceptedAt": "2026-09-11T17:22:22.570Z",
+        "note": "Verifier PASS controls-nav-*-2; execute complete 2026-09-11"
+      }
+    },
+    "Stepper": {
+      "status": "not-started",
+      "harmonySource": "src/components/ui/Stepper.astro"
+    },
+    "Step": {
+      "status": "not-started",
+      "harmonySource": "src/components/ui/Step.astro"
+    },
+    "FloatingNav": {
+      "status": "gap",
+      "harmonySource": "src/components/ui/FloatingNav.astro",
+      "strategy": "skip",
+      "skippedProps": [
+        "all"
+      ],
+      "userDecision": {
+        "strategy": "skip",
+        "approach": "Do not convert FloatingNav to vanilla for now. CP-only chrome out of scope; demo keeps accepted-gap placeholder.",
+        "gaps": [
+          "Entire FloatingNav out of vanilla scope (accepted 2026-09-11)"
+        ]
+      },
+      "gaps": [
+        "Not converting to vanilla (accepted 2026-09-11)"
+      ],
+      "notes": "Human decision 2026-09-11: FloatingNav skipped (CP-only)."
+    },
+    "Link": {
+      "status": "synced",
+      "harmonySource": "src/components/ui/Link.astro",
+      "strategy": "native",
+      "userDecision": {
+        "strategy": "native",
+        "approach": "Unclassed a is Harmony link (reset); .link--muted only; sizes via typography; compose external icon; no harmony-link",
+        "consumerApi": "a + .link--muted; link__external-icon; linkSheet for Shadow; a.btn stays button",
+        "gaps": [
+          "No base .link class (accepted)",
+          "No .link--small|medium|large (accepted)",
+          "No harmony-link CE (accepted)"
+        ]
+      },
+      "gaps": [
+        "No base .link class (accepted)",
+        "No .link--small|medium|large (accepted)",
+        "No harmony-link CE (accepted)"
+      ],
+      "notes": "Implemented and verifier PASS; plan execute approval 2026-09-10.",
+      "syncedAt": "2026-09-10T18:43:36.123Z",
+      "verification": {
+        "lastReport": "verification/reports/Link-1.md",
+        "result": "PASS",
+        "acceptedAt": "2026-09-10T18:43:36.123Z",
+        "note": "Verifier PASS + plan execute approval 2026-09-10"
+      }
+    },
+    "LeftSidebar": {
+      "status": "synced",
+      "harmonySource": "src/components/ui/LeftSidebar.astro",
+      "strategy": "web-component",
+      "userDecision": {
+        "strategy": "web-component",
+        "approach": "harmony-left-sidebar open Shadow DOM; product-kit default sections; sections property override; left-sidebar-item-select for panel wiring",
+        "consumerApi": "harmony-left-sidebar attrs active-id, expanded, panel-open, inline; sections property; event left-sidebar-item-select; parts nav/section/item/icon/label",
+        "gaps": [
+          "No consumer variant / multi-theme simultaneous DOM (accepted)",
+          "No Astro ShellPanel DOM mutation — event only until ShellPanel synced (accepted)"
+        ]
+      },
+      "gaps": [
+        "No consumer variant / multi-theme simultaneous DOM (accepted)",
+        "No Astro ShellPanel DOM mutation — event only until ShellPanel synced (accepted)"
+      ],
+      "notes": "Implemented and verifier PASS LeftSidebar-2; plan execute approval 2026-09-11.",
+      "syncedAt": "2026-09-11T23:15:00.000Z",
+      "verification": {
+        "lastReport": "verification/reports/LeftSidebar-2.md",
+        "result": "PASS",
+        "acceptedAt": "2026-09-11T23:15:00.000Z",
+        "note": "Verifier PASS LeftSidebar-2 + plan execute approval 2026-09-11"
+      }
+    },
+    "RightSidebar": {
+      "status": "synced",
+      "harmonySource": "src/components/ui/RightSidebar.astro",
+      "strategy": "web-component",
+      "userDecision": {
+        "strategy": "web-component",
+        "approach": "harmony-right-sidebar open Shadow DOM; product-kit defaults lead with Dela AI (icon names RS_DelaDefault/RS_Dela_Active); sections property override; right-sidebar-item-select for panel wiring",
+        "consumerApi": "harmony-right-sidebar attrs active-id, expanded, panel-open, inline; sections property; event right-sidebar-item-select; parts nav/section/item/icon/label",
+        "gaps": [
+          "No consumer variant / multi-theme simultaneous DOM (accepted)",
+          "No Astro ShellPanel DOM mutation — event only until ShellPanel synced (accepted)",
+          "No Astro class prop passthrough — host class (accepted)"
+        ]
+      },
+      "gaps": [
+        "No consumer variant / multi-theme simultaneous DOM (accepted)",
+        "No Astro ShellPanel DOM mutation — event only until ShellPanel synced (accepted)",
+        "No Astro class prop passthrough — host class (accepted)"
+      ],
+      "notes": "Implemented and verifier PASS RightSidebar-2; plan execute approval 2026-09-11.",
+      "syncedAt": "2026-09-11T23:40:00.000Z",
+      "verification": {
+        "lastReport": "verification/reports/RightSidebar-2.md",
+        "result": "PASS",
+        "acceptedAt": "2026-09-11T23:40:00.000Z",
+        "note": "Verifier PASS RightSidebar-2 + plan execute approval 2026-09-11"
+      }
+    },
+    "ShellPageHeader": {
+      "status": "not-started",
+      "harmonySource": "src/components/ui/ShellPageHeader.astro"
+    },
+    "ShellPanel": {
+      "status": "not-started",
+      "harmonySource": "src/components/ui/ShellPanel.astro"
+    },
+    "ShellFooter": {
+      "status": "not-started",
+      "harmonySource": "src/components/ui/ShellFooter.astro"
+    },
+    "ShellHeader": {
+      "status": "synced",
+      "harmonySource": "src/components/ui/ShellHeader.astro",
+      "strategy": "web-component",
+      "userDecision": {
+        "strategy": "web-component",
+        "approach": "harmony-shell-header open Shadow DOM; product logo from kit; actions slot composition; optional gradient-color",
+        "consumerApi": "harmony-shell-header attrs product-name, gradient-color, href; slot actions; parts header/brand/logo/title/actions/gradient",
+        "gaps": [
+          "No logoSrc / logo attribute on ShellHeader — product kit logo (accepted)",
+          "Astro default company list not baked into ShellHeader CE (accepted)",
+          "Catalog Dropdown/Select not used for company menu (accepted)"
+        ]
+      },
+      "gaps": [
+        "No logoSrc / logo attribute on ShellHeader — product kit logo (accepted)",
+        "Astro default company list not baked into ShellHeader CE (accepted)",
+        "Catalog Dropdown/Select not used for company menu (accepted)"
+      ],
+      "notes": "Implemented with CompanyPicker + UserMenu catalog peers; plan execute 2026-09-11.",
+      "syncedAt": "2026-09-11T21:30:00.000Z",
+      "verification": {
+        "lastReport": "verification/reports/ShellHeader-1.md",
+        "result": "PASS",
+        "acceptedAt": "2026-09-11T21:30:00.000Z",
+        "note": "Plan execute approval 2026-09-11; demo /shell/header"
+      }
+    },
+    "Dialog": {
+      "status": "synced",
+      "harmonySource": "src/components/ui/Dialog.astro",
+      "strategy": "web-component",
+      "userDecision": {
+        "strategy": "web-component",
+        "approach": "harmony-dialog open Shadow DOM wrapping native dialog; showModal; close-on-backdrop; dirty + confirm-unsaved nested confirm; cancelable close-request; convenience footer or footer slot; resizable grip",
+        "consumerApi": "harmony-dialog attrs title, header-variant, button-alignment, resizable, open, close-on-backdrop, dirty, confirm-unsaved, confirm/cancel/tertiary labels, unsaved copy; methods show/close({force}); events close-request, close, confirm, cancel, tertiary; slots default+footer",
+        "gaps": [
+          "No window.openDialog/closeDialog (accepted)",
+          "No confirmCallbackName globals (accepted)",
+          "No public .dialog-overlay recipe (accepted)",
+          "close-on-backdrop / dirty / confirm-unsaved are vanilla production additions (included)"
+        ]
+      },
+      "gaps": [
+        "No window.openDialog/closeDialog (accepted)",
+        "No confirmCallbackName globals (accepted)",
+        "No public .dialog-overlay recipe (accepted)",
+        "close-on-backdrop / dirty / confirm-unsaved are vanilla production additions (included)"
+      ],
+      "notes": "Implemented and verifier PASS Dialog-1; execute approval 2026-09-10.",
+      "syncedAt": "2026-09-10T20:12:00.000Z",
+      "verification": {
+        "lastReport": "verification/reports/Dialog-1.md",
+        "result": "PASS",
+        "acceptedAt": "2026-09-10T20:12:00.000Z",
+        "note": "Verifier PASS Dialog-1 + plan execute approval 2026-09-10"
+      }
+    },
+    "Dropdown": {
+      "status": "synced",
+      "harmonySource": "src/components/ui/Dropdown.astro",
+      "strategy": "web-component",
+      "userDecision": {
+        "strategy": "web-component",
+        "approach": "Catalog Dropdown ships as Select. Dual path: native select/.select closed-field chrome matching Input + harmony-select Shadow CE (formAssociated, delegatesFocus). Light-DOM option/optgroup copied into shadow select. Open list is the OS picker. label-variant outside harmony-form-layout; layout owns label position inside it.",
+        "consumerApi": "Native: unclassed select:not([multiple]) + .select. CE: harmony-select attrs name,value,placeholder,disabled,required,error,error-message,label,label-variant,id; default slot option/optgroup; input/change. multiple is not a CE feature (attribute is removed). Native select[multiple] is unstyled platform behavior. Layout: treated like harmony-input in harmony-form-layout. No harmony-dropdown.",
+        "gaps": [
+          "Custom Astro listbox / .dropdown__menu skipped — OS picker (accepted)",
+          "No trigger slot (accepted)",
+          "No option-0…option-9 slots (accepted)",
+          "Kanban CP menu positioning skipped (accepted)",
+          "No Astro auto-id (accepted)",
+          "Host is not HTMLSelectElement — ElementInternals (accepted)",
+          "multiple is not a harmony-select feature; native select[multiple] is unstyled platform behavior (accepted)"
+        ]
+      },
+      "gaps": [
+        "Custom Astro listbox / .dropdown__menu skipped — OS picker (accepted)",
+        "No trigger slot (accepted)",
+        "No option-0…option-9 slots (accepted)",
+        "Kanban CP menu positioning skipped (accepted)",
+        "No Astro auto-id (accepted)",
+        "Host is not HTMLSelectElement — ElementInternals (accepted)",
+        "multiple is not a harmony-select feature; native select[multiple] is unstyled platform behavior (accepted)"
+      ],
+      "notes": "Implemented 2026-09-10. Verifier PASS Dropdown-1. Human visual accept 2026-09-10.",
+      "syncedAt": "2026-09-11T00:37:00.000Z",
+      "verification": {
+        "lastReport": "verification/reports/Dropdown-1.md",
+        "result": "PASS",
+        "acceptedAt": "2026-09-11T00:37:00.000Z",
+        "note": "Human visual acceptance after Dropdown-1 PASS (multiple removed from CE and demo)"
+      }
+    },
+    "Accordion": {
+      "status": "synced",
+      "harmonySource": "src/components/ui/Accordion.astro",
+      "strategy": "web-component",
+      "userDecision": {
+        "strategy": "web-component",
+        "approach": "harmony-accordion + harmony-accordion-item open Shadow DOM; nested items; toggle event; no public .accordion recipe",
+        "consumerApi": "harmony-accordion allow-multiple, label; harmony-accordion-item title, open, disabled; default slot body; toggle {open}",
+        "gaps": [
+          "No Astro items[] / item-0..9 slots (accepted)",
+          "No public .accordion recipe (accepted)"
+        ]
+      },
+      "gaps": [
+        "No Astro items[] / item-0..9 slots (accepted)",
+        "No public .accordion recipe (accepted)"
+      ],
+      "notes": "Implemented 2026-09-11 per approved plan. Verifier PASS Accordion-2.",
+      "syncedAt": "2026-09-11T19:45:00.000Z",
+      "verification": {
+        "lastReport": "verification/reports/Accordion-2.md",
+        "result": "PASS",
+        "acceptedAt": "2026-09-11T19:45:00.000Z",
+        "note": "Verifier PASS Accordion-2 + plan execute approval"
+      }
+    },
+    "Kanban": {
+      "status": "gap",
+      "harmonySource": "src/components/ui/Kanban.astro",
+      "strategy": "skip",
+      "skippedProps": [
+        "all"
+      ],
+      "userDecision": {
+        "strategy": "skip",
+        "approach": "Do not convert Kanban to vanilla. Demo keeps the reference route as an accepted-gap placeholder.",
+        "gaps": [
+          "Entire Kanban catalog family out of vanilla scope (accepted 2026-09-10)"
+        ]
+      },
+      "gaps": [
+        "Not converting to vanilla (accepted 2026-09-10)"
+      ],
+      "notes": "Human decision 2026-09-10: Kanban will not be converted to vanilla. Family skip with KanbanCard and KanbanCardCostpoint."
+    },
+    "KanbanCard": {
+      "status": "gap",
+      "harmonySource": "src/components/ui/KanbanCard.astro",
+      "strategy": "skip",
+      "skippedProps": [
+        "all"
+      ],
+      "userDecision": {
+        "strategy": "skip",
+        "approach": "Do not convert KanbanCard to vanilla; follows Kanban family skip.",
+        "gaps": [
+          "Entire Kanban catalog family out of vanilla scope (accepted 2026-09-10)"
+        ]
+      },
+      "gaps": [
+        "Not converting to vanilla (accepted 2026-09-10)"
+      ],
+      "notes": "Human decision 2026-09-10: Kanban family will not be converted to vanilla."
+    },
+    "KanbanCardCostpoint": {
+      "status": "gap",
+      "harmonySource": "src/components/ui/KanbanCardCostpoint.astro",
+      "strategy": "skip",
+      "skippedProps": [
+        "all"
+      ],
+      "userDecision": {
+        "strategy": "skip",
+        "approach": "Do not convert KanbanCardCostpoint to vanilla; follows Kanban family skip. CP-only in reference.",
+        "gaps": [
+          "Entire Kanban catalog family out of vanilla scope (accepted 2026-09-10)"
+        ]
+      },
+      "gaps": [
+        "Not converting to vanilla (accepted 2026-09-10)"
+      ],
+      "notes": "Human decision 2026-09-10: Kanban family will not be converted to vanilla."
+    },
+    "DatePicker": {
+      "status": "synced",
+      "harmonySource": "src/components/ui/DatePicker.astro",
+      "strategy": "web-component",
+      "userDecision": {
+        "strategy": "web-component",
+        "approach": "Open Shadow DOM calendar widget; not form-associated; Intl locale; keyboard grid; no range-day modifiers",
+        "consumerApi": "harmony-date-picker attrs value,min,max,disabled,locale; valueAsDate; event date-select {date}; parts header,grid; inherits setDateTimeDefaults / data-harmony-*",
+        "gaps": [
+          "No Astro auto-id (accepted)",
+          "No range-day modifiers (accepted)",
+          "No native input type=date dual path (accepted)",
+          "Not form-associated until DateInput (accepted)"
+        ]
+      },
+      "gaps": [
+        "No Astro auto-id (accepted)",
+        "No range-day modifiers (accepted)",
+        "No native input type=date dual path (accepted)",
+        "Not form-associated until DateInput (accepted)"
+      ],
+      "notes": "Verifier PASS date-pickers-2. Human visual accept 2026-09-10.",
+      "syncedAt": "2026-09-11T01:40:00.000Z",
+      "verification": {
+        "lastReport": "verification/reports/date-pickers-2.md",
+        "result": "PASS",
+        "acceptedAt": "2026-09-11T01:40:00.000Z",
+        "note": "Human visual acceptance after date-pickers-2 PASS"
+      }
+    },
+    "DateTimePicker": {
+      "status": "synced",
+      "harmonySource": "src/components/ui/DateTimePicker.astro",
+      "strategy": "web-component",
+      "userDecision": {
+        "strategy": "web-component",
+        "approach": "Open Shadow DOM widget composing harmony-date-picker and harmony-time-picker; not form-associated; emit datetime-select when either half changes and the other is already known",
+        "consumerApi": "harmony-datetime-picker attrs value,min,max,disabled,time-format,locale; valueAsDate; event datetime-select {datetime}; parts date,time; inherits setDateTimeDefaults / data-harmony-*",
+        "gaps": [
+          "No Astro auto-id (accepted)",
+          "Emit when either half changes if the other is already known, including initial value (accepted)",
+          "Not form-associated until DateInput (accepted)",
+          "No native input type=datetime-local dual path (accepted)",
+          "No same-day min/max tightening beyond the Astro split (accepted)"
+        ]
+      },
+      "gaps": [
+        "No Astro auto-id (accepted)",
+        "Emit when either half changes if the other is already known, including initial value (accepted)",
+        "Not form-associated until DateInput (accepted)",
+        "No native input type=datetime-local dual path (accepted)",
+        "No same-day min/max tightening beyond the Astro split (accepted)"
+      ],
+      "notes": "Verifier PASS datetime-1. Human visual accept 2026-09-10. DateInput still blocked.",
+      "syncedAt": "2026-09-11T02:20:00.000Z",
+      "verification": {
+        "lastReport": "verification/reports/datetime-1.md",
+        "result": "PASS",
+        "acceptedAt": "2026-09-11T02:20:00.000Z",
+        "note": "Human visual acceptance after datetime-1 PASS"
+      }
+    },
+    "MonthPicker": {
+      "status": "synced",
+      "harmonySource": "src/components/ui/MonthPicker.astro",
+      "strategy": "web-component",
+      "userDecision": {
+        "strategy": "web-component",
+        "approach": "Open Shadow DOM month grid; not form-associated",
+        "consumerApi": "harmony-month-picker attrs value,min,max,disabled,locale; valueAsDate; event month-select {value}; inherits setDateTimeDefaults / data-harmony-*",
+        "gaps": [
+          "No Astro auto-id (accepted)",
+          "Not form-associated until DateInput (accepted)"
+        ]
+      },
+      "gaps": [
+        "No Astro auto-id (accepted)",
+        "Not form-associated until DateInput (accepted)"
+      ],
+      "notes": "Verifier PASS date-pickers-2. Human visual accept 2026-09-10.",
+      "syncedAt": "2026-09-11T01:40:00.000Z",
+      "verification": {
+        "lastReport": "verification/reports/date-pickers-2.md",
+        "result": "PASS",
+        "acceptedAt": "2026-09-11T01:40:00.000Z",
+        "note": "Human visual acceptance after date-pickers-2 PASS"
+      }
+    },
+    "WeekPicker": {
+      "status": "synced",
+      "harmonySource": "src/components/ui/WeekPicker.astro",
+      "strategy": "web-component",
+      "userDecision": {
+        "strategy": "web-component",
+        "approach": "Open Shadow DOM ISO week listbox; not form-associated",
+        "consumerApi": "harmony-week-picker attrs value,min,max,disabled,locale; valueAsDate; event week-select {value}; inherits setDateTimeDefaults / data-harmony-*",
+        "gaps": [
+          "No Astro auto-id (accepted)",
+          "Not form-associated until DateInput (accepted)"
+        ]
+      },
+      "gaps": [
+        "No Astro auto-id (accepted)",
+        "Not form-associated until DateInput (accepted)"
+      ],
+      "notes": "Verifier PASS date-pickers-2. Human visual accept 2026-09-10.",
+      "syncedAt": "2026-09-11T01:40:00.000Z",
+      "verification": {
+        "lastReport": "verification/reports/date-pickers-2.md",
+        "result": "PASS",
+        "acceptedAt": "2026-09-11T01:40:00.000Z",
+        "note": "Human visual acceptance after date-pickers-2 PASS"
+      }
+    },
+    "TimePicker": {
+      "status": "synced",
+      "harmonySource": "src/components/ui/TimePicker.astro",
+      "strategy": "web-component",
+      "userDecision": {
+        "strategy": "web-component",
+        "approach": "Open Shadow DOM hour/minute spinners; value always HH:MM; not form-associated",
+        "consumerApi": "harmony-time-picker attrs value,min,max,disabled,format,step; valueAsDate; event time-select {time}; format inherits setDateTimeDefaults / data-harmony-*",
+        "gaps": [
+          "No Astro auto-id (accepted)",
+          "No native input type=time dual path (accepted)",
+          "Not form-associated until DateInput (accepted)"
+        ]
+      },
+      "gaps": [
+        "No Astro auto-id (accepted)",
+        "No native input type=time dual path (accepted)",
+        "Not form-associated until DateInput (accepted)"
+      ],
+      "notes": "Verifier PASS date-pickers-2. Human visual accept 2026-09-10.",
+      "syncedAt": "2026-09-11T01:40:00.000Z",
+      "verification": {
+        "lastReport": "verification/reports/date-pickers-2.md",
+        "result": "PASS",
+        "acceptedAt": "2026-09-11T01:40:00.000Z",
+        "note": "Human visual acceptance after date-pickers-2 PASS"
+      }
+    },
+    "PickerPopup": {
+      "status": "synced",
+      "harmonySource": "src/components/ui/PickerPopup.astro",
+      "strategy": "web-component",
+      "userDecision": {
+        "strategy": "web-component",
+        "approach": "Popover API for open/close, Escape, light dismiss; CSS anchor with JS fallback; not harmony-dialog",
+        "consumerApi": "harmony-picker-popup attrs for,open,title; methods show/hide; event toggle {open}; part panel",
+        "gaps": [
+          "No Astro .is-open class API (accepted)",
+          "No aria-modal=true (accepted — non-modal popover)",
+          "Trigger is any element id, not .date-input-wrapper (accepted)"
+        ]
+      },
+      "gaps": [
+        "No Astro .is-open class API (accepted)",
+        "No aria-modal=true (accepted — non-modal popover)",
+        "Trigger is any element id, not .date-input-wrapper (accepted)"
+      ],
+      "notes": "Verifier PASS date-pickers-2. Human visual accept 2026-09-10.",
+      "syncedAt": "2026-09-11T01:40:00.000Z",
+      "verification": {
+        "lastReport": "verification/reports/date-pickers-2.md",
+        "result": "PASS",
+        "acceptedAt": "2026-09-11T01:40:00.000Z",
+        "note": "Human visual acceptance after date-pickers-2 PASS"
+      }
+    },
+    "ListMenu": {
+      "status": "synced",
+      "harmonySource": "src/components/ui/ListMenu.astro",
+      "strategy": "hybrid",
+      "userDecision": {
+        "strategy": "hybrid",
+        "approach": "Native .list-menu with composed a/button items; optional light-DOM harmony-list-menu adds list-menu__item on slotted children; no items JSON API",
+        "consumerApi": "Native: nav.list-menu (+ --no-borders) with a/button.list-menu__item (+ .is-active, optional harmony-icon). CE: harmony-list-menu variant attr; slotted items",
+        "gaps": [
+          "items[] JSON / as prop skipped — compose slotted a/button (accepted)"
+        ]
+      },
+      "gaps": [
+        "items[] JSON / as prop skipped — compose slotted a/button (accepted)"
+      ],
+      "notes": "controls-nav-batch plan execute 2026-09-11; DemoNav dogfoods list-menu",
+      "syncedAt": "2026-09-11T17:22:22.570Z",
+      "verification": {
+        "lastReport": "verification/reports/controls-nav-hybrid-2.md",
+        "result": "PASS",
+        "acceptedAt": "2026-09-11T17:22:22.570Z",
+        "note": "Verifier PASS controls-nav-*-2; execute complete 2026-09-11"
+      }
+    },
+    "CompanyPicker": {
+      "status": "synced",
+      "harmonySource": "src/components/ui/CompanyPicker.astro",
+      "strategy": "web-component",
+      "userDecision": {
+        "strategy": "web-component",
+        "approach": "harmony-company-picker open Shadow DOM; slotted options; company-change event",
+        "consumerApi": "attrs company-name, company-id, company-color; slotted data-company-option buttons; event company-change detail {id,name,color}",
+        "gaps": [
+          "No built-in default company list in CE — consumer supplies options (accepted)"
+        ]
+      },
+      "gaps": [
+        "No built-in default company list in CE — consumer supplies options (accepted)"
+      ],
+      "notes": "Catalog export; demo /components/company-picker",
+      "syncedAt": "2026-09-11T21:30:00.000Z",
+      "verification": {
+        "lastReport": "verification/reports/ShellHeader-1.md",
+        "result": "PASS",
+        "acceptedAt": "2026-09-11T21:30:00.000Z",
+        "note": "Plan execute approval 2026-09-11"
+      }
+    },
+    "UserMenu": {
+      "status": "synced",
+      "harmonySource": "src/components/ui/UserMenu.astro",
+      "strategy": "web-component",
+      "userDecision": {
+        "strategy": "web-component",
+        "approach": "harmony-user-menu open Shadow DOM; avatar+tooltip; slotted menu items",
+        "consumerApi": "attrs name, src; slotted a/button; tooltip=name; image if src else initials",
+        "gaps": []
+      },
+      "gaps": [],
+      "notes": "Catalog export; demo /components/user-menu",
+      "syncedAt": "2026-09-11T21:30:00.000Z",
+      "verification": {
+        "lastReport": "verification/reports/ShellHeader-1.md",
+        "result": "PASS",
+        "acceptedAt": "2026-09-11T21:30:00.000Z",
+        "note": "Plan execute approval 2026-09-11"
+      }
+    }
+  },
+  "deliverables": {
+    "npmPackageName": "@dltkrichardhuska/harmony-design-system-vanilla",
+    "scripts": {
+      "dev": "dev",
+      "build:lib": "build:lib",
+      "build:products": "build:products",
+      "build:static": "build:static"
+    },
+    "exports": {
+      ".": "./packages/ui/src/index.js",
+      "./theme": "./packages/ui/src/theme/index.js",
+      "./elements": "./packages/ui/src/elements/index.js",
+      "./styles/*": "./packages/ui/src/styles/*"
+    },
+    "staticKits": {
+      "folderPattern": "packages/ui/dist-static/<product>/",
+      "zipPattern": "packages/ui/dist-static/harmony-design-system-vanilla-<product>.zip",
+      "products": [
+        "cp",
+        "vp",
+        "ppm",
+        "maconomy"
+      ]
+    }
+  },
+  "documentation": {
+    "consumerGuide": "docs/CONSUMER.md"
+  },
+  "coverage": {
+    "percent": 81,
+    "completed": 46,
+    "total": 57,
+    "computedAt": "2026-09-11T23:34:48.147Z"
+  }
+}

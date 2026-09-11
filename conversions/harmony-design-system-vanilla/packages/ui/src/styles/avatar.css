@@ -1,0 +1,117 @@
+/**
+ * Avatar visual recipe — used by `<harmony-avatar>` Shadow DOM.
+ * Not appended to product document styles.css (CE-only surface).
+ */
+
+:host {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  overflow: hidden;
+  width: var(--avatar-size-md);
+  height: var(--avatar-size-md);
+  border-radius: var(--radius-08);
+  background-color: var(--theme-primary);
+  flex-shrink: 0;
+  color: white;
+  vertical-align: middle;
+}
+
+:host([size='sm']) {
+  width: var(--avatar-size-sm);
+  height: var(--avatar-size-sm);
+  border-radius: var(--radius-04);
+}
+
+:host([size='md']) {
+  width: var(--avatar-size-md);
+  height: var(--avatar-size-md);
+  border-radius: var(--radius-08);
+}
+
+:host([size='lg']) {
+  width: var(--avatar-size-lg);
+  height: var(--avatar-size-lg);
+  border-radius: var(--radius-12);
+}
+
+:host([data-content='image']) {
+  background-color: var(--surface-bg, transparent);
+  padding: 0;
+}
+
+:host([interactive]) {
+  cursor: pointer;
+}
+
+:host([interactive]:not([disabled]):hover) {
+  background-color: var(--theme-primary-hover);
+}
+
+:host([interactive]:focus-visible) {
+  outline: none;
+  box-shadow: var(--focus-ring-primary);
+}
+
+:host([interactive][disabled]),
+:host([disabled]) {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+[part='icon'] {
+  color: white;
+  display: inline-flex;
+}
+
+[part='initials'] {
+  font-family: var(--font-sans);
+  font-weight: var(--font-semibold, 600);
+  line-height: 1;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+:host([size='sm']) [part='initials'] {
+  font-size: 10px;
+}
+
+:host([size='md']) [part='initials'] {
+  font-size: 12px;
+}
+
+:host([size='lg']) [part='initials'] {
+  font-size: 14px;
+}
+
+[part='image'] {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+@media (forced-colors: active) {
+  :host {
+    background-color: Canvas;
+    color: CanvasText;
+    border: var(--border-width-thin) solid CanvasText;
+  }
+  :host([interactive]:focus-visible) {
+    outline: 2px solid Highlight;
+    outline-offset: 2px;
+    box-shadow: none;
+  }
+  [part='icon'],
+  [part='initials'] {
+    color: CanvasText;
+  }
+}

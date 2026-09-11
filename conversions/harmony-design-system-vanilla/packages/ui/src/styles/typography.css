@@ -1,0 +1,273 @@
+/**
+ * Harmony typography — element defaults + type-style classes.
+ *
+ * Type-style and utility classes port `src/styles/utilities.css`. Tag defaults
+ * (heading-first) override the generic heading/body rules in reset.css.
+ *
+ * Display styles are opt-in via `.text-display-*` so hero type never lands
+ * on a page by accident.
+ *
+ * Appended after reset.css in product styles.css, and included in
+ * `typographySheet` for Shadow DOM.
+ */
+
+/* ===========================================
+   ELEMENT DEFAULTS (heading-first type styles)
+   =========================================== */
+
+body {
+  font-family: var(--font-sans);
+  font-size: var(--body-default);
+  font-weight: var(--font-normal);
+  line-height: var(--leading-normal);
+  color: var(--text-primary);
+  background-color: var(--page-bg);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+  color: var(--text-primary);
+}
+
+h1 {
+  font-size: var(--heading-xl);
+  font-weight: var(--font-semibold);
+  line-height: var(--leading-snug);
+}
+
+h2 {
+  font-size: var(--heading-l);
+  font-weight: var(--font-semibold);
+  line-height: var(--leading-snug);
+}
+
+h3 {
+  font-size: var(--heading-m);
+  font-weight: var(--font-semibold);
+  line-height: var(--leading-snug);
+}
+
+h4,
+h5,
+h6 {
+  font-size: var(--heading-s);
+  font-weight: var(--font-medium);
+  line-height: var(--leading-snug);
+}
+
+p {
+  font-family: var(--font-sans);
+  font-size: var(--body-default);
+  font-weight: var(--font-normal);
+  line-height: var(--leading-normal);
+  color: var(--text-secondary);
+}
+
+label {
+  font-family: var(--font-display);
+  font-size: var(--label);
+  font-weight: var(--font-normal);
+  line-height: var(--leading-normal);
+}
+
+small {
+  font-family: var(--font-sans);
+  font-size: var(--caption);
+  font-weight: var(--font-normal);
+  line-height: var(--leading-normal);
+}
+
+strong,
+b {
+  font-weight: var(--font-semibold);
+}
+
+code,
+pre,
+kbd,
+samp {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+}
+
+/* ===========================================
+   TYPE SCALE - DISPLAY
+   =========================================== */
+
+.text-display-xl {
+  font-size: var(--display-xl);
+  font-family: var(--font-display);
+  font-weight: var(--font-bold);
+  line-height: var(--leading-tight);
+}
+.text-display-l {
+  font-size: var(--display-l);
+  font-family: var(--font-display);
+  font-weight: var(--font-bold);
+  line-height: var(--leading-tight);
+}
+.text-display-m {
+  font-size: var(--display-m);
+  font-family: var(--font-display);
+  font-weight: var(--font-bold);
+  line-height: var(--leading-tight);
+}
+
+/* ===========================================
+   TYPE SCALE - HEADINGS
+   =========================================== */
+
+.text-heading-xl {
+  font-size: var(--heading-xl);
+  font-family: var(--font-display);
+  font-weight: var(--font-semibold);
+  line-height: var(--leading-snug);
+}
+.text-heading-l {
+  font-size: var(--heading-l);
+  font-family: var(--font-display);
+  font-weight: var(--font-semibold);
+  line-height: var(--leading-snug);
+}
+.text-heading-m {
+  font-size: var(--heading-m);
+  font-family: var(--font-display);
+  font-weight: var(--font-semibold);
+  line-height: var(--leading-snug);
+}
+.text-heading-s {
+  font-size: var(--heading-s);
+  font-family: var(--font-display);
+  font-weight: var(--font-medium);
+  line-height: var(--leading-snug);
+}
+
+/* ===========================================
+   TYPE SCALE - BODY
+   =========================================== */
+
+.text-body-default {
+  font-size: var(--body-default);
+  font-family: var(--font-sans);
+  font-weight: var(--font-normal);
+  line-height: var(--leading-normal);
+}
+.text-body-emphasized {
+  font-size: var(--body-emphasized);
+  font-family: var(--font-sans);
+  font-weight: var(--font-semibold);
+  line-height: var(--leading-normal);
+}
+
+/* ===========================================
+   TYPE SCALE - SUPPORTING
+   =========================================== */
+
+.text-caption {
+  font-size: var(--caption);
+  font-family: var(--font-sans);
+  font-weight: var(--font-normal);
+  line-height: var(--leading-normal);
+}
+.text-label {
+  font-size: var(--label);
+  font-family: var(--font-display);
+  font-weight: var(--font-normal);
+  line-height: var(--leading-normal);
+}
+.text-overline {
+  font-size: var(--overline);
+  font-family: var(--font-sans);
+  font-weight: var(--font-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  line-height: var(--leading-normal);
+}
+
+/* ===========================================
+   FONT FAMILY
+   =========================================== */
+
+.font-sans {
+  font-family: var(--font-sans);
+}
+.font-display {
+  font-family: var(--font-display);
+}
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* ===========================================
+   FONT SIZE
+   =========================================== */
+
+.text-xs {
+  font-size: var(--text-xs);
+}
+.text-sm {
+  font-size: var(--text-sm);
+}
+.text-base {
+  font-size: var(--text-base);
+}
+.text-lg {
+  font-size: var(--text-lg);
+}
+.text-xl {
+  font-size: var(--text-xl);
+}
+.text-2xl {
+  font-size: var(--text-2xl);
+}
+.text-3xl {
+  font-size: var(--text-3xl);
+}
+.text-4xl {
+  font-size: var(--text-4xl);
+}
+.text-5xl {
+  font-size: var(--text-5xl);
+}
+
+/* ===========================================
+   FONT WEIGHT
+   =========================================== */
+
+.font-light {
+  font-weight: var(--font-light);
+}
+.font-normal {
+  font-weight: var(--font-normal);
+}
+.font-medium {
+  font-weight: var(--font-medium);
+}
+.font-semibold {
+  font-weight: var(--font-semibold);
+}
+.font-bold {
+  font-weight: var(--font-bold);
+}
+
+/* ===========================================
+   LINE HEIGHT
+   =========================================== */
+
+.leading-none {
+  line-height: var(--leading-none);
+}
+.leading-tight {
+  line-height: var(--leading-tight);
+}
+.leading-normal {
+  line-height: var(--leading-normal);
+}
+.leading-relaxed {
+  line-height: var(--leading-relaxed);
+}

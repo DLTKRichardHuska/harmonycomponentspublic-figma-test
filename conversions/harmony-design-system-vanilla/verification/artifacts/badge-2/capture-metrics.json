@@ -1,0 +1,519 @@
+{
+  "scope": "badges",
+  "theme": "cp",
+  "ref": {
+    "h1": "Harmony CP Design System",
+    "h2": [
+      "Examples",
+      "Props",
+      "Accessibility"
+    ],
+    "h3": [
+      "Variants",
+      "Sizes",
+      "With Icons",
+      "Semantic HTML",
+      "Color Contrast",
+      "Icon Badges"
+    ],
+    "nav": [
+      "Examples",
+      "Props",
+      "Accessibility"
+    ],
+    "badge": "stable",
+    "hasProps": true,
+    "hasA11y": true,
+    "badges": [
+      {
+        "text": "stable",
+        "hasIcon": false,
+        "height": 24,
+        "bg": "rgb(219, 249, 168)",
+        "color": "rgb(49, 109, 21)",
+        "border": "1px solid rgb(49, 109, 21)",
+        "fontSize": "14px"
+      },
+      {
+        "text": "Default",
+        "hasIcon": false,
+        "height": 24,
+        "bg": "rgb(247, 248, 250)",
+        "color": "rgb(82, 89, 105)",
+        "border": "1px solid rgb(191, 198, 212)",
+        "fontSize": "14px"
+      },
+      {
+        "text": "Primary",
+        "hasIcon": false,
+        "height": 24,
+        "bg": "rgb(199, 242, 255)",
+        "color": "rgb(32, 90, 158)",
+        "border": "1px solid rgb(32, 90, 158)",
+        "fontSize": "14px"
+      },
+      {
+        "text": "Success",
+        "hasIcon": false,
+        "height": 24,
+        "bg": "rgb(219, 249, 168)",
+        "color": "rgb(49, 109, 21)",
+        "border": "1px solid rgb(49, 109, 21)",
+        "fontSize": "14px"
+      },
+      {
+        "text": "Warning",
+        "hasIcon": false,
+        "height": 24,
+        "bg": "rgb(255, 241, 190)",
+        "color": "rgb(173, 84, 0)",
+        "border": "1px solid rgb(173, 84, 0)",
+        "fontSize": "14px"
+      },
+      {
+        "text": "Error",
+        "hasIcon": false,
+        "height": 24,
+        "bg": "rgb(255, 236, 239)",
+        "color": "rgb(193, 37, 58)",
+        "border": "1px solid rgb(193, 37, 58)",
+        "fontSize": "14px"
+      },
+      {
+        "text": "Info",
+        "hasIcon": false,
+        "height": 24,
+        "bg": "rgb(208, 223, 255)",
+        "color": "rgb(69, 75, 212)",
+        "border": "1px solid rgb(69, 75, 212)",
+        "fontSize": "14px"
+      },
+      {
+        "text": "Orange",
+        "hasIcon": false,
+        "height": 24,
+        "bg": "rgb(255, 226, 192)",
+        "color": "rgb(108, 31, 7)",
+        "border": "1px solid rgb(108, 31, 7)",
+        "fontSize": "14px"
+      },
+      {
+        "text": "Pink",
+        "hasIcon": false,
+        "height": 24,
+        "bg": "rgb(255, 221, 243)",
+        "color": "rgb(184, 40, 144)",
+        "border": "1px solid rgb(184, 40, 144)",
+        "fontSize": "14px"
+      },
+      {
+        "text": "Disabled",
+        "hasIcon": false,
+        "height": 24,
+        "bg": "rgb(224, 228, 235)",
+        "color": "rgb(148, 163, 184)",
+        "border": "1px solid rgb(191, 198, 212)",
+        "fontSize": "14px"
+      },
+      {
+        "text": "Small",
+        "hasIcon": false,
+        "height": 16,
+        "bg": "rgb(247, 248, 250)",
+        "color": "rgb(82, 89, 105)",
+        "border": "1px solid rgb(191, 198, 212)",
+        "fontSize": "10px"
+      },
+      {
+        "text": "Medium",
+        "hasIcon": false,
+        "height": 20,
+        "bg": "rgb(247, 248, 250)",
+        "color": "rgb(82, 89, 105)",
+        "border": "1px solid rgb(191, 198, 212)",
+        "fontSize": "12px"
+      },
+      {
+        "text": "Large",
+        "hasIcon": false,
+        "height": 24,
+        "bg": "rgb(247, 248, 250)",
+        "color": "rgb(82, 89, 105)",
+        "border": "1px solid rgb(191, 198, 212)",
+        "fontSize": "14px"
+      },
+      {
+        "text": "Approved",
+        "hasIcon": true,
+        "height": 24,
+        "bg": "rgb(219, 249, 168)",
+        "color": "rgb(49, 109, 21)",
+        "border": "1px solid rgb(49, 109, 21)",
+        "fontSize": "14px"
+      },
+      {
+        "text": "Pending",
+        "hasIcon": true,
+        "height": 24,
+        "bg": "rgb(255, 241, 190)",
+        "color": "rgb(173, 84, 0)",
+        "border": "1px solid rgb(173, 84, 0)",
+        "fontSize": "14px"
+      },
+      {
+        "text": "Rejected",
+        "hasIcon": true,
+        "height": 24,
+        "bg": "rgb(255, 236, 239)",
+        "color": "rgb(193, 37, 58)",
+        "border": "1px solid rgb(193, 37, 58)",
+        "fontSize": "14px"
+      },
+      {
+        "text": "Info",
+        "hasIcon": true,
+        "height": 24,
+        "bg": "rgb(208, 223, 255)",
+        "color": "rgb(69, 75, 212)",
+        "border": "1px solid rgb(69, 75, 212)",
+        "fontSize": "14px"
+      },
+      {
+        "text": "Small",
+        "hasIcon": true,
+        "height": 16,
+        "bg": "rgb(219, 249, 168)",
+        "color": "rgb(49, 109, 21)",
+        "border": "1px solid rgb(49, 109, 21)",
+        "fontSize": "10px"
+      },
+      {
+        "text": "Medium",
+        "hasIcon": true,
+        "height": 20,
+        "bg": "rgb(219, 249, 168)",
+        "color": "rgb(49, 109, 21)",
+        "border": "1px solid rgb(49, 109, 21)",
+        "fontSize": "12px"
+      },
+      {
+        "text": "Large",
+        "hasIcon": true,
+        "height": 24,
+        "bg": "rgb(219, 249, 168)",
+        "color": "rgb(49, 109, 21)",
+        "border": "1px solid rgb(49, 109, 21)",
+        "fontSize": "14px"
+      }
+    ],
+    "avatars": [],
+    "chips": [],
+    "progress": [],
+    "badgeCount": 20
+  },
+  "conv": {
+    "h1": "Badges",
+    "h2": [
+      "Variants",
+      "Sizes",
+      "With icons",
+      "API",
+      "Accessibility"
+    ],
+    "hasApi": true,
+    "hasA11y": true,
+    "tables": 1,
+    "apiRows": [
+      "variantdefault | primary | success | warning | error | info | orange | pink | disableddefault",
+      "sizesmall | medium | largelarge",
+      "iconharmony-icon name—"
+    ],
+    "a11yText": "Badges are typically decorative status labels. When a badge carries essential meaning, associate it with related content (proximity or ARIA). Do not rely on color alone — pair with text and/or an icon. Icon-only badges need an accessible name on the badge or parent.",
+    "badges": [
+      {
+        "text": "Default",
+        "variant": "default",
+        "size": "large",
+        "iconAttr": null,
+        "hasIcon": false,
+        "height": 24,
+        "bg": "rgb(247, 248, 250)",
+        "color": "rgb(82, 89, 105)",
+        "border": "1px solid rgb(191, 198, 212)",
+        "fontSize": "14px"
+      },
+      {
+        "text": "Primary",
+        "variant": "primary",
+        "size": "large",
+        "iconAttr": null,
+        "hasIcon": false,
+        "height": 24,
+        "bg": "rgb(199, 242, 255)",
+        "color": "rgb(32, 90, 158)",
+        "border": "1px solid rgb(32, 90, 158)",
+        "fontSize": "14px"
+      },
+      {
+        "text": "Success",
+        "variant": "success",
+        "size": "large",
+        "iconAttr": null,
+        "hasIcon": false,
+        "height": 24,
+        "bg": "rgb(219, 249, 168)",
+        "color": "rgb(49, 109, 21)",
+        "border": "1px solid rgb(49, 109, 21)",
+        "fontSize": "14px"
+      },
+      {
+        "text": "Warning",
+        "variant": "warning",
+        "size": "large",
+        "iconAttr": null,
+        "hasIcon": false,
+        "height": 24,
+        "bg": "rgb(255, 241, 190)",
+        "color": "rgb(173, 84, 0)",
+        "border": "1px solid rgb(173, 84, 0)",
+        "fontSize": "14px"
+      },
+      {
+        "text": "Error",
+        "variant": "error",
+        "size": "large",
+        "iconAttr": null,
+        "hasIcon": false,
+        "height": 24,
+        "bg": "rgb(255, 236, 239)",
+        "color": "rgb(193, 37, 58)",
+        "border": "1px solid rgb(193, 37, 58)",
+        "fontSize": "14px"
+      },
+      {
+        "text": "Info",
+        "variant": "info",
+        "size": "large",
+        "iconAttr": null,
+        "hasIcon": false,
+        "height": 24,
+        "bg": "rgb(208, 223, 255)",
+        "color": "rgb(69, 75, 212)",
+        "border": "1px solid rgb(69, 75, 212)",
+        "fontSize": "14px"
+      },
+      {
+        "text": "Orange",
+        "variant": "orange",
+        "size": "large",
+        "iconAttr": null,
+        "hasIcon": false,
+        "height": 24,
+        "bg": "rgb(255, 226, 192)",
+        "color": "rgb(108, 31, 7)",
+        "border": "1px solid rgb(108, 31, 7)",
+        "fontSize": "14px"
+      },
+      {
+        "text": "Pink",
+        "variant": "pink",
+        "size": "large",
+        "iconAttr": null,
+        "hasIcon": false,
+        "height": 24,
+        "bg": "rgb(255, 221, 243)",
+        "color": "rgb(184, 40, 144)",
+        "border": "1px solid rgb(184, 40, 144)",
+        "fontSize": "14px"
+      },
+      {
+        "text": "Disabled",
+        "variant": "disabled",
+        "size": "large",
+        "iconAttr": null,
+        "hasIcon": false,
+        "height": 24,
+        "bg": "rgb(224, 228, 235)",
+        "color": "rgb(148, 163, 184)",
+        "border": "1px solid rgb(191, 198, 212)",
+        "fontSize": "14px"
+      },
+      {
+        "text": "Small",
+        "variant": "default",
+        "size": "small",
+        "iconAttr": null,
+        "hasIcon": false,
+        "height": 16,
+        "bg": "rgb(247, 248, 250)",
+        "color": "rgb(82, 89, 105)",
+        "border": "1px solid rgb(191, 198, 212)",
+        "fontSize": "10px"
+      },
+      {
+        "text": "Medium",
+        "variant": "default",
+        "size": "medium",
+        "iconAttr": null,
+        "hasIcon": false,
+        "height": 20,
+        "bg": "rgb(247, 248, 250)",
+        "color": "rgb(82, 89, 105)",
+        "border": "1px solid rgb(191, 198, 212)",
+        "fontSize": "12px"
+      },
+      {
+        "text": "Large",
+        "variant": "default",
+        "size": "large",
+        "iconAttr": null,
+        "hasIcon": false,
+        "height": 24,
+        "bg": "rgb(247, 248, 250)",
+        "color": "rgb(82, 89, 105)",
+        "border": "1px solid rgb(191, 198, 212)",
+        "fontSize": "14px"
+      },
+      {
+        "text": "Approved",
+        "variant": "success",
+        "size": "large",
+        "iconAttr": "check",
+        "hasIcon": true,
+        "height": 24,
+        "bg": "rgb(219, 249, 168)",
+        "color": "rgb(49, 109, 21)",
+        "border": "1px solid rgb(49, 109, 21)",
+        "fontSize": "14px"
+      },
+      {
+        "text": "Pending",
+        "variant": "warning",
+        "size": "large",
+        "iconAttr": "clock",
+        "hasIcon": true,
+        "height": 24,
+        "bg": "rgb(255, 241, 190)",
+        "color": "rgb(173, 84, 0)",
+        "border": "1px solid rgb(173, 84, 0)",
+        "fontSize": "14px"
+      },
+      {
+        "text": "Rejected",
+        "variant": "error",
+        "size": "large",
+        "iconAttr": "x-mark",
+        "hasIcon": true,
+        "height": 24,
+        "bg": "rgb(255, 236, 239)",
+        "color": "rgb(193, 37, 58)",
+        "border": "1px solid rgb(193, 37, 58)",
+        "fontSize": "14px"
+      },
+      {
+        "text": "Info",
+        "variant": "info",
+        "size": "large",
+        "iconAttr": "information-circle",
+        "hasIcon": true,
+        "height": 24,
+        "bg": "rgb(208, 223, 255)",
+        "color": "rgb(69, 75, 212)",
+        "border": "1px solid rgb(69, 75, 212)",
+        "fontSize": "14px"
+      },
+      {
+        "text": "Small",
+        "variant": "success",
+        "size": "small",
+        "iconAttr": "check",
+        "hasIcon": true,
+        "height": 16,
+        "bg": "rgb(219, 249, 168)",
+        "color": "rgb(49, 109, 21)",
+        "border": "1px solid rgb(49, 109, 21)",
+        "fontSize": "10px"
+      },
+      {
+        "text": "Medium",
+        "variant": "success",
+        "size": "medium",
+        "iconAttr": "check",
+        "hasIcon": true,
+        "height": 20,
+        "bg": "rgb(219, 249, 168)",
+        "color": "rgb(49, 109, 21)",
+        "border": "1px solid rgb(49, 109, 21)",
+        "fontSize": "12px"
+      },
+      {
+        "text": "Large",
+        "variant": "success",
+        "size": "large",
+        "iconAttr": "check",
+        "hasIcon": true,
+        "height": 24,
+        "bg": "rgb(219, 249, 168)",
+        "color": "rgb(49, 109, 21)",
+        "border": "1px solid rgb(49, 109, 21)",
+        "fontSize": "14px"
+      }
+    ],
+    "avatars": [],
+    "chips": [],
+    "progress": [],
+    "badgeCount": 19,
+    "iconSectionTexts": [
+      {
+        "text": "Approved",
+        "icon": "check",
+        "size": "large",
+        "variant": "success",
+        "height": 24
+      },
+      {
+        "text": "Pending",
+        "icon": "clock",
+        "size": "large",
+        "variant": "warning",
+        "height": 24
+      },
+      {
+        "text": "Rejected",
+        "icon": "x-mark",
+        "size": "large",
+        "variant": "error",
+        "height": 24
+      },
+      {
+        "text": "Info",
+        "icon": "information-circle",
+        "size": "large",
+        "variant": "info",
+        "height": 24
+      },
+      {
+        "text": "Small",
+        "icon": "check",
+        "size": "small",
+        "variant": "success",
+        "height": 16
+      },
+      {
+        "text": "Medium",
+        "icon": "check",
+        "size": "medium",
+        "variant": "success",
+        "height": 20
+      },
+      {
+        "text": "Large",
+        "icon": "check",
+        "size": "large",
+        "variant": "success",
+        "height": 24
+      }
+    ],
+    "themeClass": "theme-cp"
+  }
+}

@@ -1,0 +1,221 @@
+{
+  "calloutText": "TableCostpointGrid (CP split datagrid) is out of scope for this conversion — accepted gap. Use the hybrid Table surface for standard and Command Center tables.",
+  "a11yPresent": true,
+  "a11yText": "Use a real <table> with th scope. Sortable headers set aria-sort. Expand and grip controls have accessible names. Forced-colors: document CSS in table.css.",
+  "chips": [
+    {
+      "text": "Active",
+      "w": 47,
+      "h": 16,
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(42, 120, 198)",
+      "radius": "4px",
+      "border": "rgb(42, 120, 198)"
+    },
+    {
+      "text": "In Progress",
+      "w": 68,
+      "h": 16,
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(42, 120, 198)",
+      "radius": "4px",
+      "border": "rgb(42, 120, 198)"
+    },
+    {
+      "text": "Pending",
+      "w": 54,
+      "h": 16,
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(42, 120, 198)",
+      "radius": "4px",
+      "border": "rgb(42, 120, 198)"
+    },
+    {
+      "text": "Active",
+      "w": 47,
+      "h": 16,
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(42, 120, 198)",
+      "radius": "4px",
+      "border": "rgb(42, 120, 198)"
+    }
+  ],
+  "stripedRows": [
+    {
+      "bg": "rgb(255, 255, 255)",
+      "cls": "",
+      "text": "PRJ-001 Website Redesign $25,000"
+    },
+    {
+      "bg": "rgb(247, 248, 250)",
+      "cls": "",
+      "text": "PRJ-002 Mobile App $150,000"
+    },
+    {
+      "bg": "rgb(255, 255, 255)",
+      "cls": "",
+      "text": "PRJ-003 Database Migration $45,000"
+    },
+    {
+      "bg": "rgb(247, 248, 250)",
+      "cls": "table-row--total",
+      "text": "Total $220,000"
+    }
+  ],
+  "cbs": [
+    {
+      "w": 64,
+      "h": 18,
+      "visible": true
+    },
+    {
+      "w": 64,
+      "h": 18,
+      "visible": true
+    },
+    {
+      "w": 64,
+      "h": 18,
+      "visible": true
+    },
+    {
+      "w": 64,
+      "h": 18,
+      "visible": true
+    }
+  ],
+  "grips": [
+    {
+      "w": 86,
+      "h": 65,
+      "aria": null
+    },
+    {
+      "w": 24,
+      "h": 40,
+      "aria": "Drag to reorder"
+    },
+    {
+      "w": 86,
+      "h": 65,
+      "aria": null
+    },
+    {
+      "w": 24,
+      "h": 40,
+      "aria": "Drag to reorder"
+    },
+    {
+      "w": 86,
+      "h": 65,
+      "aria": null
+    },
+    {
+      "w": 24,
+      "h": 40,
+      "aria": "Drag to reorder"
+    }
+  ],
+  "groupInfo": {
+    "rows": [
+      {
+        "id": "g1",
+        "parent": null,
+        "hasChildren": true,
+        "depth": null,
+        "hidden": false,
+        "text": " PRJ-001 Website Redesign $25,000"
+      },
+      {
+        "id": "g1a",
+        "parent": "g1",
+        "hasChildren": false,
+        "depth": "1",
+        "hidden": false,
+        "text": " PRJ-001-A Phase 1 $10,000"
+      },
+      {
+        "id": "g1b",
+        "parent": "g1",
+        "hasChildren": false,
+        "depth": "1",
+        "hidden": false,
+        "text": " PRJ-001-B Phase 2 $15,000"
+      },
+      {
+        "id": "g2",
+        "parent": null,
+        "hasChildren": true,
+        "depth": null,
+        "hidden": false,
+        "text": " PRJ-002 Mobile App $150,000"
+      },
+      {
+        "id": "g2a",
+        "parent": "g2",
+        "hasChildren": false,
+        "depth": "1",
+        "hidden": true,
+        "text": " PRJ-002-AiOS$80,000 "
+      }
+    ],
+    "expandBtns": 2
+  },
+  "sortHeaders": [
+    {
+      "tag": "TH",
+      "text": "Project ID",
+      "ariaSort": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Project ID",
+      "ariaSort": null
+    },
+    {
+      "tag": "TH",
+      "text": "Name",
+      "ariaSort": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Name",
+      "ariaSort": null
+    },
+    {
+      "tag": "TH",
+      "text": "Budget",
+      "ariaSort": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Budget",
+      "ariaSort": null
+    }
+  ],
+  "filterInfo": {
+    "filterBar": true,
+    "title": "Projects",
+    "action": "Export",
+    "chips": [
+      "Q1 2025",
+      "Active"
+    ],
+    "tableRows": 2
+  },
+  "ccInfo": {
+    "toolbar": "As of today",
+    "aside": "Detail\n\nCompose a panel here (CommandCenterPanel not converted).",
+    "rows": 3,
+    "headers": [
+      "PR ID",
+      "Preferred Vendor",
+      "Total Amount",
+      "Status"
+    ],
+    "cls": "table--command-center table--striped"
+  },
+  "literalStub": false,
+  "pageScroll": 1000,
+  "hostH": 0
+}

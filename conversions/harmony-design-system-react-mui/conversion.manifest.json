@@ -8,10 +8,10 @@
   "referenceVersion": "0.9.0-in-progress",
   "referenceVersionSetAt": "2026-08-14T17:15:32.241Z",
   "coverage": {
-    "percent": 76,
+    "percent": 74,
     "completed": 42,
-    "total": 55,
-    "computedAt": "2026-07-21T00:46:22.448Z"
+    "total": 57,
+    "computedAt": "2026-09-11T21:04:49.784Z"
   },
   "independence": {
     "standalone": true
@@ -1820,6 +1820,14 @@
       "verificationReport": "verification/reports/ListMenu-2.md",
       "lastVerified": "2026-07-20T23:18:00.000Z",
       "notes": "Demo at /components/list-menu. Theme in mapListToTheme.ts. Plan plans/list-menu.md. Verifier PASS ListMenu-2; human accepted synced."
+    },
+    "CompanyPicker": {
+      "status": "not-started",
+      "harmonySource": "src/components/ui/CompanyPicker.astro"
+    },
+    "UserMenu": {
+      "status": "not-started",
+      "harmonySource": "src/components/ui/UserMenu.astro"
     }
   },
   "deliverables": {

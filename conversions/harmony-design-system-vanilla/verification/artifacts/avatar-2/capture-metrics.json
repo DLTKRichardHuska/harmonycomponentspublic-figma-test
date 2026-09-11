@@ -1,0 +1,239 @@
+{
+  "scope": "avatar",
+  "theme": "cp",
+  "ref": {
+    "h1": "Harmony CP Design System",
+    "h2": [
+      "Examples",
+      "Props",
+      "Accessibility"
+    ],
+    "h3": [
+      "Sizes (icon)",
+      "Variants",
+      "Interactive",
+      "Roles and labels"
+    ],
+    "nav": [
+      "Examples",
+      "Props",
+      "Accessibility"
+    ],
+    "badge": "stable",
+    "hasProps": true,
+    "hasA11y": true,
+    "badges": [
+      {
+        "text": "stable",
+        "hasIcon": false,
+        "height": 24,
+        "bg": "rgb(219, 249, 168)",
+        "color": "rgb(49, 109, 21)",
+        "border": "1px solid rgb(49, 109, 21)",
+        "fontSize": "14px"
+      }
+    ],
+    "avatars": [
+      {
+        "className": "avatar avatar--sm",
+        "h": 24,
+        "w": 24,
+        "bg": "rgb(42, 120, 198)",
+        "radius": "4px",
+        "opacity": "1"
+      },
+      {
+        "className": "avatar avatar--md",
+        "h": 32,
+        "w": 32,
+        "bg": "rgb(42, 120, 198)",
+        "radius": "8px",
+        "opacity": "1"
+      },
+      {
+        "className": "avatar avatar--lg",
+        "h": 40,
+        "w": 40,
+        "bg": "rgb(42, 120, 198)",
+        "radius": "12px",
+        "opacity": "1"
+      },
+      {
+        "className": "avatar avatar--md",
+        "h": 32,
+        "w": 32,
+        "bg": "rgb(42, 120, 198)",
+        "radius": "8px",
+        "opacity": "1"
+      },
+      {
+        "className": "avatar avatar--md avatar--initials",
+        "h": 32,
+        "w": 32,
+        "bg": "rgb(42, 120, 198)",
+        "radius": "8px",
+        "opacity": "1"
+      },
+      {
+        "className": "avatar avatar--md avatar--image",
+        "h": 32,
+        "w": 32,
+        "bg": "rgb(255, 255, 255)",
+        "radius": "8px",
+        "opacity": "1"
+      },
+      {
+        "className": "avatar avatar--md",
+        "h": 32,
+        "w": 32,
+        "bg": "rgb(42, 120, 198)",
+        "radius": "8px",
+        "opacity": "1"
+      },
+      {
+        "className": "avatar avatar--md avatar--demo-hover",
+        "h": 32,
+        "w": 32,
+        "bg": "rgb(34, 104, 176)",
+        "radius": "8px",
+        "opacity": "1"
+      },
+      {
+        "className": "avatar avatar--md avatar--demo-focus",
+        "h": 32,
+        "w": 32,
+        "bg": "rgb(42, 120, 198)",
+        "radius": "8px",
+        "opacity": "1"
+      },
+      {
+        "className": "avatar avatar--md",
+        "h": 32,
+        "w": 32,
+        "bg": "rgb(42, 120, 198)",
+        "radius": "8px",
+        "opacity": "0.5"
+      }
+    ],
+    "chips": [],
+    "progress": [],
+    "badgeCount": 1
+  },
+  "conv": {
+    "h1": "Avatar",
+    "h2": [
+      "Sizes (icon)",
+      "Variants",
+      "Interactive",
+      "API",
+      "Accessibility"
+    ],
+    "hasApi": true,
+    "hasA11y": true,
+    "tables": 1,
+    "apiRows": [
+      "sizesm | md | lgmd",
+      "varianticon | initials | imageicon",
+      "initialsstring—",
+      "src / altimage URL / accessible name—",
+      "interactive / disabledbooleanfalse"
+    ],
+    "a11yText": "Non-interactive avatars use role=\"img\" with an accessible name. Interactive avatars use role=\"button\", are focusable, and fire host click (Enter/Space included). Decorative inner content is aria-hidden. Image alt=\"\"; name lives on the host.",
+    "badges": [],
+    "avatars": [
+      {
+        "size": "sm",
+        "variant": "icon",
+        "interactive": false,
+        "disabled": false,
+        "h": 24,
+        "w": 24,
+        "bg": "rgb(42, 120, 198)",
+        "radius": "4px",
+        "opacity": "1"
+      },
+      {
+        "size": "md",
+        "variant": "icon",
+        "interactive": false,
+        "disabled": false,
+        "h": 32,
+        "w": 32,
+        "bg": "rgb(42, 120, 198)",
+        "radius": "8px",
+        "opacity": "1"
+      },
+      {
+        "size": "lg",
+        "variant": "icon",
+        "interactive": false,
+        "disabled": false,
+        "h": 40,
+        "w": 40,
+        "bg": "rgb(42, 120, 198)",
+        "radius": "12px",
+        "opacity": "1"
+      },
+      {
+        "size": "md",
+        "variant": "icon",
+        "interactive": false,
+        "disabled": false,
+        "h": 32,
+        "w": 32,
+        "bg": "rgb(42, 120, 198)",
+        "radius": "8px",
+        "opacity": "1"
+      },
+      {
+        "size": "md",
+        "variant": "initials",
+        "interactive": false,
+        "disabled": false,
+        "h": 32,
+        "w": 32,
+        "bg": "rgb(42, 120, 198)",
+        "radius": "8px",
+        "opacity": "1"
+      },
+      {
+        "size": "md",
+        "variant": "image",
+        "interactive": false,
+        "disabled": false,
+        "h": 32,
+        "w": 32,
+        "bg": "rgb(255, 255, 255)",
+        "radius": "8px",
+        "opacity": "1"
+      },
+      {
+        "size": "md",
+        "variant": "icon",
+        "interactive": true,
+        "disabled": false,
+        "h": 32,
+        "w": 32,
+        "bg": "rgb(42, 120, 198)",
+        "radius": "8px",
+        "opacity": "1"
+      },
+      {
+        "size": "md",
+        "variant": "icon",
+        "interactive": true,
+        "disabled": true,
+        "h": 32,
+        "w": 32,
+        "bg": "rgb(42, 120, 198)",
+        "radius": "8px",
+        "opacity": "0.5"
+      }
+    ],
+    "chips": [],
+    "progress": [],
+    "badgeCount": 0,
+    "iconSectionTexts": [],
+    "themeClass": "theme-cp"
+  }
+}

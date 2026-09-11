@@ -1,0 +1,137 @@
+{
+  "spinner": {
+    "ref": {
+      "title": "Spinner | Design System",
+      "h1": [
+        "Spinner"
+      ],
+      "h2": [
+        "Examples",
+        "Props",
+        "Accessibility"
+      ],
+      "h3": [
+        "Sizes",
+        "In Context",
+        "ARIA Attributes",
+        "Screen Reader Support",
+        "Animation Preferences"
+      ],
+      "demos": 5,
+      "spinners": 5,
+      "accordionItems": 0,
+      "tables": 1,
+      "text": "Spinner\nstable\n\nSpinners indicate that content is loading or an action is being processed.\n\nExamples\nProps\nAccessibility\nExamples\nSizes\n\nDifferent spinner sizes.\n\nLoading…\nLoading…\nLoading…\nIn Context\n\nSpinners in common use cases.\n\nLoading…\nLoading…\nLoading…\n\nLoading content…\n\nProps\nProp\tType\tDefault\tDescription\nsize\t'sm' | 'md' | 'lg'\t'md'\tSpinner size\nAccessibility\nARIA Attributes\n\nSpinners use role=\"status\" and aria-label to indicate loading state to screen readers. The spinner is announced as a live region so users are informed when content is loading.\n\nScreen Reader Support\n\nScreen readers announce loading states. Provide descriptive aria-label text (e.g., \"Loading content\" or \"Processing request\") to give context about what is loading.\n\nAnimation Preferences\n\nThe spinner respects user preferences for reduced motion. When prefers-reduced-motion is enabled, animations are minimized or removed to accommodate users with motion sensitivity."
+    },
+    "conv": {
+      "title": "Spinner · Harmony Vanilla",
+      "h1": [],
+      "h2": [],
+      "h3": [],
+      "demos": 0,
+      "spinners": 0,
+      "accordionItems": 0,
+      "tables": 0,
+      "text": ""
+    }
+  },
+  "accordion": {
+    "ref": {
+      "title": "Accordion | Design System",
+      "h1": [
+        "Accordion"
+      ],
+      "h2": [
+        "Examples",
+        "Props",
+        "Accessibility"
+      ],
+      "h3": [
+        "Basic Accordion",
+        "With Label",
+        "With Default Open",
+        "Allow Multiple",
+        "Disabled Sections",
+        "Focus",
+        "Keyboard Navigation",
+        "ARIA Attributes",
+        "Screen Reader Support"
+      ],
+      "demos": 9,
+      "spinners": 0,
+      "accordionItems": 87,
+      "tables": 1,
+      "text": "Accordion\nstable\n\nAccordions organize content into collapsible sections, helping users navigate large amounts of information.\n\nExamples\nWith label\nProps\nAccessibility\nExamples\nBasic Accordion\n\nStandard accordion with single item open.\n\nWhat is this design system?\nHow do I get started?\nIs it accessible?\nWith Label\n\nPass the label prop to show a heading above the accordion. The control uses role=&quot;group&quot; and aria-labelledby for accessibility.\n\nAccount preferences\n\nNotifications\nPrivacy\nWith Default Open\n\nAccordion with an item open by default.\n\nCan I customize the colors?\nAbsolutely! The design system uses CSS custom properties (variables) for all colors. You can override them in your project to match your brand.\nWhat browsers are supported?\nCan I use this commercially?\nAllow Multiple\n\nMultiple items can be open simultaneously.\n\nWhat is this design system?\nHow do I get started?\nIs it accessible?\nDisabled Sections\n\nSet disabled on an item to prevent expanding that section and to apply disabled header styling.\n\nEditable section\nLocked section\nAnother editable section\nFocus\n\nFocused section headers use the same grey background as the hover state (pointer or keyboard). An open section does not keep that styling unless its header still has focus—for example, after focusing another header in multi-expand mode.\n\nTab through the headers below or click to move focus and see the focus state.\n\nWhat is this design system?\nHow do I get started?\nIs it accessible?\nProps\nProp\tType\tDefault\tDescription\nitems\tAccordionItem[]\t[]\tPer section: title, content; optional defaultOpen and disabled\nallowMultiple\tboolean\tfalse\tAllow multiple items to be open\nlabel\tstring\t—\tOptional label above the control; sets role=\"group\" and aria-labelledby\nclass\tstring\t—\tAdditional CSS classes on the root wrapper (.accordion-field)\nAccessibility\nKeyboard Navigation\n\nAccordion headers are fully keyboard accessible. Use Tab to navigate to accordion items, and Enter or Space to toggle expansion.\n\nARIA Attributes\n\nThe Accordion component uses proper ARIA attributes:\n\nNative <button> elements for section headers (keyboard and screen reader support)\naria-expanded indicates open/closed state\naria-controls associates headers with content panels\nWhen label is set: role=\"group\" and aria-labelledby reference the visible label\nDisabled sections use the disabled attribute on the header button (removed from tab order)\nScreen Reader Support\n\nScreen readers announce the accordion header text, expansion state, and content when expanded. The relationship between headers and their content is clearly communicated."
+    },
+    "conv": {
+      "title": "Accordion · Harmony Vanilla",
+      "h1": [],
+      "h2": [],
+      "h3": [],
+      "demos": 0,
+      "spinners": 0,
+      "accordionItems": 0,
+      "tables": 0,
+      "text": ""
+    }
+  },
+  "tables": {
+    "ref": {
+      "title": "Tables | Design System",
+      "h1": [
+        "Tables",
+        "Table Title",
+        "Table Title"
+      ],
+      "h2": [
+        "Basic Table",
+        "Table with Actions",
+        "Striped Table",
+        "Table with Reorderable Rows",
+        "Table with Grouped Rows",
+        "Sortable column headers",
+        "Table with Title Bar and Action Bar",
+        "Table with Filter Bar",
+        "Command Center (variant + panel)",
+        "Purchase Requisitions",
+        "Costpoint data grid",
+        "Props",
+        "Usage Guidelines"
+      ],
+      "h3": [
+        "Default Table with Gray Header",
+        "Table with White Header",
+        "Interactive Table",
+        "Alternating Rows",
+        "Table with Reorderable Rows",
+        "Table with Grouped Rows",
+        "Sortable column headers",
+        "Table with Title Bar",
+        "Table with Action Bar",
+        "Table with Title Bar and Action Bar",
+        "Table with Filter Bar",
+        "Command Center table with docked panel",
+        "Split frozen / scroll table",
+        "TableCostpointGrid (Astro) props",
+        "Best Practices",
+        "Accessibility"
+      ],
+      "demos": 25,
+      "spinners": 0,
+      "accordionItems": 0,
+      "tables": 16,
+      "text": "Tables\n\nTables are used to organize and display data efficiently. They allow users to scan, compare, and analyze information quickly.\n\nBasic Table\nDefault Table with Gray Header\n\nA simple table with light gray header background.\n\nProject ID\tName\tStatus\tBudget\nPRJ-001\tWebsite Redesign\tActive\t$25,000\nPRJ-002\tMobile App Development\tIn Progress\t$150,000\nPRJ-003\tDatabase Migration\tPending\t$45,000\nPRJ-004\tSecurity Audit\tReview\t$12,500\nTable with White Header\n\nTable with white header background.\n\nProject ID\tName\tStatus\tBudget\nPRJ-001\tWebsite Redesign\tActive\t$25,000\nPRJ-002\tMobile App Development\tIn Progress\t$150,000\nTable with Actions\nInteractive Table\n\nThe header checkbox selects or deselects all rows. Selected rows are highlighted in blue.\n\n\tEmployee\tDepartment\tRole\tActions\n\n\t\nJD\nJohn Doe\njohn.doe@company.com\n\tEngineering\tSenior Developer\t\n\n\n\t\nJS\nJane Smith\njane.smith@company.com\n\tDesign\tUX Lead\t\n\n\n\t\nMJ\nMike Johnson\nmike.j@company.com\n\tMarketing\tManager\t\nStriped Table\nAlternating Rows\n\nTable with alternating row background colors for easier scanning. Total row uses blue highlight.\n\nCode\tDescription\tAmount\nACC-1001\tOperating Expenses\t$12,450.00\nACC-1002\tEquipment Purchase\t$8,750.00\nACC-1003\tTravel & Entertainment\t$3,200.00\nACC-1004\tSoftware Licenses\t$15,600.00\nTotal\t$40,000.00\nTable with Reorderable Rows\nTable with Reorderable Rows\n\nWhen reorderable is enabled, a grip icon (vertical dots) appears at the far left of each row. Users can drag the grip to reorder rows up or down. When using the header slot with reorderable, add an empty th with class table__grip-column and aria-label='Reorder' as the first column.\n\n\tProject ID\tName\tStatus\tBudget\n\tPRJ-001\tWebsite Redesign\tActive\t$25,000\n\tPRJ-002\tMobile App Development\tIn Progress\t$150,000\n\tPRJ-003\tDatabase Migration\tPending\t$45,000\n\tPRJ-004\tSecurity Audit\tReview\t$12,500\nTable with Grouped Rows\nTable with Grouped Rows\n\nExpandable rows (those with child rows) display a small arrow icon on the far left. Click the arrow to expand or collapse child rows. Child rows are indented based on their depth.\n\n\tProject ID\tName\tStatus\tBudget\tActions\n\n\tPRJ-001\tWebsite Redesign\tActive\t$25,000\t\n\n\n\tPRJ-002\tMobile App Development\tIn Progress\t$150,000\t\n\n\tPRJ-003\tDatabase Migration\tPending\t$45,000\t\nSortable column headers\nSortable column headers\n\nColumn headers can be sortable with icons indicating sort order: chevron up (ascending), chevron down (descending), and chevron-up-down (unsorted). Use aria-sort on the active column for accessibility.\n\nProject ID\n\tName\n\tStatus\n\tBudget\n\nPRJ-001\tWebsite Redesign\tActive\t$25,000\nPRJ-002\tMobile App Development\tIn Progress\t$150,000\nPRJ-003\tDatabase Migration\tPending\t$45,000\nPRJ-004\tSecurity Audit\tReview\t$12,500\nTable with Title Bar and Action Bar\nTable with Title Bar\n\nTable with optional title bar containing title and window control icons. Table header background color remains unchanged.\n\nTable Title\nProject ID\tName\tStatus\tBudget\nPRJ-001\tWebsite Redesign\tActive\t$25,000\nPRJ-002\tMobile App Development\tIn Progress\t$150,000\nTable with Action Bar\n\nTable with optional action bar containing action buttons. Table header background color remains unchanged.\n\nCopy\nAdd\nDelete\n|\nGroup\nCustomize Columns\nAll Filters\nProject ID\tName\tStatus\tBudget\nPRJ-001\tWebsite Redesign\tActive\t$25,000\nPRJ-002\tMobile App Development\tIn Progress\t$150,000\nTable with Title Bar and Action Bar\n\nTable with both title bar and action bar. Table header background color remains unchanged regardless of title bar or action bar presence.\n\nTable Title\nCopy\nAdd\nDelete\n|\nGroup\nCustomize Columns\nAll Filters\nProject ID\tName\tStatus\tBudget\nPRJ-001\tWebsite Redesign\tActive\t$25,000\nPRJ-002\tMobile App Development\tIn Progress\t$150,000\nTable with Filter Bar\nTable with Filter Bar\n\nTable with a filter bar above it for narrowing datasets by period, project, category, or other dimensions. Use Dropdowns for filter controls, Chips for active filters, and a Clear button. All periods and All Statuses are defaults; chips appear only when filters are applied.\n\nQ1 2025\nActive\nClear\nQ1 2025\nActive\nProject ID\tName\tStatus\tBudget\nPRJ-001\tWebsite Redesign\tActive\t$25,000\nPRJ-002\tMobile App Development\tIn Progress\t$150,000\nPRJ-003\tDatabase Migration\tPending\t$45,000\nCommand Center (variant + panel)\n\nCommand Center grid, sort and filter header affordances, and zebra rows. Sample data includes PR IDs, vendors, amounts, status as color swatches, and overdue counts. The docked panel can follow a Purchase Requisitions–style pattern (summary, overdue banner, late items). Selecting a row uses the.table-row--command-center-selected class (semi-transparent tint on cells). Pass acommand-center-aside slot with CommandCenterPanel so the panel aligns with the table (toolbar stays above the table only). In React, use the commandCenterAside prop andonRowSelect on Table with variant=\"commandCenter\". For hierarchical rows, use grouped with data-has-children and childtr elements (data-parent-id, data-depth); limit nesting to four levels.\n\nCommand Center table with docked panel\n\nIllustrative layout: toolbar, table (row selected), and slide-in style panel. Filter icons are affordances; implement popovers in the host app (v1).\n\nAs of 09/20/2024\nPR ID\n\t\nPreferred Vendor Name\n\t\nTotal Amount\n\t\nStatus\n\t\nOverdue\n\nPR-2041\tAcme Office Supplies\t$1,250.00\t\n\t2/5\nPR-2045\tLitware Medical Devices\t$3,890.25\t\n\t1/6\nPR-2042\tNorthwind Logistics\t$8,420.50\t\n\t1/4\nPR-2048\tWide World Importers\t$22,150.00\t\n\t4/9\nPR-2043\tContoso Training Group\t$2,100.00\t\n\t1/3\nPR-2046\tAdventure Works IT\t$475.90\t\n\t0/2\nPR-2044\tFabrikam Facilities Inc.\t$640.00\t\n\t1/2\nPR-2047\tBlue Yonder Analytics\t$9,999.00\t\n\t3/3\nPurchase Requisitions\n\nPR-2042\n\nPurchase Requisition Report\n25%\nOverdue lines\nSummary\n\nPR ID\n\nPR-2042\n\nPreferred Vendor Name\n\nNorthwind Logistics\n\nNo. of Lines\n\n4\n\nRequisitioner Name\n\nTaylor Brooks\n\nLate Items\n\n1 Overdue | 4 Total\n\nPending Submittal\n\nFollow up\n\n1\n\nRow selection: apply .table-row--command-center-selected to the active row, or in React use onRowSelect and data-row-id on each<tr>.\n\nCostpoint data grid\n\nHigh-density Costpoint-only grid with frozen row-handle and voucher columns, split bar, horizontal scroll for detail columns, Lexend typography, diagonal hatch on read-only cells, native scrollbars when content overflows, and a solid header row. This block is visible when the docs theme is Costpoint (html.theme-cp). The React gallery and this Astro example both use the same scrollable column set from Subperiod through Tax Location, with the same layout mechanics.\n\nSplit frozen / scroll table\n\nUse TableCostpointGrid.astro with matching row counts in both panes. Nine sample rows exercise vertical scroll (six body rows visible by default). First row shows selected state and an active Invoice cell.\n\n\tVoucher\tFiscal year *\tPeriod *\n\t\t\t\n\t\t\t\n\t\t\t\n\t\t\t\n\t\t\t\n\t\t\t\n\t\t\t\n\t\t\t\n\t\t\t\nSubperiod *\tOriginal Voucher\tVendor *\tVendor Name\tTerms\tApproved\tInvoice\tInvoice Date\tInvoice Amount *\tDiscount Percent\tDiscount Date\tDiscount Amount\tA/P Account Description\tCash Account Description\tDue Date\tDue Amount\tVoucher Type\tVoucher Line Distribution Recalculation Method\tWhen Calculated Sales Tax is Charged\tInput File Voucher No\tTotal Tax Amt\tRemaining Balance\tTax ID\tTaxing Date\tTax Location\n\t\t\t\t\nNET 30\n90 Days\n\t\n\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\nNET 30\n90 Days\n\t\n\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\nNET 30\n90 Days\n\t\n\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\nNET 30\n90 Days\n\t\n\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\nNET 30\n90 Days\n\t\n\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\nNET 30\n90 Days\n\t\n\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\nNET 30\n90 Days\n\t\n\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\nNET 30\n90 Days\n\t\n\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\nNET 30\n90 Days\n\t\n\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\nTableCostpointGrid (Astro) props\nProp\tType\tDefault\tDescription\nmaxHeight\tstring\t—\tCaps the vertical scroller height (overrides the default of six visible body rows plus header).\nscrollChrome\tboolean\tfalse\tWhen true, shows horizontal scroll arrow buttons under the panes and vertical arrows on the right.\nresizableSplit\tboolean\ttrue\tWhen true, the split bar resizes the frozen vs scroll pane"
+    },
+    "conv": {
+      "title": "Tables · Harmony Vanilla",
+      "h1": [],
+      "h2": [],
+      "h3": [],
+      "demos": 0,
+      "spinners": 0,
+      "accordionItems": 0,
+      "tables": 0,
+      "text": ""
+    }
+  }
+}

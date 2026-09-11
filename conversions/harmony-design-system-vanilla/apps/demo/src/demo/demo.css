@@ -1,0 +1,37 @@
+/* Global page only — chrome and pages live in Custom Elements (Shadow DOM + sheets). */
+html,
+body {
+  margin: 0;
+  height: 100%;
+}
+
+#app {
+  height: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: var(--body-default);
+  font-weight: var(--font-normal);
+  line-height: var(--leading-normal);
+  background: var(--page-bg);
+  color: var(--text-primary);
+}
+
+html.dark body {
+  background: var(--page-bg);
+  color: var(--text-primary);
+}
+
+@media (forced-colors: active) {
+  body,
+  html.dark body {
+    background: Canvas;
+    color: CanvasText;
+  }
+
+  :focus-visible {
+    outline: var(--border-width-standard) solid Highlight;
+    outline-offset: var(--space-0-5);
+  }
+}

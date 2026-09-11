@@ -1,0 +1,55 @@
+---
+import DocsLayout from '../../layouts/DocsLayout.astro';
+import PropsTable from '../../components/PropsTable.astro';
+import ExampleSection from '../../components/ExampleSection.astro';
+import UserMenu from '../../components/ui/UserMenu.astro';
+import Icon from '../../components/ui/Icon.astro';
+
+const avatarDemoPhotoSrc =
+  'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&w=128&h=128&fit=crop&q=80';
+
+const props = [
+  { name: 'name', type: 'string', default: 'required', description: 'User display name — tooltip text and initials source' },
+  { name: 'src', type: 'string', default: '—', description: 'Optional avatar image URL (image variant when set)' },
+];
+---
+
+<DocsLayout title="User Menu" description="Interactive user avatar that opens a menu of consumer-defined items.">
+  <article class="space-y-12">
+    <header class="page-header page-header--compact">
+      <h1 class="page-header__title page-header__title--sm">User Menu</h1>
+      <p class="page-header__description">
+        Avatar trigger with full-name tooltip. Image when <code>src</code> is set; otherwise initials from <code>name</code>. Menu items are slotted.
+      </p>
+    </header>
+
+    <ExampleSection title="Initials" description="No image — initials from name.">
+      <div style="min-height: 160px; display: flex; justify-content: flex-end; padding: var(--space-4); background: var(--nav-bg);">
+        <UserMenu name="Jane Doe">
+          <button type="button"><Icon name="user" size="sm" class="user-menu__item-icon" />Profile</button>
+          <a href="#"><Icon name="cog-6-tooth" size="sm" class="user-menu__item-icon" />Settings</a>
+          <button type="button"><Icon name="arrow-right-on-rectangle" size="sm" class="user-menu__item-icon" />Sign out</button>
+        </UserMenu>
+      </div>
+    </ExampleSection>
+
+    <ExampleSection title="Image" description="Photo variant with the same menu pattern.">
+      <div style="min-height: 160px; display: flex; justify-content: flex-end; padding: var(--space-4); background: var(--nav-bg);">
+        <UserMenu name="Jane Doe" src={avatarDemoPhotoSrc}>
+          <button type="button"><Icon name="user" size="sm" class="user-menu__item-icon" />Profile</button>
+          <button type="button"><Icon name="arrow-right-on-rectangle" size="sm" class="user-menu__item-icon" />Sign out</button>
+        </UserMenu>
+      </div>
+    </ExampleSection>
+
+    <section id="props" class="space-y-4">
+      <h2 class="section__title">Props</h2>
+      <PropsTable props={props} />
+    </section>
+
+    <section class="space-y-4">
+      <h2 class="section__title"><Icon name="check-badge" size="sm" /> Notes</h2>
+      <p class="text-sm text-secondary">Compose inside Shell Header <code>actions</code>. Slot <code>a</code> / <code>button</code> items with a leading <code>Icon</code>; same visual recipe as Company Picker options (padding, type, hover) without a color indicator.</p>
+    </section>
+  </article>
+</DocsLayout>

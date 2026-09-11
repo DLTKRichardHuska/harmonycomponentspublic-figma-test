@@ -1,0 +1,99 @@
+{
+  "ref": {
+    "hasUsageHeading": true,
+    "usageTitle": "Usage Guidelines",
+    "doHeader": "Do",
+    "dontHeader": "Don't",
+    "doItems": [
+      "• Always use labels with inputs",
+      "• Provide helpful placeholder text",
+      "• Show validation feedback inline",
+      "• Use appropriate input types"
+    ],
+    "dontItems": [
+      "• Use placeholder as label",
+      "• Hide error messages",
+      "• Disable without explanation",
+      "• Use generic error messages"
+    ]
+  },
+  "conv": {
+    "hasUsageHeading": true,
+    "usageTitle": "Usage Guidelines",
+    "headings": [
+      "Basic Input",
+      "Input Types",
+      "With Icon",
+      "Trailing icon and slot",
+      "States",
+      "Textarea",
+      "With Label (Stacked)",
+      "With Label (Inline)",
+      "Textarea With Label",
+      "Form Example",
+      "Form Example with Inline Labels",
+      "Form layout (stacked)",
+      "Form layout (inline)",
+      "Native dual path",
+      "Usage Guidelines",
+      "API",
+      "Accessibility"
+    ],
+    "doHeader": "Do",
+    "dontHeader": "Don't",
+    "doItems": [
+      "Always use labels with inputs",
+      "Provide helpful placeholder text",
+      "Show validation feedback inline",
+      "Use appropriate input types"
+    ],
+    "dontItems": [
+      "Use placeholder as label",
+      "Hide error messages",
+      "Disable without explanation",
+      "Use generic error messages"
+    ],
+    "rawDoHtml": "\n            <h3 class=\"guideline-card__header\"><harmony-icon name=\"check\" size=\"sm\" aria-hidden=\"true\"></harmony-icon> Do</h3>\n            <ul class=\"guideline-card__list\">\n              <li>Always use labels with inputs</li>\n              <li>Provide helpful placeholder text</li>\n              <li>Show validation feedback inline</li>\n              <li>Use appropriate input types</li>\n            </ul>\n          "
+  },
+  "compare": {
+    "doMatch": false,
+    "dontMatch": false,
+    "refDo": [
+      "• Always use labels with inputs",
+      "• Provide helpful placeholder text",
+      "• Show validation feedback inline",
+      "• Use appropriate input types"
+    ],
+    "convDo": [
+      "Always use labels with inputs",
+      "Provide helpful placeholder text",
+      "Show validation feedback inline",
+      "Use appropriate input types"
+    ],
+    "refDont": [
+      "• Use placeholder as label",
+      "• Hide error messages",
+      "• Disable without explanation",
+      "• Use generic error messages"
+    ],
+    "convDont": [
+      "Use placeholder as label",
+      "Hide error messages",
+      "Disable without explanation",
+      "Use generic error messages"
+    ]
+  },
+  "spot": {
+    "basic": {
+      "h": 40,
+      "font": "16px",
+      "radius": "8px",
+      "border": "rgb(191, 198, 212)"
+    },
+    "error": {
+      "border": "rgb(216, 49, 72)",
+      "borderW": "2px",
+      "msg": "Please enter a valid value"
+    }
+  }
+}

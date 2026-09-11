@@ -1,0 +1,79 @@
+# @dltkrichardhuska/harmony-design-system-vanilla
+
+Harmony Vanilla — native HTML + CSS recipes, optional hybrid helpers, Custom Elements (native ESM). Choose product once (npm subpath or static zip). Mode: `.dark` / `initColorScheme` (prefers-color-scheme bootstrap). Forced-colors: product `styles.css` remaps tokens under `@media (forced-colors: active)` (no Theme API; Shadow DOM needs local HC).
+
+## Consume
+
+- npm: `@dltkrichardhuska/harmony-design-system-vanilla/<product>` + `/styles.css` (+ `/elements` when using Custom Elements / hybrid helpers)
+- static: copy `dist-static/<product>/` → link `styles.css`, script `elements.js` when needed
+- fonts: Figtree, Lexend, JetBrains Mono (host must load)
+
+## Exports
+
+- HarmonyElement (optional light DOM via `shadowRootInit = null`), createSheet, HarmonyIcon, HarmonyButton, HarmonyCard, HarmonyProgress, HarmonySpinner, HarmonyAccordion, HarmonyAccordionItem, HarmonyBadge, HarmonyAvatar, HarmonyChip, HarmonyAlert, HarmonyTooltip, HarmonyDialog, HarmonyInput, HarmonyTextarea, HarmonySelect, HarmonyFormLayout, HarmonyFormRow, HarmonyPickerPopup, HarmonyDatePicker, HarmonyTimePicker, HarmonyDateTimePicker, HarmonyMonthPicker, HarmonyWeekPicker, HarmonyDateInput, HarmonyButtonGroup, HarmonyListMenu, HarmonyTable, HarmonyNotificationBadge, HarmonyCheckbox, HarmonyRadio, HarmonyToggle, HarmonyTabStrip, HarmonyShellHeader, HarmonyLeftSidebar, HarmonyRightSidebar, HarmonyCompanyPicker, HarmonyUserMenu, registerIcons, registerHarmonyElements
+- typographySheet/Css, buttonSheet/Css, cardSheet/Css, progressSheet/Css, spinnerSheet/Css, accordionSheet/Css, accordionItemSheet/Css, badgeSheet/Css, avatarSheet/Css, chipSheet/Css, linkSheet/Css, alertSheet/Css, tooltipSheet/Css, dialogSheet/Css, inputFieldSheet/Css, labelSheet/Css, inputSheet/Css, pickersSheet/Css, buttonGroupSheet/Css, listMenuSheet/Css, tableSheet/Css, notificationBadgeSheet/Css, checkboxSheet/Css, radioSheet/Css, toggleSheet/Css, tabStripSheet/Css
+- setColorScheme, getColorScheme, toggleColorScheme, initColorScheme, persistColorScheme, clearPersistedColorScheme, getPersistedColorScheme, COLOR_SCHEME_STORAGE_KEY
+- Date/time: setDateTimeDefaults, getDateTimeDefaults, initDateTimeDefaults, valueAsDate on date controls, getDateValue/setDateValue/getMachineValue/setMachineValue/formatDisplay, setDateTimeAdapter (native Date/Intl; no Luxon/Day.js in core). See docs/components/DateTime.md
+- Optional html attrs: data-harmony-locale, data-harmony-time-format
+
+## Foundation
+
+- CSS variables + typography classes — docs/foundation/{colors,typography,spacing,elevations}.md
+- Reset: box-sizing, margin/padding, links, forms, tables, focus-visible, .sr-only (in styles.css; also in typographySheet)
+- Reset margin/padding targets named elements, not `*` — a `*` rule would override :host padding/margin in Shadow DOM
+- Reset keeps list markers (ul disc, ol decimal, indent --space-6); structural lists (nav, tabs, menu) opt out with list-style: none
+- Typography type styles: tags styled by styles.css (h1=Heading XL, p=Body Default); .text-* classes for any element; typographySheet for Shadow DOM
+- No foundation Custom Elements; no JS token modules
+- High Contrast: system-color remaps in styles.css; Shadow DOM needs local HC rules
+
+## Catalog surfaces
+
+- Prefer AGENTS.md catalog map: native tag+classes, hybrid (CSS + optional CE), or web-component
+- Button — unclassed `button` / `input[type=button|submit|reset]` default to primary+md; `.btn` on `<a>`; optional `harmony-button`. Adopt `buttonSheet` in Shadow. Dela variants deferred. See docs/components/Button.md
+- Card — `.card` BEM + modifiers; optional `harmony-card`. Adopt `cardSheet` in Shadow. See docs/components/Card.md
+- Link — unclassed `<a>` (reset); `.link--muted`; sizes via typography; compose external `harmony-icon`. Adopt `linkSheet` in Shadow. See docs/components/Link.md
+- ProgressBar — `harmony-progress` (value/max/size/variant/show-label; parts track/bar/label). See docs/components/ProgressBar.md
+- Spinner — `harmony-spinner` (size/label; part spinner). See docs/components/Spinner.md
+- Accordion — `harmony-accordion` + `harmony-accordion-item` (allow-multiple/label; title/open/disabled; toggle). See docs/components/Accordion.md
+- Badge — `harmony-badge` (variant/size/icon; default slot). See docs/components/Badge.md
+- Avatar — `harmony-avatar` (size/variant/initials/src/alt/interactive/disabled; click when interactive). See docs/components/Avatar.md
+- ShellHeader — `harmony-shell-header` (product-name, gradient-color, actions slot; product logo from kit). See docs/components/ShellHeader.md
+- LeftSidebar — `harmony-left-sidebar` (product-kit defaults; active-id / expanded / panel-open; left-sidebar-item-select). See docs/components/LeftSidebar.md
+- RightSidebar — `harmony-right-sidebar` (Dela-first product defaults; active-id / expanded / panel-open; right-sidebar-item-select). See docs/components/RightSidebar.md
+- CompanyPicker — `harmony-company-picker` (company-name/id/color; slotted options; company-change). See docs/components/CompanyPicker.md
+- UserMenu — `harmony-user-menu` (name, optional src; slotted menu items; tooltip = name). See docs/components/UserMenu.md
+- Chip — `harmony-chip` (size/variant/type/selected/removable/icon; click + remove). See docs/components/Chip.md
+- Alert — `harmony-alert` (variant/enhanced/title/dismissible/icon/progress-value; actions slot; dismiss event). See docs/components/Alert.md
+- Tooltip — `harmony-tooltip` (text/position/corner-variant; content slot; hover+focus; Escape). See docs/components/Tooltip.md
+- Dialog — `harmony-dialog` (native dialog; show/close; close-on-backdrop; dirty + confirm-unsaved; close-request). See docs/components/Dialog.md
+- Label — native `<label class="label">` (+ `.label--required`, `.label__helper`). See docs/components/Label.md
+- Input — dual path: native text-like `input` + `harmony-input` (icons/error/label; trailing slot); `harmony-form-layout` + `harmony-form-row` for aligned forms / multi-field rows. See docs/components/Input.md
+- Select — catalog Dropdown. Dual path: native `select` + `harmony-select` (option/optgroup children; OS picker; form-layout like input). No `harmony-dropdown`. See docs/components/Select.md
+- Textarea — dual path: native `textarea` + `harmony-textarea`. See docs/components/Textarea.md
+- PickerPopup — `harmony-picker-popup` (for/open/title; show/hide; toggle; Popover API). See docs/components/PickerPopup.md
+- DatePicker — `harmony-date-picker` (value/min/max/disabled/locale; date-select). See docs/components/DatePicker.md
+- TimePicker — `harmony-time-picker` (value HH:MM; format 12|24; step; time-select). See docs/components/TimePicker.md
+- DateTimePicker — `harmony-datetime-picker` (value YYYY-MM-DDTHH:MM; time-format 12|24; locale; datetime-select). See docs/components/DateTimePicker.md
+- MonthPicker — `harmony-month-picker` (value YYYY-MM; month-select). See docs/components/MonthPicker.md
+- WeekPicker — `harmony-week-picker` (value YYYY-Www; week-select). See docs/components/WeekPicker.md
+- DateInput — `harmony-date-input` (form-associated; type date|time|datetime-local|month|week; input/change machine value; parts field/icon/popup). See docs/components/DateInput.md
+- ButtonGroup — hybrid: `.btn-group` + optional `harmony-button-group` (variant/size/orientation; compose buttons). Adopt `buttonGroupSheet` in Shadow. See docs/components/ButtonGroup.md
+- ListMenu — hybrid: `.list-menu` + optional `harmony-list-menu` (compose a/button items; no items JSON). Adopt `listMenuSheet` in Shadow. See docs/components/ListMenu.md
+- NotificationBadge — `harmony-notification-badge` (wrap default slot; type/size/variant/value/border/position). See docs/components/NotificationBadge.md
+- Checkbox — dual path: native checkbox + `harmony-checkbox` (label/error/indeterminate; form-layout). CheckboxGroup not converted. See docs/components/Checkbox.md
+- RadioButton — dual path: native radio + `harmony-radio` (group via name; form-layout). RadioGroup not converted. See docs/components/Radio.md
+- Toggle — `harmony-toggle` only (default|segmented; form-layout). See docs/components/Toggle.md
+- TabStrip — `harmony-tab-strip` (tabs[] property; selected; consumer panels; tab-select/close/add/…). See docs/components/TabStrip.md
+- Table — hybrid: unclassed `table` + modifiers + optional `harmony-table` (bars/slots; sort/reorder/grouped/CC; totals via `tfoot`). Adopt `tableSheet` in Shadow. TableCostpointGrid skipped. See docs/components/Table.md
+- harmony-icon — outline icon by name; sizes xs|sm|md|lg|xl; optional label; raw SVG default slot; parts svg/fallback
+- Bundled full Heroicons 24/outline + Harmony custom SVGs
+- registerIcons(map | Map): app SVG strings by name; call after /elements import; merge/replace; live instances refresh
+- Lookup: default slot → registerIcons → Harmony custom → Hero outline → ? fallback
+- SVG must include an <svg> root; use currentColor; trusted markup only (sanitized; throws TypeError if invalid)
+
+## Docs
+
+- AGENTS.md — full agent guidance
+- docs/foundation/ — token usage
+- docs/components/ — per-element API (HTML recipe and/or CE)
+- custom-elements.json — CEM (Custom Elements only)

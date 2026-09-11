@@ -1,0 +1,94 @@
+{
+  "ref": {
+    "navGap": "16px",
+    "hostGap": "16px",
+    "sections": [
+      {
+        "w": 52,
+        "h": 210,
+        "bg": "rgb(252, 253, 255)",
+        "gap": "16px",
+        "radius": "0px 12px 12px 0px"
+      },
+      {
+        "w": 52,
+        "h": 574,
+        "bg": "rgb(252, 253, 255)",
+        "gap": "16px",
+        "radius": "0px 12px 12px 0px"
+      }
+    ],
+    "itemH": 36,
+    "itemColor": "rgb(55, 63, 78)",
+    "hoverW": 188
+  },
+  "conv": {
+    "h2": [
+      "Default rail",
+      "Expanded (docs staging)",
+      "Panel-open (collapsed + tooltips)",
+      "Custom sections",
+      "API"
+    ],
+    "hasConsume": true,
+    "consumeText": "\n      Consume — npm\n      \n      Consume — static zip\n      \n    ",
+    "npmHasLeftSidebar": true,
+    "staticHasLeftSidebar": true,
+    "apiTable": true,
+    "tableRows": [
+      "active-idstringuncontrolled",
+      "expandedbooleanfalse",
+      "panel-openbooleanfalse",
+      "inlinebooleanfalse (docs embed)",
+      "sections (property)SidebarSection[]product kit"
+    ],
+    "density": null,
+    "navGap": "16px",
+    "sections": [
+      {
+        "w": 52,
+        "h": 210,
+        "bg": "rgb(252, 253, 255)",
+        "gap": "16px",
+        "radius": "0px 12px 12px 0px",
+        "border": "rgb(191, 198, 212)",
+        "shadow": true
+      },
+      {
+        "w": 52,
+        "h": 574,
+        "bg": "rgb(252, 253, 255)",
+        "gap": "16px",
+        "radius": "0px 12px 12px 0px",
+        "border": "rgb(191, 198, 212)",
+        "shadow": true
+      }
+    ],
+    "itemCount": 15,
+    "itemH": 36,
+    "itemColor": "rgb(55, 63, 78)",
+    "hostW": 52,
+    "hoverW": 188,
+    "more": {
+      "out": "Welcome screen (left-sidebar-item-0-0)",
+      "headings": [
+        "Consume — npm",
+        "Consume — static zip"
+      ],
+      "codes": [
+        "",
+        ""
+      ],
+      "snippets": [
+        "import '@dltkrichardhuska/harmony-design-system-vanilla/vp/styles.css';\nimport { registerHarmonyElements } from '@dltkrichardhuska/harmony-design-system-vanilla/vp/elements';\n\nregisterHarmonyElements(",
+        "<link rel=\"stylesheet\" href=\"/vendor/harmony/styles.css\" />\n<script type=\"module\" src=\"/vendor/harmony/elements.js\"></script>\n\n<harmony-left-sidebar></harmony-left-sidebar>"
+      ],
+      "npm": "import '@dltkrichardhuska/harmony-design-system-vanilla/vp/styles.css';\nimport { registerHarmonyElements } from '@dltkrichardhuska/harmony-design-system-vanilla/vp/elements';\n\nregi",
+      "staticZip": "<link rel=\"stylesheet\" href=\"/vendor/harmony/styles.css\" />\n<script type=\"module\" src=\"/vendor/harmony/elements.js\"></script>\n\n<harmony-left-sidebar></harmony-left-sidebar>"
+    },
+    "dark": {
+      "bg": "rgb(51, 61, 71)",
+      "itemColor": "rgb(31, 37, 46)"
+    }
+  }
+}

@@ -1,0 +1,160 @@
+/**
+ * Tooltip visual recipe — used by `<harmony-tooltip>` Shadow DOM.
+ * Not appended to product document styles.css (CE-only surface).
+ * Port of reference `.tooltip*` absolute positioning (not Popover/anchor).
+ */
+
+:host {
+  position: relative;
+  display: inline-block;
+}
+
+[part='content'] {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  font-size: var(--text-xs);
+  color: var(--text-inverse);
+  background-color: var(--text-primary);
+  border-radius: var(--radius-md);
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transition-fast), visibility var(--transition-fast);
+  z-index: var(--z-tooltip);
+  pointer-events: none;
+  box-sizing: border-box;
+}
+
+[part='content']::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: var(--text-primary);
+}
+
+:host(:hover) [part='content'],
+:host(:focus-within) [part='content'] {
+  opacity: 1;
+  visibility: visible;
+}
+
+:host([data-dismissed]) [part='content'] {
+  opacity: 0;
+  visibility: hidden;
+}
+
+:host([position='bottom']) [part='content'] {
+  bottom: auto;
+  top: 100%;
+  margin-bottom: 0;
+  margin-top: var(--space-2);
+}
+
+:host([position='bottom']) [part='content']::after {
+  top: auto;
+  bottom: 100%;
+  border-top-color: transparent;
+  border-bottom-color: var(--text-primary);
+}
+
+:host([position='left']) [part='content'] {
+  bottom: auto;
+  top: 50%;
+  left: auto;
+  right: 100%;
+  transform: translateY(-50%);
+  margin-bottom: 0;
+  margin-right: var(--space-2);
+}
+
+:host([position='left']) [part='content']::after {
+  top: 50%;
+  left: 100%;
+  transform: translateY(-50%);
+  border: 6px solid transparent;
+  border-left-color: var(--text-primary);
+}
+
+:host([position='right']) [part='content'] {
+  bottom: auto;
+  top: 50%;
+  left: 100%;
+  transform: translateY(-50%);
+  margin-bottom: 0;
+  margin-left: var(--space-2);
+}
+
+:host([position='right']) [part='content']::after {
+  top: 50%;
+  left: auto;
+  right: 100%;
+  transform: translateY(-50%);
+  border: 6px solid transparent;
+  border-right-color: var(--text-primary);
+}
+
+/* Corner variants — sharp corner, hide arrow */
+:host([corner-variant]) [part='content']::after {
+  display: none;
+}
+
+:host([corner-variant='top']) [part='content'] {
+  border-top-left-radius: 0;
+  border-top-right-radius: var(--radius-md);
+  border-bottom-left-radius: var(--radius-md);
+  border-bottom-right-radius: var(--radius-md);
+}
+
+:host([corner-variant='bottom']) [part='content'] {
+  border-top-left-radius: var(--radius-md);
+  border-top-right-radius: var(--radius-md);
+  border-bottom-left-radius: var(--radius-md);
+  border-bottom-right-radius: 0;
+}
+
+:host([corner-variant='left']) [part='content'] {
+  border-top-left-radius: var(--radius-md);
+  border-top-right-radius: var(--radius-md);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: var(--radius-md);
+}
+
+:host([corner-variant='right']) [part='content'] {
+  border-top-left-radius: var(--radius-md);
+  border-top-right-radius: 0;
+  border-bottom-left-radius: var(--radius-md);
+  border-bottom-right-radius: var(--radius-md);
+}
+
+[part='content'] .tooltip__text[data-empty] {
+  display: none;
+}
+
+@media (forced-colors: active) {
+  [part='content'] {
+    background-color: Canvas;
+    color: CanvasText;
+    border: var(--border-width-thin) solid CanvasText;
+    forced-color-adjust: none;
+  }
+  [part='content']::after {
+    border-top-color: CanvasText;
+  }
+  :host([position='bottom']) [part='content']::after {
+    border-top-color: transparent;
+    border-bottom-color: CanvasText;
+  }
+  :host([position='left']) [part='content']::after {
+    border-left-color: CanvasText;
+  }
+  :host([position='right']) [part='content']::after {
+    border-right-color: CanvasText;
+  }
+}

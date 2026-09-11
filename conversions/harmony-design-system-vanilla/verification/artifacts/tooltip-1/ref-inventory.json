@@ -1,0 +1,73 @@
+{
+  "htmlTheme": [
+    "theme-cp"
+  ],
+  "h1": "Harmony CP Design System",
+  "desc": "Tooltips display informative text when users hover over an element.",
+  "headings": [
+    "H1:Harmony CP Design System",
+    "H1:Tooltips",
+    "H2:Examples",
+    "H3:Basic Tooltip",
+    "H3:Positions",
+    "H3:On Different Elements",
+    "H3:Corner Variants",
+    "H2:Props",
+    "H2:Accessibility",
+    "H3:ARIA Attributes",
+    "H3:Keyboard Access",
+    "H3:Screen Reader Support",
+    "H3:Important Information"
+  ],
+  "exampleTitles": [],
+  "tipCount": 11,
+  "hasApi": true,
+  "hasA11y": true,
+  "hasConsume": null,
+  "tipAttrs": [
+    {
+      "text": "This is a tooltip",
+      "classes": "tooltip__content"
+    },
+    {
+      "text": "Appears on top",
+      "classes": "tooltip__content"
+    },
+    {
+      "text": "Appears on bottom",
+      "classes": "tooltip__content tooltip__content--bottom"
+    },
+    {
+      "text": "Appears on left",
+      "classes": "tooltip__content tooltip__content--left"
+    },
+    {
+      "text": "Appears on right",
+      "classes": "tooltip__content tooltip__content--right"
+    },
+    {
+      "text": "Icon button info",
+      "classes": "tooltip__content"
+    },
+    {
+      "text": "More information about this text",
+      "classes": "tooltip__content"
+    },
+    {
+      "text": "Top corners sharp",
+      "classes": "tooltip__content tooltip__content--corner-top"
+    },
+    {
+      "text": "Bottom corners sharp",
+      "classes": "tooltip__content tooltip__content--bottom tooltip__content--corner-bottom"
+    },
+    {
+      "text": "Left corners sharp",
+      "classes": "tooltip__content tooltip__content--left tooltip__content--corner-left"
+    },
+    {
+      "text": "Right corners sharp",
+      "classes": "tooltip__content tooltip__content--right tooltip__content--corner-right"
+    }
+  ]
+}

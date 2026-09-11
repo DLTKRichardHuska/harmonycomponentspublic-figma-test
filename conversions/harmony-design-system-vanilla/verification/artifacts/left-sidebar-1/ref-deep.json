@@ -1,0 +1,608 @@
+{
+  "title": "Left Sidebar",
+  "badges": [
+    "Shell Component",
+    "Theme Adaptive"
+  ],
+  "desc": "A unified collapsible left navigation sidebar that supports all Harmony themes. The sidebar adapts its icons and sections based on the theme variant. CP theme includes two sections (Main Navigation + ",
+  "host": {
+    "w": 52,
+    "h": 800,
+    "cls": "left-sidebar left-sidebar--cp",
+    "bg": "rgba(0, 0, 0, 0)",
+    "radius": "0px",
+    "shadow": "none",
+    "border": "0px none rgb(233, 236, 239)"
+  },
+  "chrome": [
+    {
+      "tag": "DIV",
+      "cls": "left-sidebar__section",
+      "w": 52,
+      "h": 210,
+      "bg": "rgb(51, 61, 71)",
+      "radius": "0px 12px 12px 0px",
+      "shadow": true,
+      "shadowVal": "rgba(0, 0, 0, 0.4) 0px 20px 25px -5px, rgba(0, 0, 0, 0.3) 0px 8px 10px -6px",
+      "border": "1px/1px rgb(95, 104, 113)",
+      "pos": "static"
+    },
+    {
+      "tag": "A",
+      "cls": "left-sidebar__item",
+      "w": 35,
+      "h": 36,
+      "bg": "rgba(0, 0, 0, 0)",
+      "radius": "8px",
+      "shadow": false,
+      "shadowVal": "none",
+      "border": "0px/0px rgb(233, 236, 239)",
+      "pos": "static"
+    },
+    {
+      "tag": "SPAN",
+      "cls": "tooltip__content tooltip__content--right",
+      "w": 0,
+      "h": 0,
+      "bg": "rgb(233, 236, 239)",
+      "radius": "6px",
+      "shadow": false,
+      "shadowVal": "none",
+      "border": "0px/0px rgb(31, 37, 46)",
+      "pos": "absolute"
+    },
+    {
+      "tag": "A",
+      "cls": "left-sidebar__item",
+      "w": 35,
+      "h": 36,
+      "bg": "rgba(0, 0, 0, 0)",
+      "radius": "8px",
+      "shadow": false,
+      "shadowVal": "none",
+      "border": "0px/0px rgb(233, 236, 239)",
+      "pos": "static"
+    },
+    {
+      "tag": "SPAN",
+      "cls": "tooltip__content tooltip__content--right",
+      "w": 0,
+      "h": 0,
+      "bg": "rgb(233, 236, 239)",
+      "radius": "6px",
+      "shadow": false,
+      "shadowVal": "none",
+      "border": "0px/0px rgb(31, 37, 46)",
+      "pos": "absolute"
+    },
+    {
+      "tag": "A",
+      "cls": "left-sidebar__item",
+      "w": 35,
+      "h": 36,
+      "bg": "rgba(0, 0, 0, 0)",
+      "radius": "8px",
+      "shadow": false,
+      "shadowVal": "none",
+      "border": "0px/0px rgb(233, 236, 239)",
+      "pos": "static"
+    },
+    {
+      "tag": "SPAN",
+      "cls": "tooltip__content tooltip__content--right",
+      "w": 0,
+      "h": 0,
+      "bg": "rgb(233, 236, 239)",
+      "radius": "6px",
+      "shadow": false,
+      "shadowVal": "none",
+      "border": "0px/0px rgb(31, 37, 46)",
+      "pos": "absolute"
+    },
+    {
+      "tag": "A",
+      "cls": "left-sidebar__item",
+      "w": 35,
+      "h": 36,
+      "bg": "rgba(0, 0, 0, 0)",
+      "radius": "8px",
+      "shadow": false,
+      "shadowVal": "none",
+      "border": "0px/0px rgb(233, 236, 239)",
+      "pos": "static"
+    },
+    {
+      "tag": "SPAN",
+      "cls": "tooltip__content tooltip__content--right",
+      "w": 0,
+      "h": 0,
+      "bg": "rgb(233, 236, 239)",
+      "radius": "6px",
+      "shadow": false,
+      "shadowVal": "none",
+      "border": "0px/0px rgb(31, 37, 46)",
+      "pos": "absolute"
+    },
+    {
+      "tag": "DIV",
+      "cls": "left-sidebar__section",
+      "w": 52,
+      "h": 574,
+      "bg": "rgb(51, 61, 71)",
+      "radius": "0px 12px 12px 0px",
+      "shadow": true,
+      "shadowVal": "rgba(0, 0, 0, 0.4) 0px 20px 25px -5px, rgba(0, 0, 0, 0.3) 0px 8px 10px -6px",
+      "border": "1px/1px rgb(95, 104, 113)",
+      "pos": "static"
+    },
+    {
+      "tag": "A",
+      "cls": "left-sidebar__item",
+      "w": 35,
+      "h": 36,
+      "bg": "rgba(0, 0, 0, 0)",
+      "radius": "8px",
+      "shadow": false,
+      "shadowVal": "none",
+      "border": "0px/0px rgb(233, 236, 239)",
+      "pos": "static"
+    },
+    {
+      "tag": "SPAN",
+      "cls": "tooltip__content tooltip__content--right",
+      "w": 0,
+      "h": 0,
+      "bg": "rgb(233, 236, 239)",
+      "radius": "6px",
+      "shadow": false,
+      "shadowVal": "none",
+      "border": "0px/0px rgb(31, 37, 46)",
+      "pos": "absolute"
+    },
+    {
+      "tag": "A",
+      "cls": "left-sidebar__item",
+      "w": 35,
+      "h": 36,
+      "bg": "rgba(0, 0, 0, 0)",
+      "radius": "8px",
+      "shadow": false,
+      "shadowVal": "none",
+      "border": "0px/0px rgb(233, 236, 239)",
+      "pos": "static"
+    }
+  ],
+  "itemCount": 51,
+  "items": [
+    {
+      "label": "Welcome screen",
+      "active": false,
+      "w": 35,
+      "h": 36,
+      "color": "rgb(233, 236, 239)",
+      "hasIcon": true
+    },
+    {
+      "label": "Dashboard",
+      "active": false,
+      "w": 35,
+      "h": 36,
+      "color": "rgb(233, 236, 239)",
+      "hasIcon": true
+    },
+    {
+      "label": "My menu",
+      "active": false,
+      "w": 35,
+      "h": 36,
+      "color": "rgb(233, 236, 239)",
+      "hasIcon": true
+    },
+    {
+      "label": "Recent",
+      "active": false,
+      "w": 35,
+      "h": 36,
+      "color": "rgb(233, 236, 239)",
+      "hasIcon": true
+    },
+    {
+      "label": "Search",
+      "active": false,
+      "w": 35,
+      "h": 36,
+      "color": "rgb(233, 236, 239)",
+      "hasIcon": true
+    },
+    {
+      "label": "Command Center",
+      "active": false,
+      "w": 35,
+      "h": 36,
+      "color": "rgb(233, 236, 239)",
+      "hasIcon": true
+    },
+    {
+      "label": "Accounting",
+      "active": false,
+      "w": 35,
+      "h": 36,
+      "color": "rgb(233, 236, 239)",
+      "hasIcon": true
+    },
+    {
+      "label": "Planning",
+      "active": false,
+      "w": 35,
+      "h": 36,
+      "color": "rgb(233, 236, 239)",
+      "hasIcon": true
+    },
+    {
+      "label": "Capture & contracts",
+      "active": false,
+      "w": 35,
+      "h": 36,
+      "color": "rgb(233, 236, 239)",
+      "hasIcon": true
+    },
+    {
+      "label": "Projects",
+      "active": false,
+      "w": 35,
+      "h": 36,
+      "color": "rgb(233, 236, 239)",
+      "hasIcon": true
+    },
+    {
+      "label": "Materials",
+      "active": false,
+      "w": 35,
+      "h": 36,
+      "color": "rgb(233, 236, 239)",
+      "hasIcon": true
+    },
+    {
+      "label": "Time & expense",
+      "active": false,
+      "w": 35,
+      "h": 36,
+      "color": "rgb(233, 236, 239)",
+      "hasIcon": true
+    },
+    {
+      "label": "People",
+      "active": false,
+      "w": 35,
+      "h": 36,
+      "color": "rgb(233, 236, 239)",
+      "hasIcon": true
+    },
+    {
+      "label": "Reports",
+      "active": false,
+      "w": 35,
+      "h": 36,
+      "color": "rgb(233, 236, 239)",
+      "hasIcon": true
+    },
+    {
+      "label": "Admin",
+      "active": false,
+      "w": 35,
+      "h": 36,
+      "color": "rgb(233, 236, 239)",
+      "hasIcon": true
+    },
+    {
+      "label": "Command Center",
+      "active": true,
+      "w": 0,
+      "h": 0,
+      "color": "rgb(31, 37, 46)",
+      "hasIcon": true
+    },
+    {
+      "label": "Programs",
+      "active": false,
+      "w": 0,
+      "h": 0,
+      "color": "rgb(233, 236, 239)",
+      "hasIcon": true
+    },
+    {
+      "label": "Portfolios",
+      "active": false,
+      "w": 0,
+      "h": 0,
+      "color": "rgb(233, 236, 239)",
+      "hasIcon": true
+    },
+    {
+      "label": "Projects",
+      "active": false,
+      "w": 0,
+      "h": 0,
+      "color": "rgb(233, 236, 239)",
+      "hasIcon": true
+    },
+    {
+      "label": "Risk",
+      "active": false,
+      "w": 0,
+      "h": 0,
+      "color": "rgb(233, 236, 239)",
+      "hasIcon": true
+    },
+    {
+      "label": "Reports",
+      "active": false,
+      "w": 0,
+      "h": 0,
+      "color": "rgb(233, 236, 239)",
+      "hasIcon": true
+    },
+    {
+      "label": "Calendars",
+      "active": false,
+      "w": 0,
+      "h": 0,
+      "color": "rgb(233, 236, 239)",
+      "hasIcon": true
+    },
+    {
+      "label": "Codes",
+      "active": false,
+      "w": 0,
+      "h": 0,
+      "color": "rgb(233, 236, 239)",
+      "hasIcon": true
+    },
+    {
+      "label": "Rates",
+      "active": false,
+      "w": 0,
+      "h": 0,
+      "color": "rgb(233, 236, 239)",
+      "hasIcon": true
+    },
+    {
+      "label": "Resources",
+      "active": false,
+      "w": 0,
+      "h": 0,
+      "color": "rgb(233, 236, 239)",
+      "hasIcon": true
+    },
+    {
+      "label": "Settings",
+      "active": false,
+      "w": 0,
+      "h": 0,
+      "color": "rgb(233, 236, 239)",
+      "hasIcon": true
+    },
+    {
+      "label": "Add Menu",
+      "active": false,
+      "w": 0,
+      "h": 0,
+      "color": "rgb(233, 236, 239)",
+      "hasIcon": true
+    },
+    {
+      "label": "Command Center",
+      "active": true,
+      "w": 0,
+      "h": 0,
+      "color": "rgb(31, 37, 46)",
+      "hasIcon": true
+    },
+    {
+      "label": "Programs",
+      "active": false,
+      "w": 0,
+      "h": 0,
+      "color": "rgb(233, 236, 239)",
+      "hasIcon": true
+    },
+    {
+      "label": "Portfolios",
+      "active": false,
+      "w": 0,
+      "h": 0,
+      "color": "rgb(233, 236, 239)",
+      "hasIcon": true
+    },
+    {
+      "label": "Projects",
+      "active": false,
+      "w": 0,
+      "h": 0,
+      "color": "rgb(233, 236, 239)",
+      "hasIcon": true
+    },
+    {
+      "label": "Risk",
+      "active": false,
+      "w": 0,
+      "h": 0,
+      "color": "rgb(233, 236, 239)",
+      "hasIcon": true
+    },
+    {
+      "label": "Reports",
+      "active": false,
+      "w": 0,
+      "h": 0,
+      "color": "rgb(233, 236, 239)",
+      "hasIcon": true
+    },
+    {
+      "label": "Calendars",
+      "active": false,
+      "w": 0,
+      "h": 0,
+      "color": "rgb(233, 236, 239)",
+      "hasIcon": true
+    },
+    {
+      "label": "Codes",
+      "active": false,
+      "w": 0,
+      "h": 0,
+      "color": "rgb(233, 236, 239)",
+      "hasIcon": true
+    },
+    {
+      "label": "Rates",
+      "active": false,
+      "w": 0,
+      "h": 0,
+      "color": "rgb(233, 236, 239)",
+      "hasIcon": true
+    },
+    {
+      "label": "Resources",
+      "active": false,
+      "w": 0,
+      "h": 0,
+      "color": "rgb(233, 236, 239)",
+      "hasIcon": true
+    },
+    {
+      "label": "Settings",
+      "active": false,
+      "w": 0,
+      "h": 0,
+      "color": "rgb(233, 236, 239)",
+      "hasIcon": true
+    },
+    {
+      "label": "Add Menu",
+      "active": false,
+      "w": 0,
+      "h": 0,
+      "color": "rgb(233, 236, 239)",
+      "hasIcon": true
+    },
+    {
+      "label": "Command Center",
+      "active": true,
+      "w": 0,
+      "h": 0,
+      "color": "rgb(31, 37, 46)",
+      "hasIcon": true
+    },
+    {
+      "label": "Programs",
+      "active": false,
+      "w": 0,
+      "h": 0,
+      "color": "rgb(233, 236, 239)",
+      "hasIcon": true
+    },
+    {
+      "label": "Portfolios",
+      "active": false,
+      "w": 0,
+      "h": 0,
+      "color": "rgb(233, 236, 239)",
+      "hasIcon": true
+    },
+    {
+      "label": "Projects",
+      "active": false,
+      "w": 0,
+      "h": 0,
+      "color": "rgb(233, 236, 239)",
+      "hasIcon": true
+    },
+    {
+      "label": "Risk",
+      "active": false,
+      "w": 0,
+      "h": 0,
+      "color": "rgb(233, 236, 239)",
+      "hasIcon": true
+    },
+    {
+      "label": "Reports",
+      "active": false,
+      "w": 0,
+      "h": 0,
+      "color": "rgb(233, 236, 239)",
+      "hasIcon": true
+    },
+    {
+      "label": "Calendars",
+      "active": false,
+      "w": 0,
+      "h": 0,
+      "color": "rgb(233, 236, 239)",
+      "hasIcon": true
+    },
+    {
+      "label": "Codes",
+      "active": false,
+      "w": 0,
+      "h": 0,
+      "color": "rgb(233, 236, 239)",
+      "hasIcon": true
+    },
+    {
+      "label": "Rates",
+      "active": false,
+      "w": 0,
+      "h": 0,
+      "color": "rgb(233, 236, 239)",
+      "hasIcon": true
+    },
+    {
+      "label": "Resources",
+      "active": false,
+      "w": 0,
+      "h": 0,
+      "color": "rgb(233, 236, 239)",
+      "hasIcon": true
+    },
+    {
+      "label": "Settings",
+      "active": false,
+      "w": 0,
+      "h": 0,
+      "color": "rgb(233, 236, 239)",
+      "hasIcon": true
+    },
+    {
+      "label": "Add Menu",
+      "active": false,
+      "w": 0,
+      "h": 0,
+      "color": "rgb(233, 236, 239)",
+      "hasIcon": true
+    }
+  ],
+  "sections": [
+    {
+      "i": 0,
+      "itemCount": 4
+    },
+    {
+      "i": 1,
+      "itemCount": 11
+    },
+    {
+      "i": 2,
+      "itemCount": 12
+    },
+    {
+      "i": 3,
+      "itemCount": 12
+    },
+    {
+      "i": 4,
+      "itemCount": 12
+    }
+  ]
+}

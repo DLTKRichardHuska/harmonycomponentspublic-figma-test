@@ -29,6 +29,7 @@ Single `elements` object:
     - Examples (do not mix across targets):
       - react-mui: `existing-mui` | `custom` | `skip` (`theme-only` deprecated; `thin-wrapper` forbidden)
       - shadcn: `component` | `skip` (always ships package components; approach detail in `userDecision` / plan)
+      - vanilla: `native` | `hybrid` | `web-component` | `skip` (prefer native HTML+CSS; hybrid adds optional light-DOM CE; web-component when encapsulation is needed)
       - figma (external): `figma-component` | `figma-variable` | `skip` (when host sync state is modeled)
   - `recommendedTarget`, `targetCandidates`, `gaps`, `userDecision`, `notes`
   - `blockedBy`: catalog element keys blocking this element (structured array)
@@ -44,7 +45,7 @@ Required for **component-library** converters. Declares `allowed`, optional `dep
 
 `userDecision` — human sign-off for element strategy, prop mappings, composite equivalents, accepted gaps, **Consumer public API** (for package exports), or release boundary (converter + human, not global default). Prefer **prose in `userDecision` + the plan file** for the approved Consumer API packet (base/analog, inherited props/events, Harmony-specific props, omissions). No separate manifest schema field is required.
 
-**Consumer API (package exports):** react-mui `custom` / custom sub-exports and shadcn `component` must record Consumer API sign-off before apply. Theme-only `existing-mui` and `skip` do not. On version/resync, record only the **delta** when the public surface changes. See [CONVERSION_WORKFLOW.md](CONVERSION_WORKFLOW.md) § Consumer public API.
+**Consumer API (package exports):** react-mui `custom` / custom sub-exports, shadcn `component`, and vanilla `native` / `hybrid` / `web-component` must record Consumer API sign-off before apply. Theme-only `existing-mui` and `skip` do not. On version/resync, record only the **delta** when the public surface changes. See [CONVERSION_WORKFLOW.md](CONVERSION_WORKFLOW.md) § Consumer public API.
 
 **Per-feature skips:** record in `skippedProps[]` and `gaps[]` (e.g. `"Button size xs — no native MUI size equivalent; skipped"`). Skipped demo sections use `UnsupportedEquivalentCallout` — verifier excludes them from FAIL when `userDecision` is set.
 

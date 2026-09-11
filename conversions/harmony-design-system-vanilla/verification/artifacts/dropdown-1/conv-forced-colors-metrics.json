@@ -1,0 +1,48 @@
+{
+  "forced": true,
+  "focused": {
+    "id": "native-country",
+    "multiple": false,
+    "disabled": false,
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(96, 0, 0)",
+    "border": "1px solid rgb(55, 0, 110)",
+    "appearance": "none",
+    "bgImage": "image",
+    "outline": "none 3px rgb(55, 0, 110)"
+  },
+  "disabled": {
+    "id": "country-disabled",
+    "multiple": false,
+    "disabled": true,
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(96, 0, 0)",
+    "border": "1px solid rgb(96, 0, 0)",
+    "appearance": "auto",
+    "bgImage": "none",
+    "outline": "none 3px rgb(96, 0, 0)"
+  },
+  "multi": {
+    "id": "regions",
+    "multiple": true,
+    "disabled": false,
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(0, 0, 0)",
+    "border": "1px solid rgb(0, 0, 0)",
+    "appearance": "auto",
+    "bgImage": "none",
+    "outline": "none 3px rgb(0, 0, 0)"
+  },
+  "error": {
+    "id": "country-error",
+    "multiple": false,
+    "disabled": false,
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(96, 0, 0)",
+    "border": "2px solid rgb(0, 0, 0)",
+    "appearance": "auto",
+    "bgImage": "none",
+    "outline": "none 3px rgb(96, 0, 0)"
+  },
+  "count": 9
+}

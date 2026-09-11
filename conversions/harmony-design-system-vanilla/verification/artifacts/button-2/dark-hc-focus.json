@@ -1,0 +1,97 @@
+{
+  "darkMetrics": {
+    "htmlDark": true,
+    "appDark": true,
+    "unclassed": {
+      "text": "Primary (unclassed)",
+      "className": "",
+      "bg": "rgb(89, 172, 255)",
+      "color": "rgb(31, 37, 46)",
+      "fw": "500",
+      "border": "rgb(31, 37, 46)"
+    },
+    "primary": {
+      "text": "Primary",
+      "className": "btn--primary",
+      "bg": "rgb(89, 172, 255)",
+      "color": "rgb(31, 37, 46)",
+      "fw": "500",
+      "border": "rgb(31, 37, 46)"
+    },
+    "secondary": {
+      "text": "Secondary modifier",
+      "className": "btn--secondary",
+      "bg": "rgb(55, 66, 77)",
+      "color": "rgb(89, 172, 255)",
+      "fw": "500",
+      "border": "rgb(89, 172, 255)"
+    },
+    "xs": {
+      "text": "XSmall",
+      "className": "btn--xs",
+      "bg": "rgb(89, 172, 255)",
+      "color": "rgb(31, 37, 46)",
+      "fw": "500",
+      "border": "rgb(31, 37, 46)"
+    },
+    "pageHeader": {
+      "text": "Primary",
+      "className": "btn--page-header btn--primary",
+      "bg": "rgb(4, 56, 82)",
+      "color": "rgb(255, 255, 255)",
+      "fw": "500",
+      "border": "rgb(255, 255, 255)"
+    }
+  },
+  "hcMetrics": {
+    "primary": {
+      "text": "Primary",
+      "bg": "rgb(55, 0, 110)",
+      "color": "rgb(255, 255, 255)",
+      "border": "1px solid rgb(0, 0, 0)",
+      "outline": "rgb(255, 255, 255) solid 3px",
+      "opacity": "1"
+    },
+    "disabled": {
+      "text": "Disabled",
+      "bg": "rgb(255, 255, 255)",
+      "color": "rgb(96, 0, 0)",
+      "border": "1px solid rgb(96, 0, 0)",
+      "outline": "rgb(96, 0, 0) none 3px",
+      "opacity": "1"
+    },
+    "focused": {
+      "text": "Primary",
+      "bg": "rgb(55, 0, 110)",
+      "color": "rgb(255, 255, 255)",
+      "border": "1px solid rgb(0, 0, 0)",
+      "outline": "rgb(255, 255, 255) solid 3px",
+      "opacity": "1"
+    }
+  },
+  "focusRing": {
+    "outline": "rgb(247, 248, 250) solid 1px",
+    "outlineOffset": "0px",
+    "boxShadow": "rgba(42, 120, 198, 0.1) 0px 0px 0px 3px, rgb(247, 248, 250) 0px 0px 0px 4px",
+    "border": "0px none rgb(255, 255, 255)",
+    "beforeContent": "none",
+    "afterContent": "none",
+    "afterOutline": "rgb(255, 255, 255) none 3px",
+    "afterBoxShadow": "none"
+  },
+  "badge": {
+    "h1": "Buttons",
+    "hasStable": false
+  },
+  "refFocus": {
+    "outline": "rgb(31, 37, 46) solid 3px",
+    "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+    "outlineOffset": "0px"
+  },
+  "refDark": {
+    "bg": "rgb(89, 172, 255)",
+    "color": "rgb(31, 37, 46)",
+    "fw": "500",
+    "text": "Primary"
+  }
+}

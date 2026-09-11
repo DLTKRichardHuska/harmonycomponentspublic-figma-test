@@ -716,6 +716,14 @@
       "notes": "Implemented package + demo + docs; human accepted visual match 2026-07-20. Verifier PASS ListMenu-1 (2026-08-13 re-verify).",
       "lastVerified": "2026-08-14T01:35:00.000Z",
       "verificationReport": "verification/reports/ListMenu-1.md"
+    },
+    "CompanyPicker": {
+      "status": "not-started",
+      "harmonySource": "src/components/ui/CompanyPicker.astro"
+    },
+    "UserMenu": {
+      "status": "not-started",
+      "harmonySource": "src/components/ui/UserMenu.astro"
     }
   },
   "deliverables": {
@@ -737,9 +745,9 @@
     "consumerGuide": "docs/CONSUMER_GUIDE.md"
   },
   "coverage": {
-    "percent": 91,
+    "percent": 88,
     "completed": 50,
-    "total": 55,
-    "computedAt": "2026-08-14T13:38:49.182Z"
+    "total": 57,
+    "computedAt": "2026-09-11T21:04:50.002Z"
   }
 }

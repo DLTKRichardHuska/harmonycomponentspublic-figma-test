@@ -1,0 +1,71 @@
+{
+  "a11y": {
+    "descsCount": 12,
+    "sampleDescs": [
+      {
+        "id": "harmony-tooltip-desc-25",
+        "text": "This is a tooltip",
+        "hidden": true
+      },
+      {
+        "id": "harmony-tooltip-desc-26",
+        "text": "Appears on top",
+        "hidden": true
+      },
+      {
+        "id": "harmony-tooltip-desc-27",
+        "text": "Appears on bottom",
+        "hidden": true
+      }
+    ],
+    "describedBy": "harmony-tooltip-desc-25",
+    "descText": "This is a tooltip",
+    "descFound": true,
+    "ariaIds": [
+      "harmony-tooltip-desc-25"
+    ],
+    "tipText": "This is a tooltip",
+    "onFocus": {
+      "opacity": "1",
+      "visibility": "visible",
+      "activeTag": "DEMO-APP"
+    },
+    "afterEsc": {
+      "opacity": "0",
+      "visibility": "hidden",
+      "dismissed": true
+    }
+  },
+  "corner": {
+    "opacity": "1",
+    "visibility": "visible",
+    "radii": [
+      "0px",
+      "6px",
+      "6px",
+      "6px"
+    ],
+    "arrowDisplay": "none"
+  },
+  "darkHover": {
+    "color": "rgb(31, 37, 46)",
+    "bg": "rgb(233, 236, 239)",
+    "opacity": "1",
+    "visibility": "visible"
+  },
+  "fc": {
+    "color": "rgb(0, 0, 0)",
+    "bg": "rgb(255, 255, 255)",
+    "border": "1px solid rgb(0, 0, 0)",
+    "opacity": "1",
+    "visibility": "visible",
+    "arrowTop": "rgb(0, 0, 0)"
+  },
+  "refDark": {
+    "color": "rgb(31, 37, 46)",
+    "bg": "rgb(233, 236, 239)",
+    "opacity": "1",
+    "fontSize": "12px",
+    "padding": "8px 12px"
+  }
+}

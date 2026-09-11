@@ -38,6 +38,8 @@ Examples:
 | Target | Equivalence model |
 |--------|-------------------|
 | `harmony-design-system-react-mui` | Demo routes, package exports, theme files — see target VERIFIER.md |
+| `harmony-design-system-shadcn` | Demo routes, package exports, AI artifacts — see target VERIFIER.md |
+| `harmony-design-system-vanilla` | Demo `:5178`, native HTML+CSS / hybrid / Custom Elements + npm/static kits — see target VERIFIER.md |
 | `figma` | Figma file nodes via MCP — no URLs |
 
 When output organization changes, the **engineer agent** updates `playbook/SKILL.md` and the **QA agent** updates `playbook/VERIFIER.md` together.
