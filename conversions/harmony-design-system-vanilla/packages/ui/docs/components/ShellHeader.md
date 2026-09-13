@@ -1,6 +1,6 @@
 # ShellHeader
 
-Application header via `<harmony-shell-header>` (open Shadow DOM). Brand mark comes from the **product kit** (`product-logo` / product icon) — there is no `logo-src` attribute.
+Application header via `<harmony-shell-header>` (open Shadow DOM). Brand mark comes from the **product kit** file `assets/logo.svg` (loaded as an image) — there is no `logo-src` attribute.
 
 ## Usage
 

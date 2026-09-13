@@ -299,6 +299,7 @@ export class DemoTablesPage extends HarmonyElement {
       <demo-example>
         <div class="table-scroll">
           <harmony-table>
+            <div slot="title-bar-content"><strong>Projects</strong></div>
             <div slot="filter-bar" class="filter-row">
               <button type="button">Period</button>
               <button type="button">Status</button>
@@ -306,7 +307,6 @@ export class DemoTablesPage extends HarmonyElement {
               <harmony-chip size="sm" removable>Q1 2025</harmony-chip>
               <harmony-chip size="sm" removable>Active</harmony-chip>
             </div>
-            <div slot="title-bar-content"><strong>Projects</strong></div>
             <div slot="title-bar-icons" class="title-actions">
               <button type="button" class="btn btn--ghost btn--sm" aria-label="Refresh">
                 <harmony-icon name="arrow-path" size="sm"></harmony-icon>

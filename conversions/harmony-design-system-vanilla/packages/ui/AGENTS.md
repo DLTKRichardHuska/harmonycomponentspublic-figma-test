@@ -26,7 +26,8 @@ npm install @dltkrichardhuska/harmony-design-system-vanilla
 ### Path B — static zip / folder (no npm)
 
 1. Unzip `harmony-design-system-vanilla-<product>.zip` (or copy `dist-static/<product>/`) to e.g. `/vendor/harmony/`.
-2. Use relative links only:
+2. Keep the folder intact (includes `assets/logo.svg` for the Shell Header brand mark).
+3. Use relative links only:
 
 ```html
 <link rel="stylesheet" href="/vendor/harmony/styles.css" />
@@ -129,7 +130,7 @@ As elements convert, the map lists the **shipped surface**: native tag + classes
 | Link | unclassed `<a>` + `.link--muted` | Native — sizes via typography; compose external icon — `docs/components/Link.md` |
 | Badge | `harmony-badge` | Web component — `docs/components/Badge.md` |
 | Avatar | `harmony-avatar` | Web component — interactive fires `click` — `docs/components/Avatar.md` |
-| ShellHeader | `harmony-shell-header` | Web component — product logo from kit; `actions` slot — `docs/components/ShellHeader.md` |
+| ShellHeader | `harmony-shell-header` | Web component — product logo from kit `assets/logo.svg`; `actions` slot — `docs/components/ShellHeader.md` |
 | LeftSidebar | `harmony-left-sidebar` | Web component — product-kit default sections; `left-sidebar-item-select` — `docs/components/LeftSidebar.md` |
 | RightSidebar | `harmony-right-sidebar` | Web component — Dela-first product defaults; `right-sidebar-item-select` — `docs/components/RightSidebar.md` |
 | CompanyPicker | `harmony-company-picker` | Web component — `company-change` event — `docs/components/CompanyPicker.md` |

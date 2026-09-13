@@ -1,14 +1,12 @@
 import { HarmonyElement, createSheet } from './HarmonyElement.js';
 import { shellHeaderCss } from '../styles/generated/shellHeaderCss.js';
-import { productLogoMarkup, resolveProductLogoKey } from './productLogo.js';
+import { resolveProductLogoUrl } from './productLogo.js';
 
 const styles = createSheet(shellHeaderCss);
 
-let logoSeq = 0;
-
 /**
  * Shell header Custom Element (open Shadow DOM).
- * Brand mark uses product-kit logo SVG (no logo-src attribute). Actions are slotted.
+ * Brand mark uses product-kit assets/logo.svg (no logo-src attribute). Actions are slotted.
  */
 export class HarmonyShellHeader extends HarmonyElement {
   static styles = [styles];
@@ -19,8 +17,6 @@ export class HarmonyShellHeader extends HarmonyElement {
 
   /** @type {MutationObserver | null} */
   #styleObserver = null;
-  /** @type {string} */
-  #logoPrefix = `hdr-logo-${++logoSeq}`;
 
   connectedCallback() {
     if (!this.hasAttribute('product-name')) this.setAttribute('product-name', 'Harmony');
@@ -102,8 +98,14 @@ export class HarmonyShellHeader extends HarmonyElement {
   #syncLogo() {
     const host = this.shadowRoot.querySelector('.header__logo');
     if (!host) return;
-    const key = resolveProductLogoKey();
-    host.innerHTML = productLogoMarkup(key, `${this.#logoPrefix}-${key}`);
+    const url = resolveProductLogoUrl();
+    let img = host.querySelector('img');
+    if (!img) {
+      img = document.createElement('img');
+      img.alt = '';
+      host.replaceChildren(img);
+    }
+    if (img.getAttribute('src') !== url) img.setAttribute('src', url);
   }
 
   #syncGradient() {

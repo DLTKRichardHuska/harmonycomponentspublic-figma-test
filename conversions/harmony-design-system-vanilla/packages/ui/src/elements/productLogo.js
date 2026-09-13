@@ -1,9 +1,10 @@
-import { productLogoSvgs } from './productLogoSvgs.js';
-
 /**
- * Product logo icon key for the active kit.
- * Product builds rewrite this constant.
+ * Product logo URL for the active kit / demo stylesheet.
+ * Source tree resolves files under packages/ui/assets/logos/.
+ * Product builds rewrite this module to a single ./assets/logo.svg.
  */
+
+/** @type {string} */
 export const PRODUCT_LOGO_ICON = 'CPVPLogo';
 
 /** @type {Record<string, string>} */
@@ -32,22 +33,12 @@ export function resolveProductLogoKey() {
 }
 
 /**
- * Make SVG fragment ids unique so clipPath/mask urls work in Shadow DOM.
- * @param {string} svg
- * @param {string} prefix
- */
-export function uniquifySvgIds(svg, prefix) {
-  return String(svg)
-    .replace(/\bid="([^"]+)"/g, `id="${prefix}-$1"`)
-    .replace(/url\(#([^)]+)\)/g, `url(#${prefix}-$1)`);
-}
-
-/**
+ * Absolute URL to the product logo SVG asset.
  * @param {string} [key]
- * @param {string} [idPrefix]
  * @returns {string}
  */
-export function productLogoMarkup(key = resolveProductLogoKey(), idPrefix = 'pl') {
-  const svg = productLogoSvgs[key] || productLogoSvgs.CPVPLogo || '';
-  return uniquifySvgIds(svg, idPrefix);
+export function resolveProductLogoUrl(key = resolveProductLogoKey()) {
+  const name = PRODUCT_LOGO_BY_ID[key] || key || PRODUCT_LOGO_ICON;
+  const file = Object.values(PRODUCT_LOGO_BY_ID).includes(name) ? name : PRODUCT_LOGO_ICON;
+  return new URL(`../../assets/logos/${file}.svg`, import.meta.url).href;
 }

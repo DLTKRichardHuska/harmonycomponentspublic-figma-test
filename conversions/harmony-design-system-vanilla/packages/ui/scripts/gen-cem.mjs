@@ -2122,7 +2122,7 @@ const manifest = {
           tagName: 'harmony-shell-header',
           customElement: true,
           description:
-            'Shell header. Product logo from kit (no logo-src). Slot actions for CompanyPicker, UserMenu, and custom controls.',
+            'Shell header. Product logo from kit assets/logo.svg (no logo-src). Slot actions for CompanyPicker, UserMenu, and custom controls.',
           members: [
             {
               kind: 'field',

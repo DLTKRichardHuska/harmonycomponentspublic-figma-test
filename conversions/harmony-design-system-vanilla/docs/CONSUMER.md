@@ -30,7 +30,7 @@ Import the product stylesheet always. Register `/elements` when you use Custom E
 ## Install — static (no npm)
 
 1. Download/build the product zip from `packages/ui/dist-static/`.
-2. Copy the folder into your site (e.g. `/vendor/harmony/`).
+2. Copy the folder into your site (e.g. `/vendor/harmony/`). Keep `assets/` with the kit — Shell Header loads `assets/logo.svg` from there.
 3. Link CSS and load the module entry:
 
 ```html

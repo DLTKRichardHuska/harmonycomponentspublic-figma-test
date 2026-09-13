@@ -39,7 +39,7 @@ export { HarmonyLeftSidebar } from './HarmonyLeftSidebar.js';
 export { HarmonyRightSidebar } from './HarmonyRightSidebar.js';
 export { HarmonyCompanyPicker } from './HarmonyCompanyPicker.js';
 export { HarmonyUserMenu } from './HarmonyUserMenu.js';
-export { PRODUCT_LOGO_ICON, PRODUCT_LOGO_BY_ID, resolveProductLogoKey, productLogoMarkup } from './productLogo.js';
+export { PRODUCT_LOGO_ICON, PRODUCT_LOGO_BY_ID, resolveProductLogoKey, resolveProductLogoUrl } from './productLogo.js';
 export {
   PRODUCT_LEFT_SIDEBAR_ID,
   LEFT_SIDEBAR_DEFAULTS_BY_PRODUCT,

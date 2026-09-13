@@ -61,10 +61,11 @@ export const shellHeaderCss = `/**
   overflow: hidden;
 }
 
-.header__logo svg {
+.header__logo img {
   width: 100%;
   height: 100%;
   display: block;
+  object-fit: contain;
 }
 
 .header__title {

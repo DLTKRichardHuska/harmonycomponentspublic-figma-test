@@ -236,6 +236,9 @@ function writeElementModules(out, product) {
     'HarmonyButton.js',
     'HarmonyCard.js',
     'HarmonyProgress.js',
+    'HarmonySpinner.js',
+    'HarmonyAccordion.js',
+    'HarmonyAccordionItem.js',
     'HarmonyBadge.js',
     'HarmonyAvatar.js',
     'HarmonyChip.js',
@@ -269,23 +272,50 @@ function writeElementModules(out, product) {
     'HarmonyRightSidebar.js',
     'HarmonyCompanyPicker.js',
     'HarmonyUserMenu.js',
-    'productLogo.js',
-    'productLogoSvgs.js',
     'leftSidebarDefaults.js',
     'rightSidebarDefaults.js',
   ];
   for (const file of elementFiles) {
     writeFileSync(join(out, file), readFileSync(join(PKG, 'src/elements', file), 'utf8'));
   }
-  // Product logo constant rewrite for single-product kits
+  // Single-product logo asset (no other product logos in the kit)
   const logoByProduct = { cp: 'CPVPLogo', vp: 'CPVPLogo', ppm: 'PPMLogo', maconomy: 'MacLogo' };
   const logoName = logoByProduct[product] || 'CPVPLogo';
+  const logoSrc = join(PKG, 'assets/logos', `${logoName}.svg`);
+  if (!existsSync(logoSrc)) fail(`missing product logo ${logoSrc}`);
+  const assetsOut = join(out, 'assets');
+  mkdirSync(assetsOut, { recursive: true });
+  cpSync(logoSrc, join(assetsOut, 'logo.svg'));
   writeFileSync(
     join(out, 'productLogo.js'),
-    readFileSync(join(PKG, 'src/elements/productLogo.js'), 'utf8').replace(
-      "export const PRODUCT_LOGO_ICON = 'CPVPLogo';",
-      `export const PRODUCT_LOGO_ICON = '${logoName}';`,
-    ),
+    `/**
+ * Product logo URL for this single-product kit.
+ * Brand mark lives at ./assets/logo.svg — keep the kit folder intact.
+ */
+
+/** @type {string} */
+export const PRODUCT_LOGO_ICON = '${logoName}';
+
+/** @type {Record<string, string>} */
+export const PRODUCT_LOGO_BY_ID = {
+  ${product}: '${logoName}',
+};
+
+/**
+ * @returns {string}
+ */
+export function resolveProductLogoKey() {
+  return PRODUCT_LOGO_ICON;
+}
+
+/**
+ * Absolute URL to this kit's logo SVG.
+ * @returns {string}
+ */
+export function resolveProductLogoUrl() {
+  return new URL('./assets/logo.svg', import.meta.url).href;
+}
+`,
   );
   // Left sidebar defaults: bake product id for the kit
   writeFileSync(
@@ -308,6 +338,8 @@ function writeElementModules(out, product) {
     ['button.js', '../styles/generated/buttonCss.js', './generated/buttonCss.js'],
     ['card.js', '../styles/generated/cardCss.js', './generated/cardCss.js'],
     ['progress.js', '../styles/generated/progressCss.js', './generated/progressCss.js'],
+    ['spinner.js', '../styles/generated/spinnerCss.js', './generated/spinnerCss.js'],
+    ['accordion.js', '../styles/generated/accordionCss.js', './generated/accordionCss.js'],
     ['badge.js', '../styles/generated/badgeCss.js', './generated/badgeCss.js'],
     ['avatar.js', '../styles/generated/avatarCss.js', './generated/avatarCss.js'],
     ['chip.js', '../styles/generated/chipCss.js', './generated/chipCss.js'],
@@ -336,12 +368,18 @@ function writeElementModules(out, product) {
   for (const [file, from, to] of sheetRewrites) {
     writeFileSync(
       join(out, file),
-      readFileSync(join(PKG, 'src/elements', file), 'utf8').replace(from, to),
+      readFileSync(join(PKG, 'src/elements', file), 'utf8').replaceAll(
+        '../styles/generated/',
+        './generated/',
+      ),
     );
   }
   // Element modules import generated CSS from ../styles/generated — rewrite for flat dist.
   for (const el of [
     'HarmonyProgress.js',
+    'HarmonySpinner.js',
+    'HarmonyAccordion.js',
+    'HarmonyAccordionItem.js',
     'HarmonyBadge.js',
     'HarmonyAvatar.js',
     'HarmonyChip.js',
@@ -373,6 +411,9 @@ function writeElementModules(out, product) {
     'buttonCss.js',
     'cardCss.js',
     'progressCss.js',
+    'spinnerCss.js',
+    'accordionCss.js',
+    'accordionItemCss.js',
     'badgeCss.js',
     'avatarCss.js',
     'chipCss.js',
@@ -440,7 +481,7 @@ function buildOne(product, { npm, staticKit }) {
 
   const elementsEntry = [
     `/* Harmony elements — product ${product} (relative imports for static + npm dist). */`,
-    `export { HarmonyElement, createSheet, HarmonyIcon, HarmonyButton, HarmonyCard, HarmonyProgress, HarmonyBadge, HarmonyAvatar, HarmonyChip, HarmonyAlert, HarmonyTooltip, HarmonyDialog, HarmonyInput, HarmonyTextarea, HarmonySelect, HarmonyFormLayout, HarmonyFormRow, HarmonyPickerPopup, HarmonyDatePicker, HarmonyTimePicker, HarmonyDateTimePicker, HarmonyMonthPicker, HarmonyWeekPicker, HarmonyDateInput, HarmonyButtonGroup, HarmonyListMenu, HarmonyTable, HarmonyNotificationBadge, HarmonyCheckbox, HarmonyRadio, HarmonyToggle, HarmonyTabStrip, HarmonyShellHeader, HarmonyLeftSidebar, HarmonyRightSidebar, HarmonyCompanyPicker, HarmonyUserMenu, registerIcons, registerHarmonyElements, typographySheet, typographyCss, buttonSheet, buttonCss, cardSheet, cardCss, progressSheet, progressCss, badgeSheet, badgeCss, avatarSheet, avatarCss, chipSheet, chipCss, linkSheet, linkCss, alertSheet, alertCss, tooltipSheet, tooltipCss, dialogSheet, dialogCss, inputFieldSheet, inputFieldCss, labelSheet, labelCss, inputSheet, inputCss, pickersSheet, pickersCss, buttonGroupSheet, buttonGroupCss, listMenuSheet, listMenuCss, tableSheet, tableCss, notificationBadgeSheet, notificationBadgeCss, checkboxSheet, checkboxCss, radioSheet, radioCss, toggleSheet, toggleCss, tabStripSheet, tabStripCss, shellHeaderSheet, shellHeaderCss, leftSidebarSheet, leftSidebarCss, rightSidebarSheet, rightSidebarCss, companyPickerSheet, companyPickerCss, userMenuSheet, userMenuCss } from './register.js';`,
+    `export { HarmonyElement, createSheet, HarmonyIcon, HarmonyButton, HarmonyCard, HarmonyProgress, HarmonySpinner, HarmonyAccordion, HarmonyAccordionItem, HarmonyBadge, HarmonyAvatar, HarmonyChip, HarmonyAlert, HarmonyTooltip, HarmonyDialog, HarmonyInput, HarmonyTextarea, HarmonySelect, HarmonyFormLayout, HarmonyFormRow, HarmonyPickerPopup, HarmonyDatePicker, HarmonyTimePicker, HarmonyDateTimePicker, HarmonyMonthPicker, HarmonyWeekPicker, HarmonyDateInput, HarmonyButtonGroup, HarmonyListMenu, HarmonyTable, HarmonyNotificationBadge, HarmonyCheckbox, HarmonyRadio, HarmonyToggle, HarmonyTabStrip, HarmonyShellHeader, HarmonyLeftSidebar, HarmonyRightSidebar, HarmonyCompanyPicker, HarmonyUserMenu, registerIcons, registerHarmonyElements, typographySheet, typographyCss, buttonSheet, buttonCss, cardSheet, cardCss, progressSheet, progressCss, spinnerSheet, spinnerCss, accordionSheet, accordionItemSheet, accordionCss, accordionItemCss, badgeSheet, badgeCss, avatarSheet, avatarCss, chipSheet, chipCss, linkSheet, linkCss, alertSheet, alertCss, tooltipSheet, tooltipCss, dialogSheet, dialogCss, inputFieldSheet, inputFieldCss, labelSheet, labelCss, inputSheet, inputCss, pickersSheet, pickersCss, buttonGroupSheet, buttonGroupCss, listMenuSheet, listMenuCss, tableSheet, tableCss, notificationBadgeSheet, notificationBadgeCss, checkboxSheet, checkboxCss, radioSheet, radioCss, toggleSheet, toggleCss, tabStripSheet, tabStripCss, shellHeaderSheet, shellHeaderCss, leftSidebarSheet, leftSidebarCss, rightSidebarSheet, rightSidebarCss, companyPickerSheet, companyPickerCss, userMenuSheet, userMenuCss } from './register.js';`,
     `export {`,
     `  setColorScheme,`,
     `  getColorScheme,`,
@@ -537,7 +578,7 @@ function buildOne(product, { npm, staticKit }) {
         `  LOCALE_ATTR,`,
         `  TIME_FORMAT_ATTR,`,
         `} from './datetime.js';`,
-        `export { HarmonyElement, createSheet, HarmonyIcon, HarmonyButton, HarmonyCard, HarmonyProgress, HarmonyBadge, HarmonyAvatar, HarmonyChip, HarmonyAlert, HarmonyTooltip, HarmonyDialog, HarmonyInput, HarmonyTextarea, HarmonySelect, HarmonyFormLayout, HarmonyFormRow, HarmonyPickerPopup, HarmonyDatePicker, HarmonyTimePicker, HarmonyDateTimePicker, HarmonyMonthPicker, HarmonyWeekPicker, HarmonyDateInput, HarmonyButtonGroup, HarmonyListMenu, HarmonyTable, HarmonyNotificationBadge, HarmonyCheckbox, HarmonyRadio, HarmonyToggle, HarmonyTabStrip, HarmonyShellHeader, HarmonyLeftSidebar, HarmonyRightSidebar, HarmonyCompanyPicker, HarmonyUserMenu, registerIcons, typographySheet, typographyCss, buttonSheet, buttonCss, cardSheet, cardCss, progressSheet, progressCss, badgeSheet, badgeCss, avatarSheet, avatarCss, chipSheet, chipCss, linkSheet, linkCss, alertSheet, alertCss, tooltipSheet, tooltipCss, dialogSheet, dialogCss, inputFieldSheet, inputFieldCss, labelSheet, labelCss, inputSheet, inputCss, pickersSheet, pickersCss, buttonGroupSheet, buttonGroupCss, listMenuSheet, listMenuCss, tableSheet, tableCss, notificationBadgeSheet, notificationBadgeCss, checkboxSheet, checkboxCss, radioSheet, radioCss, toggleSheet, toggleCss, tabStripSheet, tabStripCss, shellHeaderSheet, shellHeaderCss, leftSidebarSheet, leftSidebarCss, rightSidebarSheet, rightSidebarCss, companyPickerSheet, companyPickerCss, userMenuSheet, userMenuCss } from './register.js';`,
+        `export { HarmonyElement, createSheet, HarmonyIcon, HarmonyButton, HarmonyCard, HarmonyProgress, HarmonySpinner, HarmonyAccordion, HarmonyAccordionItem, HarmonyBadge, HarmonyAvatar, HarmonyChip, HarmonyAlert, HarmonyTooltip, HarmonyDialog, HarmonyInput, HarmonyTextarea, HarmonySelect, HarmonyFormLayout, HarmonyFormRow, HarmonyPickerPopup, HarmonyDatePicker, HarmonyTimePicker, HarmonyDateTimePicker, HarmonyMonthPicker, HarmonyWeekPicker, HarmonyDateInput, HarmonyButtonGroup, HarmonyListMenu, HarmonyTable, HarmonyNotificationBadge, HarmonyCheckbox, HarmonyRadio, HarmonyToggle, HarmonyTabStrip, HarmonyShellHeader, HarmonyLeftSidebar, HarmonyRightSidebar, HarmonyCompanyPicker, HarmonyUserMenu, registerIcons, typographySheet, typographyCss, buttonSheet, buttonCss, cardSheet, cardCss, progressSheet, progressCss, spinnerSheet, spinnerCss, accordionSheet, accordionItemSheet, accordionCss, accordionItemCss, badgeSheet, badgeCss, avatarSheet, avatarCss, chipSheet, chipCss, linkSheet, linkCss, alertSheet, alertCss, tooltipSheet, tooltipCss, dialogSheet, dialogCss, inputFieldSheet, inputFieldCss, labelSheet, labelCss, inputSheet, inputCss, pickersSheet, pickersCss, buttonGroupSheet, buttonGroupCss, listMenuSheet, listMenuCss, tableSheet, tableCss, notificationBadgeSheet, notificationBadgeCss, checkboxSheet, checkboxCss, radioSheet, radioCss, toggleSheet, toggleCss, tabStripSheet, tabStripCss, shellHeaderSheet, shellHeaderCss, leftSidebarSheet, leftSidebarCss, rightSidebarSheet, rightSidebarCss, companyPickerSheet, companyPickerCss, userMenuSheet, userMenuCss } from './register.js';`,
         `export {`,
         `  registerHarmonyElements,`,
         `  setColorScheme,`,
@@ -578,7 +619,7 @@ function buildOne(product, { npm, staticKit }) {
       join(out, 'README.md'),
       `# Harmony Design System — Vanilla (${product})
 
-Static drop-in (no npm). Copy this folder into your site (e.g. \`/vendor/harmony/\`).
+Static drop-in (no npm). Copy this folder into your site (e.g. \`/vendor/harmony/\`). Keep \`assets/\` with the kit — Shell Header loads \`assets/logo.svg\`.
 
 \`\`\`html
 <link rel="stylesheet" href="/vendor/harmony/styles.css" />
