@@ -1,4 +1,5 @@
 import { HarmonyElement } from './HarmonyElement.js';
+import { syncLabelVariant } from './fieldLabel.js';
 
 const LAYOUTS = new Set(['inline', 'stacked']);
 
@@ -27,7 +28,9 @@ const FIELD_SELECTOR =
  * Reads `label` on child field CEs (`harmony-input`, `harmony-textarea`,
  * `harmony-select`, `harmony-date-input`, `harmony-checkbox`, `harmony-radio`,
  * `harmony-toggle`) and inserts aligned light-DOM `<label class="label">`
- * nodes. Layout wins over per-field shadow labels (hidden via :host-context).
+ * nodes. Layout wins over per-field shadow labels (fields set
+ * `data-in-form-layout`; shadow CSS hides the internal label — not
+ * `:host-context`, which Firefox does not support).
  *
  * Field `id` is optional (for JS/CSS hooks). When present, labels use `for`.
  * When absent, the layout wires click activation and `aria-labelledby` so
@@ -270,6 +273,9 @@ export class HarmonyFormLayout extends HarmonyElement {
    * @param {Element | null} cell
    */
   #syncFieldLabel(field, cell) {
+    syncLabelVariant(field);
+    const shadowLabel = field.shadowRoot?.querySelector('[part="label"]');
+    if (shadowLabel) shadowLabel.hidden = true;
     const labelText = field.getAttribute('label') || '';
     const host = cell || field.parentElement || this;
     const managed = this.#managedLabelFor(field);

@@ -302,7 +302,7 @@ export class HarmonyInput extends HarmonyElement {
 
     const labelEl = this.shadowRoot.querySelector('[part="label"]');
     const labelText = this.label;
-    if (labelText) {
+    if (labelText && !this.hasAttribute('data-in-form-layout')) {
       labelEl.hidden = false;
       labelEl.textContent = labelText;
       labelEl.classList.toggle('label--required', this.required);
@@ -310,7 +310,11 @@ export class HarmonyInput extends HarmonyElement {
       else labelEl.removeAttribute('for');
     } else {
       labelEl.hidden = true;
-      labelEl.textContent = '';
+      if (!labelText) labelEl.textContent = '';
+      else {
+        labelEl.textContent = labelText;
+        labelEl.classList.toggle('label--required', this.required);
+      }
     }
 
     const iconEl = this.shadowRoot.querySelector('[part="icon"]');

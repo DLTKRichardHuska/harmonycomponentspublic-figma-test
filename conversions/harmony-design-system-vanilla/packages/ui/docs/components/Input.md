@@ -81,7 +81,7 @@ Standalone `label` renders the field’s shadow label. `label-variant` is `inlin
 
 ## Form layout — `<harmony-form-layout>` + `<harmony-form-row>`
 
-Conversion helpers (not catalog elements). Place **inside** a native `<form>`. The layout reads child `label` attributes on `harmony-input`, `harmony-textarea`, `harmony-select`, and `harmony-date-input`, and inserts aligned light-DOM labels. Field shadow labels hide via `:host-context`.
+Conversion helpers (not catalog elements). Place **inside** a native `<form>`. The layout reads child `label` attributes on `harmony-input`, `harmony-textarea`, `harmony-select`, and `harmony-date-input`, and inserts aligned light-DOM labels. Field shadow labels hide via the `data-in-form-layout` host attribute (Firefox does not support `:host-context`).
 
 | Tag | Attribute | Values | Default |
 |-----|-----------|--------|---------|

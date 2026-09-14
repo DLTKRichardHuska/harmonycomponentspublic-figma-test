@@ -725,7 +725,7 @@ export const pickersCss = `/**
   color: var(--color-error);
 }
 
-:host(harmony-date-input):host-context(harmony-form-layout) [part='label'] {
+:host(harmony-date-input[data-in-form-layout]) [part='label'] {
   display: none;
 }
 
@@ -755,7 +755,7 @@ export const pickersCss = `/**
   white-space: nowrap;
 }
 
-:host(harmony-date-input):host-context(harmony-form-layout) .field {
+:host(harmony-date-input[data-in-form-layout]) .field {
   flex-direction: column;
   align-items: stretch;
   gap: var(--space-1-5);

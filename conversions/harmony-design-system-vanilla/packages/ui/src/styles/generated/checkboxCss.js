@@ -20,9 +20,9 @@ export const checkboxCss = `/**
   display: none;
 }
 
-/* Form-layout owns the label column — hide beside-control text */
-:host-context(harmony-form-layout) [part='label'],
-:host-context(harmony-form-layout) .checkbox__label {
+/* Form-layout owns the label column — hide beside-control text (no :host-context; Firefox) */
+:host([data-in-form-layout]) [part='label'],
+:host([data-in-form-layout]) .checkbox__label {
   display: none;
 }
 

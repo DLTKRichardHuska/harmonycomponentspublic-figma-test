@@ -12,6 +12,7 @@ export const cardCss = `/**
   border-radius: var(--radius-xl);
   overflow: hidden;
   box-shadow: var(--shadow-sm);
+  display: block;
 }
 
 /* Whole-card links: neutralize default / host link chrome (same idea as .btn on <a>). */

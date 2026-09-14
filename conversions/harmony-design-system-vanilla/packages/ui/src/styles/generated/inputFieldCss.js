@@ -38,8 +38,8 @@ export const inputFieldCss = `/**
   color: var(--color-error);
 }
 
-/* Hide internal label when placed inside harmony-form-layout (light-DOM labels win) */
-:host-context(harmony-form-layout) [part='label'] {
+/* Hide internal label when form-layout owns labels (data attr — Firefox has no :host-context) */
+:host([data-in-form-layout]) [part='label'] {
   display: none;
 }
 
@@ -78,13 +78,13 @@ export const inputFieldCss = `/**
   padding-top: var(--space-3);
 }
 
-:host-context(harmony-form-layout) .field {
+:host([data-in-form-layout]) .field {
   flex-direction: column;
   align-items: stretch;
   gap: var(--space-1-5);
 }
 
-:host-context(harmony-form-layout) [part='label'] {
+:host([data-in-form-layout]) [part='label'] {
   padding-top: 0;
 }
 

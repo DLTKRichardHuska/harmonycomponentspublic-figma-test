@@ -320,15 +320,20 @@ export class HarmonyDateInput extends HarmonyElement {
     if (!labelEl) return;
     const text = this.label;
     const fieldId = this.#fieldId();
-    if (text) {
+    if (text && !this.hasAttribute('data-in-form-layout')) {
       labelEl.hidden = false;
       labelEl.textContent = text;
       labelEl.classList.toggle('label--required', this.required);
       labelEl.setAttribute('for', fieldId);
     } else {
       labelEl.hidden = true;
-      labelEl.textContent = '';
-      labelEl.classList.remove('label--required');
+      if (text) {
+        labelEl.textContent = text;
+        labelEl.classList.toggle('label--required', this.required);
+      } else {
+        labelEl.textContent = '';
+        labelEl.classList.remove('label--required');
+      }
       labelEl.removeAttribute('for');
     }
   }

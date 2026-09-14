@@ -25,6 +25,112 @@ const CC_COLUMNS_JSON = JSON.stringify([
   { key: 'status', label: 'Status', align: 'left' },
 ]);
 
+const TITLE_BAR_CONTENT = `
+  <h1 slot="title-bar-content" class="table-title">Table Title</h1>
+`;
+
+const TITLE_BAR_ICONS = `
+  <div slot="title-bar-icons" class="title-actions">
+    <button type="button" class="table__title-bar-icon" aria-label="Help">
+      <harmony-icon name="question-mark-circle" size="sm"></harmony-icon>
+    </button>
+    <button type="button" class="table__title-bar-icon" aria-label="Minimize">
+      <harmony-icon name="minimize" size="sm"></harmony-icon>
+    </button>
+    <button type="button" class="table__title-bar-icon" aria-label="Window">
+      <harmony-icon name="window" size="sm"></harmony-icon>
+    </button>
+    <button type="button" class="table__title-bar-icon" aria-label="Close">
+      <harmony-icon name="x-mark" size="sm"></harmony-icon>
+    </button>
+  </div>
+`;
+
+const ACTION_BAR = `
+  <div slot="action-bar" class="action-row">
+    <harmony-button variant="ghost" size="sm" icon="document-duplicate" icon-position="right">Copy</harmony-button>
+    <harmony-button variant="ghost" size="sm" icon="plus" icon-position="right">Add</harmony-button>
+    <harmony-button variant="ghost" size="sm" icon="trash">Delete</harmony-button>
+    <span class="action-sep">|</span>
+    <harmony-button variant="ghost" size="sm" icon="queue-list">Group</harmony-button>
+    <harmony-button variant="ghost" size="sm" icon="cog-6-tooth">Customize Columns</harmony-button>
+    <span class="all-filters">All Filters</span>
+  </div>
+`;
+
+const FILTER_BAR = `
+  <div slot="filter-bar" class="filter-row">
+    <harmony-select placeholder="Period" value="q1-2025">
+      <option value="all">All periods</option>
+      <option value="q1-2025">Q1 2025</option>
+      <option value="q2-2025">Q2 2025</option>
+      <option value="q3-2025">Q3 2025</option>
+    </harmony-select>
+    <harmony-select placeholder="Status" value="active">
+      <option value="all">All Statuses</option>
+      <option value="active">Active</option>
+      <option value="in-progress">In Progress</option>
+      <option value="pending">Pending</option>
+    </harmony-select>
+    <button type="button" class="btn btn--ghost btn--sm">Clear</button>
+    <div class="chip-cluster">
+      <harmony-chip size="sm" removable>Q1 2025</harmony-chip>
+      <harmony-chip size="sm" removable>Active</harmony-chip>
+    </div>
+  </div>
+`;
+
+const TABLE_HEAD = `
+  <thead>
+    <tr>
+      <th class="text-left">Project ID</th>
+      <th class="text-left">Name</th>
+      <th class="text-left">Status</th>
+      <th class="text-right">Budget</th>
+    </tr>
+  </thead>
+`;
+
+const TABLE_BODY_TWO = `
+  <tbody>
+    <tr>
+      <td>PRJ-001</td>
+      <td>Website Redesign</td>
+      <td><harmony-badge size="small" variant="success">Active</harmony-badge></td>
+      <td class="text-right">$25,000</td>
+    </tr>
+    <tr>
+      <td>PRJ-002</td>
+      <td>Mobile App Development</td>
+      <td><harmony-badge size="small" variant="warning">In Progress</harmony-badge></td>
+      <td class="text-right">$150,000</td>
+    </tr>
+  </tbody>
+`;
+
+const TABLE_BODY_THREE = `
+  <tbody>
+    <tr>
+      <td>PRJ-001</td>
+      <td>Website Redesign</td>
+      <td><harmony-badge size="small" variant="success">Active</harmony-badge></td>
+      <td class="text-right">$25,000</td>
+    </tr>
+    <tr>
+      <td>PRJ-002</td>
+      <td>Mobile App Development</td>
+      <td><harmony-badge size="small" variant="warning">In Progress</harmony-badge></td>
+      <td class="text-right">$150,000</td>
+    </tr>
+    <tr>
+      <td>PRJ-003</td>
+      <td>Database Migration</td>
+      <td><harmony-badge size="small" variant="default">Pending</harmony-badge></td>
+      <td class="text-right">$45,000</td>
+    </tr>
+  </tbody>
+`;
+
 const pageSheet = createSheet(`
   .table-scroll { overflow-x: auto; }
   .filter-row {
@@ -33,10 +139,47 @@ const pageSheet = createSheet(`
     gap: var(--space-3);
     flex-wrap: wrap;
   }
+  .filter-row harmony-select {
+    width: auto;
+    min-width: 11rem;
+    flex: 0 1 auto;
+  }
+  .chip-cluster {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    flex-wrap: wrap;
+  }
   .title-actions {
     display: flex;
     gap: var(--space-2);
     align-items: center;
+  }
+  .action-row {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    flex-wrap: wrap;
+  }
+  .action-sep {
+    color: var(--text-secondary);
+    font-size: var(--text-sm);
+    padding: 0 var(--space-1);
+  }
+  .all-filters {
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    font-weight: var(--font-normal);
+    color: var(--text-primary);
+    padding: var(--space-1) var(--space-2);
+  }
+  .table-title {
+    font-family: var(--font-display);
+    font-size: var(--text-13);
+    font-weight: var(--font-semibold);
+    line-height: var(--leading-snug);
+    color: var(--text-primary);
+    margin: 0;
   }
   .cc-toolbar {
     display: flex;
@@ -295,38 +438,69 @@ export class DemoTablesPage extends HarmonyElement {
         <p class="muted"><code>columns</code> JSON builds the sort header. Emits <code>sort-change</code>.</p>
       </demo-example>
 
-      <h2>Filter bar + title / action bars</h2>
+      <h2>Table with Title Bar and Action Bar</h2>
       <demo-example>
         <div class="table-scroll">
           <harmony-table>
-            <div slot="title-bar-content"><strong>Projects</strong></div>
-            <div slot="filter-bar" class="filter-row">
-              <button type="button">Period</button>
-              <button type="button">Status</button>
-              <button type="button" class="btn btn--ghost btn--sm">Clear</button>
-              <harmony-chip size="sm" removable>Q1 2025</harmony-chip>
-              <harmony-chip size="sm" removable>Active</harmony-chip>
-            </div>
-            <div slot="title-bar-icons" class="title-actions">
-              <button type="button" class="btn btn--ghost btn--sm" aria-label="Refresh">
-                <harmony-icon name="arrow-path" size="sm"></harmony-icon>
-              </button>
-            </div>
-            <div slot="action-bar">
-              <button type="button" class="btn btn--sm">Export</button>
-            </div>
+            ${TITLE_BAR_CONTENT}
+            ${TITLE_BAR_ICONS}
             <table>
-              <thead>
-                <tr>
-                  <th>Project ID</th>
-                  <th>Name</th>
-                  <th class="text-right">Budget</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr><td>PRJ-001</td><td>Website Redesign</td><td class="text-right">$25,000</td></tr>
-                <tr><td>PRJ-002</td><td>Mobile App</td><td class="text-right">$150,000</td></tr>
-              </tbody>
+              ${TABLE_HEAD}
+              ${TABLE_BODY_TWO}
+            </table>
+          </harmony-table>
+        </div>
+      </demo-example>
+
+      <demo-example>
+        <div class="table-scroll">
+          <harmony-table>
+            ${ACTION_BAR}
+            <table>
+              ${TABLE_HEAD}
+              ${TABLE_BODY_TWO}
+            </table>
+          </harmony-table>
+        </div>
+      </demo-example>
+
+      <demo-example>
+        <div class="table-scroll">
+          <harmony-table>
+            ${TITLE_BAR_CONTENT}
+            ${TITLE_BAR_ICONS}
+            ${ACTION_BAR}
+            <table>
+              ${TABLE_HEAD}
+              ${TABLE_BODY_TWO}
+            </table>
+          </harmony-table>
+        </div>
+      </demo-example>
+
+      <h2>Table with Filter Bar</h2>
+      <demo-example>
+        <div class="table-scroll">
+          <harmony-table>
+            ${FILTER_BAR}
+            <table>
+              ${TABLE_HEAD}
+              ${TABLE_BODY_THREE}
+            </table>
+          </harmony-table>
+        </div>
+      </demo-example>
+
+      <demo-example>
+        <div class="table-scroll">
+          <harmony-table>
+            ${TITLE_BAR_CONTENT}
+            ${TITLE_BAR_ICONS}
+            ${FILTER_BAR}
+            ${ACTION_BAR}
+            <table>
+              ${TABLE_HEAD}
+              ${TABLE_BODY_TWO}
             </table>
           </harmony-table>
         </div>

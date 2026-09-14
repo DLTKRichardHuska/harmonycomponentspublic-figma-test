@@ -15,7 +15,7 @@ Tables are **native-first**. Product `styles.css` styles unclassed `table` / `th
 | `.table--grouped` | Expand column / CC inline expand |
 | `.table--command-center` | Command Center grid chrome |
 | `.table-wrapper` | Optional outer chrome host |
-| `.table__filter-bar` / `.table__title-bar` / `.table__action-bar` | Optional bars above the table |
+| `.table__title-bar` / `.table__filter-bar` / `.table__action-bar` | Optional bars above the table (DOM order: title → filter → action → table) |
 | `.table-row--selected` | Checkbox selection highlight |
 | `.table-row--command-center-selected` | CC row selection |
 
@@ -60,8 +60,8 @@ Light-DOM Custom Element. The host **is** `.table-wrapper`. Prefer nesting a rea
 | Slot / child | Maps to |
 |--------------|---------|
 | Nested `<table>` | Inner table (required for row data) |
+| `title-bar-content` / `title-bar-icons` | `.table__title-bar` (first when present) |
 | `filter-bar` | `.table__filter-bar` |
-| `title-bar-content` / `title-bar-icons` | `.table__title-bar` |
 | `action-bar` | `.table__action-bar` |
 | `command-center-toolbar` / `command-center-aside` | CC toolbar + docked canvas when aside present |
 

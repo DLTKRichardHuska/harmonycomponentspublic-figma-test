@@ -243,7 +243,7 @@ export class HarmonyTextarea extends HarmonyElement {
 
     const labelEl = this.shadowRoot.querySelector('[part="label"]');
     const labelText = this.label;
-    if (labelText) {
+    if (labelText && !this.hasAttribute('data-in-form-layout')) {
       labelEl.hidden = false;
       labelEl.textContent = labelText;
       labelEl.classList.toggle('label--required', this.required);
@@ -251,7 +251,11 @@ export class HarmonyTextarea extends HarmonyElement {
       else labelEl.removeAttribute('for');
     } else {
       labelEl.hidden = true;
-      labelEl.textContent = '';
+      if (!labelText) labelEl.textContent = '';
+      else {
+        labelEl.textContent = labelText;
+        labelEl.classList.toggle('label--required', this.required);
+      }
     }
 
     const errorEl = this.shadowRoot.querySelector('[part="error"]');

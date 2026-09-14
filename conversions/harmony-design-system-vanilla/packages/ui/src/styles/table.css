@@ -781,13 +781,14 @@ table tbody td .avatar span {
   border-right: var(--border-width-thin) solid var(--border-color);
   border-bottom: var(--border-width-thin) solid var(--border-color);
   background-color: var(--surface-bg);
-}
-
-.table-wrapper:has(.table__title-bar):not(:has(.table__filter-bar)) .table__title-bar {
-  border-top-left-radius: var(--radius-12);
-  border-top-right-radius: var(--radius-12);
   font-family: var(--font-display);
   font-size: var(--text-13);
+}
+
+/* Title is first when present (title → filter → action → table) */
+.table-wrapper:has(.table__title-bar) .table__title-bar {
+  border-top-left-radius: var(--radius-12);
+  border-top-right-radius: var(--radius-12);
 }
 
 .table__title-bar-content {
@@ -834,11 +835,14 @@ table tbody td .avatar span {
   flex-wrap: wrap;
   gap: var(--space-3);
   padding: var(--space-3) var(--space-4);
-  border-top: var(--border-width-thin) solid var(--border-color);
   border-left: var(--border-width-thin) solid var(--border-color);
   border-right: var(--border-width-thin) solid var(--border-color);
   border-bottom: var(--border-width-thin) solid var(--border-color);
   background-color: var(--table-header-gray-bg);
+}
+
+.table-wrapper:has(.table__filter-bar):not(:has(.table__title-bar)) .table__filter-bar {
+  border-top: var(--border-width-thin) solid var(--border-color);
   border-top-left-radius: var(--radius-12);
   border-top-right-radius: var(--radius-12);
 }

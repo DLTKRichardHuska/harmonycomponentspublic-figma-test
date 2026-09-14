@@ -653,13 +653,7 @@ export class HarmonyTable extends HarmonyElement {
 
     const dataRegion = () => {
       const frag = document.createDocumentFragment();
-      if (hasFilter) {
-        const bar = document.createElement('div');
-        bar.className = 'table__filter-bar';
-        bar.setAttribute(MARK, '');
-        for (const n of filterBar) bar.append(n);
-        frag.append(bar);
-      }
+      // Bar order: title → filter → action → table (vanilla chrome order)
       if (hasTitle) {
         const bar = document.createElement('div');
         bar.className = 'table__title-bar';
@@ -676,6 +670,13 @@ export class HarmonyTable extends HarmonyElement {
           wrap.append(icons);
         }
         bar.append(wrap);
+        frag.append(bar);
+      }
+      if (hasFilter) {
+        const bar = document.createElement('div');
+        bar.className = 'table__filter-bar';
+        bar.setAttribute(MARK, '');
+        for (const n of filterBar) bar.append(n);
         frag.append(bar);
       }
       if (hasAction) {

@@ -288,12 +288,12 @@ export class HarmonyToggle extends HarmonyElement {
       const labelEl = this.shadowRoot.querySelector('[part="label"]');
       const labelText = this.label;
       if (labelEl) {
-        if (labelText) {
+        if (labelText && !this.hasAttribute('data-in-form-layout')) {
           labelEl.hidden = false;
           labelEl.textContent = labelText;
         } else {
           labelEl.hidden = true;
-          labelEl.textContent = '';
+          labelEl.textContent = labelText || '';
         }
       }
     }
